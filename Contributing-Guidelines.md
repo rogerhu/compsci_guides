@@ -1,5 +1,3 @@
-# Contributing Guidelines
-
 Topic guides take a few different forms but generally speaking each guide is of one of these types:
 
  * Topic introduction and cheatsheet
