@@ -13,14 +13,19 @@ Topic guides take a few different forms but generally speaking each guide is of 
 
 ## General Guidelines
 
-Best practices for the guides:
+Best practices for the guides (👍):
 
- * Try to avoid using technical vocabulary (jargon) unless that vocabulary is defined explicitly in the guide itself, parent topic overview, or a foundational guide on the system.
- * Avoid language about the algorithm or data structure being "simple" or "easy". Often anything starts to feel easy with enough practice. Don't assume it is easy for everyone when they first read about it. 
+ * Information hierarchy and order is important. Content near the top of the guide should be maximally important. 
+ * Use section headings and breaks to help create a clear and consistent structure for the guide
  * Focus on the 80% most valuable cases. Avoid tangents or "20%" information except at the bottom of the guide. 
- * Try to avoid multiple long paragraphs of text that don't have direct value to the reader. Keep the guides concise with "high informational content". In other words, avoid long exposition unless absolutely necessary. 
- * Leverage progressively revealed code snippets to simulate "working through solutions" by showing stages as a final solution is completed (with explanation between stages) to help create an "aha" moment.
+ * Leverage progressively revealed code snippets to simulate "working through solutions" by showing stages as a final solution is completed (with an explanation between stages) to help create an "aha" moment.
  * Leverage code comments that clearly highlight key elements of the algorithm or data structure code.
+
+Avoid these pitfalls (⚠️):
+
+ * Avoid using technical vocabulary (jargon) unless that vocabulary is defined explicitly in the guide itself, parent topic overview, or a foundational guide on the system.
+ * Avoid language about the algorithm or data structure being "simple" or "easy". Often anything starts to feel easy with enough practice. Don't assume it is easy for everyone when they first read about it. 
+ * Avoid multiple long paragraphs of text that don't have direct value to the reader. Keep the guides concise with "high informational content". In other words, avoid long exposition unless absolutely necessary. 
 
 ## Data Structure Topic Intro Sections
 
