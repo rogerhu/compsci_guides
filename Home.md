@@ -1,5 +1,10 @@
 Welcome to the fundamental CodePath Computer Science guides on data structures, algorithms and technical interviewing!
 
+## Foundational
+
+ * [[Big-O Time/Space Complexity]]
+ * [[Identifying Problems]]
+
 ## Data Structures
 
  * [[Strings]]
