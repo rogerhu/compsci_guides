@@ -1,7 +1,8 @@
 Welcome to the fundamental CodePath Computer Science guides on data structures, algorithms and technical interviewing!
 
-## Foundational
+## Technical Interviewing
 
+ * [[Anatomy of a Technical Whiteboarding Interview]]
  * [[Big-O Time/Space Complexity]]
  * [[Identifying Problems]]
 
