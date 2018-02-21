@@ -2,8 +2,23 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
 
 ## Data Structures
 
+ * [[Strings]]
+ * [[Arrays]]
+ * [[Hash Tables]]
+ * [[Linked Lists]]
+ * [[Stacks]]
+ * [[Queues]]
+ * [[Binary Trees]]
+ * [[Graphs]]
+
 ## Algorithms
+
+ * [[Backtracking]]
+ * [[Bit Manipulation]]
+ * [[Dynamic Programming]]
+ * [[Greedy Algorithms]]
+ * [[Sorting Algorithms]]
 
 ## System Design
 
-## Mobile
+ * [[Introduction to System Design]]
