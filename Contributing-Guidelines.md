@@ -37,7 +37,7 @@ Please see the [section outlines below](#guide-section-outlines) for a much more
 e.g Linked List, Binary Trees
 
 1. **Executive Summary** - Paragraph or two that provides as much an overall summary as possible. The specifics of the data structure, why and when this structure, the tl;dr of pros and cons of using this structure.
-2. **Introduction** - Setup more context for this data structure including a visual example or two of how this structure is illustrated, small code snippets representing the structure
+2. **Introduction** - Setup more context for this data structure including a visual example or two of how this structure is illustrated, small code snippets representing the structure. Perhaps provide context for and illustrate the importance of this structure by using an easily relatable sample problem solved with this structure.
 3. **Time/Space Complexity** - Table or description of the common O(n) for this structure on various operations
 4. **Pros and Cons** - List of the advantages and disadvantages of this structure in more detail
 5. **Glossary** - List of common terminology (should cover most anything used in the page or patterns)
@@ -51,7 +51,7 @@ e.g Linked List, Binary Trees
 e.g Dynamic Programming
 
 1. **Executive Summary** - Paragraph or two that provides as much a content-rich overall summary as possible. The specifics of the algorithm, why and when this algorithm is used, the tl;dr of pros and cons of using this structure.
-2. **Introduction** - Setup more context for this algorithm including a visual example or two of how this is illustrated
+2. **Introduction** - Setup more context for this algorithm including a visual example or two of how this is illustrated. Perhaps provide context for and illustrate the importance of this algorithm class by using an easily relatable sample problem solved with this structure.
 3. **Time/Space Complexity** - Table or description of the common O(n) for this algorithm for major variations
 4. **Glossary** - List of common terminology (should cover most anything used in the page or patterns)
 5. **Basic Elements** - Code and descriptions for major elements of this algorithm (i.e Memoization)
