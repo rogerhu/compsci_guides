@@ -22,6 +22,7 @@ Please see the [section outlines below](#guide-section-outlines) for a much more
  * Focus on the 80% most valuable cases. Avoid tangents or "20%" information except at the bottom of the guide. 
  * Leverage progressively revealed code snippets to simulate "working through solutions" by showing stages as a final solution is completed (with an explanation between stages) to help create an "aha" moment.
  * Leverage code comments that clearly highlight key elements of the algorithm or data structure code.
+ * Try to make any introductory examples used relatable and accessible to as wide an audience as possible. 
 
 ### Avoid these pitfalls (⚠️):
 
