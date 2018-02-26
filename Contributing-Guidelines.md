@@ -1,11 +1,11 @@
 Topic guides take a few different forms but generally speaking each guide is of one of these types:
 
- * Topic introduction and cheatsheet
-   - e.g Data Structures (Linked List), Algorithms (Traversals)
+ * **Topic introduction and cheatsheet** - Broad overview of a key topic
+   - e.g Data Structures (Linked List) or Algorithms (Dynamic Programming)
    - Generally introductory, description of the topic, time/space complexity notes
-   - Examples of common problems
+   - Links to the pattern guides, includes examples of common problems
    - Links to videos or other resources for further reading
- * Algorithm Pattern Breakdowns - Use case guides
+ * **Algorithm Pattern Breakdowns** - Use case guides breaking down a particular algorithm pattern
    - e.g Manipulating a LinkedList, 2-Pointer tracking
    - Describe the pattern and when it's generally used, example of problems where that is used
    - Example of one or two problems and solutions leveraging this pattern
