@@ -11,6 +11,8 @@ Topic guides take a few different forms but generally speaking each guide is of 
    - Example of one or two problems and solutions leveraging this pattern
    - Specific solution example (e.g. Length of the longest substring without repeating characters)
 
+Please see the [section outlines below](#guide-section-outlines) for a much more detailed overview of each guide section.
+
 ## General Guidelines
 
 ### Best practices for the guides (👍):
