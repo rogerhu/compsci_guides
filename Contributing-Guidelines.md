@@ -43,7 +43,8 @@ e.g Linked List, Binary Trees
 5. **Glossary** - List of common terminology (should cover most anything used in the page or patterns)
 6. **Basic Operations** - Code and descriptions for basic operations (too simple to be a full pattern)
 7. **Patterns List** - List of links to the common memorized or "derived" algorithm patterns for this data structure
-8. **References** - List of external links for additional reading on this structure
+8. **Real-world Case Study** - Brief explanation of one or two real-world case studies where this structure is used
+9. **References** - List of external links for additional reading on this structure
 
 ### Algorithm Topic Intro Sections
 
@@ -55,7 +56,8 @@ e.g Dynamic Programming
 4. **Glossary** - List of common terminology (should cover most anything used in the page or patterns)
 5. **Basic Elements** - Code and descriptions for major elements of this algorithm (i.e Memoization)
 6. **Patterns List** - List of links to the common memorized or "derived" patterns/techniques for this algorithm
-7. **References** - List of external links for additional reading on this algorithm
+7. **Real-world Case Study** - Brief explanation of one or two real-world case studies where this algorithm is used
+8. **References** - List of external links for additional reading on this algorithm
 
 ### Algorithm Specific Pattern Breakdown Guide
 
