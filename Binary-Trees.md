@@ -217,8 +217,8 @@ What's the difference between the height and depth of a binary tree?
 https://stackoverflow.com/questions/2603692/what-is-the-difference-between-tree-depth-and-height
 
 ## Patterns List
-* [Binary Trees Iterative Traversal Approach](https://github.com/codepath/compsci_guides/wiki/Binary-Trees-Iterative-Traversal)
-* [Finding 2nd Largest Node in a Binary Search Tree](https://github.com/codepath/compsci_guides/wiki/Binary-Trees-2nd-Largest)
+* [Binary Trees Iterative Traversal Approach](https://guides.codepath.com/compsci/Binary-Trees-Iterative-Traversal)
+* [Finding 2nd Largest Node in a Binary Search Tree](https://guides.codepath.com/compsci/Binary-Trees-2nd-Largest)
 
 ## References
 ### Further reading links
