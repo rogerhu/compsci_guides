@@ -3,7 +3,7 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
 ## Technical Interviewing
 
  * [[Anatomy of a Technical Whiteboarding Interview]]
- * [[Big-O Time & Space Complexity]]
+ * [[Big O Complexity Analysis]]
  * [[Identifying Problems]]
 
 ## Data Structures
