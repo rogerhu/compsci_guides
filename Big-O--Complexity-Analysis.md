@@ -1,18 +1,19 @@
-## Topic: Big O Notation (Complexity Analysis)
+# Big O Notation (Complexity Analysis)
 
 > "Algorithm Complexity: you need to know Big-O. It's a must. If you struggle with basic big-O complexity analysis, then you are almost guaranteed not to get hired." -- Steve Yegge, "[Get that job at Google]"
 
+## Introduction
 Big O notation is used to describe the complexity of an algorithm when measuring its _efficiency_, which in this case means _how well the algorithm scales with the size of the dataset_. (Broadly speaking, the process of measuring this type of efficiency is known as "Complexity Analysis," and "Big O" simply refers to the notational system we use to talk about it.)
 
 Big O is represented with the following syntax: _O(n)_. The value we're concerned with is between the parentheses and will in most cases include the variable _n_, which denotes the size of the algorithm's input. In most simple scenarios (i.e., interview problems), the algorithm will be a simple function, and _n_ will typically refer to the size of a collection taken by the function as its input. The value between the parentheses expresses that function's complexity in terms of _n_.
 
 Complexity is measured in two dimensions: _time_ (how long a function takes to complete), and _space_ (how much memory a function consumes while executing).  So a simple way to think about a function's complexity is to consider _the number of things it does or creates_ (_x_) as multiplied by the size of the input (_n_). The trick is that the "number of things it does or creates" is represented in Big O notation not as variable such as _x_ but instead as a constant: 1. So instead of _O(x * n)_, the complexity would be expressed as _O(1 * n)_ or, simply, _O(n)_. Therefore a function with a time complexity of _O(n)_ performs a given number of steps multiplied by _n_.
 
-### Notable Examples
+## Examples
 
 In all of the following examples, we'll consider a single function that takes an array of items as input and has no output: a method with the signature `void someFunction(int[] inputArray)`. So in all the following examples, _n_ will represent the length of `inputArray`, and we'll express the complexity the method's body using Big O in relation to _n_.
 
-#### _O(1)_ - Constant Complexity
+### _O(1)_ - Constant Complexity
 
 Let's start with one of the simplest possible implementations of this method, one which does nothing but print the size of the input array:
 
@@ -24,7 +25,7 @@ public void someFunction(int[] inputArray) {
 
 This function runs in _O(1)_ time (or _constant time_).  Because this method takes the same amount of time to complete irrespective of the input size, we  ignore _n_ entirely when expressing the complexity. The input array could contain 1 item or 1,000 items, but this function would still just require one "step."
 
-#### _O(n)_ - Linear Complexity
+### _O(n)_ - Linear Complexity
 
 A simple _O(n)_ example would perform the same set of actions for every item in the input array. In this case we're using a `for` loop, but the same complexity could be achieved via recursion or other means.
 
@@ -38,7 +39,7 @@ public void someFunction(int[] inputArray) {
 
 This function runs in _O(n)_ time (or _linear time_), where _n_ is the number of items in the array. If the array has 10 items, the function calls `System.out.println` 10 times. If it has 1,000 items, it calls it 1,000 times.
 
-#### _O(n<sup>2</sup>)_ - Quadratic Complexity
+### _O(n<sup>2</sup>)_ - Quadratic Complexity
 
 ```java
 public void someFunction(int[] inputArray) {
@@ -55,7 +56,7 @@ Here we're nesting two loops. If our array has _n_ items, our outer loop runs _n
 
 > Classic example: [Bubble sort](https://en.wikipedia.org/wiki/Bubble_sort)
 
-#### _O(log n)_ - Logarithmic Complexity
+### _O(log n)_ - Logarithmic Complexity
 
 ```java
 public void someFunction(int[] inputArray) {
@@ -71,7 +72,7 @@ _O(log n)_ is considered to be fairly efficient. The time taken increases with t
 
 > Classic example: [Binary search](https://en.wikipedia.org/wiki/Binary_search_algorithm)
 
-#### Other Examples
+### Other Examples
 
 While the above are the most common, there are [many other well known examples](https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities) of Big O complexities. A few additional ones you may encounter:
 
@@ -79,8 +80,7 @@ While the above are the most common, there are [many other well known examples](
 - **_O(n log n)_ - Linearithmic Complexity:** The [Merge sort](https://en.wikipedia.org/wiki/Merge_sort) worst case complexity is _O(n log n)_.
 - **_O(2<sup>n</sup>)_ - Exponential Complexity:** The algorithm takes twice as long for every new element added, so even small increases in _n_ dramatically increase the running time.
 
-#### Additional Resources
+### Additional Resources
 * [HackerRank intro to Big-O](https://www.youtube.com/watch?v=v4cd1O4zkGw)
 * [InterviewCake big-O guide on time and space complexity](https://www.interviewcake.com/article/java/big-o-notation-time-and-space-complexity)
 * [InterviewCake logarithms guide](https://www.interviewcake.com/article/java/logarithms)
-  * Guide to logarithmic analysis; this covers topics we’ll explore in upcoming classes
