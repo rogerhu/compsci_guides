@@ -1,5 +1,3 @@
-# Binary Trees
-
 ## Introduction
 A common problem we are posed with is to search for something in a given list. For example, given the numbers of a lottery draw `1, 2, 5, 10, 16, 20, 23, 36, 40, 41, 45`, we may want to find if our number `18` is a winning number.
 
