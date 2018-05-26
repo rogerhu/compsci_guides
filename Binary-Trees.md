@@ -217,8 +217,8 @@ What's the difference between the height and depth of a binary tree?
 https://stackoverflow.com/questions/2603692/what-is-the-difference-between-tree-depth-and-height
 
 ## Patterns List
-[Iterative Traversals](https://hackmd.io/GwBgJgHAhmCmDGBaMBmWFEBYDsKSIgCMBWYRAJhFhWMPO02MxCA=?view)
-[Second Largest Node](https://hackmd.io/CwBg7AHAJghgTANgLRgKYGYCsTgCNOpICcMAZsEqaqnhAiEXEcEA?both)
+* [Binary Trees Iterative Traversal Approach](https://github.com/codepath/compsci_guides/wiki/Binary-Trees-Iterative-Traversal)
+* [Finding 2nd Largest Node in a Binary Search Tree](https://github.com/codepath/compsci_guides/wiki/Binary-Trees-2nd-Largest)
 
 ## References
 ### Further reading links
@@ -230,6 +230,3 @@ https://inst.eecs.berkeley.edu/~cs61b/fa17/materials/lectures/lect20.pdf
 * [Gayle Laakmann McDowell's Overview of Trees](https://www.youtube.com/watch?v=oSWTXtMglKE)
 * [Walkthrough of Inverting Binary Tree](https://drive.google.com/file/d/1VEm_t3SjTmllNNSVLW0ym1FAqxFobT10/view?usp=sharing)
 * [Walkthrough of Validating Binary Search Tree](https://drive.google.com/file/d/1DLwBfABTZKNnN-4r5BF2Q9g1hfI57yhy/view?usp=sharing)
-
-* [Binary Trees Iterative Traversal Approach](https://github.com/codepath/compsci_guides/wiki/Binary-Trees-Iterative-Traversal)
-* [Finding 2nd Largest Node in a Binary Search Tree](https://github.com/codepath/compsci_guides/wiki/Binary-Trees-2nd-Largest)
