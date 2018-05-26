@@ -2,18 +2,19 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
 
 ## Technical Interviewing
 
- * [[Anatomy of a Technical Whiteboarding Interview]]
+<!--- TODO: * [[Anatomy of a Technical Whiteboarding Interview]]-->
  * [[Big O Complexity Analysis]]
- * [[Identifying Problems]]
+<!--- TODO: add this * [[Identifying Problems]]-->
 
 ## Data Structures
 
- * [[Strings]]
- * [[Arrays]]
- * [[Hash Tables]]
  * [[Linked Lists]]
+ * [[Hash Tables]]
  * [[Stacks]]
  * [[Queues]]
+ * [[Heaps]]
+ * [[Strings]]
+ * [[Arrays]]
  * [[Binary Trees]]
  * [[Graphs]]
    * [[Graph Traversals]]
