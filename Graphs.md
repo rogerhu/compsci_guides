@@ -12,7 +12,7 @@ Graphs consist of a set of..
     * Nodes that are directly connected by an edge are commonly referred to as **neighbors**.
 * **edges**, connections between pairs of vertices
 
-<img src="https://imgur.com/2z9J2E5" width="472" height="350"/>
+<img src="https://i.imgur.com/Zq3wULu.png" width="472" height="350"/>
 
 ## Graph types
 
