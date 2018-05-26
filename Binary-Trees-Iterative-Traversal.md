@@ -1,5 +1,3 @@
-# Binary Trees (Iterative Traversals)
-
 Traversing a binary tree recursively is usually the first approach towards approaching binary tree problems. However, recursion could lead to large memory footprints and often times interviewers will ask for an iterative traversal.
 
 When traversing a tree iteratively it is common to use a **stack** or a **queue**. The common pattern involves:
