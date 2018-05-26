@@ -16,6 +16,8 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
  * [[Queues]]
  * [[Binary Trees]]
  * [[Graphs]]
+   * [[Graph Traversals]]
+   * [[Topological Sort]]
 
 ## Algorithms
 
