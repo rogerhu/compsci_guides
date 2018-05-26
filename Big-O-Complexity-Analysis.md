@@ -1,5 +1,3 @@
-# Big O Notation (Complexity Analysis)
-
 > "Algorithm Complexity: you need to know Big-O. It's a must. If you struggle with basic big-O complexity analysis, then you are almost guaranteed not to get hired." -- Steve Yegge, "[Get that job at Google]"
 
 ## Introduction
