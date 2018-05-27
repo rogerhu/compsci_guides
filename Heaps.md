@@ -7,7 +7,7 @@ Heaps are an often overlooked data structure, but come up quite often in intervi
 
 2. It is a complete binary tree. A **binary tree’s** nodes will have at most two children: a left child, and right child. A heap is a complete binary tree, which means that it fills each level entirely except the last level. Another way of thinking about this is that all the nodes in one level will have children before any of those nodes will have grandchildren.
 
-[Insert diagram here of min heap/ max heap]
+![](https://imgur.com/1mghTRv)
 
 ## Heap Operations
 In order to understand the runtimes of heap operations, it is vital to understand how insertion and deletion work within a heap.
