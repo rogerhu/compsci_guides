@@ -18,6 +18,7 @@ Internally,a hash table stores its values in an array. A special **hash function
 
 Hash function generate a code, known as the **hash code**. Each data type will have its own hash function that generates its hash code differently. It is important to remember that a hash code is not equivalent to the index in the underlying array storage structure--there are often more hash codes than indices in the underlying array.
 
+**Figure below**: Internals of a hash table
 ![](https://i.imgur.com/bEIWPaQ.png)
 
 
@@ -25,9 +26,12 @@ Hash function generate a code, known as the **hash code**. Each data type will h
 
 
 ### Collisions
-If the hash function is implemented well, inputted objects will be distributed evenly across the array indices. However, the number of hash codes is often greater than the size of the underlying array, so some keys will bes assigned the same index. When two keys are matched to the same index, this is called a **collision**. There are several different ways of addressing collisions. 
+If the hash function is implemented well, inputted objects will be distributed evenly across the array indices. However, the number of hash codes is often greater than the size of the underlying array, so some keys will be assigned the same index. When two keys are matched to the same index, this is called a **collision**. There are several different ways of addressing collisions. 
 
 There are multiple approaches to dealing with collisions. The most common one is simply to store all the objects that get assigned to the same index in a linked list. In this scenario, instead of simply storing the value at that index, the linked list must contain both the entire key and the value in pairs instead of just the value, so that the values can be uniquely tied to a key.
+
+**Figure below**: Hash Collision
+![](https://i.imgur.com/ZqF2crs.png)
 
 For more information about other ways to address hash collisions, see the [hash tables Wikipedia page](https://en.wikipedia.org/wiki/Hash_table#Open_addressing) for descriptions of several different approaches. If you have time, I'd encourage you to learn about open addressing, the other common hash collision method.
 
