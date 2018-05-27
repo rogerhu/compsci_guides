@@ -2,8 +2,8 @@
 Heaps are an often overlooked data structure, but come up quite often in interview problems. **Heaps** are special tree based data structures that satisfy two properties:
 
 1. All nodes are ordered in a specific way, depending on the type of heap. There are two types of heaps: min heaps and max heaps.
-    *  In **min heaps**, the root node contains the smallest element and all the nodes in the heap contain elements that are less than their child nodes.
-    * In **max heaps**, the root node contains the largest element and all the nodes in the heap contain elements that are greater than their child nodes.
+    *  In **min heaps**, the root node contains the smallest element and all the nodes in the heap contain elements that are less than or equal to their child nodes.
+    * In **max heaps**, the root node contains the largest element and all the nodes in the heap contain elements that are greater or equal to than their child nodes.
 
 2. It is a complete binary tree. A **binary tree’s** nodes will have at most two children: a left child, and right child. A heap is a complete binary tree, which means that it fills each level entirely except the last level. Another way of thinking about this is that all the nodes in one level will have children before any of those nodes will have grandchildren.
 
@@ -60,9 +60,13 @@ In the worst case scenario, the swapping procedure for insertions and deletions 
 
 ## Glossary
 **Binary tree**: a tree that has at most two children.
+
 **Bubble down**: the process of moving an element down within the heap by swapping it with one of its children until it is placed in the proper position that satisfies the heap ordering.
+
 **Bubble up**: the process of moving an element up within the heap by swapping it with its parent until it is placed in the proper position that satisfies the heap ordering.
+
 **Max heap**: tree based structure in which the root node contains the largest element and all the nodes in the heap contain elements that are greater than their child nodes.
+
 **Min heap**: tree based structure in which the root node contains the smallest element and all the nodes in the heap contain elements that are less than their child nodes.
 
 ## Example problems
