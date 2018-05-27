@@ -29,8 +29,6 @@ If the hash function is implemented well, inputted objects will be distributed e
 
 There are multiple approaches to dealing with collisions. The most common one is simply to store all the objects that get assigned to the same index in a linked list. In this scenario, instead of simply storing the value at that index, the linked list must contain both the entire key and the value in pairs instead of just the value, so that the values can be uniquely tied to a key.
 
-[insert diagram here]
-
 For more information about other ways to address hash collisions, see the [hash tables Wikipedia page](https://en.wikipedia.org/wiki/Hash_table#Open_addressing) for descriptions of several different approaches. If you have time, I'd encourage you to learn about open addressing, the other common hash collision method.
 
 **Note on updating keys in the hash table**: Be wary of updating a key object that's present in the hash table. Once it's updated, lookup will no longer work for that key. Instead, if a key needs to be updated, remove it, update the key, then re-insert the key into the table.
