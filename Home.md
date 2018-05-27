@@ -10,8 +10,7 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
 
  * [[Linked Lists]]
  * [[Hash Tables]]
- * [[Stacks]]
- * [[Queues]]
+ * [[Stacks and Queues]]
  * [[Heaps]]
  * [[Strings]]
  * [[Arrays]]
