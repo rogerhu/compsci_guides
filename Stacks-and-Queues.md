@@ -10,11 +10,11 @@ A **stack** is a
 A **queue** is a
 
 ## Key takeaways
-* 
-* 
+* Stacks are very useful for it's backtracking features. For example, parsing questions tend to use stacks because of the LIFO property.
 
 ## Example problems
 * Stacks:
+
 * Queues:
 
 ## Resources
