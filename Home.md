@@ -27,6 +27,7 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
  * [[Bit Manipulation]]
  * [[Dynamic Programming]]
  * [[Greedy Algorithms]]
+   * [[Scheduling Meeting Rooms]]
  * [[Sorting Algorithms]]
 
 ## System Design
