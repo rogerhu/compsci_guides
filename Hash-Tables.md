@@ -18,7 +18,7 @@ Internally,a hash table stores its values in an array. A special **hash function
 
 Hash function generate a code, known as the **hash code**. Each data type will have its own hash function that generates its hash code differently. It is important to remember that a hash code is not equivalent to the index in the underlying array storage structure--there are often more hash codes than indices in the underlying array.
 
-[insert diagram here]
+![](https://i.imgur.com/bEIWPaQ.png)
 
 
 **Note:** When utilizing a hash table with a class you've created, be sure that the hash function for that object type operates as you would expect. If two objects are equivalent, you should ensure that their hash codes are the same.
