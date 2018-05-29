@@ -97,8 +97,9 @@ def __len__(self):
 
 ## Patterns List
 - [[Dummy Head]]
-- [Multiple Pass](https://hackmd.io/RKL_IujwQ9uAvOyCaZDy2w)
+- [[Multiple Pass]]
 - [[Two Pointer]]
 
 ## References
-https://en.wikipedia.org/wiki/Linked_list
+- https://en.wikipedia.org/wiki/Linked_list
+- https://manybutfinite.com/post/journey-to-the-stack
