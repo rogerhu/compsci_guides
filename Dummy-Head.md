@@ -5,7 +5,7 @@ This is a very common linked list technique as it typically saves you creating s
 Say you are asked to delete a node in a linked list given the value of the node you want to delete. Furthermore you are told that you can assume the values are unique.
 
 For example:
-```python
+```
 Input: 1->2->4, 2
 Output: 1->4
 ```
