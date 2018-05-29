@@ -96,7 +96,7 @@ def __len__(self):
 ```
 
 ## Patterns List
-- [Dummy Head](DummyHead.md)
+- [[Dummy Head]]
 - [Multiple Pass](https://hackmd.io/RKL_IujwQ9uAvOyCaZDy2w)
 - [Two Pointer](https://hackmd.io/DtF_zhQdSOe9--Pk4nt0vg)
 
