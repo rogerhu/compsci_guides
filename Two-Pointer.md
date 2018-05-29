@@ -35,11 +35,13 @@ print(f"List {my_list.val} --> {my_list.next.val} --> {my_list.next.next.val}")
 print(has_cycle_with_aux(my_list))
 ```
 
-Output:
-`List 5 --> 7 --> None`
-`False`
-`List 5 --> 7 --> 5`
-`True`
+#### Output:
+```python
+"List 5 --> 7 --> None"
+False
+"List 5 --> 7 --> 5"
+True
+```
 
 ### Answer: Two Pointers, time = O(N) space = O(1)
 We can get rid of the extra auxillary data structure by utilizing only one additional pointer. We can then use the two pointers to iterate through the list at two different speeds. The motivation being that if there is a cycle, then the list can be thought of as a circle (at least the part of the list past the self-intersection). Similar to a race track, the faster pointer must eventually cross paths with the slower pointer, whereas if there is not cycle they will never cross paths.
@@ -65,8 +67,10 @@ print(f"List {my_list.val} --> {my_list.next.val} --> {my_list.next.next.val}")
 print(has_cycle(my_list)) 
 ```
 
-Output:
-`List 5 --> 7 --> None`
-`False`
-`List 5 --> 7 --> 5`
-`True`
+#### Output:
+```python
+"List 5 --> 7 --> None"
+False
+"List 5 --> 7 --> 5"
+True
+```
