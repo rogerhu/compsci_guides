@@ -27,9 +27,9 @@ If the node we want to delete has **one** child...
 replace the node with the node's child
 
 If the node we want to delete has **two** children...
-1) find the minimum value in the right subtree
-2) replace the node value with the found minimum value
-3) remove the node that is now duplicated in the right subtree
+ 1) find the minimum value in the right subtree
+ 2) replace the node value with the found minimum value
+ 3) remove the node that is now duplicated in the right subtree
 (this is not immediately obvious at all, and to get a better understanding of why this is the case, it would be helpful to draw out some examples to see how this will always work)
 
 ### Create helper methods
@@ -61,6 +61,31 @@ otherwise, we've found the node we want to delete
       -> set the current node's value to the found min value
       -> delete the now duplicated node
       -> return the current node
+```
+
+that was a lot of words, which doesn't help us a lot of terms of efficiency, so let's translate those words into some pseudocode
+
+```
+Node deleteNode(Node root, int valueToDelete) {
+  if root == null -> return node 
+  if root.value < valueToDelete
+    deleteNode(root.right, valueToDelete)
+  if root.value > valueToDelete
+    deleteNode(root.left, valueToDelete)
+  else 
+    if (root.left == null && root.right == null)
+      return null
+
+    if (root.right == null) 
+      return root.left
+    if (root.left == null)
+      return root.right
+
+    else 
+      minValue = findMinInRightSubtree(root)
+      root.value = minValue
+      removeDuplicateNode(root)
+      return root
 ```
 
 ### Summary
