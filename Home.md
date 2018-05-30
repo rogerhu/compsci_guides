@@ -17,6 +17,7 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
  * [[Binary Trees]]
    * [[Binary Trees Iterative Traversal]]
    * [[Binary Trees 2nd Largest Node]]
+   * [[Delete Node From Binary Search Tree]]
  * [[Graphs]]
    * [[Graph Traversals]]
    * [[Topological Sort]]
