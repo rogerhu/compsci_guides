@@ -67,13 +67,14 @@ that was a lot of words, which doesn't help us a lot of terms of efficiency, so 
 
 ```
 Node deleteNode(Node root, int valueToDelete) {
-  if root == null -> return node 
+  if root = null
+    return node 
   if root.value < valueToDelete
     deleteNode(root.right, valueToDelete)
   if root.value > valueToDelete
     deleteNode(root.left, valueToDelete)
   else 
-    if (root.left == null && root.right == null)
+    if (isLeafNode(root))
       return null
 
     if (root.right == null) 
@@ -87,6 +88,3 @@ Node deleteNode(Node root, int valueToDelete) {
       removeDuplicateNode(root)
       return root
 ```
-
-### Summary
-The pseudocode we came up with looks a bit wordy, and it probably wouldn't be a great idea to write all that on the whiteboard if we were working on whiteboards. However, it did give us a great idea of how we will implement the solution without us getting bogged down in code intricacies. 
