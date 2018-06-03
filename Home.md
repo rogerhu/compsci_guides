@@ -9,6 +9,9 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
 ## Data Structures
 
  * [[Linked Lists]]
+	* [[Dummy Head]]
+	* [[Multiple Pass]]
+	* [[Two Pointer]]
  * [[Hash Tables]]
  * [[Stacks and Queues]]
  * [[Heaps]]
