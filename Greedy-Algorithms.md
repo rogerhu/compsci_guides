@@ -13,7 +13,7 @@ This greedy approach can also be applied to a handful of common problems. When a
 
 ### Disadvantages:
 - Hard to design: The hard part often lies in trying picture the problem in a way that would allow you to solve it greedily.
-- Proofing correctness: Proofing that the greedy approach will be correct in all cases can also be a challenge
+- Proving correctness: Proving that the greedy approach will be correct in all cases can also be a challenge
 
 ### Common problems that can be solved with the greedy approach
 #### Frog Jumping
