@@ -35,7 +35,7 @@ The math and implementation behind this optimization are a bit complex, but are 
 Surprisingly, this complex data structure can be represented using an array! Given that the root node will always be either the least or greatest element in the heap, we can place this element as the first element in the array. This underlying array is then filled up by going through each level of the heap, from left to right, top to bottom.
 
 With the guarantee of fullness and the binary tree property of the heap, we can easily calculate the indices of the children and parents of each node using these formulas:
-* Parent: (current index - 2) / 2
+* Parent: current index // 2 (round down)
 * Left child: (current index * 2) + 1
 * Right child: (current index * 2) + 2
 
