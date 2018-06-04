@@ -79,6 +79,7 @@ While the above are the most common, there are [many other well known examples](
 - **_O(2<sup>n</sup>)_ - Exponential Complexity:** The algorithm takes twice as long for every new element added, so even small increases in _n_ dramatically increase the running time.
 
 ### Additional Resources
-* [HackerRank intro to Big-O](https://www.youtube.com/watch?v=v4cd1O4zkGw)
+* [HackerRank intro to Big-O video](https://www.youtube.com/watch?v=v4cd1O4zkGw)
+* [CS Dojo Time complexity video](https://www.youtube.com/watch?v=D6xkbGLQesk)
 * [InterviewCake big-O guide on time and space complexity](https://www.interviewcake.com/article/java/big-o-notation-time-and-space-complexity)
 * [InterviewCake logarithms guide](https://www.interviewcake.com/article/java/logarithms)
