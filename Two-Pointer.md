@@ -44,7 +44,7 @@ True
 ```
 
 ### Answer: Two Pointers, time = O(N) space = O(1)
-We can get rid of the extra auxillary data structure by utilizing only one additional pointer. We can then use the two pointers to iterate through the list at two different speeds. The motivation being that if there is a cycle, then the list can be thought of as a circle (at least the part of the list past the self-intersection). Similar to a race track, the faster pointer must eventually cross paths with the slower pointer, whereas if there is not cycle they will never cross paths.
+We can get rid of the extra auxillary data structure by utilizing only one additional pointer. We can then use the two pointers to iterate through the list at two different speeds. The motivation being that if there is a cycle, then the list can be thought of as a circle (at least the part of the list past the self-intersection). Similar to a race track, the faster pointer must eventually cross paths with the slower pointer, whereas if there is not a cycle they will never cross paths.
 
 ```python
 def has_cycle(ll):
