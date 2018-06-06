@@ -31,7 +31,7 @@ head.next = ListNode(2)
 , would create the list `1` -> `2` and `1` is at the head (front) of the list.
 
 ## Pros and Cons
-If we think about the call stack example, we were only really operating on one side (the head) of the list. Our operations consisted of 1) going to the head of the list in order to find the next function that our process needed to run and 2) adding a new function to the head of the list and having the node that holds that function poin to the previous head. 
+If we think about the call stack example, we were only really operating on one side (the head) of the list. Our operations consisted of 1) going to the head of the list in order to find the next function that our process needed to run and 2) adding a new function to the head of the list and having the node that holds that function point to the previous head. 
 
 Linked Lists really shine when we confine the our operations to one end of the data structure and also are dealing with arbitrary, yet small sizes (number of list nodes). The linked list is a good choice in this case because it is both simple to work with and efficient.
 
