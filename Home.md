@@ -4,6 +4,7 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
 
 <!--- TODO: * [[Anatomy of a Technical Whiteboarding Interview]]-->
  * [[Big O Complexity Analysis]]
+ * [[UMPIRE Interview Strategy]]
 <!--- TODO: add this * [[Identifying Problems]]-->
 
 ## Data Structures
