@@ -33,7 +33,7 @@ head.next = ListNode(2)
 ## Pros and Cons
 If we think about the call stack example, we were only really operating on one side (the head) of the list. Our operations consisted of 1) going to the head of the list in order to find the next function that our process needed to run and 2) adding a new function to the head of the list and having the node that holds that function point to the previous head. 
 
-Linked Lists really shine when we confine the our operations to one end of the data structure and also are dealing with arbitrary, yet small sizes (number of list nodes). The linked list is a good choice in this case because it is both simple to work with and efficient.
+Linked Lists really shine when we confine our operations to one end of the data structure and also are dealing with arbitrary, yet small sizes (number of list nodes). The linked list is a good choice in this case because it is both simple to work with and efficient.
 
 Lists do not do well when you want to support random access, i.e., work at any arbitrary location in the list. This is because the only way to get to the back of the list, is to go one node at a time asking for the next item down until you reach your desired location.
 
