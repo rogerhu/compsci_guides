@@ -1,5 +1,5 @@
 # Dummy Head Technique
-This is a very common linked list technique as it typically saves you creating special edge condition logic in order to operate on the head of a linked list with some algorithms. This technique only involves creating one extra pointer, the dummy head, that will point to your final answer or list that you will return. This technique is much easier to demonstrate with an example.
+This is a very common linked list technique as it typically saves you creating [special edge condition logic](https://youtu.be/njTh_OwMljA?t=6m35s) in order to operate on the head of a linked list with some algorithms. This technique only involves creating one extra pointer, the dummy head, that will point to your final answer or list that you will return. This technique is much easier to demonstrate with an example.
 
 ## Delete Node
 Say you are asked to delete a node in a linked list given the value of the node you want to delete. Furthermore you are told that you can assume the values are unique.
