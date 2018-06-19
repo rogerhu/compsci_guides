@@ -1,5 +1,5 @@
 ## Question
-**Given an array of meeting time intervals consisting of start and end times `[[start1, end1], [start2,end2],...]` find the minimum number of conference rooms required.**
+**Given an array of meeting time intervals consisting of start and end times `{[start1, end1], [start2,end2],...}` find the minimum number of conference rooms required.**
 
 ### Understanding the problem
 Let's start by understanding the problem we're trying to solve.
