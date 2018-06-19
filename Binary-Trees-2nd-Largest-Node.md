@@ -1,5 +1,3 @@
-# Binary Tree (2nd Largest Node)
-
 **Question:**
 **Given a binary search tree, find the 2nd largest tree node.**
 
