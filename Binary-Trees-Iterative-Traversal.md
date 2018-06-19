@@ -88,22 +88,22 @@ public void preorderTraversal(TreeNode root) {
 Time complexity is O(n) since we push/pop each node of the tree, while space complexity is O(h), h being the height of the tree.
 
 Going back to the beginning to see how we approached this problem from start to finish, there are a couple of important steps we followed:
-1) Recall the recursive way to solve the problem
-2) Working from the recursive solution, we know what our desired output should be
-3) Using the desired output, we then tried to create a new approach that would give us the same outcome
-4) Once we saw a pattern, we were able come up with an algorithm
+1. Recall the recursive way to solve the problem
+2. Working from the recursive solution, we know what our desired output should be
+3. Using the desired output, we then tried to create a new approach that would give us the same outcome
+4. Once we saw a pattern, we were able come up with an algorithm
 
 ## Example problems 
 
 These are problems that can be solved with similar approaches of using stacks / queues
 
-Binary Tree Iterator:
+- Binary Tree Iterator:
 https://leetcode.com/problems/binary-search-tree-iterator/description/
-Binary Tree Inorder Traversal:
+- Binary Tree Inorder Traversal:
 https://leetcode.com/problems/binary-tree-inorder-traversal/
-Binary Tree Postorder Traversal:
+- Binary Tree Postorder Traversal:
 https://leetcode.com/problems/binary-tree-postorder-traversal/
 
 ## More resources:
-Article : https://leetcode.com/articles/binary-tree-inorder-traversal/
-Video: https://www.youtube.com/watch?v=VsxLHGUqAKs
+* Article : https://leetcode.com/articles/binary-tree-inorder-traversal/
+* Video: https://www.youtube.com/watch?v=VsxLHGUqAKs
