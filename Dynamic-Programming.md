@@ -35,9 +35,9 @@ We can look at the funciton call graph of this solution for `f(5)`:
 
 The call graph is a great way to get an idea of the computational complexity of a recursive algorithm and in this case also find wasted computations which are repeated sub-trees. For example, `f(2)` is calculated three times. 
 
-As we know from our study of trees, a full or balanced tree will have size $2^n$ where $n$ is the height of the tree or in this case the Fibonacci number we are solving for.
+As we know from our study of trees, a full or balanced tree will have size `2**n` where `n` is the height of the tree or in this case the Fibonacci number we are solving for.
 
-The call graph is a great visualization because it also gives us a hint that the actual required computations to solve for `f(n)` is just $n$, i.e., the unique nodes of the call graph.
+The call graph is a great visualization because it also gives us a hint that the actual required computations to solve for `f(n)` is just `n`, i.e., the unique nodes of the call graph.
 
 So this is exactly the kind of problem DP can help us with. There are two main patterns to DP design, 1) Top Down or Recursion + Memoization and 2) Bottom Up sometimes reffered to as DP Table design. Since, this problem is given as a recursive algorithm let's start with Top Down.
 
@@ -61,7 +61,7 @@ print(Fib().results(6))
 ```
 `The 6th Fibonacci number is 8 and requires 25 computations`
 
-That confirms our hypothesis that our complexity is more than $O(N)$ and perhaps $O(2^N)$. So let's alter our code with memoization. We will just need to store past calculations and look them up before blindly computing. The common storage mechanism is a hash table.
+That confirms our hypothesis that our complexity is more than `O(N)` and perhaps `O(2**N)`. So let's alter our code with memoization. We will just need to store past calculations and look them up before blindly computing. The common storage mechanism is a hash table.
 
 ```python
 class FibMemo(Fib):
@@ -86,9 +86,9 @@ Similar to other recursive algorithms, however, there can be some benefit to tra
 
 ## Time/Space Complexity
 There are three main variants of DP problems that you will see in programming interviews. They are distinguished by the way we will define our the subproblem that is the core of the recursion or iterative computation. The key to looking at this is to see what work is "left to do". The three main variants are:
-- Single Suffix/Prefix -- Where the subproblem solves for some position `i` and then recurses or iterates on the rest defined by either `f[:,i-1]` OR `f[i+1,:]`. This is often $O(N)$.
-- Subsequence -- You will solve for both ends of an interval in your sequence and be left to solve for `f[i, j]`. This is often $O(N^2)$.
-- Double Suffix/Prefix -- More rare, but sometimes you will solve for `i` and `j` separately and be left with work in two linear sequences `f[:,i-1]` and `g[:j-1]`. This is likely $O(N^2)$.
+- Single Suffix/Prefix -- Where the subproblem solves for some position `i` and then recurses or iterates on the rest defined by either `f[:,i-1]` OR `f[i+1,:]`. This is often `O(N)`.
+- Subsequence -- You will solve for both ends of an interval in your sequence and be left to solve for `f[i, j]`. This is often `O(N**2)`.
+- Double Suffix/Prefix -- More rare, but sometimes you will solve for `i` and `j` separately and be left with work in two linear sequences `f[:,i-1]` and `g[:j-1]`. This is likely `O(N**2)`.
 
 
 ## Glossary

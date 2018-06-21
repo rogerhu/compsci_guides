@@ -36,7 +36,7 @@ b
     d
 ```
 
-If you count this up and think about the combinatorics happening here, you see that this algorithm has time complexity $O(N!)$. I consider this a brute-force technique either because it was the first thing that popped into my head and I'm guessing there is a better way or because I already know there is a better way and I'm just working up to it. The brute-force solution, although often trivial compared to what the interviewer is asking for, is a great way to start thinking about possible recursive sub-problems that can avoid the inefficiency of the brute-force algorithm. 
+If you count this up and think about the combinatorics happening here, you see that this algorithm has time complexity `O(N!)`. I consider this a brute-force technique either because it was the first thing that popped into my head and I'm guessing there is a better way or because I already know there is a better way and I'm just working up to it. The brute-force solution, although often trivial compared to what the interviewer is asking for, is a great way to start thinking about possible recursive sub-problems that can avoid the inefficiency of the brute-force algorithm. 
 
 ### Recursive Formulation
 It can be hard to directly jump to the insight that leads to structuring the solution in a useful recursive way, but at least by laying out all of the computations of the brute-force strategy you can see that overlapping calculations and then trying to use that to see if you can solve some of the lines of the brute force solution if you knew earlier or later lines.
@@ -78,7 +78,7 @@ Now we continue to the next diagonal to the right where `j - i == 2` or 3 charac
 
 ![len1 DP Table](https://i.imgur.com/dfw8KIr.png)
 
-So according to the DP Table our algorithm has a simple visual definition whereby for any substring `s[i:j]` where `j > i + 1` the computation is simply dependent on the characters at the row and column and the answer previously computed in the `[i + 1, j - 1]` location that is already calculated. This visual description also makes the complexity analysis straightforward. Essentially, we have a computation for each location in the upper-right triangle of the matrix and each cell requires only constant work. So we have designed an $O(N^2)$ algorithm where $N$ is the length of the string.
+So according to the DP Table our algorithm has a simple visual definition whereby for any substring `s[i:j]` where `j > i + 1` the computation is simply dependent on the characters at the row and column and the answer previously computed in the `[i + 1, j - 1]` location that is already calculated. This visual description also makes the complexity analysis straightforward. Essentially, we have a computation for each location in the upper-right triangle of the matrix and each cell requires only constant work. So we have designed an `O(N**2)` algorithm where `N` is the length of the string.
 
 ```python
 def find_longest(s):

@@ -1,5 +1,5 @@
 # Bottom Up Dynamic Programming
-In the [[Dynamic Programming]] Overview, we solved the "Hello World" of recursion problems, a function that found the $N$th [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_number) in $O(N)$ time complexity. The solution used recursion + memoization or Top Down DP, which also required $O(N)$ extra space to solve the problem. Now we will use the Bottom Up DP technique to solve the same problem in order to achieve greater space efficiency.
+In the [[Dynamic Programming]] Overview, we solved the "Hello World" of recursion problems, a function that found the `N`th [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_number) in `O(N)` time complexity. The solution used recursion + memoization or Top Down DP, which also required `O(N)` extra space to solve the problem. Now we will use the Bottom Up DP technique to solve the same problem in order to achieve greater space efficiency.
 
 ## Finding the Bottom
 Let's now take a look at the call graph for the recursive algorithm with repeat calls to the same function pointing to the same node. ![Fibonacci DAG](https://i.imgur.com/yThh6bR.png)
@@ -46,4 +46,4 @@ print(FibNoCache().results(6))
 ```
 `The 6th Fibonacci number is 8 and requires 7 computations`
 
-So now we've achieved the same computation time saving, i.e., going from $O(2^N)$ brute-force to $O(N)$. Further, as is common with the bottom-up formulation, in this case we can find more storage saving by understanding how we are traversing the DAG. Since we are traversing from left to right and the dependency of any node is at most two nodes back we realize that we only need to store 2 values, $O(1)$, rather than retaining all $O(N)$ previous numbers.
+So now we've achieved the same computation time saving, i.e., going from `O(2**N)` brute-force to `O(N)`. Further, as is common with the bottom-up formulation, in this case we can find more storage saving by understanding how we are traversing the DAG. Since we are traversing from left to right and the dependency of any node is at most two nodes back we realize that we only need to store 2 values, `O(1)`, rather than retaining all `O(N)` previous numbers.
