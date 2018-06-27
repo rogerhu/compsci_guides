@@ -59,3 +59,7 @@ def binary_search(nums, key):
 ## Runtime and Space Complexity
 
 Binary search completes in **O(log N)** time because each iteration decreases the size of the list by a factor of 2. Its space complexity is constant because  we only need to maintain two pointers to locations in the list. Even the recursive solution has constant space with tail call optimization.
+
+## Example problems
+* [Search insert position](https://leetcode.com/problems/search-insert-position/description/)
+* [Search in a 2D matrix](https://leetcode.com/problems/search-a-2d-matrix/description/)
