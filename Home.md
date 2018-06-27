@@ -18,6 +18,7 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
  * [[Heaps]]
  * [[Strings]]
  * [[Arrays]]
+   * [[Binary Search]]
  * [[Binary Trees]]
    * [[Binary Trees Iterative Traversal]]
    * [[Binary Trees 2nd Largest Node]]
