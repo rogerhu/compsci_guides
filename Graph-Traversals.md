@@ -78,4 +78,4 @@ def breadth_first_search(graph, start):
 
 ## Key Takeaways:
 * DFS is better for analyzing structure of graphs (ex. looking for cycles)
-* BFS is better for optimization (ex. shortetest path algorithms)
+* BFS is better for optimization (ex. shortest path algorithms)
