@@ -63,3 +63,6 @@ Binary search completes in **O(log N)** time because each iteration decreases th
 ## Example problems
 * [Search insert position](https://leetcode.com/problems/search-insert-position/description/)
 * [Search in a 2D matrix](https://leetcode.com/problems/search-a-2d-matrix/description/)
+
+## Video walkthrough
+[HackerRank binary search video](https://www.youtube.com/watch?v=P3YID7liBug)
