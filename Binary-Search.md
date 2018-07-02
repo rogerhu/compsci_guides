@@ -2,7 +2,7 @@ Binary search is a method for locating an element in a sorted list efficiently. 
 
 Algorithm
 ------------------
-In binary search, you are provided a list of sorted numbers and a key. The desired output is the index of the key, if it exists.
+In binary search, you are provided a list of sorted numbers and a key. The desired output is the index of the key, if it exists and None if it doesn't.
 
 Binary search is a recursive algorithm. The high level approach is that we examine the middle element of the list. The value of the middle element determines whether to terminate the algorithm (found the key), recursively search the left half of the list, or recursively search the right half of the list.
 ```
