@@ -1,4 +1,3 @@
-# Two Pointer Technique
 A very useful technique for dealing with linked lists involves iterating through the list with 2 or more pointers. The differences between how the pointers iterate can be used to make calculations on the list more efficient. This is best demonstrated with an example and probably the most famous example of this technique is cycle detection.
 
 ## Detect Cycle in Linked List
