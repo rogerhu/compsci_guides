@@ -12,7 +12,7 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
  * [[Linked Lists]]
 	* [[Dummy Head]]
 	* [[Multiple Pass]]
-	* [[Two Pointer]]
+	* [[Linked List Two Pointer]]
  * [[Hash Tables]]
  * [[Stacks and Queues]]
  * [[Heaps]]
