@@ -65,4 +65,5 @@ Binary search completes in **O(log N)** time because each iteration decreases th
 * [Search in a 2D matrix](https://leetcode.com/problems/search-a-2d-matrix/description/)
 
 ## Video walkthrough
-[HackerRank binary search video](https://www.youtube.com/watch?v=P3YID7liBug)
+* [HackerRank binary search video](https://www.youtube.com/watch?v=P3YID7liBug)
+* [Search a 2D matrix](https://www.youtube.com/playlist?list=PL7zKQzeqjecINi-_8CmiFLMLCCxjIHBPj)
