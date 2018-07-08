@@ -58,26 +58,30 @@ Merge sort is a recursive, divide and conquer algorithm. It takes O(log N) recur
 
 ```python
 def partition(nums, left_idx, right_idx):
-    pivot = nums[(right_idx + left_idx) // 2]
-    while left_idx < right_idx:
-        while nums[left_idx] < pivot:
+    pivot = nums[left_idx]
+    while True:
+        while nums[left_idx] < pivot and left_idx <= right_idx:
             left_idx += 1
-        while nums[right_idx] > pivot:
+        while nums[right_idx] > pivot and right_idx >= left_idx:
             right_idx -= 1
-        if left_idx <= right_idx:
-            nums[left_idx], nums[right_idx] = nums[right_idx], nums[left_idx]
-    return right_idx
+        if left_idx >= right_idx:
+            return right_idx
+        nums[left_idx], nums[right_idx] = nums[right_idx], nums[left_idx]
+        left_idx += 1
+        right_idx -= 1
 ```
 The partition function modifies `nums` inplace and takes up no extra memory. It also takes O(N) time in the worst case to fully partition a list.
 
 ```python
 def quick_sort_helper(nums, left_idx, right_idx):
-    pivot_idx = partition(nums, left_idx, right_idx) 
+    if left_idx >= right_idx:
+        return
+    pivot_idx = partition(nums, left_idx, right_idx)
     if left_idx < pivot_idx - 1:
-        quick_sort_helper(nums, left_idx, pivot_idx - 1)
+        quick_sort_helper(nums, left_idx, pivot_idx)
     if right_idx > pivot_idx + 1:
         quick_sort_helper(nums, pivot_idx + 1, right_idx)
-    
+
 def quick_sort(nums):
     quick_sort_helper(nums, 0, len(nums) - 1)
 ```
@@ -107,7 +111,7 @@ This algorithm takes O(N<sup>2</sup>) worst time, because looping through the un
 Insertion sort is easier on linked lists, which have O(1) insertion whereas arrays have O(N) insertion because in an array, inserting an element requires shifting all the elements behind that element.
 
 **Summary**
-* Worst case: O(N<sup>2</sup>)
+* Worst case: O(N^2^)
 * Best case: O(N)
 * Stable: yes
 * In-place: yes
