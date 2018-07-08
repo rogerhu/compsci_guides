@@ -1,4 +1,4 @@
-The **two pointer method** is a helpful technique to always keep in mind when working with strings and arrays questions. It's a clever optimization that can help reduce time complexity with no added space complexity (a win-win!) by utilizing extra pointers to avoid repetative operations.
+The **two pointer method** is a helpful technique to always keep in mind when working with strings and arrays questions. It's a clever optimization that can help reduce time complexity with no added space complexity (a win-win!) by utilizing extra pointers to avoid repetitive operations.
 
 This approach is best demonstrated through a walkthrough, as done below. 
 
