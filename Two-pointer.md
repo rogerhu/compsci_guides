@@ -20,7 +20,7 @@ Explanation: the subarray [4,3] has the minimal length under the problem constra
 When first given a problem, if an optimal solution is not immediately clear, it's better to have a solution that works rather than to be stuck. With this problem, a brute force solution would be to generate all possible subarrays and find the length of the shortest subarray that sums up to a sum that is greater than or equal to the given number.
 
 **Implementation**
-```python=
+```python
 def min_sub_array_length(nums, sum):
     min_length = float("inf")
     for start_idx in range(len(nums)):
@@ -47,7 +47,7 @@ The space complexity would be **O(1)** because the solution doesn't create new d
 #### Optimization #1: Keep track of a running sum instead of running `get_sum` in each iteration of the inner `end_idx` for loop
 In the brute solution, a lot of repetitive calculations are done in the inner `end_idx` for loop with the `get_sum` function. Instead of having to recalculate the sum from elements `start_idx` to `end_idx` within every iteration of the `end_idx` loop, we can store a `subarray_sum` variable to store calculations from previous iterations and simply add to it within each iteration of the `end_idx` loop.
 
-```python=
+```python
 def min_sub_array_length(nums, sum):
     min_length = float("inf")
     for start_idx in range(len(nums)):
@@ -65,7 +65,7 @@ This optimization reduces the time complexity from O(N<sup>3</sup>) to O(N<sup>2
 #### Optimization #2: Reduce number of calculations by terminating the inner `end_idx` for loop early
 With the improved solution, we can further reduce the number of iterations in the inner for loop by terminating it early. Once we have a `subarray_sum` that is equal to or greater than the target sum, we can simply move to the next iteration of the outer for loop. This is because the questions asks for minimum length subarray and any further iterations of the inner for loop would only cause an increase in the subarray length.
 
-```python=
+```python
 def min_sub_array_length(nums, sum):
     min_length = float("inf")
     for start_idx in range(len(nums)):
