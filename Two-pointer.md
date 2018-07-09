@@ -136,3 +136,4 @@ We now move the `end_idx` pointer and it hits the end of the list, with interval
 This optimization can often be applied to improve solutions that involve the use of multiple for loops, as shown in the example above. If you have an approach that utilizes multiple for loops, analyze the actions within those for loops to determine if repetitive calculations can be removed through strategic movements of multiple pointers.
 
 **Note**: Though this walkthrough demonstrated applying the two pointer approach to an arrays problem, this approach is commonly utilized to solve string problems as well.
+
