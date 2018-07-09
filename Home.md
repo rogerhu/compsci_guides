@@ -35,6 +35,7 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
  * [[Greedy Algorithms]]
    * [[Scheduling Meeting Rooms]]
  * [[Sorting Algorithms]]
+   * [[Sorting colors]]
 
 ## System Design
 
