@@ -97,7 +97,7 @@ This push and pull of the end and start pointer will continue until we finish lo
 
 
 **Implementation**
-```python=
+```python
 def min_sub_array_length(nums, sum):
     start_idx = 0
     min_length, subarray_sum = float('inf'), 0
