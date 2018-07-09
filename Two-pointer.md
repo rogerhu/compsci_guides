@@ -39,7 +39,7 @@ def get_sum(nums, start_index, end_index):
 
 **Time and space complexity**
 
-The time complexity of this solution would be O(N^3^). The double for loop results in O(N^2^) calls to get_sum and each call to get_sum has a worst case run time of O(N), which results in a O(N^2^ * N) = **O(N^3^) runtime**.
+The time complexity of this solution would be O(N<sup>3</sup>). The double for loop results in O(N<sup>2</sup>) calls to get_sum and each call to get_sum has a worst case run time of O(N), which results in a O(N<sup>2</sup> * N) = **O(N<sup>3</sup>) runtime**.
 
 The space complexity would be **O(1)** because the solution doesn't create new data structures.
 
