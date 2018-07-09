@@ -28,5 +28,5 @@ def dfs(graph, start_node, visited, sorted_nodes):
         for neighbor in neighbors:
             if neighbor not in visited:
                 dfs(graph, neighbor, visited, sorted_nodes)
-        sorted_nodes.appendleft(start_node)
+    sorted_nodes.appendleft(start_node)
 ```
