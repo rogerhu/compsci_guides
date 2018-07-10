@@ -33,6 +33,7 @@ It's important to note that whenever you mutate a string, a new copy of the stri
 
 #### Python arrays
 * [Google developer lists guide](https://developers.google.com/edu/python/lists)
+
 #### Java arrays
  * [InterviewCake DynamicArray](https://www.interviewcake.com/concept/java/dynamic-array-amortized-analysis?)
  * [ArrayList Succinctly Guide](https://code.tutsplus.com/tutorials/the-array-list--cms-20661)
