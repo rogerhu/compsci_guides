@@ -11,9 +11,9 @@ Arrays commonly come up in interviews, so it's important to review the array lib
 ## Strings
 **Strings** are a special kind of array, one that only contains characters. They commonly come up in interview questions, so it's important to go through the string library for the language you're most comfortable with. You should know common operations such as: getting the length, getting a substring, splitting a string based on a delimiter, etc.
 
-It's important to note that whenever you mutate a string, a new copy of the string is created. There are different ways to reduce the space utilized depending on the language:
+It's important to note that whenever you manipulate a string, a new copy of the string is created. There are different ways to reduce the space utilized depending on the language:
 * In Python, you can represent a string as a list of characters and operate on the list of character instead.
-* In Java, you can utilize the [StringBuffer](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html) class to mitigate the amount of space utilized if you need to mutate a string.
+* In Java, you can utilize the [StringBuffer](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html) class to mitigate the amount of space utilized if you need to manipulate a string.
 
 ## Patterns List
 * [Two pointer](https://guides.codepath.com/compsci/Two-pointer)
