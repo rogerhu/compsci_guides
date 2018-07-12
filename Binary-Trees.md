@@ -218,7 +218,7 @@ https://stackoverflow.com/questions/2603692/what-is-the-difference-between-tree-
 
 ## Patterns List
 * [Binary Trees Iterative Traversal Approach](https://guides.codepath.com/compsci/Binary-Trees-Iterative-Traversal)
-* [Finding 2nd Largest Node in a Binary Search Tree](https://guides.codepath.com/compsci/Binary-Trees-2nd-Largest)
+* [Finding 2nd Largest Node in a Binary Search Tree](https://guides.codepath.com/compsci/Binary-Trees-2nd-Largest-Node)
 
 ## References
 ### Further reading links
