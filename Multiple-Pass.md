@@ -1,5 +1,5 @@
 # Multiple Pass Technique
-Most computations on a list will require O(N) time complexity, so a simple, but very useful technique is to pass through the list a constant number of times to calculate some summary of the list that will simplify your algorithm. One example that we see a lot is the need to calculate the length of the list. That sounds simple enough, but let's see an example to motivate this technique better.
+Most computations on a list will require O(N) time complexity, so a simple but very useful technique is to pass through the list a constant number of times to calculate some summary of the list that will simplify your algorithm. One example that we see a lot is the need to calculate the length of the list. That sounds simple enough, but let's see an example to motivate this technique better.
 
 ## Example: Intersection of Two Linked Lists
 Let's take a look at this common problem as defined in [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists).
@@ -27,8 +27,10 @@ class Node(object):
     def __init__(self, v):
         self.val = v
         self.next = None
+
     def __repr__(self):
         return f"{self.val} --> {self.next}"
+
     def insert(self, v):
         n = Node(v)
         n.next = self
