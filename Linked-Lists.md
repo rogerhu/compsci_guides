@@ -53,10 +53,10 @@ Deleting: `O(N)`
 **Best Case** occurs when the node is at the head of the list and **Worst Case** is when the node is at the end of the list.
 
 ## Glossary
- * **Node** a position in a list that contains the value of whatever is stored at the position as well as at least one reference to another node.
- * **Head** node at the beginning of the list.
- * **Tail** node at the end of the list.
- * **Sentinel** a dummy node, typically placed at the head or end of the list to help make operations simpler (e.g., delete) or to indicate the termination of the list.
+ * **Node** - a position in a list that contains the value of whatever is stored at the position as well as at least one reference to another node.
+ * **Head** — node at the beginning of the list.
+ * **Tail** — node at the end of the list.
+ * **Sentinel** — a dummy node, typically placed at the head or end of the list to help make operations simpler (e.g., delete) or to indicate the termination of the list.
 
 ## Common Operations
 
