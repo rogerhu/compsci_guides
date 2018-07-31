@@ -20,7 +20,7 @@ In a min heap, if the parent of the new element is greater than it, it gets swap
 <img src="https://i.imgur.com/kx7DM60.png" width="700" height="681"/>
 
 ### Removal
-When removing from a heap, the root node is always removed. Then, the last element, the leftmost node in the last level of the heap, is removed and set as the root. This removal process retains the heap shape, but this new ordering may violate the proper ordering of the heap.
+When removing from a heap, the root node is always removed. Then, the last element, the right most node in the last level of the heap, is removed and set as the root. This removal process retains the heap shape, but this new ordering may violate the proper ordering of the heap.
 
 In a min heap, if either one of the new element's children are less than their parent, the new element is swapped with the smaller of the two children. This element keeps getting **bubbled down** in the tree until it either reaches the last level of the heap or it has been placed in the right position. The same process applies to max heaps as well, but the ordering is such that the children are both greater than the current node.
 
