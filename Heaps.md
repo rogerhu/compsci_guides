@@ -41,7 +41,10 @@ With the guarantee of fullness and the binary tree property of the heap, we can 
 
 <img src="https://i.imgur.com/VHtiUsL.png" width="700" height="500"/>
 
-These calculations enable it to easily implement the insertion and removal procedures within the array.
+These calculations enable it to easily implement the insertion and removal procedures within the array.  When we perform insertion, we need to calculate the location of the parent to swap with it to maintain the heap property. We also need to use the calculation of the left and right child in case an element needs to be swapped with one of its children during insertion operations.
+
+
+
 
 ## Runtimes
 In the worst case scenario, the swapping procedure for insertions and deletions will move the element through the height of the heap. Because heaps are binary trees that are guaranteed to be as complete as possible, the number of levels in the heap will be log n.
