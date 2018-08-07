@@ -14,7 +14,7 @@ address_book.get("Bob")
 Hash tables are very efficient – their insertion, deletion, and get operations take, on average, constant time.
 ## How it works:
 ### Hash Codes
-Internally,a hash table stores its values in an array. A special **hash function** is utilized to convert each key into a code, which is then converted into an index into the underlying array. This hash function has a hard requirement to return the same hash code for equal keys.
+Internally, a hash table stores its values in an array. A special **hash function** is utilized to convert each key into a code, which is then converted into an index into the underlying array. This hash function has a hard requirement to return the same hash code for equal keys.
 
 Hash function generate a code, known as the **hash code**. Each data type will have its own hash function that generates its hash code differently. It is important to remember that a hash code is not equivalent to the index in the underlying array storage structure--there are often more hash codes than indices in the underlying array.
 
