@@ -96,7 +96,7 @@ There are 4 main methods for traversing binary trees: preorder, postorder, inord
 ![](https://i.imgur.com/t2Ihbru.png)
 
 **Preorder**
-``` 
+```c
 void printPreorder(TreeNode node) {	
     if (node == null) {
         return;
@@ -111,7 +111,7 @@ Good for exploring roots before leaves.
 Example problems: copying a tree
 
 **Postorder**
-``` 
+```c
 void printPostorder(TreeNode node) {
     if (node == null) {
         return;
@@ -126,7 +126,7 @@ Output: 4 -> 5 -> 2 -> 3 -> 1
 Good for exploring leaves before roots.
 
 **Inorder**
-```
+```c
 void printInorder(TreeNode node) {
     if (node == null) {
         return;
@@ -139,7 +139,7 @@ void printInorder(TreeNode node) {
 Output: 4 -> 2 -> 5 -> 1 -> 3
 
 **BFS**
-```
+```c
 public void printBFS(TreeNode root) {
     Queue<TreeNode> queue = new LinkedList<BinaryTree.TreeNode>();
     
@@ -160,7 +160,7 @@ public void printBFS(TreeNode root) {
 ## Common Operations
 
 ### Searching in a BST
-```
+```c
 public boolean doesNodeExistInBST(TreeNode bstRoot, int searchValue) {
     // if we've ran out of values to search for, return false
     if (bstRoot == null) {
@@ -194,7 +194,7 @@ https://www.programcreek.com/2014/07/leetcode-find-leaves-of-binary-tree-java/
 ### Height of Binary Tree
 The height of a tree is the length of the path from the root to the deepest node in the tree.
 
-```
+```c
 int getBinaryTreeHeight(TreeNode node) {
     if (node == null) {
         return -1;
