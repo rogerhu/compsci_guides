@@ -2,7 +2,7 @@
 **Given a binary search tree, find the 2nd largest tree node.**
 
 Assume this is our definition for a tree node.
-```
+```c
 public class TreeNode {
     int value;
     TreeNode left;
@@ -13,7 +13,7 @@ public class TreeNode {
 **Method 1:**
 The first thing to note here is that we are given a binary search tree. Knowing that, our first instinct may be to do an inorder traversal. Recall that an inorder traversal is implemented as such:
 
-```
+```c
 void printInorder(TreeNode node) {
     if (node == null) {
         return;
@@ -53,7 +53,7 @@ If we were looking for the largest element in the tree, our method can be more f
     2) if yes, recurse on the right child
     3) if no, return the current node.
 
-```
+```c
 TreeNode getLargest(TreeNode node) {
     if (node.right != null) {
         return getLargest(node.right);
@@ -112,7 +112,7 @@ With that, our algorithm to finding the second largest element becomes:
         return the largest element of the left subtree
     b) else, return the parent of the largest element
 
-```
+```c
 public static TreeNode getSecondLargest(TreeNode node) { 
     
     // we are looking at the right-most element 
