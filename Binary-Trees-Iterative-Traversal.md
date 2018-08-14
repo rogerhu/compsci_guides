@@ -68,7 +68,7 @@ Looking at what we've been doing, it looks like a pattern has emerged.
     b. push right child of popped node to stack.
     c. push left child of popped node to stack
 
-```
+```c
 public void preorderTraversal(TreeNode root) {
     TreeNode node = root;
     Stack<TreeNode> stack = new Stack<>();
