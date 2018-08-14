@@ -36,7 +36,7 @@ At this point, we know a couple of things
 
 2) When we pop `1` from the stack, we have the option to add node `2` first or node `3` first. Which node should we push onto the stack first?
 
-    * Looking at what our traversal should end up being, `2` comes before `3`, so if we want to see `2` first, we should probably add node `3` to the stack, followed by node`2`. That way, when we pop from the stack, `2` will be popped before `3`
+    * Looking at what our traversal should end up being, `2` comes before `3`, so if we want to see `2` first, we should probably add node `3` to the stack, followed by node `2`. That way, when we pop from the stack, `2` will be popped before `3`
 
 At this point, we've printed `1` and our stack looks like:
 
