@@ -10,7 +10,7 @@ When traversing a tree iteratively it is common to use a **stack** or a **queue*
 As an example, we can take a look at how to implement a preorder traversal iteratively.
 
 Recall the **recursive approach** for a preorder traversal:
-``` 
+```c 
 void printPreorder(TreeNode node) {	
     if (node == null) {
         return;
