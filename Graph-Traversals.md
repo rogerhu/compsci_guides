@@ -60,13 +60,13 @@ def breadth_first_search(graph, start):
     visited, queue = set(), deque(start)
     while queue:
         vertex = queue.popLeft()
-            visited.add(vertex)
-            # If a node with no outgoing edges won't be 
-            # included in the adjacency list, we need to check
-            if vertex in graph:
-                for neighbor in graph[vertex]:
-                    if neighbor not in visited:
-                        queue.append(neighbor)
+        visited.add(vertex)
+        # If a node with no outgoing edges won't be 
+        # included in the adjacency list, we need to check
+        if vertex in graph:
+           for neighbor in graph[vertex]:
+              if neighbor not in visited:
+                 queue.append(neighbor)
     return visited
 ```
 
