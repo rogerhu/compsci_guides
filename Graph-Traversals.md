@@ -80,7 +80,7 @@ def breadth_first_search(graph, start):
 * DFS is better for analyzing structure of graphs (ex. looking for cycles)
 * BFS is better for optimization (ex. shortest path algorithms)
 
-### References
+## References
 
 * https://medium.freecodecamp.org/deep-dive-into-graph-traversals-227a90c6a261
 * https://medium.com/basecs/deep-dive-through-a-graph-dfs-traversal-8177df5d0f13
