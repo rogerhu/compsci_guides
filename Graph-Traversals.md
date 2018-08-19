@@ -32,7 +32,7 @@ def depth_first_search(graph, start):
     return visited
 ```
 
-**Runtime:** O(V + E)
+**Runtime:** O(V + E), where V = number of nodes/vertices and E = number of edges
 
 **Example interview question using DFS:**
 * [Detect a cycle in a graph](https://www.geeksforgeeks.org/detect-cycle-in-a-graph/) 
@@ -74,7 +74,7 @@ def breadth_first_search(graph, start):
 **Example interview question using BFS:**
 
 
-**Runtime**: O(V + E)
+**Runtime**: O(V + E), where V = number of nodes/vertices and E = number of edges
 
 ## Key Takeaways
 * DFS is better for analyzing structure of graphs (ex. looking for cycles)
@@ -82,5 +82,5 @@ def breadth_first_search(graph, start):
 
 ## References
 
-* https://medium.freecodecamp.org/deep-dive-into-graph-traversals-227a90c6a261
 * https://medium.com/basecs/deep-dive-through-a-graph-dfs-traversal-8177df5d0f13
+* https://medium.freecodecamp.org/deep-dive-into-graph-traversals-227a90c6a261
