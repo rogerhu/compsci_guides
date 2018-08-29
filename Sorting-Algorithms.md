@@ -141,3 +141,7 @@ Radix sort thus needs one pass for each digit place it is sorting and takes O(KN
 * Best case: O(KN)
 * Stable: yes (if going through digits from right to left)
 * In-place: no
+
+### References
+
+* [Merge Sort](https://www.youtube.com/watch?v=KF2j-9iSf4Q) (iterative approach shown)
