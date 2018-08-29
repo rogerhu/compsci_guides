@@ -145,3 +145,4 @@ Radix sort thus needs one pass for each digit place it is sorting and takes O(KN
 ### References
 
 * [Merge Sort](https://www.youtube.com/watch?v=KF2j-9iSf4Q) (iterative approach shown)
+* [Pivoting to Understand Quicksort](https://medium.com/basecs/pivoting-to-understand-quicksort-part-1-75178dfb9313)
