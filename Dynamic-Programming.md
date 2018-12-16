@@ -82,6 +82,7 @@ class FibMemo(Fib):
     
 print(FibMemo().results(6))
 ```
+
 The result will be: `The 6th Fibonacci number is 8 and requires 7 computations`
 
 At its core, thats really all there is to dynamic programming. Once you find a recursive solution to your problem that exhibits the computational explosion because of wasteful repetition you can really improve performance by saving computation and adding storage.
