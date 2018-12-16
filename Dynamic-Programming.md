@@ -48,6 +48,7 @@ So this is exactly the kind of problem DP can help us with. There are two main p
 class Fib(object):
     def __init__(self):
         self.work = 0
+
     def results(self, n):
         return f"The {n}th Fibonacci number is {self.f(n)} and requires {self.work} computations" 
     
@@ -59,7 +60,8 @@ class Fib(object):
 
 print(Fib().results(6))
 ```
-`The 6th Fibonacci number is 8 and requires 25 computations`
+
+The result will be: `The 6th Fibonacci number is 8 and requires 25 computations`
 
 That confirms our hypothesis that our complexity is more than `O(N)` and perhaps `O(2**N)`. So let's alter our code with memoization. We will just need to store past calculations and look them up before blindly computing. The common storage mechanism is a hash table.
 
@@ -67,6 +69,7 @@ That confirms our hypothesis that our complexity is more than `O(N)` and perhaps
 class FibMemo(Fib):
     def __init__(self):
         self.cache = {}
+
     def f(self, n):
         if n in self.cache:
             return self.cache[n]
@@ -77,8 +80,8 @@ class FibMemo(Fib):
         return self.cache[n]
     
 print(FibMemo().results(6))
-```
-`The 6th Fibonacci number is 8 and requires 7 computations`
+
+The result will be: `The 6th Fibonacci number is 8 and requires 7 computations`
 
 At its core, thats really all there is to dynamic programming. Once you find a recursive solution to your problem that exhibits the computational explosion because of wasteful repetition you can really improve performance by saving computation and adding storage.
 
