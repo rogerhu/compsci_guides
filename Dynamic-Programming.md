@@ -67,6 +67,7 @@ That confirms our hypothesis that our complexity is more than `O(N)` and perhaps
 
 ```python
 class FibMemo(Fib):
+
     def __init__(self):
         self.cache = {}
 
@@ -80,7 +81,7 @@ class FibMemo(Fib):
         return self.cache[n]
     
 print(FibMemo().results(6))
-
+```
 The result will be: `The 6th Fibonacci number is 8 and requires 7 computations`
 
 At its core, thats really all there is to dynamic programming. Once you find a recursive solution to your problem that exhibits the computational explosion because of wasteful repetition you can really improve performance by saving computation and adding storage.
@@ -88,6 +89,7 @@ At its core, thats really all there is to dynamic programming. Once you find a r
 Similar to other recursive algorithms, however, there can be some benefit to transforming the problem into an iterative algorithm. When you do this you will often benefit by making the algorithm even more efficient by using storage more effectively, both in terms of the function call stack and auxillary storage for the problem itself. In terms of dynamic programming, we consider this the [[Bottom Up DP Technique]].
 
 ## Time/Space Complexity
+
 There are three main variants of DP problems that you will see in programming interviews. They are distinguished by the way we will define our the subproblem that is the core of the recursion or iterative computation. The key to looking at this is to see what work is "left to do". The three main variants are:
 - Single Suffix/Prefix -- Where the subproblem solves for some position `i` and then recurses or iterates on the rest defined by either `f[:,i-1]` OR `f[i+1,:]`. This is often `O(N)`.
 - Subsequence -- You will solve for both ends of an interval in your sequence and be left to solve for `f[i, j]`. This is often `O(N**2)`.
