@@ -19,7 +19,7 @@ It's important to note that whenever you manipulate a string, a new copy of the 
 * [Two pointer](https://guides.codepath.com/compsci/Two-pointer)
 * [Binary Search](https://guides.codepath.com/compsci/Binary-Search)
 
-### Strings
+## Strings Resources
 #### General guide
 * [Coding for Interviews Strings Guide](http://blog.codingforinterviews.com/string-questions/)
 
@@ -27,7 +27,7 @@ It's important to note that whenever you manipulate a string, a new copy of the 
    * [Character Arrays in C++](https://www.youtube.com/watch?v=Bf8a6IC1dE8)
    * [Character Arrays in C++ Part 2](https://www.youtube.com/watch?v=vFZTxvUoZSU)
 
-### Arrays
+## Arrays Resources
 #### General guide
  * [InterviewCake Arrays](https://www.interviewcake.com/concept/java/array)
 
