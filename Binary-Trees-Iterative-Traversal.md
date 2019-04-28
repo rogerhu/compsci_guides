@@ -104,6 +104,7 @@ https://leetcode.com/problems/binary-tree-inorder-traversal/
 - Binary Tree Postorder Traversal:
 https://leetcode.com/problems/binary-tree-postorder-traversal/
 
-## More resources:
+## More resources
+
 * Article : https://leetcode.com/articles/binary-tree-inorder-traversal/
 * Video: https://www.youtube.com/watch?v=VsxLHGUqAKs
