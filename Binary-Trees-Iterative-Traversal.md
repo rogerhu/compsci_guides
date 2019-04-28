@@ -36,7 +36,7 @@ At this point, we know a couple of things
 
 2) When we pop `1` from the stack, we have the option to add node `2` first or node `3` first. Which node should we push onto the stack first?
 
-    * Looking at what our traversal should end up being, `2` comes before `3`, so if we want to see `2` first, we should probably add node `3` to the stack, followed by node `2`. That way, when we pop from the stack, `2` will be popped before `3`
+   * Looking at what our traversal should end up being, `2` comes before `3`, so if we want to see `2` first, we should probably add node `3` to the stack, followed by node `2`. That way, when we pop from the stack, `2` will be popped before `3`
 
 At this point, we've printed `1` and our stack looks like:
 
@@ -45,20 +45,20 @@ At this point, we've printed `1` and our stack looks like:
 
 3) Now that our stack is not empty, we can pop from it again. We pop`2` from it, and again we have to decide whether to push node `4` first or node `5` first. 
 
-    * Again, if we look at our desired traversal outcome from our recursive approach, we see that `4` should be printed before `5`. Following step 2a, it looks like we should push `5` onto the stack first, followed by `4`.
+   * Again, if we look at our desired traversal outcome from our recursive approach, we see that `4` should be printed before `5`. Following step 2a, it looks like we should push `5` onto the stack first, followed by `4`.
 
-Now we've printed `1 2` and our stack looks like
+   * Now we've printed `1 2` and our stack looks like
 
-    (4)
-    (5)
-    (3)
+     (4)
+     (5)
+     (3)
     
 4) Again, we pop from our stack. This time we `4` is popped and printed, and since `4` has no children, we don't add anything, and just keep popping.
 
-    After `4` has been popped, we will have printed `1 2 4` and our stack would then contain:
+   * After `4` has been popped, we will have printed `1 2 4` and our stack would then contain:
 
-    (5)
-    (3)
+     (5)
+     (3)
 
 Looking at what we've been doing, it looks like a pattern has emerged.
 1.  Create empty stack 
