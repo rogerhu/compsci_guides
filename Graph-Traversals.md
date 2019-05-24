@@ -59,7 +59,7 @@ graph = {'A': ['B', 'C'],
 def breadth_first_search(graph, start):  
     visited, queue = set(), deque(start)
     while queue:
-        vertex = queue.popLeft()
+        vertex = queue.popleft()
         visited.add(vertex)
         # If a node with no outgoing edges won't be 
         # included in the adjacency list, we need to check
