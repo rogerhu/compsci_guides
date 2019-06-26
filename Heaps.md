@@ -13,7 +13,7 @@ Heaps are an often overlooked data structure, but come up quite often in intervi
 In order to understand the runtimes of heap operations, it is vital to understand how insertion and deletion work within a heap.
 
 ### Insertion
-When a new element is inserted into a heap, it is added in the next empty spot in the heap, in the left most position in the last level of the heap, in order to maintain the full shape of the heap. However, this new item may violate the other key property of the heap, its ordering.
+When a new element is inserted into a heap, it is added in the next empty spot in the heap, in the right most position in the last level of the heap, in order to maintain the full shape of the heap. However, this new item may violate the other key property of the heap, its ordering.
 
 In a min heap, if the parent of the new element is greater than it, it gets swapped with the parent. This element keeps getting **bubbled up** in the tree until it either reaches the root of the heap or it has been placed in the right order. This same process applies to max heaps as well, but the check to ensure that the node is in the proper position is that the parent node is greater than the new node.
 
