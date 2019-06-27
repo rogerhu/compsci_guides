@@ -137,6 +137,7 @@ void printInorder(TreeNode node) {
 }
 ```
 Output: 4 -> 2 -> 5 -> 1 -> 3
+Good for converting BST into an array.
 
 **BFS**
 ```c
@@ -156,6 +157,7 @@ public void printBFS(TreeNode root) {
 
 }
 ```
+Output: 1 -> 2 -> 3 -> 4 -> 5
 
 ## Common Operations
 
