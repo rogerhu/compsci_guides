@@ -18,7 +18,7 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
  * [[Heaps]]
  * [[Strings and Arrays]]
    * [[Binary search]]
-   * [[Two pointer]]
+   * [[Two pointer (also known as 'Sliding Window')]]
  * [[Binary Trees]]
    * [[Binary Trees Iterative Traversal]]
    * [[Binary Trees 2nd Largest Node]]
