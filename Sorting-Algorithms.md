@@ -111,7 +111,7 @@ This algorithm takes O(N<sup>2</sup>) worst time, because looping through the un
 Insertion sort is easier on linked lists, which have O(1) insertion whereas arrays have O(N) insertion because in an array, inserting an element requires shifting all the elements behind that element.
 
 **Summary**
-* Worst case: O(N^2^)
+* Worst case: O(N^2)
 * Best case: O(N)
 * Stable: yes
 * In-place: yes
