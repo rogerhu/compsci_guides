@@ -230,5 +230,5 @@ https://inst.eecs.berkeley.edu/~cs61b/fa17/materials/lectures/lect20.pdf
 
 ### Videos
 * [Gayle Laakmann McDowell's Overview of Trees](https://www.youtube.com/watch?v=oSWTXtMglKE)
-* [Walkthrough of Inverting Binary Tree](https://drive.google.com/file/d/1VEm_t3SjTmllNNSVLW0ym1FAqxFobT10/view?usp=sharing)
-* [Walkthrough of Validating Binary Search Tree](https://drive.google.com/file/d/1DLwBfABTZKNnN-4r5BF2Q9g1hfI57yhy/view?usp=sharing)
+* [Walkthrough of Inverting Binary Tree](https://www.youtube.com/watch?v=2zLM6K1RItQ)
+* [Walkthrough of Validating Binary Search Tree](https://www.youtube.com/watch?v=PXyaZFOklwU)
