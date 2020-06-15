@@ -38,6 +38,6 @@ def delete_node(head, val):
 ## Summary
 Treating the dummy head with the invariant that it is always pointing to the current correct answer makes dealing with edge cases in linked lists a lot easier and can be found in a number of elegant solutions.
 
-## References
+## Reference
 
 * <http://www.eternallyconfuzzled.com/tuts/datastructures/jsw_tut_linklist.aspx>
