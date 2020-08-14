@@ -72,6 +72,7 @@ Looking at what we've been doing, it looks like a pattern has emerged.
 public void preorderTraversal(TreeNode root) {
     TreeNode node = root;
     Stack<TreeNode> stack = new Stack<>();
+    stack.push(root);
     while (!stack.isEmpty()) {
         TreeNode curr = stack.pop();
         System.out.print(curr.data);
