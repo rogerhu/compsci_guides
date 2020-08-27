@@ -98,7 +98,7 @@ def __len__(self):
 ## Patterns List
 - [[Dummy Head]]
 - [[Multiple Pass]]
-- [[Two Pointer]]
+- [[Linked List Two Pointer]]
 
 ## References
 - https://en.wikipedia.org/wiki/Linked_list
