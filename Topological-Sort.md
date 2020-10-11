@@ -18,7 +18,8 @@ from collections import deque
 def top_sort(graph):
     sorted_nodes, visited = deque(), set()
     for node in graph.keys():
-        dfs(graph, node, visited, sorted_nodes)
+        if node not in visited:
+           dfs(graph, node, visited, sorted_nodes)
     return list(sorted_nodes)
  
 def dfs(graph, start_node, visited, sorted_nodes):
