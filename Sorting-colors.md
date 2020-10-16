@@ -71,7 +71,7 @@ def sort_colors(colors):
         elif colors[middle] == 2:
             colors[middle], colors[right] = colors[right], colors[middle] 
             right -= 1
-            middle += 1
+            
 ```
 
 
