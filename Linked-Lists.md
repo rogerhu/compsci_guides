@@ -9,7 +9,7 @@ A call stack is simply a trace from where the program is currently at all the wa
 
 The most common variants of linked lists are:
 - Singly Linked List
-- Doubly Linked List
+- Doubly Linked Listt
 - Circular Linked List
 
 All variants refer to how the items (**nodes**) of the list point to each other. The Singly Linked List will only have one pointer that has a reference to the next node in the list, whereas, the Doubly Linked List would have a pointer to the next item as well as the previous item. In almost ALL interviewing scenarios the linked list will be the Singly Linked List and the rest of the documentation will refer to linked list as that and only the other list types if specifically mentioned.
