@@ -37,7 +37,7 @@ Going back to our example of the following intervals: `[09:00 - 9:30], [07:00 - 
 
 In the end we would return 2.
 
-But what's the problem with this approach? While step 4 was easy to visualize and explain, would we be able to code it efficiently? It's easy to tell if the current interval we're examining overlaps with the previous interval we're looked at, but how can we tell if it overlaps with other meeting rooms? We would have to iterate through all the current meeting rooms in progress to do the comparison, and that could turn out to be very inefficient. 
+But what is the problem with this approach? While step 4 was easy to visualize and explain, would we be able to code it efficiently? It's easy to tell if the current interval we're examining overlaps with the previous interval we're looked at, but how can we tell if it overlaps with other meeting rooms? We would have to iterate through all the current meeting rooms in progress to do the comparison, and that could turn out to be very inefficient. 
 
 Furthermore, our example conveniently had intervals that were back to back. What if we had two intervals [7-9] and [10-12] ? Would we combine them to be 7-12? That would make us miss out on scheduling any meetings from 9-10, when the room is actually free. Could we instead have a 2D array that stored all the intervals for a meeting room ([[7-9], [10-12]]? While that's certainly one option, our approach seems to be growing in complexity as we think of these different cases.
 
