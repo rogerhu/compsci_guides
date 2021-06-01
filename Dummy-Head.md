@@ -40,4 +40,4 @@ Treating the dummy head with the invariant that it is always pointing to the cur
 
 ## Reference
 
-* <http://www.eternallyconfuzzled.com/tuts/datastructures/jsw_tut_linklist.aspx>
+* <https://web.archive.org/web/20180227180712/http://www.eternallyconfuzzled.com/tuts/datastructures/jsw_tut_linklist.aspx>
