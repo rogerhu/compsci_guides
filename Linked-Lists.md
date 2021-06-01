@@ -14,7 +14,7 @@ The most common variants of linked lists are:
 
 All variants refer to how the items (**nodes**) of the list point to each other. The Singly Linked List will only have one pointer that has a reference to the next node in the list, whereas, the Doubly Linked List would have a pointer to the next item as well as the previous item. In almost ALL interviewing scenarios the linked list will be the Singly Linked List and the rest of the documentation will refer to linked list as that and only the other list types if specifically mentioned.
 
-A minimal, but quite common python definition of a linked list node would be:
+A minimal, but quite common Python definition of a linked list node would be:
 
 ```python
 class ListNode: 
