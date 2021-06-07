@@ -28,7 +28,6 @@ It's important to know the common operations associated with a queue. The two im
 
 ## Resources
 ### Guides
-* [Overview of stacks & queues with applications](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html)
 * [In depth stacks guide](https://medium.com/basecs/stacks-and-overflows-dbcf7854dc67)
 * [In depth queues guide](https://medium.com/basecs/to-queue-or-not-to-queue-2653bcde5b04)
 
