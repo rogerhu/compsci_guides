@@ -20,7 +20,7 @@ Let's practice using the UMPIRE technique on the following problem.
 One of the best ways to understand a problem is to come up with test cases. E.g.,
 ```
 Input: 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1; partition = 5
-Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
+Output: 3 -> 1 -> 2 -> 5 -> 5 -> 8 -> 10
 ```
 Coming up with good test cases can be an art, but I typically like to cover one happy path or an average case. And any interesting edge cases. This can be tricky as it depends on the problem. 
 ```
