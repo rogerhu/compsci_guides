@@ -31,6 +31,8 @@ Let's examine how to build these pieces for this particular problem and how we w
 
 Let's first define a function that will identify valid solutions:
 ```python
+from typing import Set, List  # requires Python 3.6+
+
 def is_valid(s: Set[int], k: int, n: int) -> bool:
   """Return whether `s` is a valid solution."""
   return len(s) == k and sum(s) == n
@@ -59,10 +61,13 @@ def is_bad(s: Set[int], k: int, n: int) -> bool:
 Now we can create a backtracking search to use these elements to efficiently search the space.
 
 ```python
-def search(s: Set[int], k: int, n: int, solutions: List[Set[int]]) -> None:
-  """Add solutions to the `solutions` list based on the sub-solution or solution `s`, using backtracking."""
+def search(s: Set[int], k: int, n: int, solutions: List[List[int]]) -> None:
+  """
+  Add solutions to the `solutions` list based on the sub-solution or solution `s`, using backtracking.
+  There is actually an issue with this algorithm; it can return the same combination multiple times (just permuted differently).
+  """
   if is_valid(s, k, n):
-    solutions.append(s)
+    solutions.append(list(s))  # we have to make a *copy* of `s` to append to `solutions`, because soon after, we will be removing elements from `s`
 
   for c in candidates(s, n):
     s.add(c)
