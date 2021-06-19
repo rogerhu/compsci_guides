@@ -20,23 +20,38 @@ Input: k = 3, n = 9
 Output: [[1,2,6], [1,3,5], [2,3,4]]
 ```
 
-Backtracking takes solving a problem like this, by breaking it down into solving for 4 components to the algorithm. 1) Given a current sub-solution state, what are all the candidates I can choose to move to a new possible sub-solution state, 2) Decide if all possible solutions derived from the current sub-solution state will be invalid, 3) efficienctly backtrack from any current sub-solution state to a previous state, 4) is a particular sub-solution actually a valid solution. Let's examine how to build these pieces for this particular problem and how we weave them together to construct a final solution.
+Backtracking takes solving a problem like this, by breaking it down into solving for 4 components to the algorithm.
+
+1. Given a current sub-solution state, what are all the candidates I can choose to move to a new possible sub-solution state?
+2. Decide if all possible solutions derived from the current sub-solution state will be invalid
+3. Efficiently backtrack from any current sub-solution state to a previous sub-solution state
+4. Is a particular sub-solution actually a valid solution? If so, we can add it to the list of solutions.
+
+Let's examine how to build these pieces for this particular problem and how we weave them together to construct a final solution.
 
 Let's first define a function that will identify valid solutions:
 ```python
-def is_valid(s, k, n):
+def is_valid(s: Set[int], k: int, n: int) -> bool:
+  """Return whether `s` is a valid solution."""
   return len(s) == k and sum(s) == n
 ```
 
 ```python
-def candidates(s, n):
-  """Any 1 - 9 that are less than or equal to remaining difference and have not been used"""
+def candidates(s: Set[int], n: int) -> List[int]:
+  """
+  Generate a list of candidate numbers, any of which could be used to continue the sub-solution `s`.
+  The candidate list is the numbers from 1 to 9 that are less than or equal to remaining difference (between `sum(s)` and `n`) and have not been used in `s`.
+  """
   rem = n - sum(s)
-  return [c for range(1, 10) if c <= rem and c not in s]
+  return [c for c in range(1, 10) if c <= rem and c not in s]
 ```
 
 ```python
-def is_bad(s, k, n):
+def is_bad(s: Set[int], k: int, n: int) -> bool:
+  """
+  Return whether `s` is neither a valid solution nor sub-solution.
+  Actually, we don't need to use this function because our `candidates` function only generates valid candidates.
+  """
   sum_s = sum(s)
   return len(s) > k or sum_s > n or (len(s) == k and sum_s != n) 
 ```
@@ -44,7 +59,8 @@ def is_bad(s, k, n):
 Now we can create a backtracking search to use these elements to efficiently search the space.
 
 ```python
-def search(s, k, n, solutions):
+def search(s: Set[int], k: int, n: int, solutions: List[Set[int]]) -> None:
+  """Add solutions to the `solutions` list based on the sub-solution or solution `s`, using backtracking."""
   if is_valid(s, k, n):
     solutions.append(s)
 
@@ -53,7 +69,7 @@ def search(s, k, n, solutions):
     search(s, k, n, solutions)
     s.remove(c)
 
-def solve(k, n):
+def solve(k: int, n: int) -> List[List[int]]:
   solutions = []
   s = set()
   search(s, k, n, solutions)
