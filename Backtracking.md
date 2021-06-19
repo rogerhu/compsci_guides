@@ -8,6 +8,8 @@ Let's motivate backtracking by solving the following problem:
 
 > Find all possible combinations of k numbers that add up to a number n, given that only numbers from 1 to 9 can be used and each combination should be a unique set of numbers. All numbers will be positive integers. The solution set must not contain duplicate combinations.
 
+You can find this problem on LeetCode as [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/).
+
 ### Example 1
 ```
 Input: k = 3, n = 7
@@ -20,66 +22,57 @@ Input: k = 3, n = 9
 Output: [[1,2,6], [1,3,5], [2,3,4]]
 ```
 
-Backtracking takes solving a problem like this, by breaking it down into solving for 4 components to the algorithm.
+A backtracking algorithm has four components:
 
 1. Given a current sub-solution state, what are all the candidates I can choose to move to a new possible sub-solution state?
+   - For example, in Example 2 with k = 3, n = 9, if we have the partial solution [1], then to add another element to the sub-solution, we could choose any of [2, 3, 5, 6] as candidates
 2. Decide if all possible solutions derived from the current sub-solution state will be invalid
+   - For example, for k = 3, n = 9, [1, 8] and [1, 2, 4] are bad sub-solutions because they can't derive valid solutions.
 3. Efficiently backtrack from any current sub-solution state to a previous sub-solution state
+   - For example, if we went from sub-solution [1, 2] to [1, 2, 6], then we can backtrack back to [1, 2].
 4. Is a particular sub-solution actually a valid solution? If so, we can add it to the list of solutions.
-
-Let's examine how to build these pieces for this particular problem and how we weave them together to construct a final solution.
-
-Let's first define a function that will identify valid solutions:
-```python
-from typing import Set, List  # requires Python 3.6+
-
-def is_valid(s: Set[int], k: int, n: int) -> bool:
-  """Return whether `s` is a valid solution."""
-  return len(s) == k and sum(s) == n
-```
+   - For example, for k = 3, n = 9, [1, 2, 6] is a valid solution.
 
 ```python
-def candidates(s: Set[int], n: int) -> List[int]:
-  """
-  Generate a list of candidate numbers, any of which could be used to continue the sub-solution `s`.
-  The candidate list is the numbers from 1 to 9 that are less than or equal to remaining difference (between `sum(s)` and `n`) and have not been used in `s`.
-  """
-  rem = n - sum(s)
-  return [c for c in range(1, 10) if c <= rem and c not in s]
+from typing import List  # type annotations require Python 3.6+
+
+def combination_sum(k: int, n: int) -> List[List[int]]:
+    def search(solutions: List[List[int]], sol: List[int], k: int, n: int, start: int) -> None:
+    """
+    Use backtracking to derive solutions based on the sub-solution/solution `sol`, and then add them to the `solutions`
+    list.
+
+    start: the first integer (from 1 to 9) to consider adding to the sub-solution `sol`. This parameter is used to 
+           guarantee that all numbers in a sub-solution are in ascending order. This prevents us from having duplicate 
+           combinations like [1, 3, 5] and [5, 3, 1], and also prevents us from repeating the same number twice in a 
+           combination (to avoid [3, 3, 3], for example).
+    """
+    sum_sol = sum(sol)
+
+    # Check whether `sol` is a valid solution. If so, add it 
+    if len(sol) == k and sum_sol == n:
+        # we have to make a *copy* of `s` to append to `solutions`, because soon after,
+        # we will be removing elements from `s`
+        solutions.append(list(sol))
+        return
+    
+    # Optional optimization: Check whether the sub-solution `sol` is bad (can't lead to a valid solution).
+    if len(sol) > k or sum_sol > n or (len(sol) == k and sum_sol != n):
+        return
+
+    # Enumerate possible candidates. It's okay if some candidates may be invalid, since we later weed out invalid
+    # sub-solutions. To further limit the search space, you can instead write `range(start, min(10, n - sum_sol + 1))`.
+    for i in range(start, 10):
+        sol.append(i)  # move to another sub-solution state...
+        search(solutions, sol, k, n, start=i+1)
+        del sol[-1]  # ...and move back to previous sub-solution state
+  
+    solutions = []
+    search(solutions, [], k, n, start=1)
+    return solutions
 ```
 
-```python
-def is_bad(s: Set[int], k: int, n: int) -> bool:
-  """
-  Return whether `s` is neither a valid solution nor sub-solution.
-  Actually, we don't need to use this function because our `candidates` function only generates valid candidates.
-  """
-  sum_s = sum(s)
-  return len(s) > k or sum_s > n or (len(s) == k and sum_s != n) 
-```
-
-Now we can create a backtracking search to use these elements to efficiently search the space.
-
-```python
-def search(s: Set[int], k: int, n: int, solutions: List[List[int]]) -> None:
-  """
-  Add solutions to the `solutions` list based on the sub-solution or solution `s`, using backtracking.
-  There is actually an issue with this algorithm; it can return the same combination multiple times (just permuted differently).
-  """
-  if is_valid(s, k, n):
-    solutions.append(list(s))  # we have to make a *copy* of `s` to append to `solutions`, because soon after, we will be removing elements from `s`
-
-  for c in candidates(s, n):
-    s.add(c)
-    search(s, k, n, solutions)
-    s.remove(c)
-
-def solve(k: int, n: int) -> List[List[int]]:
-  solutions = []
-  s = set()
-  search(s, k, n, solutions)
-  return solutions
-```
+(This solution is partially based on https://leetcode.com/problems/combination-sum-iii/discuss/60614/Simple-and-clean-Java-code-backtracking.)
 
 ## Comparison to Dynamic Programming
 Dynamic Programming and Backtracking have multiple similarities and differences and are often confused when first learning about them. Often, the confusion comes simply from the name collision where there is a part of DP that involves 'backtracking' to recreate an optimal solution sequence at the end of the DP. For example, when finding the minimum path through a grid in DP we may want to minimize the number of jumps taken, but to reconstruct that final path we often need to go backwards from our final solution to retrace all of the steps that got us to the optimal point in order to reconstruct the minimal path. This is not the Backtracking algorithm.
