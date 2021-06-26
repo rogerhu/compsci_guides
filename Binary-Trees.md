@@ -1,7 +1,7 @@
 ## Introduction
-A common problem we are posed with is to search for something in a given list. For example, given the numbers of a lottery draw `1, 2, 5, 10, 16, 20, 23, 36, 40, 41, 45`, we may want to find if our number `18` is a winning number.
+A common problem we are posed with is to search for something in a given list. For example, given the numbers of a lottery draw `1, 2, 5, 10, 16, 20, 23, 36, 40, 41, 45`, we may want to find out if our number `18` is a winning number.
 
-If we didn't know that the list of winning numbers is sorted we would have to look at every number. However, if we do know that the list is sorted, we can stop once we reach a number bigger than the one we're looking for.
+If we didn't know that the list of winning numbers is sorted we would have to look at every number. However, if we know the list is sorted, we can stop once we reach a number bigger than the one we're looking for.
 
 We can be even more efficient in our search by starting in the middle in the list, and moving left or right depending on whether the number we're looking for is smaller or bigger than the number we're currently comparing it to.
 
@@ -27,7 +27,7 @@ Binary trees are composed of **nodes**, where each node in the tree has at most 
 - left pointer
 - right pointer
 
-```
+```c
 class TreeNode {
     int data;
     TreeNode left;
@@ -35,16 +35,16 @@ class TreeNode {
 }
 ```
 
-`1` `2` `3` `4` `5` are all nodes in the tree above
+`1` `2` `3` `4` `5` are all nodes in the tree above.
 
 This tree, however, **is not** a binary tree because `1` has 4 children ` 2 3 4 5`
 
                 1
         2    3     4    5
 
-**Binary search trees are special in that for each node, all nodes to the left are less than or equal to it, and all nodes to the right are greater than it**. Due to its special setup, **lookups in a binary search tree take log(N) time on average** if the tree is well-balanced.
+**BSTs are special in that for each node, all nodes to the left are less than or equal to it, and all nodes to the right are greater than it**. Due to this property, **lookups in a BST take O(logN) time on average** if the tree is well-balanced.
 
-If we were to put our winning lottery numbers into binary search tree form, it could look something like this:
+If we were to put our winning lottery numbers into BST form, it could look something like this:
 `1, 2, 5, 10, 16, 20, 23, 36, 40, 41, 45`
 
                         20
@@ -53,9 +53,9 @@ If we were to put our winning lottery numbers into binary search tree form, it c
         1         10        23           45
 
 ## Pros and Cons
-BSTs are the best options when trying to optimize for **efficient searching and flexible updates**. Unsorted linked lists have O(1) insertion and deletion operations, but requires O(N) for search operations. If an array is sorted, searching can be O(logN), but updating the array by adding or deleting elements is can be O(N) in the worst cases.
+BSTs are the best options when trying to optimize for **efficient searching and flexible updates**. Unsorted linked lists have O(1) insertion and deletion operations, but require O(N) for search operations. If an array is sorted, searching can be O(logN), but updating the array by adding or deleting elements is can be O(N) in the worst cases.
 
-On the other hand, binary search trees have more overhead and complexity to initialize and maintain. Arrays and linked lists are more straight forward due to their one dimensional structure. Trees, on the other hand, require more thought due to its multi-dimension structure.
+On the other hand, BSTs have more overhead and complexity to initialize and maintain. Arrays and linked lists are more straight forward due to their one dimensional structure. Trees require more thought due to its multi-dimension structure.
 
 ## Time and Space Complexity
 **Best cases:**
@@ -68,7 +68,7 @@ Accessing / Searching : `O(n)`
 Inserting: `O(n)`
 Deleting: `O(n)`
 
-The best / worst cases are differentiated by how well balanced the tree is. Balanced trees are more efficient than unbalanced trees
+The best / worst cases differ by how well balanced the tree is. Balanced trees are more efficient than unbalanced trees
 
 Balanced tree:
 
