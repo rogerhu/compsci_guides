@@ -29,7 +29,7 @@ def f(n):
   return fib(n-1) + fib(n-2)
 ```
 
-We can look at the funciton call graph of this solution for `f(5)`:
+We can look at the function call graph of this solution for `f(5)`:
 
 ![Fibonacci Computation Tree](https://i.imgur.com/BRUwYWc.png)
 
@@ -39,7 +39,7 @@ As we know from our study of trees, a full or balanced tree will have size `2**n
 
 The call graph is a great visualization because it also gives us a hint that the actual required computations to solve for `f(n)` is just `n`, i.e., the unique nodes of the call graph.
 
-So this is exactly the kind of problem DP can help us with. There are two main patterns to DP design, 1) Top Down or Recursion + Memoization and 2) Bottom Up sometimes reffered to as DP Table design. Since, this problem is given as a recursive algorithm let's start with Top Down.
+So this is exactly the kind of problem DP can help us with. There are two main patterns to DP design, 1) Top Down or Recursion + Memoization and 2) Bottom Up sometimes referred to as DP Table design. Since, this problem is given as a recursive algorithm let's start with Top Down.
 
 ### Top Down Dynamic Programming
 [Memoization](https://en.wikipedia.org/wiki/Memoization) simply means we will store computations we make so that if we ever need them again we will just look them up rather than recomputing. That sounds like a great idea for calculating our Fibonacci numbers and dealing with the repetitive calculations. So let's first take a look at the brute-force recursive algorithm, with a little work counter added for illustration.
@@ -98,7 +98,7 @@ There are three main variants of DP problems that you will see in programming in
 
 
 ## Glossary
- * **Memoization** use an auxillary cache structure to return early from a function if the result of the funciton is already stored in the cache. The cache is often implemented as a hash.
+ * **Memoization** use an auxiliary cache structure to return early from a function if the result of the function is already stored in the cache. The cache is often implemented as a hash.
  * **Recursion** a function that calls itself.
  * **Subproblem** a recursion can be split into given conditions (base cases) and the rest that you have to compute or subproblem.
  * **Suffix** the rest of a sequence from the current position to the end.
