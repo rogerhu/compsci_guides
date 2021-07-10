@@ -9,7 +9,7 @@ An application of this algorithm is ordering a sequence of tasks given their dep
 <img src="https://i.imgur.com/Q3MA6dZ.png"/>
 
 ## Implementation:
-Topological sort is simply a modification of DFS. Topological sort simply involves running DFS on an entire graph and adding each node to the global ordering of nodes only after all of a node's children are visited. This ensures that parent nodes will be ordered before their child nodes honoring the forward direction of edges in the ordering.
+Topological sort is simply a modification of DFS. Topological sort simply involves running DFS on an entire graph and adding each node to the global ordering of nodes, but only after all of a node's _children_ are visited. This ensures that parent nodes will be ordered before their child nodes, and honors the forward direction of edges in the ordering.
 
 ### Graph with no cycles
 ```python
