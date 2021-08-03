@@ -59,7 +59,7 @@ On the other hand, BSTs have more overhead and complexity to initialize and main
 
 ## Time and Space Complexity
 **Best cases:**
-Accessing / Search : `O(logN)`
+Accessing / Searching : `O(logN)`
 Inserting: `O(logN)`
 Deleting: `O(logN)`
 
