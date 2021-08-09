@@ -33,7 +33,7 @@ We can look at the function call graph of this solution for `f(5)`:
 
 ![Fibonacci Computation Tree](https://i.imgur.com/BRUwYWc.png)
 
-The call graph is a great way to get an idea of the computational complexity of a recursive algorithm and in this case also find wasted computations which are repeated sub-trees. For example, `f(2)` is calculated three times. 
+The call graph is a great way to get an idea of the computational complexity of a recursive algorithm and in this case also find wasted computations which are repeated subtrees. For example, `f(2)` is calculated three times. 
 
 As we know from our study of trees, a full or balanced tree will have size `2**n` where `n` is the height of the tree or in this case the Fibonacci number we are solving for.
 
