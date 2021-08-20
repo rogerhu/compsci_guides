@@ -76,6 +76,8 @@ def breadth_first_search(graph, start):
 
 **Runtime**: O(V + E), where V = number of nodes/vertices and E = number of edges
 
+See [explanation](https://www.quora.com/Why-is-the-complexity-of-DFS-O-V+E) of why it's O(V-E).
+
 ## Key Takeaways
 * DFS is better for analyzing structure of graphs (ex. looking for cycles)
 * BFS is better for optimization (ex. shortest path algorithms)
