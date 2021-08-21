@@ -1,4 +1,4 @@
-For some programming problems you may find that there is a 'greedy' way to solve it. A greedy approach means that at every step we take the best option for us with the current circumstances.
+For some programming problems you may find that there is a 'greedy' way to solve it. A greedy approach means that at every step we take the best option for us with the current circumstances. In CS speak, if locally optimal choices lead to a global optimum and the subproblems are optimal, then the greedy algorithm works. 
 
 For example, consider the following situation:
 **There is a pile of coins containing: 2 quarters, 3 dimes, and 10 pennies**
@@ -9,11 +9,11 @@ This greedy approach can also be applied to a handful of common problems. When a
 
 ### Advantages:
 - Simplicity: Greedy algorithms are often easier to visualize and code. As a result, they can also be easier to analyze in terms of space and time complexity.
-- Efficiency: Greedy algorithms usually don't involve having to store a lot of data or going through multiple passes of the input
+- Efficiency: Greedy algorithms usually don't involve having to store a lot of data or going through multiple passes of the input. 
 
 ### Disadvantages:
 - Hard to design: The hard part often lies in trying picture the problem in a way that would allow you to solve it greedily.
-- Proving correctness: Proving that the greedy approach will be correct in all cases can also be a challenge
+- Proving correctness: Proving that the greedy approach will be correct in all cases can also be a challenge. Greedy algorithms don't work for some problems. 
 
 ### Common problems that can be solved with the greedy approach
 #### Jump Game
@@ -71,6 +71,12 @@ lengths of the assigned codes are based on the frequencies of corresponding char
 The most frequent character gets the smallest code and the least frequent character gets the largest code.
 ```
 https://www.geeksforgeeks.org/greedy-algorithms-set-3-huffman-coding/
+
+#### Counting coins
+
+This problem is to count to a desired value by choosing the least possible coins and the greedy approach forces the algorithm to pick the largest possible coin. 
+
+
 ### Resources:
 https://web.stanford.edu/class/archive/cs/cs161/cs161.1138/lectures/13/Small13.pdf
 
