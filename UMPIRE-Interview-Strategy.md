@@ -56,7 +56,7 @@ I then fast forward the bookkeeping visualization, to the next position where th
 
 Since this seems to handle all possible cases, I fast forward the visualization to deal with the end case. This situation 3 is when `r` reaches the end or `r.next`. So most likely the whole algorithm will be in a while loop to forward `r` until this condition fails.
 
-Finally, I revisit the initial condition of setting up the `l` and `r` pointer, in situation 4. Here, however, I realize that it would have been easier to utilize the dummy-head technique because there is a chance that the very first node could be >= `p`, thus I would not be able to get the intial invariant I setup in the beginning with `l` pointing to the last node on the left side. So situation with situation 4, I create a `d` node or dummy-head that points to the actual head of the list and this is a great place to start `l`. However, now that we have the dummy-head and combined with the knowledge that we don't care about the ordering of the nodes within the left or right partitions we realize we could alter the algorithm to not use an `l` pointer and simply place the `c` nodes after the dummy to simplify the algorithm.
+Finally, I revisit the initial condition of setting up the `l` and `r` pointer, in situation 4. Here, however, I realize that it would have been easier to utilize the dummy-head technique because there is a chance that the very first node could be >= `p`, thus I would not be able to get the initial invariant I setup in the beginning with `l` pointing to the last node on the left side. So situation with situation 4, I create a `d` node or dummy-head that points to the actual head of the list and this is a great place to start `l`. However, now that we have the dummy-head and combined with the knowledge that we don't care about the ordering of the nodes within the left or right partitions we realize we could alter the algorithm to not use an `l` pointer and simply place the `c` nodes after the dummy to simplify the algorithm.
 
 ### Implement
 If our plan stage was successful, we should be able to implement the code by simply glueing the plan together while filling out the details of our language specific implementation. I like to write my implementation out in layers, where the first layer is me writing basic setup code and then talking to the pieces of the plan.
@@ -65,7 +65,7 @@ def partition(list, p):
   d = ListNode('dummy')
   d.next = list
   # 4: Initialize r pointer to first value >= p
-  # 3: Loop until we run out of unkown values
+  # 3: Loop until we run out of unknown values
   # 1: Handle right side value
   # 2: Handle left side value
   
