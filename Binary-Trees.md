@@ -103,7 +103,7 @@ void printPreorder(TreeNode node) {
     }
     System.out.print(node.data + " "); // process node
     printPreorder(node.left); // recurse on left
-    printPreorder(node.right); // recrse on right
+    printPreorder(node.right); // recurse on right
 }
 ```
 Output: 1 -> 2 -> 4 -> 5 -> 3
@@ -174,7 +174,7 @@ public boolean doesNodeExistInBST(TreeNode bstRoot, int searchValue) {
         if (searchValue > bstRoot.value) {
             return doesNodeExistInBST(bstRoot.right, searchValue);
         } else {
-            // if the node we're at is bigger than the value we're looking for, traver the left side
+            // if the node we're at is bigger than the value we're looking for, traverse the left side
             return doesNodeExistInBST(bstRoot.left, searchValue);
         }
     }
