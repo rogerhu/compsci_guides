@@ -12,6 +12,7 @@ Pseucoding also allows us to break up the problem into smaller subproblems. If w
 ## Problem : Delete a given node from a BST
 For our pseudocoding practice, we will look at how to delete a given node from a Binary Search Tree (BST) while still maintaining the qualities of a BST
 https://leetcode.com/problems/delete-node-in-a-bst/description/
+https://www.interviewbit.com/blog/delete-node-from-binary-search-tree/
 
 ### Possible Cases
 Since this is a binary search tree, we are guaranteed that each node will have **at most** two children. Given that, we can assume the following scenarios:
