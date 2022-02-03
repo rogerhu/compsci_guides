@@ -5,7 +5,7 @@ Heaps are an often overlooked data structure, but come up quite often in intervi
     *  In **min heaps**, the root node contains the smallest element and all the nodes in the heap contain elements that are less than or equal to their child nodes.
     * In **max heaps**, the root node contains the largest element and all the nodes in the heap contain elements that are greater than or equal to their child nodes.
 
-2. It is a complete binary tree. A **binary tree’s** nodes will have at most two children: a left child, and right child. A heap is a complete binary tree, which means that it fills each level entirely except the last level. Another way of thinking about this is that all the nodes in one level will have children before any of those nodes will have grandchildren.
+2. It is a complete binary tree. A **binary tree’s** nodes will have at most two children: a left child, and a right child. A heap is a complete binary tree, which means that it fills each level entirely except the last level. Another way of thinking about this is that all the nodes in one level will have children before any of those nodes will have grandchildren.
 
 <img src="https://i.imgur.com/1mghTRv.png"/>
 
