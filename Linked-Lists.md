@@ -3,7 +3,7 @@
 ## Introduction
 Let's start with an example of a very important Linked List. For any running program, the most fundamental structure that explains the program's state at any time is the [Call Stack](https://manybutfinite.com/post/journey-to-the-stack/). If you have had the experience of staring down the face of a nasty run-time bug, you might attest to this. For example, here is an image of a call stack while debugging in the Chrome Browser.
 
-![Chrome Browser Call Stack](https://i.ibb.co/sVMGhSs/anon.png)
+![Chrome Browser Call Stacc](https://i.ibb.co/sVMGhSs/anon.png)
 
 A call stack is simply a trace from where the program is currently at all the way back to the start of that process or thread. This simple trail home is essential for the computer to know what to do when the current function it is working on exits. In this case, the computer knows it can just go to the first item on that stack remove it from the list, making the second item now the first thing on the stack, and then doing the rest of the work that the previous first item was pointing to. This sequence of one item (address in memory) pointing to another item (address in memory) pointing to another item, and so on, forms a Linked List.
 
