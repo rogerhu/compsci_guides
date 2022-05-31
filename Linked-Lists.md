@@ -1,7 +1,7 @@
 # Linked Lists
 
 ## Introduction
-Let's start with an example of a very important Linked List. For any running program, the most fundamental structure that explains the program's state at any time is the [Call Stack](https://manybutfinite.com/post/journey-to-the-stack/). If you have had the experience of staring down the face of a nasty run-time bug, you might attest to this. For example, here is an image of a call stack while debugging in the Chrome Browser.
+Let's start with an example of a very important Linked List. For any running program, the most fundamental structure that explains the program's state at any time is the [Call Stack](https://manybutfinite.com/post/journey-to-the-stack/). If you have had the experience of staring down the face of a nasty runtime bug, you might attest to this. For example, here is an image of a call stack while debugging in the Chrome Browser.
 
 ![Chrome Browser Call Stacc](https://i.ibb.co/sVMGhSs/anon.png)
 
