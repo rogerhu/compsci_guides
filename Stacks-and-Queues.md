@@ -22,7 +22,7 @@ It's important to know the common operations associated with a queue. The two im
 2) enqueue(item): adding an item to the queue
 
 ## Key takeaways
-* Stacks are very useful for it's backtracking features. For example, parsing questions tend to use stacks because of the LIFO property.
+* Stacks are very useful for its backtracking features. For example, parsing questions tend to use stacks because of the LIFO property.
 * Stacks can be used to implement recursive solutions iteratively.
 * Queues are useful when the ordering of the data matters as it preserves that ordering. For example, they're used for caching.
 
