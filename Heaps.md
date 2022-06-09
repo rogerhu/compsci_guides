@@ -75,7 +75,6 @@ In the worst case scenario, the swapping procedure for insertions and deletions 
 ## Example problems
 * [Top K frequent words](https://leetcode.com/problems/top-k-frequent-words/description/)
 * [Find K pairs with smallest sums](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/)
-* [Implementing a heap](http://interactivepython.org/courselib/static/pythonds/Trees/BinaryHeapImplementation.html)
 
 ## Resources
 To get a more thorough understanding of the internals of heaps, here are a few links to helpful resources.
