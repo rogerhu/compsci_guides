@@ -84,3 +84,4 @@ To get a more thorough understanding of the internals of heaps, here are a few l
 * Princeton Coursera video lecture series: https://www.coursera.org/learn/algorithms-part1/lecture/Uzwy6/binary-heaps
 * HackerRank video: https://youtu.be/t0Cq6tVNRBA
 * How to implement max heap in Python: https://www.youtube.com/watch?v=GnKHVXv_rlQ
+* Heapify Python Documentation: https://docs.python.org/3/library/heapq.html#heapq.heapify
