@@ -31,6 +31,8 @@ One approach to building a heap from a list of N elements is starting with an em
 
 The math and implementation behind this optimization are a bit complex, but are explained well in the [Wikipedia page](https://en.wikipedia.org/wiki/Binary_heap#Building_a_heap). It’s a good idea to get a general understanding of the optimization.
 
+- In Python, the heapify function will construct a heap from a list in linear time.
+
 ## Implementation
 Surprisingly, this complex data structure can be represented using an array! Given that the root node will always be either the least or greatest element in the heap, we can place this element as the first element in the array. This underlying array is then filled up by going through each level of the heap, from left to right, top to bottom.
 
