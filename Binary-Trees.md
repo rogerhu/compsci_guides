@@ -224,9 +224,10 @@ https://stackoverflow.com/questions/2603692/what-is-the-difference-between-tree-
 
 ## References
 ### Further reading links
-https://algs4.cs.princeton.edu/32bst/
-http://cslibrary.stanford.edu/110/BinaryTrees.html
-https://inst.eecs.berkeley.edu/~cs61b/fa17/materials/lectures/lect20.pdf
+* https://algs4.cs.princeton.edu/32bst/
+* http://cslibrary.stanford.edu/110/BinaryTrees.html
+* https://inst.eecs.berkeley.edu/~cs61b/fa17/materials/lectures/lect20.pdf
+* [Different Types of Binary Tree with colourful illustrations](https://towardsdatascience.com/5-types-of-binary-tree-with-cool-illustrations-9b335c430254)
 
 ### Videos
 * [Gayle Laakmann McDowell's Overview of Trees](https://www.youtube.com/watch?v=oSWTXtMglKE)
