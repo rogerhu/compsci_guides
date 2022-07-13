@@ -4,7 +4,7 @@ Aside from DFS and BFS, the most common graph concept that interviews will test 
 A **topological sort** is an ordering of nodes for a directed acyclic graph (DAG) such that for every directed edge _uv_ from vertex _u_ to vertex _v_, _u_ comes before _v_ in the ordering.
 
 ## Example
-An application of this algorithm is ordering a sequence of tasks given their dependencies on other tasks. In this application, there is an directed edge from _u_ to _v_ if task _u_ must be completed before task _v_ can start. For example, when cooking, we need to turn on the oven (task _u_) before we can bake the cookies (task _v_).
+An application of this algorithm is ordering a sequence of tasks given their dependencies on other tasks. In this application, there is a directed edge from _u_ to _v_ if task _u_ must be completed before task _v_ can start. For example, when cooking, we need to turn on the oven (task _u_) before we can bake the cookies (task _v_).
 
 <img src="https://i.imgur.com/Q3MA6dZ.png"/>
 
