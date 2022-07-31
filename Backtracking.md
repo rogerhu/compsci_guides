@@ -87,4 +87,4 @@ Unlike DP, backtracking is typically not looking for one optimal solution, but i
  * **Candidates** are all the local choices you can make given the current state of the backtracking algorithm.
 
 ## References
-One of the best discussions of Backtracking can be found in the [Algorithm Design Manual](https://github.com/addyrookie/Depot-App/raw/master/gmail/The%20Algorithm%20Design%20Manual%202ed%20%20by%20Steven%20S.%20Skiena.pdf) by Skiena. The backtracking algorithm is discussed in pages 230 - 244. Highly recommended.
+One of the best discussions of Backtracking can be found in the [Algorithm Design Manual](https://mimoza.marmara.edu.tr/~msakalli/cse706_12/SkienaTheAlgorithmDesignManual.pdf) by Skiena. The backtracking algorithm is discussed in pages 230 - 244. Highly recommended.
