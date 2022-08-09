@@ -27,7 +27,7 @@ Binary trees are composed of **nodes**, where each node in the tree has at most 
 - left pointer
 - right pointer
 
-### Language: C
+**Language: C**
 ```c
 class TreeNode {
     int data;
@@ -35,7 +35,7 @@ class TreeNode {
     TreeNode right;
 }
 ```
-### Language: Python
+**Language: Python**
 ```python
 class TreeNode():
  def __init__(self, data=None, left=None, right=None):
@@ -106,7 +106,7 @@ There are 4 main methods for traversing binary trees: preorder, postorder, inord
 
 **Preorder**
 
-### Language: C
+**Language: C**
 ```c
 void printPreorder(TreeNode node) {	
     if (node == null) {
@@ -117,20 +117,21 @@ void printPreorder(TreeNode node) {
     printPreorder(node.right); // recurse on right
 }
 ```
-### Language: Python
+**Language: Python**
 ```python
 def printPreorder(node:TreeNode):	
     if (node == None):
         return
-    print(node.data + " ") // process node
-    printPreorder(node.left) // recurse on left
-    printPreorder(node.right) // recurse on right
+    print(node.data)
+    printPreorder(node.left)
+    printPreorder(node.right)
 ```
 Output: 1 -> 2 -> 4 -> 5 -> 3
 Good for exploring roots before leaves. 
 Example problems: copying a tree
 
 **Postorder**
+**Language: C**
 ```c
 void printPostorder(TreeNode node) {
     if (node == null) {
@@ -141,11 +142,22 @@ void printPostorder(TreeNode node) {
     System.out.println(node.data + " "); // process node
 }
 ```
+**Langauge: Python**
+
+```python
+def printPostorder(node:TreeNode):
+    if (node == None):
+        return
+    printPostorder(node.left)
+    printPostorder(node.right)
+    print(node.data)
+```
 
 Output: 4 -> 5 -> 2 -> 3 -> 1
 Good for exploring leaves before roots.
 
 **Inorder**
+**Language: C**
 ```c
 void printInorder(TreeNode node) {
     if (node == null) {
@@ -156,10 +168,21 @@ void printInorder(TreeNode node) {
     printInorder(node.right); // process right
 }
 ```
+**Langauge: Python**
+```python
+def printInorder(node:TreeNode):
+    if (node == None):
+        return
+    printInorder(node.left)
+    print(node.data)
+    printInorder(node.right)
+```
+
 Output: 4 -> 2 -> 5 -> 1 -> 3
 Good for converting BST into an array.
 
 **BFS**
+**Language: C**
 ```c
 public void printBFS(TreeNode root) {
     Queue<TreeNode> queue = new LinkedList<BinaryTree.TreeNode>();
@@ -177,11 +200,26 @@ public void printBFS(TreeNode root) {
 
 }
 ```
+**Language: Python**
+```python
+from collections import deque
+def printBFS(root:TreeNode):
+    queue = deque()
+    if (root == None):
+        return
+    queue.append(root)
+    while queue:
+        node = queue.popleft()
+        print(node.data)
+        if(node.left != None): queue.append(node.left)
+        if(node.right != None): queue.append(node.right)
+```
 Output: 1 -> 2 -> 3 -> 4 -> 5
 
 ## Common Operations
 
 ### Searching in a BST
+**Language: C**
 ```c
 public boolean doesNodeExistInBST(TreeNode bstRoot, int searchValue) {
     // if we've ran out of values to search for, return false
@@ -200,6 +238,22 @@ public boolean doesNodeExistInBST(TreeNode bstRoot, int searchValue) {
     }
 }
 ```
+**Language: Python**
+```python
+def doesNodeExistInBST(bstRoot:TreeNode, searchValue:int):
+    # if we've ran out of values to search for, return false
+    if (bstRoot == None):
+        return False
+    elif (bstRoot.data == searchValue):
+        return True
+    else:
+        #if the node we're at is smaller than the value we're looking for, traverse on the right side
+        if (searchValue > bstRoot.data):
+            return doesNodeExistInBST(bstRoot.right, searchValue)
+        else:
+            #if the node we're at is bigger than the value we're looking for, traverse the left side
+            return doesNodeExistInBST(bstRoot.left, searchValue)
+```
 **Common related problems:**
 Sum of left leaves (Easy)
 https://leetcode.com/problems/sum-of-left-leaves
@@ -215,7 +269,7 @@ https://www.programcreek.com/2014/07/leetcode-find-leaves-of-binary-tree-java/
 
 ### Height of Binary Tree
 The height of a tree is the length of the path from the root to the deepest node in the tree.
-
+**Language: C**
 ```c
 int getBinaryTreeHeight(TreeNode node) {
     if (node == null) {
@@ -231,6 +285,19 @@ int getBinaryTreeHeight(TreeNode node) {
         return rightHeight + 1;
     }
 }
+```
+**Langauge: Python**
+```python
+def getBinaryTreeHeight(node:TreeNode):
+    if (node == None):
+        return -1
+    leftHeight = getBinaryTreeHeight(node.left)
+    rightHeight = getBinaryTreeHeight(node.right)
+
+    if (leftHeight > rightHeight):
+        return leftHeight + 1
+    else:
+        return rightHeight + 1
 ```
 
 ### Depth of Binary Tree
