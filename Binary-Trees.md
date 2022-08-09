@@ -106,7 +106,9 @@ There are 4 main methods for traversing binary trees: preorder, postorder, inord
 
 **Preorder**
 
+
 **Language: C**
+
 ```c
 void printPreorder(TreeNode node) {	
     if (node == null) {
@@ -117,6 +119,7 @@ void printPreorder(TreeNode node) {
     printPreorder(node.right); // recurse on right
 }
 ```
+
 **Language: Python**
 ```python
 def printPreorder(node:TreeNode):	
@@ -126,11 +129,13 @@ def printPreorder(node:TreeNode):
     printPreorder(node.left)
     printPreorder(node.right)
 ```
+
 Output: 1 -> 2 -> 4 -> 5 -> 3
 Good for exploring roots before leaves. 
 Example problems: copying a tree
 
 **Postorder**
+
 **Language: C**
 ```c
 void printPostorder(TreeNode node) {
@@ -157,6 +162,7 @@ Output: 4 -> 5 -> 2 -> 3 -> 1
 Good for exploring leaves before roots.
 
 **Inorder**
+
 **Language: C**
 ```c
 void printInorder(TreeNode node) {
@@ -182,6 +188,7 @@ Output: 4 -> 2 -> 5 -> 1 -> 3
 Good for converting BST into an array.
 
 **BFS**
+
 **Language: C**
 ```c
 public void printBFS(TreeNode root) {
@@ -201,6 +208,7 @@ public void printBFS(TreeNode root) {
 }
 ```
 **Language: Python**
+
 ```python
 from collections import deque
 def printBFS(root:TreeNode):
@@ -219,7 +227,9 @@ Output: 1 -> 2 -> 3 -> 4 -> 5
 ## Common Operations
 
 ### Searching in a BST
+
 **Language: C**
+
 ```c
 public boolean doesNodeExistInBST(TreeNode bstRoot, int searchValue) {
     // if we've ran out of values to search for, return false
@@ -239,6 +249,7 @@ public boolean doesNodeExistInBST(TreeNode bstRoot, int searchValue) {
 }
 ```
 **Language: Python**
+
 ```python
 def doesNodeExistInBST(bstRoot:TreeNode, searchValue:int):
     # if we've ran out of values to search for, return false
@@ -269,7 +280,9 @@ https://www.programcreek.com/2014/07/leetcode-find-leaves-of-binary-tree-java/
 
 ### Height of Binary Tree
 The height of a tree is the length of the path from the root to the deepest node in the tree.
+
 **Language: C**
+
 ```c
 int getBinaryTreeHeight(TreeNode node) {
     if (node == null) {
