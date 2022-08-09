@@ -1,9 +1,9 @@
 ## Introduction
 A common problem we are posed with is to search for something in a given list. For example, given the numbers of a lottery draw `1, 2, 5, 10, 16, 20, 23, 36, 40, 41, 45`, we may want to find out if our number `18` is a winning number.
 
-If we didn't know that the list of winning numbers is sorted we would have to look at every number. However, if we know the list is sorted, we can stop once we reach a number bigger than the one we're looking for.
+If we didn't know that the list of winning numbers is sorted, we would have to look at every number. However, if we know the list is sorted, we can stop once we reach a number bigger than the one we're looking for.
 
-We can be even more efficient in our search by starting in the middle in the list, and moving left or right depending on whether the number we're looking for is smaller or bigger than the number we're currently comparing it to.
+We can be even more efficient in our search by starting in the middle in the list, and moving left or right depending on whether the number we're looking for is smaller or bigger than the number we're currently comparing to.
 
 For example, if our list is `1, 2, 5, 10, 16, 20, 23, 36, 40, 41, 45` and we were looking for `18`, we would 
 - first compare 18 and 20 (because 20 is in the middle of the list)
@@ -27,12 +27,21 @@ Binary trees are composed of **nodes**, where each node in the tree has at most 
 - left pointer
 - right pointer
 
+### Language: C
 ```c
 class TreeNode {
     int data;
     TreeNode left;
     TreeNode right;
 }
+```
+### Language: Python
+```python
+class TreeNode():
+ def __init__(self, data=None, left=None, right=None):
+	self.data = data
+	self.left = left
+	self.right = right
 ```
 
 `1` `2` `3` `4` `5` are all nodes in the tree above.
@@ -68,7 +77,7 @@ Accessing / Searching : `O(n)`
 Inserting: `O(n)`
 Deleting: `O(n)`
 
-The best / worst cases differ by how well balanced the tree is. Balanced trees are more efficient than unbalanced trees
+The best / worst cases differ by how well the tree is balanced. Balanced trees are more efficient than unbalanced trees.
 
 Balanced tree:
 
@@ -96,6 +105,8 @@ There are 4 main methods for traversing binary trees: preorder, postorder, inord
 ![](https://i.imgur.com/t2Ihbru.png)
 
 **Preorder**
+
+### Language: C
 ```c
 void printPreorder(TreeNode node) {	
     if (node == null) {
@@ -105,6 +116,15 @@ void printPreorder(TreeNode node) {
     printPreorder(node.left); // recurse on left
     printPreorder(node.right); // recurse on right
 }
+```
+### Language: Python
+```python
+def printPreorder(node:TreeNode):	
+    if (node == None):
+        return
+    print(node.data + " ") // process node
+    printPreorder(node.left) // recurse on left
+    printPreorder(node.right) // recurse on right
 ```
 Output: 1 -> 2 -> 4 -> 5 -> 3
 Good for exploring roots before leaves. 
