@@ -1,11 +1,17 @@
-Traversing a binary tree recursively is usually the first approach towards approaching binary tree problems. However, recursion could lead to large memory footprints and often times interviewers will ask for an iterative traversal.
+Traversing a binary tree recursively is usually the first approach to approaching binary tree problems. However, recursion could lead to large memory footprints, and often times interviewers will ask for an iterative traversal.
 
-When traversing a tree iteratively it is common to use a **stack** or a **queue**. The common pattern involves:
-1) Determine whether to use a stack or a queue to store nodes we need to visit
-    a) stacks are last-in-first-out 
-    b) queues are first-in-first-out
-2) While our stack/queue is not null, retrieve nodes from it
-    a) When we retrieve a node to visit it, we also have to figure out how to put its child nodes on
+When traversing a tree iteratively, it is common to use a **stack** or a **queue**. 
+The common pattern involves:
+
+1) Determine whether to use a stack or a queue to store nodes we need to visit.
+
+    a) stacks are last-in-first-out.
+ 
+    b) queues are first-in-first-out.
+
+2) While our stack/queue is not null, retrieve nodes from it.
+
+    a) When we pop a node to visit, we also have to figure out how to push its child nodes.
 
 As an example, we can take a look at how to implement a preorder traversal iteratively.
 
