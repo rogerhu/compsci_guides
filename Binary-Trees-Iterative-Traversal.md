@@ -16,6 +16,9 @@ The common pattern involves:
 As an example, we can take a look at how to implement a preorder traversal iteratively.
 
 Recall the **recursive approach** for a preorder traversal:
+
+**Language: C**
+
 ```c 
 void printPreorder(TreeNode node) {	
     if (node == null) {
@@ -25,6 +28,16 @@ void printPreorder(TreeNode node) {
     printPreorder(node.left); // recurse on left
     printPreorder(node.right); // recurse on right
 }
+```
+**Language: Python**
+
+```
+def printPreorder(node:TreeNode):
+    if node == None:
+        return
+    print(node.data)
+    printPreorder(node.left)
+    printPreorder(node.right)
 ```
 
 For the following tree:
