@@ -132,11 +132,11 @@ We can reason this is true because if the largest element has a subtree, nothing
 
 Following are steps we are going to take to solve the problem:
 
-1) traverse through the tree looking for the largest element.
+    1) traverse through the tree looking for the largest element.
 
-    a) if the largest element has a left child, return the largest element of the left subtree.
+      a) if the largest element has a left child, return the largest element of the left subtree.
 
-    b) else, return the parent of the largest element.
+      b) else, return the parent of the largest element.
 
 **Language: C**
 ```c
