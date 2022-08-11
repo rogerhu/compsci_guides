@@ -31,7 +31,7 @@ void printPreorder(TreeNode node) {
 ```
 **Language: Python**
 
-```
+```python
 def printPreorder(node:TreeNode):
     if node == None:
         return
@@ -87,6 +87,8 @@ Looking at what we've been doing, it looks like a pattern has emerged.
     b. push right child of popped node to stack.
     c. push left child of popped node to stack
 
+**Language: C**
+
 ```c
 public void preorderTraversal(TreeNode root) {
     TreeNode node = root;
@@ -103,6 +105,20 @@ public void preorderTraversal(TreeNode root) {
         }
     }
 }
+```
+
+**Language: Python**
+```python
+def preorderTraversal(root:TreeNode):
+    stack = []
+    stack.append(root)
+    while stack:
+        curr = stack.pop()
+        print(curr.data)
+        if (curr.right != None):
+            stack.append(curr.right)
+        if (curr.left != None):
+            stack.append(curr.left)
 ```
 
 Time complexity is O(n) since we push/pop each node of the tree, while space complexity is O(h), h being the height of the tree.
