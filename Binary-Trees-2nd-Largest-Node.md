@@ -2,6 +2,9 @@
 **Given a binary search tree, find the 2nd largest tree node.**
 
 Assume this is our definition for a tree node.
+
+**Language: C**
+
 ```c
 public class TreeNode {
     int value;
@@ -9,9 +12,20 @@ public class TreeNode {
     TreeNode right;
 }
 ```
+**Language: Python**
+
+```python
+class TreeNode():
+    def __init__(self, data=None, left=None, right=None):
+        self.data = data
+        self.left = left
+        self.right = right
+```
 
 **Method 1:**
 The first thing to note here is that we are given a binary search tree. Knowing that, our first instinct may be to do an inorder traversal. Recall that an inorder traversal is implemented as such:
+
+**Language: C**
 
 ```c
 void printInorder(TreeNode node) {
@@ -22,6 +36,16 @@ void printInorder(TreeNode node) {
     System.out.println(node.value); // process node
     printInorder(node.right); // process right
 }
+```
+**Language: Python**
+
+```python
+def printInorder(node:TreeNode):
+    if (node == None):
+        return
+    printInorder(node.left)
+    print(node.data)
+    printInorder(node.right)
 ```
 
 Using inorder traversal, we would be able to print every node in the binary search tree in ascending order. We can then store the nodes in an array and return the second to last element in the array.
@@ -112,6 +136,7 @@ With that, our algorithm to finding the second largest element becomes:
         return the largest element of the left subtree
     b) else, return the parent of the largest element
 
+**Language: C**
 ```c
 public static TreeNode getSecondLargest(TreeNode node) { 
     
@@ -135,6 +160,17 @@ public static TreeNode getSecondLargest(TreeNode node) {
     // one of the above cases
     return getSecondLargest(node.right);  
 }
+```
+
+**Language: Python**
+
+```python
+def getSecondLargest(root):
+    if root.right == None and root.left != None:
+        return getSecondLargest(root.left)
+    if root.right != None and root.right.left == None and root.right.right == None:
+        return root.data
+    return getSecondLargest(root.right)
 ```
 
 Similar problems:
