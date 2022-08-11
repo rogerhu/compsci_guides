@@ -130,11 +130,13 @@ In all of these cases, notice that when the right most element has a left child,
 
 We can reason this is true because if the largest element has a subtree, nothing in its subtree can be greater, so the greatest element in its subtree must be the second great element in the whole tree.
 
-With that, our algorithm to finding the second largest element becomes:
-1) traverse through the tree looking for the largest element
-    a) if the largest element has a left child, 
-        return the largest element of the left subtree
-    b) else, return the parent of the largest element
+Following are steps we are going to take to solve the problem:
+
+1) traverse through the tree looking for the largest element.
+
+    a) if the largest element has a left child, return the largest element of the left subtree.
+
+    b) else, return the parent of the largest element.
 
 **Language: C**
 ```c
