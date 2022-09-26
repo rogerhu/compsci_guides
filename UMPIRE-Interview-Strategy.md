@@ -1,6 +1,6 @@
 ## Introduction
 
-During a technical interview, the way you work towards your solution is often more important than the binary result of solving the problem or not. There are a number of good ways to show and communicate your work as you work through an algorithm problem. The UMPIRE method is another way to state the best practices that underlie the most successful approaches in a catchy name.
+During a technical interview, the way you work towards your solution is often more important than the binary result of solving the problem or not. There are several good ways to show and communicate your work as you work through an algorithm problem. The UMPIRE method is another way to state the best practices that underlie the most successful approaches in a catchy name.
 
 UMPIRE stands for:
 1. **Understand** what the interviewer is asking for by using test cases and questions about the problem.
