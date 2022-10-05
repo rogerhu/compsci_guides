@@ -3,7 +3,7 @@
 
 Assume this is our definition for a tree node.
 
-**Language: C**
+
 
 ```c
 public class TreeNode {
@@ -25,7 +25,7 @@ class TreeNode():
 **Method 1:**
 The first thing to note here is that we are given a binary search tree. Knowing that, our first instinct may be to do an inorder traversal. Recall that an inorder traversal is implemented as such:
 
-**Language: C**
+
 
 ```c
 void printInorder(TreeNode node) {
@@ -138,7 +138,7 @@ Following are steps we are going to take to solve the problem:
 
       b) else, return the parent of the largest element.
 
-**Language: C**
+
 ```c
 public static TreeNode getSecondLargest(TreeNode node) { 
     
