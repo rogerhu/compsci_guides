@@ -27,7 +27,7 @@ Binary trees are composed of **nodes**, where each node in the tree has at most 
 - left pointer
 - right pointer
 
-**Language: C**
+
 ```c
 class TreeNode {
     int data;
@@ -107,7 +107,7 @@ There are 4 main methods for traversing binary trees: preorder, postorder, inord
 **Preorder**
 
 
-**Language: C**
+
 
 ```c
 void printPreorder(TreeNode node) {	
@@ -136,7 +136,7 @@ Example problems: copying a tree
 
 **Postorder**
 
-**Language: C**
+
 ```c
 void printPostorder(TreeNode node) {
     if (node == null) {
@@ -163,7 +163,7 @@ Good for exploring leaves before roots.
 
 **Inorder**
 
-**Language: C**
+
 ```c
 void printInorder(TreeNode node) {
     if (node == null) {
@@ -189,7 +189,7 @@ Good for converting BST into an array.
 
 **BFS**
 
-**Language: C**
+
 ```c
 public void printBFS(TreeNode root) {
     Queue<TreeNode> queue = new LinkedList<BinaryTree.TreeNode>();
@@ -228,7 +228,7 @@ Output: 1 -> 2 -> 3 -> 4 -> 5
 
 ### Searching in a BST
 
-**Language: C**
+
 
 ```c
 public boolean doesNodeExistInBST(TreeNode bstRoot, int searchValue) {
@@ -281,7 +281,7 @@ https://www.programcreek.com/2014/07/leetcode-find-leaves-of-binary-tree-java/
 ### Height of Binary Tree
 The height of a tree is the length of the path from the root to the deepest node in the tree.
 
-**Language: C**
+
 
 ```c
 int getBinaryTreeHeight(TreeNode node) {
