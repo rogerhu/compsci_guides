@@ -17,7 +17,7 @@ As an example, we can take a look at how to implement a preorder traversal itera
 
 Recall the **recursive approach** for a preorder traversal:
 
-**Language: C**
+
 
 ```c 
 void printPreorder(TreeNode node) {	
@@ -87,7 +87,7 @@ Looking at what we've been doing, it looks like a pattern has emerged.
     b. push right child of popped node to stack.
     c. push left child of popped node to stack
 
-**Language: C**
+
 
 ```c
 public void preorderTraversal(TreeNode root) {
