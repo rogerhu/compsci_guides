@@ -14,8 +14,6 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-**Solution**
-
 - Can we transform the organization into a tree with each node containing the wait time (before transmitting down to their reports)?
     - This can simplify the problem into traversing the tree from the top node down to the bottom.
 - How is the time calculated while traversing down and comparing and setting the maximum time?
