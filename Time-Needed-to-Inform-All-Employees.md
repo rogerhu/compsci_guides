@@ -50,7 +50,7 @@ For graph problems, we want to consider the following approaches:
 4. we update the maximum time at each step
 ```
 
-### Common Mistakes
+**⚠️ Common Mistakes**
 
 * 
 
@@ -84,6 +84,30 @@ class Solution(object):
                 graph[manager].append(employee)
             
         return graph
+```
+```java
+public int numOfMinutes(int n, int headID, int[] manager, int[] informTime) {
+    Map<Integer,List<Integer>> graph = new HashMap<>();
+    for(int i=0;i<manager.length;i++){
+        if(manager[i]==-1){
+            continue;
+        }
+        graph.computeIfAbsent(manager[i],k->new ArrayList()).add(i);
+    }        
+    return dfs(headID,0,graph,informTime);
+}
+    
+public int dfs(int headId,int time,Map<Integer,List<Integer>> graph,int[] informTime){
+    if(informTime[headId]==0){
+        return time;
+    }
+    int count = informTime[headId];
+    int val=Integer.MIN_VALUE;
+    for(int childId :graph.get(headId)){
+        val = Math.max(val,dfs(childId,time+count,graph,informTime));
+    }
+    return val;
+}
 ```
     
 ## 5: R-eview
