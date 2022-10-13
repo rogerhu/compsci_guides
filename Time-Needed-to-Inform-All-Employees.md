@@ -58,13 +58,6 @@ For graph problems, we want to consider the following approaches:
 
 > **Implement** the code to solve the algorithm.
 
-```java 
-Java code
-```
-```kotlin
-Kotlin code
-```
-    
 ```python
 class Solution(object):
     def numOfMinutes(self, n, headID, managers, informTime):
@@ -91,8 +84,7 @@ class Solution(object):
                 graph[manager].append(employee)
             
         return graph
-```
-```java
+``````java
 public int numOfMinutes(int n, int headID, int[] manager, int[] informTime) {
     Map<Integer,List<Integer>> graph = new HashMap<>();
     for(int i=0;i<manager.length;i++){
