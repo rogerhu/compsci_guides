@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/time-needed-to-inform-all-employees/](https://leetcode.com/problems/time-needed-to-inform-all-employees/) 
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
-* **Similar Questions**: [[Number of Islands]]
+* **Similar Questions**: TBD
     
 ## 1: U-nderstand
  
