@@ -5,14 +5,16 @@ Welcome to the fundamental CodePath Computer Science guides on data structures, 
 <!--- TODO: * [[Anatomy of a Technical Whiteboarding Interview]]-->
  * [[Big O Complexity Analysis]]
  * [[UMPIRE Interview Strategy]]
+ * [[UMPIRE Cheat Sheets]]
+ * [[UMPIRE Problem Solutions]]
 <!--- TODO: add this * [[Identifying Problems]]-->
 
 ## Data Structures
 
  * [[Linked Lists]]
-	* [[Dummy Head]]
-	* [[Multiple Pass]]
-	* [[Linked List Two Pointer]]
+ * [[Dummy Head]]
+   * [[Multiple Pass]]
+   * [[Linked List Two Pointer]]
  * [[Hash Tables]]
  * [[Stacks and Queues]]
  * [[Heaps]]
