@@ -84,7 +84,8 @@ class Solution(object):
                 graph[manager].append(employee)
             
         return graph
-``````java
+```
+```java
 public int numOfMinutes(int n, int headID, int[] manager, int[] informTime) {
     Map<Integer,List<Integer>> graph = new HashMap<>();
     for(int i=0;i<manager.length;i++){
