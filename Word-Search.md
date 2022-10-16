@@ -4,14 +4,11 @@
 
 1. **U-nderstand**
 
-a. When do we return true? 
+a. When do we return true? Return true when the last letter is reached.
 
-Return true when the last letter is reached.
+b. What if we come across the same letter during the search path? During the search path, set the visited letter as visited to avoid reuse.
 
-b. What if we come across the same letter during the search path?
-
-During the search path, set the visited letter as visited to avoid reuse.
-
+```markdown
 word = "ABCCED", -> returns 1,
 
 word = "SEE", -> returns 1,
@@ -21,6 +18,7 @@ word = "ABCB", -> returns 1,
 word = "ABFSAB" -> returns 1
 
 word = "ABCD" -> returns 0
+```
 
 1. M-atch
     
