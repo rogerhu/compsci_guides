@@ -48,4 +48,5 @@ The backtracking algorithm is applied to some specific types of problems. For in
 ### E-valuate
 
 Time Complexity
+<br>
 It's not very easy to calculate the time complexity of recursive functions in backtracking. One piece of advice would be to estimate how many possible states the function has, and how much work it does in each state.
