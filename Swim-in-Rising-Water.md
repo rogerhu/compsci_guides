@@ -35,8 +35,6 @@ Start with `(0,0)`corner. On each moment of time we choose node with smallest v
     
 3. P-lan
     
-    General Description of plan (1-2 sentences)
-    
     - We start from 0, 0, and push this onto priority_queue
     - Then push all possible moves from this position onto queue
     - Queue is designed such that the first move to be processed will be the one with lowest value in grid[][]
