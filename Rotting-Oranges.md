@@ -3,21 +3,13 @@
 ⏰ **Time to complete**: 15 mins
 
 1. **U-nderstand**
-    1. What do the possible values of the grid represent? 
+    a. What do the possible values of the grid represent? 1’s are fresh oranges, 2’s are rotten oranges and 0’s are empty spaces
     
-    1’s are fresh oranges, 2’s are rotten oranges and 0’s are empty spaces
+    b. What data structures can I use to store the grids? You can use a 2D array, hashset, queue, etc.
     
-    b. What data structures can I use to store the grids?
+    c. Do we need to keep track of the level? Yes, you can keep track of the level using a search algorithm. Trick is to only increment once per level and only if fresh.
     
-    You can use a 2D array, hashset, queue, etc.
-    
-    c. Do we need to keep track of the level?
-    
-    Yes, you can keep track of the level using a search algorithm. Trick is to only increment once per level and only if fresh.
-    
-    d. What is a possible edge case?
-    
-    That there is no fresh, there is no rotten
+    d. What is a possible edge case? That there is no fresh, there is no rotten
     
     ```markdown
     HAPPY CASE
@@ -50,6 +42,8 @@
     6. Repeat this process until we have no more rotten oranges.
     7. If the number of fresh oranges after the entire process is still not zero, then return -1 indicating that it’s impossible to rot all the oranges.
     8. Else return the time required to rot all the oranges.
+
+
 4. I-mplement
     
     ```java
@@ -146,5 +140,5 @@
     Verify the code works for the happy and edge cases you created in the “Understand” section
     
 6. E-valuate
-    - Time Complexity: O(n*m), where n — number of rows m– number of cols, for first traversal of the grid to find all the rotten and fresh oranges + O(n*m) for queue traversal if there is only one fresh orange and that too when the last orange is fresh.
-    - Space Complexity: O(n*m), where n — number of rows m– number of cols, extra space for queue in the worst case when all the oranges are rotten.
+    - Time Complexity: `O(n*m)`, where n — number of rows m– number of cols, for first traversal of the grid to find all the rotten and fresh oranges + O(n*m) for queue traversal if there is only one fresh orange and that too when the last orange is fresh.
+    - Space Complexity: `O(n*m)`, where n — number of rows m– number of cols, extra space for queue in the worst case when all the oranges are rotten.
