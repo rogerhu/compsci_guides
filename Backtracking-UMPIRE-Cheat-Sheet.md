@@ -1,5 +1,3 @@
-## Backtracking UMPIRE Cheat Sheet
-
 ### Definition
 
 Backtracking is similar to Dynamic Programming in that it solves a problem by efficiently performing an exhaustive search over the entire set of possible options. Backtracking is different in that it structures the search to be able to efficiently eliminate large sub-sets of solutions that are no longer possible. For this reason, all backtracking algorithms will have a very similar overall structure for exhaustively searching the space of possible solutions, but the art & difficulty of the particular backtracking solution will be strategies that can be used to get rid of impossible solutions quickly.
