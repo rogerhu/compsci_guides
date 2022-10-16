@@ -1,4 +1,4 @@
-## Backtracking
+- [Backtracking](https://github.com/codepath/compsci_guides/wiki/Backtracking-Cheat-Sheet)
 
 ## Binary Trees 
 
