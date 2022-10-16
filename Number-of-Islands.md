@@ -4,10 +4,10 @@
 
 1. **U-nderstand**
     - What are the constraints?
-        - m == grid.length (number of rows)
-        - n == grid[i].length (number of columns)
-        - 1 <= m, n <= 300
-        - grid[i][j] is '0' or '1'
+        - `m` == grid.length (number of rows)
+        - `n` == grid[i].length (number of columns)
+        - 1 <= `m`, `n` <= 300
+        - `grid[i][j]` is '0' or '1'
     - Can we simply iterate through the grid and count each time that there isn’t a 1 to the left or above another 1? 
     That won’t actually work though because there can be islands with isolated cells that have 0s above and to the left, but are still part of the island.
     - What is the definition of an island?
@@ -48,7 +48,9 @@
             2. If the upper neighbor is '1', call union
     3. Return the number of islands (sets)
 4. I-mplement
-    
+
+
+Java Solution:     
     ```java
     public int numIslands(char[][] grid) {
             if(grid == null || grid.length < 1 || grid[0].length < 1){
@@ -103,6 +105,8 @@
         }
     ```
     
+
+Python Solution:
     ```python
     class Solution(object):
         def numIslands(self, grid):
@@ -148,15 +152,15 @@
     
     Calculate complexity in terms of:
     
-    - the number of grid elements, V
-    - the size of the maximum island, I
+    - the number of grid elements, `V`
+    - the size of the maximum island, `I`
     
     Time complexity:
     
-    - O(V) to build array
-    - O(V) iterations
-        - O(log I) for union operation
+    - `O(V)` to build array
+    - `O(V)` iterations
+        - `O(log I)` for union operation
     - Total: **O(V log I)**
-    - Can ensure O(V log V) by tuning union function
+    - Can ensure `O(V log V)` by tuning union function
     
     Space complexity: **O(V)**
