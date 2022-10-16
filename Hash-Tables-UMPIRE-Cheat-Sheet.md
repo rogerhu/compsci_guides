@@ -1,5 +1,3 @@
-## Hash Tables UMPIRE Cheat Sheet
-
 ### Definition
 
 * A hash table is a data structure that stores keys and values associated with unique keys. If two keys are indexed at the same location, a collision occurs.
