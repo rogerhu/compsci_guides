@@ -37,7 +37,7 @@ Backtrack(x)
     if x is a new solution
         add to list of solutions
     backtrack(expand x)
-`` 
+```
 
 Tips:
 
