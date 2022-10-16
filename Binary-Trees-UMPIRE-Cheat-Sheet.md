@@ -1,5 +1,3 @@
-## Binary Trees UMPIRE Cheat Sheet
-
 ### Definition
 
 **Binary Search Trees (BST)** are special cases of binary trees. Binary trees are trees where each element or node has no more than 2 children.
