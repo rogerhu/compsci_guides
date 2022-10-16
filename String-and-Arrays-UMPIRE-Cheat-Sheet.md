@@ -1,5 +1,3 @@
-## String and Arrays UMPIRE Cheat Sheet
-
 ### Definition
 
 #### Arrays
