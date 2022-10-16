@@ -4,7 +4,7 @@
 
 1. **U-nderstand**
 
-a. How do we identify an account?
+- How do we identify an account?
     We give each account an ID, based on the index of it within the list of accounts. For example: 
     
     ```
@@ -16,11 +16,11 @@ a. How do we identify an account?
     ]
     ```
     
-b. Can one person have multiple accounts? One person is allowed to have multiple accounts, but each email can only belong to one person.
+- Can one person have multiple accounts? One person is allowed to have multiple accounts, but each email can only belong to one person.
     
-c. Why do need to list out all the emails that belong to a specific person? This is done so that every time we find two accounts with an email in common, we will merge the two accounts into one.
+- Why do need to list out all the emails that belong to a specific person? This is done so that every time we find two accounts with an email in common, we will merge the two accounts into one.
     
-d. What do you mean by “merging” accounts? We have a set of elements (emails) that are connected (belonging to the same user). We can consider this as our input on a graph. Converting the input into a graph is what is meant by “merging” the accounts.
+- What do you mean by “merging” accounts? We have a set of elements (emails) that are connected (belonging to the same user). We can consider this as our input on a graph. Converting the input into a graph is what is meant by “merging” the accounts.
     
     ```markdown
     HAPPY CASE
