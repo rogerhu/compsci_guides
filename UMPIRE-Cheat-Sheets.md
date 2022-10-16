@@ -6,7 +6,7 @@
 
 ## [Hash Tables](https://github.com/codepath/compsci_guides/wiki/Hash-Tables-UMPIRE-Cheat-Sheet)
 
-## [Hash Tables](https://github.com/codepath/compsci_guides/wiki/Linked-List-UMPIRE-Cheat-Sheet)
+## [Linked Lists](https://github.com/codepath/compsci_guides/wiki/Linked-List-UMPIRE-Cheat-Sheet)
 
 ## [Stacks and Queues](https://github.com/codepath/compsci_guides/wiki/Stacks-and-Queues-UMPIRE-Cheat-Sheet)
 
