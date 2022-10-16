@@ -41,8 +41,7 @@ Backtrack(x)
 
 Tips:
 
-Try to avoid nested loops
-This is usually a brute force solution and is O(n²) time complexity
+Try to avoid nested loop: This is usually a brute force solution and is O(n²) time complexity.
 The backtracking algorithm is applied to some specific types of problems. For instance, we can use it to find a feasible solution to a decision problem. It was also found to be very effective for optimization problems.
 
 ### E-valuate
