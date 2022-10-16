@@ -3,17 +3,15 @@
 ⏰ **Time to complete**:13 mins
 
 1. **U-nderstand**
-    1. How do we approach a neighboring cell? 
+
+- How do we approach a neighboring cell? 
+When we find the neighbor, we just ignore the visited position, this will lead you to find the new neighbor, and exactly level by level.
     
-    When we find the neighbor, we just ignore the visited position, this will lead you to find the new neighbor, and exactly level by level.
+- What should we keep track of when we visit a cell? 
+Every time you visit a node, it will be from a path of predecessors that is of shortest distance to a zero.
     
-    b. What should we keep track of when we visit a cell? 
-    
-    Every time you visit a node, it will be from a path of predecessors that is of shortest distance to a zero.
-    
-    c. What coordinates should we store?
-    
-    Store all the coordinates which have 1s.
+- What coordinates should we store?
+Store all the coordinates which have 1s.
     
     ```markdown
     HAPPY CASE
