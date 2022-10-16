@@ -4,9 +4,9 @@
 
 1. **U-nderstand**
 
-a. When do we return true? Return true when the last letter is reached.
+- When do we return true? Return true when the last letter is reached.
 
-b. What if we come across the same letter during the search path? During the search path, set the visited letter as visited to avoid reuse.
+- What if we come across the same letter during the search path? During the search path, set the visited letter as visited to avoid reuse.
 
 ```markdown
 word = "ABCCED", -> returns 1,
