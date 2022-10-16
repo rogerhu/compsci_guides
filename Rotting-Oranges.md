@@ -3,13 +3,14 @@
 ⏰ **Time to complete**: 15 mins
 
 1. **U-nderstand**
-    a. What do the possible values of the grid represent? 1’s are fresh oranges, 2’s are rotten oranges and 0’s are empty spaces
     
-    b. What data structures can I use to store the grids? You can use a 2D array, hashset, queue, etc.
+a. What do the possible values of the grid represent? 1’s are fresh oranges, 2’s are rotten oranges and 0’s are empty spaces
     
-    c. Do we need to keep track of the level? Yes, you can keep track of the level using a search algorithm. Trick is to only increment once per level and only if fresh.
+b. What data structures can I use to store the grids? You can use a 2D array, hashset, queue, etc.
     
-    d. What is a possible edge case? That there is no fresh, there is no rotten
+c. Do we need to keep track of the level? Yes, you can keep track of the level using a search algorithm. Trick is to only increment once per level and only if fresh.
+    
+d. What is a possible edge case? That there is no fresh, there is no rotten
     
     ```markdown
     HAPPY CASE
