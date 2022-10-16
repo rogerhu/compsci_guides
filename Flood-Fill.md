@@ -3,12 +3,15 @@
 ⏰ **Time to complete**: 17 mins
 
 1. **U-nderstand**
-    1. What do we do with 0s?
-    We need to replace any of the 1s on the graph with a 2. However, if there are any other numbers on that graph (such as 0), we should leave them as they are.
-    2. How can we traverse this graph?
-    To traverse through this graph, we can use recursion. We will need some recursive function within our algorithm to repeat until our conditions are met.
-    3. What if the image is null?
-    If the image is null, then we can't do any transformation. Let's return the image if that is the case. If the image is of length 0, we also return the image, as the image is empty.
+
+- What do we do with 0s?
+We need to replace any of the 1s on the graph with a 2. However, if there are any other numbers on that graph (such as 0), we should leave them as they are.
+
+- How can we traverse this graph?
+To traverse through this graph, we can use recursion. We will need some recursive function within our algorithm to repeat until our conditions are met.
+
+- What if the image is null?
+If the image is null, then we can't do any transformation. Let's return the image if that is the case. If the image is of length 0, we also return the image, as the image is empty.
     
     ```markdown
     HAPPY CASE
