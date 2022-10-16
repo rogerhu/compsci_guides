@@ -72,6 +72,7 @@ For each class there are 3 statuses: not visited, visiting, visited.
     **Approach #1**
     
     ```java
+    # Java Solution
     class Solution {
         Boolean[] completedCourses;
         public boolean canFinish(int numCourses, int[][] prerequisites) {
@@ -141,6 +142,7 @@ For each class there are 3 statuses: not visited, visiting, visited.
     **Approach #2:** This approach creates a graph out of the prereq-course pairs, and attempts to topologically sort the graph into the `eligibleCourses` array.
     
     ```java
+    # Java Solution
     class Solution {
         public boolean canFinish(int numCourses, int[][] prerequisites) {
             int[] indegree = new int[numCourses];
