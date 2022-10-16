@@ -1,3 +1,11 @@
+## Linked Lists
+
+## Core Data Structures
+
+## Arrays and Strings
+
+## Binary Trees
+
 ## Graphs
 
 * [[Time Needed to Inform All Employees]]
@@ -22,3 +30,7 @@
 * [[Evaluate Division]]
 * [[Most Stones Removed]]
 * [[Clone Graph]]
+
+## Greedy Algorithms & Dynamic Programming
+
+## Backtracking
