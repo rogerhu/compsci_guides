@@ -1,5 +1,3 @@
-## Linked List UMPIRE Cheat Sheet
-
 ### Definition
 
 * A linked list is a sequence of data structures that are all connected together. Each link contains a connection to another link.
