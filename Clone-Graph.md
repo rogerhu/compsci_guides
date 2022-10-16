@@ -36,8 +36,7 @@ The difference is only in the traversal of DFS and BFS. DFS explores the depths 
 
 1. P-lan
     
-    General Description of plan (1-2 sentences)
-    
+ 
     1. Using DFS
         1. Check is current node is empty.
         2. Check if cached.
