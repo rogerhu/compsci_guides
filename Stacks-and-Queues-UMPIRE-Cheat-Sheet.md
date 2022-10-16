@@ -1,5 +1,3 @@
-## Stacks and Queues UMPIRE Cheat Sheet
-
 ### Definition
 
 Stacks and queues are foundational data structures that are useful when adding and removing in particular orders. It's important to be comfortable with these two data structures.
