@@ -20,7 +20,7 @@ word = "ABFSAB" -> returns 1
 word = "ABCD" -> returns 0
 ```
 
-1. M-atch
+2. M-atch
     
     For graph problems, some things we want to consider are:
     
@@ -28,7 +28,7 @@ word = "ABCD" -> returns 0
     
     How should we traverse the matrix efficiently? We need to think of a traversal approach. BFS? DFS? Both can work. But DFS will be better as it immediately checks the next node of the graph and returns if it is not needed after marking it as visited.
     
-2. P-lan
+3. P-lan
     1. Create helper function(node, string):
         1. If the string is empty, return true (success).
         2. If the node's letter is not the first letter of the string, return false (failure).
@@ -39,7 +39,7 @@ word = "ABCD" -> returns 0
         1. Return true if any of these helper function calls return true
             1. each node
             2. the full string
-3. I-mplement
+4. I-mplement
 
 ```python
 def exist(self, board: List[List[str]], word: str) -> bool:        
@@ -122,11 +122,11 @@ class Solution {
 }
 ```
 
-1. R-eview
+5. R-eview
 
 Verify the code works for the happy and edge cases you created in the “Understand” section
 
-1. E-valuate
+6. E-valuate
     
     **Time Complexity: O(m * n * 4^w)**
     
