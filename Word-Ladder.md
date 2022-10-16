@@ -47,7 +47,9 @@ No, the beginning and ending word will always be different.
     
     Traverse the wordList using BFS, starting from beginWord until we either reach the end or see endWord. As we visit each node, we add all adjacent nodes by looking up if a certain word exists in wordList.
     
-    `1) Create a set of all words in wordList, including endWord.
+
+```markdown
+    1) Create a set of all words in wordList, including endWord.
     2) Create a set of visited nodes
     3) Start BFS from beginWord, setting currentWord
        a) If currentWord is equal to endWord, return number of steps
@@ -58,8 +60,10 @@ No, the beginning and ending word will always be different.
     4) If endWord was not found, return 0
     
     Time Complexity: O(N*M^2)
-    Space Complexity: O(N*M)`
+    Space Complexity: O(N*M)
     
+```
+
     **Common Mistakes**
     
     - Some people may attempt to find adjacent pairs of words by computing finding the number of different letters between each word, whose runtime is O(M^2). Instead, the difference can be computed via iteration over the possible letters to allow a O(M*26) runtime.
