@@ -51,7 +51,7 @@
 
 
 Java Solution:     
-    ```java
+```java
     public int numIslands(char[][] grid) {
             if(grid == null || grid.length < 1 || grid[0].length < 1){
                 return 0;
@@ -103,11 +103,11 @@ Java Solution:
             }
             return p;
         }
-    ```
+```
     
 
 Python Solution:
-    ```python
+```python
     class Solution(object):
         def numIslands(self, grid):
             """
@@ -142,7 +142,7 @@ Python Solution:
                     if i < row-1 and grid[i+1][j] == '1':
                         union(index, index+col)
             return self.count
-    ```
+```
     
 5. R-eview
     
