@@ -1,4 +1,4 @@
-- [Backtracking](https://github.com/codepath/compsci_guides/wiki/Backtracking-UMPIRE-Cheat-Sheet)
+- [[Backtracking | Backtracking-UMPIRE-Cheat-Sheet]]
 
 - [Binary Trees](https://github.com/codepath/compsci_guides/wiki/Binary-Trees-UMPIRE-Cheat-Sheet)
 
