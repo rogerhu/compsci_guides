@@ -1,8 +1,15 @@
 🔗 **Leetcode Link:** [https://leetcode.com/problems/minimum-height-trees/description/](https://leetcode.com/problems/minimum-height-trees/description/)
 
-⏰ **Time to complete**: 18 mins
+⏰ **Time to complete**: __ mins
 
 1. **U-nderstand**
+
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
 
 - What would be a N^2 solution?
 A brute force N^2 solution would be to try every node and find its height. 
@@ -28,6 +35,8 @@ A degree of node is basically the number of edges connected to for from the node
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     For graph problems, some things we want to consider are:
     
@@ -38,11 +47,15 @@ A degree of node is basically the number of edges connected to for from the node
     How will you find the longest path in a tree? Randomly select any node in the tree and find the longest path from that node. Use DFS to do that. Let the terminal node be x. x must be the end-point of the true longest path in the tree. Run DFS/BFS from x to find the real longest path in the tree.
     
 3. P-lan
+
+> **Plan** the solution with appropriate visualizations and pseudocode.
     
 The idea is keep removing all of the leaves until there is the last layer of leaves, then those are the roots of the minimum height trees. Using an arrayList, add the first layer of leaves. Because when we break the longest branch in half, there can be at most 2 things at the top. If there are three, then we can break again. Remove all the other occurrences of this leaf from other rows that the leaf is associated with. Remove the row of the current leaf from the adjacency list.
                     
     
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     ```java
     class Solution {
@@ -124,8 +137,16 @@ The idea is keep removing all of the leaves until there is the last layer of lea
     
 5. R-eview
     
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 6. E-valuate
-    - Time Complexity: O(n)
-    - Space Complexity: O(n)
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
+Time Complexity: O(n)
+<br>
+Space Complexity: O(n)
