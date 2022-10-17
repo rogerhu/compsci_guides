@@ -1,8 +1,15 @@
 🔗 **Leetcode Link:** [https://leetcode.com/problems/cheapest-flights-within-k-stops/](https://leetcode.com/problems/cheapest-flights-within-k-stops/)
 
-⏰ **Time to complete**: 20 mins
+⏰ **Time to complete**: __ mins
 
 1. **U-nderstand**
+
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
 
 - When does a given path given priority over another?
 In a basic Dijkstra algorithm, the only basis upon which one path is given priority over another is the cost. In this problem however, there is an additional constraint; length of route or (number of stops).
@@ -23,6 +30,8 @@ We need to keep track of all routes to the node and compare on the basis of (cos
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     For graph problems, some things we want to consider are:
     
@@ -30,6 +39,7 @@ We need to keep track of all routes to the node and compare on the basis of (cos
     
 3. P-lan
     
+> **Plan** the solution with appropriate visualizations and pseudocode.
 
     To implement Dijkstra, we need a priority queue to pop out the lowest weight node for next search. In this case, the weight would be the accumulated flight cost. So my node takes a form of `(cost, src, k)`. `cost` is the accumulated cost, `src` is the current node's location, `k` is stop times we left as we only have at most K stops. I also convert `edges` to an adjacent list based graph `g`.
     
@@ -40,6 +50,8 @@ We need to keep track of all routes to the node and compare on the basis of (cos
     For Dijkstra, there is not need to maintain a `best cost` for each node since it's kind of greedy search. It always chooses the lowest cost node for next search. So the previous searched node always has a lower cost and has no chance to be updated. The first time we pop our destination from our queue, we have found the lowest cost to our destination.
     
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     ```java
     class Solution {
@@ -130,8 +142,16 @@ We need to keep track of all routes to the node and compare on the basis of (cos
     
 5. R-eview
     
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 6. E-valuate
-    - Time Complexity: O(KE), where E is # of edges and K is the # of stops
-    - Space Complexity: O(V), where V is the # of nodes in graph
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
+Time Complexity: `O(KE)`, where *E* is # of edges and K is the # of stops
+<br>
+Space Complexity: `O(V)`, where *V* is the # of nodes in graph
