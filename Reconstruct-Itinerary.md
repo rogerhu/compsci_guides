@@ -1,4 +1,3 @@
-# Wiki Solutions Guide
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/reconstruct-itinerary/](https://leetcode.com/problems/reconstruct-itinerary/)
