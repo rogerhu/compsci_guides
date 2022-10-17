@@ -1,3 +1,5 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/rotting-oranges/](https://leetcode.com/problems/rotting-oranges/)
 
 ⏰ **Time to complete**: __ mins
@@ -32,7 +34,7 @@
     Output: 0
     ```
     
-2. M-atch
+## 2. M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -40,7 +42,7 @@
     
     We can just push all these root nodes into a queue and perform BFS on a grid algorithm, to calculate the total time taken to rot all the oranges. Since there can be multiple rotten cells, we will push all those cells in the queue first and then continue with the BFS. If all oranges are not rotten before our algorithm terminates, we will return -1. 
     
-3. P-lan
+## 3. P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -54,11 +56,11 @@
     8. Else return the time required to rot all the oranges.
 
 
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
-    ```java
+```java
     static int dx[] = {1, 0, -1, 0};
     static int dy[] = {0, 1, 0, -1};
     public static int numberOfDays(int[][] grid) {
@@ -104,9 +106,9 @@
       }
       return countOfOnes == 0 ? days : -1;
     }
-    ```
+```
     
-    ```python
+```python
     def numberOfDays(grid):
         r = len(grid)
         c = len(grid[0])
@@ -145,9 +147,9 @@
                     fresh -= 1
                 size -= 1
         return -1 if fresh else days
-    ```
+```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -155,7 +157,7 @@
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
