@@ -1,8 +1,10 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/swim-in-rising-water/](https://leetcode.com/problems/swim-in-rising-water/)
 
 ⏰ **Time to complete**: __ mins
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -26,7 +28,7 @@ Start with `(0,0)`corner. On each moment of time we choose node with smallest v
     Output: 16
     ```
     
-2. M-atch
+## 2. M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -42,7 +44,7 @@ Start with `(0,0)`corner. On each moment of time we choose node with smallest v
     
     Another option is to a DFS. How do we know that a path exists? Here, we will travel in all the four directions (up, down, left, right) by not visiting the node we have visited earlier. And in this traversal we start from `[0,0]` and if we happen to touch `[n-1,m-1]`, then we can say that a path exists. This is general Depth First Traversal, but we have another constraint that we cannot move to a `height > t`, so we include a constraint that we can move in any of the four directions, if and only if, the height of the building in that direction is less than `t`.
     
-3. P-lan
+## 3. P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -53,11 +55,11 @@ Start with `(0,0)`corner. On each moment of time we choose node with smallest v
     
     Continue this until bottom right element is filled. This will be minimum.
     
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
-    ```java
+```java
     class Solution {
         int[][] directions = new int[][]{{0,1}, {0,-1}, {1,0}, {-1,0}};
         public int swimInWater(int[][] grid) {
@@ -100,9 +102,9 @@ Start with `(0,0)`corner. On each moment of time we choose node with smallest v
             return result;
         }
     }
-    ```
-    
-    ```python
+```
+
+```python
     class Solution:
         def swimInWater(self, grid: List[List[int]]) -> int:
             directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
@@ -133,9 +135,9 @@ Start with `(0,0)`corner. On each moment of time we choose node with smallest v
     
         def _isValid(self, r, c, N, visited):
             return r >= 0 and r < N and c >= 0 and c < N and not visited[r][c]
-    ```
+```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -143,7 +145,7 @@ Start with `(0,0)`corner. On each moment of time we choose node with smallest v
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
