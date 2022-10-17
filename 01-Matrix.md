@@ -1,8 +1,10 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/01-matrix/](https://leetcode.com/problems/01-matrix/)
 
 ⏰ **Time to complete**: __ mins
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -30,7 +32,7 @@ Store all the coordinates which have 1s.
     
     ```
     
-2. M-atch
+## 2. M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
@@ -48,7 +50,7 @@ Store all the coordinates which have 1s.
     5. now for those new queue element length will be set to updated length if
     that cell has -1.
     
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
@@ -132,7 +134,7 @@ Store all the coordinates which have 1s.
             return mat
     ```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -140,7 +142,7 @@ Store all the coordinates which have 1s.
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
