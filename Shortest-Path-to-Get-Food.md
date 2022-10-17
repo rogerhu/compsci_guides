@@ -1,8 +1,10 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/shortest-path-to-get-food/](https://leetcode.com/problems/shortest-path-to-get-food/)
 
 ⏰ **Time to complete**: __ mins
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -32,7 +34,7 @@ Until we find the food, return the level.
     Output: 6
     ```
     
-2. M-atch
+## 2. M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -40,22 +42,20 @@ Until we find the food, return the level.
     
     - The use of BFS can help us keep track of what cells are already visited. Once a cell is visited mark it with `X`, so that during BFS when we see a cell with `X`, it is either obstacle or is already visited, so we can skip it.
 
-3. P-lan
+## 3. P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
-    
-    General Description of plan (1-2 sentences)
     
     - First, we need to find where to start.
     - Starting BFS with the help of deque `(i, j, cnt)`, explore 4 neighbors and increment `cnt` by 1
     - Mark visited point as `X` to avoid revisit
     - If `#` is met, return `cnt`
 
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
-    ```java
+```java
     class Solution {
         public int getFood(char[][] grid) {
             Queue<int[]> queue = new LinkedList<>();
@@ -93,9 +93,9 @@ Until we find the food, return the level.
             return -1;
         }
     }
-    ```
-    
-    ```python
+```
+
+```python
     class Solution:
         def getFood(self, grid: List[List[str]]) -> int:
             m, n = len(grid), len(grid[0])
@@ -114,9 +114,9 @@ Until we find the food, return the level.
                     if 0 <= i < m and 0 <= j < n and grid[i][j] != 'X':
                         q.append((i, j, cnt + 1))
             return -1
-    ```
+```
     
-2. R-eview
+## 2. R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -124,7 +124,7 @@ Until we find the food, return the level.
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-3. E-valuate
+## 3. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
