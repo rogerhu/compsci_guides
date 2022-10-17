@@ -60,7 +60,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
 
 > **Implement** the code to solve the algorithm.
     
-    ```java
+```java
     class Solution {
       public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
     	   if (image[sr][sc] == newColor) return image;
@@ -77,9 +77,9 @@ If the image is null, then we can't do any transformation. Let's return the imag
     	   fill(image, sr, sc - 1, color, newColor);
     	}
     }
-    ```
+```
     
-    ```python
+```python
     class Solution:
         def floodFill(self, image, sr, sc, newColor):
     	   if (image[sr][sc] == newColor):
@@ -97,7 +97,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
     	       dfs(i, j-1)
     	   dfs(sr, sc)
     	   return image
-    ```
+```
     
 ## 5. R-eview
     
