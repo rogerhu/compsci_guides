@@ -149,10 +149,6 @@ class Solution {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
-    **Time Complexity: O(m * n * 4^w)**
-    
-    Board size = n * m. w - length of the word
-    
-    **Space Complexity: O(1)**
-    
-    The space complexity would be the length of the word, since the recursion stack only goes as far as the length. However, if you are using extra space to mark visited cells, then it would be the size of the board.
+Time Complexity: `O(m * n * 4^w)`, where Board size = n * m and w = length of the word
+<br>
+Space Complexity: `O(1)`. The space complexity would be the length of the word, since the recursion stack only goes as far as the length. However, if you are using extra space to mark visited cells, then it would be the size of the board.
