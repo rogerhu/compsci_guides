@@ -128,6 +128,6 @@ Until we find the food, return the level.
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Time Complexity: O(NM), where M is the number of rows and N is the number of columns. We had to traverse the whole grid.
+Time Complexity: `O(NM)`, where M is the number of rows and N is the number of columns. We had to traverse the whole grid.
 <br>
-Space Complexity: O(NM), where M is the number of rows and N is the number of columns. We needed a visited array to keep track of the visited cells in the grid.
+Space Complexity: `O(NM)`, where M is the number of rows and N is the number of columns. We needed a visited array to keep track of the visited cells in the grid.
