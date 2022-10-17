@@ -1,13 +1,7 @@
-- [[Backtracking | Backtracking-UMPIRE-Cheat-Sheet]]
-
-- [Binary Trees](https://github.com/codepath/compsci_guides/wiki/Binary-Trees-UMPIRE-Cheat-Sheet)
-
-- [Graphs](https://github.com/codepath/compsci_guides/wiki/Graphs-UMPIRE-Cheat-Sheet)
-
-- [Hash Tables](https://github.com/codepath/compsci_guides/wiki/Hash-Tables-UMPIRE-Cheat-Sheet)
-
-- [Linked Lists](https://github.com/codepath/compsci_guides/wiki/Linked-List-UMPIRE-Cheat-Sheet)
-
-- [Stacks and Queues](https://github.com/codepath/compsci_guides/wiki/Stacks-and-Queues-UMPIRE-Cheat-Sheet)
-
-- [Strings and Arrays](https://github.com/codepath/compsci_guides/wiki/String-and-Arrays-UMPIRE-Cheat-Sheet)
+- [[Backtracking | Backtracking UMPIRE Cheat Sheet]]
+- [[Binary Trees | Binary Trees UMPIRE Cheat Sheet]]
+- [[Graphs | Graphs UMPIRE Cheat Sheet]]
+- [[Hash Tables | Hash Tables UMPIRE Cheat Sheet]]
+- [[Linked Lists | Linked Lists UMPIRE Cheat Sheet]]
+- [[Stacks and Queues | Stacks and Queues UMPIRE Cheat Sheet]]
+- [[Strings and Arrays | Strings and Arrays UMPIRE Cheat Sheet]]
