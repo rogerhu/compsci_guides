@@ -1,8 +1,15 @@
 🔗 **Leetcode Link:** [https://leetcode.com/problems/course-schedule/](https://leetcode.com/problems/course-schedule/)
 
-⏰ **Time to complete**: 15 mins
+⏰ **Time to complete**: __ mins
 
 1. **U-nderstand**
+
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
 
 - When should the program return false? 
 We only return false when we encounter a cycle. We encounter a cycle when course A needs course B and course B needs course A. So we just need to write a function to check if course A needs course B and course B needs course A. As long as there is no cycle, we can complete all the courses.
@@ -33,6 +40,8 @@ For each class there are 3 statuses: not visited, visiting, visited.
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     For graph problems, some things we want to consider are:
     
@@ -43,6 +52,8 @@ For each class there are 3 statuses: not visited, visiting, visited.
     - Topological Sort - If a cycle ****exists, no topological ordering exists and therefore it will be impossible to take all courses.
     
 3. P-lan
+
+> **Plan** the solution with appropriate visualizations and pseudocode.
     
     **Approach #1**
     
@@ -67,7 +78,10 @@ For each class there are 3 statuses: not visited, visiting, visited.
         - ad_list = {1: []}
     - Fourth iteration, take course 1
     - ad_list is empty, so we have taken all courses
+
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     **Approach #1**
     
@@ -209,9 +223,16 @@ For each class there are 3 statuses: not visited, visiting, visited.
     
 5. R-eview
     
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 6. E-valuate
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
     - Time Complexity: O(N^2)
     - Space Complexity: O(N + E)
     
