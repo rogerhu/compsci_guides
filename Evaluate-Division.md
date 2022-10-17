@@ -1,8 +1,10 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/evaluate-division](https://leetcode.com/problems/evaluate-division)
 
 ⏰ **Time to complete**: __ mins
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -44,7 +46,7 @@ There can be up to 20 queries.
     Output: [6.00000,0.50000,-1.00000,1.00000,-1.00000]
     ```
     
-2. M-atch
+## 2. M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -58,7 +60,7 @@ There can be up to 20 queries.
     - We can use topological sort to traverse the graph, similar to BFS and DFS, and find the result.
     - **BONUS** – We can use floyd warshall to perform all node minimum distance computation, allowing O(1) query.
 
-3. P-lan
+## 3. P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -83,12 +85,11 @@ There can be up to 20 queries.
     
     - Make sure you really clarify all inputs. When treating this problem as a graph problem, they may assume information that can significantly affect runtime complexity. For instance, assuming the lengths of the variable names or number of equations greatly affects which algorithms can be used and how they are used. In this case, students should cover most, if not all, clarifications to develop an efficient algorithm.
 
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
-    ```java
-    // Java Code
+```java
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
     
         /* Build graph. */
@@ -134,10 +135,9 @@ There can be up to 20 queries.
             graph.putIfAbsent(v, new HashMap<>());
             graph.get(v).put(u, 1 / values[i]);
         }
-    ```
+```
     
-    ```python
-    # Python Code
+```python
     def calcEquation(equations, values, queries):
       graph = buildGraph(equations, values)
       results = []
@@ -175,9 +175,9 @@ There can be up to 20 queries.
         graph[v][u] = 1 / value
     
       return graph
-    ```
+```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -185,7 +185,7 @@ There can be up to 20 queries.
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
