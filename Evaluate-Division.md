@@ -4,6 +4,13 @@
 
 1. **U-nderstand**
 
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
+
 - How many equations can we have?
 We can have up to 20 questions.
 
@@ -38,6 +45,8 @@ There can be up to 20 queries.
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     For graph problems, some things we want to consider are:
     
@@ -48,7 +57,10 @@ There can be up to 20 queries.
     - We can use a map to store the edges in the graph to lookup equations by name, and store all neighbors by name.
     - We can use topological sort to traverse the graph, similar to BFS and DFS, and find the result.
     - **BONUS** – We can use floyd warshall to perform all node minimum distance computation, allowing O(1) query.
+
 3. P-lan
+
+> **Plan** the solution with appropriate visualizations and pseudocode.
     
     We will build a graph of the equation where the nodes are variables, edges are the equations, and edge weights are the equation values. Then, we will perform a topological sort to return the weight contribution of the children to the parent node.
     
@@ -70,7 +82,10 @@ There can be up to 20 queries.
     **Common Mistakes:**
     
     - Make sure you really clarify all inputs. When treating this problem as a graph problem, they may assume information that can significantly affect runtime complexity. For instance, assuming the lengths of the variable names or number of equations greatly affects which algorithms can be used and how they are used. In this case, students should cover most, if not all, clarifications to develop an efficient algorithm.
+
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     ```java
     // Java Code
@@ -164,8 +179,16 @@ There can be up to 20 queries.
     
 5. R-eview
     
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 6. E-valuate
-    - Time Complexity: O(N*K)
-    - Space Complexity: O(N)
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
+Time Complexity: O(N*K)
+<br>
+Space Complexity: O(N)
