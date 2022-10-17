@@ -1,8 +1,15 @@
 🔗 **Leetcode Link:** [https://leetcode.com/problems/word-search](https://leetcode.com/problems/word-search)
 
-⏰ **Time to complete**: 11 mins
+⏰ **Time to complete**: __ mins
 
 1. **U-nderstand**
+
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
 
 - When do we return true? Return true when the last letter is reached.
 
@@ -21,6 +28,8 @@ word = "ABCD" -> returns 0
 ```
 
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     For graph problems, some things we want to consider are:
     
@@ -29,6 +38,9 @@ word = "ABCD" -> returns 0
     How should we traverse the matrix efficiently? We need to think of a traversal approach. BFS? DFS? Both can work. But DFS will be better as it immediately checks the next node of the graph and returns if it is not needed after marking it as visited.
     
 3. P-lan
+
+> **Plan** the solution with appropriate visualizations and pseudocode.
+
     1. Create helper function(node, string):
         1. If the string is empty, return true (success).
         2. If the node's letter is not the first letter of the string, return false (failure).
@@ -39,7 +51,10 @@ word = "ABCD" -> returns 0
         1. Return true if any of these helper function calls return true
             1. each node
             2. the full string
+
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
 
 ```python
 def exist(self, board: List[List[str]], word: str) -> bool:        
@@ -124,9 +139,15 @@ class Solution {
 
 5. R-eview
 
-Verify the code works for the happy and edge cases you created in the “Understand” section
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
 
 6. E-valuate
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
     **Time Complexity: O(m * n * 4^w)**
     
