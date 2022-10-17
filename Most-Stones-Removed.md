@@ -64,7 +64,6 @@ Then the result should be zero.
 > **Implement** the code to solve the algorithm.
     
     ```java
-    // Java Code
     def removeStones(stones):
       f = {}
       islands = 0
@@ -91,7 +90,6 @@ Then the result should be zero.
     ```
     
     ```python
-    # Python Code
     public class Solution {
       Map<Integer, Integer> f = new HashMap<>();
       int islands = 0;
