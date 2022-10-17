@@ -168,6 +168,6 @@ The difference is only in the traversal of DFS and BFS. DFS explores the depths 
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Time Complexity: `O(NM)`, where N is a number of nodes (vertices) and *M* is a number of edges
+Time Complexity: `O(NM)`, where *N* is a number of nodes (vertices) and *M* is a number of edges
 <br>
 Space Complexity: `O(N)`, accounting for the use of the hash map used in the Java solution or the stack used in the python solution
