@@ -1,3 +1,5 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/keys-and-rooms/](https://leetcode.com/problems/keys-and-rooms/)
 
 ⏰ **Time to complete**: __ mins
@@ -9,7 +11,7 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-1. U-nderstand
+## 1. U-nderstand
     - How do we keep track of the rooms? Does the set begin at room 0? If so, should I add 0 to the visited set?
     - What if the room has not been visited yet? "If the key is not visited yet, add the key to visited and recursively visit keys in that room, otherwise do not visit the room again."
     - When do we know all rooms are visited? "We can visit all rooms only when the size of visited set equals to the size of the rooms."
@@ -35,14 +37,14 @@
     - Think about a breadth-first search (BFS) queue or a depth-first search (DFS) stack approach, or even a DFS recursion approach here. The DFS can be implemented in Recursion or the classic iterative approach with the help of a stack.
     - We would need a hash set e.g. unordered_set to remember the rooms that we have been to. Then, as long as we are in the room, we can depth first search the rooms whose keys are in the room. Once the search is finished, we can count the number of the keys in the set, and compare to the number of the rooms.
 
-3. P-lan
+## 3. P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
     **Sample Approach:**
      Use a stack to store previous operator/operand combinations and compute the answer as we go.
     
-    ```
+```
     1) create a hashmap to hold graph that it will be a map of Integer: [], because we will insert room: [list of keys]
     2) build the map from the given list of lists
     3) create a boolean array to say whether a room is visited
@@ -53,18 +55,18 @@
     
     Time Complexity: O(N + K)
     Space Complexity: O(N)
-    ```
+```
     
     **Common Mistakes:**
     
     - What if we start at the beginning and push the values into some array, then visit the cells of those inner values and push their values into the array, as well. We should end up with an array of length rooms.length if we get all the keys.
     - Once DFS has completed (it will stop running once it can't find any more unvisited rooms), we check to see if its size is equal to the length of the rooms array.
 
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
-    ```python
+```python
     class Solution:
         def canVisitAllRooms(self, R: List[List[int]]) -> bool:
             vis, stack, count = [False for _ in range(len(R))], [0], 1
@@ -77,9 +79,9 @@
                         vis[k] = True
                         count += 1
             return len(R) == count
-    ```
+```
     
-    ```java
+```java
     class Solution {
         public boolean canVisitAllRooms(List<List<Integer>> rooms) {     
             Map<Integer, List<Integer>> graph = new HashMap<>();
@@ -110,9 +112,9 @@
             return true;
         }
     }
-    ```
+```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -120,7 +122,7 @@
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
