@@ -1,8 +1,16 @@
 🔗 **Leetcode Link:** [https://leetcode.com/problems/maximal-network-rank](https://leetcode.com/problems/maximal-network-rank/discuss/?currentPage=1&orderBy=most_votes&query=)
 
-⏰ **Time to complete**: 6 mins
+⏰ **Time to complete**: __ mins
 
 1. **U-nderstand**
+
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
+
     - How can you efficiently check if there is a road connecting two different cities?
     - Would it be efficient to use a matrix to save all the edges between vertex?
     - If the edge is close to `city_1` and `city_2`, then during counting, are they counted twice?
@@ -20,10 +28,14 @@
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
+
     - Use a hashtable of size `n` which stores sets for each city. Members of the sets are cities which are directly connected to the city the set corresponds to. Then, examine all unique pairs `(city_1, city_2)` and sum up the edges of both cities. If there is an edge between both cities, the sum needs to be reduced by one since the edge is counted twice. We store the highest sum of edges and return it.
+
 3. P-lan
-    
-    General Description of plan (1-2 sentences)
+
+> **Plan** the solution with appropriate visualizations and pseudocode.
     
     ```
     1) Use a hashtable of size `n` which stores sets for each city. Members of the sets are cities which are directly connected to the city the set corresponds to.
@@ -40,7 +52,11 @@
     
     - A common mistake would be iterating 2 times, in other words, 2 for loops, to find the 1st and 2nd maximum values while traversing the loop.
     - The 2 cities with most connections may not be necessarily connected with each other, and if they are connected, the common connection is counted only once.
+
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
+
     
     ```java
     class Solution {
@@ -93,9 +109,17 @@
     ```
     
 5. R-eview
-    
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 6. E-valuate
-    - Time Complexity: `O(M+N)`
-    - Space Complexity: `O(N)`
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
+Time Complexity: `O(M+N)`
+<br>
+Space Complexity: `O(N)`
