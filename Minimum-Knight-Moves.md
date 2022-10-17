@@ -1,8 +1,10 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/minimum-knight-moves](https://leetcode.com/problems/minimum-knight-moves/discuss/?currentPage=1&orderBy=most_votes&query=)
 
 ⏰ **Time to complete**: __ mins
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -29,7 +31,7 @@ Each position on the board can be thought of as a node. Edges can be thought of 
     Output: 4
     ```
     
-2. M-atch
+## 2. M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -41,7 +43,7 @@ Each position on the board can be thought of as a node. Edges can be thought of 
     
     At each point, we've got 8 coordinates (8 neighbors) that we can move to in any given location. As with normal BFS, we build a queue, keep track of what we've visited, and explore our 8 neighbors. Observe that our movements are completely symmetric. Whether our destination was `(x,y)`, `(x,-y)`, `(-x,y)`, or `(-x,-y)`, our answer would be the exact same. So what we can do is restrict our search space to just one quadrant (namely the 1st quadrant where `x,y` are both positive). When exploring our neighbors, if we ever fall outside of quadrant 1, ignore that neighbor. 
     
-3. P-lan
+## 3. P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -49,11 +51,11 @@ Each position on the board can be thought of as a node. Edges can be thought of 
     - Keep performing BFS from each point present in the queue. At each step poll a point and explore all 8 possible tiles where the knight can land and add those points to the queue if not visited.
     - Thus each point reaches one more hop to the neighbor. And eventually reaches the target node.
 
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
-    ```java
+```java
     class Solution {
         public int minKnightMoves(int x, int y) {
             Map<String, Integer> map = new HashMap<>();
@@ -84,9 +86,9 @@ Each position on the board can be thought of as a node. Edges can be thought of 
             return res;
         }
     }
-    ```
-    
-    ```python
+```
+
+```python
     class Solution:
         def minKnightMoves(self, x: int, y: int) -> int:
             dirs = [(1, 2), (2, 1), (1, -2), (2, -1), (-1, 2), (-2, 1)]
@@ -111,9 +113,9 @@ Each position on the board can be thought of as a node. Edges can be thought of 
                         queue.append((next_coord, next_count))
                
             return -1
-    ```
+```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -121,7 +123,7 @@ Each position on the board can be thought of as a node. Edges can be thought of 
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
