@@ -2,6 +2,13 @@
 
 ⏰ **Time to complete**: 17 mins
 
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
+
 1. **U-nderstand**
 
 - What do we do with 0s?
@@ -27,13 +34,17 @@ If the image is null, then we can't do any transformation. Let's return the imag
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     For graph problems, some things we want to consider are:
     
     - BFS or DFS would work on this problem. Carrying out DFS is simple on this array by balancing edges cases wherein row and col point to out of index values. After handling those values, we call recursive function again on matrix with the corrsponding values of row and col (i.e. [row-1][col], [row+1][col], [row][col-1], [row][col+1]). Now for the algorithm to not recompute on previously computed values, we can use the same check for value of color.
+
+
 3. P-lan
     
-    General Description of plan (1-2 sentences)
+> **Plan** the solution with appropriate visualizations and pseudocode.
     
     Store our starting point in a variable. We are given our starting point through the parameters `image`, `sr`, and `sc`. `sr` represents the row, and `sc` represents the column. Step 1 starts from the middle as the starting pixel, changes itself to the new color which is ‘2’ in this case. It checks its neighbors (left, right, top, bottom), replaces those that had the same number as the one the starting pixel had (which is 1) before it changed to the new color (2). So it changes all the 1s to 2s as long as they are neighbors. Then moves to its left neighbor (1st column) to go through the same process.
     
@@ -44,6 +55,8 @@ If the image is null, then we can't do any transformation. Let's return the imag
     There is a tricky case where the new color is the same as the original color and if the DFS is done on it, there will be an infinite loop. If new color is same as original color, there is nothing to be done and we can simply return the `image`.
     
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     ```java
     class Solution {
@@ -86,8 +99,15 @@ If the image is null, then we can't do any transformation. Let's return the imag
     
 5. R-eview
     
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 6. E-valuate
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
     - Time Complexity: `O(NM)`, note: every element of matrix is processed
     - Space Complexity: `O(NM)`
