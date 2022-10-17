@@ -1,8 +1,10 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** 
 
 ⏰ **Time to complete**: __ mins
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -30,7 +32,7 @@ Then the result should be zero.
     Output: 0
     ```
     
-2. M-atch
+## 2. M-atch
     
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
@@ -41,7 +43,7 @@ Then the result should be zero.
     - We can use a map to store the edges in the graph to lookup rows by index to reduce average runtime complexity.
     - We can use union find to count the number of islands by adding each stone to union-find set, and counting number of sets.
 
-3. P-lan
+## 3. P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
@@ -59,11 +61,11 @@ Then the result should be zero.
     
     - Some people may want to sort the array first, but there are faster solutions if we avoid sorting. We can reduce runtime complexity from O(N*log(N)) to O(N+M) if we avoid sorting either of the arrays. Though, we can sort for O(1) space complexity.
 
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
-    ```python
+```python
     def removeStones(stones):
       f = {}
       islands = 0
@@ -87,9 +89,9 @@ Then the result should be zero.
       for [x, y] in stones:
         union(x, ~y)
       return len(stones) - islands
-    ```
+```
     
-    ```java
+```java
     public class Solution {
       Map<Integer, Integer> f = new HashMap<>();
       int islands = 0;
@@ -117,9 +119,9 @@ Then the result should be zero.
           }
       }
     }
-    ```
+```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -127,7 +129,7 @@ Then the result should be zero.
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
