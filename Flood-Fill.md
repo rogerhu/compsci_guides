@@ -1,6 +1,8 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/flood-fill/](https://leetcode.com/problems/flood-fill/)
 
-⏰ **Time to complete**: 17 mins
+⏰ **Time to complete**: __ mins
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -9,7 +11,7 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 - What do we do with 0s?
 We need to replace any of the 1s on the graph with a 2. However, if there are any other numbers on that graph (such as 0), we should leave them as they are.
@@ -33,7 +35,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
     Output: [[0,0,0],[0,1,0],[0,0,1]]
     ```
     
-2. M-atch
+## 2. M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -42,7 +44,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
     - BFS or DFS would work on this problem. Carrying out DFS is simple on this array by balancing edges cases wherein row and col point to out of index values. After handling those values, we call recursive function again on matrix with the corrsponding values of row and col (i.e. [row-1][col], [row+1][col], [row][col-1], [row][col+1]). Now for the algorithm to not recompute on previously computed values, we can use the same check for value of color.
 
 
-3. P-lan
+## 3. P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -54,7 +56,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
     
     There is a tricky case where the new color is the same as the original color and if the DFS is done on it, there will be an infinite loop. If new color is same as original color, there is nothing to be done and we can simply return the `image`.
     
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
@@ -97,7 +99,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
     	   return image
     ```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -105,7 +107,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
