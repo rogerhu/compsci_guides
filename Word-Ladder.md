@@ -1,8 +1,10 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/word-ladder/](https://leetcode.com/problems/word-ladder/)
 
 ⏰ **Time to complete**: __ mins
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -41,7 +43,7 @@ No, the beginning and ending word will always be different.
     Output: 0
     ```
     
-2. M-atch
+## 2. M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -53,7 +55,7 @@ No, the beginning and ending word will always be different.
     - We can use an adjacency matrix to store graph, but will cause runtime slowdowns of O(N^2) for a sparse graph.
     - We can use topological sort to traverse the graph, but will share similar limitations like DFS.
 
-3. P-lan
+## 3. P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
@@ -80,12 +82,11 @@ No, the beginning and ending word will always be different.
     
     - Some people may attempt to find adjacent pairs of words by computing finding the number of different letters between each word, whose runtime is O(M^2). Instead, the difference can be computed via iteration over the possible letters to allow a O(M*26) runtime.
 
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
-    ```java
-    // Java Code
+```java
     private static final char[] letters = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
@@ -114,10 +115,9 @@ No, the beginning and ending word will always be different.
       }
       return 0;
     }
-    ```
+```
     
-    ```python
-    # Python Code
+```python
     LETTERS = set('abcdefghijklmnopqrstuvwxyz')
     
     def word_ladder(start, end, words):
@@ -137,9 +137,9 @@ No, the beginning and ending word will always be different.
                             queue.append([candidate, length + 1])
                             visited.add(candidate)
         return 0
-    ```
+```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -147,7 +147,7 @@ No, the beginning and ending word will always be different.
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
