@@ -57,8 +57,10 @@
             1. If the left neighbor is '1', call union
             2. If the upper neighbor is '1', call union
     3. Return the number of islands (sets)
+
 4. I-mplement
 
+> **Implement** the code to solve the algorithm.
 
 Java Solution:     
 ```java
