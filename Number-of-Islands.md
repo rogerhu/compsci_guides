@@ -62,8 +62,9 @@
 
 > **Implement** the code to solve the algorithm.
 
-Java Solution:     
+     
 ```java
+# Java Solution
     public int numIslands(char[][] grid) {
             if(grid == null || grid.length < 1 || grid[0].length < 1){
                 return 0;
@@ -118,8 +119,9 @@ Java Solution:
 ```
     
 
-Python Solution:
+
 ```python
+# Python Solution
     class Solution(object):
         def numIslands(self, grid):
             """
@@ -167,12 +169,12 @@ Python Solution:
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
-    Calculate complexity in terms of:
+Calculate complexity in terms of:
     
     - the number of grid elements, `V`
     - the size of the maximum island, `I`
-    
-    Time complexity:
+
+Time complexity:
     
     - `O(V)` to build array
     - `O(V)` iterations
@@ -180,4 +182,4 @@ Python Solution:
     - Total: **O(V log I)**
     - Can ensure `O(V log V)` by tuning union function
     
-    Space complexity: **O(V)**
+Space complexity: `O(V)`
