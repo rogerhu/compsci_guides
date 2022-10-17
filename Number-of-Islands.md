@@ -1,8 +1,10 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/number-of-islands](https://leetcode.com/problems/number-of-islands)
 
 ⏰ **Time to complete**: 15 mins
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -34,7 +36,7 @@
     Output: 2
     ```
     
-2. M-atch
+## 2. M-atch
     
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
@@ -45,7 +47,7 @@
     - Find-Union
         - Each set is a single island
         - Two pieces of land should be merged if they are adjacent
-3. P-lan
+## 3. P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -58,7 +60,7 @@
             2. If the upper neighbor is '1', call union
     3. Return the number of islands (sets)
 
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
 
@@ -158,14 +160,14 @@
             return self.count
 ```
     
-5. R-eview
+## 5. R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
 - Trace through your code with an input to check for the expected output
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
