@@ -1,8 +1,10 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://www.geeksforgeeks.org/find-whether-it-is-possible-to-finish-all-tasks-or-not-from-given-dependencies](https://www.geeksforgeeks.org/find-whether-it-is-possible-to-finish-all-tasks-or-not-from-given-dependencies)
 
 ⏰ **Time to complete**: __ mins
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -30,14 +32,14 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
     Output: true
     ```
     
-2. M-atch
+## 2. M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     How can we apply DFS on this problem?
     Given a starting vertex, it’s wise to find all vertices reachable from the start. There are many algorithms to do this, the simplest is the use of depth-first search. DFS enumerates the deepest paths. DFS only backtracks when it hits a dead end or an already-visited section of the graph.
     
-3. P-lan
+## 3. P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -58,16 +60,11 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
     - Each node is visited more than once.
     - Using Kahn's algorithm, you can peel off the nodes with indegree 0, rather than nodes with outdegree 0.
 
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
-    ```java
-    import java.util.ArrayList;
-    import java.util.LinkedList;
-    import java.util.List;
-    import java.util.Queue;
-    
+```java
     public class CanFinish {
     
         List<List<Integer>> edges;
@@ -105,26 +102,10 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
     
             return visited == numCourses;
         }
+  }
+```
     
-        public static void main(String[] args) {
-            CanFinish canFinish = new CanFinish();
-            System.out.println(!canFinish.canFinish(4, new int[][]{{0,1},{3,1},{1,3},{3,2}}));
-            System.out.println(canFinish.canFinish(5, new int[][]{{1,4},{2,4},{3,1},{3,2}}));
-            System.out.println(!canFinish.canFinish(3, new int[][]{{1,0},{2,0},{0,2}}));
-            System.out.println(!canFinish.canFinish(2, new int[][]{{1, 0},{0,1}}));
-            System.out.println(!canFinish.canFinish(13, new int[][]{{1,2},{2,3},{2,10},{3,4},{4,5},{4,11},{5,1}}));
-            System.out.println(!canFinish.canFinish(3, new int[][]{{1,0},{0,2},{2,1}}));
-    
-            System.out.println(canFinish.canFinish(8, new int[][]{{1,0},{2,6},{1,7},{6,4},{7,0},{0,5}}));
-            System.out.println(!canFinish.canFinish(20, new int[][]{{0,10},{3,18},{5,5},{6,11},{11,14},{13,1},{15,1},{17,4}}));
-    
-            System.out.println(canFinish.canFinish(2, new int[][]{{1, 0}}));
-        }
-    }
-    ```
-    
-    ```python
-    # Python Code
+```python
     def canFinish(self, n, prerequisites):
         arr = [[] for i in range(n)]
         degree = [0] * n
@@ -164,9 +145,9 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
                     break
             state[currNode] = Solution.SAFE if isSafe else Solution.UNSAFE
             return isSafe
-    ```
+```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -174,7 +155,7 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
