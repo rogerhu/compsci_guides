@@ -1,6 +1,13 @@
 🔗 **Leetcode Link:** [https://leetcode.com/problems/keys-and-rooms/](https://leetcode.com/problems/keys-and-rooms/)
 
-⏰ **Time to complete**: 17 mins
+⏰ **Time to complete**: __ mins
+
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
 
 1. U-nderstand
     - How do we keep track of the rooms? Does the set begin at room 0? If so, should I add 0 to the visited set?
@@ -20,12 +27,17 @@
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     To apply a graph algorithm for this problem, here are things we want to consider are:
     
     - Think about a breadth-first search (BFS) queue or a depth-first search (DFS) stack approach, or even a DFS recursion approach here. The DFS can be implemented in Recursion or the classic iterative approach with the help of a stack.
     - We would need a hash set e.g. unordered_set to remember the rooms that we have been to. Then, as long as we are in the room, we can depth first search the rooms whose keys are in the room. Once the search is finished, we can count the number of the keys in the set, and compare to the number of the rooms.
+
 3. P-lan
+
+> **Plan** the solution with appropriate visualizations and pseudocode.
     
     **Sample Approach:**
      Use a stack to store previous operator/operand combinations and compute the answer as we go.
@@ -47,7 +59,10 @@
     
     - What if we start at the beginning and push the values into some array, then visit the cells of those inner values and push their values into the array, as well. We should end up with an array of length rooms.length if we get all the keys.
     - Once DFS has completed (it will stop running once it can't find any more unvisited rooms), we check to see if its size is equal to the length of the rooms array.
+
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     ```python
     class Solution:
@@ -99,8 +114,16 @@
     
 5. R-eview
     
-    Verify the code works with the happy cases created in the “Understand” section. Afterwards, use the code for the edge cases created in the “Plan” section.
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 6. E-valuate
-    - Time Complexity: The time complexity for this algorithm is `O(N + K)`, where `N` is the number of rooms and `K` is the number of Keys.
-    - Space Complexity: The space complexity is `O(N)` since we are using a list to store the visited rooms list.
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
+Time Complexity: The time complexity for this algorithm is `O(N + K)`, where `N` is the number of rooms and `K` is the number of Keys.
+<br>
+Space Complexity: The space complexity is `O(N)` since we are using a list to store the visited rooms list.
