@@ -7,7 +7,7 @@
 * **Similar Questions**: 
     
 ## 1: U-nderstand
- 
+
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
 > - Established a set (2-3) of test cases to verify their own solution later.
