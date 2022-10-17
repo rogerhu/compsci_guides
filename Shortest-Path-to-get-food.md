@@ -1,8 +1,15 @@
 🔗 **Leetcode Link:** [https://leetcode.com/problems/shortest-path-to-get-food/](https://leetcode.com/problems/shortest-path-to-get-food/)
 
-⏰ **Time to complete**: 20 mins
+⏰ **Time to complete**: __ mins
 
 1. **U-nderstand**
+
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
 
 - Does this problem give us a starting point?
 This problem doesn't provide you a start point. We, then, need to find it by iterating over the grid to find the cell which value is `*`. The problem guarantee that there is only one `*`.
@@ -26,11 +33,16 @@ Until we find the food, return the level.
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     For graph problems, some things we want to consider are:
     
     - The use of BFS can help us keep track of what cells are already visited. Once a cell is visited mark it with `X`, so that during BFS when we see a cell with `X`, it is either obstacle or is already visited, so we can skip it.
+
 3. P-lan
+
+> **Plan** the solution with appropriate visualizations and pseudocode.
     
     General Description of plan (1-2 sentences)
     
@@ -39,7 +51,9 @@ Until we find the food, return the level.
     - Mark visited point as `X` to avoid revisit
     - If `#` is met, return `cnt`
 
-1. I-mplement
+4. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     ```java
     class Solution {
@@ -103,9 +117,17 @@ Until we find the food, return the level.
     ```
     
 2. R-eview
-    
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 3. E-valuate
-    - Time Complexity: O(NM), where M is the number of rows and N is the number of columns. We had to traverse the whole grid.
-    - Space Complexity: O(NM), where M is the number of rows and N is the number of columns. We needed a visited array to keep track of the visited cells in the grid.
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
+Time Complexity: O(NM), where M is the number of rows and N is the number of columns. We had to traverse the whole grid.
+<br<
+Space Complexity: O(NM), where M is the number of rows and N is the number of columns. We needed a visited array to keep track of the visited cells in the grid.
