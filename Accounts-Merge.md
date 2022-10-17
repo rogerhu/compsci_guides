@@ -1,8 +1,15 @@
 🔗 **Leetcode Link:** [https://leetcode.com/problems/accounts-merge](https://leetcode.com/problems/accounts-merge)
 
-⏰ **Time to complete**: 17 mins
+⏰ **Time to complete**: __ mins
 
 1. **U-nderstand**
+
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
 
 - How do we identify an account?
     We give each account an ID, based on the index of it within the list of accounts. For example: 
@@ -32,6 +39,8 @@
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     For graph problems, some things we want to consider are:
     
@@ -55,11 +64,13 @@
     
 3. P-lan
     
-    General Description of plan (1-2 sentences)
+> **Plan** the solution with appropriate visualizations and pseudocode.
     
     Build a graph with an adjacency list of emails. Every email should have an edge to the connected email (including itself). From this, we can maintain a list of emails to account name list. Next, do a DFS for the unique email (using a hashset 'visited') to fill the emails for the given account name. Then, we can add the account name to the email address. Add the resultant account to end result.
     
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     ```java
     class Solution {
@@ -141,8 +152,15 @@
     
 5. R-eview
     
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 6. E-valuate
-    - Time Complexity: `O(V + E)`, where `V` is the number accounts (can contain duplicates) and `E` is the number of accounts (without any duplicates)
-    - Space Complexity: `O(V + E)`, where `V` is the number accounts (can contain duplicates) and `E` is the number of accounts (without any duplicates)
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
+Time Complexity: `O(V + E)`, where `V` is the number accounts (can contain duplicates) and `E` is the number of accounts (without any duplicates)
+Space Complexity: `O(V + E)`, where `V` is the number accounts (can contain duplicates) and `E` is the number of accounts (without any duplicates)
