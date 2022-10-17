@@ -63,7 +63,7 @@ Then the result should be zero.
 
 > **Implement** the code to solve the algorithm.
     
-    ```java
+    ```python
     def removeStones(stones):
       f = {}
       islands = 0
@@ -89,7 +89,7 @@ Then the result should be zero.
       return len(stones) - islands
     ```
     
-    ```python
+    ```java
     public class Solution {
       Map<Integer, Integer> f = new HashMap<>();
       int islands = 0;
