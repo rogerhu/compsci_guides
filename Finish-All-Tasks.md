@@ -1,8 +1,15 @@
 🔗 **Leetcode Link:** [https://www.geeksforgeeks.org/find-whether-it-is-possible-to-finish-all-tasks-or-not-from-given-dependencies](https://www.geeksforgeeks.org/find-whether-it-is-possible-to-finish-all-tasks-or-not-from-given-dependencies)
 
-⏰ **Time to complete**: 15 mins
+⏰ **Time to complete**: __ mins
 
 1. **U-nderstand**
+
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
 
 - How do we encode the prerequisites into a graph?
 You can denote each course as a node and the prerequisite relationship as an one-direction edge.
@@ -24,11 +31,15 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     How can we apply DFS on this problem?
     Given a starting vertex, it’s wise to find all vertices reachable from the start. There are many algorithms to do this, the simplest is the use of depth-first search. DFS enumerates the deepest paths. DFS only backtracks when it hits a dead end or an already-visited section of the graph.
     
 3. P-lan
+
+> **Plan** the solution with appropriate visualizations and pseudocode.
     
     ```
     1) if(current is already processed), return false
@@ -48,6 +59,8 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
     - Using Kahn's algorithm, you can peel off the nodes with indegree 0, rather than nodes with outdegree 0.
 
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     ```java
     import java.util.ArrayList;
@@ -155,8 +168,16 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
     
 5. R-eview
     
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 6. E-valuate
-    - Time Complexity: O(E+V)
-    - Space Complexity: O(V)
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
+Time Complexity: O(E+V)
+<br>
+Space Complexity: O(V)
