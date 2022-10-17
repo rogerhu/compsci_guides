@@ -4,6 +4,13 @@
 
 1. **U-nderstand**
 
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
+
 - What are the possible characters in the words?
 All lowercase alphabet letters.
 
@@ -35,6 +42,8 @@ No, the beginning and ending word will always be different.
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     For graphs, some of the top things we want to consider are:
     
@@ -43,8 +52,11 @@ No, the beginning and ending word will always be different.
     - We can use an adjacency list to store graph, which works well for our sparse graph.
     - We can use an adjacency matrix to store graph, but will cause runtime slowdowns of O(N^2) for a sparse graph.
     - We can use topological sort to traverse the graph, but will share similar limitations like DFS.
+
 3. P-lan
     
+> **Plan** the solution with appropriate visualizations and pseudocode.
+
     Traverse the wordList using BFS, starting from beginWord until we either reach the end or see endWord. As we visit each node, we add all adjacent nodes by looking up if a certain word exists in wordList.
     
 
@@ -67,7 +79,10 @@ No, the beginning and ending word will always be different.
     **Common Mistakes**
     
     - Some people may attempt to find adjacent pairs of words by computing finding the number of different letters between each word, whose runtime is O(M^2). Instead, the difference can be computed via iteration over the possible letters to allow a O(M*26) runtime.
+
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     ```java
     // Java Code
@@ -126,8 +141,16 @@ No, the beginning and ending word will always be different.
     
 5. R-eview
     
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 6. E-valuate
-    - Time Complexity: O(N*M^2)
-    - Space Complexity: O(N*M)
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
+Time Complexity: O(N*M^2)
+<br>
+Space Complexity: O(N*M)
