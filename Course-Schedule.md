@@ -1,8 +1,10 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/course-schedule/](https://leetcode.com/problems/course-schedule/)
 
 ⏰ **Time to complete**: __ mins
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -39,7 +41,7 @@ For each class there are 3 statuses: not visited, visiting, visited.
     Explanation: In this case, no courses have prereqs, so we can take them in any order
     ```
     
-2. M-atch
+## 2. M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -51,7 +53,7 @@ For each class there are 3 statuses: not visited, visiting, visited.
         - If node `v` has been visited, then mark it as `+1`. If a vertex was marked as `1`, then no ring contains `v` or its successors.
     - Topological Sort - If a cycle ****exists, no topological ordering exists and therefore it will be impossible to take all courses.
     
-3. P-lan
+## 3. P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -79,13 +81,13 @@ For each class there are 3 statuses: not visited, visiting, visited.
     - Fourth iteration, take course 1
     - ad_list is empty, so we have taken all courses
 
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
     **Approach #1**
     
-    ```java
+```java
     # Java Solution
     class Solution {
         Boolean[] completedCourses;
@@ -125,9 +127,9 @@ For each class there are 3 statuses: not visited, visiting, visited.
             return false;
         }
     }
-    ```
+```
     
-    ```python
+```python
     # Python Code
     class Solution:
         def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
@@ -151,11 +153,11 @@ For each class there are 3 statuses: not visited, visiting, visited.
                 ad_list.pop(next_course)
             
             return True
-    ```
+```
     
     **Approach #2:** This approach creates a graph out of the prereq-course pairs, and attempts to topologically sort the graph into the `eligibleCourses` array.
     
-    ```java
+```java
     # Java Solution
     class Solution {
         public boolean canFinish(int numCourses, int[][] prerequisites) {
@@ -190,9 +192,9 @@ For each class there are 3 statuses: not visited, visiting, visited.
             return true;
         }
     }
-    ```
+```
     
-    ```python
+```python
     # Python Code
     class Solution:
         def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
@@ -219,9 +221,9 @@ For each class there are 3 statuses: not visited, visiting, visited.
                 i += 1
             
             return len(eligibleCourses) == numCourses
-    ```
+```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -229,7 +231,7 @@ For each class there are 3 statuses: not visited, visiting, visited.
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
