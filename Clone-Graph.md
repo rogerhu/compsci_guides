@@ -1,8 +1,15 @@
 🔗 **Leetcode Link:** [https://leetcode.com/problems/clone-graph/](https://leetcode.com/problems/clone-graph/)
 
-⏰ **Time to complete**: 10 mins
+⏰ **Time to complete**: __ mins
 
 1. **U-nderstand**
+
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
 
 - Does the graph have to a connected graph?
 Yes, this graph has to be a connected graph. If it’s not connected, it’s impossible to clone a graph give only one node.
@@ -26,6 +33,8 @@ Based on the kind of graph we are expecting we can chose BFS or DFS.
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     For graph problems, some things we want to consider are:
     
@@ -36,7 +45,8 @@ The difference is only in the traversal of DFS and BFS. DFS explores the depths 
 
 1. P-lan
     
- 
+> **Plan** the solution with appropriate visualizations and pseudocode.
+
     1. Using DFS
         1. Check is current node is empty.
         2. Check if cached.
@@ -55,7 +65,10 @@ The difference is only in the traversal of DFS and BFS. DFS explores the depths 
     
     - Because you need to copy each single node and assign the correct reference to the copied node, you can easily make a mistake in assigning a pointer to the old reference.
     - To avoid cycles, we would need the `visited` hash map in both the BFS/DFS approaches. We need this to to keep track of the nodes which have already been copied. By doing this we don't end up traversing them again.
+
 2. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     ```java
     // DFS Java Code
@@ -145,8 +158,16 @@ The difference is only in the traversal of DFS and BFS. DFS explores the depths 
     
 3. R-eview
     
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 4. E-valuate
-    - Time Complexity: *O*(*N*+*M*), where *N* is a number of nodes (vertices) and *M* is a number of edges
-    - Space Complexity: *O*(*N*), accounting for the use of the hash map used in the Java solution or the stack used in the python solution
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
+Time Complexity: `O(NM)`, where N is a number of nodes (vertices) and *M* is a number of edges
+<br>
+Space Complexity: `O(N)`, accounting for the use of the hash map used in the Java solution or the stack used in the python solution
