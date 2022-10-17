@@ -1,16 +1,23 @@
 🔗 **Leetcode Link:** [https://leetcode.com/problems/rotting-oranges/](https://leetcode.com/problems/rotting-oranges/)
 
-⏰ **Time to complete**: 15 mins
+⏰ **Time to complete**: __ mins
+
+> **Understand** what the interviewer is asking for by using test cases and questions about the problem.
+> 
+> - Established a set (2-3) of test cases to verify their own solution later.
+> - Established a set (1-2) of edge cases to verify their solution handles complexities.
+> - Have fully understood the problem and have no clarifying questions.
+> - Have you verified any Time/Space Constraints for this problem?
 
 1. **U-nderstand**
     
-a. What do the possible values of the grid represent? 1’s are fresh oranges, 2’s are rotten oranges and 0’s are empty spaces
+- What do the possible values of the grid represent? 1’s are fresh oranges, 2’s are rotten oranges and 0’s are empty spaces
     
-b. What data structures can I use to store the grids? You can use a 2D array, hashset, queue, etc.
+- What data structures can I use to store the grids? You can use a 2D array, hashset, queue, etc.
     
-c. Do we need to keep track of the level? Yes, you can keep track of the level using a search algorithm. Trick is to only increment once per level and only if fresh.
+- Do we need to keep track of the level? Yes, you can keep track of the level using a search algorithm. Trick is to only increment once per level and only if fresh.
     
-d. What is a possible edge case? That there is no fresh, there is no rotten
+- What is a possible edge case? That there is no fresh, there is no rotten
     
     ```markdown
     HAPPY CASE
@@ -26,6 +33,8 @@ d. What is a possible edge case? That there is no fresh, there is no rotten
     ```
     
 2. M-atch
+
+> **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     We can model the grid in the form of a graph and to compute the distance for every node, we can apply standard BFS algorithm using a queue. We can think of it in a level by level manner. The key observation is that fresh oranges adjacent to rotten oranges are rotten on day 1, those adjacent to those oranges are rotten on day 2, and so on. The phenomenon is similar to a level order traversal on a graph, where all the initial rotten oranges act as root nodes.
     
@@ -33,7 +42,7 @@ d. What is a possible edge case? That there is no fresh, there is no rotten
     
 3. P-lan
     
-    General Description of plan (1-2 sentences)
+> **Plan** the solution with appropriate visualizations and pseudocode.
     
     1. Initialize a queue for breadth first search.
     2. Iterate over the entire grid and add all the rotten oranges in the queue and also keep counting the number of fresh oranges.
@@ -46,6 +55,8 @@ d. What is a possible edge case? That there is no fresh, there is no rotten
 
 
 4. I-mplement
+
+> **Implement** the code to solve the algorithm.
     
     ```java
     static int dx[] = {1, 0, -1, 0};
@@ -138,8 +149,15 @@ d. What is a possible edge case? That there is no fresh, there is no rotten
     
 5. R-eview
     
-    Verify the code works for the happy and edge cases you created in the “Understand” section
+> **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
+
+- Trace through your code with an input to check for the expected output
+- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+
     
 6. E-valuate
-    - Time Complexity: `O(n*m)`, where n — number of rows m– number of cols, for first traversal of the grid to find all the rotten and fresh oranges + O(n*m) for queue traversal if there is only one fresh orange and that too when the last orange is fresh.
-    - Space Complexity: `O(n*m)`, where n — number of rows m– number of cols, extra space for queue in the worst case when all the oranges are rotten.
+
+> **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
+
+Time Complexity: `O(n*m)`, where n — number of rows m– number of cols, for first traversal of the grid to find all the rotten and fresh oranges + O(n*m) for queue traversal if there is only one fresh orange and that too when the last orange is fresh.
+Space Complexity: `O(n*m)`, where n — number of rows m– number of cols, extra space for queue in the worst case when all the oranges are rotten.
