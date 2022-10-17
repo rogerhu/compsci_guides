@@ -2,7 +2,7 @@
 
 🔗 **Leetcode Link:** [https://leetcode.com/problems/number-of-islands](https://leetcode.com/problems/number-of-islands)
 
-⏰ **Time to complete**: 15 mins
+⏰ **Time to complete**: __ mins
 
 ## 1. **U-nderstand**
 
