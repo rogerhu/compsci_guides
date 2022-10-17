@@ -54,7 +54,7 @@ Store all the coordinates which have 1s.
 
 > **Implement** the code to solve the algorithm.
     
-    ```java
+```java
     class Solution {
         public int[][] updateMatrix(int[][] mat) {
     		// Queue to hold the co-ordinates
@@ -98,9 +98,9 @@ Store all the coordinates which have 1s.
     		return mat;
     	}
     }
-    ```
+```
     
-    ```python
+```python
     from collections import deque
     
     class Solution:
@@ -132,7 +132,7 @@ Store all the coordinates which have 1s.
                         
                 distance += 1
             return mat
-    ```
+```
     
 ## 5. R-eview
     
