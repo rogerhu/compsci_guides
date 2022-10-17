@@ -1,8 +1,10 @@
+## Problem Highlights
+
 🔗 **Leetcode Link:** [https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
 
 ⏰ **Time to complete**: __ mins
 
-1. **U-nderstand**
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -26,7 +28,7 @@ DFS and BFS are similar. First we build an adjacent-list graph base on edges. Th
     Output: 1
     ```
     
-2. M-atch
+## 2. M-atch
     
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
@@ -38,7 +40,7 @@ DFS and BFS are similar. First we build an adjacent-list graph base on edges. Th
     
     - Union Find: Basically, we want to minimize the height of the tree to reduce the number of operations of finding the parent node. In order to prevent generating a skewed tree, we should apply the weighted technique. The weighted technique records the number of nodes of a set in the corresponding root node as a negative number as shown in the code. Whenever two sets are about to be unioned, we calculate the total number of nodes and set one of the root with the larger number as the new root of the newly union set.
 
-3. P-lan
+## 3. P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -46,11 +48,11 @@ DFS and BFS are similar. First we build an adjacent-list graph base on edges. Th
     - Loop over the nodes and run a BFS on the node if it has not been explored before. It will behave as a sink that will swallow each connected component allowing you to increment a counter.
     - To make your algorithm more efficient, use a global visited set for the entire graph rather than a new visited set for each component.
 
-4. I-mplement
+## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
     
-    ```java
+```java
     class Solution {
         ArrayList<ArrayList<Integer>> adj = new ArrayList();
         public int countComponents(int n, int[][] edges) {
@@ -85,9 +87,9 @@ DFS and BFS are similar. First we build an adjacent-list graph base on edges. Th
             }
         }
     }
-    ```
+```
     
-    ```python
+```python
     class Solution:
         def countComponents(self, n: int, edges: List[List[int]]) -> int:
             adj_list = [[] for _ in range(n)]
@@ -114,9 +116,9 @@ DFS and BFS are similar. First we build an adjacent-list graph base on edges. Th
                     if neighbour not in seen:
                         seen.add(neighbour)
                         queue.append(neighbour)
-    ```
+```
     
-5. R-eview
+## 5. R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -124,7 +126,7 @@ DFS and BFS are similar. First we build an adjacent-list graph base on edges. Th
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-6. E-valuate
+## 6. E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
