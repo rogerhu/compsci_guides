@@ -4,7 +4,7 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
-* **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: TBD
     
 ## 1: U-nderstand
  
