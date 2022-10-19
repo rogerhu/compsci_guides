@@ -19,7 +19,7 @@
 * [[Number of Connected Components]]
 * [[Keys and Rooms]]
 * [[Minimum Knight Moves]]
-* [[Shortest Path to get food]]
+* [[Shortest Path to Get Food]]
 * [[Course Schedule]]
 * [[Minimum Height Trees]]
 * [[Word Ladder]]
