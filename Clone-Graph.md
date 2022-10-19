@@ -126,6 +126,20 @@ Step 3. Do the BFS traversal.
 
 **Approach #2: BFS**
 
+```python 
+    # BFS Python Solution
+    def cloneGraph(self, node):
+        dict = {}
+        stack = [node] if node else []
+        for i in stack:
+            if i not in dict:
+                dict[i] = UndirectedGraphNode(i.label)
+            stack.extend([j for j in i.neighbors if j not in dict])
+        for i in dict:
+            for j in i.neighbors:
+                dict[i].neighbors.append(dict[j])
+        return dict[node] if node else node
+```
 ```java
    // BFS Java Solution
     public class Solution {
@@ -151,20 +165,6 @@ Step 3. Do the BFS traversal.
             return map.get(node.label);
         }
     }
-```
-```python 
-    # BFS Python Solution
-    def cloneGraph(self, node):
-        dict = {}
-        stack = [node] if node else []
-        for i in stack:
-            if i not in dict:
-                dict[i] = UndirectedGraphNode(i.label)
-            stack.extend([j for j in i.neighbors if j not in dict])
-        for i in dict:
-            for j in i.neighbors:
-                dict[i].neighbors.append(dict[j])
-        return dict[node] if node else node
 ```
     
 ## 5. R-eview
