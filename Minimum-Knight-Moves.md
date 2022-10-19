@@ -1,8 +1,10 @@
 ## Problem Highlights
 
-🔗 **Leetcode Link:** [https://leetcode.com/problems/minimum-knight-moves](https://leetcode.com/problems/minimum-knight-moves/discuss/?currentPage=1&orderBy=most_votes&query=)
+* 🔗 **Leetcode Link:** [https://leetcode.com/problems/minimum-knight-moves](https://leetcode.com/problems/minimum-knight-moves) 
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Graphs
+* **Similar Questions**: TBD
 
-⏰ **Time to complete**: __ mins
 
 ## 1. **U-nderstand**
 
