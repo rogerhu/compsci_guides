@@ -1,8 +1,9 @@
 ## Problem Highlights
 
-🔗 **Leetcode Link:** [https://leetcode.com/problems/keys-and-rooms/](https://leetcode.com/problems/keys-and-rooms/)
-
-⏰ **Time to complete**: __ mins
+* 🔗 **Leetcode Link:** [https://leetcode.com/problems/keys-and-rooms/](https://leetcode.com/problems/keys-and-rooms/)
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Graphs
+* **Similar Questions**: TBD
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
