@@ -1,8 +1,8 @@
 ## Problem Highlights
 
 🔗 **Leetcode Link:** [https://leetcode.com/problems/number-of-islands](https://leetcode.com/problems/number-of-islands)
-
 ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search, Union Find
 
 ## 1. **U-nderstand**
 
@@ -44,7 +44,7 @@
     
     - Depth-First Search
         - The idea is to consider the given matrix as a graph, where each cell is a node of the given graph. Two nodes contain an edge if and only if there is a ‘1’ either horizontally or vertically.
-    - Find-Union
+    - Union Find
         - Each set is a single island
         - Two pieces of land should be merged if they are adjacent
 ## 3. P-lan
