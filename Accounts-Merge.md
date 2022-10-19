@@ -1,9 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/accounts-merge](https://leetcode.com/problems/accounts-merge)
+* 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs, Depth-First Search
-* **Similar Questions**: TBD
+* 🛠️ **Topics**: Graphs
+* 🗒️ **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
