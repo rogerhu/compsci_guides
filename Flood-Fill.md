@@ -1,9 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/flood-fill/](https://leetcode.com/problems/flood-fill/)
+* 💡 **Problem Difficulty:** Easy
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
-* **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
