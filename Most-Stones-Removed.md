@@ -1,9 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)
+* 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs
-* **Similar Questions**: TBD
+* 🛠️ **Topics**: Graphs, Depth-First Search
+* 🗒️ **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
