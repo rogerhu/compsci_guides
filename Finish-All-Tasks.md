@@ -1,9 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://www.geeksforgeeks.org/find-whether-it-is-possible-to-finish-all-tasks-or-not-from-given-dependencies](https://www.geeksforgeeks.org/find-whether-it-is-possible-to-finish-all-tasks-or-not-from-given-dependencies)
+* 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs
-* **Similar Questions**: TBD
+* 🛠️ **Topics**: Graphs, Depth-First Search
+* 🗒️ **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
