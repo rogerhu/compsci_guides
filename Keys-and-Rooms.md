@@ -1,9 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/keys-and-rooms/](https://leetcode.com/problems/keys-and-rooms/)
+* 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs
-* **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: TBD
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
