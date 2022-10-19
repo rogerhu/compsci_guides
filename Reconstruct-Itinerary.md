@@ -1,9 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/reconstruct-itinerary/](https://leetcode.com/problems/reconstruct-itinerary/)
+* 💡 **Problem Difficulty:** Hard
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs, DFS, Adjacency List
-* **Similar Questions**: 
+* 🗒️ **Similar Questions**: TBD
     
 ## 1: U-nderstand
 
