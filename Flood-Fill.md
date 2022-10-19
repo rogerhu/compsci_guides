@@ -1,8 +1,10 @@
 ## Problem Highlights
 
-🔗 **Leetcode Link:** [https://leetcode.com/problems/flood-fill/](https://leetcode.com/problems/flood-fill/)
+* 🔗 **Leetcode Link:** [https://leetcode.com/problems/flood-fill/](https://leetcode.com/problems/flood-fill/)
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
+* **Similar Questions**: TBD
 
-⏰ **Time to complete**: __ mins
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
