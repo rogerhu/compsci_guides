@@ -1,9 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/word-search](https://leetcode.com/problems/word-search)
+* 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
-* **Similar Questions**: TBD
+* 🛠️ **Topics**: Graphs
+* 🗒️ **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
