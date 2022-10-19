@@ -1,8 +1,9 @@
 ## Problem Highlights
 
-🔗 **Leetcode Link:** [https://leetcode.com/problems/course-schedule/](https://leetcode.com/problems/course-schedule/)
-
-⏰ **Time to complete**: __ mins
+* 🔗 **Leetcode Link:** [https://leetcode.com/problems/course-schedule/](https://leetcode.com/problems/course-schedule/)
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Graphs
+* **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
