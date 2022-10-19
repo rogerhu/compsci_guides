@@ -51,21 +51,21 @@ The difference is only in the traversal of DFS and BFS. DFS explores the depths 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 - Using DFS
-1. Check is current node is empty.
-2. Check if cached.
-3. Create a new node and save it into map.
-4. Use DFS to copy all its neighbors.
+Step 1. Check is current node is empty.
+Step 2. Check if cached.
+Step 3. Create a new node and save it into map.
+Step 4. Use DFS to copy all its neighbors.
 
 - Using BFS
-1. Use a hash map to store the reference of the copy of all the nodes that have already been visited and copied. 
-2. Add the first node to the queue. 
-3. Do the BFS traversal.
+Step 1. Use a hash map to store the reference of the copy of all the nodes that have already been visited and copied. 
+Step 2. Add the first node to the queue. 
+Step 3. Do the BFS traversal.
             - Pop a node from the front of the queue.
             - Visit all the neighbors of this node.
             - If any of the neighbors was already visited then it must be present in the `visited` dictionary. Get the clone of this neighbor from `visited` in that case.
             - Add the clones of the neighbors to the corresponding list of the clone node.
     
-** ⚠️ Common Mistakes**
+⚠️ Common Mistakes
     
     - Because you need to copy each single node and assign the correct reference to the copied node, you can easily make a mistake in assigning a pointer to the old reference.
     - To avoid cycles, we would need the `visited` hash map in both the BFS/DFS approaches. We need this to to keep track of the nodes which have already been copied. By doing this we don't end up traversing them again.
