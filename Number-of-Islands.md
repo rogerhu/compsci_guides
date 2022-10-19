@@ -1,7 +1,9 @@
 ## Problem Highlights
 
 🔗 **Leetcode Link:** [https://leetcode.com/problems/number-of-islands](https://leetcode.com/problems/number-of-islands)
+
 ⏰ **Time to complete**: __ mins
+
 * 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search, Union Find
 
 ## 1. **U-nderstand**
