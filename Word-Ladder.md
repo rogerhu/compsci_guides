@@ -1,8 +1,9 @@
 ## Problem Highlights
 
-🔗 **Leetcode Link:** [https://leetcode.com/problems/word-ladder/](https://leetcode.com/problems/word-ladder/)
-
-⏰ **Time to complete**: __ mins
+* 🔗 **Leetcode Link:** [https://leetcode.com/problems/word-ladder/](https://leetcode.com/problems/word-ladder/)
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
+* **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
