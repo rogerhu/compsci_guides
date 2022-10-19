@@ -82,7 +82,24 @@ Step 3. Do the BFS traversal.
 ## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
-    
+
+**Approach #1: DFS**
+
+```python
+    # DFS Python Solution
+    def cloneGraph(self, node):
+        dict = {}
+        stack = [node] if node else []
+        while stack:
+            i = stack.pop()
+            if i not in dict:
+                dict[i] = UndirectedGraphNode(i.label)
+            stack.extend([j for j in i.neighbors if j not in dict])
+        for i in dict:
+            for j in i.neighbors:
+                dict[i].neighbors.append(dict[j])
+        return dict[node] if node else node
+```    
 ```java
    // DFS Java Solution    
     class Solution {
@@ -106,6 +123,8 @@ Step 3. Do the BFS traversal.
         }
     }
 ```
+
+**Approach #2: BFS**
 
 ```java
    // BFS Java Solution
@@ -133,23 +152,6 @@ Step 3. Do the BFS traversal.
         }
     }
 ```
-    
-```python
-    # DFS Python Solution
-    def cloneGraph(self, node):
-        dict = {}
-        stack = [node] if node else []
-        while stack:
-            i = stack.pop()
-            if i not in dict:
-                dict[i] = UndirectedGraphNode(i.label)
-            stack.extend([j for j in i.neighbors if j not in dict])
-        for i in dict:
-            for j in i.neighbors:
-                dict[i].neighbors.append(dict[j])
-        return dict[node] if node else node
-```
-    
 ```python 
     # BFS Python Solution
     def cloneGraph(self, node):
