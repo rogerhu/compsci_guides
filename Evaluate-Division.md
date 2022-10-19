@@ -1,8 +1,9 @@
 ## Problem Highlights
 
-🔗 **Leetcode Link:** [https://leetcode.com/problems/evaluate-division](https://leetcode.com/problems/evaluate-division)
-
-⏰ **Time to complete**: __ mins
+* 🔗 **Leetcode Link:** [https://leetcode.com/problems/evaluate-division](https://leetcode.com/problems/evaluate-division)
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Graphs
+* **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
