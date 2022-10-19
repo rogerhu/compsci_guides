@@ -83,7 +83,8 @@ Step 3. Do the BFS traversal.
 
 > **Implement** the code to solve the algorithm.
     
-```java (dfs)    
+```java
+   // DFS Java Solution    
     class Solution {
         private Map<Integer, Node> map;
         public Node cloneGraph(Node node) {
@@ -106,7 +107,8 @@ Step 3. Do the BFS traversal.
     }
 ```
 
-```java (bfs)
+```java (
+   // BFS Java Solution
     public class Solution {
         public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
             if (node == null)
@@ -132,7 +134,8 @@ Step 3. Do the BFS traversal.
     }
 ```
     
-```python (dfs)
+```python
+    # DFS Python Solution
     def cloneGraph(self, node):
         dict = {}
         stack = [node] if node else []
@@ -147,7 +150,8 @@ Step 3. Do the BFS traversal.
         return dict[node] if node else node
 ```
     
-```python (bfs)
+```python 
+    # BFS Python Solution
     def cloneGraph(self, node):
         dict = {}
         stack = [node] if node else []
