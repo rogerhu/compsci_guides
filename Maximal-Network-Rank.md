@@ -1,9 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/maximal-network-rank](https://leetcode.com/problems/maximal-network-rank)
+* 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs, Hashtable
-* **Similar Questions**: TBD
+* 🛠️ **Topics**: Graphs
+* 🗒️ **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
