@@ -86,7 +86,6 @@ Step 3. Do the BFS traversal.
 **Approach #1: DFS**
 
 ```python
-    # DFS Python Solution
     def cloneGraph(self, node):
         dict = {}
         stack = [node] if node else []
@@ -100,8 +99,7 @@ Step 3. Do the BFS traversal.
                 dict[i].neighbors.append(dict[j])
         return dict[node] if node else node
 ```    
-```java
-   // DFS Java Solution    
+```java 
     class Solution {
         private Map<Integer, Node> map;
         public Node cloneGraph(Node node) {
@@ -127,7 +125,6 @@ Step 3. Do the BFS traversal.
 **Approach #2: BFS**
 
 ```python 
-    # BFS Python Solution
     def cloneGraph(self, node):
         dict = {}
         stack = [node] if node else []
@@ -141,7 +138,6 @@ Step 3. Do the BFS traversal.
         return dict[node] if node else node
 ```
 ```java
-   // BFS Java Solution
     public class Solution {
         public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
             if (node == null)
