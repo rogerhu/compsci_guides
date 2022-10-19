@@ -5,6 +5,7 @@
 * 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
 * **Similar Questions**: TBD
 
+## 1. **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -12,8 +13,6 @@
 > - Established a set (1-2) of edge cases to verify their solution handles complexities.
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
-
-## 1. **U-nderstand**
 
 - What do we do with 0s?
 We need to replace any of the 1s on the graph with a 2. However, if there are any other numbers on that graph (such as 0), we should leave them as they are.
