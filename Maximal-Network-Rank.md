@@ -1,8 +1,9 @@
 ## Problem Highlights
 
-🔗 **Leetcode Link:** [https://leetcode.com/problems/maximal-network-rank](https://leetcode.com/problems/maximal-network-rank/discuss/?currentPage=1&orderBy=most_votes&query=)
-
-⏰ **Time to complete**: __ mins
+* 🔗 **Leetcode Link:** [https://leetcode.com/problems/maximal-network-rank](https://leetcode.com/problems/maximal-network-rank)
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Graphs, Hashtable
+* **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
