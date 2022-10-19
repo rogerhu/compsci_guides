@@ -1,9 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/01-matrix/](https://leetcode.com/problems/01-matrix/)
+* 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs, Breadth-First Search
-* **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
