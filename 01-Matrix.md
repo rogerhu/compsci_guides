@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/01-matrix/](https://leetcode.com/problems/01-matrix/)
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
+* 🛠️ **Topics**: Graphs, Breadth-First Search
 * **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
