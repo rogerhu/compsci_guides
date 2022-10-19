@@ -1,9 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/swim-in-rising-water/](https://leetcode.com/problems/swim-in-rising-water/)
+* 💡 **Problem Difficulty:** Hard
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
-* **Similar Questions**: TBD
+* 🛠️ **Topics**: Graphs
+* 🗒️ **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
