@@ -50,24 +50,29 @@ The difference is only in the traversal of DFS and BFS. DFS explores the depths 
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-```markdown
 - Using DFS
+<br>
 Step 1. Check is current node is empty.
+<br>
 Step 2. Check if cached.
+<br>
 Step 3. Create a new node and save it into map.
+<br>
 Step 4. Use DFS to copy all its neighbors.
-```
 
-```markdown
+
 - Using BFS
+<br>
 Step 1. Use a hash map to store the reference of the copy of all the nodes that have already been visited and copied. 
+<br>
 Step 2. Add the first node to the queue. 
+<br>
 Step 3. Do the BFS traversal.
             - Pop a node from the front of the queue.
             - Visit all the neighbors of this node.
             - If any of the neighbors was already visited then it must be present in the `visited` dictionary. Get the clone of this neighbor from `visited` in that case.
             - Add the clones of the neighbors to the corresponding list of the clone node.
-```
+<br>
    
 ⚠️ Common Mistakes
     
