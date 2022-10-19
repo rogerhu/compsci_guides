@@ -41,8 +41,8 @@ Based on the kind of graph we are expecting we can chose BFS or DFS.
     
 For graph problems, some things we want to consider are:
     
-    - DFS - We can use DFS to traverse all node of original graph. As soon as we reach a node, we will make a copy node. And recur for rest of the graph.
-    - BFS - If the recursion stack is what we are worried about, then DFS is not the best solution. We use the BFS way of doing iterative traversal of the graph.
+- DFS - We can use DFS to traverse all node of original graph. As soon as we reach a node, we will make a copy node. And recur for rest of the graph.
+- BFS - If the recursion stack is what we are worried about, then DFS is not the best solution. We use the BFS way of doing iterative traversal of the graph.
 
 The difference is only in the traversal of DFS and BFS. DFS explores the depths of the graph first and BFS explores the breadth. 
 
@@ -50,12 +50,15 @@ The difference is only in the traversal of DFS and BFS. DFS explores the depths 
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
+```markdown
 - Using DFS
 Step 1. Check is current node is empty.
 Step 2. Check if cached.
 Step 3. Create a new node and save it into map.
 Step 4. Use DFS to copy all its neighbors.
+```
 
+```markdown
 - Using BFS
 Step 1. Use a hash map to store the reference of the copy of all the nodes that have already been visited and copied. 
 Step 2. Add the first node to the queue. 
@@ -64,7 +67,8 @@ Step 3. Do the BFS traversal.
             - Visit all the neighbors of this node.
             - If any of the neighbors was already visited then it must be present in the `visited` dictionary. Get the clone of this neighbor from `visited` in that case.
             - Add the clones of the neighbors to the corresponding list of the clone node.
-    
+```
+   
 ⚠️ Common Mistakes
     
     - Because you need to copy each single node and assign the correct reference to the copied node, you can easily make a mistake in assigning a pointer to the old reference.
