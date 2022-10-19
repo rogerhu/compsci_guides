@@ -1,9 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/clone-graph/](https://leetcode.com/problems/clone-graph/)
+* 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs
-* **Similar Questions**: TBD
+* 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
+* 🗒️ **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
