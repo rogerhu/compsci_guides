@@ -1,8 +1,9 @@
 ## Problem Highlights
 
-🔗 **Leetcode Link:** [https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
-
-⏰ **Time to complete**: __ mins
+* 🔗 **Leetcode Link:** [https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Graphs
+* **Similar Questions**: TBD
 
 ## 1. **U-nderstand**
 
