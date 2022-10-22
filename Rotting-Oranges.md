@@ -13,7 +13,7 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-1. **U-nderstand**
+## 1: **U-nderstand**
     
 - What do the possible values of the grid represent? 1’s are fresh oranges, 2’s are rotten oranges and 0’s are empty spaces
     
@@ -36,7 +36,7 @@
     Output: 0
     ```
     
-## 2. M-atch
+## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -44,7 +44,7 @@
     
     We can just push all these root nodes into a queue and perform BFS on a grid algorithm, to calculate the total time taken to rot all the oranges. Since there can be multiple rotten cells, we will push all those cells in the queue first and then continue with the BFS. If all oranges are not rotten before our algorithm terminates, we will return -1. 
     
-## 3. P-lan
+## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -62,7 +62,7 @@
 
 * 
 
-## 4. I-mplement
+## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
     
@@ -155,7 +155,7 @@
         return -1 if fresh else days
 ```
     
-## 5. R-eview
+## 5: R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -163,9 +163,10 @@
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-## 6. E-valuate
+## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
 Time Complexity: `O(n*m)`, where n — number of rows m– number of cols, for first traversal of the grid to find all the rotten and fresh oranges + O(n*m) for queue traversal if there is only one fresh orange and that too when the last orange is fresh.
+<br>
 Space Complexity: `O(n*m)`, where n — number of rows m– number of cols, extra space for queue in the worst case when all the oranges are rotten.
