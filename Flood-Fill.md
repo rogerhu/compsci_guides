@@ -6,7 +6,7 @@
 * 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
 * 🗒️ **Similar Questions**: TBD
 
-## 1. **U-nderstand**
+## 1: **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -37,7 +37,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
     Output: [[0,0,0],[0,1,0],[0,0,1]]
     ```
     
-## 2. M-atch
+## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -46,7 +46,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
     - BFS or DFS would work on this problem. Carrying out DFS is simple on this array by balancing edges cases wherein row and col point to out of index values. After handling those values, we call recursive function again on matrix with the corrsponding values of row and col (i.e. [row-1][col], [row+1][col], [row][col-1], [row][col+1]). Now for the algorithm to not recompute on previously computed values, we can use the same check for value of color.
 
 
-## 3. P-lan
+## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -64,7 +64,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
 * 
 
     
-## 4. I-mplement
+## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
     
@@ -107,7 +107,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
     	   return image
 ```
     
-## 5. R-eview
+## 5: R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -115,7 +115,7 @@ If the image is null, then we can't do any transformation. Let's return the imag
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-## 6. E-valuate
+## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
