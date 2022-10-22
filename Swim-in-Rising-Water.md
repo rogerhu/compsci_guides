@@ -156,6 +156,6 @@ Start with `(0,0)`corner. On each moment of time we choose node with smallest v
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Time Complexity: O(r*c* logn), where r, c = rows and columns in grid and n is the max cell elevation found in the grid
+Time Complexity: `O(r*c* logn)`, where `r`, `c` = rows and columns in grid and `n` is the max cell elevation found in the grid
 <br>
-Space Complexity: O(r * c), where r, c = rows and columns in grid and n is the max cell elevation found in the grid
+Space Complexity: `O(r * c)`, where `r`, `c` = rows and columns in grid and `n` is the max cell elevation found in the grid
