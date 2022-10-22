@@ -29,7 +29,8 @@ Output: ["JFK","MUC","LHR","SFO","SJC"]
     
 EDGE CASE
 Input: tickets = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
-Output: ["JFK","ATL","JFK","SFO","ATL","SFO"]```   
+Output: ["JFK","ATL","JFK","SFO","ATL","SFO"]
+```   
     
 ## 2: M-atch
 
