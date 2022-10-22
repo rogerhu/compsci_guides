@@ -50,6 +50,10 @@ DFS and BFS are similar. First we build an adjacent-list graph base on edges. Th
     - Loop over the nodes and run a BFS on the node if it has not been explored before. It will behave as a sink that will swallow each connected component allowing you to increment a counter.
     - To make your algorithm more efficient, use a global visited set for the entire graph rather than a new visited set for each component.
 
+⚠️ **Common Mistakes**
+
+* 
+
 ## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
