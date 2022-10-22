@@ -52,10 +52,10 @@
     Space Complexity: O(N)
     ```
     
-    **Common Mistakes**
-    
-    - A common mistake would be iterating 2 times, in other words, 2 for loops, to find the 1st and 2nd maximum values while traversing the loop.
-    - The 2 cities with most connections may not be necessarily connected with each other, and if they are connected, the common connection is counted only once.
+⚠️ **Common Mistakes**
+
+* A common mistake would be iterating 2 times, in other words, 2 for loops, to find the 1st and 2nd maximum values while traversing the loop.
+The 2 cities with most connections may not be necessarily connected with each other, and if they are connected, the common connection is counted only once.
 
 ## 4. I-mplement
 
