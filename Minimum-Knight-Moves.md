@@ -54,6 +54,11 @@ Each position on the board can be thought of as a node. Edges can be thought of 
     - Keep performing BFS from each point present in the queue. At each step poll a point and explore all 8 possible tiles where the knight can land and add those points to the queue if not visited.
     - Thus each point reaches one more hop to the neighbor. And eventually reaches the target node.
 
+⚠️ **Common Mistakes**
+
+* 
+
+
 ## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
