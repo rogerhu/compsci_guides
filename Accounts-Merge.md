@@ -6,7 +6,7 @@
 * 🛠️ **Topics**: Graphs
 * 🗒️ **Similar Questions**: TBD
 
-## 1. **U-nderstand**
+## 1: **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -42,7 +42,7 @@
     Output: [["Ethan","Ethan0@m.co","Ethan4@m.co","Ethan5@m.co"],["Gabe","Gabe0@m.co","Gabe1@m.co","Gabe3@m.co"],["Hanzo","Hanzo0@m.co","Hanzo1@m.co","Hanzo3@m.co"],["Kevin","Kevin0@m.co","Kevin3@m.co","Kevin5@m.co"],["Fern","Fern0@m.co","Fern1@m.co","Fern5@m.co"]]
     ```
     
-## 2. M-atch
+## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -66,7 +66,7 @@
     We can use a DFS on each account in accounts list and look up the emails accounts map
     to tell us which accounts are linked to that particular account via common emails. This will make sure we visit each account only once. This is a recursive process and we should collect all the emails that we encounter along the way. Lastly, it will allow us to sort the collected emails and add it to final results. 
     
-## 3. P-lan
+## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -77,7 +77,7 @@
 
 * 
 
-## 4. I-mplement
+## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
     
@@ -159,7 +159,7 @@
             return res
 ```
     
-## 5. R-eview
+## 5: R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -167,7 +167,7 @@
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-## 6. E-valuate
+## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
