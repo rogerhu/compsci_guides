@@ -3,10 +3,10 @@
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/minimum-height-trees](https://leetcode.com/problems/minimum-height-trees)
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs
-* 🗒️ **Similar Questions**: TBD
+* 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search, Topological Sort
+* 🗒️ **Similar Questions**: [Course Schedule](https://leetcode.com/problems/course-schedule/)
 
-## 1. **U-nderstand**
+## 1: **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -38,7 +38,7 @@ A degree of node is basically the number of edges connected to for from the node
     Output:
     ```
     
-## 2. M-atch
+## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -50,7 +50,7 @@ A degree of node is basically the number of edges connected to for from the node
     
     How will you find the longest path in a tree? Randomly select any node in the tree and find the longest path from that node. Use DFS to do that. Let the terminal node be x. x must be the end-point of the true longest path in the tree. Run DFS/BFS from x to find the real longest path in the tree.
     
-## 3. P-lan
+## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -61,7 +61,7 @@ The idea is keep removing all of the leaves until there is the last layer of lea
 
 *  
     
-## 4. I-mplement
+## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
     
@@ -143,7 +143,7 @@ The idea is keep removing all of the leaves until there is the last layer of lea
     
 ```
     
-## 5. R-eview
+## 5: R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -151,10 +151,10 @@ The idea is keep removing all of the leaves until there is the last layer of lea
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-## 6. E-valuate
+## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Time Complexity: O(n)
+Time Complexity: `O(V)`, where `V` represents the number of nodes in the graph
 <br>
-Space Complexity: O(n)
+Space Complexity: `O(V)`, where `V` represents the number of nodes in the graph
