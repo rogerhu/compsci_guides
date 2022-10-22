@@ -4,9 +4,9 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
-* 🗒️ **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer)
 
-## 1. **U-nderstand**
+## 1: **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -32,11 +32,12 @@ Based on the kind of graph we are expecting we can chose BFS or DFS.
     Input: adjList = [[]]
     Output: [[]]
     
+    EDGE CASE
     Input: adjList = []
     Output: []
     ```
     
-## 2. M-atch
+## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -47,7 +48,7 @@ For graph problems, some things we want to consider are:
 
 The difference is only in the traversal of DFS and BFS. DFS explores the depths of the graph first and BFS explores the breadth. 
 
-## 3. P-lan
+## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
@@ -81,7 +82,7 @@ Step 3. Do the BFS traversal.
 * Because you need to copy each single node and assign the correct reference to the copied node, you can easily make a mistake in assigning a pointer to the old reference.
 * To avoid cycles, we would need the `visited` hash map in both the BFS/DFS approaches. We need this to to keep track of the nodes which have already been copied. By doing this we don't end up traversing them again.
 
-## 4. I-mplement
+## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
 
@@ -165,7 +166,7 @@ Step 3. Do the BFS traversal.
     }
 ```
     
-## 5. R-eview
+## 5: R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -173,7 +174,7 @@ Step 3. Do the BFS traversal.
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-## 6. E-valuate
+## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
