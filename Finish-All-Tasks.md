@@ -16,9 +16,9 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - How do we encode the prerequisites into a graph?
-You can denote each course as a node and the prerequisite relationship as an one-direction edge.
+You can denote each task as a node and the prerequisite relationship as a one-direction edge.
 
-- When is it impossible for you to finish all courses?
+- When is it impossible for you to finish all tasks?
 When there exists at least one task pair t1 and t2, such that t1 is direct or indirect prerequisite for t2 and t2 is direct or indirect prerequisite for t1. This is equivalent to finding a cycle in our graph representation.
     
     ```markdown
@@ -67,86 +67,78 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
 > **Implement** the code to solve the algorithm.
     
 ```java
-    public class CanFinish {
-    
-        List<List<Integer>> edges;
-        int[] indeg;
-    
-        public boolean canFinish(int numCourses, int[][] prerequisites) {
-            edges = new ArrayList<>();
-            for (int i = 0; i < numCourses; ++i) {
-                edges.add(new ArrayList<>());
-            }
-            indeg = new int[numCourses];
-            for (int[] info : prerequisites) {
-                edges.get(info[1]).add(info[0]);
-                ++indeg[info[0]];
-            }
-    
-            Queue<Integer> queue = new LinkedList<>();
-            for (int i = 0; i < numCourses; ++i) {
-                if (indeg[i] == 0) {
-                    queue.offer(i);
-                }
-            }
-    
-            int visited = 0;
-            while (!queue.isEmpty()) {
-                ++visited;
-                int u = queue.poll();
-                for (int v: edges.get(u)) {
-                    --indeg[v];
-                    if (indeg[v] == 0) {
-                        queue.offer(v);
-                    }
-                }
-            }
-    
-            return visited == numCourses;
+    // returns adjacency list representation from a list of pairs
+    static ArrayList<ArrayList<Integer>> make_graph(int numTasks, Vector<pair> prerequisites) {
+        ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>(numTasks);
+ 
+        for(int i=0; i<numTasks; i++){
+            graph.add(new ArrayList<Integer>());
         }
-  }
+ 
+        for (pair pre : prerequisites)
+            graph.get(pre.second).add(pre.first);
+ 
+        return graph;
+    }
+     
+    // a DFS based function to check if there is a cycle in the directed graph
+    static boolean dfs_cycle(ArrayList<ArrayList<Integer>> graph, int node, boolean onpath[], boolean visited[]) {
+        if (visited[node])
+            return false;
+        onpath[node] = visited[node] = true;
+ 
+        for (int neigh : graph.get(node))
+            if (onpath[neigh] || dfs_cycle(graph, neigh, onpath, visited))
+                return true;
+ 
+        return onpath[node] = false;
+    }
+     
+    // main function to check whether possible to finish all tasks or not
+    static boolean canFinish(int numTasks, Vector<pair> prerequisites) {
+        ArrayList<ArrayList<Integer>> graph = make_graph(numTasks, prerequisites);
+         
+        boolean onpath[] = new boolean[numTasks];
+        boolean visited[] = new boolean[numTasks];
+ 
+        for (int i = 0; i < numTasks; i++)
+            if (!visited[i] && dfs_cycle(graph, i, onpath, visited))
+                return false;
+ 
+        return true;
+    }
 ```
     
 ```python
-    def canFinish(self, n, prerequisites):
-        arr = [[] for i in range(n)]
-        degree = [0] * n
-        for j, i in prerequisites:
-            arr[i].append(j)
-            degree[j] += 1
-        dfs = [i for i in range(n) if degree[i] == 0]
-        for i in dfs:
-            for j in arr[i]:
-                degree[j] -= 1
-                if degree[j] == 0:
-                    dfs.append(j)
-        return len(dfs) == n
-    
-     -> List[int]:
-            numNodes = len(graph)
-            state = [Solution.UNVISITED] * numNodes
-            for node in range(numNodes):
-                if state[node] == Solution.UNVISITED:
-                    self.dfs(graph, node, state)
-            safeNodes = []
-            for (i, nodeState) in enumerate(state):
-                if nodeState == Solution.SAFE:
-                    safeNodes.append(i)
-            return safeNodes
-        
-        def dfs(self, graph, currNode, state):
-            if state[currNode] == Solution.SAFE:
-                return True
-            if state[currNode] == Solution.VISITING or state[currNode] == Solution.UNSAFE:
-                return False
-            state[currNode] = Solution.VISITING
-            isSafe = True
-            for neighbor in graph[currNode]:
-                isSafe &= self.dfs(graph, neighbor, state)
-                if not isSafe:
-                    break
-            state[currNode] = Solution.SAFE if isSafe else Solution.UNSAFE
-            return isSafe
+# returns adjacency list representation from a list of pairs
+def make_graph(numTasks, prerequisites):
+    graph = []
+    for i in range(numTasks):
+        graph.append([])
+ 
+    for pre in prerequisites:
+        graph[pre.second].append(pre.first)
+ 
+    return graph
+ 
+# a DFS based function to check if there is a cycle in the directed graph
+def dfs_cycle(graph, node, onpath, visited):
+    if visited[node]:
+        return false
+    onpath[node] = visited[node] = True
+    for neigh in graph[node]:
+        if (onpath[neigh] or dfs_cycle(graph, neigh, onpath, visited)):
+            return true
+    return False
+ 
+def canFinish(numTasks, prerequisites):
+    graph = make_graph(numTasks, prerequisites)
+    onpath = [False]*numTasks
+    visited = [False]*numTasks
+    for i in range(numTasks):
+        if (not visited[i] and dfs_cycle(graph, i, onpath, visited)):
+            return False
+    return True
 ```
     
 ## 5: R-eview
@@ -161,6 +153,6 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Time Complexity: O(E+V)
+Time Complexity: O(E+V), where E is the number of dependencies and V is the number of tasks
 <br>
-Space Complexity: O(V)
+Space Complexity: O(V), where V is the number of tasks
