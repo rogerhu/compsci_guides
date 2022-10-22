@@ -4,9 +4,9 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs
-* 🗒️ **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/), [Course Schedule III](https://leetcode.com/problems/course-schedule-iii/)
 
-## 1. **U-nderstand**
+## 1: **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -43,7 +43,7 @@ For each class there are 3 statuses: not visited, visiting, visited.
     Explanation: In this case, no courses have prereqs, so we can take them in any order
     ```
     
-## 2. M-atch
+## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -55,7 +55,7 @@ For each class there are 3 statuses: not visited, visiting, visited.
         - If node `v` has been visited, then mark it as `+1`. If a vertex was marked as `1`, then no ring contains `v` or its successors.
     - Topological Sort - If a cycle ****exists, no topological ordering exists and therefore it will be impossible to take all courses.
     
-## 3. P-lan
+## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -89,7 +89,7 @@ For each class there are 3 statuses: not visited, visiting, visited.
 * 
 
 
-## 4. I-mplement
+## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
     
@@ -231,7 +231,7 @@ For each class there are 3 statuses: not visited, visiting, visited.
             return len(eligibleCourses) == numCourses
 ```
     
-## 5. R-eview
+## 5: R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -239,7 +239,7 @@ For each class there are 3 statuses: not visited, visiting, visited.
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-## 6. E-valuate
+## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
