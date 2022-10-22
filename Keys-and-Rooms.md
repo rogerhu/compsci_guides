@@ -59,10 +59,10 @@
     Space Complexity: O(N)
 ```
     
-    **Common Mistakes:**
-    
-    - What if we start at the beginning and push the values into some array, then visit the cells of those inner values and push their values into the array, as well. We should end up with an array of length rooms.length if we get all the keys.
-    - Once DFS has completed (it will stop running once it can't find any more unvisited rooms), we check to see if its size is equal to the length of the rooms array.
+⚠️ **Common Mistakes**
+
+* What if we start at the beginning and push the values into some array, then visit the cells of those inner values and push their values into the array, as well. We should end up with an array of length rooms.length if we get all the keys.
+* Once DFS has completed (it will stop running once it can't find any more unvisited rooms), we check to see if its size is equal to the length of the rooms array.
 
 ## 4. I-mplement
 
