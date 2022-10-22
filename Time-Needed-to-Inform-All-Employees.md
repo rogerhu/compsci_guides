@@ -55,7 +55,7 @@ For graph problems, we want to consider the following approaches:
 4. we update the maximum time at each step
 ```
 
-** :warning: Common Mistakes**
+:warning: Common Mistakes
 
 * Some may not noice that there is a tree structure in this problem. The first thought that comes to mind when trying to solve this problem is that the deepest employee in the tree is going to require the most time until that become informed. We proceed down the hierarchy, layer by layer. The tree is a mapping from `employee_id` to list of subordinates.
 
