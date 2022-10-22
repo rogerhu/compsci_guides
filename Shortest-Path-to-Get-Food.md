@@ -53,6 +53,10 @@ Until we find the food, return the level.
     - Mark visited point as `X` to avoid revisit
     - If `#` is met, return `cnt`
 
+⚠️ **Common Mistakes**
+
+* 
+
 ## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
