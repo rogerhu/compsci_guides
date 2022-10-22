@@ -60,7 +60,7 @@ Start with `(0,0)`corner. On each moment of time we choose node with smallest v
 
 ⚠️ **Common Mistakes**
 
-* The brute force solution may not garner the best time `T`. We can use either Dijkstra's, or binary search for the best time T where you can reach the end if you only step on squares at most T.
+* The brute force solution may not garner the best time `T`. We can use either Dijkstra's, or binary search for the best time `T` where you can reach the end if you only step on squares at most `T`.
     
 ## 4: I-mplement
 
