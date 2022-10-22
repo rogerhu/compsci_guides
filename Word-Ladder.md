@@ -80,9 +80,9 @@ No, the beginning and ending word will always be different.
     
 ```
 
-    **Common Mistakes**
-    
-    - Some people may attempt to find adjacent pairs of words by computing finding the number of different letters between each word, whose runtime is O(M^2). Instead, the difference can be computed via iteration over the possible letters to allow a O(M*26) runtime.
+⚠️ **Common Mistakes**
+
+* Some people may attempt to find adjacent pairs of words by computing finding the number of different letters between each word, whose runtime is O(M^2). Instead, the difference can be computed via iteration over the possible letters to allow a O(M*26) runtime.
 
 ## 4. I-mplement
 
