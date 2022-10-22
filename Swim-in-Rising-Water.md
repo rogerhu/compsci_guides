@@ -56,6 +56,11 @@ Start with `(0,0)`corner. On each moment of time we choose node with smallest v
     - When moving to new position, if the new position value is lower then previous, retain previous
     
     Continue this until bottom right element is filled. This will be minimum.
+
+
+⚠️ **Common Mistakes**
+
+* 
     
 ## 4. I-mplement
 
