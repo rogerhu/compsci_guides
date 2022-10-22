@@ -75,10 +75,11 @@ Step 3. Do the BFS traversal.
             - Add the clones of the neighbors to the corresponding list of the clone node.
 <br>
    
-⚠️ Common Mistakes
-    
-    - Because you need to copy each single node and assign the correct reference to the copied node, you can easily make a mistake in assigning a pointer to the old reference.
-    - To avoid cycles, we would need the `visited` hash map in both the BFS/DFS approaches. We need this to to keep track of the nodes which have already been copied. By doing this we don't end up traversing them again.
+
+⚠️ **Common Mistakes**
+
+* Because you need to copy each single node and assign the correct reference to the copied node, you can easily make a mistake in assigning a pointer to the old reference.
+* To avoid cycles, we would need the `visited` hash map in both the BFS/DFS approaches. We need this to to keep track of the nodes which have already been copied. By doing this we don't end up traversing them again.
 
 ## 4. I-mplement
 
