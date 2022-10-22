@@ -4,9 +4,9 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs, Breadth-First Search
-* 🗒️ **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: [Shortest Path to Get Food](https://leetcode.com/problems/shortest-path-to-get-food/), [Minimum Operations to Remove Adjacent Ones in Matrix](https://leetcode.com/problems/minimum-operations-to-remove-adjacent-ones-in-matrix/)
 
-## 1. **U-nderstand**
+## 1: **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -34,12 +34,13 @@ Store all the coordinates which have 1s.
     
     ```
     
-## 2. M-atch
+## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
     - BFS: The idea is to put all zeroes in one BFS layer/breadth and move out to other nodes from there. Mark unvisited node as `-1`. The first `matrix[vrow][vcol] = matrix[urow][ucol] + 1`should be the smallest distance possible.
-3. P-lan
+
+## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -56,7 +57,7 @@ Store all the coordinates which have 1s.
 
 * 
     
-## 4. I-mplement
+## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
     
@@ -140,7 +141,7 @@ Store all the coordinates which have 1s.
             return mat
 ```
     
-## 5. R-eview
+## 5: R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -148,10 +149,11 @@ Store all the coordinates which have 1s.
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-## 6. E-valuate
+## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Time Complexity: `O(m*n)`
+Time complexity: O(r⋅c)
+Since, the new cells are added to the queue only if their current distance is greater than the calculated distance, cells are not likely to be added multiple times.
 <br>
-Space Complexity: `O(m*n)`
+Space complexity: O(r⋅c), where an additional O(r⋅c) space is required to maintain the queue.
