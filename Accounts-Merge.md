@@ -72,6 +72,11 @@
     
     Build a graph with an adjacency list of emails. Every email should have an edge to the connected email (including itself). From this, we can maintain a list of emails to account name list. Next, do a DFS for the unique email (using a hashset 'visited') to fill the emails for the given account name. Then, we can add the account name to the email address. Add the resultant account to end result.
     
+
+⚠️ **Common Mistakes**
+
+* 
+
 ## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
