@@ -52,6 +52,11 @@ We need to keep track of all routes to the node and compare on the basis of (cos
     Once `k` is used up (`k == 0`) or `vis[x] >= k`, we no longer push that node `x` to our queue. Once a popped cost is our destination, we get our lowest valid cost.
     
     For Dijkstra, there is not need to maintain a `best cost` for each node since it's kind of greedy search. It always chooses the lowest cost node for next search. So the previous searched node always has a lower cost and has no chance to be updated. The first time we pop our destination from our queue, we have found the lowest cost to our destination.
+
+
+⚠️ **Common Mistakes**
+
+* 
     
 ## 4. I-mplement
 
