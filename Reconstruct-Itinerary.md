@@ -3,8 +3,8 @@
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/reconstruct-itinerary/](https://leetcode.com/problems/reconstruct-itinerary/)
 * 💡 **Problem Difficulty:** Hard
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs, DFS, Adjacency List
-* 🗒️ **Similar Questions**: TBD
+* 🛠️ **Topics**: Graphs, Depth-First Search, Adjacency List
+* 🗒️ **Similar Questions**: [Longest Common Subpath](https://leetcode.com/problems/longest-common-subpath/), [Valid Arrangement of Pairs](https://leetcode.com/problems/valid-arrangement-of-pairs/)
     
 ## 1: U-nderstand
 
@@ -130,5 +130,6 @@ public void visit(String airport, HashMap<String, PriorityQueue<String>> ticketG
 
 Assume `N` represents the number of tickets.
 
-* **Time Complexity**: `O(N*logN)`
-* **Space Complexity**: `O(N)`
+Time Complexity: `O(N*logN)`
+<br>
+Space Complexity: `O(N)`
