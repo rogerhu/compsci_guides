@@ -83,9 +83,10 @@ There can be up to 20 queries.
     Time Complexity: O(N*K)
     Space Complexity: O(N)`
     
-    **Common Mistakes:**
-    
-    - Make sure you really clarify all inputs. When treating this problem as a graph problem, they may assume information that can significantly affect runtime complexity. For instance, assuming the lengths of the variable names or number of equations greatly affects which algorithms can be used and how they are used. In this case, students should cover most, if not all, clarifications to develop an efficient algorithm.
+
+⚠️ **Common Mistakes**
+
+* Make sure you really clarify all inputs. When treating this problem as a graph problem, they may assume information that can significantly affect runtime complexity. For instance, assuming the lengths of the variable names or number of equations greatly affects which algorithms can be used and how they are used. In this case, students should cover most, if not all, clarifications to develop an efficient algorithm.
 
 ## 4. I-mplement
 
