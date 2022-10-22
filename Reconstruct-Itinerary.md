@@ -65,9 +65,9 @@ For graphs, some of the top things we want to consider are:
 5. Return the reverse of the current path array
 ```
 
-**⚠️ Common Mistakes**
+⚠️ **Common Mistakes**
 
-* TBD
+* 
 
 ## 4: I-mplement
 
