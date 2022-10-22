@@ -57,7 +57,7 @@ For graph problems, we want to consider the following approaches:
 
 ⚠️ **Common Mistakes**
 
-* Some may not noice that there is a tree structure in this problem. The first thought that comes to mind when trying to solve this problem is that the deepest employee in the tree is going to require the most time until that become informed. We proceed down the hierarchy, layer by layer. The tree is a mapping from `employee_id` to list of subordinates.
+* Some may not notice that there is a tree structure can be formed in this problem. The first thought that comes to mind when trying to solve this problem is that the deepest employee in the tree is going to require the most time until that become informed. We proceed down the hierarchy, layer by layer. The tree is a mapping from `employee_id` to list of subordinates.
 
 ## 4: I-mplement
 
