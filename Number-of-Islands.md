@@ -4,9 +4,7 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
-* 🗒️ **Similar Questions**: TBD
-
-**Similar Questions**: TBD
+* 🗒️ **Similar Questions**: [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/), [Walls and Gates](https://leetcode.com/problems/walls-and-gates/), [Number of Islands II](https://leetcode.com/problems/number-of-islands-ii/), [Number of Distinct Islands](https://leetcode.com/problems/number-of-distinct-islands/)
 
 ## 1. **U-nderstand**
 
@@ -51,17 +49,18 @@
     - Union Find
         - Each set is a single island
         - Two pieces of land should be merged if they are adjacent
+
 ## 3. P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
     1. Create the initial parent array
-        1. Number of entries: nrows * ncols
-        2. Set parent[i] = i for all elements
+        - Number of entries: nrows * ncols
+        - Set parent[i] = i for all elements
     2. For each element of the grid
-        1. If this element is '1'
-            1. If the left neighbor is '1', call union
-            2. If the upper neighbor is '1', call union
+        - If this element is '1'
+            a. If the left neighbor is '1', call union
+            b. If the upper neighbor is '1', call union
     3. Return the number of islands (sets)
 
 ## 4. I-mplement
