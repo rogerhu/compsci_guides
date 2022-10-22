@@ -57,6 +57,12 @@ If the image is null, then we can't do any transformation. Let's return the imag
     Step 3 and 4 go through the same process.
     
     There is a tricky case where the new color is the same as the original color and if the DFS is done on it, there will be an infinite loop. If new color is same as original color, there is nothing to be done and we can simply return the `image`.
+
+
+⚠️ **Common Mistakes**
+
+* 
+
     
 ## 4. I-mplement
 
