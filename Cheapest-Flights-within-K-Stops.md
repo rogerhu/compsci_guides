@@ -3,8 +3,8 @@
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/cheapest-flights-within-k-stops/](https://leetcode.com/problems/cheapest-flights-within-k-stops/)
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs, Dijkstra’s
-* 🗒️ **Similar Questions**: TBD
+* 🛠️ **Topics**: Graphs, Depth-First Search, Breadth-First Search, Dijkstra’s
+* 🗒️ **Similar Questions**: [Maximum Vacation Days](https://leetcode.com/problems/maximum-vacation-days/)
 
 ## 1: **U-nderstand**
 
@@ -29,6 +29,7 @@ We need to keep track of all routes to the node and compare on the basis of (cos
     Input: n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, k = 1
     Output: 200
     
+    EDGE CASE
     Input: n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, k = 0
     Output: 500
     ```
