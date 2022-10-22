@@ -4,9 +4,9 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs, Depth-First Search
-* 🗒️ **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: [Find Minimum Time to Finish All Jobs II](https://leetcode.com/problems/find-minimum-time-to-finish-all-jobs-ii/)
 
-## 1. **U-nderstand**
+## 1: **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -34,14 +34,14 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
     Output: true
     ```
     
-## 2. M-atch
+## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     How can we apply DFS on this problem?
     Given a starting vertex, it’s wise to find all vertices reachable from the start. There are many algorithms to do this, the simplest is the use of depth-first search. DFS enumerates the deepest paths. DFS only backtracks when it hits a dead end or an already-visited section of the graph.
     
-## 3. P-lan
+## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -62,7 +62,7 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
 * Each node is visited more than once.
 * Using Kahn's algorithm, you can peel off the nodes with `indegree` 0, rather than nodes with `outdegree` 0.
 
-## 4. I-mplement
+## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
     
@@ -149,7 +149,7 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
             return isSafe
 ```
     
-## 5. R-eview
+## 5: R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -157,7 +157,7 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-## 6. E-valuate
+## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
