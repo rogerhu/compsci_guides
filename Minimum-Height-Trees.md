@@ -34,8 +34,8 @@ A degree of node is basically the number of edges connected to for from the node
     Output: [3,4]
     
     EDGE CASE
-    Input:
-    Output:
+    Input: n = 7, edges = [[0,1],[1,2],[1,3],[2,4],[3,5],[4,6]]
+    Output: [1,2]
     ```
     
 ## 2: M-atch
