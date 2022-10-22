@@ -58,6 +58,10 @@
     8. Else return the time required to rot all the oranges.
 
 
+⚠️ **Common Mistakes**
+
+* 
+
 ## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
