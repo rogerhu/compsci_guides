@@ -56,6 +56,10 @@ word = "ABCD" -> returns 0
             1. each node
             2. the full string
 
+⚠️ **Common Mistakes**
+
+* 
+
 ## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
