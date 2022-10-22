@@ -31,7 +31,10 @@ Store all the coordinates which have 1s.
     
     Input: mat = [[0,0,0],[0,1,0],[1,1,1]]
     Output: [[0,0,0],[0,1,0],[1,2,1]]
-    
+
+    EDGE CASE
+    Input: mat = [[0,0,0],[0,0,0],[0,0,0]]
+    Output: [[0,0,0],[0,0,0],[0,0,0]]
     ```
     
 ## 2: M-atch
