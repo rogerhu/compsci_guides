@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/word-ladder/](https://leetcode.com/problems/word-ladder/)
 * 💡 **Problem Difficulty:** Hard
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs
+* 🛠️ **Topics**: Graphs, Breadth-First Search
 * 🗒️ **Similar Questions**: [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)
 
 ## 1: **U-nderstand**
