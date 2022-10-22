@@ -83,6 +83,12 @@ For each class there are 3 statuses: not visited, visiting, visited.
     - Fourth iteration, take course 1
     - ad_list is empty, so we have taken all courses
 
+
+⚠️ **Common Mistakes**
+
+* 
+
+
 ## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
