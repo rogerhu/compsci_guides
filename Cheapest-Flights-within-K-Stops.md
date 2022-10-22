@@ -6,7 +6,7 @@
 * 🛠️ **Topics**: Graphs, Dijkstra’s
 * 🗒️ **Similar Questions**: TBD
 
-## 1. **U-nderstand**
+## 1: **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -33,7 +33,7 @@ We need to keep track of all routes to the node and compare on the basis of (cos
     Output: 500
     ```
     
-## 2. M-atch
+## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -41,7 +41,7 @@ We need to keep track of all routes to the node and compare on the basis of (cos
     
     We can use Dijkstra’s algorithm to find minimum path from single source with edge weights. The main trick to this problem is we have two constraints to consider in our Dijkstra's implementation. The priority queue must sort by stops and then by cost. We must sort by stops before cost. The issue arises when we find a less cost, but greater stop number path to an intermediary node. From `node0` -> `node1`, we can take `path 0->1`, with 5 cost and 1 stop, or we could take `0->3->1`, with 4 cost and 2 stops. If we update our Dijkstra's shortest path cache to be 4 cost, then we will miss out on a better cost because k = 2 already by taking the shortest path to 1. By taking the shortest cost path to 1 (0->3->1), we already used our 2 stops, so our next node must be our goal of `node2` to not violate `k` constraint. The actual shortest path is `0->1->4->2` where we take a higher cost path to 1, `0->1` cost 5, but `k = 1`.
     
-## 3. P-lan
+## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
@@ -58,7 +58,7 @@ We need to keep track of all routes to the node and compare on the basis of (cos
 
 * 
     
-## 4. I-mplement
+## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
 
@@ -149,7 +149,7 @@ We need to keep track of all routes to the node and compare on the basis of (cos
     	return -1
 ```
     
-## 5. R-eview
+## 5: R-eview
     
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -157,7 +157,7 @@ We need to keep track of all routes to the node and compare on the basis of (cos
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-## 6. E-valuate
+## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
