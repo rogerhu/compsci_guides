@@ -57,10 +57,10 @@ When there exists at least one task pair t1 and t2, such that t1 is direct or in
     Space Complexity: O(V)
     ```
     
-    **Common Mistakes:**
-    
-    - Each node is visited more than once.
-    - Using Kahn's algorithm, you can peel off the nodes with indegree 0, rather than nodes with outdegree 0.
+⚠️ **Common Mistakes**
+
+* Each node is visited more than once.
+* Using Kahn's algorithm, you can peel off the nodes with `indegree` 0, rather than nodes with `outdegree` 0.
 
 ## 4. I-mplement
 
