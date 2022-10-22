@@ -63,6 +63,10 @@
             b. If the upper neighbor is '1', call union
     3. Return the number of islands (sets)
 
+⚠️ **Common Mistakes**
+
+* 
+
 ## 4. I-mplement
 
 > **Implement** the code to solve the algorithm.
