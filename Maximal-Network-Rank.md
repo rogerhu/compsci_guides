@@ -6,7 +6,7 @@
 * 🛠️ **Topics**: Graphs
 * 🗒️ **Similar Questions**: TBD
 
-## 1. **U-nderstand**
+## 1: **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -31,13 +31,13 @@
     Explanation: The network rank of 2 and 5 is 5. Notice that all the cities do not have to be connected.
     ```
     
-## 2. M-atch
+## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
     - Use a hashtable of size `n` which stores sets for each city. Members of the sets are cities which are directly connected to the city the set corresponds to. Then, examine all unique pairs `(city_1, city_2)` and sum up the edges of both cities. If there is an edge between both cities, the sum needs to be reduced by one since the edge is counted twice. We store the highest sum of edges and return it.
 
-## 3. P-lan
+## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
@@ -57,7 +57,7 @@
 * A common mistake would be iterating 2 times, in other words, 2 for loops, to find the 1st and 2nd maximum values while traversing the loop.
 The 2 cities with most connections may not be necessarily connected with each other, and if they are connected, the common connection is counted only once.
 
-## 4. I-mplement
+## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
 
@@ -111,7 +111,7 @@ The 2 cities with most connections may not be necessarily connected with each ot
             return max_network_rank
 ```
     
-## 5. R-eview
+## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -119,7 +119,7 @@ The 2 cities with most connections may not be necessarily connected with each ot
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
-## 6. E-valuate
+## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
