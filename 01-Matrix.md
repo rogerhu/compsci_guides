@@ -51,6 +51,10 @@ Store all the coordinates which have 1s.
     first level), for them new level is checked and hence length counter will increased by 1
     5. now for those new queue element length will be set to updated length if
     that cell has -1.
+
+⚠️ **Common Mistakes**
+
+* 
     
 ## 4. I-mplement
 
