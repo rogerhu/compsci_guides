@@ -4,7 +4,7 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
-* 🗒️ **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/), [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
     
 ## 1: U-nderstand
  
@@ -17,12 +17,20 @@
 
 - Can we transform the organization into a tree with each node containing the wait time (before transmitting down to their reports)?
     - This can simplify the problem into traversing the tree from the top node down to the bottom.
+- How can we represent the company?
+    - The company can be represented as a tree, headID is always the root. You can store for each node the time needed to be informed of the news. Answer is the max time a leaf node needs to be informed.
 - How is the time calculated while traversing down and comparing and setting the maximum time?
 - Can we avoid repeating the work of calculating how much time it takes for each manager to inform their superiors?
    
 ```markdown
+
+HAPPY CASE
 Input: n = 7, headId = 0, manager = [-1, 0, 0, 0, 1, 1, 3]
 Output: informTime = [ 4, 2, 0, 3, 0, 0, 0]
+
+EDGE CASE
+Input: n = 6, headID = 2, manager = [2,2,-1,2,2,2], informTime = [0,0,1,0,0,0]
+Output: 1
 ```   
     
 ## 2: M-atch
@@ -49,7 +57,7 @@ For graph problems, we want to consider the following approaches:
 
 **⚠️ Common Mistakes**
 
-* 
+* Some may not noice that there is a tree structure in this problem. The first thought that comes to mind when trying to solve this problem is that the deepest employee in the tree is going to require the most time until that become informed. We proceed down the hierarchy, layer by layer. The tree is a mapping from `employee_id` to list of subordinates.
 
 ## 4: I-mplement
 
