@@ -6,7 +6,7 @@
 * 🛠️ **Topics**: Graphs
 * 🗒️ **Similar Questions**: TBD
 
-## 1. **U-nderstand**
+## 1: **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -31,7 +31,7 @@ word = "ABFSAB" -> returns 1
 word = "ABCD" -> returns 0
 ```
 
-## 2. M-atch
+## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
@@ -41,7 +41,7 @@ word = "ABCD" -> returns 0
     
     How should we traverse the matrix efficiently? We need to think of a traversal approach. BFS? DFS? Both can work. But DFS will be better as it immediately checks the next node of the graph and returns if it is not needed after marking it as visited.
     
-## 3. P-lan
+## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
@@ -60,7 +60,7 @@ word = "ABCD" -> returns 0
 
 * 
 
-## 4. I-mplement
+## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
 
@@ -145,7 +145,7 @@ class Solution {
 }
 ```
 
-## 5. R-eview
+## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
@@ -153,7 +153,7 @@ class Solution {
 - Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
 
 
-## 6. E-valuate
+## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
