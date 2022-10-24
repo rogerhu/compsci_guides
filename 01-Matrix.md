@@ -16,15 +16,17 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - How do we approach a neighboring cell? 
-When we find the neighbor, we just ignore the visited position, this will lead you to find the new neighbor, and exactly level by level.
+  - When we find the neighbor, we just ignore the visited position, this will lead you to find the new neighbor, and exactly level by level.
     
 - What should we keep track of when we visit a cell? 
-Every time you visit a node, it will be from a path of predecessors that is of shortest distance to a zero.
+  - Every time you visit a node, it will be from a path of predecessors that is of shortest distance to a zero.
     
 - What coordinates should we store?
-Store all the coordinates which have 1s.
+  - Store all the coordinates which have 1s.
     
-    ```markdown
+
+
+```markdown
     HAPPY CASE
     Input: mat = [[0,0,0],[0,1,0],[0,0,0]]
     Output: [[0,0,0],[0,1,0],[0,0,0]]
@@ -35,7 +37,7 @@ Store all the coordinates which have 1s.
     EDGE CASE
     Input: mat = [[0,0,0],[0,0,0],[0,0,0]]
     Output: [[0,0,0],[0,0,0],[0,0,0]]
-    ```
+```
     
 ## 2: M-atch
 
