@@ -15,9 +15,11 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-- When do we return true? Return true when the last letter is reached.
+- When do we return true? 
+  - Return true when the last letter is reached.
 
-- What if we come across the same letter during the search path? During the search path, set the visited letter as visited to avoid reuse.
+- What if we come across the same letter during the search path? 
+  - During the search path, set the visited letter as visited to avoid reuse.
 
 ```markdown
 word = "ABCCED", -> returns 1,
