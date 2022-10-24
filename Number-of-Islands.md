@@ -15,15 +15,17 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-    - What are the constraints?
-        - `m` == grid.length (number of rows)
-        - `n` == grid[i].length (number of columns)
-        - 1 <= `m`, `n` <= 300
-        - `grid[i][j]` is '0' or '1'
-    - Can we simply iterate through the grid and count each time that there isn’t a 1 to the left or above another 1? 
-    That won’t actually work though because there can be islands with isolated cells that have 0s above and to the left, but are still part of the island.
-    - What is the definition of an island?
-        - One or more pieces of land ('1') connected horizontally or vertically
+- What are the constraints?
+   - `m` == grid.length (number of rows)
+   - `n` == grid[i].length (number of columns)
+   - 1 <= `m`, `n` <= 300
+   - `grid[i][j]` is '0' or '1'
+
+- Can we simply iterate through the grid and count each time that there isn’t a 1 to the left or above another 1? 
+   - That won’t actually work though because there can be islands with isolated cells that have 0s above and to the left, but are still part of the island.
+
+- What is the definition of an island?
+   - One or more pieces of land ('1') connected horizontally or vertically
     
     ```markdown
     HAPPY CASE
