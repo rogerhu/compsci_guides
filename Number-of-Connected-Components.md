@@ -16,19 +16,19 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - Do we need on the node or the keys in the graph?
-We are told that we are guaranteed to have all nodes from 0 -> n. That's why we need to loop on the range (0 -> n) instead of the keys in your graph representation (or the edge list) because nodes that are completely isolated need to be treated as their own connected component.
+  - We are told that we are guaranteed to have all nodes from 0 -> n. That's why we need to loop on the range (0 -> n) instead of the keys in your graph representation (or the edge list) because nodes that are completely isolated need to be treated as their own connected component.
     
 - Are the BFS and DFS solutions same here?
-DFS and BFS are similar. First we build an adjacent-list graph base on edges. Then we iterate all nodes in graph: `{0,...,n-1}`. In each iteration, we can either DFS or BFS to remove all connected component nodes. The times that node is still in our graph when we iterate it is the number of connected components.
+  - DFS and BFS are similar. First we build an adjacent-list graph base on edges. Then we iterate all nodes in graph: `{0,...,n-1}`. In each iteration, we can either DFS or BFS to remove all connected component nodes. The times that node is still in our graph when we iterate it is the number of connected components.
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: n = 5, edges = [[0,1],[1,2],[3,4]]
     Output: 2
     
     Input: n = 5, edges = [[0,1],[1,2],[2,3],[3,4]]
     Output: 1
-    ```
+```
     
 ## 2: M-atch
     
