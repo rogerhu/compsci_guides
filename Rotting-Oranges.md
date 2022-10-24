@@ -15,15 +15,18 @@
 
 ## 1: **U-nderstand**
     
-- What do the possible values of the grid represent? 1’s are fresh oranges, 2’s are rotten oranges and 0’s are empty spaces
+- What do the possible values of the grid represent? 
+  - 1’s are fresh oranges, 2’s are rotten oranges and 0’s are empty spaces
     
-- What data structures can I use to store the grids? You can use a 2D array, hashset, queue, etc.
+- What data structures can I use to store the grids? 
+  - You can use a 2D array, hashset, queue, etc.
     
-- Do we need to keep track of the level? Yes, you can keep track of the level using a search algorithm. Trick is to only increment once per level and only if fresh.
+- Do we need to keep track of the level? 
+  - Yes, you can keep track of the level using a search algorithm. Trick is to only increment once per level and only if fresh.
     
 - What is a possible edge case? That there is no fresh, there is no rotten
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: grid = [[2,1,1],[1,1,0],[0,1,1]]
     Output: 4
@@ -34,7 +37,7 @@
     EDGE CASE
     Input: grid = [[0,2]]
     Output: 0
-    ```
+```
     
 ## 2: M-atch
 
