@@ -3,10 +3,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/>
-* **Difficulty:** 
-* **Time to complete**: __ mins
-* **Topics**: 
-* **Similar Questions**: 
+* 💡 **Problem Difficulty:** Medium
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
+* 🗒️ **Similar Questions**:
     
 ## 1: U-nderstand
  
