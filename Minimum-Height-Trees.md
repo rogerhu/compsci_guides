@@ -16,16 +16,16 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - What would be a N^2 solution?
-A brute force N^2 solution would be to try every node and find its height. 
+  - A brute force N^2 solution would be to try every node and find its height. 
 
 - What is a minimum height tree?
-Minimum height tree is rooted at the mid point of the longest path in the tree. The root of minimum height tree is the middle point of the longest path in the tree; hence there are at most two minimum height tree roots. Remember a tree has n nodes and n-1 edges.
+  - Minimum height tree is rooted at the mid point of the longest path in the tree. The root of minimum height tree is the middle point of the longest path in the tree; hence there are at most two minimum height tree roots. Remember a tree has n nodes and n-1 edges.
 
 - What is the degree of the node?
-A degree of node is basically the number of edges connected to for from the node. This is the case for an undirected graph.
+  - A degree of node is basically the number of edges connected to for from the node. This is the case for an undirected graph.
         
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: n = 4, edges = [[1,0],[1,2],[1,3]]
     Output: [1]
@@ -36,7 +36,7 @@ A degree of node is basically the number of edges connected to for from the node
     EDGE CASE
     Input: n = 7, edges = [[0,1],[1,2],[1,3],[2,4],[3,5],[4,6]]
     Output: [1,2]
-    ```
+```
     
 ## 2: M-atch
 
