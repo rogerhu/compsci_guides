@@ -16,19 +16,19 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - Can we think of the grid as a weighted graph?
-Yes, to solve this problem, we have to think about the grid as a weighted graph. Each cell is a node. An edge is a connector between two of such nodes. The weight of an edge is calculated as the maximum value of two nodes connected by that edge. That way we reduced the problem to graph traversal problem with some constraints. We no longer want to search for the shortest path, but a path with the minimum-maximum value.
+  - Yes, to solve this problem, we have to think about the grid as a weighted graph. Each cell is a node. An edge is a connector between two of such nodes. The weight of an edge is calculated as the maximum value of two nodes connected by that edge. That way we reduced the problem to graph traversal problem with some constraints. We no longer want to search for the shortest path, but a path with the minimum-maximum value.
     
 - Where do I start on the grid?
-Start with `(0,0)`corner. On each moment of time we choose node with smallest value to visit. In this way when we reached `(N-1, N-1)`corner, the answer will be the maximum of visited cells so far.
+  - Start with `(0,0)`corner. On each moment of time we choose node with smallest value to visit. In this way when we reached `(N-1, N-1)`corner, the answer will be the maximum of visited cells so far.
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: grid = [[0,2],[1,3]]
     Output: 3
     
     Input: grid = [[0,1,2,3,4],[24,23,22,21,5],[12,13,14,15,16],[11,17,18,19,20],[10,9,8,7,6]]
     Output: 16
-    ```
+```
     
 ## 2: M-atch
 
