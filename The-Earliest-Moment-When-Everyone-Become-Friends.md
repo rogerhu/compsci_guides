@@ -1,5 +1,3 @@
-# Wiki Solutions Guide
-
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/>
@@ -17,10 +15,10 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-- Question
-  - Answer
-- Question
-  - Answer 
+- How can we sort the log items?
+  - Sort the log items by their timestamp.
+- How can we model this problem as a graph problem?
+  - To keep track of connectivity of each element in the subset or connectivity of subsets with each other, you can use Union Find data structure to do this operation efficiently.
    
 ```markdown
 HAPPY CASE
@@ -41,9 +39,9 @@ Output:
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
-For XXX problems, we want to consider the following approaches:
+For graph problems, we want to consider the following approaches:
 
-* Algorithm: Yes/No and explanation on why this approach will or will not work.
+* Union Find: Let's use a union-find data structure. At the beginning we have a graph with N nodes but no edges. Then we loop through the events and if unite each node until the number of connected components reach to 1. Notice that each time two different connected components are united the number of connected components decreases by 1.
 
 
 ## 3: P-lan
