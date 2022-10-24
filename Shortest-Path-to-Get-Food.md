@@ -16,15 +16,15 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - Does this problem give us a starting point?
-This problem doesn't provide you a start point. We, then, need to find it by iterating over the grid to find the cell which value is `*`. The problem guarantee that there is only one `*`.
+  - This problem doesn't provide you a start point. We, then, need to find it by iterating over the grid to find the cell which value is `*`. The problem guarantee that there is only one `*`.
     
 - What is the worst case scenario? 
-We should visit each cell in the grid is the worst case scenario. Therefore, the time complexity is `O(mn)` where m, n is the row and column size of grid.
+  - We should visit each cell in the grid is the worst case scenario. Therefore, the time complexity is `O(mn)` where m, n is the row and column size of grid.
     
 - When we find the food, what do we return?
-Until we find the food, return the level.
+  - Until we find the food, return the level.
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: grid = [["X","X","X","X","X","X"],["X","*","O","O","O","X"],["X","O","O","#","O","X"],["X","X","X","X","X","X"]]
     Output: 3
@@ -34,7 +34,7 @@ Until we find the food, return the level.
     
     Input: grid = [["X","X","X","X","X","X","X","X"],["X","*","O","X","O","#","O","X"],["X","O","O","X","O","O","X","X"],["X","O","O","O","O","#","O","X"],["X","X","X","X","X","X","X","X"]]
     Output: 6
-    ```
+```
     
 ## 2: M-atch
 
