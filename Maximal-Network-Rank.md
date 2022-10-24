@@ -15,11 +15,11 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-    - How can you efficiently check if there is a road connecting two different cities?
-    - Would it be efficient to use a matrix to save all the edges between vertex?
-    - If the edge is close to `city_1` and `city_2`, then during counting, are they counted twice?
+- How can you efficiently check if there is a road connecting two different cities?
+- Would it be efficient to use a matrix to save all the edges between vertex?
+- If the edge is close to `city_1` and `city_2`, then during counting, are they counted twice?
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: n = 5, roads = [[0,1], [0,3], [1,2], [1,3], [2,3], [2,4]]
     Output: 5
@@ -29,7 +29,7 @@
     Input: n = 8, roads = [[0,1], [1,2], [2,3], [2,4], [5,6], [5,7]]
     Output: 5
     Explanation: The network rank of 2 and 5 is 5. Notice that all the cities do not have to be connected.
-    ```
+```
     
 ## 2: M-atch
 
