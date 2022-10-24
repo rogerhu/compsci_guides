@@ -16,16 +16,16 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - Does the graph have to a connected graph?
-Yes, this graph has to be a connected graph. If it’s not connected, it’s impossible to clone a graph give only one node.
+  - Yes, this graph has to be a connected graph. If it’s not connected, it’s impossible to clone a graph give only one node.
     
 - What do we go after copying every single node?
-We need to copy each single node and assign the correct reference to the copied node.
+  - We need to copy each single node and assign the correct reference to the copied node.
     
 - Can a node in this graph have more than one neighbor?
-Yes, a node could have any number of neighbors. This is why neighbors can be thought of as a list.
+  - Yes, a node could have any number of neighbors. This is why neighbors can be thought of as a list.
     
 - How do we choose how to traverse the graph?
-Based on the kind of graph we are expecting we can chose BFS or DFS. 
+  - Based on the kind of graph we are expecting we can chose BFS or DFS. 
     
     ```markdown
     HAPPY CASE
