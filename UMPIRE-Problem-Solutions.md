@@ -30,6 +30,7 @@
 * [[Evaluate Division]]
 * [[Most Stones Removed]]
 * [[Clone Graph]]
+* [[Connecting Cities With Minimum Cost]]
 
 ## Greedy Algorithms & Dynamic Programming
 
