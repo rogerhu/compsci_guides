@@ -16,19 +16,19 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - How many equations can we have?
-We can have up to 20 questions.
+   - We can have up to 20 questions.
 
 - Can there be no questions?
-No, there must be a minimum of one question.
+   - No, there must be a minimum of one question.
 
 - How long can variable names be?
-There can be up to 5 characters in a variable name.
+   - There can be up to 5 characters in a variable name.
 
 - Can variable names be empty?
-No, variable names must have at least one alphabetical character
+   - No, variable names must have at least one alphabetical character
 
 - How many queries are performed?
-There can be up to 20 queries.
+   - There can be up to 20 queries.
     
     ```markdown
     HAPPY CASE
