@@ -30,8 +30,8 @@
 * [[Evaluate Division]]
 * [[Most Stones Removed]]
 * [[Clone Graph]]
-* [[Connecting Cities With Minimum Cost]] - In Progress
-* [[The Earliest Moment When Everyone Become Friends]] - In Progress
+* [[Connecting Cities With Minimum Cost]]
+* [[The Earliest Moment When Everyone Become Friends]]
 
 ## Greedy Algorithms & Dynamic Programming
 
