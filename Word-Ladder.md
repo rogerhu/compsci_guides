@@ -19,15 +19,15 @@
 All lowercase alphabet letters.
 
 - Do all words have the same number of characters?
-Yes, all words have the same number of characters.
+  - Yes, all words have the same number of characters.
 
 - Could the beginning or end word be empty?
-No, each word must have at least one character.
+  - No, each word must have at least one character.
 
 - Could the beginning word be the same as the ending word?
-No, the beginning and ending word will always be different.
+  - No, the beginning and ending word will always be different.
     
-    ```
+```
     HAPPY CASE
     Input:
        beginWord = "hit"
@@ -43,7 +43,7 @@ No, the beginning and ending word will always be different.
        wordList  = ["hot","dot","dog","lot","log"]
     
     Output: 0
-    ```
+```
     
 ## 2: M-atch
 
