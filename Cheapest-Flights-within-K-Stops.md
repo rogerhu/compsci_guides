@@ -16,12 +16,13 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - When does a given path given priority over another?
-In a basic Dijkstra algorithm, the only basis upon which one path is given priority over another is the cost. In this problem however, there is an additional constraint; length of route or (number of stops).
+  - In a basic Dijkstra algorithm, the only basis upon which one path is given priority over another is the cost. In this problem however, there is an additional constraint; length of route or (number of stops).
     
 - What do we need to keep track of during the traversal?
-We need to keep track of all routes to the node and compare on the basis of (cost and number of stops).
-    
-    ```markdown
+  - We need to keep track of all routes to the node and compare on the basis of (cost and number of stops).
+
+
+```markdown
     HAPPY CASE
     Input: n = 4, flights = [[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]], src = 0, dst = 3, k = 1
     Output: 700
@@ -32,7 +33,7 @@ We need to keep track of all routes to the node and compare on the basis of (cos
     EDGE CASE
     Input: n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, k = 0
     Output: 500
-    ```
+```
     
 ## 2: M-atch
 
