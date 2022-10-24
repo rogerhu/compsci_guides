@@ -16,10 +16,10 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - How do we encode the prerequisites into a graph?
-You can denote each task as a node and the prerequisite relationship as a one-direction edge.
+  - You can denote each task as a node and the prerequisite relationship as a one-direction edge.
 
 - When is it impossible for you to finish all tasks?
-When there exists at least one task pair t1 and t2, such that t1 is direct or indirect prerequisite for t2 and t2 is direct or indirect prerequisite for t1. This is equivalent to finding a cycle in our graph representation.
+  - When there exists at least one task pair t1 and t2, such that t1 is direct or indirect prerequisite for t2 and t2 is direct or indirect prerequisite for t1. This is equivalent to finding a cycle in our graph representation.
     
     ```markdown
     HAPPY CASE
