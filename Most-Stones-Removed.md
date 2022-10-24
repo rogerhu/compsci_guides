@@ -16,13 +16,13 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - How many stones can there be on the plane?
-There can be up to 1000 stones.
+  - There can be up to 1000 stones.
 
 - Could there be no stones?
-Yes, there could be no stones.
+  - Yes, there could be no stones.
 
 - What if no stones can be removed?
-Then the result should be zero.
+  - Then the result should be zero.
     
     ```markdown
     HAPPY CASE
