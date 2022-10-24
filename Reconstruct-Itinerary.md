@@ -18,9 +18,9 @@
 - Are all ticket names the same length?
   - Yes, they are all three characters.
 - What are the valid characters for the ticket names?
-    - They are all uppercase alphabet characters.
+   - They are all uppercase alphabet characters.
 - Can a ticket have the same starting and ending location?
-    - No, tickets cannot start and end at the same place.
+   - No, tickets cannot start and end at the same place.
    
 ```markdown
 HAPPY CASE
