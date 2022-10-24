@@ -17,22 +17,22 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - How many neighbors do we have at each point?
-At each point, we can have 8 neighbors. We need to consider only neighbors to the right (or left) of the given point. This means for `(0,0)`, we need to consider only 4 neighbors to its right to get to `(x,y)`.
+  - At each point, we can have 8 neighbors. We need to consider only neighbors to the right (or left) of the given point. This means for `(0,0)`, we need to consider only 4 neighbors to its right to get to `(x,y)`.
     
 - How can we make sure neighbors are not added multiple times?
-You can use a data structure like a hashMap to make sure neighbors are not added multiple times.
+  - You can use a data structure like a hashMap to make sure neighbors are not added multiple times.
     
 - How can we reduce this graph to find the minimum number of moves?
-Each position on the board can be thought of as a node. Edges can be thought of as possible moves for a knight from one position to other. This leads to an undirected uniform weighted graph. Thus the shortest distance to the target position is our answer.
+  - Each position on the board can be thought of as a node. Edges can be thought of as possible moves for a knight from one position to other. This leads to an undirected uniform weighted graph. Thus the shortest distance to the target position is our answer.
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: x = 2, y = 1
     Output: 1
     
     Input: x = 5, y = 5
     Output: 4
-    ```
+```
     
 ## 2: M-atch
 
