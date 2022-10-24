@@ -43,6 +43,7 @@ Output: -1
 For graph problems, we want to consider the following approaches:
 
 * Union Find: Let's use a union-find data structure. At the beginning we have a graph with N nodes but no edges. Then we loop through the events and if unite each node until the number of connected components reach to 1. Notice that each time two different connected components are united the number of connected components decreases by 1.
+* Depth First Search: Suppose we have a set. We can keep track of the friend circle and add people in the set. As soon as we find a new relation (by iterating through logs), we can check if this new relation will bring every member in set.
 
 
 ## 3: P-lan
@@ -60,6 +61,8 @@ For graph problems, we want to consider the following approaches:
 **⚠️ Common Mistakes**
 
 * What are some common pitfalls students might have when implementing this solution?
+
+You can think of the node "representing" the connected component as sometimes further (a certain number of edges) away. A common mistake is not seeing that the parent is closer. To ensure best runtime, the smaller connected component is merged into the larger one.
 
 ## 4: I-mplement
 
