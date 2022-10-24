@@ -15,13 +15,13 @@
 
 ## 1: U-nderstand
 
-    - How do we keep track of the rooms? Does the set begin at room 0? If so, should I add 0 to the visited set?
-    - What if the room has not been visited yet? "If the key is not visited yet, add the key to visited and recursively visit keys in that room, otherwise do not visit the room again."
-    - When do we know all rooms are visited? "We can visit all rooms only when the size of visited set equals to the size of the rooms."
-    - What if inputs are too large? "If input is too large, DFS might cause stack overflow."
-    - How would you use DFS to see which rooms can be reached from room 0?
+- How do we keep track of the rooms? Does the set begin at room 0? If so, should I add 0 to the visited set?
+- What if the room has not been visited yet? "If the key is not visited yet, add the key to visited and recursively visit keys in that room, otherwise do not visit the room again."
+- When do we know all rooms are visited? "We can visit all rooms only when the size of visited set equals to the size of the rooms."
+- What if inputs are too large? "If input is too large, DFS might cause stack overflow."
+- How would you use DFS to see which rooms can be reached from room 0?
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: [[1],[2],[3],[]]
     Output:	true
@@ -29,7 +29,7 @@
     EDGE CASE 
     Input: [[2], [], [1]]
     Output: false
-    ```
+```
     
 ## 2: M-atch
 
