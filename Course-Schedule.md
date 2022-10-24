@@ -16,18 +16,18 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - When should the program return false? 
-We only return false when we encounter a cycle. We encounter a cycle when course A needs course B and course B needs course A. So we just need to write a function to check if course A needs course B and course B needs course A. As long as there is no cycle, we can complete all the courses.
+  - We only return false when we encounter a cycle. We encounter a cycle when course A needs course B and course B needs course A. So we just need to write a function to check if course A needs course B and course B needs course A. As long as there is no cycle, we can complete all the courses.
     
 - Can you take a course without a prerequisite?
-There is no problem taking up courses for which there is no prerequisite. For the other courses, as long as there is no cyclic dependency, we can finish them. 
+  - There is no problem taking up courses for which there is no prerequisite. For the other courses, as long as there is no cyclic dependency, we can finish them. 
     
 - Do we need track completed courses? 
-Maintain a list of completed courses to remind us that these courses have already been verified to not form a cycle. This is to avoid doing DFS over and over again on the same courses.
+  - Maintain a list of completed courses to remind us that these courses have already been verified to not form a cycle. This is to avoid doing DFS over and over again on the same courses.
     
 - What are the three course statuses?
-For each class there are 3 statuses: not visited, visiting, visited.  
+  - For each class there are 3 statuses: not visited, visiting, visited.  
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: numCourses = 4, prerequisites = [[0,1], [1,2], [2,3]]
     Output: true
@@ -41,7 +41,7 @@ For each class there are 3 statuses: not visited, visiting, visited.
     Input: numCourses = 5, prerequisites = []
     Output: true
     Explanation: In this case, no courses have prereqs, so we can take them in any order
-    ```
+```
     
 ## 2: M-atch
 
