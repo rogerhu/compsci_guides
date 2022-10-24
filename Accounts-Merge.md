@@ -16,7 +16,7 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - How do we identify an account?
-    We give each account an ID, based on the index of it within the list of accounts. For example: 
+  - We give each account an ID, based on the index of it within the list of accounts. For example: 
     
     ```
     [
@@ -27,20 +27,23 @@
     ]
     ```
     
-- Can one person have multiple accounts? One person is allowed to have multiple accounts, but each email can only belong to one person.
+- Can one person have multiple accounts? 
+  - One person is allowed to have multiple accounts, but each email can only belong to one person.
     
-- Why do need to list out all the emails that belong to a specific person? This is done so that every time we find two accounts with an email in common, we will merge the two accounts into one.
+- Why do need to list out all the emails that belong to a specific person? 
+  - This is done so that every time we find two accounts with an email in common, we will merge the two accounts into one.
     
-- What do you mean by “merging” accounts? We have a set of elements (emails) that are connected (belonging to the same user). We can consider this as our input on a graph. Converting the input into a graph is what is meant by “merging” the accounts.
+- What do you mean by “merging” accounts? 
+  - We have a set of elements (emails) that are connected (belonging to the same user). We can consider this as our input on a graph. Converting the input into a graph is what is meant by “merging” the accounts.
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: accounts = [["John","johnsmith@mail.com","john_newyork@mail.com"],["John","johnsmith@mail.com","john00@mail.com"],["Mary","mary@mail.com"],["John","johnnybravo@mail.com"]]
     Output: [["John","john00@mail.com","john_newyork@mail.com","johnsmith@mail.com"],["Mary","mary@mail.com"],["John","johnnybravo@mail.com"]]
     
     Input: accounts = [["Gabe","Gabe0@m.co","Gabe3@m.co","Gabe1@m.co"],["Kevin","Kevin3@m.co","Kevin5@m.co","Kevin0@m.co"],["Ethan","Ethan5@m.co","Ethan4@m.co","Ethan0@m.co"],["Hanzo","Hanzo3@m.co","Hanzo1@m.co","Hanzo0@m.co"],["Fern","Fern5@m.co","Fern1@m.co","Fern0@m.co"]]
     Output: [["Ethan","Ethan0@m.co","Ethan4@m.co","Ethan5@m.co"],["Gabe","Gabe0@m.co","Gabe1@m.co","Gabe3@m.co"],["Hanzo","Hanzo0@m.co","Hanzo1@m.co","Hanzo3@m.co"],["Kevin","Kevin0@m.co","Kevin3@m.co","Kevin5@m.co"],["Fern","Fern0@m.co","Fern1@m.co","Fern5@m.co"]]
-    ```
+```
     
 ## 2: M-atch
 
