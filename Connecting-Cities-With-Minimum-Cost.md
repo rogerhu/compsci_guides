@@ -1,5 +1,3 @@
-# Wiki Solutions Guide
-
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/connecting-cities-with-minimum-cost/>
