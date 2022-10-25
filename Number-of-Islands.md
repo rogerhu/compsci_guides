@@ -28,7 +28,7 @@
    - One or more pieces of land ('1') connected horizontally or vertically
     
 
-    ```markdown
+```markdown
     HAPPY CASE
     Input: [["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]]
     Output: 1
@@ -39,7 +39,7 @@
     EDGE CASE
     Input: [["0","0","1","0","0"],["0","0","0","0","0"],["0","0","0","0","0"],["0","0","1","0","0"]]
     Output: 2
-    ```
+```
     
 ## 2: M-atch
     
@@ -68,7 +68,7 @@
 
 ⚠️ **Common Mistakes**
 
-* 
+* When we are checking neighbors, we might end up filling queue with duplicate cells having '1' which will cause time limit exceeded error. To fix this problem, we can convert all 1s neighbors to 0s before adding them to the queue.
 
 ## 4: I-mplement
 
