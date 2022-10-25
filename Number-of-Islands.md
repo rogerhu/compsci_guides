@@ -133,41 +133,24 @@
 
 
 ```python
-# Python Solution
-    class Solution(object):
-        def numIslands(self, grid):
-            """
-            :type grid: List[List[str]]
-            :rtype: int
-            """
-            if len(grid) == 0: return 0
-            row = len(grid); col = len(grid[0])
-            self.count = sum(grid[i][j]=='1' for i in range(row) for j in range(col))
-            parent = [i for i in range(row*col)]
-            
-            def find(x):
-                if parent[x]!= x:
-                    return find(parent[x])
-                return parent[x]
-            
-            def union(x,y):
-                xroot, yroot = find(x),find(y)
-                if xroot == yroot: return 
-                parent[xroot] = yroot
-                self.count -= 1
-            
-            
-            
-            for i in range(row):
-                for j in range(col):
-                    if grid[i][j] == '0':
-                        continue
-                    index = i*col + j
-                    if j < col-1 and grid[i][j+1] == '1':
-                        union(index, index+1)
-                    if i < row-1 and grid[i+1][j] == '1':
-                        union(index, index+col)
-            return self.count
+def numIslands(self, grid: List[List[str]]) -> int:
+	# keep track of row and column lengths of grid to access later
+	m = len(grid)
+	n = len(grid[0])
+
+	def destroyIsland(r,c): # recursive DFS helper
+		grid[r][c] = "2" # set this spot to a different value to avoid infinite loops
+		for (row,col) in [(r-1,c),(r+1,c),(r,c-1),(r,c+1)]: # 4-dimensionally adjacent locations
+			if 0 <= row < m and 0 <= col < n and grid[row][col] == "1": # if not out of bounds and part of the island
+				destroyIsland(row,col) # destroy the rest of the island (set to "2")
+
+	ans = 0 # answer
+	for i, row in enumerate(grid): # get rows from grid
+		for j, element in enumerate(row): # go through the row
+			if element == "1": # if we hid land
+				destroyIsland(i,j) # destroy this island
+				ans += 1 # we found an island
+	return ans
 ```
     
 ## 5: R-eview
