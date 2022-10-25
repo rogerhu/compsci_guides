@@ -71,34 +71,30 @@ You can think of the node "representing" the connected component as sometimes fu
 ```python
 class Solution:
     def earliestAcq(self, logs: List[List[int]], n: int) -> int:
-        # In order to ensure that we find the _earliest_ moment,
-        #  first of all we need to sort the events in chronological order.
+        # sort the events in chronological order
         logs.sort(key = lambda x: x[0])
 
         uf = UnionFind(n)
-        # Initially, we treat each individual as a separate group.
+        # treat each individual as a separate group
         group_cnt = n
 
-        # We merge the groups along the way.
+        # merge the groups as we traverse the logs
         for timestamp, friend_a, friend_b in logs:
             if uf.union(friend_a, friend_b):
                 group_cnt -= 1
 
-            # The moment when all individuals are connected to each other.
+            # return timestamp when individuals are connected to each other
             if group_cnt == 1:
                 return timestamp
 
-        # There are still more than one groups left,
-        #  i.e. not everyone is connected.
+        # not everyone is connected
         return -1
 ```
 ```java
 class Solution {
     public int earliestAcq(int[][] logs, int n) {
-        // In order to ensure that we find the _earliest_ moment,
-        //  first of all we need to sort the events in chronological order.
+        // sort the events in chronological order
         Arrays.sort(logs, new Comparator<int[]>() {
-            @Override
             public int compare(int[] log1, int[] log2) {
                 Integer tsp1 = new Integer(log1[0]);
                 Integer tsp2 = new Integer(log2[0]);
@@ -106,7 +102,7 @@ class Solution {
             }
         });
 
-        // Initially, we treat each individual as a separate group.
+        // treat each individual as a separate group
         int groupCount = n;
         UnionFind uf = new UnionFind(n);
 
@@ -114,19 +110,18 @@ class Solution {
             int timestamp = log[0];
             int friendA = log[1];
             int friendB = log[2];
-            // We merge the groups along the way.
+            // merge the groups
             if (uf.union(friendA, friendB)) {
                 groupCount -= 1;
             }
 
-            // The moment when all individuals are connected to each other.
+            // return timestamp when individuals are connected to each other
             if (groupCount == 1) {
                 return timestamp;
             }
         }
 
-        // There are still more than one groups left,
-        //  i.e. not everyone is connected.
+        // not everyone is connected
         return -1;
     }
 }
