@@ -118,5 +118,5 @@ Step 3 and 4 go through the same process.
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-    - Time Complexity: `O(NM)`, note: every element of matrix is processed
-    - Space Complexity: `O(NM)`
+Time Complexity: `O(NM)`, note: every element of matrix is processed
+Space Complexity: `O(NM)`
