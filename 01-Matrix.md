@@ -43,7 +43,7 @@
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
-    - BFS: The idea is to put all zeroes in one BFS layer/breadth and move out to other nodes from there. Mark unvisited node as `-1`. The first `matrix[vrow][vcol] = matrix[urow][ucol] + 1`should be the smallest distance possible.
+* BFS: The idea is to put all zeroes in one BFS layer/breadth and move out to other nodes from there. Mark unvisited node as `-1`. The first `matrix[vrow][vcol] = matrix[urow][ucol] + 1`should be the smallest distance possible.
 
 ## 3: P-lan
     
