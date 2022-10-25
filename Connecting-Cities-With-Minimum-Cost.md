@@ -53,8 +53,9 @@ For graph problems, we want to consider the following approaches:
 **General Idea:** Write a 1-2 sentence overview that explains the general approach.
 
 ```markdown
-1. Let visit[i][j]: minimum cost from 0 to i with j times we have to use discount
-2. Use Dijkstra's to find minimum cost from 0 to n-1
+1. Let visit[i][j] be the minimum cost from 0 to i with j times we have to use discount
+2. Use Dijkstra's to find minimum cost from 0 to n-1. We keep a list of minimum cost for the current node and update
+to find the edge with minimum cost in the priority queue.
 ```
 
 **⚠️ Common Mistakes**
