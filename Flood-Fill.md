@@ -52,18 +52,15 @@
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    Store our starting point in a variable. We are given our starting point through the parameters `image`, `sr`, and `sc`. `sr` represents the row, and `sc` represents the column. Step 1 starts from the middle as the starting pixel, changes itself to the new color which is ‘2’ in this case. It checks its neighbors (left, right, top, bottom), replaces those that had the same number as the one the starting pixel had (which is 1) before it changed to the new color (2). So it changes all the 1s to 2s as long as they are neighbors. Then moves to its left neighbor (1st column) to go through the same process.
-    
-    Step 2, changes its top and bottom neighbors to 2 because those neighbors had the same number as its initial before itself was changed. 
-    
-    Step 3 and 4 go through the same process.
-    
-    There is a tricky case where the new color is the same as the original color and if the DFS is done on it, there will be an infinite loop. If new color is same as original color, there is nothing to be done and we can simply return the `image`.
-
+1. Store our starting point in a variable. We are given our starting point through the parameters `image`, `sr`, and `sc`. `sr` represents the row, and `sc` represents the column. Step 1 starts from the middle as the starting pixel, changes itself to the new color which is ‘2’ in this case. It checks its neighbors (left, right, top, bottom), replaces those that had the same number as the one the starting pixel had (which is 1) before it changed to the new color (2). So it changes all the 1s to 2s as long as they are neighbors. Then moves to its left neighbor (1st column) to go through the same process.
+2. Change top and bottom neighbors to 2 because those neighbors had the same number as its initial before itself was changed. 
+Step 3 and 4 go through the same process.
+   
 
 ⚠️ **Common Mistakes**
 
 * A common mistake could include not returning the image at the end so that when the recursion ends at the end of the stack it returns the state of image. Watch out for any errors along the lines of an recursion_depth_exceeded error.
+* There is a tricky case where the new color is the same as the original color and if the DFS is done on it, there will be an infinite loop. If new color is same as original color, there is nothing to be done and we can simply return the `image`.
 
     
 ## 4: I-mplement
