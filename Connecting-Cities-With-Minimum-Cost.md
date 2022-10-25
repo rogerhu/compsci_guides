@@ -18,7 +18,7 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - How can we find the minimum weight path?
-  - Use Dijkstra's algorithm to find the minimum weight path. Keep track of the minimum distance to each vertex with d discounts left
+  - You can use Dijkstra's algorithm to find the minimum weight path. Keep track of the minimum distance to each vertex with d discounts left
 - Are there duplicate highways?
   - There are no duplicate highways.
    
