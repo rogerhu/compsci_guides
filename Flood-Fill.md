@@ -26,7 +26,7 @@
     
 
 
-    ```markdown
+```markdown
     HAPPY CASE
     Input: image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, color = 2
     Output: [[2,2,2],[2,2,0],[2,0,1]]
@@ -37,7 +37,7 @@
     EDGE CASE
     Input: [[1,0,0],[0,1,0],[0,0,1]], sr = 0, sc = 0, color = 0
     Output: [[0,0,0],[0,1,0],[0,0,1]]
-    ```
+```
     
 ## 2: M-atch
 
@@ -63,7 +63,7 @@
 
 ⚠️ **Common Mistakes**
 
-* 
+* A common mistake could include not returning the image at the end so that when the recursion ends at the end of the stack it returns the state of image. Watch out for any errors along the lines of an recursion_depth_exceeded error.
 
     
 ## 4: I-mplement
