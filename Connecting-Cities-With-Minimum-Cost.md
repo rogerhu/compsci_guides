@@ -44,6 +44,7 @@ Output: -1
 For graph problems, we want to consider the following approaches:
 
 * Dijkstra’s: We essentially need to find the minimum distance to get from node 0 to node n - 1 in an undirected weighted graph. What algorithm should we use to do this? Since, Dijkstra’s algorithm that seeks the minimum weighted vertex on every iteration, so the original Dijkstra’s algorithm will output the first path but the result should be the second path as it contains minimum number of edges.
+* Prim's: With Prim's, we can first build an adjacency list. Start from any vertex that has not been visited yet, and add all edges from that vertex. We need to add all edges except for the ones where both vertices are in MST
 
 
 ## 3: P-lan
