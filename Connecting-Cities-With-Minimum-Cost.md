@@ -44,7 +44,8 @@ Output: -1
 For graph problems, we want to consider the following approaches:
 
 * Dijkstra’s: We essentially need to find the minimum distance to get from node 0 to node n - 1 in an undirected weighted graph. What algorithm should we use to do this? Since, Dijkstra’s algorithm that seeks the minimum weighted vertex on every iteration, so the original Dijkstra’s algorithm will output the first path but the result should be the second path as it contains minimum number of edges.
-* Prim's: With Prim's, we can first build an adjacency list. Start from any vertex that has not been visited yet, and add all edges from that vertex. We need to add all edges except for the ones where both vertices are in MST
+* Prim's: With Prim's, it constructs an MST from the point of view. The general idea is: Let the set of vertices in the graph G be U, first Arbitrarily choose a point in the graph G as the starting point a, add this point to the set V, and then find another point b from the set UV to make the weight of any point from b to V the smallest, then add point b to the set V ; And so on, the current set V={a,b}, and then find another point c from the set UV so that the weight of any point from c to V is the smallest, at this time point c is added to the set V until all vertices All were added to V, and an MST was constructed at this time. Because there are N vertices, the MST has N-1 edges. Each time a point is added to the set V, it means that an MST edge is found.
+* Kruskal's: With Kruskal's, we first arrange all edges from smallest to largest according to their weights, and then select each edge in order. If the two endpoints of this edge do not belong to the same set, then merge them until all the points belong to the same set Until the collection. As for how to merge into a collection, then here we can use a tool and search collection. The Kruskal algorithm is a greedy algorithm based on union search.
 
 
 ## 3: P-lan
@@ -75,6 +76,7 @@ class Solution(object):
         pq = [(0, discounts, 0)]
         visited = set()
         
+        # build an adjacency list
         adj = collections.defaultdict(list)
         for city1, city2, toll in highways:
             adj[city1].append((city2, toll))
@@ -84,10 +86,12 @@ class Solution(object):
         while pq:
             toll, d, city = heapq.heappop(pq)
             if (d, city) in visited: continue
+            # add to visited set
             visited.add((d, city))
             
             if city==n-1: return toll
             
+            # iterate through each node (cities) and check if they belong to the same connected component or not
             for nei, toll2 in adj[city]:
                 if (d, nei) not in visited:
                     heapq.heappush(pq, (toll+toll2, d, nei))
