@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/connecting-cities-with-minimum-cost/>
-* **Difficulty:** Medium
-* **Time to complete**: __ mins
-* **Topics**: Graphs, Dijkstra's, Union Find, Minimum Spanning Tree
-* **Similar Questions**: [Minimum Cost to Reach City With Discounts](https://leetcode.com/problems/minimum-cost-to-reach-city-with-discounts/)
+* 💡 **Difficulty:** Medium
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Graphs, Dijkstra's, Union Find, Minimum Spanning Tree
+* 🗒️ **Similar Questions**: [Minimum Cost to Reach City With Discounts](https://leetcode.com/problems/minimum-cost-to-reach-city-with-discounts/)
     
 ## 1: U-nderstand
  
