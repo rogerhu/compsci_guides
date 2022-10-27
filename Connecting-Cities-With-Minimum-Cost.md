@@ -49,6 +49,9 @@ union find to avoid this issue. After we finish constructing the route, we can d
 * Prim's: With Prim's, the algorithm resembles Dijkstra's algorithm. The MST is constructed starting from a single vertex and adding in new edges to the MST that link the partial tree to a new vertex outside of the MST
 * Kruskal's: With Kruskal's, we first arrange all edges from smallest to largest according to their weights, and then select each edge in order. If the two endpoints of this edge do not belong to the same set, then merge them until all the points belong to the same set Until the collection. As for how to merge into a collection, then here we can use a tool and search collection. The Kruskal algorithm is a greedy algorithm based on union search.
 
+Note: Which one is better --- Prims or Kruskal?
+If the graph consists of lots of edges, i.e. for dense graphs, then Prim’s Algorithm is more efficient than Kruskal’s algorithm.
+
 
 ## 3: P-lan
 
