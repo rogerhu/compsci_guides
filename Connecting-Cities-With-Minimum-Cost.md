@@ -19,6 +19,8 @@
   - You can use Dijkstra's algorithm to find the minimum weight path. Keep track of the minimum distance to each vertex with d discounts left
 - Are there duplicate highways?
   - There are no duplicate highways.
+- How does adding edges to a data structure like a heap affect the time complexity?
+  - As you're adding all edges to the heap, it affects the time complexity. You need to use a heap that can bubble up keys already inside it, and store the vertex's min edge weights to the connected set.
    
 ```markdown
 HAPPY CASE
@@ -41,8 +43,10 @@ Output: -1
 
 For graph problems, we want to consider the following approaches:
 
+* Union Find: At every single step, we use the shortest/cheapest route. The only issue will be, we might construct redundant routes. We use
+union find to avoid this issue. After we finish constructing the route, we can do one last check to make sure all the nodes are in this one single set. We can greedily pick the smallest edge at each iteration to connect cities together. Then, in the end, the result will be the smallest.
 * Dijkstra’s: We essentially need to find the minimum distance to get from node 0 to node n - 1 in an undirected weighted graph. What algorithm should we use to do this? Since, Dijkstra’s algorithm that seeks the minimum weighted vertex on every iteration, so the original Dijkstra’s algorithm will output the first path but the result should be the second path as it contains minimum number of edges.
-* Prim's: With Prim's, it constructs an MST from the point of view. The general idea is: Let the set of vertices in the graph G be U, first Arbitrarily choose a point in the graph G as the starting point a, add this point to the set V, and then find another point b from the set UV to make the weight of any point from b to V the smallest, then add point b to the set V ; And so on, the current set V={a,b}, and then find another point c from the set UV so that the weight of any point from c to V is the smallest, at this time point c is added to the set V until all vertices All were added to V, and an MST was constructed at this time. Because there are N vertices, the MST has N-1 edges. Each time a point is added to the set V, it means that an MST edge is found.
+* Prim's: With Prim's, the algorithm resembles Dijkstra's algorithm. The MST is constructed starting from a single vertex and adding in new edges to the MST that link the partial tree to a new vertex outside of the MST
 * Kruskal's: With Kruskal's, we first arrange all edges from smallest to largest according to their weights, and then select each edge in order. If the two endpoints of this edge do not belong to the same set, then merge them until all the points belong to the same set Until the collection. As for how to merge into a collection, then here we can use a tool and search collection. The Kruskal algorithm is a greedy algorithm based on union search.
 
 
@@ -53,9 +57,10 @@ For graph problems, we want to consider the following approaches:
 **General Idea:** Write a 1-2 sentence overview that explains the general approach.
 
 ```markdown
-1. Let visit[i][j] be the minimum cost from 0 to i with j times we have to use discount
-2. Use Dijkstra's to find minimum cost from 0 to n-1. We keep a list of minimum cost for the current node and update
-to find the edge with minimum cost in the priority queue.
+1. Implement the Union find first as usual with Path Compression using forest
+2. This is a greedy Algorithm, the way it works is every time you need to find the minimum cost from the connections and check if including this Edge would cause a loop or cycle, which is where our Union Find would come Handy.
+3. Union Find Algo finds the parent of two cities and checks if they are not the same, because if they are then you are already forming a cycle that would violate the minimum spanning tree property so then out check helps over there.
+4. After that, you can append the cost and in the end make these cities a new set using Union
 ```
 
 **⚠️ Common Mistakes**
@@ -69,80 +74,91 @@ Because of how Djikstra's algorithm works, when we reach this node the first tim
 > **Implement** the code to solve the algorithm.
 
 ```python
-class Solution(object):
-    def minimumCost(self, n, highways, discounts):
-        pq = [(0, discounts, 0)]
-        visited = set()
+def minimumCost(self, N, connections):
+        parent = [-1] * (N+1)
+        forest = [1] * (N+1)
+        self.n = N
+        mst = []
+        res = 0
         
-        # build an adjacency list
-        adj = collections.defaultdict(list)
-        for city1, city2, toll in highways:
-            adj[city1].append((city2, toll))
-            adj[city2].append((city1, toll))
+        for city1, city2, cost in sorted(connections, key = lambda x: x[2]):
+            if self.find(parent, city1) != self.find(parent, city2):
+                mst.append((city1, city2))
+                res += cost
+                if len(mst) == N:
+                    break
+                self.Union(forest, parent, city1, city2)
+        return res if self.n==1 else -1
+                
+    
+    def find(self, parent, i):
+        while parent[i] != -1:
+            i = parent[i]
+        return i
+    
+    def Union(self,forest, parent, x, y):
+        set1 = self.find(parent, x)
+        set2 = self.find(parent, y)
         
-        
-        while pq:
-            toll, d, city = heapq.heappop(pq)
-            if (d, city) in visited: continue
-            # add to visited set
-            visited.add((d, city))
-            
-            if city==n-1: return toll
-            
-            # iterate through each node (cities) and check if they belong to the same connected component or not
-            for nei, toll2 in adj[city]:
-                if (d, nei) not in visited:
-                    heapq.heappush(pq, (toll+toll2, d, nei))
-                if d>0 and (d-1, nei) not in visited:
-                    heapq.heappush(pq, (toll+toll2/2, d-1, nei))    
-        
-        return -1
+        if set1 != set2:
+            if forest[set1] < forest[set2]:
+                parent[set1] = set2
+                forest[set2] += forest[set1]
+            else:
+                parent[set2] = set1
+                forest[set1] += forest[set2]
+        self.n-=1
 ```
 ```java
 class Solution {
-     public int minimumCost(int n, int[][] highways, int discounts) {
+    public int minimumCost(int N, int[][] connections) {
+        // before the union, each city is considered as isolated, not-connected node, so there should be N unions at first 
+	// 1 indexed, so need N+1 length
+        UnionFind uf = new UnionFind(N + 1);
+        // sort connections in a way that the cost is in ascending order 
+        Arrays.sort(connections, new Comparator<int[]>(){
+            public int compare(int[] a, int[] b){
+                return a[2] - b[2];
+            }                 
+        });
+       
+        int cost = 0;
+        for(int i = 0; i < connections.length; i++) {
+            int x = connections[i][0], y = connections[i][1];
+            if(!uf.find(x, y)) {
+                uf.union(x, y);
+                cost += connections[i][2];
+            }
+        }
+        return connections.length < N - 1 ? -1 : cost;
+    }
+    
+    // each time we connect a city into the union, there will be one less isolated city
+    class UnionFind {
+        int[] array;
+        public UnionFind(int size) {
+            array = new int[size];
+            for(int i = 0; i < size; i++) {
+                array[i] = i;
+            }
+        }
         
-        Map<Integer, List<int[]>> graph = new HashMap<>();
-        for (int[] highway: highways) {
-            int city1 = highway[0], city2 = highway[1], toll = highway[2];
-            if (!graph.containsKey(city1)) {
-                graph.put(city1, new ArrayList<>());
+        public int root(int i) {
+            while(i != array[i]) {
+                i = array[i];
             }
-            graph.get(city1).add(new int[]{city2, toll});
-            if (!graph.containsKey(city2)) {
-                graph.put(city2, new ArrayList<>());
-            }
-            graph.get(city2).add(new int[]{city1, toll});
+            return i;
         }
         
-        int[][] costs = new int[n][discounts+1];
-        for (int[] c: costs) {
-            Arrays.fill(c, Integer.MAX_VALUE);
+        public boolean find(int i, int j) {
+            return root(i) == root(j);
         }
-        costs[0][0] = 0;
-        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> (a[1] - b[1]));
-        pq.offer(new int[]{0, 0, 0});
-        while (!pq.isEmpty()) {
-            int[] cur = pq.poll();
-            int city = cur[0], cost = cur[1], discount = cur[2];
-            if (city == n-1)
-                return cost;
-            if (!graph.containsKey(city))
-                continue;
-            for (int[] nei: graph.get(city)) {
-                int next = nei[0];
-                int dCost = nei[1];
-                if (cost+dCost < costs[next][discount]) {
-                    pq.add(new int[]{next, cost+dCost, discount});
-                    costs[next][discount] = cost+dCost;
-                }
-                if (discount < discounts && cost+dCost/2 < costs[next][discount+1]) {
-                    pq.add(new int[]{next, cost+dCost/2, discount+1});
-                    costs[next][discount+1] = cost+dCost/2;
-                }
-            }
+        
+        public boolean union(int i, int j) {
+            if(find(i, j)) return false;
+            array[root(i)] = j;
+            return true;
         }
-        return -1;
     }
 }
 ```
