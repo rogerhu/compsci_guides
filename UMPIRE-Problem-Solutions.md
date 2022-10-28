@@ -1,5 +1,7 @@
 ## Linked Lists
 
+* [[Palindrome Linked Lists]]
+
 ## Core Data Structures
 
 ## Arrays and Strings
