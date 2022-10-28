@@ -6,6 +6,8 @@
 
 ## Binary Trees
 
+* [[Min Depth of Binary Trees]]
+
 ## Graphs
 
 * [[Time Needed to Inform All Employees]]
