@@ -140,5 +140,5 @@ class Solution {
 Let E be the number of edges or the number of timestamps.
 Let V be the number of vertices or the number of people.
 
-* **Time Complexity**: O(E * lgE + EV) = O(E(lgE+V)), as sorting logs takes O(E * lgE) and going through each log takes O(E) and in each log we call union(with rank and find with which its worst case takes O(V) (amortized close to O(1)), thus the loop takes O(E * V)
+* **Time Complexity**: O(E * log(E) + EV) = O(E(log(E)+V)), as sorting logs takes O(E * log(E)) and going through each log takes O(E) and in each log we call union(with rank and find with which its worst case takes O(V) (amortized close to O(1)), thus the loop takes O(E * V)
 * **Space Complexity**: O(V), as we used union find.
