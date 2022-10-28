@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/>
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs, Union Find
+* 🛠️ **Topics**: Graphs, Union Find, Depth First Search
 * 🗒️ **Similar Questions**: [Number of Provinces](https://leetcode.com/problems/number-of-provinces/)
     
 ## 1: U-nderstand
