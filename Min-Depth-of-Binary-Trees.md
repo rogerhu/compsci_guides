@@ -98,6 +98,8 @@ Have to use an auxiliary data structure (queue) to process nodes
 
 > **Implement** the code to solve the algorithm.
 
+Approach #1: DFS
+
 ```python
 #Approach 1: DFS
 
@@ -131,6 +133,9 @@ def minDepth(self, root):
             queue.append((currNode.right, currLevel + 1))
     return -1
 ```
+
+**Approach #2: BFS**
+
 ```python
 #Approach 2: BFS
 
