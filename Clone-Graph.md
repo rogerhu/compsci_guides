@@ -45,6 +45,10 @@ For graph problems, some things we want to consider are:
     
 - DFS: We can use DFS to traverse all node of original graph. As soon as we reach a node, we will make a copy node. And recur for rest of the graph.
 - BFS: If the recursion stack is what we are worried about, then DFS is not the best solution. We use the BFS way of doing iterative traversal of the graph.
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. We can use union find to count the number of islands by adding each stone to union-find set, and counting number of sets.
+- Adjacency List: We can use an adjacency list to store the graph, especially when the graph is sparse.
+- Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
+- Topological Sort: We can use topological sort when a directed graph is used and returns an array of the nodes where each node appears before all the nodes it points to. In order to have a topological sorting, the graph must not contain any cycles.
 
 The difference is only in the traversal of DFS and BFS. DFS explores the depths of the graph first and BFS explores the breadth. 
 
