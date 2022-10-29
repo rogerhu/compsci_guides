@@ -178,6 +178,6 @@ Step 3. Do the BFS traversal.
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Time Complexity: `O(NM)`, where *N* is a number of nodes (vertices) and *M* is a number of edges
+Time Complexity: `O(VE)`, where *V* is a number of nodes (vertices) and *E* is a number of edges
 <br>
-Space Complexity: `O(N)`, accounting for the use of the hash map used in the Java solution or the stack used in the python solution
+Space Complexity: `O(V)`, accounting for the use of the hash map used in the Java solution or the stack used in the python solution
