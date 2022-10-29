@@ -60,12 +60,8 @@
     
 ⚠️ **Common Mistakes**
     
-    - Some people may want to sort the array first, but there are faster solutions if we avoid sorting. We can reduce runtime complexity from O(N*log(N)) to O(N+M) if we avoid sorting either of the arrays. Though, we can sort for O(1) space complexity.
+* Some people may want to sort the array first, but there are faster solutions if we avoid sorting. We can reduce runtime complexity from O(N*log(N)) to O(N+M) if we avoid sorting either of the arrays. Though, we can sort for O(1) space complexity.
 
-
-⚠️ **Common Mistakes**
-
-* 
 
 ## 4: I-mplement
 
