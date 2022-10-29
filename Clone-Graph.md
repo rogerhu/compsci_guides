@@ -27,7 +27,7 @@
 - How do we choose how to traverse the graph?
   - Based on the kind of graph we are expecting we can chose BFS or DFS. 
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: adjList = [[]]
     Output: [[]]
@@ -35,7 +35,7 @@
     EDGE CASE
     Input: adjList = []
     Output: []
-    ```
+```
     
 ## 2: M-atch
 
