@@ -41,6 +41,8 @@
 - BFS/DFS: Not necessary. DFS is not a complete algorithm for infinitely deep graphs (it does not guarantee to reach the goal if there is any). Even if your graph is very deep but you have the prior knowledge that your goal is a shallow one, using DFS is not a very good idea.
 BFS needs to keep all the current nodes in the memory.
 - Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
+- Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
+- Topological Sort: We can use topological sort when a directed graph is used and returns an array of the nodes where each node appears before all the nodes it points to. In order to have a topological sorting, the graph must not contain any cycles.
 
 ## 3: P-lan
 
