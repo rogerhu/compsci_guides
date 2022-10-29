@@ -90,8 +90,14 @@ Step 3. Do the BFS traversal.
 
 ```python
     def cloneGraph(self, node):
+        # create a dictionary to save the visited node and it's respective clone
+        # as key and value respectively. This helps to avoid cycles.
         dict = {}
         stack = [node] if node else []
+
+        
+        # iterate through the neighbors to generate their clones
+        # and prepare a list of cloned neighbors to be added to the cloned node
         while stack:
             i = stack.pop()
             if i not in dict:
@@ -104,6 +110,8 @@ Step 3. Do the BFS traversal.
 ```    
 ```java 
     class Solution {
+        // create a hash map to save the visited node and it's respective clone
+        // as key and value respectively. This helps to avoid cycles.
         private Map<Integer, Node> map;
         public Node cloneGraph(Node node) {
             map = new HashMap<>();
@@ -111,11 +119,16 @@ Step 3. Do the BFS traversal.
         }
         private Node dfs(Node node, int num){
             if(node == null) return null;
+
+            // if the node was already visited before, return the clone from the visited dictionary
             else if(map.containsKey(num)) return map.get(num);
             else{
                 List<Node> neighbours = new ArrayList<>();
                 Node cur = new Node(num, neighbours);
                 map.put(num, cur);
+
+                // iterate through the neighbors to generate their clones 
+                // and prepare a list of cloned neighbors to be added to the cloned node.
                 for(Node neighbour : node.neighbors){
                     neighbours.add(dfs(neighbour, neighbour.val));
                 }
