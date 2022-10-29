@@ -125,7 +125,7 @@
             # take a visited[r][c] to keep track of visited nodes
             visited = [[False] * N for _ in range(N)]
    
-            # take a heap to store grid
+            # take a priority queue to store grid
             pq = []
             ans = 0
 
