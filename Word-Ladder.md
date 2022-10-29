@@ -50,12 +50,13 @@ All lowercase alphabet letters.
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
     For graphs, some of the top things we want to consider are:
-    
-    - We can use BFS to traverse the graph, which works well for finding optimal path in unweighted graphs.
-    - We can use DFS to traverse the graph, but will be less efficient at finding optimal path compared to BFS.
-    - We can use an adjacency list to store graph, which works well for our sparse graph.
-    - We can use an adjacency matrix to store graph, but will cause runtime slowdowns of O(N^2) for a sparse graph.
-    - We can use topological sort to traverse the graph, but will share similar limitations like DFS.
+
+- BFS: We cannot use BFS to traverse the graph because we may visit exit nodes in the first traversal.
+- DFS: We can use DFS to traverse the graph until we find a valid itinerary, ensuring we choose the lexicographically least itinerary.
+- Adjacency List: We can use an adjacency list to store the graph, especially since the graph is sparse.
+- Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
+- Topological Sort: We can use topological sort for the same reason we can use DFS, as in this problem, the application of DFS is a topological sort.
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
 
 ## 3: P-lan
     
