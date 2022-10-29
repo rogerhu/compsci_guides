@@ -21,7 +21,7 @@
 - When is it impossible for you to finish all tasks?
   - When there exists at least one task pair t1 and t2, such that t1 is direct or indirect prerequisite for t2 and t2 is direct or indirect prerequisite for t1. This is equivalent to finding a cycle in our graph representation.
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input: 2, [[1, 0]] 
     Output: true 
@@ -32,7 +32,7 @@
     EDGE CASE
     Input: 4, [[1,0],[2,0],[3,1],[3,2]]
     Output: true
-    ```
+```
     
 ## 2: M-atch
 
@@ -49,7 +49,7 @@
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    ```
+```
     1) if(current is already processed), return false
     2) if(current is in processing state), return true (cycle is found)
     3) reaching means current is unprocessed, so mark current as processing
@@ -57,9 +57,7 @@
     5) else, push neighbor to res
     6) then, mark current as processed
     
-    Time Complexity: O(|E|+|V|)
-    Space Complexity: O(V)
-    ```
+```
     
 ⚠️ **Common Mistakes**
 
