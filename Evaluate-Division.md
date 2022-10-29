@@ -81,9 +81,6 @@
         b) Add result of topological sort call from start to end variable to list
     4) Return result list
     
-    Time Complexity: O(N*K)
-    Space Complexity: O(N)`
-    
 
 ⚠️ **Common Mistakes**
 
