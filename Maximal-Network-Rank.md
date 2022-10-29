@@ -65,8 +65,15 @@ To find the edges of nodes and finding the best pair of nodes to maximize the an
 ```java
     class Solution {
         public int maximalNetworkRank(int n, int[][] roads) {
+            # create hashmap 
             Map<Integer, Set<Integer>> map = buildMap(n, roads);
             int ans = 0;
+
+            # Try every pair of different cities and calculate its network rank.
+            # The network rank of two vertices is sum of their degrees discarding the common edge.
+            # For all combinations of nodes check network rank.
+            # If two nodes are connected then consider the edge between them only once,
+            # that is add -1 to sum of their indegrees else add 0.
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
                     if (i != j) {
