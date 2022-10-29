@@ -49,11 +49,15 @@
     
     For graph problems, some things we want to consider are:
     
-    - We can use DFS to solve this problem. Utilize an adjacency list with key as course and value of list of prerequisites needed before taking this course.
+- DFS: We can use DFS to solve this problem. Utilize an adjacency list with key as course and value of list of prerequisites needed before taking this course.
         - If node `v` has not been visited, then mark it as `0`.
         - If node `v` is being visited, then mark it as `1`. If we find a vertex marked as `1` in DFS, then there is a ring.
         - If node `v` has been visited, then mark it as `+1`. If a vertex was marked as `1`, then no ring contains `v` or its successors.
-    - Topological Sort - If a cycle ****exists, no topological ordering exists and therefore it will be impossible to take all courses.
+- BFS: We cannot use BFS to traverse the graph because we may visit exit nodes in the first traversal.
+- Adjacency List: We can use an adjacency list to store the graph, especially since the graph is sparse.
+- Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
+- Topological Sort: We can use topological sort for the same reason we can use DFS, as in this problem, the application of DFS is a topological sort.
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
     
 ## 3: P-lan
 
