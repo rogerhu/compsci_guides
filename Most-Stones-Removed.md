@@ -40,10 +40,8 @@
 
     For graph problems, some things we want to consider are:
     
-    - We can possible use BFS to traverse the stones graph, but it will lead to a difficult solution.
-        - We can use DFS to traverse the graph and use it to count the number of connected components.
-    - We can use a map to store the edges in the graph to lookup rows by index to reduce average runtime complexity.
-    - We can use union find to count the number of islands by adding each stone to union-find set, and counting number of sets.
+- BFS/DFS: We can possible use BFS to traverse the stones graph, but it will lead to a difficult solution. We can use DFS to traverse the graph and use it to count the number of connected components. We can use a map to store the edges in the graph to lookup rows by index to reduce average runtime complexity.
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. We can use union find to count the number of islands by adding each stone to union-find set, and counting number of sets.
 
 ## 3: P-lan
     
