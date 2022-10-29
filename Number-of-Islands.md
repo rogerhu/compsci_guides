@@ -60,11 +60,10 @@
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    1. Create the initial parent array
-        - Number of entries: nrows * ncols
+    1. Take visited[m][m] boolean array and initialize all values to false
         - Set parent[i] = i for all elements
     2. For each element of the grid
-        - If this element is '1'
+        - Check boundary conditions. If this element is '1'
             a. If the left neighbor is '1', call union
             b. If the upper neighbor is '1', call union
     3. Return the number of islands (sets)
