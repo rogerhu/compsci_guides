@@ -38,7 +38,9 @@
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
-- DFS: How can we apply DFS on this problem? Given a starting vertex, it’s wise to find all vertices reachable from the start. There are many algorithms to do this, the simplest is the use of depth-first search. DFS enumerates the deepest paths. DFS only backtracks when it hits a dead end or an already-visited section of the graph.
+- BFS: BFS uses the indegrees of each node. We will first try to find a node with 0 indegree. If we fail to do so, there must be a cycle in the graph and we return false. Otherwise we set its indegree to be -1 to prevent from visiting it again and reduce the indegrees of its neighbors by 1. This process will be repeated for n (number of nodes) times.
+- DFS: All tasks are nodes of the graph and if task u is a prerequisite of task v, we will add a directed edge from node u to node v. Now, this problem is equivalent to detecting a cycle in the graph represented by prerequisites. If there is a cycle in the graph, then it is not possible to finish all tasks (because in that case there is no any topological order of tasks). Both BFS and DFS can be used to solve it.
+Since pair is inconvenient for the implementation of graph algorithms, we first transform it to a graph. If task u is a prerequisite of task v, we will add a directed edge from node u to node v.
 - Adjacency List: We can use an adjacency list to store the graph, especially when the graph is sparse.
 - Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
 - Topological Sort: We can use topological sort when a directed graph is used and returns an array of the nodes where each node appears before all the nodes it points to. In order to have a topological sorting, the graph must not contain any cycles.
@@ -50,13 +52,8 @@
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
 ```
-    1) if(current is already processed), return false
-    2) if(current is in processing state), return true (cycle is found)
-    3) reaching means current is unprocessed, so mark current as processing
-    4) process all neighbors of current if during processing any cycle is found for neighbor
-    5) else, push neighbor to res
-    6) then, mark current as processed
-    
+1) in each visit, we start from a node and keep visiting its neighbors, 
+2) if at a time we return to a visited node, there is a cycle. Otherwise, start again from another unvisited node and repeat this process. 
 ```
     
 ⚠️ **Common Mistakes**
