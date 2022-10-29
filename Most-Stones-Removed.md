@@ -42,9 +42,9 @@
     
 - BFS/DFS: We can possible use BFS to traverse the stones graph, but it will lead to a difficult solution. We can use DFS to traverse the graph and use it to count the number of connected components. We can use a map to store the edges in the graph to lookup rows by index to reduce average runtime complexity.
 - Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. We can use union find to count the number of islands by adding each stone to union-find set, and counting number of sets.
-- Adjacency List: We can use an adjacency list to store the graph, especially since the graph is sparse.
+- Adjacency List: We can use an adjacency list to store the graph, especially when the graph is sparse.
 - Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
-- Topological Sort: We can use topological sort for the same reason we can use DFS, as in this problem, the application of DFS is a topological sort. 
+- Topological Sort: We can use topological sort when a directed graph is used and returns an array of the nodes where each node appears before all the nodes it points to. In order to have a topological sorting, the graph must not contain any cycles.
 
 ## 3: P-lan
     
