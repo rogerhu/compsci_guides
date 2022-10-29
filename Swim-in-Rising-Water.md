@@ -129,7 +129,7 @@
             pq = []
             ans = 0
 
-            // add (grid[0][0], 0, 0) to heap
+            # add (grid[0][0], 0, 0) to heap
             heapq.heappush(pq, (grid[0][0], 0, 0))
     
 
