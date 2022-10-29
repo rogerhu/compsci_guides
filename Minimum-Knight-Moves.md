@@ -47,9 +47,9 @@
     At each point, we've got 8 coordinates (8 neighbors) that we can move to in any given location. As with normal BFS, we build a queue, keep track of what we've visited, and explore our 8 neighbors. Observe that our movements are completely symmetric. Whether our destination was `(x,y)`, `(x,-y)`, `(-x,y)`, or `(-x,-y)`, our answer would be the exact same. So what we can do is restrict our search space to just one quadrant (namely the 1st quadrant where `x,y` are both positive). When exploring our neighbors, if we ever fall outside of quadrant 1, ignore that neighbor. 
 
 - DFS: We can use DFS to traverse the graph until we find a valid itinerary, ensuring we choose the lexicographically least itinerary.
-- Adjacency List: We can use an adjacency list to store the graph, especially since the graph is sparse.
+- Adjacency List: We can use an adjacency list to store the graph, especially when the graph is sparse.
 - Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
-- Topological Sort: We can use topological sort for the same reason we can use DFS, as in this problem, the application of DFS is a topological sort.
+- Topological Sort: We can use topological sort when a directed graph is used and returns an array of the nodes where each node appears before all the nodes it points to. In order to have a topological sorting, the graph must not contain any cycles.
 - Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
     
 ## 3: P-lan
