@@ -142,14 +142,19 @@ Step 3. Do the BFS traversal.
 
 ```python 
     def cloneGraph(self, node):
+        # create dictionary to save the visited node and it's respective clone
         dict = {}
+        # put the first node in the stack
         stack = [node] if node else []
+
+        # iterate through all the neighbors of the node
         for i in stack:
             if i not in dict:
                 dict[i] = UndirectedGraphNode(i.label)
             stack.extend([j for j in i.neighbors if j not in dict])
         for i in dict:
             for j in i.neighbors:
+                # add the newly encountered node to the stack.
                 dict[i].neighbors.append(dict[j])
         return dict[node] if node else node
 ```
