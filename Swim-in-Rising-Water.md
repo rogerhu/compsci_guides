@@ -37,7 +37,6 @@
     For graph problems, some things we want to consider are:
     
 - BFS: We can utilize BFS and Djikstra’s algorithm. This problem is to find shortest path, the only thing we need to pay attention to is the weight of edge from `grid[0][0]` to `grid[n-1][n-1]`. We can take grid `[[0, 1], [2, 3]]` as an example: We can treat this as a graph with 4 vertices `0,1,2,3` and there are 4 edges. `{0, 1}` with weight 1, `{0, 2}` with weight `2`, `{1, 3}` with weight `3` and `{2, 3}` with weight `3` respectively. Each time we choose the smallest edge `{m, n}` to simulate at time `max(m, n)` and rain falls. So we first take edge `{0, 1}` then `{0, 2}`. When we are processing edge `{1, 3}`, the original result is `2(getting from {0, 2})`, but since original time is less than we currently need, we need time 3 to reach vertex 3. For another case like grid `[[3, 2], [1, 0]]`, the first part is the same. To reach from vertex 3 to vertex 1, we need time 3. Then to reach from vertex 1 to vertex 0, we also only need time 3, since we can move infinite distance in one move. We can see this like at time 3, water can move from vertex 3 to vertex 1 then vertex 0 directly. From 2 cases above, we can get the most important thing in this problem that the time needs to reach `grid[i][j]` is `max(grid[i][j], grid[i'][j'])`, where `grid[i'][j']` is the cell to get to `grid[i][j]`.
-    
 - DFS: Another option is to a DFS. How do we know that a path exists? Here, we will travel in all the four directions (up, down, left, right) by not visiting the node we have visited earlier. And in this traversal we start from `[0,0]` and if we happen to touch `[n-1,m-1]`, then we can say that a path exists. This is general Depth First Traversal, but we have another constraint that we cannot move to a `height > t`, so we include a constraint that we can move in any of the four directions, if and only if, the height of the building in that direction is less than `t`.
 - Adjacency List: We can use an adjacency list to store the graph, especially when the graph is sparse.
 - Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
@@ -49,13 +48,17 @@
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    - We start from 0, 0, and push this onto priority_queue
-    - Then push all possible moves from this position onto queue
-    - Queue is designed such that the first move to be processed will be the one with lowest value in grid[][]
-    - When moving to new position, if the new position value is lower then previous, retain previous
-    
-    Continue this until bottom right element is filled. This will be minimum.
-
+1. Take a priority queue to store grid
+2. Take a visited[r][c] to keep track of visited nodes
+3. Set result = 0
+4. Add (grid[0][0], 0, 0) to priority_queue and mark it as visited
+5. While priority_queue is not empty, take top element from priority_queue (max, r, c)
+6. Mark it as visited
+7. If r == N-1 and c = N-1, return result
+8. For each of the valid neighbors (in 4 directions) and not visited, mark this node as visited
+9. result = max of its own values and the one from max value of item popped
+10. Add to priority queue (grid[newRow][newColumn], newRow, newColumn)
+11. Return result
 
 ⚠️ **Common Mistakes**
 
@@ -71,21 +74,24 @@
         public int swimInWater(int[][] grid) {
             int rowLen = grid.length;
             int colLen = grid[0].length;
+
+            // take a priority queue to store grid
+            // add (grid[0][0], 0, 0) to priority_queue
             Queue<int[]> pq = new PriorityQueue<>((a,b) -> Integer.compare(a[2],b[2]));
-            
             pq.add(new int[]{0, 0, grid[0][0]});
             
             int result = grid[rowLen-1][colLen-1];
             
+            // mark as visited
             boolean[][] visited = new boolean[rowLen][colLen];
             
             while(pq.isEmpty()==false) {
                 int[] currentCell = pq.poll();
-                
                 result = Math.max(result, currentCell[2]);
-                
                 visited[currentCell[0]][currentCell[1]] = true;
                 
+                // for each of the valid neighbors (in 4 directions) and not visited, mark this node as visited
+                // result = max of its own values and the one from max value of item popped
                 if(currentCell[0]==rowLen-1 && currentCell[1]==colLen-1) {
                     break;
                 }
@@ -102,6 +108,7 @@
                         continue;
                     }
                     
+                    // add to priority queue 
                     pq.add(new int[]{newRow, newCol, grid[newRow][newCol]});
                 }
             }
@@ -114,17 +121,25 @@
     class Solution:
         def swimInWater(self, grid: List[List[int]]) -> int:
             directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
-            N = len(grid)
+            N = len(grid) 
+            // take a visited[r][c] to keep track of visited nodes
             visited = [[False] * N for _ in range(N)]
-    
+   
+            // take a heap to store grid
             pq = []
             ans = 0
+
+            // add (grid[0][0], 0, 0) to heap
             heapq.heappush(pq, (grid[0][0], 0, 0))
     
+
+            // while priority queue is not empty, take top element from priority_queue (max, r, c)
             while pq:
                 time, r, c = heapq.heappop(pq)
                 if visited[r][c]:
                     continue
+
+                // mark as visited
                 visited[r][c] = True
                 ans = max(ans, time)
     
@@ -139,6 +154,7 @@
     
             return ans
     
+        // helper function to check for each of the valid neighbors (in 4 directions) and not visited, mark this node as visited
         def _isValid(self, r, c, N, visited):
             return r >= 0 and r < N and c >= 0 and c < N and not visited[r][c]
 ```
