@@ -49,11 +49,9 @@
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
-    For graph problems, some things we want to consider are:
+For graph problems, some things we want to consider are:
     
-    How is this a graph problem?
-    
-    We can apply a graph data structure where we build a map that maps an email to a list of accounts, which can be used to track which email is linked to which account. Emails can be represented as nodes, and an edge between nodes will signify that they belong to the same person. Then we can add an edge between the two connected components, effectively merging them into one connected component. This is essentially our graph. For example:
+How is this a graph problem? We can apply a graph data structure where we build a map that maps an email to a list of accounts, which can be used to track which email is linked to which account. Emails can be represented as nodes, and an edge between nodes will signify that they belong to the same person. Then we can add an edge between the two connected components, effectively merging them into one connected component. This is essentially our graph. For example:
     
     ```
     # emails_accounts_map of email to account ID
@@ -66,9 +64,10 @@
     }
     ```
     
-    We can use a DFS on each account in accounts list and look up the emails accounts map
-    to tell us which accounts are linked to that particular account via common emails. This will make sure we visit each account only once. This is a recursive process and we should collect all the emails that we encounter along the way. Lastly, it will allow us to sort the collected emails and add it to final results. 
-    
+- DFS: We can use a DFS on each account in accounts list and look up the emails accounts map to tell us which accounts are linked to that particular account via common emails. This will make sure we visit each account only once. This is a recursive process and we should collect all the emails that we encounter along the way. Lastly, it will allow us to sort the collected emails and add it to final results. 
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
+
+
 ## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -167,7 +166,7 @@
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
 - Trace through your code with an input to check for the expected output
-- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+- Catch possible edge cases and off-by-one errors and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
 ## 6: E-valuate
