@@ -50,7 +50,7 @@ For graph problems, some things we want to consider are:
 - Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
 - Topological Sort: We can use topological sort when a directed graph is used and returns an array of the nodes where each node appears before all the nodes it points to. In order to have a topological sorting, the graph must not contain any cycles.
 
-The difference is only in the traversal of DFS and BFS. DFS explores the depths of the graph first and BFS explores the breadth. 
+Note: The difference is only in the traversal of DFS and BFS. DFS explores the depths of the graph first and BFS explores the breadth. 
 
 ## 3: P-lan
     
