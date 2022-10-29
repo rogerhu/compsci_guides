@@ -93,10 +93,9 @@
 
 > **Implement** the code to solve the algorithm.
     
-    **Approach #1**
+**Approach #1**
     
 ```java
-    # Java Solution
     class Solution {
         Boolean[] completedCourses;
         public boolean canFinish(int numCourses, int[][] prerequisites) {
@@ -138,7 +137,6 @@
 ```
     
 ```python
-    # Python Code
     class Solution:
         def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
             ad_list = {i: set() for i in range(numCourses)}
@@ -163,7 +161,7 @@
             return True
 ```
     
-    **Approach #2:** This approach creates a graph out of the prereq-course pairs, and attempts to topologically sort the graph into the `eligibleCourses` array.
+**Approach #2:** This approach creates a graph out of the prereq-course pairs, and attempts to topologically sort the graph into the `eligibleCourses` array.
     
 ```java
     # Java Solution
