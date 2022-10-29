@@ -39,9 +39,9 @@
 - BFS: The idea is to have an unvisited set from 0 to `n-1`. We have the edge map, representing edges. For every non-visited node, we add it to the BFS queue. We run the BFS. If there's remaining nodes, we add it to the BFS queue again incrementing the count, since this is an unconnected component. We repeat until all nodes are visited. The runtime is O(E+V) where V = number of nodes and V = number of edges in the entire graph (all connected components) because you only drill down on a node (and all its neighbors) if you haven't seen it before.
 - Union Find: Basically, we want to minimize the height of the tree to reduce the number of operations of finding the parent node. In order to prevent generating a skewed tree, we should apply the weighted technique. The weighted technique records the number of nodes of a set in the corresponding root node as a negative number as shown in the code. Whenever two sets are about to be unioned, we calculate the total number of nodes and set one of the root with the larger number as the new root of the newly union set.
 - DFS: We can use DFS to traverse the graph until we find a valid itinerary, ensuring we choose the lexicographically least itinerary.
-- Adjacency List: We can use an adjacency list to store the graph, especially since the graph is sparse.
+- Adjacency List: We can use an adjacency list to store the graph, especially when the graph is sparse.
 - Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
-- Topological Sort: We can use topological sort for the same reason we can use DFS, as in this problem, the application of DFS is a topological sort.
+- Topological Sort: We can use topological sort when a directed graph is used and returns an array of the nodes where each node appears before all the nodes it points to. In order to have a topological sorting, the graph must not contain any cycles.
 
 ## 3: P-lan
     
