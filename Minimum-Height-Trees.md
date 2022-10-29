@@ -148,7 +148,7 @@ The idea is keep removing all of the leaves until there is the last layer of lea
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
 - Trace through your code with an input to check for the expected output
-- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+- Catch possible edge cases and off-by-one errors and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
 ## 6: E-valuate
