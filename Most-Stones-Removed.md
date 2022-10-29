@@ -50,12 +50,13 @@
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-    We can first create an empty disjoint set, add each stone in a loop, and at each iteration compute the number of sets. At the end, # of stones - # of sets.
+We can first create an empty disjoint set, add each stone in a loop, and at each iteration compute the number of sets. At the end, # of stones - # of sets.
     
-    `1) Create a disjoint set. 2) For each stone
+1) Create a disjoint set. 
+2) For each stone
       a) Add the coordinate x, ~y (i.e. -(y-1)) to the set
       b) Update number of sets
-    3) Return number of stones - number of sets
+3) Return number of stones - number of sets
    
     
 ⚠️ **Common Mistakes**
@@ -94,33 +95,57 @@
 ```
     
 ```java
-    public class Solution {
-      Map<Integer, Integer> f = new HashMap<>();
-      int islands = 0;
-    
-      public int removeStones(int[][] stones) {
-          for (int i = 0; i < stones.length; ++i)
-              union(stones[i][0], -stones[i][1]);
-          return stones.length - islands;
-      }
-    
-      public int find(int x) {
-          if (f.putIfAbsent(x, x) == null)
-              islands++;
-          if (x != f.get(x))
-              f.put(x, find(f.get(x)));
-          return f.get(x);
-      }
-    
-      public void union(int x, int y) {
-          x = find(x);
-          y = find(y);
-          if (x != y) {
-              f.put(x, y);
-              islands--;
-          }
-      }
+class Solution {
+    // return true if stone a and b shares row or column
+    boolean shareSameRowOrColumn(int[] a, int[] b) {
+        return a[0] == b[0] || a[1] == b[1];
     }
+    
+    void dfs(int[][] stones, List<Integer>[] adj, int[] visited, int src) {
+        // mark the stone as visited
+        visited[src] = 1;
+        
+        // iterate over the adjacent, and iterate over it if not visited yet
+        for (int adjacent : adj[src]) {
+            if (visited[adjacent] == 0) {
+                dfs(stones, adj, visited, adjacent);
+            }
+        }
+    }
+    
+    int removeStones(int[][] stones) {
+        // create adjacency list to store edges
+        List<Integer>[] adj = new ArrayList[stones.length]; 
+        for (int i = 0; i < stones.length; i++) {
+            adj[i] = new ArrayList<>();
+        }
+        
+        for (int i = 0; i < stones.length; i++) {
+            for (int j = i + 1; j < stones.length; j++) {
+                if (shareSameRowOrColumn(stones[i], stones[j])) {
+                    adj[i].add(j);
+                    adj[j].add(i);
+                }
+            }
+        }
+        
+        // create array to mark visited stones
+        int[] visited = new int[stones.length];
+        // counter for connected components
+        int componentCount = 0;
+        for (int i = 0; i < stones.length; i++) {
+            if (visited[i] == 0) {
+                // If the stone is not visited yet,
+                // Start the DFS and increment the counter
+                componentCount++;
+                dfs(stones, adj, visited, i);
+            }
+        }
+        
+        // return the maximum stone that can be removed
+        return stones.length - componentCount;
+    }
+};
 ```
     
 ## 5: R-eview
@@ -137,8 +162,6 @@
 
 Time complexity: O(N^2 + E)
 Building the graph will need O(N^2) as needed to traverse over all pairs of stones. During the DFS traversal, each stone only is visited once. This is because we mark each stone as visited as soon as we see it, and then we only visit stones that are not marked as visited. In addition, when we iterate over the edge list of each stone, we look at each edge once. 
-
-<br>
 
 Space complexity: O(N + E)
 Building the adjacency list will take O(E) space. To keep track of visited vertices, an array of size O(N), is required. Also, the run-time stack for DFS will use O(N) space.
