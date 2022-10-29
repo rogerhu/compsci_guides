@@ -49,10 +49,7 @@
     
     For graph problems, some things we want to consider are:
     
-- DFS: We can use DFS to solve this problem. Utilize an adjacency list with key as course and value of list of prerequisites needed before taking this course.
-        - If node `v` has not been visited, then mark it as `0`.
-        - If node `v` is being visited, then mark it as `1`. If we find a vertex marked as `1` in DFS, then there is a ring.
-        - If node `v` has been visited, then mark it as `+1`. If a vertex was marked as `1`, then no ring contains `v` or its successors.
+- DFS: We can use DFS to solve this problem. Utilize an adjacency list with key as course and value of list of prerequisites needed before taking this course. If node `v` has not been visited, then mark it as `0`. If node `v` is being visited, then mark it as `1`. If we find a vertex marked as `1` in DFS, then there is a ring. If node `v` has been visited, then mark it as `+1`. If a vertex was marked as `1`, then no ring contains `v` or its successors.
 - BFS: We cannot use BFS to traverse the graph because we may visit exit nodes in the first traversal.
 - Adjacency List: We can use an adjacency list to store the graph, especially since the graph is sparse.
 - Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
