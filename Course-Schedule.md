@@ -243,14 +243,12 @@
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-    - Time Complexity: O(V^2)
-    - Space Complexity: OV + E)
-    
-    **Explanation**
-    
+* **Time Complexity:** O(V^2)
     - Creating the adjacency list takes O(E) time, where E is the number of prereqs (edges in the graph)
     - On each iteration we take one course, so at most there are n iterations, where V = numCourses
         - On each iteration, we iterate over the list twice, which takes O(V) time
     - Therefore, the total time is O(V^2) + O(E)
-        - Since we can have at most V*(V-1) prereqs, E < V^2, so total time is O(V^2)
+
+* **Space Complexity:** OV + E)
+    - Since we can have at most V*(V-1) prereqs, E < V^2, so total time is O(V^2)
     - Space is also O(V + E) = O(V^2) due to the space needed for adjacency list
