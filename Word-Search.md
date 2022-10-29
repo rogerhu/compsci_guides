@@ -39,9 +39,9 @@ word = "ABCD" -> returns 0
     
     For graph problems, some things we want to consider are:
     
-    Our goal is to find if the `word` exists in the matrix or not. We only have to look at the adjacent cells (ignore the diagonal ones). Match character-by-character, go ahead and check if the adjacent cells match the next character, and go back if it does not match.
-    
-    How should we traverse the matrix efficiently? We need to think of a traversal approach. BFS? DFS? Both can work. But DFS will be better as it immediately checks the next node of the graph and returns if it is not needed after marking it as visited.
+- BFS/DFS: Our goal is to find if the `word` exists in the matrix or not. We only have to look at the adjacent cells (ignore the diagonal ones). Match character-by-character, go ahead and check if the adjacent cells match the next character, and go back if it does not match.
+How should we traverse the matrix efficiently? We need to think of a traversal approach. BFS? DFS? Both can work. But DFS will be better as it immediately checks the next node of the graph and returns if it is not needed after marking it as visited.
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
     
 ## 3: P-lan
 
