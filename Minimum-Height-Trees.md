@@ -45,9 +45,9 @@
     For graph problems, some things we want to consider are:
     
 - BFS/DFS; In a tree (remember a tree with n nodes can only have n -1 edges), there can only be 1 or 2 roots for a minimum height tree. So we remove the leaves of the tree one iteration at a time. We know a node is a leaf if it has only 1 node it is connected to since this is a directed graph. If it was an undirected graph, a leaf could have 1 or 0 connected nodes. How to find a minimum height tree? We can BFS from the bottom (leaves) to the top until the last level with <=2 nodes. To build the current level from the previous level, we can monitor the degree of each node. If the node has degree of one, it will be added to the current level. Since it only check the edges once, the complexity is O(n). How will you find the longest path in a tree? Randomly select any node in the tree and find the longest path from that node. Use DFS to do that. Let the terminal node be x. x must be the end-point of the true longest path in the tree. Run DFS/BFS from x to find the real longest path in the tree.
-- Adjacency List: We can use an adjacency list to store the graph, especially since the graph is sparse.
+- Adjacency List: We can use an adjacency list to store the graph, especially when the graph is sparse.
 - Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
-- Topological Sort: We can use topological sort for the same reason we can use DFS, as in this problem, the application of DFS is a topological sort.
+- Topological Sort: We can use topological sort when a directed graph is used and returns an array of the nodes where each node appears before all the nodes it points to. In order to have a topological sorting, the graph must not contain any cycles.
 - Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
     
 ## 3: P-lan
