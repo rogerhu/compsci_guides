@@ -69,14 +69,13 @@ To find the edges of nodes and finding the best pair of nodes to maximize the an
             Map<Integer, Set<Integer>> map = buildMap(n, roads);
             int ans = 0;
 
-            # Try every pair of different cities and calculate its network rank.
+            # try every pair of different cities and calculate its network rank.
             # The network rank of two vertices is sum of their degrees discarding the common edge.
             # For all combinations of nodes check network rank.
-            # If two nodes are connected then consider the edge between them only once,
-            # that is add -1 to sum of their indegrees else add 0.
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
                     if (i != j) {
+                        # sum up the edges of both cities
                         int sum = map.get(i).size() + map.get(j).size();
                         if (map.get(i).contains(j)) {
                             sum--;
