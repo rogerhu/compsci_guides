@@ -38,8 +38,12 @@
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
-    How can we apply DFS on this problem?
-    Given a starting vertex, it’s wise to find all vertices reachable from the start. There are many algorithms to do this, the simplest is the use of depth-first search. DFS enumerates the deepest paths. DFS only backtracks when it hits a dead end or an already-visited section of the graph.
+- DFS: How can we apply DFS on this problem? Given a starting vertex, it’s wise to find all vertices reachable from the start. There are many algorithms to do this, the simplest is the use of depth-first search. DFS enumerates the deepest paths. DFS only backtracks when it hits a dead end or an already-visited section of the graph.
+- Adjacency List: We can use an adjacency list to store graph, but equation variables cannot be directly translated to an index.
+- Adjacency Matrix: We can use an adjacency matrix to store graph, but will cause runtime slowdowns of O(N^2) for a sparse graph and run into similar issues as with adjacency list.
+- Map: We can use a map to store the edges in the graph to lookup equations by name, and store all neighbors by name.
+- Topological Sort: We can use topological sort to traverse the graph, similar to BFS and DFS, and find the result.
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
     
 ## 3: P-lan
 
