@@ -45,6 +45,11 @@
     
 - BFS: We can model the grid in the form of a graph and to compute the distance for every node, we can apply standard BFS algorithm using a queue. We can think of it in a level by level manner. The key observation is that fresh oranges adjacent to rotten oranges are rotten on day 1, those adjacent to those oranges are rotten on day 2, and so on. The phenomenon is similar to a level order traversal on a graph, where all the initial rotten oranges act as root nodes. We can just push all these root nodes into a queue and perform BFS on a grid algorithm, to calculate the total time taken to rot all the oranges. Since there can be multiple rotten cells, we will push all those cells in the queue first and then continue with the BFS. If all oranges are not rotten before our algorithm terminates, we will return -1. 
 - Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
+- DFS: We can use DFS to traverse the graph until we find a valid itinerary, ensuring we choose the lexicographically least itinerary.
+- Adjacency List: We can use an adjacency list to store the graph, especially since the graph is sparse.
+- Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
+- Topological Sort: We can use topological sort for the same reason we can use DFS, as in this problem, the application of DFS is a topological sort.
+
     
 ## 3: P-lan
     
