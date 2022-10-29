@@ -131,5 +131,4 @@ To find the edges of nodes and finding the best pair of nodes to maximize the an
 * **Time Complexity:** `O(E + V^2)`, where V represents the vertices and E represents the edges. 
 Note: The worst case runtime is `O(V^2)`. This will happen when all nodes have the same amount of edges.
 
-<br>
 * **Space Complexity:** `O(E)`, accounting for the use of a hash table to store the neighbors of each city
