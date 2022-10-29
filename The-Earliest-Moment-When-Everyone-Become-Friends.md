@@ -43,9 +43,9 @@ For graph problems, we want to consider the following approaches:
 
 - Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. At the beginning we have a graph with N nodes but no edges. Then we loop through the events and if unite each node until the number of connected components reach to 1. Notice that each time two different connected components are united the number of connected components decreases by 1.
 - DFS: Suppose we have a set. We can keep track of the friend circle and add people in the set. As soon as we find a new relation (by iterating through logs), we can check if this new relation will bring every member in set.
-- Adjacency List: We can use an adjacency list to store the graph, especially since the graph is sparse.
+- Adjacency List: We can use an adjacency list to store the graph, especially when the graph is sparse.
 - Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
-- Topological Sort: We can use topological sort for the same reason we can use DFS, as in this problem, the application of DFS is a topological sort.
+- Topological Sort: We can use topological sort when a directed graph is used and returns an array of the nodes where each node appears before all the nodes it points to. In order to have a topological sorting, the graph must not contain any cycles.
 
 
 ## 3: P-lan
