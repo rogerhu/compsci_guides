@@ -40,11 +40,12 @@ Output: ["JFK","ATL","JFK","SFO","ATL","SFO"]
 
 For graphs, some of the top things we want to consider are:
         
-- **BFS:** We cannot use BFS to traverse the graph because we may visit exit nodes in the first traversal.
-- **DFS:** We can use DFS to traverse the graph until we find a valid itinerary, ensuring we choose the lexicographically least itinerary.
-- **Adjacency List:** We can use an adjacency list to store the graph, especially since the graph is sparse.
-- **Adjacency Matrix:** We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
-- **Topological Sort:** We can use topological sort for the same reason we can use DFS, as in this problem, the application of DFS is a topological sort.
+- BFS: We cannot use BFS to traverse the graph because we may visit exit nodes in the first traversal.
+- DFS: We can use DFS to traverse the graph until we find a valid itinerary, ensuring we choose the lexicographically least itinerary.
+- Adjacency List: We can use an adjacency list to store the graph, especially since the graph is sparse.
+- Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
+- Topological Sort: We can use topological sort for the same reason we can use DFS, as in this problem, the application of DFS is a topological sort.
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
 
 
 ## 3: P-lan
