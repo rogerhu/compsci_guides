@@ -23,12 +23,14 @@
     HAPPY CASE
     Input: n = 5, roads = [[0,1], [0,3], [1,2], [1,3], [2,3], [2,4]]
     Output: 5
-    Explanation: There are 5 roads that are connected to cities 1 or 2. 
     
-    EDGE CASE 
+    HAPPY CASE
     Input: n = 8, roads = [[0,1], [1,2], [2,3], [2,4], [5,6], [5,7]]
     Output: 5
-    Explanation: The network rank of 2 and 5 is 5. Notice that all the cities do not have to be connected.
+
+    EDGE CASE
+    Input: n = 4, roads = []
+    Output: 0
 ```
     
 ## 2: M-atch
@@ -41,25 +43,24 @@
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    ```
+```
     1) Use a hashtable of size `n` which stores sets for each city. Members of the sets are cities which are directly connected to the city the set corresponds to.
     2) Then, examine all unique pairs `(city_1, city_2)`
     3) Sum up the edges of both cities.
     4) If there is an edge between both cities, the sum needs to be reduces by 1 since the edge is counted 2x.
     4) Then, store the highest sum of edges and return it.
-    
-    Time Complexity: O(M + N)
-    Space Complexity: O(N)
-    ```
+```
     
 ⚠️ **Common Mistakes**
 
 * A common mistake would be iterating 2 times, in other words, 2 for loops, to find the 1st and 2nd maximum values while traversing the loop.
-The 2 cities with most connections may not be necessarily connected with each other, and if they are connected, the common connection is counted only once.
+The 2 cities with most connections may not be necessarily connected with each other, and if they are connected, the common connection is counted only once. You go through every single road and in the worst case, every pair of nodes might be connected to each other, so you will have n^2 entries.
 
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
+
+To find the edges of nodes and finding the best pair of nodes to maximize the answer.
 
 ```java
     class Solution {
@@ -97,8 +98,12 @@ The 2 cities with most connections may not be necessarily connected with each ot
 ```python
     class Solution:
         def maximalNetworkRank(self, n: int, roads: List[List[int]]) -> int:
+            # use a set to store the neighbors
             city_to_cities = [ set() for i in range( n ) ]
             max_network_rank = 0
+            # check each pair of cities, add their ranks together
+            # For each (i, j) pair, if i is the neighbor of j or the vice versa,
+            # we minus 1 on the rank
             for road in roads:
                 city_to_cities[ road[0] ].add( road[1] )
                 city_to_cities[ road[1] ].add( road[0] )
@@ -116,13 +121,15 @@ The 2 cities with most connections may not be necessarily connected with each ot
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
 - Trace through your code with an input to check for the expected output
-- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+- Catch possible edge cases and off-by-one errors and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
 ## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Time Complexity: `O(M+N)`
+* **Time Complexity:** `O(E + V^2)`, where V represents the vertices and E represents the edges. 
+Note: The worst case runtime is `O(V^2)`. This will happen when all nodes have the same amount of edges.
+
 <br>
-Space Complexity: `O(N)`
+* **Space Complexity:** `O(E)`, accounting for the use of a hash table to store the neighbors of each city
