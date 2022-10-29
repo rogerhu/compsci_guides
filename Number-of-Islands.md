@@ -78,11 +78,12 @@
 
      
 ```java
-# Java Solution
     public int numIslands(char[][] grid) {
+            // return 0 if grid is empty or out of bounds
             if(grid == null || grid.length < 1 || grid[0].length < 1){
                 return 0;
             }
+            // initialize variables
             int row = grid.length;
             int col = grid[0].length;
             int[] root = new int[row * col];
@@ -96,6 +97,7 @@
                     }
                 }
             }
+            // Check boundary conditions
             for(int i = 0; i < row; i++){
                 for(int j = 0; j < col; j++){
                     if(grid[i][j] == '1'){
@@ -112,6 +114,8 @@
                     }
                 }
             }
+
+            // return the number of islands
             return n;
         }
         private int union(int[] root, int p, int q, int count){
