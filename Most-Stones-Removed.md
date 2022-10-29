@@ -69,29 +69,35 @@ We can first create an empty disjoint set, add each stone in a loop, and at each
 > **Implement** the code to solve the algorithm.
     
 ```python
-    def removeStones(stones):
-      f = {}
-      islands = 0
-      def find(x):
-        nonlocal islands
-        if x not in f:
-          f[x] = x
-          islands += 1
-        if x != f[x]:
-          f[x] = find(f[x])
-        return f[x]
-    
-      def union(x, y):
-        nonlocal islands
-        x = find(x)
-        y = find(y)
-        if x != y:
-          f[x] = y
-          islands -= 1
-    
-      for [x, y] in stones:
-        union(x, ~y)
-      return len(stones) - islands
+class Solution(object):
+    def removeStones(self, stones):
+        stones = list(map(tuple, stones))
+        s = set(stones)
+        d = collections.defaultdict(list)
+        for i,j in s:
+            d[i].append(j)
+            d[j].append(i)
+        
+        def dfs(i,j):
+            for y in d[i]: # find all points in x=i
+                if (i,y) not in s: continue
+                s.remove((i,y))
+                dfs(i,y)
+            for x in d[j]: # find all points in y=j
+                if (x,j) not in s: continue
+                s.remove((x,j))
+                dfs(x,j)
+        
+        n = len(s)
+        res = 0
+        for i,j in stones:
+            if (i,j) not in s: continue
+            s.remove((i,j))
+            dfs(i,j)
+            # n-len(s) represent the length of graph, e.g. the number of element removed through dfs
+            res += n - len(s) - 1 
+            n = len(s)
+        return res
 ```
     
 ```java
