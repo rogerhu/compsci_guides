@@ -30,7 +30,7 @@
 - How many queries are performed?
    - There can be up to 20 queries.
     
-    ```markdown
+```markdown
     HAPPY CASE
     Input:
         equations = [["a","b"],["b","c"],["bc","cd"]]
@@ -46,7 +46,7 @@
         queries = [["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]]
     
     Output: [6.00000,0.50000,-1.00000,1.00000,-1.00000]
-    ```
+```
     
 ## 2: M-atch
 
