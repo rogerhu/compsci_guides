@@ -69,17 +69,18 @@
     
     We will build a graph of the equation where the nodes are variables, edges are the equations, and edge weights are the equation values. Then, we will perform a topological sort to return the weight contribution of the children to the parent node.
     
-    `1) Create a map as our graph. 2) For each equation, i
+1) Create a map as our graph. 
+2) For each equation,
       a) Add edge from A to B with V[i]
       b) Add edge from B to A with 1/V[i]
-    3) For each query
+3) For each query
         a) Perform topological sort from start node
             i)   Keep track of product weights for each neighbor, 
                 computed by neighbor * topoSort(neighbor)
             ii)  If all neighbor product weights were -1, return -1
             iii) Return tracked product weights
         b) Add result of topological sort call from start to end variable to list
-    4) Return result list
+4) Return result list
     
 
 ⚠️ **Common Mistakes**
@@ -93,7 +94,7 @@
 ```java
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
     
-        /* Build graph. */
+        // build graph
         Map<String, Map<String, Double>> graph = buildGraph(equations, values);
         double[] result = new double[queries.size()];
         
@@ -105,11 +106,11 @@
     }
     private double getPathWeight(String start, String end, Set<String> visited, Map<String, Map<String, Double>> graph) {
         
-        /* Rejection case. */
+        // rejection case
         if (!graph.containsKey(start)) 
             return -1.0;
         
-        /* Accepting case. */
+        // accepting case
         if (graph.get(start).containsKey(end))
             return graph.get(start).get(end);
         
@@ -139,43 +140,50 @@
 ```
     
 ```python
-    def calcEquation(equations, values, queries):
-      graph = buildGraph(equations, values)
-      results = []
-      for query in queries:
-        result = getPathWeight(query[0], query[1], graph, set())
-        results.append(result)
-    
-      return results
-    
-    def getPathWeight(start, end, graph, visited):
-      if start not in graph:
-        return -1
-    
-      if end in graph[start]:
-        return graph[start][end]
-    
-      visited.add(start)
-    
-      for neighbor in graph[start]:
-        if neighbor not in visited:
-          productWeight = getPathWeight(neighbor, end, graph, visited)
-          if productWeight != -1:
-                return graph[start][neighbor] * productWeight
-            
-      return -1
-    
-    def buildGraph(equations, values):
-      graph = {}
-    
-      for equation, value in zip(equations, values):
-        u, v = equation[0], equation[1]
-        if u not in graph: graph[u] = {}
-        graph[u][v] = value
-        if v not in graph: graph[v] = {}
-        graph[v][u] = 1 / value
-    
-      return graph
+class Solution:
+    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+
+        graph = defaultdict(defaultdict)
+
+        def backtrack_evaluate(curr_node, target_node, acc_product, visited):
+            visited.add(curr_node)
+            ret = -1.0
+            neighbors = graph[curr_node]
+            if target_node in neighbors:
+                ret = acc_product * neighbors[target_node]
+            else:
+                for neighbor, value in neighbors.items():
+                    if neighbor in visited:
+                        continue
+                    ret = backtrack_evaluate(
+                        neighbor, target_node, acc_product * value, visited)
+                    if ret != -1.0:
+                        break
+            visited.remove(curr_node)
+            return ret
+
+        # build the graph from the equations
+        for (dividend, divisor), value in zip(equations, values):
+            # add nodes and two edges into the graph
+            graph[dividend][divisor] = value
+            graph[divisor][dividend] = 1 / value
+
+        # evaluate each query via backtracking (DFS)
+        #  by verifying if there exists a path from dividend to divisor
+        results = []
+        for dividend, divisor in queries:
+            if dividend not in graph or divisor not in graph:
+                # case 1): either node does not exist
+                ret = -1.0
+            elif dividend == divisor:
+                # case 2): origin and destination are the same node
+                ret = 1.0
+            else:
+                visited = set()
+                ret = backtrack_evaluate(dividend, divisor, 1, visited)
+            results.append(ret)
+
+        return results
 ```
     
 ## 5: R-eview
@@ -195,3 +203,4 @@ Let `N` be the number of input equations and `M` be the number of queries.
 Time Complexity: O(N*M)
 <br>
 Space Complexity: O(N)
+
