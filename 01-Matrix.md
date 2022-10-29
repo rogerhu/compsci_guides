@@ -43,7 +43,8 @@
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
-* BFS: The idea is to put all zeroes in one BFS layer/breadth and move out to other nodes from there. Mark unvisited node as `-1`. The first `matrix[vrow][vcol] = matrix[urow][ucol] + 1`should be the smallest distance possible.
+- BFS: The idea is to put all zeroes in one BFS layer/breadth and move out to other nodes from there. Mark unvisited node as `-1`. The first `matrix[vrow][vcol] = matrix[urow][ucol] + 1`should be the smallest distance possible.
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
 
 ## 3: P-lan
     
@@ -151,7 +152,7 @@
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
 - Trace through your code with an input to check for the expected output
-- Catch possible edge cases and off-by-one errorS and verify the code works for the happy and edge cases you created in the “Understand” section
+- Catch possible edge cases and off-by-one errors and verify the code works for the happy and edge cases you created in the “Understand” section
 
     
 ## 6: E-valuate
