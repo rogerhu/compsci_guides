@@ -25,7 +25,7 @@
   - Yes, a node could have any number of neighbors. This is why neighbors can be thought of as a list.
     
 - How do we choose how to traverse the graph?
-  - Based on the kind of graph we are expecting we can chose BFS or DFS. 
+  - Based on the kind of graph we are expecting, we can chose a BFS or DFS implementation. 
     
 ```markdown
     HAPPY CASE
@@ -43,8 +43,8 @@
     
 For graph problems, some things we want to consider are:
     
-- DFS - We can use DFS to traverse all node of original graph. As soon as we reach a node, we will make a copy node. And recur for rest of the graph.
-- BFS - If the recursion stack is what we are worried about, then DFS is not the best solution. We use the BFS way of doing iterative traversal of the graph.
+- DFS: We can use DFS to traverse all node of original graph. As soon as we reach a node, we will make a copy node. And recur for rest of the graph.
+- BFS: If the recursion stack is what we are worried about, then DFS is not the best solution. We use the BFS way of doing iterative traversal of the graph.
 
 The difference is only in the traversal of DFS and BFS. DFS explores the depths of the graph first and BFS explores the breadth. 
 
