@@ -40,6 +40,7 @@
 - Adjacency List: An adjacency list is efficient in terms of storage because we only need to store the values for the edges. For a sparse graph with millions of vertices and edges, this can mean a lot of saved space. It also helps to find all the vertices adjacent to a vertex easily. We can apply an adjacency list to count the number of edges for a pair of nodes and return the maximum of the counts.
 - BFS/DFS: Not necessary. DFS is not a complete algorithm for infinitely deep graphs (it does not guarantee to reach the goal if there is any). Even if your graph is very deep but you have the prior knowledge that your goal is a shallow one, using DFS is not a very good idea.
 BFS needs to keep all the current nodes in the memory.
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
 
 ## 3: P-lan
 
