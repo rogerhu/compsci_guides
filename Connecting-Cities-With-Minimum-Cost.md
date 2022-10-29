@@ -85,6 +85,7 @@ def minimumCost(self, N, connections):
         mst = []
         res = 0
         
+        # build the graph
         for city1, city2, cost in sorted(connections, key = lambda x: x[2]):
             if self.find(parent, city1) != self.find(parent, city2):
                 mst.append((city1, city2))
@@ -92,14 +93,17 @@ def minimumCost(self, N, connections):
                 if len(mst) == N:
                     break
                 self.Union(forest, parent, city1, city2)
-        return res if self.n==1 else -1
+        return res if self.n == 1 else -1
                 
     
+    # traverse all the way to the top (root) going through the parent nodes
     def find(self, parent, i):
         while parent[i] != -1:
             i = parent[i]
         return i
     
+    # start union implementation for disjoint set, returns false if elements have the same parent
+    # this will help to prevent adding edge among elements from same parent, thus avoiding cycles
     def Union(self,forest, parent, x, y):
         set1 = self.find(parent, x)
         set2 = self.find(parent, y)
