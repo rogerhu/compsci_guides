@@ -54,13 +54,14 @@
     
     For graph problems, some things we want to consider are:
     
-    - We can use BFS to traverse the equation graph, and accumulate the products of the edges to find the answer.
-    - We can use DFS to traverse the equation graph, and accumulate the products of the edges to find the answer, while ignoring invalid paths.
-    - We can use an adjacency list to store graph, but equation variables cannot be directly translated to a index.
-    - We can use an adjacency matrix to store graph, but will cause runtime slowdowns of O(N^2) for a sparse graph and run into similar issues as with adjacency list.
-    - We can use a map to store the edges in the graph to lookup equations by name, and store all neighbors by name.
-    - We can use topological sort to traverse the graph, similar to BFS and DFS, and find the result.
-    - **BONUS** – We can use floyd warshall to perform all node minimum distance computation, allowing O(1) query.
+- BFS: We can use BFS to traverse the equation graph, and accumulate the products of the edges to find the answer.
+- DFS: We can use DFS to traverse the equation graph, and accumulate the products of the edges to find the answer, while ignoring invalid paths.
+- Adjacency List: We can use an adjacency list to store graph, but equation variables cannot be directly translated to an index.
+- Adjacency Matrix: We can use an adjacency matrix to store graph, but will cause runtime slowdowns of O(N^2) for a sparse graph and run into similar issues as with adjacency list.
+- Map: We can use a map to store the edges in the graph to lookup equations by name, and store all neighbors by name.
+- Topological Sort: We can use topological sort to traverse the graph, similar to BFS and DFS, and find the result.
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
+- **BONUS** – We can use floyd warshall to perform all node minimum distance computation, allowing O(1) query.
 
 ## 3: P-lan
 
