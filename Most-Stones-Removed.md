@@ -56,11 +56,9 @@
       a) Add the coordinate x, ~y (i.e. -(y-1)) to the set
       b) Update number of sets
     3) Return number of stones - number of sets
+   
     
-    Time Complexity: O(N)
-    Space Complexity: O(N)`
-    
-    **Common Mistakes:**
+⚠️ **Common Mistakes**
     
     - Some people may want to sort the array first, but there are faster solutions if we avoid sorting. We can reduce runtime complexity from O(N*log(N)) to O(N+M) if we avoid sorting either of the arrays. Though, we can sort for O(1) space complexity.
 
