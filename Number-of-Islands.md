@@ -47,11 +47,8 @@
 
     For this graph problem, some things we want to consider are:
     
-    - Depth-First Search
-        - The idea is to consider the given matrix as a graph, where each cell is a node of the given graph. Two nodes contain an edge if and only if there is a ‘1’ either horizontally or vertically.
-    - Union Find
-        - Each set is a single island
-        - Two pieces of land should be merged if they are adjacent
+- DFS: The idea is to consider the given matrix as a graph, where each cell is a node of the given graph. Two nodes contain an edge if and only if there is a ‘1’ either horizontally or vertically.
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. We can imagine each set is a single island and two pieces of land should be merged if they are adjacent.
 
 ## 3: P-lan
     
