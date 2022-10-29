@@ -122,10 +122,10 @@
         def swimInWater(self, grid: List[List[int]]) -> int:
             directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
             N = len(grid) 
-            // take a visited[r][c] to keep track of visited nodes
+            # take a visited[r][c] to keep track of visited nodes
             visited = [[False] * N for _ in range(N)]
    
-            // take a heap to store grid
+            # take a heap to store grid
             pq = []
             ans = 0
 
@@ -133,13 +133,13 @@
             heapq.heappush(pq, (grid[0][0], 0, 0))
     
 
-            // while priority queue is not empty, take top element from priority_queue (max, r, c)
+            # while priority queue is not empty, take top element from priority_queue (max, r, c)
             while pq:
                 time, r, c = heapq.heappop(pq)
                 if visited[r][c]:
                     continue
 
-                // mark as visited
+                # mark as visited
                 visited[r][c] = True
                 ans = max(ans, time)
     
@@ -154,7 +154,7 @@
     
             return ans
     
-        // helper function to check for each of the valid neighbors (in 4 directions) and not visited, mark this node as visited
+        # helper function to check for each of the valid neighbors (in 4 directions) and not visited, mark this node as visited
         def _isValid(self, r, c, N, visited):
             return r >= 0 and r < N and c >= 0 and c < N and not visited[r][c]
 ```
