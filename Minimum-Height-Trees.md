@@ -53,6 +53,8 @@
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
+
+**General Idea:**  Filter out the roots that have the minimal height among all the trees
     
 The idea is keep removing all of the leaves until there is the last layer of leaves, then those are the roots of the minimum height trees. Using an arrayList, add the first layer of leaves. Because when we break the longest branch in half, there can be at most 2 things at the top. If there are three, then we can break again. Remove all the other occurrences of this leaf from other rows that the leaf is associated with. Remove the row of the current leaf from the adjacency list.
                    
