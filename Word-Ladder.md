@@ -62,7 +62,7 @@ All lowercase alphabet letters.
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-    Traverse the wordList using BFS, starting from beginWord until we either reach the end or see endWord. As we visit each node, we add all adjacent nodes by looking up if a certain word exists in wordList.
+**General Idea:** Traverse the wordList using BFS, starting from beginWord until we either reach the end or see endWord. As we visit each node, we add all adjacent nodes by looking up if a certain word exists in wordList.
     
 1. Create a set of all words in wordList, including endWord.
 2. Create a set of visited nodes
