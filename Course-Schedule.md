@@ -59,6 +59,8 @@
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
+
+**General Idea:** Only return false when we encounter a cycle
     
     **Approach #1**
     
