@@ -73,51 +73,45 @@
 > **Implement** the code to solve the algorithm.
     
 ```python
-    class Solution:
-        def canVisitAllRooms(self, R: List[List[int]]) -> bool:
-            vis, stack, count = [False for _ in range(len(R))], [0], 1
-            vis[0] = 1
-            while stack:
-                keys = R[stack.pop()]
-                for k in keys:
-                    if not vis[k]:
-                        stack.append(k)
-                        vis[k] = True
-                        count += 1
-            return len(R) == count
+class Solution(object):
+    def canVisitAllRooms(self, rooms):
+        seen = [False] * len(rooms)
+        seen[0] = True
+        stack = [0]
+        #At the beginning, we have a todo list "stack" of keys to use.
+        #'seen' represents at some point we have entered this room.
+        while stack:  #While we have keys...
+            node = stack.pop() # get the next key 'node'
+            for nei in rooms[node]: # For every key in room # 'node'...
+                if not seen[nei]: # ... that hasn't been used yet
+                    seen[nei] = True # mark that we've entered the room
+                    stack.append(nei) # add the key to the todo list
+        return all(seen) # Return true iff we've visited every room
 ```
     
 ```java
-    class Solution {
-        public boolean canVisitAllRooms(List<List<Integer>> rooms) {     
-            Map<Integer, List<Integer>> graph = new HashMap<>();
-            for(int i = 0; i < rooms.size(); i++) {
-                graph.put(i, rooms.get(i));
-            }
-            boolean[] visited = new boolean[rooms.size()];
-            Stack<Integer> s = new Stack<>();
-            for(Integer room : graph.keySet()) {
-                s.push(room);
-    
-                while(s.isEmpty() == false) {
-                    Integer r = s.pop();
-                    if (visited[r] != true) {
-                        visited[r] = true;
-                        for(Integer reachable: graph.get(r)) {
-                            if (visited[reachable] != true)
-                                s.push(reachable);
-                        }
-                    }
+class Solution {
+    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+        boolean[] seen = new boolean[rooms.size()];
+        seen[0] = true;
+        Stack<Integer> stack = new Stack();
+        stack.push(0);
+
+        // at the beginning, we have a todo list "stack" of keys to use.
+        while (!stack.isEmpty()) { // While we have keys...
+            int node = stack.pop(); // Get the next key 'node'
+            for (int nei: rooms.get(node)) // For every key in room # 'node'...
+                if (!seen[nei]) { // ...that hasn't been used yet
+                    seen[nei] = true; // mark that we've entered the room
+                    stack.push(nei); // add the key to the todo list
                 }
-                
-                for(boolean b : visited)
-                    if (b == false)
-                        return false;
-                
-            }
-            return true;
         }
+
+        for (boolean v: seen)  // if any room hasn't been visited, return false
+            if (!v) return false;
+        return true;
     }
+}
 ```
     
 ## 5: R-eview
