@@ -4,6 +4,8 @@
 
 ## Core Data Structures
 
+* [[K Closest Points to the Origin]]
+
 ## Arrays and Strings
 
 ## Binary Trees
