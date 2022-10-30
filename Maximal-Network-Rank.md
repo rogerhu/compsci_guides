@@ -49,7 +49,7 @@ BFS needs to keep all the current nodes in the memory.
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-Use a hashtable of size `n` which stores sets for each city. Members of the sets are cities which are directly connected to the city the set corresponds to. Then, examine all unique pairs `(city_1, city_2)` and sum up the edges of both cities. If there is an edge between both cities, the sum needs to be reduced by one since the edge is counted twice. We store the highest sum of edges and return it.
+**General Idea:** Use a hashtable of size `n` which stores sets for each city. Members of the sets are cities which are directly connected to the city the set corresponds to. Then, examine all unique pairs `(city_1, city_2)` and sum up the edges of both cities. If there is an edge between both cities, the sum needs to be reduced by one since the edge is counted twice. We store the highest sum of edges and return it.
 
 
 1. Use a hashtable of size `n` which stores sets for each city. Members of the sets are cities which are directly connected to the city the set corresponds to.
