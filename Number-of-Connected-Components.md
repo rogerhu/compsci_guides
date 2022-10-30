@@ -4,7 +4,7 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs
-* 🗒️ **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: [Number of Islands](https://leetcode.com/problems/number-of-islands/), [Paths in Maze That Lead to Same Room](https://leetcode.com/problems/paths-in-maze-that-lead-to-same-room/)
 
 ## 1: **U-nderstand**
 
@@ -64,7 +64,7 @@
         ArrayList<ArrayList<Integer>> adj = new ArrayList();
         public int countComponents(int n, int[][] edges) {
             boolean [] visited = new boolean[n];
-            for(int i=0;i<n;i++){
+            for(int i = 0; i < n; i++){
                 adj.add(new ArrayList());
             }
             for(int [] edge:edges){
@@ -74,18 +74,18 @@
                 adj.get(v).add(u);
             }
             int count=0;
-            for(int i=0;i<n;i++){
-                if(visited[i]==false){
-                  dfs(adj,visited,i);
+            for(int i = 0;i < n;i++){
+                if(visited[i] == false) {
+                  // apply dfs
+                  dfs(adj, visited, i);
                 count++;
                 }
-               
-                
             }
             return count;
         }
         
-        private void dfs(ArrayList<ArrayList<Integer>> adj, boolean[] visited,int s){
+        // use dfs to traverse the graph to see if all the nodes can be covered
+        private void dfs(ArrayList<ArrayList<Integer>> adj, boolean[] visited, int s){
             visited[s]=true;
             for(int v:adj.get(s)){
                 if(visited[v]==false){
@@ -99,12 +99,15 @@
 ```python
     class Solution:
         def countComponents(self, n: int, edges: List[List[int]]) -> int:
+            # create adjacency list
             adj_list = [[] for _ in range(n)]
             for n1, n2 in edges:
                 adj_list[n1].append(n2)
                 adj_list[n2].append(n1)
     
             count = 0
+
+            # keep track of visited nodes in set
             seen = set()
             queue = collections.deque()
             
@@ -116,6 +119,7 @@
                     self.bfs(adj_list, queue, seen)
             return count
     
+        # apply bfs
         def bfs(self, adj_list, queue, seen):
             while queue:
                 node = queue.popleft()
