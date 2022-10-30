@@ -53,6 +53,8 @@
 ## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
+
+**General Idea:** Apply BFS so very time you visit a node, it will be from a path of predecessors that is of shortest distance to a zero.
     
 1. apply bfs on zero values and store -1 for other matrix data to denote they are not visited yet.
 2. traverse level order wise and for each level update distance only of those indexes who has -1 assigned and currently neighbor of queue.poll.
