@@ -125,13 +125,13 @@ The space complexity would be **O(1)** because the solution doesn't create new d
 ### Walkthrough
 Take the example of `min_sub_array_length([2,3,1,2,4,3], 7)`. The left pointer starts at 0 and the right doesn't exist yet.
 
-As we start looping through the list, our first interval is [2]. We won't fulfill the while loop condition until the list reaches [2, 3, 1, 2] whose sum, 8 is >= 7. We then set the `min_length` to 4.
+As we start looping through the list, our first interval is [2]. We won't fulfill the while loop condition until the list reaches `[2, 3, 1, 2]` whose sum, 8 is >= 7. We then set the `min_length` to 4.
 
-Now, we shrink the interval to [3, 1, 2] by increasing `start_idx` by 1. This new interval sums up to less than the target sum, 7 so we need to grow the interval. In the next iteration, we grow the interval to [3, 1, 2, 4], which has a sum of 10 and once again, we satisfy the while loop condition.
+Now, we shrink the interval to `[3, 1, 2]` by increasing `start_idx` by 1. This new interval sums up to less than the target sum, 7 so we need to grow the interval. In the next iteration, we grow the interval to `[3, 1, 2, 4]`, which has a sum of 10 and once again, we satisfy the while loop condition.
 
-We then shrink the interval to [1, 2, 4]. This is the shortest interval we've come across that sums up to at least the target sum, so we update the `min_length` to 3.
+We then shrink the interval to `[1, 2, 4]`. This is the shortest interval we've come across that sums up to at least the target sum, so we update the `min_length` to 3.
 
-We now move the `end_idx` pointer and it hits the end of the list, with interval [2, 4, 3]. Then shrink the interval to [4, 3], which sums up to 7, the target sum. This is the shortest interval we've come across that sums up to at least the target sum, so we update the `min_length` to 2. This is the final result that is returned.
+We now move the `end_idx` pointer and it hits the end of the list, with interval `[2, 4, 3]`. Then shrink the interval to `[4, 3]`, which sums up to 7, the target sum. This is the shortest interval we've come across that sums up to at least the target sum, so we update the `min_length` to 2. This is the final result that is returned.
 
 ## Takeaways
 
