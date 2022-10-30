@@ -5,6 +5,11 @@
 ## Core Data Structures
 
 * [[K Closest Points to the Origin]]
+* [[Minimum Stack]]
+* [[Implement Queue Using Stacks]]
+* [[Validate Stack Sequences]]
+* [[Brick Wall]]
+* [[Find a Celebrity]]
 
 ## Arrays and Strings
 
