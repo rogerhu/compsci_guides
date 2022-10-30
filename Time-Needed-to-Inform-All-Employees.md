@@ -106,6 +106,7 @@ public int numOfMinutes(int n, int headID, int[] manager, int[] informTime) {
     return dfs(headID, 0, graph, informTime);
 }
     
+// apply dfs
 public int dfs(int headId, int time, Map<Integer,List<Integer>> graph, int[] informTime){
     if(informTime[headId] == 0) {
         return time;
