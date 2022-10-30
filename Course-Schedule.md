@@ -72,7 +72,7 @@
         - If by the end we have taken all the classes, return true
         - If we reach a point where there are no eligible classes to take, return false
     
-    **Approach #2:** Use adjacency list
+    **Approach #2:** Use an adjacency list
     
     - Ad list would look like this: ad_list = { 0: [3], 1: [0, 2], 2: [], 3: [2] }
     - First iteration, len(ad_list[2]) == 0, so we know 2 does not have any dependencies, so take course 2, and remove any nodes pointing to 2, and remove 2
@@ -87,7 +87,7 @@
 
 ⚠️ **Common Mistakes**
 
-* 
+* This problem is equivalent to finding if a cycle exists in a directed graph. If a cycle exists, no topological ordering exists and therefore it will be impossible to take all courses. Don't mistake the definition for indegree. When offer into queue at first, you should add for those courses which needs precouse. Thus, their indexes are all reversed.
 
 
 ## 4: I-mplement
@@ -101,6 +101,8 @@
         Boolean[] completedCourses;
         public boolean canFinish(int numCourses, int[][] prerequisites) {
             completedCourses = new Boolean[numCourses];
+
+            // build an adjacency list
             List<Integer>[] adjList = (ArrayList<Integer>[]) new ArrayList<?>[numCourses];
             for(int[] e : prerequisites){
                 if(adjList[e[1]] == null)
@@ -115,6 +117,7 @@
             return true;
         }
         
+        // check if there is a cycle
         private boolean isCycle(int course, List<Integer>[] adjList, boolean[] visited){
             if(visited[course])
                 return true;
@@ -140,10 +143,14 @@
 ```python
     class Solution:
         def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+
+            # create adjacency list
             ad_list = {i: set() for i in range(numCourses)}
             for prereq, course in prerequisites:
+                // add prereq to adjacency list
                 ad_list[course].add(prereq)
             
+            // check if there is a cycle
             while len(ad_list) > 0:
                 next_course = None
                 for course in ad_list:
@@ -173,6 +180,8 @@
             for(int pre[] : prerequisites){
                 indegree[pre[0]]++;
             }
+
+            // create queue
             Queue<Integer> q = new LinkedList<Integer>();
           
             for(int i=0;i<indegree.length;i++){
@@ -192,8 +201,11 @@
                     }
                 }
             }
+
+            // if there are still some edges left, then there exist some cycles
+            // due to dependencies, we cannot remove the cyclic edges
             for(int a: indegree){
-                if(a!=0)
+                if(a != 0)
                     return false;
             }
             return true;
