@@ -126,6 +126,6 @@ class Solution {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Time Complexity: The time complexity for this algorithm is `O(N + K)`, where `N` is the number of rooms and `K` is the number of Keys.
+* **Time Complexity:** The time complexity for this algorithm is `O(N + K)`, where `N` is the number of rooms and `K` is the number of Keys.
 <br>
-Space Complexity: The space complexity is `O(N)` since we are using a list to store the visited rooms list.
+* **Space Complexity:** The space complexity is `O(N)` since we are using a list to store the visited rooms list.
