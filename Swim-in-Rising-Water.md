@@ -47,6 +47,8 @@
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
+
+**General Idea:** Perform a BFS to check whether it is possible where we can only walk in squares that are at most `T`.
     
 1. Take a priority queue to store grid
 2. Take a visited[r][c] to keep track of visited nodes
