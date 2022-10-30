@@ -72,42 +72,66 @@ Step 3 and 4 go through the same process.
 > **Implement** the code to solve the algorithm.
     
 ```java
-    class Solution {
-      public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
-    	   if (image[sr][sc] == newColor) return image;
-    	   fill(image, sr, sc, image[sr][sc], newColor);
-    	   return image;
-    	}
-    
-    	private void fill(int[][] image, int sr, int sc, int color, int newColor) {
-    	   if (sr < 0 || sr >= image.length || sc < 0 || sc >= image[0].length || image[sr][sc] != color) return;
-    	   image[sr][sc] = newColor;
-    	   fill(image, sr + 1, sc, color, newColor);
-    	   fill(image, sr - 1, sc, color, newColor);
-    	   fill(image, sr, sc + 1, color, newColor);
-    	   fill(image, sr, sc - 1, color, newColor);
-    	}
+class Solution {
+    public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+        int previousColor=image[sr][sc];
+        fillColor(image,sr,sc,newColor,previousColor);
+        return image;
     }
+    
+    public void fillColor(int[][] image, int sr, int sc, int newColor,int previousColor){
+        //change sr sc index color to new color
+        image[sr][sc]=newColor;
+        
+       // check for up and change the color to new Color if up is not visited yet
+        if(sr-1>=0 && image[sr-1][sc]==previousColor && image[sr-1][sc]!=newColor){
+            fillColor(image,sr-1,sc,newColor,previousColor);
+        }
+        // check for down and change the color to new Color if down is not visited yet
+        if(sr+1<image.length && image[sr+1][sc]==previousColor && image[sr+1][sc]!=newColor){
+            fillColor(image,sr+1,sc,newColor,previousColor);
+        }
+        // check for left and change the color to new Color if left is not visited yet
+        if(sc-1>=0 && image[sr][sc-1]==previousColor && image[sr][sc-1]!=newColor){
+            fillColor(image,sr,sc-1,newColor,previousColor);
+        }
+        // check for right and change the color to new Color if right is not visited yet
+        if(sc+1<image[0].length && image[sr][sc+1]==previousColor && image[sr][sc+1]!=newColor){
+            fillColor(image,sr,sc+1,newColor,previousColor);
+        }
+    }
+}
 ```
     
 ```python
-    class Solution:
-        def floodFill(self, image, sr, sc, newColor):
-    	   if (image[sr][sc] == newColor):
-    	       return image
-    	   m, n, originalColor = len(image), len(image[0]), 
-    	image[sr][sc]
-    	   def dfs(i,j):
-    	       if i < 0 or i > m-1 or j < 0 or j > n-1 or 
-    	image[i][j] != originalColor:
-    	           return
-    	       image[i][j] = newColor
-    	       dfs(i+1, j)
-    	       dfs(i-1, j)
-    	       dfs(i, j+1)
-    	       dfs(i, j-1)
-    	   dfs(sr, sc)
-    	   return image
+import queue
+class Solution:
+    def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
+        # BFS
+        m, n = len(image), len(image[0])
+        visited = [['w' for i in range(n)] for j in range(m)] # white as not-yet discovered/visited
+        Q = queue.Queue()
+        srcColor = image[sr][sc] 
+        image[sr][sc] = newColor
+        Q.put((sr, sc))
+        visited[sr][sc] = 'g'
+        while not Q.empty():
+            (i,j) = Q.get()
+            # adjacent nodes to traverse 
+            adjacents = [(i-1, j), (i+1, j), (i, j-1), (i,j+1)]
+            for node in adjacents:
+                (x,y) = node
+                # check if the asjacent node are of legal indices 
+                if (0<=x and x<m) and (0<=y and y < n):
+                    # check if node is not yet discovered and needs to fill flood
+                    if (image[x][y] == srcColor) and (visited[x][y] == 'w'):
+                        image[x][y]= newColor
+                        visited[x][y] = 'g'
+						# push the adjacent node into Queue (mark gray as discovered but needs to be visited)
+                        Q.put((x,y)) 
+			# mark visited (black)
+            visited[i][j] = 'b'
+        return image
 ```
     
 ## 5: R-eview
