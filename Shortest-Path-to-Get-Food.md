@@ -53,14 +53,14 @@
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    - First, we need to find where to start.
-    - Starting BFS with the help of deque `(i, j, cnt)`, explore 4 neighbors and increment `cnt` by 1
-    - Mark visited point as `X` to avoid revisit
-    - If `#` is met, return `cnt`
+1. First, we need to find where to start.
+2. Starting BFS with the help of deque `(i, j, cnt)`, explore 4 neighbors and increment `cnt` by 1
+3. Mark visited point as `X` to avoid revisit
+4. If `#` is met, return `cnt`
 
 ⚠️ **Common Mistakes**
 
-* 
+* Don't forget to check if the position you just dequeued has already been visited. It has the potential to be marked visited in the time between being queued and dequeued. Before you do the `grid[cur[0]][cur[1]] = 'X';` line, you need to do a check for `if(grid[cur[0]][cur[1]] == 'X')` and then break; if that is the case.
 
 ## 4: I-mplement
 
@@ -69,6 +69,7 @@
 ```java
     class Solution {
         public int getFood(char[][] grid) {
+            // create a queue 
             Queue<int[]> queue = new LinkedList<>();
             Set<String> visited = new HashSet<>();
             for (int i = 0; i < grid.length; i++) {
@@ -83,6 +84,8 @@
             int[] dx = new int[]{1, 0, 0, -1};
             int[] dy = new int[]{0, 1, -1, 0};
             int steps = 0;
+
+            // apply bfs
             while (!queue.isEmpty()) {
                 int size = queue.size();
                 for (int i = 0; i < size; i++) {
@@ -107,24 +110,47 @@
 ```
 
 ```python
-    class Solution:
-        def getFood(self, grid: List[List[str]]) -> int:
-            m, n = len(grid), len(grid[0])
-            q = collections.deque()
-            for i in range(m):
-                for j in range(n):
-                    if grid[i][j] == '*': 
-                        q.append((i,j, 0)); break
-                if q: break        
-            while q:
-                x, y, cnt = q.popleft()
-                if grid[x][y] == 'X': continue
-                elif grid[x][y] == '#': return cnt
-                grid[x][y] = 'X'
-                for i, j in [(x + _x, y + _y) for _x, _y in [(-1, 0), (1, 0), (0, -1), (0, 1)]]:
-                    if 0 <= i < m and 0 <= j < n and grid[i][j] != 'X':
-                        q.append((i, j, cnt + 1))
-            return -1
+class Solution:
+def getFood(self, grid: List[List[str]]) -> int:
+
+    k = l = 0
+    # initialize the truth table
+    visited = [[False]*len(grid[0]) for p in range(len(grid))]
+
+    # search for the starting position
+    for i in range(len(grid)):
+        for j in range(len(grid[0])):
+            if grid[i][j] == '*':
+                k,l = i,j   
+                break
+                
+    # update the starting position's value in visited
+    visited[k][l] = True
+	
+    # initialize queue with starting position and steps calculated
+    queue = [(k,l, 0)]
+    
+    # start the BFS process from the starting position
+    while queue != []:
+        
+        x,y,s = queue.pop(0)
+        
+	# runs in all directions
+        for l,r in [(-1,0), (0,1), (1,0), (0,-1)]:
+            
+	    # checks for edge case
+            if ((0 <= x+l < len(grid)) and (0 <= y+r < len(grid[0])) and not visited[x+l][y+r]):
+                
+		# found food, return the number of steps
+                if grid[x+l][y+r] == '#':
+                    return s+1
+                
+		# found empty space, add the queue and update visited
+                if grid[x+l][y+r] == 'O':
+                    queue.append((x+l, y+r, s+1))
+                    visited[x+l][y+r] = True
+    # could not find any food, exit the function
+    return -1
 ```
     
 ## 5: R-eview
