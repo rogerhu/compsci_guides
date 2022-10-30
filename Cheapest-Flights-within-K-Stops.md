@@ -52,6 +52,8 @@
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
+**General idea:** Need to keep track of the number of stops taken to reach a node (city), in addition to the shortest path from the source node
+
     To implement Dijkstra, we need a priority queue to pop out the lowest weight node for next search. In this case, the weight would be the accumulated flight cost. So my node takes a form of `(cost, src, k)`. `cost` is the accumulated cost, `src` is the current node's location, `k` is stop times we left as we only have at most K stops. I also convert `edges` to an adjacent list based graph `g`.
     
     Use a `vis` array to maintain visited nodes to avoid loop. `vis[x]` record the remaining steps to reach x with the lowest cost. If `vis[x] >= k`, then no need to visit that case `(start from x with k steps left)` as a better solution has been visited before (more remaining step and lower cost as heappopped beforehand). And we should initialize `vis[x]` to `0` to ensure visit always stop at a negative `k`.
