@@ -46,6 +46,8 @@
 ## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
+
+**General Idea:** Run a DFS, starting from a particular vertex, it will continue to visit the vertices depth-wise until there are no more adjacent vertices left to visit. 
     
 1. Build the undirected graph.
 2. Loop over the nodes and run a BFS on the node if it has not been explored before. It will behave as a sink that will swallow each connected component allowing you to increment a counter.
