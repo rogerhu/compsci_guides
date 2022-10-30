@@ -54,14 +54,13 @@
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    1. apply bfs on zero values and store -1 for other matrix data to denote they are not visited yet.
-    2. traverse level order wise and for each level update distance only of those
-    indexes who has -1 assigned and currently neighbor of queue.poll.
-    3. add such element to back of queue also for next level traversal.
-    4. in this way those who are not reachable to any zero in first attempt (i.e.
-    first level), for them new level is checked and hence length counter will increased by 1
-    5. now for those new queue element length will be set to updated length if
-    that cell has -1.
+1. apply bfs on zero values and store -1 for other matrix data to denote they are not visited yet.
+2. traverse level order wise and for each level update distance only of those indexes who has -1 assigned and currently neighbor of queue.poll.
+3. add such element to back of queue also for next level traversal.
+4. in this way those who are not reachable to any zero in first attempt (i.e.
+first level), for them new level is checked and hence length counter will increased by 1
+5. now for those new queue element length will be set to updated length if
+that cell has -1.
 
 ⚠️ **Common Mistakes**
 
@@ -118,37 +117,49 @@
 ```
     
 ```python
-    from collections import deque
-    
-    class Solution:
-        def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
-            rows, cols = len(mat), len(mat[0])
-            seen = set()
-            q = deque()
-            
-            for r in range(rows):
-                for c in range(cols):
-                    if mat[r][c] == 0:
-                        q.append((r, c))
-                        seen.add((r, c))
-            
-            coords = [(0,1), (1,0), (0,-1), (-1,0)]
-            distance = 1
-            while q:
-                # for distance += 1 at the end of the level traversal.
-                for _ in range(len(q)):
-                    row, col = q.popleft()
-                    for rc, cc in coords:
-                        r = row + rc
-                        c = col + cc
-    
-                        if r >= 0 and r < rows and c >= 0 and c < cols and (r, c) not in seen:
-                            mat[r][c] = distance
-                            q.append((r, c))
-                            seen.add((r, c))
-                        
-                distance += 1
-            return mat
+def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
+    num_rows, num_cols = len(mat), len(mat[0])
+	queue = deque()
+	inf_value = float('inf')
+
+	for i in range(num_rows):
+		for j in range(num_cols):
+			if mat[i][j] == 0:
+				queue.append((i, j))
+			else:
+				mat[i][j] = inf_value
+
+	# BFS from each zero cell rather than just one cell
+	while queue:
+		i, j = queue.popleft()    
+
+		# Set the value if it has not been visited (value is inf)
+		# Don't need to set if value is actually a zero (or even some number)
+		if mat[i][j] == inf_value:
+			up = down = left = right = inf_value
+			if i-1 >= 0:
+				up = mat[i-1][j] 
+			if i+1 < num_rows:
+				down = mat[i+1][j]
+			if j-1 >= 0:
+				left = mat[i][j-1]
+			if j+1 < num_cols:
+				right = mat[i][j+1]
+
+			min_value = min(down, up, left, right)
+			mat[i][j] = min_value + 1
+
+		# Add any neighbours to the queue
+		if i-1 >= 0 and mat[i-1][j] == inf_value:
+			queue.append((i-1, j))
+		if i+1 < num_rows and mat[i+1][j] == inf_value:
+			queue.append((i+1, j))
+		if j-1 >= 0 and mat[i][j-1] == inf_value:
+			queue.append((i, j-1))
+		if j+1 < num_cols and mat[i][j+1] == inf_value:
+			queue.append((i, j+1))
+
+	return mat
 ```
     
 ## 5: R-eview
