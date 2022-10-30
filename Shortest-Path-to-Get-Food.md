@@ -53,6 +53,8 @@
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
+**General Idea:** Find the shortest path from one point to the other. 
+
 1. First, we need to find where to start.
 2. Starting BFS with the help of deque `(i, j, cnt)`, explore 4 neighbors and increment `cnt` by 1
 3. Mark visited point as `X` to avoid revisit
