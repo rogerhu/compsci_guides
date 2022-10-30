@@ -58,7 +58,7 @@ If the graph consists of lots of edges, i.e. for dense graphs, then Prim’s Alg
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Write a 1-2 sentence overview that explains the general approach.
+**General Idea:** If we model the cities and connections as a graph, each connection is an edge (undirected) and each city is a node of the graph. We need to find a subset of edges which connects all the nodes of the graph with the minimum possible total weight
 
 ```markdown
 1. Implement the Union find first as usual with Path Compression using forest
