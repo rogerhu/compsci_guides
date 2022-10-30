@@ -59,88 +59,107 @@ The idea is keep removing all of the leaves until there is the last layer of lea
 
 ⚠️ **Common Mistakes**
 
-*  
+*  We can approach this problem in brute-force manner by considering each one of the nodes as root and calculating the height of the tree thus formed. Each node which leads to minimum-height tree will be pushed in an array. If a node forms a tree with smaller height that observed till now, we will clear the array and refill if we find nodes having this smaller height. Finally this array will be returned. The runtime to this can be extremely slow. 
     
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
     
 ```java
-    class Solution {
-        
-        public List<Integer> findMinHeightTrees(int n, int[][] edges) {
-            if (n == 1) return Collections.singletonList(0);
-            HashMap<Integer, ArrayList<Integer>> adjList = changeEdgesIntoAdjList(n, edges);
-            
-            ArrayList<Integer> leaves = new ArrayList<Integer>();
-            
-            for (int i = 0; i < n; i++) {
-                if (adjList.get(i).size() == 1) {
-                    leaves.add(i);
-                }
-            }
-    
-            while (n > 2) {
-                n -= leaves.size();
-                
-                ArrayList<Integer> newLeaves = new ArrayList<Integer>();
-                
-                for (int leaf: leaves) {
-             
-                    for (int adjLeaf: adjList.get(leaf)) {
-                        adjList.get(adjLeaf).remove(Integer.valueOf(leaf));
-                       
-                        if (adjList.get(adjLeaf).size() == 1) {
-                            newLeaves.add(adjLeaf);
-                        }
-                    }
-                    adjList.remove(leaf);
-                }
-                leaves = newLeaves;
-            }
-            
-            return leaves;
+class Solution {
+    public List<Integer> findMinHeightTrees(int n, int[][] edges) {
+
+        // edge cases
+        if (n < 2) {
+            ArrayList<Integer> centroids = new ArrayList<>();
+            for (int i = 0; i < n; i++)
+                centroids.add(i);
+            return centroids;
         }
-        
-         public HashMap<Integer, ArrayList<Integer>> changeEdgesIntoAdjList(int n, int[][] edges) {
-            
-            HashMap<Integer, ArrayList<Integer>> adjList = new HashMap<Integer, ArrayList<Integer>>();
-            
-            for (int i = 0; i < n; i++) {
-                adjList.put(i, new ArrayList<Integer>());
-            }
-            
-            for (int[] edge: edges) {
-                adjList.get(edge[0]).add(edge[1]);
-                adjList.get(edge[1]).add(edge[0]);
-            }
-            
-            return adjList;
+
+        // Build the graph with the adjacency list
+        ArrayList<Set<Integer>> neighbors = new ArrayList<>();
+        for (int i = 0; i < n; i++)
+            neighbors.add(new HashSet<Integer>());
+
+        for (int[] edge : edges) {
+            Integer start = edge[0], end = edge[1];
+            neighbors.get(start).add(end);
+            neighbors.get(end).add(start);
         }
+
+        // Initialize the first layer of leaves
+        ArrayList<Integer> leaves = new ArrayList<>();
+        for (int i = 0; i < n; i++)
+            if (neighbors.get(i).size() == 1)
+                leaves.add(i);
+
+        // Trim the leaves until reaching the centroids
+        int remainingNodes = n;
+        while (remainingNodes > 2) {
+            remainingNodes -= leaves.size();
+            ArrayList<Integer> newLeaves = new ArrayList<>();
+
+            // remove the current leaves along with the edges
+            for (Integer leaf : leaves) {
+                // the only neighbor left for the leaf node
+                Integer neighbor = neighbors.get(leaf).iterator().next();
+                // remove the edge along with the leaf node
+                neighbors.get(neighbor).remove(leaf);
+                if (neighbors.get(neighbor).size() == 1)
+                    newLeaves.add(neighbor);
+            }
+
+            // prepare for the next round
+            leaves = newLeaves;
+        }
+
+        // The remaining nodes are the centroids of the graph
+        return leaves;
     }
+}
 ```
     
 ```python
-    class Solution(object):
-        def findMinHeightTrees(self, n, edges):
-            degree = {k:0 for k in range(n)}
-            graph = {k:set([]) for k in range(n)}
-            for edge in edges:
-                u,v = edge[0], edge[1]
-                degree[u], degree[v] = degree[u]+1, degree[v]+1
-                graph[u].add(v)
-                graph[v].add(u)
-            leaves = [k for k,v in degree.items() if v == 1]
-            while leaves and len(graph) > 2:
-                for leaf in leaves:
-                    v = graph[leaf].pop()
-                    del graph[leaf]
-                    del degree[leaf]
-                    degree[v] -= 1
-                    graph[v].remove(leaf)
-                leaves = [k for k,v in degree.items() if v == 1]
-            return list(graph.keys())
-    
+class Solution:
+    def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
+
+        # edge cases
+        if n <= 2:
+            return [i for i in range(n)]
+
+        # Build the graph with the adjacency list
+        neighbors = [set() for i in range(n)]
+        for start, end in edges:
+            neighbors[start].add(end)
+            neighbors[end].add(start)
+
+        # Initialize the first layer of leaves
+        leaves = []
+        for i in range(n):
+            if len(neighbors[i]) == 1:
+                leaves.append(i)
+
+        # Trim the leaves until reaching the centroids
+        remaining_nodes = n
+        while remaining_nodes > 2:
+            remaining_nodes -= len(leaves)
+            new_leaves = []
+            # remove the current leaves along with the edges
+            while leaves:
+                leaf = leaves.pop()
+                # the only neighbor left for the leaf node
+                neighbor = neighbors[leaf].pop()
+                # remove the only edge left
+                neighbors[neighbor].remove(leaf)
+                if len(neighbors[neighbor]) == 1:
+                    new_leaves.append(neighbor)
+
+            # prepare for the next round
+            leaves = new_leaves
+
+        # The remaining nodes are the centroids of the graph
+        return leaves
 ```
     
 ## 5: R-eview
