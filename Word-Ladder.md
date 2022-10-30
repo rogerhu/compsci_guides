@@ -64,18 +64,16 @@ All lowercase alphabet letters.
 
     Traverse the wordList using BFS, starting from beginWord until we either reach the end or see endWord. As we visit each node, we add all adjacent nodes by looking up if a certain word exists in wordList.
     
-
-```markdown
-    1) Create a set of all words in wordList, including endWord.
-    2) Create a set of visited nodes
-    3) Start BFS from beginWord, setting current word
+1) Create a set of all words in wordList, including endWord.
+2) Create a set of visited nodes
+3) Start BFS from beginWord, setting current word
        a) If current word is equal to endWord, return number of steps
        b) For each index of current word and each letter not equal to current word at index
           i)   Create candidate word equal to currentWord
           ii)  Change candidate word at current index to new letter
           iii) If it exists and not visited, traverse
-    4) If endWord was not found, return 0
-```
+4) If endWord was not found, return 0
+
 
 ⚠️ **Common Mistakes**
 
