@@ -24,6 +24,8 @@
 
 ![Screen Shot 2022-10-29 at 9 28 03 PM](https://user-images.githubusercontent.com/16420802/198859855-b35dc394-fdde-41f2-b582-253e232e0f37.png)
 
+Source: [Medium](https://medium.com/analytics-vidhya/brick-and-wall-problem-competetive-programming-a-complete-algorithm-with-code-e351354b6234)
+
 Run through a set of example cases:
 
 ```markdown
