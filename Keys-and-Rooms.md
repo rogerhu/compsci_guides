@@ -4,7 +4,7 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs
-* 🗒️ **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: [ Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree)
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -50,18 +50,14 @@
     **Sample Approach:**
      Use a stack to store previous operator/operand combinations and compute the answer as we go.
     
-```
-    1) create a hashmap to hold graph that it will be a map of Integer: [], because we will insert room: [list of keys]
-    2) build the map from the given list of lists
-    3) create a boolean array to say whether a room is visited
-    4) iterate over each room, perform DFS.
-    5) for each room, push it onto stack
-    6) while we still have rooms on stack (current room or rooms we could go to using the keys that we will find.
-    7) finally, we iterate over all the rooms and see if we have any unvisited rooms
-    
-    Time Complexity: O(N + K)
-    Space Complexity: O(N)
-```
+1. create a hashmap to hold graph that it will be a map of Integer: [], because we will insert room: [list of keys]
+2. build the map from the given list of lists
+3. create a boolean array to say whether a room is visited
+4. iterate over each room, perform DFS.
+5. for each room, push it onto stack
+6. while we still have rooms on stack (current room or rooms we could go to using the keys that we will find.
+7. finally, we iterate over all the rooms and see if we have any unvisited rooms
+
     
 ⚠️ **Common Mistakes**
 
