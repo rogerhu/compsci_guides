@@ -4,7 +4,8 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs
-* 🗒️ **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: [Cheapest Flights Within K Stops
+](https://leetcode.com/problems/cheapest-flights-within-k-stops/)
 
 ## 1: **U-nderstand**
 
@@ -50,14 +51,12 @@ BFS needs to keep all the current nodes in the memory.
 
 Use a hashtable of size `n` which stores sets for each city. Members of the sets are cities which are directly connected to the city the set corresponds to. Then, examine all unique pairs `(city_1, city_2)` and sum up the edges of both cities. If there is an edge between both cities, the sum needs to be reduced by one since the edge is counted twice. We store the highest sum of edges and return it.
 
-    
-```
-    1) Use a hashtable of size `n` which stores sets for each city. Members of the sets are cities which are directly connected to the city the set corresponds to.
-    2) Then, examine all unique pairs `(city_1, city_2)`
-    3) Sum up the edges of both cities.
-    4) If there is an edge between both cities, the sum needs to be reduces by 1 since the edge is counted 2x.
-    4) Then, store the highest sum of edges and return it.
-```
+
+1. Use a hashtable of size `n` which stores sets for each city. Members of the sets are cities which are directly connected to the city the set corresponds to.
+2.  Then, examine all unique pairs `(city_1, city_2)`
+3. Sum up the edges of both cities.
+4. If there is an edge between both cities, the sum needs to be reduces by 1 since the edge is counted 2x.
+5. Then, store the highest sum of edges and return it.
     
 ⚠️ **Common Mistakes**
 
