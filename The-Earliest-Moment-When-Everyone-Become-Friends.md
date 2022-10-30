@@ -52,7 +52,7 @@ For graph problems, we want to consider the following approaches:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Write a 1-2 sentence overview that explains the general approach.
+**General Idea:** Use union find to join two groups and reduce the group of friends by 1. At the end we will have only 1 friend group meaning everyone is friends with everyone.
 
 ```markdown
 1. Initialize a variable time, which stores the value of the current timestamp of the DSU.
