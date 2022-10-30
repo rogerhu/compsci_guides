@@ -4,7 +4,7 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Graphs, Breadth-First Search
-* 🗒️ **Similar Questions**: TBD
+* 🗒️ **Similar Questions**: [Walls and Gates](https://leetcode.com/problems/walls-and-gates/)
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
@@ -54,111 +54,127 @@
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    1. Initialize a queue for breadth first search.
-    2. Iterate over the entire grid and add all the rotten oranges in the queue and also keep counting the number of fresh oranges.
-    3. If the number of fresh oranges is zero then we can directly return zero.
-    4. Otherwise, traverse the queue in level order fashion and add all the adjacent fresh oranges in the queue and decrement the count of fresh oranges by 1 each time. When we add a fresh orange in the queue, we mark it as rotten so that it is not added multiple times.
-    5. If after one complete traversal of a level, the queue is not empty, then increase the minutes by one.
-    6. Repeat this process until we have no more rotten oranges.
-    7. If the number of fresh oranges after the entire process is still not zero, then return -1 indicating that it’s impossible to rot all the oranges.
-    8. Else return the time required to rot all the oranges.
+1. Initialize a queue for breadth first search.
+2. Iterate over the entire grid and add all the rotten oranges in the queue and also keep counting the number of fresh oranges.
+3. If the number of fresh oranges is zero then we can directly return zero.
+4. Otherwise, traverse the queue in level order fashion and add all the adjacent fresh oranges in the queue and decrement the count of fresh oranges by 1 each time. When we add a fresh orange in the queue, we mark it as rotten so that it is not added multiple times.
+5. If after one complete traversal of a level, the queue is not empty, then increase the minutes by one.
+6. Repeat this process until we have no more rotten oranges.
+7. If the number of fresh oranges after the entire process is still not zero, then return -1 indicating that it’s impossible to rot all the oranges.
+8. Else return the time required to rot all the oranges.
 
 
 ⚠️ **Common Mistakes**
 
-* 
+* Index-out-of-range error is common mistake that comes up if unable to design the matrix. Make sure to define a value to map uniquely the position in the matrix. Matrix has rows * columns elements, rows from 0 to rows - 1, columns from 0 to columns - 1.
 
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
     
 ```java
-    static int dx[] = {1, 0, -1, 0};
-    static int dy[] = {0, 1, 0, -1};
-    public static int numberOfDays(int[][] grid) {
-      int r = grid.length;
-      int c = grid[0].length;
-      int days = 0, countOfOnes = 0;
-      Queue < int[] > q = new LinkedList < > ();
-      for (int i = 0; i < r; i++) {
-        for (int j = 0; j < c; j++) {
-          if (grid[i][j] == 2) {
-            q.add(new int[] {i, j});
-          }
-          if (grid[i][j] == 1) {
-            countOfOnes += 1;
-          }
-        }
-      }
-      if (countOfOnes == 0) {
-        return 0;
-      }
-      while (!q.isEmpty()) {
-        int size = q.size();
-        while (size--> 0) {
-          int[] temp = q.remove();
-          int i = temp[0], j = temp[1];
-          for (int l = 0; l < 4; l++) {
-            int nr = i + dx[l], nc = j + dy[l];
-            if (nr < 0 || nc < 0 || nr == r || nc == c) {
-              continue;
+class Solution {
+    public int orangesRotting(int[][] grid) {
+        Queue<Pair<Integer, Integer>> queue = new ArrayDeque();
+
+        // Step 1). build the initial set of rotten oranges
+        int freshOranges = 0;
+        int ROWS = grid.length, COLS = grid[0].length;
+
+        for (int r = 0; r < ROWS; ++r)
+            for (int c = 0; c < COLS; ++c)
+                if (grid[r][c] == 2)
+                    queue.offer(new Pair(r, c));
+                else if (grid[r][c] == 1)
+                    freshOranges++;
+
+        // Mark the round / level, _i.e_ the ticker of timestamp
+        queue.offer(new Pair(-1, -1));
+
+        // Step 2). start the rotting process via BFS
+        int minutesElapsed = -1;
+        int[][] directions = { {-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+
+        while (!queue.isEmpty()) {
+            Pair<Integer, Integer> p = queue.poll();
+            int row = p.getKey();
+            int col = p.getValue();
+            if (row == -1) {
+                // We finish one round of processing
+                minutesElapsed++;
+                // to avoid the endless loop
+                if (!queue.isEmpty())
+                    queue.offer(new Pair(-1, -1));
+            } else {
+                // this is a rotten orange
+                // then it would contaminate its neighbors
+                for (int[] d : directions) {
+                    int neighborRow = row + d[0];
+                    int neighborCol = col + d[1];
+                    if (neighborRow >= 0 && neighborRow < ROWS && 
+                        neighborCol >= 0 && neighborCol < COLS) {
+                        if (grid[neighborRow][neighborCol] == 1) {
+                            // this orange would be contaminated
+                            grid[neighborRow][neighborCol] = 2;
+                            freshOranges--;
+                            // this orange would then contaminate other oranges
+                            queue.offer(new Pair(neighborRow, neighborCol));
+                        }
+                    }
+                }
             }
-            if (grid[nr][nc] == 1) {
-              countOfOnes -= 1;
-              q.add(new int[] {
-                nr,nc
-              });
-              grid[nr][nc] = 2;
-            }
-          }
         }
-        if (q.size() > 0) {
-          days += 1;
-        }
-      }
-      return countOfOnes == 0 ? days : -1;
+
+        // return elapsed minutes if no fresh orange left
+        return freshOranges == 0 ? minutesElapsed : -1;
     }
+}
 ```
     
 ```python
-    def numberOfDays(grid):
-        r = len(grid)
-        c = len(grid[0])
-        fresh = 0
-        queue = []
-        vis = set()
-        for i in range(r):
-            for j in range(c):
-                if grid[i][j] == 2:
-                    queue.append((i, j, 0))
-                    vis.add((i, j))
-                elif grid[i][j] == 1:
-                    fresh += 1
-        if not fresh:
-            return 0
+from collections import deque
+class Solution:
+    def orangesRotting(self, grid: List[List[int]]) -> int:
+        queue = deque()
+
+        # Step 1). build the initial set of rotten oranges
+        fresh_oranges = 0
+        ROWS, COLS = len(grid), len(grid[0])
+        for r in range(ROWS):
+            for c in range(COLS):
+                if grid[r][c] == 2:
+                    queue.append((r, c))
+                elif grid[r][c] == 1:
+                    fresh_oranges += 1
+
+        # Mark the round / level, _i.e_ the ticker of timestamp
+        queue.append((-1, -1))
+
+        # Step 2). start the rotting process via BFS
+        minutes_elapsed = -1
+        directions = [(-1, 0), (0, 1), (1, 0), (0, -1)]
         while queue:
-            size = len(queue)
-    
-            while size:
-                x, y, days = queue.pop(0)
-                if x < r - 1 and (x + 1, y) not in vis and grid[x + 1][y] == 1:
-                    queue.append((x + 1, y, days + 1))
-                    vis.add((x + 1, y))
-                    fresh -= 1
-                if x > 0 and (x - 1, y) not in vis and grid[x - 1][y] == 1:
-                    queue.append((x - 1, y, days + 1))
-                    vis.add((x - 1, y))
-                    fresh -= 1
-                if y < c - 1 and (x, y + 1) not in vis and grid[x][y + 1] == 1:
-      queue.append((x, y + 1, days + 1))
-                    vis.add((x, y + 1))
-                    fresh -= 1
-                if y > 0 and (x, y - 1) not in vis and grid[x][y - 1] == 1:
-                    queue.append((x, y - 1, days + 1))
-                    vis.add((x, y - 1))
-                    fresh -= 1
-                size -= 1
-        return -1 if fresh else days
+            row, col = queue.popleft()
+            if row == -1:
+                # We finish one round of processing
+                minutes_elapsed += 1
+                if queue:  # to avoid the endless loop
+                    queue.append((-1, -1))
+            else:
+                # this is a rotten orange
+                # then it would contaminate its neighbors
+                for d in directions:
+                    neighbor_row, neighbor_col = row + d[0], col + d[1]
+                    if ROWS > neighbor_row >= 0 and COLS > neighbor_col >= 0:
+                        if grid[neighbor_row][neighbor_col] == 1:
+                            # this orange would be contaminated
+                            grid[neighbor_row][neighbor_col] = 2
+                            fresh_oranges -= 1
+                            # this orange would then contaminate other oranges
+                            queue.append((neighbor_row, neighbor_col))
+
+        # return elapsed minutes if no fresh orange left
+        return minutes_elapsed if fresh_oranges == 0 else -1
 ```
     
 ## 5: R-eview
