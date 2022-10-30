@@ -63,7 +63,7 @@
 
 ⚠️ **Common Mistakes**
 
-* 
+* The current state is being checked against previous state + cost. A common mistake is to check `prev[v]` against `prev[u] + cost(u,v)`. However, in this case we will not get the minimum value of the current state. It's possible that `curr_1 < curr_2 < prev` but, `curr_2` is encountered later than `curr_1`, resulting in it being overwritten.
     
 ## 4: I-mplement
 
@@ -74,12 +74,14 @@
       int UNVISITED = 10000000;
       
       public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+        // build graph, pair first element is denoting destination & second element denotes fare
         Map<Integer, List<int[]>> graph = buildGraph(flights, n);
         
         int result = dijkstra(graph, src, dst, k, n);
         return result;
       }
       
+      // apply Dijkstra's
       public int dijkstra(
         Map<Integer, List<int[]>> graph,
         int start, int dest, int k, int n
@@ -89,10 +91,11 @@
         dist[start] = 0;
         
         PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> {
-          if(a[2] == b[2]) return a[1] - b[1]; 
-          return a[2] - b[2]; 
+          if(a[2] == b[2]) return a[1] - b[1]; // if # of stops are equal, sort by cost
+          return a[2] - b[2]; // otherwise sort first by # of stops
         });
         pq.offer(new int[]{start, 0, 0});
+        
         
         while(!pq.isEmpty()) {
           int[] item = pq.poll();
@@ -104,11 +107,13 @@
           
           List<int[]> neighbors = graph.get(node);
           
+          // examine all neighboring edges if possible 
           for(int[] neighbor : neighbors) {
             int neighborNode = neighbor[0];
             int neighborCost = neighbor[1];
             int totalCost = cost + neighborCost;
             
+            // is there a better cost?
             if(totalCost < dist[neighborNode]) {
               dist[neighborNode] = totalCost;
               pq.offer(new int[]{neighborNode, totalCost, stops+1});
@@ -138,22 +143,51 @@
 ```
     
 ```python
-    def findCheapestPrice(n, flights, src, dst, K):
-    	graph = collections.defaultdict(dict)
-    	for s, d, w in flights:
-    		graph[s][d] = w
-    	pq = [(0, src, K+1)]
-    	vis = [0] * n
-    	while pq:
-    		w, x, k = heapq.heappop(pq)
-    		if x == dst:
-    			return w
-    		if vis[x] >= k:
-    			continue
-    		vis[x] = k
-    		for y, dw in graph[x].items():
-    			heapq.heappush(pq, (w+dw, y, k-1))
-    	return -1
+import heapq
+
+class Solution:
+    def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, K: int) -> int:
+        
+        # Build the adjacency matrix
+        adj_matrix = [[0 for _ in range(n)] for _ in range(n)]
+        for s, d, w in flights:
+            adj_matrix[s][d] = w
+            
+        # Shortest distances array
+        distances = [float("inf") for _ in range(n)]
+        current_stops = [float("inf") for _ in range(n)]
+        distances[src], current_stops[src] = 0, 0
+        
+        # Data is (cost, stops, node)
+        minHeap = [(0, 0, src)]     
+        
+        while minHeap:
+            
+            cost, stops, node = heapq.heappop(minHeap)
+            
+            # If destination is reached, return the cost to get here
+            if node == dst:
+                return cost
+            
+            # If there are no more steps left, continue 
+            if stops == K + 1:
+                continue
+             
+            # Examine and relax all neighboring edges if possible 
+            for nei in range(n):
+                if adj_matrix[node][nei] > 0:
+                    dU, dV, wUV = cost, distances[nei], adj_matrix[node][nei]
+                    
+                    # Better cost?
+                    if dU + wUV < dV:
+                        distances[nei] = dU + wUV
+                        heapq.heappush(minHeap, (dU + wUV, stops + 1, nei))
+                        current_stops[nei] = stops
+                    elif stops < current_stops[nei]:
+                        #  Better steps?
+                        heapq.heappush(minHeap, (dU + wUV, stops + 1, nei))
+                        
+        return -1 if distances[dst] == float("inf") else distances[dst]
 ```
     
 ## 5: R-eview
