@@ -152,5 +152,5 @@ class Solution:
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
 * **Time Complexity:** O(xy), where (x, y) are the coordinates of the target. 
-<br>
+
 * **Space Complexity:** O(xy), where (x, y) are the coordinates of the target. 
