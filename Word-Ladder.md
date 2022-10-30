@@ -68,17 +68,13 @@ All lowercase alphabet letters.
 ```markdown
     1) Create a set of all words in wordList, including endWord.
     2) Create a set of visited nodes
-    3) Start BFS from beginWord, setting currentWord
-       a) If currentWord is equal to endWord, return number of steps
-       b) For each index of currentWord and each letter not equal to currentWord at index
-          i)   Create candidateWord equal to currentWord
-          ii)  Change candidateWord at current index to new letter
+    3) Start BFS from beginWord, setting current word
+       a) If current word is equal to endWord, return number of steps
+       b) For each index of current word and each letter not equal to current word at index
+          i)   Create candidate word equal to currentWord
+          ii)  Change candidate word at current index to new letter
           iii) If it exists and not visited, traverse
     4) If endWord was not found, return 0
-    
-    Time Complexity: O(N*M^2)
-    Space Complexity: O(N*M)
-    
 ```
 
 ⚠️ **Common Mistakes**
@@ -93,18 +89,23 @@ All lowercase alphabet letters.
     private static final char[] letters = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+      // create a set of all words in wordList
       HashSet<String> wordsSet = new HashSet(wordList);
       HashSet<String> visited = new HashSet<>();
       Queue<Pair<String, Integer>> queue = new LinkedList();
+
+      // start BFS from beginWord, setting currentWord
       queue.offer(new Pair<>(beginWord, 1));
       while (!queue.isEmpty()) {
-       Pair<String, Integer> pair = queue.poll();
-       String word = pair.getKey();
-       int length = pair.getValue();
-       if (word.equals(endWord)) {
+        Pair<String, Integer> pair = queue.poll();
+        String word = pair.getKey();
+        int length = pair.getValue();
+        if (word.equals(endWord)) {
           return length;
-       }
-       for (int i = 0; i < word.length(); i++) {
+      }
+
+      // for each index of current word and each letter not equal to current word at index
+      for (int i = 0; i < word.length(); i++) {
           for (int j = 0; j < letters.length; j++) {
              if (word.charAt(i) != letters[j]) {
                 String candidate = word.substring(0,i) + letters[j] + word.substring(i+1);
@@ -116,15 +117,20 @@ All lowercase alphabet letters.
           }
        }
       }
+
+      // if endWord was not found, return 0
       return 0;
     }
 ```
     
 ```python
     LETTERS = set('abcdefghijklmnopqrstuvwxyz')
-    
+   
     def word_ladder(start, end, words):
+        # create a set of all words in wordList
         words = set(words)
+       
+        # create a set of visited nodes
         visited = set()
         queue = [(start, 1)] # queue for BFS, which stores the word and distance
     
@@ -139,7 +145,9 @@ All lowercase alphabet letters.
                         if candidate in words and candidate not in visited:
                             queue.append([candidate, length + 1])
                             visited.add(candidate)
-        return 0
+        
+         # if endWord was not found, return 0
+         return 0
 ```
     
 ## 5: R-eview
