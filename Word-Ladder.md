@@ -67,11 +67,11 @@ All lowercase alphabet letters.
 1) Create a set of all words in wordList, including endWord.
 2) Create a set of visited nodes
 3) Start BFS from beginWord, setting current word
-      - If current word is equal to endWord, return number of steps
-      - For each index of current word and each letter not equal to current word at index
-          i)   Create candidate word equal to currentWord
-          ii)  Change candidate word at current index to new letter
-          iii) If it exists and not visited, traverse
+    - If current word is equal to endWord, return number of steps
+    - For each index of current word and each letter not equal to current word at index
+          - Create candidate word equal to currentWord
+          - Change candidate word at current index to new letter
+          - If it exists and not visited, traverse
 4) If endWord was not found, return 0
 
 
