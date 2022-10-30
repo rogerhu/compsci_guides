@@ -50,6 +50,8 @@ Since pair is inconvenient for the implementation of graph algorithms, we first 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
+
+**General Idea:** Generate all possible tasks distribution among workers and compare with previous best result
     
 ```
 1) in each visit, we start from a node and keep visiting its neighbors, 
