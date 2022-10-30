@@ -47,13 +47,13 @@
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    - Build the undirected graph.
-    - Loop over the nodes and run a BFS on the node if it has not been explored before. It will behave as a sink that will swallow each connected component allowing you to increment a counter.
-    - To make your algorithm more efficient, use a global visited set for the entire graph rather than a new visited set for each component.
+1. Build the undirected graph.
+2. Loop over the nodes and run a BFS on the node if it has not been explored before. It will behave as a sink that will swallow each connected component allowing you to increment a counter.
+3. To make your algorithm more efficient, use a global visited set for the entire graph rather than a new visited set for each component.
 
 ⚠️ **Common Mistakes**
 
-* 
+* We may apply the union find algorithm where it uses Union by rank. The time complexity for this is O(log(N)) for each merge. We can improve this with both union by rank and path compression, which will offer us ~O(1) time for each union/find operation, so it gives O(V + E) time in total.
 
 ## 4: I-mplement
 
