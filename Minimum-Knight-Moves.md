@@ -55,6 +55,8 @@
 ## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
+
+**General Idea:** Find the minimum steps required to travel from one point to another point on a grid.
     
 1. Start from `{0,0}`. The distance to `{0,0}` here is `0`. Add this position to queue.
 2. Keep performing BFS from each point present in the queue. At each step poll a point and explore all 8 possible tiles where the knight can land and add those points to the queue if not visited.
