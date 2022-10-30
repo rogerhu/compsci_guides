@@ -56,6 +56,8 @@ Note: The difference is only in the traversal of DFS and BFS. DFS explores the d
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
+**General Idea:** Use BFS or DFS to mark visited nodes and to keep track of created copies
+
 - Using DFS
 <br>
 Step 1. Check is current node is empty.
