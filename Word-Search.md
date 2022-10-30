@@ -50,102 +50,92 @@ How should we traverse the matrix efficiently? We need to think of a traversal a
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-    1. Create helper function(node, string):
-        1. If the string is empty, return true (success).
-        2. If the node's letter is not the first letter of the string, return false (failure).
-        3. Otherwise, return true if the helper function returns true for
-            1. any neighbor
-            2. the remainder of the string
-    2. Implement main function(board, string):
-        1. Return true if any of these helper function calls return true
-            1. each node
-            2. the full string
+1. Create helper function(node, string):
+    - if the string is empty, return true (success).
+    - If the node's letter is not the first letter of the string, return false (failure).
+    - Otherwise, return true if the helper function returns true for
+       - any neighbor
+       - the remainder of the string
+2. Implement main function(board, string):
+    - Return true if any of these helper function calls return true
 
 ⚠️ **Common Mistakes**
 
-* 
+* Ensure you are marking the board cell visited. If we don't do so, then we might be end up comparing two or more characters of the string with the single character of the board. TLE can be avoided by passing board by reference so as to avoid making copy of board again and again when the function is invoked.
 
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
 
 ```python
-def exist(self, board: List[List[str]], word: str) -> bool:        
-        if not board or not word:
-            return False    
-    
-        def dfs(row, col, index):
-            if index == len(word):
-                return True
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        
+        if not board: 
+            return False
+        
+        h, w = len(board), len(board[0])
+      
+        def dfs_search(idx: int, x: int, y: int) -> bool:
             
-            if row < 0 or row >= len(board) or col < 0 or col >= len(board[row]) or board[row][col] != word[index]:
+            if x < 0 or x == w or y < 0 or y == h or word[idx] != board[y][x]:
+                # Reject if out of boundary, or current grid cannot match the character word[idx]
                 return False
+
+            if idx == len(word) - 1: 
+                # Accept when we match all characters of word during DFS
+                return True
+
+            cur = board[y][x]
             
-            temp = board[row][col]
-            board[row][col] = ''
-            found = dfs(row + 1, col, index + 1) or dfs(row - 1, col, index + 1) or dfs(row, col + 1, index + 1) or dfs(row, col - 1, index + 1)
-            board[row][col] = temp
+            # mark as '#' to avoid repeated traversal
+            board[y][x] = '#'
+            
+            # visit next four neighbor grids
+            found = dfs_search(idx + 1, x + 1, y) or dfs_search(idx + 1, x - 1, y) or dfs_search(idx + 1, x, y + 1) or dfs_search(idx + 1, x, y - 1)
+            
+            # recover original grid character after DFS is completed
+            board[y][x] = cur
+            
             return found
         
-        for row in range(len(board)):
-            for col in range(len(board[row])):
-                if word[0] == board[row][col] and dfs(row, col, 0):
-                    return True
-
-        return False
+        return any(dfs_search(0, x, y) for y in range(h) for x in range(w))    
 ```
 
 ```java
 class Solution {
     public boolean exist(char[][] board, String word) {
         char[] arr = word.toCharArray();
-        boolean[][] visited = new boolean[board.length][board[0].length];
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
-                visited[i][j] = true;
-                if (dfs(board,visited, arr,0, i, j)) {
-                    return true;
-                } else {
-                    visited[i][j] = false;
-                }
-            }
-        }
-        return false;
-        
-    }
-    
-    private boolean dfs(char[][] board, boolean[][] visited, char[] arr, int index, int row, int col) {
-        if (arr[index] != board[row][col]) {
-            return false;
-        } 
-        if (index == arr.length - 1) {
-            return true;
-        }
-        int[] rHelp = new int[]{1,-1,0,0};
-        int[] cHelp = new int[]{0,0,1, -1};
-        for (int i = 0; i < 4; i++) {
-            int nextRow = row + rHelp[i];
-            int nextCol = col + cHelp[i];
-            if (isValid(board, visited, nextRow, nextCol)) {
-                visited[nextRow][nextCol] = true;
-                if (dfs(board,visited, arr, index + 1, nextRow, nextCol)) {
-                    return true;
-                } else {
-                    visited[nextRow][nextCol] = false;
+        for(int i = 0; i<board.length; i++) {
+            for(int j = 0; j<board[i].length; j++) {
+                if(dfs(i, j, board, arr, 0)) {
+                    return true;   
                 }
             }
         }
         return false;
     }
     
-    private boolean isValid(char[][] board, boolean[][] visited, int row, int col) {
-        int rowMax = board.length - 1;
-        int colMax = board[0].length - 1;
-        if (row >= 0 && row <= rowMax && col >= 0 && col <= colMax && !visited[row][col]) {
+    private boolean dfs(int i, int j, char[][] board, char[] arr, int index) {
+        if( index == arr.length) {
             return true;
-        } else {
-            return false;
         }
+        Boolean result;
+        if( 0 <= i && i < board.length && 
+                0 <= j && j < board[i].length &&
+                board[i][j] == arr[index]) {
+				
+            // mark this position as visited for the current DFS
+			board[i][j] = '.';       
+            result = dfs(i+1, j, board, arr, index+1) || 
+                     dfs(i-1, j, board, arr, index+1) || 
+                     dfs(i, j+1, board, arr, index+1) || 
+                     dfs(i, j-1, board, arr, index+1);   
+             // remove mark on the position and restore original character
+			 board[i][j] = arr[index];
+            return result;
+        }
+        return false;        
     }
 }
 ```
