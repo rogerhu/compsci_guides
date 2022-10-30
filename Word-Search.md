@@ -50,6 +50,8 @@ How should we traverse the matrix efficiently? We need to think of a traversal a
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
+**General Idea:** Iterate over every element of grid checking if it is equals to first element of given word. If found then we call the DFS function with current position of board with starting position of word.
+
 1. Create helper function(node, string):
     - if the string is empty, return true (success).
     - If the node's letter is not the first letter of the string, return false (failure).
