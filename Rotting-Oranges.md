@@ -53,6 +53,8 @@
 ## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
+
+**General Idea:**  Use a queue data structure to keep track of the candidates that we need to visit during the process
     
 1. Initialize a queue for breadth first search.
 2. Iterate over the entire grid and add all the rotten oranges in the queue and also keep counting the number of fresh oranges.
