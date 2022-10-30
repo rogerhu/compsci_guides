@@ -47,8 +47,7 @@
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    **Sample Approach:**
-     Use a stack to store previous operator/operand combinations and compute the answer as we go.
+**General Idea:** Use a stack to store previous operator/operand combinations and compute the answer as we go.
     
 1. create a hashmap to hold graph that it will be a map of Integer: [], because we will insert room: [list of keys]
 2. build the map from the given list of lists
