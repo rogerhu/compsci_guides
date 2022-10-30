@@ -56,13 +56,13 @@
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    - Start from `{0,0}`. The distance to `{0,0}` here is `0`. Add this position to queue.
-    - Keep performing BFS from each point present in the queue. At each step poll a point and explore all 8 possible tiles where the knight can land and add those points to the queue if not visited.
-    - Thus each point reaches one more hop to the neighbor. And eventually reaches the target node.
+1. Start from `{0,0}`. The distance to `{0,0}` here is `0`. Add this position to queue.
+2. Keep performing BFS from each point present in the queue. At each step poll a point and explore all 8 possible tiles where the knight can land and add those points to the queue if not visited.
+3. Thus each point reaches one more hop to the neighbor. And eventually reaches the target node.
 
 ⚠️ **Common Mistakes**
 
-* 
+* Avoid visiting the same cell again. You can realize that the problem is symmetric, i.e. all 4 of (±x, ±y) will have the same solution, so restrict the solution space to the first quadrant. It's possible to reach (x, y) by going 1 step out of Q1 then returning to Q1, so max you can go out of Q1 is 2 steps in either direction.
 
 
 ## 4: I-mplement
@@ -70,63 +70,73 @@
 > **Implement** the code to solve the algorithm.
     
 ```java
-    class Solution {
-        public int minKnightMoves(int x, int y) {
-            Map<String, Integer> map = new HashMap<>();
-            Queue<int[]> q = new LinkedList<>();
-            int res = 0;
-            int[][] offsets = new int[][]{{-1,-2}, {-1,2}, {1,-2}, {1,2}, {-2,-1}, {-2,1}, {2,-1}, {2,1}};
-            q.offer(new int[]{0,0});
-            
-            while(!q.isEmpty()) {
-                int size = q.size();
-                for(int k=0; k<size; k++) {
-                    int[] curr = q.poll();
-                    if(curr[0] == Math.abs(x) && curr[1] == Math.abs(y)) return res;
-    
-                    for(int[] offset: offsets) {
-                        if(curr[0] < -2 || curr[1] < -2) continue;
-                        int xnew = curr[0]+offset[0];
-                        int ynew = curr[1]+offset[1];
-                        
-                        if(map.get(xnew+","+ynew) != null) continue;
-                        q.offer(new int[]{xnew, ynew});
-                        map.putIfAbsent(xnew+","+ynew, res);
+class Solution {
+    public int minKnightMoves(int x, int y) {
+        // the offsets in the eight directions
+        int[][] offsets = {{1, 2}, {2, 1}, {2, -1}, {1, -2},
+                {-1, -2}, {-2, -1}, {-2, 1}, {-1, 2}};
+        boolean[][] visited = new boolean[607][607];
+
+        Deque<int[]> queue = new LinkedList<>();
+        queue.addLast(new int[]{0, 0});
+        int steps = 0;
+
+        while (queue.size() > 0) {
+            int currLevelSize = queue.size();
+            // iterate through the current level
+            for (int i = 0; i < currLevelSize; i++) {
+                int[] curr = queue.removeFirst();
+                if (curr[0] == x && curr[1] == y) {
+                    return steps;
+                }
+
+                for (int[] offset : offsets) {
+                    int[] next = new int[]{curr[0] + offset[0], curr[1] + offset[1]};
+                    // align the coordinate to the bitmap
+                    if (!visited[next[0] + 302][next[1] + 302]) {
+                        visited[next[0] + 302][next[1] + 302] = true;
+                        queue.addLast(next);
                     }
                 }
-                res++;
             }
-            
-            return res;
+            steps++;
         }
+        // move on to the next level
+        return steps;
     }
+}
 ```
 
 ```python
-    class Solution:
-        def minKnightMoves(self, x: int, y: int) -> int:
-            dirs = [(1, 2), (2, 1), (1, -2), (2, -1), (-1, 2), (-2, 1)]
-            
-            queue = []
-            curr = [0, 0]
-            visited = []
-            queue.append((curr, 0))
-            visited.append(curr)
-            x, y = abs(x), abs(y)
-         
+class Solution:
+    def minKnightMoves(self, x: int, y: int) -> int:
+        # the offsets in the eight directions
+        offsets = [(1, 2), (2, 1), (2, -1), (1, -2),
+                   (-1, -2), (-2, -1), (-2, 1), (-1, 2)]
+
+        def bfs(x, y):
+            visited = set()
+            queue = deque([(0, 0)])
+            steps = 0
+
             while queue:
-                coord, count = queue.pop(0)
-                if coord[0] == x and coord[1] == y:
-                    return count
-                    
-                for dir in dirs:
-                    next_coord = [coord[0] + dir[0], coord[1] + dir[1]]
-                    if next_coord not in visited and x + 2 >= next_coord[0] >= -1 and y + 2 >= next_coord[1] >= -1:
-                        next_count = count + 1
-                        visited.append(next_coord)
-                        queue.append((next_coord, next_count))
-               
-            return -1
+                curr_level_cnt = len(queue)
+                # iterate through the current level
+                for i in range(curr_level_cnt):
+                    curr_x, curr_y = queue.popleft()
+                    if (curr_x, curr_y) == (x, y):
+                        return steps
+
+                    for offset_x, offset_y in offsets:
+                        next_x, next_y = curr_x + offset_x, curr_y + offset_y
+                        if (next_x, next_y) not in visited:
+                            visited.add((next_x, next_y))
+                            queue.append((next_x, next_y))
+
+                # move on to the next level
+                steps += 1
+
+        return bfs(x, y)
 ```
     
 ## 5: R-eview
