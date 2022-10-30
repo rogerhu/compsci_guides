@@ -74,6 +74,8 @@ How is this a graph problem? We can apply a graph data structure where we build 
 ## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
+
+**General Idea:** Do a DFS on each account in accounts list and look up to tell us which accounts are linked to that particular account via common emails.
     
 Build a graph with an adjacency list of emails. Every email should have an edge to the connected email (including itself). From this, we can maintain a list of emails to account name list. Next, do a DFS for the unique email (using a hashset 'visited') to fill the emails for the given account name. Then, we can add the account name to the email address. Add the resultant account to end result.
     
