@@ -58,7 +58,7 @@ In Strings/Arrays, common problem patterns include:
 * **Traversing the array more than once**
   * Traversing the array twice/thrice (as long as fewer than n times) is still O(n). Sometimes traversing the array more than once can help you solve the problem while keeping the time complexity to O(n).
 
-### Plan
+### P-lan/Pseudocode
 
 Before ANY pseudocode, have students explain a general approach to the problem.
 Ask the students how they would solve this problem by hand if they were to. This gives a good idea to the brute force solution. Optimizations can occur on top of this or can inspire new approaches.
@@ -70,8 +70,6 @@ This should hint to the student the exact solution to the problem.
 
 “If we are at an index and there are no smaller values to the right of that index, can we make a chunk at that point? Why or why not?”
 Mentors, before diving into specifics about algorithms, have students give a 1-2 sentence summary on their approach.
-
-### P-lan/Pseudocode
 
 * Can you create any **magic** helper methods that would simplify the solution?
 * Talk through different approaches you can take, and their tradeoffs
