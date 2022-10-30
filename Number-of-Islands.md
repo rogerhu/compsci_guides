@@ -60,6 +60,8 @@
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
+**General Idea:** iteratively search the neighbors of enqueued nodes until the queue becomes empty.
+
     1. Take visited[m][m] boolean array and initialize all values to false
         - Set parent[i] = i for all elements
     2. For each element of the grid
