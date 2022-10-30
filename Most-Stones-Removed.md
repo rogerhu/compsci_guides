@@ -50,7 +50,7 @@
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-We can first create an empty disjoint set, add each stone in a loop, and at each iteration compute the number of sets. At the end, # of stones - # of sets.
+**General Idea:** We can first create an empty disjoint set, add each stone in a loop, and at each iteration compute the number of sets. At the end, # of stones - # of sets.
     
 1) Create a disjoint set. 
 2) For each stone
