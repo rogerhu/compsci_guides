@@ -67,7 +67,7 @@
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
     
-    We will build a graph of the equation where the nodes are variables, edges are the equations, and edge weights are the equation values. Then, we will perform a topological sort to return the weight contribution of the children to the parent node.
+**General Idea:** We will build a graph of the equation where the nodes are variables, edges are the equations, and edge weights are the equation values. Then, we will perform a topological sort to return the weight contribution of the children to the parent node.
     
 1) Create a map as our graph. 
 2) For each equation,
