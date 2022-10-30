@@ -68,53 +68,63 @@ For graphs, some of the top things we want to consider are:
 
 ⚠️ **Common Mistakes**
 
-* 
+* When setting up the queue, consider having two tickets with same depatures. Don't fall into the trap of creating priority queue for all departure as it can be duplicated.
 
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
 
 ```python
-def find_itinerary(tickets):
-    ticket_graph = defaultdict(list)
-    sorted_tickets = sorted(tickets)
-    for start, end in sorted_tickets:
-        ticket_graph[start].append(end)
-    route = []
-    visit('JFK', ticket_graph, route)
-    route.reverse()
-    return route
-    
-def visit(airport, ticket_graph, route):
-    while ticket_graph[airport]:
-        next_city = ticket_graph[airport].pop(0)
-        visit(next_city, ticket_graph, route)
-    route.append(airport)
+class Solution(object):
+    def findItinerary(self, tickets):
+        result=[]
+        # create a graph
+        graph = collections.defaultdict(list)
+        for frm, to in tickets: 
+            # rearrange the destination of same start together    
+            graph[frm].append(to)   
+        # get key and value from dictionary, sort the destination                
+        for frm, tos in graph.items():      
+            tos.sort(reverse=True)     
+        
+        def dfs(graph, source, result):
+            while graph[source]:   
+                # let the destination empty if we choose it to pop           
+                new_source = graph[source].pop()         
+                dfs(graph, new_source, result)
+            result.append(source)
+            
+        dfs(graph, "JFK", result)         
+        return result[::-1]
 ```
 ```java
-public List<String> findItinerary(List<List<String>> tickets) {
-	HashMap<String, PriorityQueue<String>> ticketGraph = new HashMap<>();
-   for (List<String> ticket : tickets) {
-      PriorityQueue<String> nextCities = ticketGraph.get(ticket.get(0));
-      if (nextCities == null) {
-         nextCities = new PriorityQueue<>();
-         ticketGraph.put(ticket.get(0), nextCities);
-      }
-      nextCities.add(ticket.get(1));
-   }
-   LinkedList<String> route = new LinkedList<>();
-   visit("JFK", ticketGraph, route);
-   Collections.reverse(route);
-   return route;
-}
-    
-public void visit(String airport, HashMap<String, PriorityQueue<String>> ticketGraph, LinkedList<String> route) {
-   PriorityQueue<String> nextCities = ticketGraph.get(airport);
-   while (nextCities != null && !nextCities.isEmpty()) {
-      String nextCity = nextCities.poll();
-      visit(nextCity, ticketGraph, route);
-   }
-   route.add(airport);
+class Solution {
+    public List<String> findItinerary(List<List<String>> tickets) {
+        HashMap<String , PriorityQueue<String>> map = new HashMap<>();
+        // map the ticket from and to values
+        for(List<String> ticket: tickets){
+            map.putIfAbsent(ticket.get(0),new PriorityQueue<String>());
+            map.get(ticket.get(0)).add(ticket.get(1));
+        }
+        LinkedList<String> ans = new LinkedList<>();
+        // call the dfs method on JFK as that is the starting point
+        dfs(map, ans, "JFK");
+        return ans;
+    }
+    public static void dfs(HashMap<String , PriorityQueue<String>> map, LinkedList<String> ans, String search){
+        // get the priority queue of our search from value
+        PriorityQueue<String> currentqueue= map.get(search);
+        // iterate all the to places one by one
+        while(currentqueue != null && !currentqueue.isEmpty() ){
+            // remove the place as we have counted(that ticket) them in
+            String newSearch = map.get(search).poll();
+            // cal dfs on the new Search
+            dfs(map,ans,newSearch);
+        }
+        // add at the starting of the list
+        ans.addFirst(search);
+        return;
+    }
 }
 ```
     
