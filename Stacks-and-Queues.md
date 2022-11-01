@@ -1,10 +1,6 @@
 ## Introduction
 
-Stacks and queues are foundational data structures that are useful when adding and removing in particular orders. It is important to be comfortable with these two data structures because depth-first-search and breadth-first-search will use them for graph traversals.
-
-![Pancake Stack](https://user-images.githubusercontent.com/60195141/199292652-536c3290-d2ff-43db-9de1-7763a47a9c23.jpg)
-
-![Ski Lift Queue](https://user-images.githubusercontent.com/60195141/199292459-0efce999-e625-462b-8b43-66bec75f9ccb.jpg)
+Stacks and queues are foundational data structures that are useful when adding and removing in particular orders. It is important to be comfortable with these two data structures because depth-first-search and breadth-first-search will use them for [graph traversals](https://guides.codepath.com/compsci/Graph-Traversals).
 
 ## Stacks
 A **stack** is a data structure that stores objects in which the most recently stored objects are the first ones to be removed, (LIFO: last in, first out). An example to help you remember the mechanics of a stack is to associate it with stacks in real life. With a stack of plates, the plates that are placed on top of a stack will be the first ones that are removed from the top!
@@ -45,12 +41,12 @@ It is important to be comfortable with the common operations of a queue.
 ## Resources
 ### Guides
 * [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
-* [In depth stacks guide](https://medium.com/basecs/stacks-and-overflows-dbcf7854dc67)
-* [In depth queues guide](https://medium.com/basecs/to-queue-or-not-to-queue-2653bcde5b04)
+* [Stacks Medium Article](https://medium.com/basecs/stacks-and-overflows-dbcf7854dc67)
+* [Queue Medium Article](https://medium.com/basecs/to-queue-or-not-to-queue-2653bcde5b04)
 
 ### Libraries
-* [Java queue library](https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html)
-* [Java stack library](https://docs.oracle.com/javase/7/docs/api/java/util/Stack.html)
+* [Java Queue](https://www.javatpoint.com/java-queue)  
+* [Java Stack](https://www.javatpoint.com/java-stack)  
 
-* [Python queue library](https://docs.python.org/2/tutorial/datastructures.html#using-lists-as-queues)
-* [Python stack library](https://docs.python.org/2/tutorial/datastructures.html#using-lists-as-stacks)
+* [Python Queue](https://realpython.com/queue-in-python/#queue-first-in-first-out-fifo)  
+* [Python Stack](https://realpython.com/queue-in-python/#stack-last-in-first-out-lifo)  
