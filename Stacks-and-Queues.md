@@ -2,7 +2,9 @@
 
 Stacks and queues are foundational data structures that are useful when adding and removing in particular orders. It is important to be comfortable with these two data structures because depth-first-search and breadth-first-search will use them for graph traversals.
 
-![mae-mu-ecUVGNZA1TM-unsplash](https://user-images.githubusercontent.com/60195141/199291246-082842a7-3182-4b58-836e-a11dc6d60d9d.jpg)
+![mae-mu-TkzdkVn1AyA-unsplash](https://user-images.githubusercontent.com/60195141/199292652-536c3290-d2ff-43db-9de1-7763a47a9c23.jpg)
+
+![mael-balland-DFgvAYbEV9k-unsplash(1)](https://user-images.githubusercontent.com/60195141/199292459-0efce999-e625-462b-8b43-66bec75f9ccb.jpg)
 
 ## Stacks
 A **stack** is a data structure that stores objects in which the most recently stored objects are the first ones to be removed, (LIFO: last in, first out). An example to help you remember the mechanics of a stack is to associate it with stacks in real life. With a stack of plates, the plates that are placed on top of a stack will be the first ones that are removed from the top!
