@@ -2,9 +2,9 @@
 
 Stacks and queues are foundational data structures that are useful when adding and removing in particular orders. It is important to be comfortable with these two data structures because depth-first-search and breadth-first-search will use them for graph traversals.
 
-![mae-mu-TkzdkVn1AyA-unsplash](https://user-images.githubusercontent.com/60195141/199292652-536c3290-d2ff-43db-9de1-7763a47a9c23.jpg)
+![Pancake Stack](https://user-images.githubusercontent.com/60195141/199292652-536c3290-d2ff-43db-9de1-7763a47a9c23.jpg)
 
-![mael-balland-DFgvAYbEV9k-unsplash(1)](https://user-images.githubusercontent.com/60195141/199292459-0efce999-e625-462b-8b43-66bec75f9ccb.jpg)
+![Ski Lift Queue](https://user-images.githubusercontent.com/60195141/199292459-0efce999-e625-462b-8b43-66bec75f9ccb.jpg)
 
 ## Stacks
 A **stack** is a data structure that stores objects in which the most recently stored objects are the first ones to be removed, (LIFO: last in, first out). An example to help you remember the mechanics of a stack is to associate it with stacks in real life. With a stack of plates, the plates that are placed on top of a stack will be the first ones that are removed from the top!
@@ -32,12 +32,19 @@ It is important to be comfortable with the common operations of a queue.
 * size: a function that returns the number of elements that are in a queue at any given time
 
 ## Key takeaways
+
+|       | Access | Search | Insert | Delete |
+|-------|--------|--------|--------|--------|
+| Stack | O(n)   | O(n)   | O(1)   | O(1)   |
+| Queue | O(n)   | O(n)   | O(1)   | O(1)   |
+
 * Stacks are useful for backtracking features. For example, parsing questions tend to use stacks because of the LIFO property.
 * Stacks can be used to implement recursive solutions iteratively.
 * Queues are useful when the ordering of the data matters as it preserves that ordering. For example, they are used for caching.
 
 ## Resources
 ### Guides
+* [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
 * [In depth stacks guide](https://medium.com/basecs/stacks-and-overflows-dbcf7854dc67)
 * [In depth queues guide](https://medium.com/basecs/to-queue-or-not-to-queue-2653bcde5b04)
 
