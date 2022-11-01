@@ -44,9 +44,8 @@ It is important to be comfortable with the common operations of a queue.
 * [Stacks Medium Article](https://medium.com/basecs/stacks-and-overflows-dbcf7854dc67)
 * [Queue Medium Article](https://medium.com/basecs/to-queue-or-not-to-queue-2653bcde5b04)
 
-### Libraries
-* [Java Queue](https://www.javatpoint.com/java-queue)  
-* [Java Stack](https://www.javatpoint.com/java-stack)  
-
-* [Python Queue](https://realpython.com/queue-in-python/#queue-first-in-first-out-fifo)  
-* [Python Stack](https://realpython.com/queue-in-python/#stack-last-in-first-out-lifo)  
+### References
+* [Java Queue](https://www.javatpoint.com/java-queue)
+* [Java Stack](https://www.javatpoint.com/java-stack)
+* [Python Queue](https://realpython.com/queue-in-python/#queue-first-in-first-out-fifo)
+* [Python Stack](https://realpython.com/queue-in-python/#stack-last-in-first-out-lifo)
