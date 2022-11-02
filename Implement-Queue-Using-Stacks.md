@@ -30,6 +30,10 @@
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
+- Stack: What could we push onto a stack to make this problem easier? Stacks don’t allow us to keep track of data based on keys.
+- Queue: Queues fall into the same category as Stacks, do we need to maintain any sense of ordering to solve this problem?
+- HashMap: HashMaps allow us to store data for quick access. What could we store in a HashMap to make this problem easier?
+- Heap: Do we need some sort of ordering to our data that a Heap could provide?
 
 
 ## 3: P-lan
