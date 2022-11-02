@@ -1,10 +1,10 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** []() 
+* 🔗 **Leetcode Link:** [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) 
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: 
-* 🗒️ **Similar Questions**: 
+* 🛠️ **Topics**: Stacks, Queues
+* 🗒️ **Similar Questions**: [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)
     
 ## 1: U-nderstand
  
