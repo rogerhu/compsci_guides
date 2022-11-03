@@ -1,10 +1,10 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** []() 
+* 🔗 **Leetcode Link:** n/a
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Linked Lists
-* 🗒️ **Similar Questions**: []()
+* 🗒️ **Similar Questions**: TBD
     
 ## 1: U-nderstand
  
