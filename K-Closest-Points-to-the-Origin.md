@@ -75,50 +75,66 @@ Output: [[0,0], [1,1]]
 
 ```python
 import heapq
-def k_closest_points (points, K):
-    heap = []
-    for x,y in points:
-        d = -(x*x + y*y)
-        heapq.heappush(heap, (d,x,y))
-        if len(heap) > K:
-            heapq.heappop(heap)
 
-    ret = []
-    for d,x,y in heap:
-        ret.append((x,y))
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        heap = []  # out heap
+        output = [] # output array since we can't return heap directly + don't want to modify the points array
+        
+        # loop through the points array
+        for cord in points:
+            # calculate the distance from 0 - current point
+            distance = ((cord[0] - 0) ** 2) + ((cord[1] - 0) ** 2)
+            # make a tuple, where tuple[0] is the distance negated, and tuple[1] is the current point we're on eg. (-8, [-2, 2])
+            # note that heapq will keep the heap property of tuples using the first index.
+            '''
+            we negate the distance because python's built in heap is by default a min heap. 
+            we also want to be able to utilize heapq.heappushpop, and heapq.heappush, which doesn't exist for
+            the builtin max heap implementation.
+            '''
+            distance_tuple = (-distance, cord)
+            
+            if len(heap) == k:
+                # check if we've reached our heap's max size, which is k.
+                # if so, we push the current tuple and pop the smallest item. 
+                # since values are negated, the smallest item ends up being the largest item
+                heapq.heappushpop(heap, distance_tuple)
+            else:
+                # simply push on to the heap if we haven't exceeded size k
+                heapq.heappush(heap, distance_tuple)
+        
+        # add points arrays from the tuples in the heaps to our output to get desired answer
+        for item in heap:
+            output.append(item[1])
 
-    return ret
+        return output
 ```
 ```java
 class Solution {
     public int[][] kClosest(int[][] points, int k) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>(
-            new Comparator<Integer>(){
-                @Override
-                public int compare(Integer a, Integer b){
-                return a-b;
-                }
-            }
-        );
-
-        Map<Integer, int[]> map = new HashMap<>();
-        for(int[] point : points){
-            int d = getDistance(point);
-            map.put(d, point);
-            pq.offer(d);
+        
+        PriorityQueue<int[]> maxHeap = new PriorityQueue<>((a, b) -> (b[0] * b[0] + b[1] * b[1]) - (a[0] * a[0] + a[1] * a[1]));
+        
+        // loop in the rows of the 2Darray called points
+        for(int[] point : points) {
+            
+            // add a row to the max heap
+            maxHeap.add(point);
+            
+            // if the size of the max heap becomes more than k then remove a row from it
+            if(maxHeap.size() > k) 
+                maxHeap.remove();
         }
-
+        
         int[][] res = new int[k][2];
-         for(int i=0; i<k && !pq.isEmpty(); i++){
-            int d = pq.poll();
-            int[] arr = map.get(d);
-            res[i] = arr;
-         }      
+        
+        while(k-- > 0) {
+            
+            // the last element in the heap is the kth closest element to the origin so put it in the kth row of res
+            res[k] = maxHeap.remove();
+        }
+        
         return res;
-    }
-
-    private int getDistance(int[] points){
-        return (int)(Math.pow(Math.abs(points[0]),2) + Math.pow(Math.abs(points[1]),2));
     }
 }
 ```
