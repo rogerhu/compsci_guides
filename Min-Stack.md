@@ -1,6 +1,6 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** []() 
+* 🔗 **Leetcode Link:** [Min Stack](https://leetcode.com/problems/min-stack/) 
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: 
