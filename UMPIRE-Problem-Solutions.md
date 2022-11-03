@@ -1,6 +1,11 @@
 ## Linked Lists
 
 * [[Palindrome Linked Lists]]
+* [[Substring]]
+* [[Valid Palindrome]]
+* [[Next Prime]]
+* [[Swap Nodes In Pairs]]
+* [[Rotate List]]
 
 ## Core Data Structures
 
