@@ -3,8 +3,8 @@
 * 🔗 **Leetcode Link:** [Min Stack](https://leetcode.com/problems/min-stack/) 
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: 
-* 🗒️ **Similar Questions**: 
+* 🛠️ **Topics**: Stack
+* 🗒️ **Similar Questions**: [Max Stack](https://leetcode.com/problems/max-stack/)
     
 ## 1: U-nderstand
  
