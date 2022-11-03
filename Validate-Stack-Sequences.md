@@ -76,7 +76,17 @@ Output: true
 > **Implement** the code to solve the algorithm.
 
 ```python
+class Solution(object):
+    def validateStackSequences(self, pushed, popped):
+        j = 0
+        stack = []
+        for x in pushed:
+            stack.append(x)
+            while stack and j < len(popped) and stack[-1] == popped[j]:
+                stack.pop()
+                j += 1
 
+        return j == len(popped)
 ```
 ```java
 public boolean validateStackSequences(int[] pushed, int[] popped) {
@@ -113,5 +123,5 @@ public boolean validateStackSequences(int[] pushed, int[] popped) {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
-* **Time Complexity**: 
-* **Space Complexity**: 
+* **Time Complexity**: O(N), where N is the length of pushed and popped.
+* **Space Complexity**: O(N), accounting for the stack used.
