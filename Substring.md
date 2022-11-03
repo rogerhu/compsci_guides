@@ -33,9 +33,6 @@ EDGE CASE
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
-- Multiple passes: To find the length, or save other information about the contents
-- Two pointers: ‘Race car’ strategy with one regular pointer, and one fast pointer
-- Dummy node: Helpful for preventing errors when returning ‘head’ if merging lists, deleting from lists
 
 ## 3: P-lan
 
