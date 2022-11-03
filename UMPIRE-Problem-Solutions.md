@@ -5,7 +5,7 @@
 ## Core Data Structures
 
 * [[K Closest Points to the Origin]]
-* [[Minimum Stack]]
+* [[Min Stack]]
 * [[Implement Queue Using Stacks]]
 * [[Validate Stack Sequences]]
 * [[Brick Wall]]
