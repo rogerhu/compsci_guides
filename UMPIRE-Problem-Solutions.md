@@ -1,9 +1,6 @@
 ## Linked Lists
 
 * [[Palindrome Linked Lists]]
-* [[Substring]]
-* [[Valid Palindrome]]
-* [[Next Prime]]
 * [[Swap Nodes In Pairs]]
 * [[Rotate List]]
 
@@ -52,3 +49,9 @@
 ## Greedy Algorithms & Dynamic Programming
 
 ## Backtracking
+
+## Miscellaneous 
+
+* [[Substring]]
+* [[Valid Palindrome]]
+* [[Next Prime]]
