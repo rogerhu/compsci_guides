@@ -36,7 +36,7 @@
 * [[Word Ladder]]
 * [[Reconstruct Itinerary]]
 * [[Swim in Rising Water]]
-* [[Cheapest Flights within K Stops]]
+* [[Cheapest Flights Within K Stops]]
 * [[Finish All Tasks]]
 * [[Evaluate Division]]
 * [[Most Stones Removed]]
