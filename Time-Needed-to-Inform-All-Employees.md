@@ -25,8 +25,11 @@
 ```markdown
 
 HAPPY CASE
-Input: n = 7, headId = 0, manager = [-1, 0, 0, 0, 1, 1, 3]
-Output: informTime = [ 4, 2, 0, 3, 0, 0, 0]
+Input: n = 1, headID = 0, manager = [-1], informTime = [0]
+Output: 0
+
+Input: n = 4, headId = 2, manager = [3,3,-1,2], informTime = [0, 0, 162, 914]
+Output: 1076
 
 EDGE CASE
 Input: n = 6, headID = 2, manager = [2,2,-1,2,2,2], informTime = [0,0,1,0,0,0]
