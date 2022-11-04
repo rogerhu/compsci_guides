@@ -50,6 +50,8 @@
 
 ## Backtracking
 
+* [[Finish All Tasks]]
+
 ## Miscellaneous 
 
 * [[Substring]]
