@@ -36,9 +36,9 @@ HARDER CASE
 
 Input: 
 ["MinStack","push","push","push","push","getMin","pop","top","getMin"]
-[        [],   [1],  [-1],  [2],   [-8],      [],   [],   [],      []]
+[[],[1],[-1],[2],[-8],[],[],[],[]]
 Output:
-[      null,  null,  null, null,  null,       -8, null,    2,      -1]
+[null,null,null,null,null,-8, null,2,-1]
 ```   
     
 ## 2: M-atch
