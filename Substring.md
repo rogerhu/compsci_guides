@@ -7,7 +7,7 @@ Write a function that takes in two strings and returns true if the second string
 * 🔗 **Leetcode Link:** n/a
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Linked Lists
+* 🛠️ **Topics**: Strings
 * 🗒️ **Similar Questions**: TBD
     
 ## 1: U-nderstand
