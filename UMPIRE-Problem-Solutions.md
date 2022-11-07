@@ -4,14 +4,21 @@
 * [[Swap Nodes In Pairs]]
 * [[Rotate List]]
 
-## Core Data Structures
+## Stacks
 
-* [[K Closest Points to the Origin]]
 * [[Min Stack]]
-* [[Implement Queue Using Stacks]]
 * [[Validate Stack Sequences]]
+* [[Implement Queue Using Stacks]]
+
+## Queues
+
+* [[Implement Queue Using Stacks]]
+
+## Heaps
+
 * [[Brick Wall]]
 * [[Find a Celebrity]]
+* [[K Closest Points to the Origin]]
 
 ## Arrays and Strings
 
