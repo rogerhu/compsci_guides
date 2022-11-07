@@ -15,6 +15,9 @@
 
 ## Arrays and Strings
 
+* [[Substring]]
+* [[Valid Palindrome]]
+
 ## Binary Trees
 
 * [[Min Depth of Binary Trees]]
@@ -54,6 +57,4 @@
 
 ## Miscellaneous 
 
-* [[Substring]]
-* [[Valid Palindrome]]
 * [[Next Prime]]
