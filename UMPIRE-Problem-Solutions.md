@@ -9,15 +9,18 @@
 * [[Min Stack]]
 * [[Validate Stack Sequences]]
 * [[Implement Queue Using Stacks]]
+* [[Find a Celebrity]]
 
 ## Queues
 
 * [[Implement Queue Using Stacks]]
 
-## Heaps
+## Hash Tables
 
 * [[Brick Wall]]
-* [[Find a Celebrity]]
+
+## Heaps
+
 * [[K Closest Points to the Origin]]
 
 ## Arrays and Strings
