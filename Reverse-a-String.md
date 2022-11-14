@@ -40,8 +40,8 @@ Output: ""
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
 For Strings, common solution patterns include:
-
 * Two pointer solutions (left and right pointer variables): What we can do is take two pointer variables: start and end pointers. Then, point them with the two ends of the input string. When left pointer and right pointer pointing at the same index, we should exit and return the reverse string
+* Sort the character in the string.
 * Storing the characters of the string in a HashMap or a Set
 * Traversing the string with a sliding window
 
