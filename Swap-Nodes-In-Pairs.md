@@ -143,5 +143,5 @@ class Solution {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
-* **Time Complexity**: Time Complexity: O(N), as we used a single pass-through linked list
-* **Space Complexity**: Space Complexity: O(1), as only 1 dummy node created for any size list
+* **Time Complexity**: O(N), as we used a single pass-through linked list
+* **Space Complexity**: O(1), as only 1 dummy node created for any size list
