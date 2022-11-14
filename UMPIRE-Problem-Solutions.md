@@ -31,6 +31,8 @@
 --- WIP ---
 * [[Shifting Letters]]
 * [[Set Matrix Zeros]]
+* [[Longest Repeating Character Replacement]]
+* [[Group Anagrams]]
 
 ## Binary Trees
 
