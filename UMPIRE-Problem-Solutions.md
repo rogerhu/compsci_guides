@@ -27,7 +27,7 @@
 
 * [[Substring]]
 * [[Valid Palindrome]]
-*[[Shifting Letters]]
+* [[Shifting Letters]]
 
 ## Binary Trees
 
