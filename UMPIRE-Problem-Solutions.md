@@ -27,7 +27,10 @@
 
 * [[Substring]]
 * [[Valid Palindrome]]
+
+--- WIP ---
 * [[Shifting Letters]]
+* [[Set Matrix Zeros]]
 
 ## Binary Trees
 
