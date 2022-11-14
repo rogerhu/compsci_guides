@@ -35,6 +35,8 @@
 * [[Group Anagrams]]
 * [[Trapping Rain Water]]
 * [[Max Chunks To Make Sorted]]
+* [[Basic Calc]]
+* [[Asteroid Collision]]
 
 ## Binary Trees
 
