@@ -29,6 +29,7 @@
 * [[Valid Palindrome]]
 
 --- WIP ---
+* [[Reverse a String]]
 * [[Shifting Letters]]
 * [[Set Matrix Zeros]]
 * [[Longest Repeating Character Replacement]]
@@ -78,3 +79,12 @@
 ## Miscellaneous 
 
 * [[Next Prime]]
+
+## Recursion
+* [[Valid Palindrome]]
+* [[Next Prime]]
+
+--- WIP ---
+* [[Valid Palindrome II]]
+* [[Pow(x,n)]]
+* [[Permutations]]
