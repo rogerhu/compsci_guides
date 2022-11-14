@@ -66,6 +66,8 @@ A less optimized approached would be build a new string iterating through the st
 > **Implement** the code to solve the algorithm.
 
 ```python
+#Approach 1: Two Pointer
+
 def reverse_string(input_str):
     arr = list(input_str)
     l, r = 0, len(arr) - 1
@@ -75,6 +77,8 @@ def reverse_string(input_str):
     return "".join(arr)
 ```
 ```python
+#Approach 2: Iterative
+
 def reverse_string(input_str):
     output_str = ""
     for i in range(len(input_str) - 1, -1, -1):
