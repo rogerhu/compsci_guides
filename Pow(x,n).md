@@ -50,11 +50,16 @@ We can implement fast modulo exponentiation either in a recursive manner or iter
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Convert exponent in binary format and keep on multiplying the bases as per the exponent binary format.
-
+**General Idea:** Convert exponent in binary format and keep on multiplying the bases as per the exponent binary format. If we just use the normal way of calculation, when face 1 to the power of 10000, the computation complexity is too high. Consider this way: if we want to get 2^10.
+```markdown
+2^10  = 2^4 * 2^4 *2^2
+2^4 = 2^2*2^2
+2^2 = 2*2
+```
 
 ```markdown
-Break into base case where n = 0 or n = 1 and recurrent relations where n is even or odd numbers.
+1. Break into base case where n = 0 or n = 1
+2. recurrent relations where n is even or odd numbers.
 ```
 
 ⚠️ **Common Mistakes**
