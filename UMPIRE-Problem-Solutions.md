@@ -33,6 +33,8 @@
 * [[Set Matrix Zeros]]
 * [[Longest Repeating Character Replacement]]
 * [[Group Anagrams]]
+* [[Trapping Rain Water]]
+* [[Max Chunks To Make Sorted]]
 
 ## Binary Trees
 
