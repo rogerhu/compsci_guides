@@ -51,18 +51,24 @@ Explanation: You could delete the character 'c'.
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Convert the string to array of characters, then iterate the array and in each iteration, filter out the element at current index and check if filtered array is palindrome or not. We try to check the comparison of head & tail elements of the string, if they are identical characters, check the next pair, otherwise, one of them will be the 'key' we want to find.
+**General Idea:**  We try to check the comparison of head & tail elements of the string, if they are identical characters, check the next pair, otherwise we recursively try the next two possibilities, skip one character from the left or skip one character from the right
 
 ```markdown
-1. Use two strings, one is normal and other is reversed.
-2. Iterate the original string and in each iteration, remove the i'th character from the beginning in the normal string and from rear in the reversed string.
-3. After removing the characters, if both the string matches that means they are palindrome.
+1. Write a recursive function to handle two pointer solution while maintaining the count
+2. Set the basecase if the number of available skips is below 1, return false
+3. Now move the start pointer to right so it points to a alphanumeric character. Similarly move end pointer to left so it also points to a alphanumeric character.
+4. Now check if both the characters are same or not (ignoring cases):
+- If it is not equal then we know string is not a valid palindrome, hence return two possibilities skip one character on the left or skip one or skip one character on the right. (be sure to reduce the number of available skips by 1)
+- Else continue to next iteration and repeat the same process of moving both pointers to point to next alphanumeric character till start<end.
+5. After loop finishes, the string is said to be palindrome, hence return true.
+6. Call start and end and point them with the two ends of the input string with the number of available skips to be 1.
 ```
 
 ⚠️ **Common Mistakes**
 
-* The tricky part is, if the given string is not a palindrome, then we can delete at most one character from a string. After deleting a character we have to check whether a new string is a palindrome or not. The idea here is to traverse a string from both the ends using two pointers. Let’s say the two variables are left and right. The initial values of left and right are 0 and string length minus one.
-Then run a loop and start comparing characters present at left and right index. If characters are equal then increment left pointer and decrement right pointer. If it is not equal then check whether a string is palindrome by deleting either the character present at left or right index.
+* The tricky part is, if the given string is not a palindrome, then we can delete at most one character from a string. After deleting a character we have to check whether a new string is a palindrome or not. 
+
+* The idea here is to traverse a string from both the ends using two pointers. Let’s say the two variables are left and right. The initial values of left and right are 0 and string length minus one. Then run a loop and start comparing characters present at left and right index. If characters are equal then increment left pointer and decrement right pointer. If it is not equal then check whether a string is palindrome by deleting either the character present at left or right index.
 
 ## 4: I-mplement
 
@@ -71,18 +77,32 @@ Then run a loop and start comparing characters present at left and right index. 
 ```python
 class Solution(object):
     def validPalindrome(self, s):
+
+        # Write a recursive function to handle two pointer solution while maintaining the count
         def isPalindrome(left, right, count):
+            # Set the basecase if the number of available skips is below 1, return false
             if count > 1:
                 return False
             
+            # Now move the start pointer to right so it points to a alphanumeric character. 
+	    # Similarly move end pointer to left so it also points to a alphanumeric character
             while left < right:
+
+                # Now check if both the characters are same or not (ignoring cases):
+                # If it is not equal then we know string is not a valid palindrome, hence return two possibilities 
+                # skip one character on the left or skip one or skip one character on the right. 
+		# (be sure to reduce the number of available skips by 1)
                 if s[left] != s[right]:
                     return isPalindrome(left+1, right, count+1) or isPalindrome(left, right-1, count+1)
+                
+               # Else continue to next iteration and repeat the same process of moving both pointers to point to next alphanumeric character till start<end.
                 left += 1
                 right -= 1
-                
+            
+	    # After loop finishes, the string is said to be palindrome, hence return true.
             return True
-        
+
+        # Call start and end and point them with the two ends of the input string with the number of available skips to be 1.                       
         return isPalindrome(0, len(s)-1, 0)
 ```
     
@@ -97,5 +117,7 @@ class Solution(object):
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
-* **Time Complexity**: O(N) because we will run the algorithm until the left and right pointers meet.
+* **Time Complexity**: O(N) because we will run the algorithm at most twice due to a single skip. (N being the number of characters in the string) 
+    - However, if we had more number of skips like 4, then we will have O(N * 2^M) M being the number of skips available, because each time we skip we will have to double the number of possible strings to check. 
+    - Here, we have O(N * 2^1), which is O(N*2), which is basically O(N).
 * **Space Complexity**: O(1) because we use two pointers.
