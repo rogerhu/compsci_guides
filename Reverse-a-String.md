@@ -68,22 +68,31 @@ A less optimized approached would be build a new string iterating through the st
 ```python
 #Approach 1: Two Pointer
 
-def reverse_string(input_str):
-    arr = list(input_str)
-    l, r = 0, len(arr) - 1
-    while l < r:
-        arr[l], arr[r] = arr[r], arr[l]
-        l, r = l + 1, r - 1
-    return "".join(arr)
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        # We first convert the string into an array, because a string is immutable.
+        arr = list(input_str)
+
+        # Then we can take two pointer variables, start and end and point them with the two ends of the array.
+        l, r = 0, len(arr) - 1
+
+        # As we move the start pointer right and end pointer left, we swap the characters.
+        while l < r:
+            arr[l], arr[r] = arr[r], arr[l]
+            l, r = l + 1, r - 1
+
+        # After loop finishes, the string is said to be reversed, hence convert the array into a string and return.
+        return "".join(arr)
 ```
 ```python
 #Approach 2: Iterative
 
-def reverse_string(input_str):
-    output_str = ""
-    for i in range(len(input_str) - 1, -1, -1):
-        output_str += input_str[i]
-    return output_str
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        output_str = ""
+        for i in range(len(input_str) - 1, -1, -1):
+            output_str += input_str[i]
+        return output_str
 ```
 ⚠️ **Common Mistakes**
 * String concatenation is dependent on language usage.
