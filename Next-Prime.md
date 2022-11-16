@@ -6,11 +6,11 @@ Note: A prime number is greater than one and has no other factors other than 1 a
 
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** []() 
-* 💡 **Problem Difficulty:** Medium
+* 🔗 **Leetcode Link:** [N/A](https://www.geeksforgeeks.org/program-to-find-the-next-prime-number/) 
+* 💡 **Problem Difficulty:** Easy
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: 
-* 🗒️ **Similar Questions**: []()
+* 🛠️ **Topics**: Math, Recursion
+* 🗒️ **Similar Questions**: [Count Primes](https://leetcode.com/problems/count-primes/), [Ugly Number](https://leetcode.com/problems/ugly-number/), [Ugly Number II](https://leetcode.com/problems/ugly-number-ii/)
     
 ## 1: U-nderstand
  
@@ -34,15 +34,16 @@ Run through a set of example cases:
    
 ```markdown
 HAPPY CASE
-Input: n = 10
-Output: 4
+Input: 5
+Output: 7
 
-Input: n = 0
-Output: 0
+Input: 1
+Output: 2
 
-EDGE CASE
-Input: n = 1
-Output: 0
+EDGE CASE:
+Input: -10
+Output: 2
+The smallest prime number is 2, so any input less than 2 should return 2
 ```   
     
 ## 2: M-atch
@@ -54,7 +55,7 @@ Output: 0
 - Storing the elements of the array in a HashMap or a Set
 - Traversing the array with a sliding window. In a sliding window, the two pointers usually move in the same direction will never overtake each other. This ensures that each value is only visited at most twice and the time complexity is still O(n).
 - Traversing the array twice/thrice (as long as fewer than n times) is still O(n). Sometimes traversing the array more than once can help you solve the problem while keeping the time complexity to O(n).
-
+- This problem may be hard to match to a specific problem pattern since it relies on general math intuition.
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -74,6 +75,11 @@ Output: 0
 
 - Negative Case, Example: `next_prime(-10) --> 2`
 - Zero Case, Example: `next_prime(0) --> 2`
+- What is the time complexity of your plan? Is it O(n)? There is actually an even optimal solution with a time complexity of O(√n)!
+- What the largest factor of any number? Think of a few examples and write out the factors of those numbers.
+    - Given a number n, the largest factor of n is √n. This should imply, the loop to find if a number is prime should stop at √n.
+With this optimization, the is_prime(n) function will be O(√n).
+
 
 ## 4: I-mplement
 
