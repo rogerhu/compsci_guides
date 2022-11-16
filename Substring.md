@@ -4,11 +4,11 @@ Write a function that takes in two strings and returns true if the second string
 
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** n/a
-* 💡 **Problem Difficulty:** Medium
+* 🔗 **Leetcode Link:** [Substring](https://leetcode.com/problems/is-subsequence/)
+* 💡 **Problem Difficulty:** Easy
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Strings
-* 🗒️ **Similar Questions**: TBD
+* 🛠️ **Topics**: Strings, Hash
+* 🗒️ **Similar Questions**: [Number of Matching Subsequences](https://leetcode.com/problems/number-of-matching-subsequences/), [Shortest Way to Form String](https://leetcode.com/problems/shortest-way-to-form-string/)
     
 ## 1: U-nderstand
  
@@ -20,7 +20,7 @@ Write a function that takes in two strings and returns true if the second string
 > - Have you verified any Time/Space Constraints for this problem?
 
 - Are both inputs only strings?
-  - Can elements of the string be both characters and numbers?
+- Can elements of the string be both characters and numbers?
 - Can the second string be larger than the first?
 - What are the Time & Space considerations?
   - Best Case Time Complexity: O(n * m)
@@ -51,6 +51,7 @@ For Strings, common solution patterns include:
 - Two pointer solutions (left and right pointer variables) or a pointer on each string
 - Storing the characters of the string in a HashMap or a Set
 - Traversing the string with a sliding window
+
 
 ## 3: P-lan
 
