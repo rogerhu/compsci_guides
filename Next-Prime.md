@@ -86,26 +86,31 @@ With this optimization, the is_prime(n) function will be O(√n).
 > **Implement** the code to solve the algorithm.
 
 ```python
-def next_prime(n):
-    if n <= 1:
-        return 2
-        
-    n += 1
-    while True:
-        if is_prime(n):
-            return n
-        n += 1
+class Solution:
+    def next_prime(n):
+        if n <= 1:
+            return 2
 
-# Helper method
-def is_prime(n):
-    if n < 2:
-        return False
-    if n < 4:
-        return True
-    for i in range(4, int(math.sqrt(n))):
-        if n % i == 0:
+        n += 1
+        # Iterate from N+1 to INF
+        while True:
+            # If the current number is prime, return this number
+            if is_prime(n):
+                return n
+            # Else, continue to increment and re-evaluate the next number
+            n += 1
+            # Repeat until we find the next largest prime number, since it is guaranteed to exist
+
+    # Helper method
+    def is_prime(n):
+        if n < 2:
             return False
-    return True
+        if n < 4:
+            return True
+        for i in range(4, int(math.sqrt(n))):
+            if n % i == 0:
+                return False
+        return True
 ```
     
 ## 5: R-eview
