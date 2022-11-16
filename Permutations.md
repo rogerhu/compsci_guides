@@ -70,21 +70,28 @@ The best way to think about the problem is to imagine each index being moved int
 > **Implement** the code to solve the algorithm.
 
 ```python
-def permute(self, nums: List[int]) -> List[List[int]]:
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        n = len(nums)
+        
+        def solve(n, perm):
+            if n==0:
+                res.append(perm.copy())
+                return None
+            for i in range(len(nums)):
+                # To do that we keep track of current which is the currently available integers, and permutation, which is the currently generated permutation.
+                if nums[i] in perm: continue
 
-    res = []
-    n = len(nums)
-    def solve(n, perm):
-        if n==0:
-            res.append(perm.copy())
-            return None
-        for i in range(len(nums)):
-            if nums[i] in perm: continue
-            perm.append(nums[i])
-            solve(n-1, perm)
-            perm.pop()
-    solve(n, [])
-    return res
+                # Generate all the permutations for the remaining list and append them to the first element
+                perm.append(nums[i])
+
+                solve(n-1, perm)
+                # Pick one element in the list, and remove it from the list of available integers
+                perm.pop()
+                
+        solve(n, [])
+        return res
 ```
     
 ## 5: R-eview
