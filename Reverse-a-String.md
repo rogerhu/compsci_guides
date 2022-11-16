@@ -1,10 +1,10 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** [Reverse a String] (https://leetcode.com/problems/reverse-string/)
+* 🔗 **Leetcode Link:** [Reverse a String](https://leetcode.com/problems/reverse-string/)
 * 💡 **Problem Difficulty:** Easy
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Strings, Two Pointer
-* 🗒️ **Similar Questions**: [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) 
+* 🗒️ **Similar Questions**: [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/), [Reverse String II](https://leetcode.com/problems/reverse-string-ii/), [Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/)
     
 ## 1: U-nderstand
  
