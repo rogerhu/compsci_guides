@@ -66,21 +66,23 @@ Else continue to next iteration and repeat the same process of moving both point
 > **Implement** the code to solve the algorithm.
 
 ```python
-def isPalindrome(self, s: str) -> bool:
-        i = 0
-        while i < len(s):
-            while i < len (s) and not s[i].isalnum():
-                s = s.replace(s[i],"") #delete all non alphanumeric characters
-            i+=1
-        s, j = s.lower(), len(s)-1  #convert s to lower
-        for i in range(len(s)//2): #i goes from first to middle character, j goes from last to middle character
-            if s[i] != s[j]:
-                return False
-            j-=1
-        return True
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+            i = 0
+            while i < len(s):
+                while i < len (s) and not s[i].isalnum():
+                    s = s.replace(s[i],"") #delete all non alphanumeric characters
+                i+=1
+            s, j = s.lower(), len(s)-1  #convert s to lower
+            for i in range(len(s)//2): #i goes from first to middle character, j goes from last to middle character
+                if s[i] != s[j]:
+                    return False
+                j-=1
+            return True
 ```
 ```java
-public boolean isPalindrome(String s) {
+class Solution {
+    public boolean isPalindrome(String s) {
         // create pointers to the front and back of the string
         int back = s.length()-1;
         int front = 0;
@@ -105,6 +107,7 @@ public boolean isPalindrome(String s) {
             front++;
         }
         return true;
+    }
 }
 ```
     
