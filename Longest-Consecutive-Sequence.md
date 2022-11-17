@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 * **Difficulty:** Medium
 * **Time to complete**: __ mins
-* **Topics**: Array,  Hash 
+* **Topics**: Array,  Hash, Sliding Window 
 * **Similar Questions**: [Find Three Consecutive Integers That Sum to a Given Number](https://leetcode.com/problems/find-three-consecutive-integers-that-sum-to-a-given-number/),  [Length of the Longest Alphabetical Continuous Substring](https://leetcode.com/problems/length-of-the-longest-alphabetical-continuous-substring/)
     
 ## 1: U-nderstand
