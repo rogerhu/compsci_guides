@@ -3,8 +3,8 @@
 * 🔗 **Leetcode Link:** [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 * **Difficulty:** Medium
 * **Time to complete**: __ mins
-* **Topics**: Array, Hash 
-* **Similar Questions**: [Find Three Consecutive Integers That Sum to a Given Number](https://leetcode.com/problems/find-three-consecutive-integers-that-sum-to-a-given-number/), [Length of the Longest Alphabetical Continuous Substring](https://leetcode.com/problems/length-of-the-longest-alphabetical-continuous-substring/)
+* **Topics**: Array,  Hash 
+* **Similar Questions**: [Find Three Consecutive Integers That Sum to a Given Number](https://leetcode.com/problems/find-three-consecutive-integers-that-sum-to-a-given-number/),  [Length of the Longest Alphabetical Continuous Substring](https://leetcode.com/problems/length-of-the-longest-alphabetical-continuous-substring/)
     
 ## 1: U-nderstand
  
@@ -59,48 +59,90 @@ For Array problems, we want to consider the following approaches:
 
 **General Idea:** Approach #1 Sort and find subsequence length
 ```markdown
-* Sort the array
-* Keep track of current length count (current) and longest length count (longest). Both starting at 0.
-* Loop through the sorted array with index a in ascending order
-	* If (array[a] == array[a-1]), continue // duplicates do not count
-	* If (array[a] - array[a - 1]) == 1, currentStreak += 1
-	* Else:
-		* longestStreak = Math.max(longestStreak, currentStreak)
-		* currentStreak = 1 //Reset
-* Return Math.max(longestStreak, currentStreak)
-
-Time Complexity: O(n log n)
-Space Complexity: O(1)
+1. Sort the array
+2. Keep track of current length count (current) and longest length count (longest). Both starting at 1.
+3. Loop through the sorted array 
+4. Skip duplicates
+5. If current number is one more than previous number, increment current streak 
+6. Else set longest streak and reset current streak
+7. Return the longest streak
 ```
 
 **General Idea:** Approach #2 Use a hash set to find the longest length
 ```markdown
-* Create a hash set s
-* Loop through the array and add all the value to the set
-* Keep track of longest length count (longest) starting at 0.
-* Loop through the array again with index a
-	* If set.contains(array[a] - 1), continue //this current number is not the start index of the subsequence
-	* Else create two trackers variables (currentNum = array[a] and currentLength = 1)
-		* While the set contains currentNum + 1, increment currentNum and currentLength
-		* After the loop is done, update longest length count longest = Math.max(longest, currentLength)
-* Return longestStreak
-
-Time Complexity: O(n). At the first glance, the while loop inside the for loop may seem like the time complexity is O(n * n). However, the while loop is only reached when the currentNum is the first of a subsequence, the while loop can only run for n iterations throughout the entire runtime of the function. So the runtime is actually O(n+n) = O(n).
-Space Complexity: O(n) 
+1. Keep track of longestStreak starting at 0.
+2. Create a hashset 
+3. Loop through the number set
+4. If current number has no previous number, then start counting from this number
+5. While the set contains currentNum + 1, increment currentNum and currentStreak
+6. After each while loop, check and set longestStreak
+7. Return longestStreak
 ```
 **⚠️ Common Mistakes**
 
-* If there is a runtime constraint of O(n), the second solution is better. If there is a memory constraint, the first solution is better.
+* If there is a runtime constraint of O(n), the second solution. If there is a memory constraint O(1), the first solution.
 
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
 
 ```python
+# Approach #1 Sort and find subsequence length
 
+class Solution:
+    def longestConsecutive(self, nums):
+        if not nums:
+            return 0
+        # Sort the array
+        nums.sort()
+        
+        # Keep track of current length count (current) and longest length count (longest). Both starting at 1.
+        longest_streak = 1
+        current_streak = 1
+
+        # Loop through the sorted array 
+        for i in range(1, len(nums)):
+            # skip duplicates
+            if nums[i] == nums[i-1]:
+                continue
+            
+            # If current number is one more than previous number add to current streak 
+            if nums[i] == nums[i-1]+1:
+                current_streak += 1
+            # Else set longest streak and reset current streak
+            else:
+                longest_streak = max(longest_streak, current_streak)
+                current_streak = 1
+        
+        # Return the longest streak
+        return max(longest_streak, current_streak)
 ```
-```java
+```python
+# Approach #2 Use a hash set to find the longest length
 
+class Solution:
+    def longestConsecutive(self, nums):
+        # Keep track of longestStreak starting at 0.
+        longest_streak = 0
+        # Create a hashset 
+        num_set = set(nums)
+        
+        # Loop through the number set
+        for num in num_set:
+            # If current number has no previous number, then start counting from this number
+            if num - 1 not in num_set:
+                current_num = num
+                current_streak = 1
+                # While the set contains currentNum + 1, increment currentNum and currentStreak
+                while current_num + 1 in num_set:
+                    current_num += 1
+                    current_streak += 1
+                
+                # After each while loop, check and set longestStreak
+                longest_streak = max(longest_streak, current_streak)
+        
+        # Return longestStreak
+        return longest_streak
 ```
     
 ## 5: R-eview
@@ -116,5 +158,5 @@ Space Complexity: O(n)
 
 Assume `N` represents the number of XXX.
 
-* **Time Complexity**: `O(N)` because ...
-* **Space Complexity**: `O(N)` because ...
+* **Time Complexity**: `O(N)` because at the first glance, the while loop inside the for loop may seem like the time complexity is O(n * n). However, the while loop is only reached when the currentNum is the first of a subsequence, the while loop can only run for n iterations throughout the entire runtime of the function. So the runtime is actually O(n+n) = O(n).
+* **Space Complexity**: `O(N)` because we store the numbers in a hashset. 
