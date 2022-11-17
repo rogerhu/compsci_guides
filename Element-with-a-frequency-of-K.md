@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** N/A
-* **Difficulty:** Medium
+* **Difficulty:** Easy
 * **Time to complete**: __ mins
 * **Topics**: Array, Hash 
-* **Similar Questions**: 
+* **Similar Questions**: [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/), [Word Frequency](https://leetcode.com/problems/word-frequency/), [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/)
     
 ## 1: U-nderstand
  
@@ -46,7 +46,6 @@ Output: 1 or 2
 
 For Array problems, we want to consider the following approaches:
 
-* Sort
 - Sorting the array could help us group together the same elements making it easy to count the number of occurrences the element k appears.
 - Two pointer solutions (left and right pointer variables) could work in determining when the element value changes, but would be dependent on a sorted array
 - Storing the elements of the array in a HashMap or a Set, we could use a HashMap to keep track of a counter for each element k as we traverse the array for the first time.
@@ -60,47 +59,82 @@ For Array problems, we want to consider the following approaches:
 **General Idea:** Approach #1 Sort the array and find the number 
 
 ```markdown
-* Sort the array
-* Keep a counter n
-* Loop through the sorted array with index a
-  * If array[a] == array[a - 1], n += 1
-  * Else:
-    * if n == k, return array[a]
-    * else, n = 0
-* Return null
-
-Time Complexity: O(n log n)
-Space Complexity: O(1)
+1. Sort the array
+2. Keep a counter of number of times seen
+3. Loop through the sorted array
+4. If current number is equal to previous number increase n
+5. else check 
+    - if n equals k then return number
+    - else reset seen to 0 and continue
+6. If seen never equals k then return None
 ```
 
 **General Idea:** Approach #2 Use a hash map to find number. 
 
 ```markdown
-* Create a hash map h
-* Loop through the array with index a
-  * If h[array[a]] exists, h[array[a]] += 1
-  * Else h[array[a]] = 1
-* Loop throug hash map h with key i
-  * if h[i] == k, return i
-* Return null
-
-Time Complexity: O(n)
-Space Complexity: O(n)
+1. Create a hashmap
+2. Loop through the array 
+3. Count number times seen using hashmap
+4. Loop through hashmap to check if seen is equal to k
+5. Return number if seen is equal to k 
+6. If seen never equals k then return None
 ```
 
 **⚠️ Common Mistakes**
 
-* What are some common pitfalls students might have when implementing this solution?
+* If there is a runtime constraint of O(n) and space constraint of O(n), the second solution. If there is a runtime constraint of O(nlogn) and memory constraint of O(1), the first solution.
 
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
 
 ```python
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> int:
+        # Sort the array
+        nums.sort()
+        
+        # Keep a counter of number of times seen
+        seen = 0
+        
+        # Loop through the sorted array
+        for i in range(len(nums)):
+            # If current number is equal to previous number increase n
+            if nums[i] == nums[i - 1]:
+                seen += 1
+            else:
+                # if seen equals k then return the number
+                if seen == k:
+                    return nums[i - 1]
+                # else reset seen to 0 and continue
+                else:
+                    seen = 0
 
+        # If seen never equals k then return None
+        return None
 ```
-```java
-
+```python
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> int:
+        # Create a hashmap
+        hashmap = dict()
+        
+        # Loop through the array
+        for i in range(len(nums)):
+            # Count number times seen using hashmap
+            if nums[i] in hashmap:
+                hashmap[nums[i]] += 1
+            else:
+                hashmap[nums[i]] = 1
+        
+        # Loop through hashmap to check if seen is equal to k
+        for num, seen in hashmap.items:
+            # Return number if found
+            if seen == k:
+                return num
+        
+        # If seen never equals k then return None
+        return None
 ```
     
 ## 5: R-eview
@@ -114,7 +148,7 @@ Space Complexity: O(n)
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Assume `N` represents the number of XXX.
+Assume `N` represents the number of items in array.
 
-* **Time Complexity**: `O(N)` because ...
-* **Space Complexity**: `O(N)` because ...
+* **Time Complexity**: `O(N)` because we loop through the array once.
+* **Space Complexity**: `O(N)` because if each number in array is seen once, then each number in array is stored in hashmap.
