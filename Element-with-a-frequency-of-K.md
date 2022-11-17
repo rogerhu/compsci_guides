@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** N/A
 * **Difficulty:** Easy
 * **Time to complete**: __ mins
-* **Topics**: Array, Hash 
+* **Topics**: Array, Hash, Sliding Window 
 * **Similar Questions**: [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/), [Word Frequency](https://leetcode.com/problems/word-frequency/), [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/)
     
 ## 1: U-nderstand
