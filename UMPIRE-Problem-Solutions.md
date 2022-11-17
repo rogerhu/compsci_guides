@@ -22,6 +22,7 @@
 --- WIP ---
 
 * [[Element with a frequency of K]]
+* [[Longest Consecutive Sequence]]
 * [[Majority Element]]
 * [[Roman to Integer]]
 * [[Destination City]]
