@@ -19,6 +19,13 @@
 
 * [[Brick Wall]]
 
+--- WIP ---
+
+* [[Element with a frequency of K]]
+* [[Majority Element]]
+* [[Roman to Integer]]
+* [[Destination City]]
+
 ## Heaps
 
 * [[K Closest Points to the Origin]]
