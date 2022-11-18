@@ -58,8 +58,8 @@ For Strings, common solution patterns include:
 4. After loop finishes, the string is said to be reversed, hence convert the array into a string and return.
 ```
 ⚠️ **Common Mistakes**
-A less optimized approached would be build a new string iterating through the string in reverse. We will need perform O(n) loops rather than O(n/2) loops.
-* 
+* A less optimized approached would be build a new string iterating through the string in reverse. We will need perform O(n) loops rather than O(n/2) loops.
+
 
 ## 4: I-mplement
 
@@ -94,6 +94,7 @@ class Solution:
             output_str += input_str[i]
         return output_str
 ```
+
 ⚠️ **Common Mistakes**
 * String concatenation is dependent on language usage.
 * Java StringBuilder allows for O(1) appends
