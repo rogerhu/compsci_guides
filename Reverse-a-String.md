@@ -84,6 +84,7 @@ class Solution:
         # After loop finishes, the string is said to be reversed, hence convert the array into a string and return.
         return "".join(arr)
 ```
+
 ```python
 #Approach 2: Iterative
 
