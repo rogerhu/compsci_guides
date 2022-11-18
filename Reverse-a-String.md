@@ -65,9 +65,9 @@ For Strings, common solution patterns include:
 
 > **Implement** the code to solve the algorithm.
 
-```python
-#Approach 1: Two Pointer
+**Approach #1: Two Pointer**
 
+```python
 class Solution:
     def reverseString(self, s: List[str]) -> None:
         # We first convert the string into an array, because a string is immutable.
@@ -85,9 +85,9 @@ class Solution:
         return "".join(arr)
 ```
 
-```python
-#Approach 2: Iterative
+**Approach #1: Iterative**
 
+```python
 class Solution:
     def reverseString(self, s: List[str]) -> None:
         output_str = ""
