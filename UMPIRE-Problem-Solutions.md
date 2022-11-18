@@ -21,9 +21,19 @@
 * [[Implement Queue Using Stacks]]
 * [[Find a Celebrity]]
 
+--- WIP ---
+
+* [[Evaluate Postfix expression]]
+* [[Valid Parentheses]]
+* [[Sort a stack using a temporary stack]]
+
 ## Queues
 
 * [[Implement Queue Using Stacks]]
+
+--- WIP ---
+
+* [[Moving Average from Data Stream]]
 
 ## Hash Tables
 
