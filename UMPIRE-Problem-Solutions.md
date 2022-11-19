@@ -56,8 +56,6 @@
 
 * [[Substring]]
 * [[Valid Palindrome]]
-
---- WIP ---
 * [[Longest Substring with k distinct characters]]
 * [[Reverse Words in a String]]
 * [[String to Integer (ATOI)]]
@@ -72,7 +70,7 @@
 * [[Group Anagrams]]
 * [[Trapping Rain Water]]
 * [[Max Chunks To Make Sorted]]
-* [[Basic Calc]]
+* [[Basic Calculator]]
 * [[Asteroid Collision]]
 
 ## Binary Trees
