@@ -65,7 +65,7 @@ Using a sliding window is iterable and ordered and is normally used for a longes
 ```markdown
 1. declare a stack
 2. Pick an asteroid one by one from the list of asteroids
-4. We worry about the asteroid if only it is negative, else simply push it into the stack. Analyze the Stack from top to bottom and do some operations on it until our desired condition is met.
+3. Pay attention to an asteroid if it is negative, else simply push it into the stack. Analyze the Stack from top to bottom and do some operations on it until our desired condition is met.
 Those operations are:
 a) If the top of the Stack has a lesser magnitude than the current asteroid, we destroy (pop) it.
 b) Else If the top of the stack is Negative or the Stack got empty, push the current asteroid.
