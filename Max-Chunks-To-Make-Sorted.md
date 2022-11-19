@@ -144,5 +144,5 @@ class Solution {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
-* **Time Complexity**: 
-* **Space Complexity**: 
+* **Time Complexity**: O(n), where is the length of the array
+* **Space Complexity**: O(n) to account for the use array
