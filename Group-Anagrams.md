@@ -1,10 +1,10 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** 
+* 🔗 **Leetcode Link:** [https://leetcode.com/problems/group-anagrams/](https://leetcode.com/problems/group-anagrams/)
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Array, String
-* 🗒️ **Similar Questions**: 
+* 🛠️ **Topics**: String
+* 🗒️ **Similar Questions**: [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
     
 ## 1: U-nderstand
  
