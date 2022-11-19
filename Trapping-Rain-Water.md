@@ -148,5 +148,5 @@ class Solution {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
-* **Time Complexity**: O(n), where n is 
+* **Time Complexity**: O(n), where n is length of the given array
 * **Space Complexity**: O(1), only constant space required for left, right, left_max, and right_max.
