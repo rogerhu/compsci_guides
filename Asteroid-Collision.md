@@ -63,7 +63,7 @@ Using a sliding window is iterable and ordered and is normally used for a longes
 **General Idea:** We can use a stack to efficiently simulate the collisions.
 
 ```markdown
-1. declare a stack
+1. Declare a stack
 2. Pick an asteroid one by one from the list of asteroids
 3. Pay attention to an asteroid if it is negative, else simply push it into the stack. Analyze the Stack from top to bottom and do some operations on it until our desired condition is met.
 Those operations are:
