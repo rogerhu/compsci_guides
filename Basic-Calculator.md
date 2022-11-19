@@ -60,11 +60,16 @@ For this string problem, we can think about the following techniques:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** 
+**General Idea:** Whenever we see a (, put the intermediate result into the stack, and start new calculation right after this (. When we see a ), pop the add/minus the result with the last item in the stack.
 
 ```markdown
-1. parse the input string and convert it to postfix notation.
-2. evaluate the postfix string from step 1.
+1. Iterate the expression string in reverse order one character at a time. 
+
+2. Once we encounter a character which is not a digit, we push the operand onto the stack. When we encounter an opening parenthesis (, this means an expression just ended. 
+
+3. Push the other non-digits onto to the stack.
+
+4. Do this until we get the final result.
 ```
 
 ⚠️ **Common Mistakes**
