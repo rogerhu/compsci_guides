@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** 
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: 
+* 🛠️ **Topics**: Array, String
 * 🗒️ **Similar Questions**: 
     
 ## 1: U-nderstand
