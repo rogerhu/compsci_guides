@@ -1,5 +1,6 @@
 ## Linked Lists
 
+* [[Reverse a Doubly Linked List]]
 * [[Palindrome Linked Lists]]
 * [[Swap Nodes In Pairs]]
 * [[Rotate List]]
@@ -57,6 +58,13 @@
 * [[Valid Palindrome]]
 
 --- WIP ---
+* [[Longest Substring with k distinct characters]]
+* [[Reverse Words in a String]]
+* [[String to Integer (ATOI)]]
+* [[Increment an arbitrary precision integer]]
+* [[Run Length Encoding]]
+* [[Shortest Unsorted Subarray]]
+* [[Word Frequency]]
 * [[Reverse a String]]
 * [[Shifting Letters]]
 * [[Set Matrix Zeros]]
