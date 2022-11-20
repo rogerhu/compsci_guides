@@ -73,9 +73,15 @@
 * [[Basic Calculator]]
 * [[Asteroid Collision]]
 
-## Binary Trees
+## Trees
 
 * [[Min Depth of Binary Trees]]
+* [[Binary Tree Pruning]]
+* [[]]
+* [[]]
+* [[]]
+* [[]]
+* [[]]
 
 ## Graphs
 
