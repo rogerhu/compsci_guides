@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/find-largest-value-in-each-tree-row/>
 * 💡 **Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Binary Trees
+* 🛠️ **Topics**: Trees
 * 🗒️ **Similar Questions**: TBD
     
 ## 1: U-nderstand
@@ -15,30 +15,40 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-- How do I construct the linked list using tree nodes?
-  - You should construct the linked list such that the "right" pointer of the tree node will be used as the "next" pointer for a linked list"
-- What about the left pointer?
-  - All left pointers should be set to NULL
+- Could the input tree be null?
+  - Yes. In that case, let’s return an empty list. That makes the most sense.
+- Could there be a tie for the largest value in a row?
+  - Yes, there can be. If there is a tie, we just choose that value.
    
 ```markdown
 HAPPY CASE
+Input: 
+          1
+         / \
+        3   2
+       / \   \  
+      5   3   9 
 
-Input: root = [1,2,5,3,4,null,6]
-Output: [1,null,2,null,3,null,4,null,5,null,6]
+Output: [1, 3, 9]
 
-Input: root = [1,3,2,5,3,null,9]
-Output: [1,3,9]
+Input: 
+         -1
+         / \
+        3   2
+       /   /    
+      5   2     
 
-Input: root = [1,2,3]
-Output: [1,3]
-
+Output: [-1, 3, 5]
 
 EDGE CASE
-Input: root = []
+Input: 
 Output: []
 
-Input: root = [0]
+Input: 0
 Output: [0]
+
+Input: 1
+Output: [1]
 ```   
     
 ## 2: M-atch
