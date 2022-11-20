@@ -80,7 +80,7 @@
 * [[Vertical Order Traversal of a Binary Tree]]
 * [[Find Duplicate Subtrees]]
 * [[Most Frequent Subtree Sum]]
-* [[Create Balanced BST]]
+* [[Convert Sorted Array to Binary Search Tree]]
 * [[Flatten Binary Tree to Linked List]]
 * [[Find Largest Value in Each Tree Row]]
 
