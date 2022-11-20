@@ -1,10 +1,10 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** <>
+* 🔗 **Leetcode Link:** <https://leetcode.com/problems/word-break/>
 * 💡 **Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Dynamic Programming
-* 🗒️ **Similar Questions**: []()
+* 🗒️ **Similar Questions**: [Word Break II](https://leetcode.com/problems/word-break-ii/)
     
 ## 1: U-nderstand
  
