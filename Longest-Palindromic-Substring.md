@@ -174,5 +174,5 @@ public String longestPalindrome(String s) {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-* **Time Complexity**: 
-* **Space Complexity**: 
+* **Time Complexity**: O(n^2), 
+* **Space Complexity**: O(n^2) space to store the table.
