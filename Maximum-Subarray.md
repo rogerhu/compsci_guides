@@ -48,8 +48,6 @@ For graph problems, we want to consider the following approaches:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** 
-
 ```markdown
 1. Initialize 2 integer variables. Set both of them equal to the first value in the array.
 currentSubarray will keep the running count of the current subarray we are focusing on.
@@ -62,7 +60,7 @@ maxSubarray will be our final return value. Continuously update it whenever we f
 
 * What are some common pitfalls students might have when implementing this solution?
 
-
+The algorithm will find the continuous subarray in the 1D integer array which has the largest sum possible. The first approach for everyone after understanding the problem statement will be applying the brute-force approach and solving the problem. But by doing so, the time complexity of the solution will be O(N^2) which isn't ideal. We need to solve the problem by traversing over the whole array using two variables to track the sum so far and maximum total.
 
 ## 4: I-mplement
 
