@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** <>
 * 💡 **Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Greedy
+* 🛠️ **Topics**: Dynamic Programming
 * 🗒️ **Similar Questions**: []()
     
 ## 1: U-nderstand
