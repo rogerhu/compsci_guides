@@ -59,45 +59,36 @@ Output: [1]
 
 
 For trees, some things we should consider are:
-- Using a traversal (ie. Pre-Order, In-Order, Post-Order, Level-Order)
-  - With a traversal we can visit every node, including the leaf nodes
-  - If we can find the depth of every leaf, we can find the min depth
-  - We should find a way to keep track of the depth of each node we visit while traversing
-  - We can visit & flatten the left subtree of a node, visit & flatten the right subtree of a node, then connect them somehow
-Since we are visiting left, visiting right, then doing something, it seems like this will utilize a post-order traversal
-We need to figure out what information we need to keep track of to be able to connect the flatten subtrees
-- Using binary search to find an element
-  - The tree is not ordered in any way, and we should probably visit all leaves, so searching for a specific node won't work
-- Storing nodes within a HashMap to refer to later
+
+- Using a Pre/In/Post-Order Traversal to generate a unique sequence of nodes
+We want to be able to compute maximum values a row at a time. These types of traversals don’t perform level-order traversals that are needed in this problem.
+- Using Binary Search to find an element
+We aren’t looking for a specific value, so its hard to use Binary Search in this problem. In addition, the tree is not a BST, so Binary Search couldn’t apply to this problem.
 - Applying a level-order traversal with a queue
+Using a level-order traversal for this problem is essential since we are looking for a computation on each level.
 
 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
+Perform a level-order traversal of the tree with a Queue. Calculate a running max while traversing the row.
+
 ```markdown
-1) Traverse the tree via a post-order traversal
-2) When we visit a node, recursively flatten its left subtree (if it exists), then its right subtree (if it exists)
-3) To correctly arrange the flattened subtrees, the current node's next pointer (in this case we use the right pointer as a next pointer) 
-should be set to the head of the left flattened subtree, then the tail of the left flattened subtree should be set to the head of the right flattened subtree
-    - There are some special cases to consider:
-        - If there is no right subtree, then the tail of the left subtree should be connected to NULL
-        - If there is no left subtree, the current node should be connected directly to the head of the right flattened subtree
-          (Luckily for us, this is how the tree is already setup, so no action needs to be taken in this case.)
-        - If there is neither a left nor right subtree, then the current node should be connected to NULL
-          (This is how the tree is already setup when there are no subtrees at the current node, so again no action needs to be taken.)
-4) Based on step 3, we need to be able to keep track of the head and tail of a flattened portion of the tree, and return them up the call stack as we recurse
-    - The head of the flattened subtree will be the current node we are visiting
-    - The tail of the flattened subtree will vary depending on what subtrees were visited:
-        - If there was a right subtree, the tail will be the tail of the right flattened subtree
-        - If there was no right subtree but there was a left subtree, the tail will be the tail of the left flattened subtree
-        - If there was neither a left nor right subtree, the tail will just be the current node
+1) Create a Queue and place the root in there
+2) While the Queue is not empty, iterate through the queue
+    a) Compute the length of the Queue and iterate that fixed amount (k) 
+        for the current row
+        i) Keep a running max for the row
+        ii) Add the left and right sub-tree nodes to the end of the queue for the 
+            next iteration
+    b) Append this row's max to an output array
+3) Return the array of row-wise maximums
 ```
 
 **⚠️ Common Mistakes**
 
-* Make sure to use a post-order traversal. We cannot flatten the subtree rooted at a node until we have flattened its left and right subtrees first.
+* Your interviewee may not know about level-order traversals in trees. As an effect, they may try to traverse the tree with a pre/in/post order traversal and store level associations in a HashMap.
 
 ## 4: I-mplement
 
@@ -105,80 +96,55 @@ should be set to the head of the left flattened subtree, then the tail of the le
 
 ```java
 class Solution {
-    // stores root of branch that was previously flattened
-    private TreeNode prevRoot = null;
+    public List<Integer> largestValues(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        search(root, 0, result);
+        return result;
+    }
 
-    // recursively flattens using post-order traversal
-    // visits each node once: O(n) time, O(h) space
-    public void flatten(TreeNode root) {
-        if (root == null) return;
-
-        // flattens subtrees in post-order
-        // this ensures flattened right sub-list comes after the left sub-list
-        flatten(root.right);
-        flatten(root.left);
-
-        // after children are flattened, just set head of sub-list as child
-        root.right = prevRoot;
-        root.left = null;
-
-        prevRoot = root
+    public static void search(TreeNode root, int depth, List<Integer> result) {
+        if (root == null) {
+            return;
+        }
+        if (depth >= result.size()) { // if this row of the tree has not been visited yet
+            result.add(root.val); // add the value
+        } else { // if this row has been visited already
+            int cur = result.get(depth); // get the previous max value of the row
+            int big = Math.max(cur, root.val); // compare
+            if (cur != big) { // if the node we are visiting now has the max value
+                result.remove(depth); // remove the previous
+                result.add(depth, big); // add the max
+            }
+            
+        }
+        search(root.left, depth+1, result); // search left and right (the order does not matter)
+        search(root.right, depth+1, result);
     }
 }
 ```
 ```python
-def flatten(root: Optional[TreeNode]) -> None:
-        def getList(node):
-            # initialize head and tail of left flattened subtree to None
-            leftHead = None
-            leftTail = None
+import sys, queue
 
-            # if the left subtree exists, recursively flatten and get the
-                # head and tail of the flattened subtree
+def largestValues(self, root: TreeNode) -> List[int]:
+    if not root:
+        return []
+    output = []
+    q = queue.Queue()
+    q.put(root)
+    while q.qsize() > 0:
+        cur_max = -sys.maxsize # running max value for this row
+        for _ in range(q.qsize()): # fixed size iteration for this row
+            node = q.get()
+            cur_max = max(cur_max, node.val)
             if node.left:
-                (leftHead, leftTail) = getList(node.left)
-            
-            # initialize head and tail of right flattened subtree to None
-            rightHead = None
-            rightTail = None
-
-            # if the right subtree exists, recursively flatten and get the
-                # head and tail of the flattened subtree
+                q.put(node.left)
             if node.right:
-                (rightHead, rightTail) = getList(node.right)
-            
-            # we have variables pointing to the left and right subtrees, so we can
-                # safely set the node's left to None
-            node.left = None
-
-            # if there is a left subtree, we need to set the node's next (right) pointer
-                # to point to the head of the flattened left subtree
-                # We also need to set the tail of the left flattened subtree to be the head
-                # of the right flattened subtree.
-                # (Note: since we initialized rightHead to None above, this will give the
-                # correct assignment even if there is no right subtree)
-            if leftHead:
-                node.right = leftHead
-                leftTail.right = rightHead
-            
-            # based on the presence of flattened subtrees, we determine the head and tail of the
-                # flattened portion of the tree
-                # - The head will always be the current node
-                # - The tail will either be the rightTail, leftTail, or the current node itself,
-                #   depending on what is defined
-            if rightHead:
-                return (node, rightTail)
-            elif leftHead:
-                return (node, leftTail)
-            else:
-                return (node, node)
-        
-        # handle null root edge case
-        if not root:
-            return root
-        
-        # return the head of the flattened tree
-        return getList(root)[0]
+                q.put(node.right)
+        output.append(cur_max)
+    return output
 ```
     
 ## 5: R-eview
@@ -195,4 +161,4 @@ def flatten(root: Optional[TreeNode]) -> None:
 Assume `N` represents the number of nodes in the tree.
 
 * Time Complexity: O(N)
-* Space Complexity: O(1)
+* Space Complexity: O(N)
