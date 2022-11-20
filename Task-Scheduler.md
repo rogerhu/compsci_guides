@@ -78,6 +78,7 @@ Maximum possible number of idle slots is defined by the frequency of the most fr
 
 * What are some common pitfalls students might have when implementing this solution?
 
+- To work on the same task again, CPU has to wait for time n, therefore we can think of as if there is a cycle, of time n+1, regardless whether you schedule some other task in the cycle or not. To avoid leave the CPU with limited choice of tasks and having to sit there cooling down frequently at the end, it is critical the keep the diversity of the task pool for as long as possible. In order to do that, we should try to schedule the CPU to always try round robin between the most popular tasks at any time.
 
 
 ## 4: I-mplement
