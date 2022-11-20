@@ -84,7 +84,6 @@ It is easy to get confused between the terms substring and subsequence. Be sure 
 ```python
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        # Dynamic Programming
         # P(i,j) means if the substring s_i, .... , s_j is a palindrome
         if len(s) <= 1:
             return s
@@ -174,5 +173,5 @@ public String longestPalindrome(String s) {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-* **Time Complexity**: O(n^2), 
+* **Time Complexity**: O(n^2), The idea is to start from the center of the palindrom and move the center. For each center position, search for the palindrome take O(n) so the total complexity is n^2
 * **Space Complexity**: O(n^2) space to store the table.
