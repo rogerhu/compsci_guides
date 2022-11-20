@@ -1,10 +1,10 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** <>
+* 🔗 **Leetcode Link:** <https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/>
 * 💡 **Difficulty:** 
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Binary Trees
-* 🗒️ **Similar Questions**: []()
+* 🛠️ **Topics**: Binary Trees, Binary Search Trees
+* 🗒️ **Similar Questions**: [Convert Sorted List to Binary Search Tree](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/)
     
 ## 1: U-nderstand
  
