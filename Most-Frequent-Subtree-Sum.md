@@ -1,7 +1,7 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/most-frequent-subtree-sum/>
-* 💡 **Difficulty:** 
+* 💡 **Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Trees
 * 🗒️ **Similar Questions**: [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
