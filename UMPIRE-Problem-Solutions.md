@@ -77,11 +77,12 @@
 
 * [[Min Depth of Binary Trees]]
 * [[Binary Tree Pruning]]
-* [[]]
-* [[]]
-* [[]]
-* [[]]
-* [[]]
+* [[Vertical order traversal of a Binary Tree]]
+* [[Find Duplicate Subtrees]]
+* [[Most Frequent Subtree Sum]]
+* [[Create balanced BST]]
+* [[Flatten Binary Tree to Linked List]]
+* [[Find Largest Value in Each Tree Row]]
 
 ## Graphs
 
