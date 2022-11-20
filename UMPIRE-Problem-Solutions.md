@@ -111,10 +111,17 @@
 * [[Connecting Cities With Minimum Cost]]
 * [[The Earliest Moment When Everyone Become Friends]]
 
-## Greedy Algorithms & Dynamic Programming
+## Greedy Algorithms
 
-* [[]]
-* [[]]
+* [[Largest Number]]
+* [[Task Scheduler]]
+* [[Rabbits In The Forest]]
+
+##  Dynamic Programming
+
+* [[Maximum Subarray]]
+* [[Word Break]]
+* [[Longest Palindromic Substring]]
 
 ## Backtracking
 
