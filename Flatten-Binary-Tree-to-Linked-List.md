@@ -1,7 +1,7 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** <>
-* 💡 **Difficulty:** 
+* 🔗 **Leetcode Link:** <https://leetcode.com/problems/flatten-binary-tree-to-linked-list/>
+* 💡 **Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Binary Trees
 * 🗒️ **Similar Questions**: []()
