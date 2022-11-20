@@ -56,8 +56,6 @@ For trees, some things we should consider are:
 
 > **Implement** the code to solve the algorithm.
 
-Approach #1: DFS
-
 ```java
 
 ```
@@ -78,5 +76,5 @@ Approach #1: DFS
 
 Assume `N` represents the number of nodes in the tree.
 
-* Time Complexity – 
-* Space Complexity –
+* Time Complexity:
+* Space Complexity:
