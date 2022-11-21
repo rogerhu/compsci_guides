@@ -116,12 +116,14 @@
 * [[Largest Number]]
 * [[Task Scheduler]]
 * [[Rabbits In The Forest]]
+* [[Advantage Shuffle]]
 
 ##  Dynamic Programming
 
 * [[Maximum Subarray]]
 * [[Word Break]]
 * [[Longest Palindromic Substring]]
+* [[Unique Paths]]
 
 ## Backtracking
 
@@ -129,6 +131,7 @@
 * [[Generate Parentheses]]
 * [[Subsets]]
 * [[Word Search]]
+* [[Path with Maximum Gold]]
 
 ## Miscellaneous 
 
