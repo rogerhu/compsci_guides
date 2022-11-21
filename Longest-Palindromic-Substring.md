@@ -41,8 +41,6 @@ Output: ""
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
-For graph problems, we want to consider the following approaches:
-
 * Dynamic Programming Approach: The time complexity can be reduced by storing results of subproblems. The next time the same palindromic substring is spotted, instead of recomputing its solution, one simply looks up the previously computed solution, thereby saving computation time at the expense of a modest expenditure in storage space.
 
 
