@@ -45,8 +45,6 @@ Output: 11
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
-For graph problems, we want to consider the following approaches:
-
 * Greedy Algorithm: Greedily put as many rabbits into the same color as possible, until it is not possible to fit, create a new color. If rabbits share same answer, we can put at most rabbits in this color group. Because the result is min of rabbits count, so put as many rabbits in same color group as possible.
 
 
