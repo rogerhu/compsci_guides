@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/word-search](https://leetcode.com/problems/word-search)
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs
+* 🛠️ **Topics**: Graphs, Backtracking
 * 🗒️ **Similar Questions**: [Word Search II](https://leetcode.com/problems/word-search-ii/)
 
 ## 1: **U-nderstand**
