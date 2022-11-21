@@ -129,9 +129,6 @@
 
 ## Miscellaneous 
 
-* [[Next Prime]]
-
-## Recursion
 * [[Valid Palindrome]]
 * [[Next Prime]]
 
