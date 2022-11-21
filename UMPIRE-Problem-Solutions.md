@@ -126,6 +126,9 @@
 ## Backtracking
 
 * [[Finish All Tasks]]
+* [[Generate Parentheses]]
+* [[Subsets]]
+* [[Word Search]]
 
 ## Miscellaneous 
 
