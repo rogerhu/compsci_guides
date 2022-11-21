@@ -39,8 +39,6 @@ Output: 1
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
-For graph problems, we want to consider the following approaches:
-
 * Whenever you see a question that asks for the maximum or minimum of something, consider Dynamic Programming as a possibility. If you want to forego the brute force approach, a more optimal solution for obtaining the maximum sub-array is [Kadane’s algorithm](https://medium.com/@rsinghal757/kadanes-algorithm-dynamic-programming-how-and-why-does-it-work-3fd8849ed73d). Two significant variables used is: current_maximum to keep track of whether or not the value at the current index would increase the maximum sum and maximum_so_far to keep track of the overall maximum that is propagated along the array.
 
 
