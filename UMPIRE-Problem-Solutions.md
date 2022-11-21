@@ -124,6 +124,7 @@
 * [[Word Break]]
 * [[Longest Palindromic Substring]]
 * [[Unique Paths]]
+* [[Maximal Rectangle]]
 
 ## Backtracking
 
