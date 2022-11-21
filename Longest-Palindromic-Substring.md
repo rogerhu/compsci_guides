@@ -114,12 +114,8 @@ class Solution:
                         cond = P[in_i][in_j]
                     
                     P[i][j] = cond and s[i] == s[j]
-            
-        # for ps in P:
-        #     print(ps)
-            
-        # Get result
-        # Longest palindrome will have max distance (i, j)
+
+        # get result of longest palindrome will have max distance (i, j)
         max_dist = -1 # 0 will mean one character (i, i)
         max_ij = None
         for i in range(0,len(s)):
