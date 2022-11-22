@@ -111,7 +111,7 @@
 * [[Connecting Cities With Minimum Cost]]
 * [[The Earliest Moment When Everyone Become Friends]]
 
-## Greedy Algorithms
+## Greedy
 
 * [[Largest Number]]
 * [[Task Scheduler]]
