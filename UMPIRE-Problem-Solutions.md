@@ -36,6 +36,10 @@
 
 * [[Moving Average from Data Stream]]
 
+## Heaps
+
+* [[K Closest Points to the Origin]]
+
 ## Hash Tables
 
 * [[Brick Wall]]
@@ -48,9 +52,6 @@
 * [[Roman to Integer]]
 * [[Destination City]]
 
-## Heaps
-
-* [[K Closest Points to the Origin]]
 
 ## Arrays and Strings
 
