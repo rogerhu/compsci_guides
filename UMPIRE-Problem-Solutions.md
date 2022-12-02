@@ -27,6 +27,7 @@
 * [[Evaluate Postfix expression]]
 * [[Valid Parentheses]]
 * [[Sort a stack using a temporary stack]]
+* [[Score of Parentheses]]
 
 ## Queues
 
@@ -34,6 +35,7 @@
 
 --- WIP ---
 
+* [[Implement Stack Using Queue]]
 * [[Moving Average from Data Stream]]
 
 ## Heaps
@@ -77,6 +79,9 @@
 --- WIP ---
 
 * [[Contain Duplicates]]
+* [[Reverse Words in a String II]]
+* [[Spiral Matrix]]
+* [[Island Problem]]
 
 ## Trees
 
@@ -88,6 +93,14 @@
 * [[Convert Sorted Array to Binary Search Tree]]
 * [[Flatten Binary Tree to Linked List]]
 * [[Find Largest Value in Each Tree Row]]
+
+--- WIP ---
+* [[Same Trees]]
+* [[Insert into a Binary Search Tree]]
+* [[Convert Sorted Array to Binary Search Tree]]
+* [[Print Binary Tree]]
+* [[Binary Tree Paths]]
+* [[Convert Sorted List to BST]]
 
 ## Graphs
 
@@ -115,6 +128,15 @@
 * [[Clone Graph]]
 * [[Connecting Cities With Minimum Cost]]
 * [[The Earliest Moment When Everyone Become Friends]]
+
+--- WIP ---
+* [[Flood Fill]]
+* [[01 Matrix]]
+* [[Word Search II]]
+* [[Rotting Oranges]]
+* [[Accounts Merge]]
+* [[Maximal Network Rank]]
+* [[Clone Graph]]
 
 ## Greedy
 
