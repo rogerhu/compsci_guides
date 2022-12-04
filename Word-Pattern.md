@@ -52,10 +52,10 @@ Output: false
 **General Idea:** Create two dictionaries that maps words to char and char to word
 
 ```markdown
-2. For each (character and word) in the lists respectively, check if the mapping of char to word is in the dictionary (and similar for word to char). 
-3. If the dictionary doesn’t yet have the mapping, add to it.
-4. If at any instance, the mapping doesn’t match, return false. 
-5.If after checking every pair, we still match, that means the pattern matches.
+1. For each (character and word) in the lists respectively, check if the mapping of char to word is in the dictionary (and similar for word to char). 
+2. If the dictionary doesn’t yet have the mapping, add to it.
+3. If at any instance, the mapping doesn’t match, return false. 
+4.If after checking every pair, we still match, that means the pattern matches.
 ```
 
 ⚠️ **Common Mistakes**
