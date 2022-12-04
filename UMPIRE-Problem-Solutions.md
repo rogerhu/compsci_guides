@@ -47,6 +47,7 @@
 
 * [[Brick Wall]]
 * [[Word Pattern]]
+* [[Encode and Decode TinyURL]]
 
 --- WIP ---
 
