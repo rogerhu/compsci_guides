@@ -11,10 +11,10 @@
 * [[Remove Duplicates from Sorted List]]
 * [[Linked List Cycle]]
 * [[Merge Two Sorted Lists]]
-* [[Remove Duplicates II]]
+* [[Remove Duplicates from Sorted List II]]
 * [[Remove Nth Node from End of List]]
 * [[Add Two Numbers]]
-* [[Remove Duplicates]]
+
 
 ## Stacks
 
