@@ -4,6 +4,7 @@
 * [[Palindrome Linked Lists]]
 * [[Swap Nodes In Pairs]]
 * [[Rotate List]]
+* [[LRU Cache]]
 
 --- WIP ---
 
