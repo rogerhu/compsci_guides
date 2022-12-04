@@ -1,10 +1,10 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** <>
-* 💡 **Problem Difficulty:** Medium
+* 🔗 **Leetcode Link:** <https://leetcode.com/problems/word-pattern/>
+* 💡 **Problem Difficulty:** Easy
 * ⏰ **Time to complete**: __ mins
 * 🛠️ **Topics**: Hash Table
-* 🗒️ **Similar Questions**: 
+* 🗒️ **Similar Questions**: [Word Pattern II](https://leetcode.com/problems/word-pattern-ii/)
     
 ## 1: U-nderstand
  
@@ -15,17 +15,25 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-- 
+- Does every character map to a single word?
+  - Each character has to map to a single word. Every word has to map to a single character.
+- Should the time and space complexity analyses ignore the size of words?
+  - Since the size (number of entries) of the two hash maps should be the same, it should be O(1). Whenever the number of distinct words goes beyond the number of distinct letters in the pattern, a False value will be returned immediately.
+
 
 Run through a set of example cases:
 
 ```markdown
 HAPPY CASE
+Input: pattern = "abba", s = "dog cat cat dog"
+Output: true
 
-
+Input: pattern = "abba", s = "dog cat cat fish"
+Output: false
 
 EDGE CASE
-
+Input: pattern = "aaaa", s = "dog cat cat dog"
+Output: false
 ```   
     
 ## 2: M-atch
@@ -41,9 +49,13 @@ EDGE CASE
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** 
+**General Idea:** Create two dictionaries that maps words to char and char to word
 
 ```markdown
+2. For each (character and word) in the lists respectively, check if the mapping of char to word is in the dictionary (and similar for word to char). 
+3. If the dictionary doesn’t yet have the mapping, add to it.
+4. If at any instance, the mapping doesn’t match, return false. 
+5.If after checking every pair, we still match, that means the pattern matches.
 ```
 
 ⚠️ **Common Mistakes**
@@ -55,10 +67,57 @@ EDGE CASE
 > **Implement** the code to solve the algorithm.
 
 ```python
+class Solution:
+ def wordPattern(self, pattern: str, s: str) -> bool:
+   words = s.split(" ")
+   if len(pattern) != len(words):
+     return False
 
+   # create two dictionaries charToWord and wordToChar
+   wordToChar = {}
+   charToWord = {}
+
+   # for each char and word, add them to respective dictionaries
+   for char, word in zip(pattern, words):
+     # As soon as the mapping doesn’t match, return False
+     if char in charToWord and charToWord[char] != word:
+       return False
+     if word in wordToChar and wordToChar[word] != char:
+       return False
+     wordToChar[word] = char
+     charToWord[char] = word
+
+   # return true if all the pair matches
+   return True
 ```
 ```java
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        // O(n) time | O(n) space
+        HashMap<Character, String> myMap = new HashMap<>();
+        String[] words = s.split(" ");
+        
+        // pattern = " a b c" && s = "mice cat dog chicken" then return false directly
+        if(pattern.length() != words.length) return false;
 
+        // update myMap in for-loop
+        for(int i = 0; i < words.length; i++) {
+            char ch = pattern.charAt(i);
+             
+            if(!myMap.containsKey(ch)) {
+                // we need to check the case that, we dont' have such a key in map but value already exists
+                // for example, pattern = "abab" && s = "dog dog dog dog"
+                if(myMap.containsValue(words[i])) return false;
+                
+                myMap.put(ch, words[i]);
+            }
+            else
+                if(!myMap.get(ch).equals(words[i]))
+                    return false;
+        }
+        return true;
+    }
+}
 ```
     
 ## 5: R-eview
@@ -72,5 +131,7 @@ EDGE CASE
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-* **Time Complexity**: 
-* **Space Complexity**: `O(N)`, required to maintain hashmap.
+Assuming that n represents the number of items in the word list or num of characters: 
+
+* **Time Complexity**: `O(n)`
+* **Space Complexity**: `O(n)`, required to maintain hashmap.
