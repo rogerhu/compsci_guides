@@ -45,6 +45,7 @@
 ## Hash Tables
 
 * [[Brick Wall]]
+* [[Word Pattern]]
 
 --- WIP ---
 
