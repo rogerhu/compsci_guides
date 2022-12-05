@@ -25,7 +25,7 @@
 
 --- WIP ---
 
-* [[Evaluate Postfix expression]]
+* [[Evaluate Reverse Polish Notation]]
 * [[Valid Parentheses]]
 * [[Sort a stack using a temporary stack]]
 * [[Score of Parentheses]]
