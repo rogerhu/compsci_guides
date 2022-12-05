@@ -54,9 +54,7 @@ For Strings/Arrays, some things we should consider are:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Keep a running total and remove items first in first out using a queue
-
-
+**General Idea:** Look through each element in the array and increment a counter every time it matches the given word.
 
 ```markdown
 1. Check for edge case where inputs are null, if so return -1.
