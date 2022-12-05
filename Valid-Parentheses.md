@@ -5,6 +5,7 @@
 * **Time to complete**: 15 mins
 * **Topics**: Array, Stack
 * **Similar Questions**: [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/), [Check if a Parentheses String Can Be Valid](https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid/)
+
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
