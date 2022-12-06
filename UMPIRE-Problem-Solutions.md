@@ -81,6 +81,7 @@
 
 --- WIP ---
 
+* [[Integer to String]]
 * [[Contain Duplicates]]
 * [[Reverse Words in a String II]]
 * [[Spiral Matrix]]
