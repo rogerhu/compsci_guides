@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Majority Element](https://leetcode.com/problems/majority-element/)
-* **Difficulty:** Easy
-* **Time to complete**: __ mins
-* **Topics**: Array, Hash, Divide And Conquer, Sorting
-* **Similar Questions**: [Check If a Number Is Majority Element in a Sorted Array](https://leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array/), [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/), [Majority Element II](https://leetcode.com/problems/majority-element-ii/)
+* 💡 **Difficulty:** Easy
+* ⏰ **Time to complete**: 10 mins
+* 🛠️ **Topics**: Array, Hash, Divide And Conquer, Sorting
+* 🗒️ **Similar Questions**: [Check If a Number Is Majority Element in a Sorted Array](https://leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array/), [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/), [Majority Element II](https://leetcode.com/problems/majority-element-ii/)
     
 ## 1: U-nderstand
  
