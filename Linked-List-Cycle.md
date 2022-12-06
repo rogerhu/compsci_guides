@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
-* **Difficulty:** Easy
-* **Time to complete**: 15 mins
-* **Topics**: Linked List, Two Pointer, Hash, Recursion,
-* **Similar Questions**: [Happy Number](https://leetcode.com/problems/happy-number/), [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
+* 💡 **Difficulty:** Easy
+* ⏰ **Time to complete**: 15 mins
+* 🛠️ **Topics**: Linked List, Two Pointer, Hash, Recursion,
+* 🗒️ **Similar Questions**: [Happy Number](https://leetcode.com/problems/happy-number/), [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
     
 ## 1: U-nderstand
  
