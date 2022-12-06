@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
-* **Difficulty:** Easy
-* **Time to complete**: __ mins
-* **Topics**: Linked List, Recursion
-* **Similar Questions**: [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/), [Remove Duplicates From an Unsorted Linked List](https://leetcode.com/problems/remove-duplicates-from-an-unsorted-linked-list/)
+* 💡 **Difficulty:** Easy
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Linked List, Recursion
+* 🗒️ **Similar Questions**: [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/), [Remove Duplicates From an Unsorted Linked List](https://leetcode.com/problems/remove-duplicates-from-an-unsorted-linked-list/)
     
 ## 1: U-nderstand
  
