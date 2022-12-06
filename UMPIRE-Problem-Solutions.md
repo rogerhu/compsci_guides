@@ -81,6 +81,7 @@
 
 --- WIP ---
 
+* [[Two Sum]]
 * [[Integer to String]]
 * [[Contain Duplicates]]
 * [[Reverse Words in a String II]]
