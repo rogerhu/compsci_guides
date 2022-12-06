@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Remove Nth Node from End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
-* **Difficulty:** Medium
-* **Time to complete**: 20 mins
-* **Topics**: Linked List, Dummy Node, Two Pointer
-* **Similar Questions**: [Delete N Nodes After M Nodes of a Linked List](https://leetcode.com/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/), [Delete the Middle Node of a Linked List](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/), [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)
+* 💡 **Difficulty:** Medium
+* ⏰ **Time to complete**: 20 mins
+* 🛠️ **Topics**: Linked List, Dummy Node, Two Pointer
+* 🗒️ **Similar Questions**: [Delete N Nodes After M Nodes of a Linked List](https://leetcode.com/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/), [Delete the Middle Node of a Linked List](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/), [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
