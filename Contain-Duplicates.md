@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
-* **Difficulty:** Easy
-* **Time to complete**: 10 mins
-* **Topics**: Array, Sort, Hash
-* **Similar Questions**: [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/), [Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/)
+* 💡 **Difficulty:** Easy
+* ⏰ **Time to complete**: 10 mins
+* 🛠️ **Topics**: Array, Sort, Hash
+* 🗒️ **Similar Questions**: [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/), [Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/)
     
 ## 1: U-nderstand
  
