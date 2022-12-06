@@ -2,8 +2,8 @@
 
 * 🔗 **Leetcode Link:** [Plus One](https://leetcode.com/problems/plus-one/) 
 * 💡 **Problem Difficulty:** Easy
-* ⏰ **Time to complete**: 20 mins
-* 🛠️ **Topics**: Strings, Two Pointer
+* ⏰ **Time to complete**: 15 mins
+* 🛠️ **Topics**: Array
 * 🗒️ **Similar Questions**: [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/), [Maximum Product of the Length of Two Palindromic Subsequences](https://leetcode.com/problems/maximum-product-of-the-length-of-two-palindromic-subsequences/), [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/)
     
 ## 1: U-nderstand
@@ -50,11 +50,10 @@ Thus, the result should be [1,0].
 
 - Sort
     - Does sorting help us achieve what we need in order to solve the problem?
-
 - Two pointer solutions (left and right pointer variables)
     - Can two or multiple pointers help us in any way?
 - Storing the elements of the array in a HashMap or a Set
-    - Do we need additonal data structures to solve this problem? If yes, which ones?
+    - Do we need additional data structures to solve this problem? If yes, which ones?
 - Traversing the array with a sliding window
     - Will viewing pieces of the input at a time help us?
 
