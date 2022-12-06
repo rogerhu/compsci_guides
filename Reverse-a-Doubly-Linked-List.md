@@ -1,10 +1,11 @@
 ## Problem Highlights
 
 * 🔗 **Geeksforgeeks Link:**  [Reverse a doubly linked list in groups of given size](https://www.geeksforgeeks.org/reverse-doubly-linked-list-groups-given-size/)
-* **Difficulty:** Medium
-* **Time to complete**: 40 mins
-* **Topics**: Array, Stack
-* **Similar Questions**: [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/),[Reverse Nodes in Even Length Groups](https://leetcode.com/problems/reverse-nodes-in-even-length-groups/)
+* 💡 **Difficulty:** Medium
+* ⏰ **Time to complete**: 40 mins
+* 🛠️ **Topics**: Array, Stack
+* 🗒️ **Similar Questions**: [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/),[Reverse Nodes in Even Length Groups](https://leetcode.com/problems/reverse-nodes-in-even-length-groups/)
+
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
