@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:**  [Moving Average from Data Streamstack](https://leetcode.com/problems/moving-average-from-data-stream/)
-* **Difficulty:** Easy
-* **Time to complete**: 20 mins
-* **Topics**: Array, Stack
-* **Similar Questions**: [K Radius Subarray Averages](https://leetcode.com/problems/k-radius-subarray-averages/), [Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/)
+* 💡 **Difficulty:** Easy
+* ⏰ **Time to complete**: 20 mins
+* 🛠️ **Topics**: Array, Stack
+* 🗒️ **Similar Questions**: [K Radius Subarray Averages](https://leetcode.com/problems/k-radius-subarray-averages/), [Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/)
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
