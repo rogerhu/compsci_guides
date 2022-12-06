@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Roman to Integer](https://leetcode.com/problems/roman-to-integer/)
-* **Difficulty:** Easy
-* **Time to complete**: __ mins
-* **Topics**: String, Hash, Math
-* **Similar Questions**: [Integer to Roman](https://leetcode.com/problems/integer-to-roman/), [Integer to English Words](https://leetcode.com/problems/integer-to-english-words/)
+* 💡 **Difficulty:** Easy
+* ⏰ **Time to complete**: 15 mins
+* 🛠️ **Topics**: String, Hash, Math
+* 🗒️ **Similar Questions**: [Integer to Roman](https://leetcode.com/problems/integer-to-roman/), [Integer to English Words](https://leetcode.com/problems/integer-to-english-words/)
     
 ## 1: U-nderstand
  
