@@ -156,7 +156,7 @@ class Solution:
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Assume `N` represents the number of XXX.
+Assume `N` represents the number of items in the array.
 
 * **Time Complexity**: `O(N)` because at the first glance, the while loop inside the for loop may seem like the time complexity is O(n * n). However, the while loop is only reached when the currentNum is the first of a subsequence, the while loop can only run for n iterations throughout the entire runtime of the function. So the runtime is actually O(n+n) = O(n).
 * **Space Complexity**: `O(N)` because we store the numbers in a hashset. 
