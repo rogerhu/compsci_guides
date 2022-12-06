@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
-* **Difficulty:** Medium
-* **Time to complete**: 25 mins
-* **Topics**: Linked List, Dummy Node
-* **Similar Questions**: [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/), [Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements), [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list)
+* 💡 **Difficulty:** Medium
+* ⏰ **Time to complete**: 25 mins
+* 🛠️ **Topics**: Linked List, Dummy Node
+* 🗒️ **Similar Questions**: [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/), [Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements), [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list)
     
 ## 1: U-nderstand
  
