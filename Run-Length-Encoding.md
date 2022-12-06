@@ -3,7 +3,7 @@
 * 🔗 **Geeksforgeeks Link:**  [Run Length Encoding](https://www.geeksforgeeks.org/run-length-encoding/)
 * **Difficulty:** Medium
 * **Time to complete**: 20 mins
-* **Topics**: Array, Stack
+* **Topics**: Array
 * **Similar Questions**: [String Compression](https://leetcode.com/problems/string-compression/), [Count and Say](https://leetcode.com/problems/count-and-say/)
 ## 1: U-nderstand
  
