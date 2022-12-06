@@ -121,6 +121,8 @@ class Solution {
 ## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
-    
+
+Assume N represents the number of characters in the string.
+
 * **Time Complexity**: O(n), traversing is done for almost every character, until the pointers meet in the middle or if the required condition is not true we return early. Time complexity will be O(n) (where n is the length of the given string).
 * **Space Complexity**: O(1), we do not need any extra memory here.
