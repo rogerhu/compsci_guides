@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
-* **Difficulty:** Medium
-* **Time to complete**: 15 mins
-* **Topics**: Linked List, Dummy Node
-* **Similar Questions**: [Add Binary](https://leetcode.com/problems/add-binary/), [Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/), [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/)
+* 💡 **Difficulty:** Medium
+* ⏰ **Time to complete**: 15 mins
+* 🛠️ **Topics**: Linked List, Dummy Node
+* 🗒️ **Similar Questions**: [Add Binary](https://leetcode.com/problems/add-binary/), [Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/), [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/)
     
 ## 1: U-nderstand
  
