@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)
-* **Difficulty:** Medium
-* **Time to complete**: 20 mins
-* **Topics**: Array, Stack
-* **Similar Questions**: [Basic Calculator](https://leetcode.com/problems/basic-calculator/), [Expression Add Operators](https://leetcode.com/problems/expression-add-operators/)
+* 💡 **Difficulty:** Medium
+* ⏰ **Time to complete**: 20 mins
+* 🛠️ **Topics**: Array, Stack
+* 🗒️ **Similar Questions**: [Basic Calculator](https://leetcode.com/problems/basic-calculator/), [Expression Add Operators](https://leetcode.com/problems/expression-add-operators/)
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
