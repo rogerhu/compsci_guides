@@ -138,5 +138,4 @@ Assume N represents the number of character in the string.
 
 
 * **Time Complexity**: O(n), traversing may be done on every character in string. 
-* 
 * **Space Complexity**: O(n), we will be building a integer with the length of the string.
