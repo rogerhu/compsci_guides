@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
-* **Difficulty:** Medium
-* **Time to complete**: 25 mins
-* **Topics**: Array, Stack, Queue
-* **Similar Questions**: , [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/), [Build an Array With Stack Operations](https://leetcode.com/problems/build-an-array-with-stack-operations/)
+* 💡 **Difficulty:** Medium
+* ⏰ **Time to complete**: 25 mins
+* 🛠️ **Topics**: Array, Stack, Queue
+* 🗒️ **Similar Questions**: , [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/), [Build an Array With Stack Operations](https://leetcode.com/problems/build-an-array-with-stack-operations/)
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
