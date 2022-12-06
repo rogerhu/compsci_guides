@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
-* **Difficulty:** Easy
-* **Time to complete**: 15 mins
-* **Topics**: Array, Stack
-* **Similar Questions**: [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/), [Check if a Parentheses String Can Be Valid](https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid/)
+* 💡 **Difficulty:** Easy
+* ⏰ **Time to complete**: 15 mins
+* 🛠️ **Topics**: Array, Stack
+* 🗒️ **Similar Questions**: [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/), [Check if a Parentheses String Can Be Valid](https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid/)
 
 ## 1: U-nderstand
  
