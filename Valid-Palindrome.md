@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) 
 * 💡 **Problem Difficulty:** Easy
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 10 mins
 * 🛠️ **Topics**: Strings, Two Pointer
 * 🗒️ **Similar Questions**: [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/), [Maximum Product of the Length of Two Palindromic Subsequences](https://leetcode.com/problems/maximum-product-of-the-length-of-two-palindromic-subsequences/), [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/)
     
@@ -36,6 +36,8 @@ Output: true
 ## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
+
+For Array/Strings, common solution patterns include:
 
 - Sort
 - Two pointer solutions (left and right pointer variables): What we can do is take two pointer variables: start and end pointers. Then, point them with the two ends of the input string. When left pointer and right pointer pointing at different valid character, we should exit and return false immediately.
