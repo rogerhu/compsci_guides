@@ -1,10 +1,10 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
-* **Difficulty:** Easy
-* **Time to complete**: 10 mins
-* **Topics**: Linked List, Dummy Node
-* **Similar Questions**: [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/), [Sort List](https://leetcode.com/problems/sort-list/), [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+* 💡 **Difficulty:** Easy
+* ⏰ **Time to complete**: 10 mins
+* 🛠️ **Topics**: Linked List, Dummy Node
+* 🗒️ **Similar Questions**: [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/), [Sort List](https://leetcode.com/problems/sort-list/), [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
     
 ## 1: U-nderstand
  
