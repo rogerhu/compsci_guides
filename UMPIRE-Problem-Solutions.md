@@ -53,6 +53,7 @@
 
 --- WIP ---
 
+* [[Single Number]]
 * [[Element with a frequency of K]]
 * [[Longest Consecutive Sequence]]
 * [[Majority Element]]
