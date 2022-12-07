@@ -32,6 +32,7 @@
 
 ## Queues
 
+* [[Number of Recent Calls]]
 * [[Implement Queue Using Stacks]]
 
 --- WIP ---
