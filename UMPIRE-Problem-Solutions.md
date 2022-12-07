@@ -41,6 +41,7 @@
 
 ## Heaps
 
+* [[Kth Largest Element in a Stream]]
 * [[K Closest Points to the Origin]]
 
 ## Hash Tables
