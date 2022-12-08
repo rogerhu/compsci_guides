@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/rotate-list/](https://leetcode.com/problems/rotate-list/)
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 10 to 13 mins
 * 🛠️ **Topics**: Linked Lists, Two Pointer
 * 🗒️ **Similar Questions**: [Rotate Array](https://leetcode.com/problems/rotate-array/)
     
