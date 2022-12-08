@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/swap-nodes-in-pairs/](https://leetcode.com/problems/swap-nodes-in-pairs/)
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 10 to 12 mins
 * 🛠️ **Topics**: Linked Lists, Recursion
 * 🗒️ **Similar Questions**: [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)
     
