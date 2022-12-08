@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/lru-cache/](https://leetcode.com/problems/lru-cache/)
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 10 to 13 mins
 * 🛠️ **Topics**: Linked Lists, Hash Table
 * 🗒️ **Similar Questions**: [LFU Cache](https://leetcode.com/problems/lfu-cache/), [Design In-Memory File System](https://leetcode.com/problems/design-in-memory-file-system/)
     
