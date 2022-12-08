@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/encode-and-decode-tinyurl/>
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 10 to 13 mins
 * 🛠️ **Topics**: Hash Table
 * 🗒️ **Similar Questions**: TBD
     
