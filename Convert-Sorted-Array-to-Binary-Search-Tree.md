@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/>
 * 💡 **Difficulty:** Easy
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 10 mins
 * 🛠️ **Topics**: Binary Trees, Binary Search Trees
 * 🗒️ **Similar Questions**: [Convert Sorted List to Binary Search Tree](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/)
     
@@ -18,9 +18,11 @@
 - Could the input array be null or empty?
   - Yep! In that case, let’s just return a null reference.
 - Could values be negative?
-  - Yes. Our solution shouldn’t change because of that.
+  - Yes. the node values will range from -100000 to 100000. Our solution shouldn’t change because of that.
 - After creating the tree, do we need to verify its height-balanced property?
   - I don’t believe you need to verify it after you make it. Rather, your process in generating the tree should guarantee that it should be height-balanced. Does that make sense?
+- Will the input list always be sorted?
+  - Yes, the values in the input list will always be sorted in a strictly increasing order
    
 ```markdown
 HAPPY CASE
@@ -43,10 +45,10 @@ Output:
                8
 (Note the subtrees differ in height by 1, but not more than 1)
 
-EDGE CASE (One element)
-Input: [1]
-Output:  
-    1
+EDGE CASE (No elements)
+Input: []
+Output: None
+    
 ```   
     
 ## 2: M-atch
@@ -54,7 +56,6 @@ Output:
 <!-- See https://docs.google.com/document/d/1hYT1hoOJ6pFIt8A5q-PIZmYP7pB4WqlzyUJgFx9x2mY/edit#heading=h.ya2de4n4zsds for list of algorithms based on question type-->
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
-
 
 For trees, some things we should consider are:
 - Using a traversal (ie. Pre-Order, In-Order, Post-Order, Level-Order)
@@ -64,28 +65,31 @@ For trees, some things we should consider are:
   - Since we don’t have a tree to start with, we cannot use these traversals to help us in this problem. However, performing an in order traversal of this tree after generating it would yield ascending values.
 Using binary search to find an element
 - Using binary search to find an element
-  - The tree is not ordered in any way, and we should probably visit all leaves, so searching for a specific node won't work
+  - Since the input list is provided in sorted order and we need to build a binary search tree, some elements of the binary search algorithm may come in handy
 - Storing nodes within a HashMap to refer to later
+  - We could employ this technique, but is it really necessary?
 - Applying a level-order traversal with a queue
-We could apply a binary search strategy to this problem to divide the array the way a BST divides a sorted data set.
+  - Using this approach may complicate our code
+- We could apply a binary search strategy to this problem to divide the array the way a BST divides a sorted data set.
 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-Start at the array middle and recurse left, right halves of the array to build a eight-balanced binary search tree.
+Recursively build binary search trees by using the middle node as the root, splitting the array in half for the left and right nodes.
 
 ```markdown
-1) Calculate center point of current array
-2) Create node of center value
-3) Set left reference to center of the left half of array (recurse)
-4) Set right reference to center of the right half of array (recurse)
-5) Return current node
+1) Basecase: Check for an empty input list. If it is empty, return None (an empty BST)
+2) Recursively: 
+    a) Get the index of the root node from the list (this will be the element at the center of the input list)
+    b) Build the left and right subtrees of the tree by recursively calling the function on each remaining half of the input list
+3) Return the root of the tree
 ```
 
 **⚠️ Common Mistakes**
-
-* When we look at a BST, from left to right, the elements are sorted. When we look at an array, from left to right, the elements are sorted. Can we use this shared pattern between the two to help us generate the BST from the array? If we chose a random index in the array, everything left of that index is smaller and everything right of that index is larger, right? If we were to structure our BST on that index it may not be height-balanced, so how do we choose a proper index? Some people don’t see the connection between the sorted array and the sorted nature of a BST. This alignment offers a simple solution to the problem.
+- Not noticing or clarifying that the input list is sorted
+    - Not recognizing how this sorted property allows us to build the BST
+    - When we look at a BST, from left to right, the elements are sorted. When we look at an array, from left to right, the elements are sorted. Can we use this shared pattern between the two to help us generate the BST from the array? If we chose a random index in the array, everything left of that index is smaller and everything right of that index is larger, right? If we were to structure our BST on that index it may not be height-balanced, so how do we choose a proper index? Some people don’t see the connection between the sorted array and the sorted nature of a BST. This alignment offers a simple solution to the problem.
 
 ## 4: I-mplement
 
@@ -116,21 +120,21 @@ class Solution {
 ```
 ```python
 class Solution:
-    def sortedArrayToBST(self, nums: List[int]) -> TreeNode:        
-        def helper(left, right):
-            if left > right:
-                return None
+    def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
+        # Basecase: Check for an empty input list. If it is empty, return None (an empty BST)
+        if not nums:
+            return None
 
-            # always choose left middle node as a root
-            p = (left + right) // 2
+        # Recursively: Get the index of the root node from the list (this will be the element at the center of the input list)
+        mid = len(nums) // 2
+        root = TreeNode(nums[mid])
 
-            # preorder traversal: node -> left -> right
-            root = TreeNode(nums[p])
-            root.left = helper(left, p - 1)
-            root.right = helper(p + 1, right)
-            return root
-        
-        return helper(0, len(nums) - 1)
+        # Recursively: Build the left and right subtrees of the tree by recursively calling the function on each remaining half of the input list
+        root.left = self.sortedArrayToBST(nums[:mid])
+        root.right = self.sortedArrayToBST(nums[mid + 1:])
+
+        # Return the root of the tree
+        return root
 ```
     
 ## 5: R-eview
@@ -146,5 +150,7 @@ class Solution:
 
 Assume `N` represents the number of nodes in the tree.
 
-* Time Complexity: O(n) since we visit each node exactly once
-* Space Complexity: O(logN), since the tree is height-balanced. 
+* **Time Complexity**: O(N)
+    *  We need to visit each value in the array to create a Binary Search Tree with each value.
+* **Space Complexity**: O(N) 
+    * O(N) because we need O(N) space to represent each value in the array as nodes in the binary search tree. 
