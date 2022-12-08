@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/word-pattern/>
 * 💡 **Problem Difficulty:** Easy
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 10 mins
 * 🛠️ **Topics**: Hash Table
 * 🗒️ **Similar Questions**: [Word Pattern II](https://leetcode.com/problems/word-pattern-ii/)
     
