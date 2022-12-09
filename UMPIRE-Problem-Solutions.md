@@ -5,6 +5,10 @@
 * [[Swap Nodes In Pairs]]
 * [[Rotate List]]
 * [[LRU Cache]]
+* [[Spiral Matrix IV]]
+* [[Reverse Nodes in k-Group]]
+* [[Dinner Plate Stacks]]
+* [[Find K Pairs with Smallest Sums]]
 
 --- WIP ---
 
