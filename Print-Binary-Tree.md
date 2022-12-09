@@ -20,7 +20,6 @@
     - Unless the tree is Null, there have to be leaf nodes. Even the root can be a leaf node if it has no children.
 ```markdown
 HAPPY CASE
-HAPPY CASE
 Input:     1
           / \
          3   4
