@@ -60,19 +60,17 @@ For Trees, some things we should consider are:
 
 **General Idea:** Pre-Order Traversal of the Tree. At every node, verify if the node is a leaf or not. If so, print the value and continue.
 
-
-
-
-
 ```markdown
 1) Basecase: If the current node is Null, return
-2) If the current node has no children, print its value
-3) Recurse Left and Recurse Right
+2) Recursive: Get all nodes with no children
+  a) If the current node has no children, print its value
+  b) Recurse Left and Recurse Right
 ```
 
 **⚠️ Common Mistakes**
 
-* Look out to pop and push element to the right Stack
+* Remember to identify the basecase first. 
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
