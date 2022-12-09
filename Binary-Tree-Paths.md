@@ -80,10 +80,8 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 ```
 
 **⚠️ Common Mistakes**
-- Not noticing or clarifying that the input list is sorted
-    - Not recognizing how this sorted property allows us to build the BST
-- Choosing the incorrect traversal type
-    - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+- Not noticing the need for a helper function to retain memory 
+- Not noticing the need to clear current path after recursion a.k.a backtracking
 
 ## 4: I-mplement
 
