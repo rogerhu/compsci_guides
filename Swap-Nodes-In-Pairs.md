@@ -52,8 +52,6 @@ A slow and fast pointer may not help the problem.
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** 
-
 ```markdown
 1) Establish a dummy head that points to the first node
 2) Keep a pointer to the dummy head
