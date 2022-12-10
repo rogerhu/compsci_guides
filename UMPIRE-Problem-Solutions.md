@@ -7,7 +7,6 @@
 * [[LRU Cache]]
 * [[Spiral Matrix IV]]
 * [[Reverse Nodes in k-Group]]
-* [[Dinner Plate Stacks]]
 
 --- WIP ---
 
@@ -25,6 +24,7 @@
 * [[Validate Stack Sequences]]
 * [[Implement Queue Using Stacks]]
 * [[Find a Celebrity]]
+* [[Dinner Plate Stacks]]
 
 --- WIP ---
 
