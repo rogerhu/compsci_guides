@@ -210,8 +210,8 @@ public:
     
 * **Time Complexity**: 
 
-- push, `O(logN)` time
-- pop, amortized `O(1)` time
-- popAtStack, `O(logN)` time
+   - push, `O(logN)` time
+   - pop, amortized `O(1)` time
+   - popAtStack, `O(logN)` time
 
 * **Space Complexity**: O(n) since a stack data structure was used
