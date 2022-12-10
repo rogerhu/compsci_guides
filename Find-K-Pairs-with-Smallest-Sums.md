@@ -1,10 +1,10 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** <>
+* 🔗 **Leetcode Link:** <https://leetcode.com/problems/find-k-pairs-with-smallest-sums/>
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: 10 to 12 mins
-* 🛠️ **Topics**: Linked Lists
-* 🗒️ **Similar Questions**: []()
+* 🛠️ **Topics**: Array
+* 🗒️ **Similar Questions**: [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
     
 ## 1: U-nderstand
  
