@@ -43,6 +43,7 @@ Output: [[1,3],[2,3]]
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
+- Heaps: In the heap data structure, we assign key-value or weight to every node of the tree. Now, the root node key value is compared with the children’s nodes and then the tree is arranged accordingly into two categories i.e., max-heap and min-heap. Heap data structure is basically used as a heapsort algorithm to sort the elements in an array or a list. 
 - Multiple passes: To find the length, or save other information about the contents. If we were able to take multiple passes of the linked list, would that help solve the problem? Multiple passes would not help this problem since we aren’t collecting unique items or need any pre-processing.
 - Two pointers: ‘Race car’ strategy with one regular pointer, and one fast pointer. If we used two pointers to iterate through the list at different speeds, would that help us solve this problem?
 A slow and fast pointer may not help the problem.
