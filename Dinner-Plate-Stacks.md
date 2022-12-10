@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/dinner-plate-stacks/>
 * 💡 **Problem Difficulty:** Hard
 * ⏰ **Time to complete**: 15 mins
-* 🛠️ **Topics**: Stacks
+* 🛠️ **Topics**: Stacks, Heaps
 * 🗒️ **Similar Questions**: TBD
     
 ## 1: U-nderstand
@@ -17,7 +17,13 @@
 
 Be sure that you clarify the input and output parameters of the problem:
 
-- 
+- What data structure can we use to keep track of the first stack? 
+  - Use a heap to keep track of the first stack that is available. The cost of pop of an element from the heap can be charged to the pop()/popAtStack() operation that pushed the element into the heap. 
+- What are the time and space constraints?
+  - 1 <= capacity <= 2 * 104
+  - 1 <= val <= 2 * 104
+  - 0 <= index <= 105
+  - At most 2 * 105 calls will be made to push, pop, and popAtStack.
 
 Run through a set of example cases:
 
@@ -26,8 +32,13 @@ HAPPY CASE
 Input
 ["DinnerPlates", "push", "push", "push", "push", "push", "popAtStack", "push", "push", "popAtStack", "popAtStack", "pop", "pop", "pop", "pop", "pop"]
 [[2], [1], [2], [3], [4], [5], [0], [20], [21], [0], [2], [], [], [], [], []]
-Output
+Output:
 [null, null, null, null, null, null, 2, null, null, 20, 21, 5, 4, 3, 1, -1]
+
+Input: ["DinnerPlates","push","push","push","push","push","push","push","popAtStack","popAtStack","popAtStack","popAtStack","popAtStack","push","push","pop","pop","pop","pop","pop"]
+[[2],[1],[2],[3],[4],[5],[6],[7],[2],[2],[1],[1],[0],[8],[9],[],[],[],[],[]]
+Output:
+[null,null,null,null,null,null,null,null,6,5,4,3,2,null,null,9,7,8,1,-1]
 ```   
     
 ## 2: M-atch
