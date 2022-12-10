@@ -8,7 +8,6 @@
 * [[Spiral Matrix IV]]
 * [[Reverse Nodes in k-Group]]
 * [[Dinner Plate Stacks]]
-* [[Find K Pairs with Smallest Sums]]
 
 --- WIP ---
 
@@ -48,6 +47,7 @@
 
 * [[Kth Largest Element in a Stream]]
 * [[K Closest Points to the Origin]]
+* [[Find K Pairs with Smallest Sums]]
 
 ## Hash Tables
 
