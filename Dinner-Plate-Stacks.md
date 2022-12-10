@@ -1,10 +1,10 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** <>
-* 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: 10 to 12 mins
-* 🛠️ **Topics**: Linked Lists
-* 🗒️ **Similar Questions**: []()
+* 🔗 **Leetcode Link:** <https://leetcode.com/problems/dinner-plate-stacks/>
+* 💡 **Problem Difficulty:** Hard
+* ⏰ **Time to complete**: 15 mins
+* 🛠️ **Topics**: Stacks
+* 🗒️ **Similar Questions**: TBD
     
 ## 1: U-nderstand
  
