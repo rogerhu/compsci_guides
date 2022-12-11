@@ -95,6 +95,14 @@
 * [[Spiral Matrix]]
 * [[Island Problem]]
 
+# 2D-Array
+
+-- WIP --
+* [[Flood Fill]]
+* [[01 Matrix]]
+* [[Word Search II]]
+* [[Rotting Oranges]]
+
 ## Trees
 
 * [[Min Depth of Binary Trees]]
@@ -141,11 +149,7 @@
 * [[Connecting Cities With Minimum Cost]]
 * [[The Earliest Moment When Everyone Become Friends]]
 
---- WIP ---
-* [[Flood Fill]]
-* [[01 Matrix]]
-* [[Word Search II]]
-* [[Rotting Oranges]]
+-- WIP --
 * [[Accounts Merge]]
 * [[Maximal Network Rank]]
 * [[Clone Graph]]
