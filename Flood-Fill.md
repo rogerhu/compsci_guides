@@ -1,10 +1,9 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** [https://leetcode.com/problems/flood-fill/](https://leetcode.com/problems/flood-fill/)
-* 💡 **Problem Difficulty:** Easy
-* ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
-* 🗒️ **Similar Questions**: [Island Perimeter](https://leetcode.com/problems/island-perimeter/)
+* 🔗 **Leetcode Link:** [Flood Fill](https://leetcode.com/problems/flood-fill/)
+* ⏰ **Time to complete**: 15 mins
+* 🛠️ **Topics**: 2D-Array, Breadth-First Search, Depth-First Search
+* 🗒️ **Similar Questions**: [Island Perimeter](https://leetcode.com/problems/island-perimeter/), [Max Area of Island](https://leetcode.com/problems/max-area-of-island/), [Coloring A Border](https://leetcode.com/problems/coloring-a-border/)
 
 ## 1: **U-nderstand**
 
@@ -43,24 +42,31 @@
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
     
-For graph problems, some things we want to consider are:
-    
-- BFS/DFS: BFS or DFS would work on this problem. Carrying out DFS is simple on this array by balancing edges cases wherein row and col point to out of index values. After handling those values, we call recursive function again on matrix with the corresponding values of row and col (i.e. [row-1][col], [row+1][col], [row][col-1], [row][col+1]). Now for the algorithm to not recompute on previously computed values, we can use the same check for value of color.
-- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
-- Adjacency List: We can use an adjacency list to store the graph, especially when the graph is sparse.
-- Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
-- Topological Sort: We can use topological sort when a directed graph is used and returns an array of the nodes where each node appears before all the nodes it points to. In order to have a topological sorting, the graph must not contain any cycles.
+For 2D-Array, common solution patterns include:
 
+- Perform a BFS/DFS Search through the 2D Array
+    - BFS or DFS would work on this problem. Carrying out DFS is simple on this array by balancing edges cases wherein row and col point to out of index values. After handling those values, we call recursive function again on matrix with the corresponding values of row and col (i.e. [row-1][col], [row+1][col], [row][col-1], [row][col+1]). Now for the algorithm to not recompute on previously computed values, we can use the same check for value of color.
+- Hash the 2D Array in some way to help with the Strings
+    - We are not working with strings
+- Create/Utilize a Trie
+    - A Trie will complicate the problem
 
 ## 3: P-lan
     
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Apply DFS to paint the starting pixels, plus adjacent pixels of the same color, and so on.
+**General Idea:** Use DFS to traverse the matrix and then recursively call function on neighbors above, below, left, and right.
     
-1. Store our starting point in a variable. We are given our starting point through the parameters `image`, `sr`, and `sc`. `sr` represents the row, and `sc` represents the column. Step 1 starts from the middle as the starting pixel, changes itself to the new color which is ‘2’ in this case. It checks its neighbors (left, right, top, bottom), replaces those that had the same number as the one the starting pixel had (which is 1) before it changed to the new color (2). So it changes all the 1s to 2s as long as they are neighbors. Then moves to its left neighbor (1st column) to go through the same process.
-2. Change top and bottom neighbors to 2 because those neighbors had the same number as its initial before itself was changed. 
-Step 3 and 4 go through the same process.
+0. Check if our starting point color needs to be changed:
+    a. If color is as intended then return original image
+    b. Otherwise continue.    
+1. Store our starting point color in a variable. We are given our starting point through the parameters `image`, `sr`, and `sc`. `sr` represents the row, and `sc` represents the column. 
+2. Starts from the starting pixel, changes itself to the new color which is ‘2’ in this case. 
+3. Using a dfs call we. can checks its neighbors (left, right, top, bottom), replaces those that had the same number as the one the starting pixel had (which is 1) before it changed to the new color (2). So it changes all the 1s to 2s as long as they are neighbors. Then moves to its left neighbor (1st column) to go through the same process.
+    a. Check if neighbor is inbound and is the same as the orginalColor.
+        i. if it is out of bound or a different color, then stop
+        ii. else repeat.
+4. Return the doctored image
    
 
 ⚠️ **Common Mistakes**
@@ -75,66 +81,62 @@ Step 3 and 4 go through the same process.
     
 ```java
 class Solution {
-    public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
-        int previousColor=image[sr][sc];
-        fillColor(image,sr,sc,newColor,previousColor);
+    public int[][] floodFill(int[][] image, int sr, int sc, int color) {
+        // Check if our starting point color needs to be changed:
+        if (image[sr][sc] == color) return image;
+
+        // Otherwise continue. Starts from the starting pixel, changes itself to the new color which is ‘2’ in this case. And run a dfs call to check and change all it's neighbors.
+        dfs(image, sr, sc, image[sr][sc], color);
+
+        // return doctored image
         return image;
-    }
-    
-    public void fillColor(int[][] image, int sr, int sc, int newColor,int previousColor){
-        //change sr sc index color to new color
-        image[sr][sc]=newColor;
-        
-       // check for up and change the color to new Color if up is not visited yet
-        if(sr-1>=0 && image[sr-1][sc]==previousColor && image[sr-1][sc]!=newColor){
-            fillColor(image,sr-1,sc,newColor,previousColor);
-        }
-        // check for down and change the color to new Color if down is not visited yet
-        if(sr+1<image.length && image[sr+1][sc]==previousColor && image[sr+1][sc]!=newColor){
-            fillColor(image,sr+1,sc,newColor,previousColor);
-        }
-        // check for left and change the color to new Color if left is not visited yet
-        if(sc-1>=0 && image[sr][sc-1]==previousColor && image[sr][sc-1]!=newColor){
-            fillColor(image,sr,sc-1,newColor,previousColor);
-        }
-        // check for right and change the color to new Color if right is not visited yet
-        if(sc+1<image[0].length && image[sr][sc+1]==previousColor && image[sr][sc+1]!=newColor){
-            fillColor(image,sr,sc+1,newColor,previousColor);
-        }
+  }
+
+    // Using a dfs call we. can checks its neighbors (left, right, top, bottom), replaces those that had the same number as the one the starting pixel had (which is 1) before it changed to the new color (2). So it changes all the 1s to 2s as long as they are neighbors. Then moves to its left neighbor (1st column) to go through the same process.
+    private void dfs(int[][] image, int sr, int sc, int originalColor, int newColor) {
+        // Check if neighbor is inbound and is the same as the orginalColor.
+        // if it is out of bound or a different color, then stop
+        if (sr < 0 || sr >= image.length || sc < 0 || sc >= image[0].length || image[sr][sc] != originalColor) return;
+
+        // else repeat.
+        image[sr][sc] = newColor;
+        dfs(image, sr + 1, sc, originalColor, newColor);
+        dfs(image, sr - 1, sc, originalColor, newColor);
+        dfs(image, sr, sc + 1, originalColor, newColor);
+        dfs(image, sr, sc - 1, originalColor, newColor);
     }
 }
 ```
     
 ```python
-import queue
 class Solution:
-    def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
-        # BFS
-        m, n = len(image), len(image[0])
-        visited = [['w' for i in range(n)] for j in range(m)] # white as not-yet discovered/visited
-        Q = queue.Queue()
-        srcColor = image[sr][sc] 
-        image[sr][sc] = newColor
-        Q.put((sr, sc))
-        visited[sr][sc] = 'g'
-        while not Q.empty():
-            (i,j) = Q.get()
-            # adjacent nodes to traverse 
-            adjacents = [(i-1, j), (i+1, j), (i, j-1), (i,j+1)]
-            for node in adjacents:
-                (x,y) = node
-                # check if the asjacent node are of legal indices 
-                if (0<=x and x<m) and (0<=y and y < n):
-                    # check if node is not yet discovered and needs to fill flood
-                    if (image[x][y] == srcColor) and (visited[x][y] == 'w'):
-                        image[x][y]= newColor
-                        visited[x][y] = 'g'
-						# push the adjacent node into Queue (mark gray as discovered but needs to be visited)
-                        Q.put((x,y)) 
-			# mark visited (black)
-            visited[i][j] = 'b'
-        return image
-```
+    def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
+        # Check if our starting point color needs to be changed: If color is as intended then return original image. Otherwise continue.    
+        if (image[sr][sc] == color):
+            return image
+
+        # Store our starting point color in a variable. We are given our starting point through the parameters `image`, `sr`, and `sc`. `sr` represents the row, and `sc` represents the column. 
+        m, n, originalColor = len(image), len(image[0]), image[sr][sc]
+
+        # Using a dfs call we. can checks its neighbors (left, right, top, bottom), replaces those that had the same number as the one the starting pixel had (which is 1) before it changed to the new color (2). So it changes all the 1s to 2s as long as they are neighbors. Then moves to its left neighbor (1st column) to go through the same process.
+        def dfs(i,j):
+            # Check if neighbor is inbound and is the same as the orginalColor.
+            if i < 0 or i > m-1 or j < 0 or j > n-1 or image[i][j] != originalColor:
+                # if it is out of bound or a different color, then stop
+                return
+            
+            # else repeat.
+            image[i][j] = color
+            dfs(i+1, j)
+            dfs(i-1, j)
+            dfs(i, j+1)
+            dfs(i, j-1)
+
+        # Starts from the middle as the starting pixel, changes itself to the new color which is ‘2’ in this case. And run a dfs call to check and change all it's neighbors.
+        dfs(sr, sc)
+        
+        # Return the doctored image
+        return image```
     
 ## 5: R-eview
     
