@@ -1,13 +1,13 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** [https://leetcode.com/problems/word-search](https://leetcode.com/problems/word-search)
+* 🔗 **Leetcode Link:** [Word Search](https://leetcode.com/problems/word-search)
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Graphs, Backtracking
-* 🗒️ **Similar Questions**: [Word Search II](https://leetcode.com/problems/word-search-ii/)
-
-## 1: **U-nderstand**
-
+* ⏰ **Time to complete**: 30 mins
+* 🛠️ **Topics**: Array, 2D-Array, DFS, BFS, Backtracking
+* 🗒️ **Similar Questions**: [Word Search II](https://leetcode.com/problems/word-search-ii/), [Unique Paths III](https://leetcode.com/problems/unique-paths-iii/), [Encrypt and Decrypt Strings](https://leetcode.com/problems/encrypt-and-decrypt-strings/)
+    
+## 1: U-nderstand
+ 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
 > 
 > - Established a set (2-3) of test cases to verify their own solution later.
@@ -15,55 +15,79 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-- When do we return true? 
+- When do we return true?
   - Return true when the last letter is reached.
 
-- What if we come across the same letter during the search path? 
-  - During the search path, set the visited letter as visited to avoid reuse.
+- What if we come across the same letter during the search path?
+    - During the search path, set the visited letter as visited to avoid reuse.
+
+- What is the smallest 2D-Array?
+    - 1 row and 1 column
+    
+- What is the shortest word?
+    - 1 character long
+    
+- Is it possible that the word is longer than then number of possible squares in 2D-Array?
+    - Yes
 
 ```markdown
-word = "ABCCED", -> returns 1,
+HAPPY CASE
+Input:  board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
+Output: true
 
-word = "SEE", -> returns 1,
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "SEE"
+Output: true
 
-word = "ABCB", -> returns 1,
-
-word = "ABFSAB" -> returns 1
-
-word = "ABCD" -> returns 0
-```
-
+EDGE CASE
+Input: board = [["A","B","C"],["S","F","C"],["A","D","E"]], word = "ABCSFCADEA"
+Output: false
+```   
+    
 ## 2: M-atch
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
-    
-    For graph problems, some things we want to consider are:
-    
-- BFS/DFS: Our goal is to find if the `word` exists in the matrix or not. We only have to look at the adjacent cells (ignore the diagonal ones). Match character-by-character, go ahead and check if the adjacent cells match the next character, and go back if it does not match.
-How should we traverse the matrix efficiently? We need to think of a traversal approach. BFS? DFS? Both can work. But DFS will be better as it immediately checks the next node of the graph and returns if it is not needed after marking it as visited.
-- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
-- Adjacency List: We can use an adjacency list to store the graph, especially when the graph is sparse.
-- Adjacency Matrix: We can use an adjacency matrix to store the graph, but a sparse graph will cause an unneeded worst-case runtime.
-- Topological Sort: We can use topological sort when a directed graph is used and returns an array of the nodes where each node appears before all the nodes it points to. In order to have a topological sorting, the graph must not contain any cycles.
-    
+
+For 2D-Array, common solution patterns include:
+
+- Perform a BFS/DFS Search through the 2D Array
+    - DFS: Our goal is to find if the word exists in the matrix or not. We only have to look at the adjacent cells (ignore the diagonal ones). Match character-by-character, go ahead and check if the adjacent cells match the next character, and go back if it does not match. How should we traverse the matrix efficiently? We need to think of a traversal approach. BFS? DFS? Both can work. But DFS will be better as it immediately checks the next position and returns if it is not needed after marking it as visited.
+ 
+
+- Hash the 2D Array in some way to help with the Strings
+    - We do need a visited hashset to ensure that we do not revisit the same position twice.
+- Create/Utilize a Trie
+    - A Trie will complicate the problem.
+
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Iterate over every element of grid checking if it is equals to first element of given word. If found then we call the DFS function with current position of board with starting position of word.
+**General Idea:** Apply DFS/Backtracking at each position in the 2D-Array to see if we can create the desired word, with each DFS/Backtracking call we can detect a possible match or return to previous DFS and try next branch. 
 
-1. Create helper function(node, string):
-    - if the string is empty, return true (success).
-    - If the node's letter is not the first letter of the string, return false (failure).
-    - Otherwise, return true if the helper function returns true for
-       - any neighbor
-       - the remainder of the string
+
+
+```markdown
+0. Preliminary Checks
+    a. Check if word has more characters than board
+
+1. Define a helper function to check if a word exists starting at a given position
+    a. Check if the index is out of bounds or the character does not match, return false (failure).
+    b. If we have reached the end of the word, return True
+    c. Mark the current position as valid and visited by replacing it with a space character
+    d. Check if the rest of the word exists in any of the adjacent positions
+    e. Backtrack: Restore the original character at the current position
+    e. Return the result of the search
+    
 2. Implement main function(board, string):
-    - Return true if any of these helper function calls return true
+    a. Check each starting point for the full string using DFS, return true if found
+    b. Otherwise have checked each position and none of them will spell our word  
+```
 
 ⚠️ **Common Mistakes**
 
-* Ensure you are marking the board cell visited. If we don't do so, then we might be end up comparing two or more characters of the string with the single character of the board. TLE can be avoided by passing board by reference so as to avoid making copy of board again and again when the function is invoked.
+* How do you avoid having the Time Limit Exceeded?
+    * Perform the prelimiary checks and make sure the word can fit inside the 2D-Array. 
 
 ## 4: I-mplement
 
@@ -72,88 +96,117 @@ How should we traverse the matrix efficiently? We need to think of a traversal a
 ```python
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
+        # Get the dimensions of the board
+        rows = len(board)
+        cols = len(board[0])
         
-        if not board: 
+        # Check if word has more characters than board
+        if rows*cols < len(word):
             return False
-        
-        h, w = len(board), len(board[0])
-      
-        def dfs_search(idx: int, x: int, y: int) -> bool:
-            
-            if x < 0 or x == w or y < 0 or y == h or word[idx] != board[y][x]:
-                # Reject if out of boundary, or current grid cannot match the character word[idx]
+
+        # Define a helper function to check if a word exists starting at a given position
+        def check(i, j, k):
+            # Check if the index is out of bounds or the character does not match
+            if i < 0 or i >= rows or j < 0 or j >= cols or board[i][j] != word[k]:
                 return False
-
-            if idx == len(word) - 1: 
-                # Accept when we match all characters of word during DFS
+            
+            # If we have reached the end of the word, return True
+            if k == len(word) - 1:
                 return True
-
-            cur = board[y][x]
             
-            # mark as '#' to avoid repeated traversal
-            board[y][x] = '#'
+            # Mark the current position as visited by replacing it with a space character
+            temp = board[i][j]
+            board[i][j] = ' '
             
-            # visit next four neighbor grids
-            found = dfs_search(idx + 1, x + 1, y) or dfs_search(idx + 1, x - 1, y) or dfs_search(idx + 1, x, y + 1) or dfs_search(idx + 1, x, y - 1)
+            # Check if the rest of the word exists in any of the adjacent positions
+            found = check(i-1, j, k+1) or check(i+1, j, k+1) or check(i, j-1, k+1) or check(i, j+1, k+1)
             
-            # recover original grid character after DFS is completed
-            board[y][x] = cur
+            # Backtrack: Restore the original character at the current position
+            board[i][j] = temp
             
+            # Return the result of the search
             return found
         
-        return any(dfs_search(0, x, y) for y in range(h) for x in range(w))    
+        # Check each starting point for the full string using DFS, return true if found
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+                if check(i, j, 0):
+                    return True
+        # Otherwise have checked each position and none of them will spell our word
+        return False
 ```
 
 ```java
 class Solution {
+    // Implement main function(board, string)   
     public boolean exist(char[][] board, String word) {
+        // 0. Preliminary Checks
+        // Check if word has more characters than board
+        if (board.length * board[0].length < word.length()) {
+            return false;
+        }
+
+        // Check each starting point for the full string using DFS, return true if found
         char[] arr = word.toCharArray();
-        for(int i = 0; i<board.length; i++) {
-            for(int j = 0; j<board[i].length; j++) {
-                if(dfs(i, j, board, arr, 0)) {
-                    return true;   
-                }
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (dfs(board, arr,0, i, j)) {
+                    return true;
+                } 
             }
         }
+        // Otherwise have checked each position and none of them will spell our word  
         return false;
     }
-    
-    private boolean dfs(int i, int j, char[][] board, char[] arr, int index) {
-        if( index == arr.length) {
-            return true;
-        }
-        Boolean result;
-        if( 0 <= i && i < board.length && 
-                0 <= j && j < board[i].length &&
-                board[i][j] == arr[index]) {
-				
-            // mark this position as visited for the current DFS
-			board[i][j] = '.';       
-            result = dfs(i+1, j, board, arr, index+1) || 
-                     dfs(i-1, j, board, arr, index+1) || 
-                     dfs(i, j+1, board, arr, index+1) || 
-                     dfs(i, j-1, board, arr, index+1);   
-             // remove mark on the position and restore original character
-			 board[i][j] = arr[index];
-            return result;
-        }
-        return false;        
+  
+  private boolean dfs(char[][] board, char[] arr, int index, int row, int col) {
+    //  Check if the index is out of bounds or the character does not match, return false (failure).
+    int rowMax = board.length - 1;
+    int colMax = board[0].length - 1;
+    if (row < 0 || row > rowMax || col < 0 || col > colMax || arr[index] != board[row][col]) {
+      return false;
+    } 
+    // If we have reached the end of the word, return True
+    if (index == arr.length - 1) {
+      return true;
     }
+    // Mark the current position as valid and visited by replacing it with a space character
+    char temp = board[row][col];
+    board[row][col] = '#';
+
+    // Check if the rest of the word exists in any of the adjacent positions
+    int[] rHelp = new int[]{1,-1,0,0};
+    int[] cHelp = new int[]{0,0,1, -1};
+    for (int i = 0; i < 4; i++) {
+        int nextRow = row + rHelp[i];
+        int nextCol = col + cHelp[i];
+        if (dfs(board, arr, index + 1, nextRow, nextCol)) {
+            return true;
+        } 
+    }
+    // Backtrack: Restore the original character at the current position
+    board[row][col] = temp;
+
+    // Return the result of the search
+    return false;
+  }
 }
 ```
-
+    
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
 
 - Trace through your code with an input to check for the expected output
-- Catch possible edge cases and off-by-one errors and verify the code works for the happy and edge cases you created in the “Understand” section
-
+- Catch possible edge cases and off-by-one errors
 
 ## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
-    
-Time Complexity: `O(m * n * 4^w)`, where Board size = n * m and w = length of the word
-<br>
-Space Complexity: `O(1)`. The space complexity would be the length of the word, since the recursion stack only goes as far as the length. However, if you are using extra space to mark visited cells, then it would be the size of the board.
+
+Assume `N` represents the number of rows in 2D-array.
+Assume`M` represents the number of columns in 2D-array.
+Assume `L` represents the number of characters in the word.
+
+* **Time Complexity**: O(N * M * 3 ^ L) we need to start at each character in the 2D-Array. Then we need to perform a dfs on 3 possible paths for the word. And we need to do this at each character.
+* **Space Complexity**: O(L) we may need to store the length of our word as depth in our recursion stack.  
