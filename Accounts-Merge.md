@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** [Accounts Merge](https://leetcode.com/problems/accounts-merge)
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: 30 mins
-* 🛠️ **Topics**: 2D-Array, Graph, DFS, Union Find
+* 🛠️ **Topics**: Graph, DFS, Adjacency List
 * 🗒️ **Similar Questions**: [Redundant Connection](https://leetcode.com/problems/redundant-connection/), [Redundant Connection II](https://leetcode.com/problems/redundant-connection-ii/), [Maximum Employees to Be Invited to a Meeting](https://leetcode.com/problems/maximum-employees-to-be-invited-to-a-meeting/)
     
 ## 1: U-nderstand
@@ -21,21 +21,6 @@
     
 - Will names be case sensitive?
   - No. You can assume that there will not be two accounts with a similar email but different names as in "John" or "john"
-
-    
-- Do we need to keep track of the level? 
-  - Yes, you can keep track of the level using a search algorithm. Trick is to only increment once per level and only if fresh.
-    
-- How do we identify an account? 
-    - We give each account an ID, based on the index of it within the list of accounts. For example: 
-    ```
-    [
-      ["John", "johnsmith@mail.com", "john@mail.com"], # Account 0
-      ["John", "johnnybravo@mail.com"], # Account 1
-      ["John", "johnsmith@mail.com", "john_smith@mail.com"],  # Account 2
-      ["Jane", "jane@mail.com"] # Account 3
-    ]
-    ```
 
 - Can one person have multiple accounts? 
   - One person is allowed to have multiple accounts, but each email can only belong to one person.
@@ -83,9 +68,21 @@ For Graph Problems, common solution patterns include:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Do a DFS on each account in accounts list and look up to tell us which accounts are linked to that particular account via common emails.
+**General Idea:** We will create a adjacency list and find the common emails.  Do a DFS on each account in accounts list and look up to tell us which accounts are linked to that particular account via common emails.
 
 ```markdown
+PYTHON
+1. Create adjacency list list of email to emails
+2. Create primaryEmail to name dictionary
+3. Run DFS call to join associated emails in adjacency list under a single name 
+    a. Create result to store results and visited to prevent email cycles.
+    b. Define DFS call to join all related emails under allRelatedEmails.
+    c. Make DFS Call on every primary email and collect all related emails
+    d. If primary email had not been seen then we should get allRelatedEmail under one name for storage
+4. Return results
+```
+```markdown
+JAVA
 1. Build a graph of an adjacency list of emails. 
 2. Every email should have an edge to the connected email (including itself). From this, we can maintain a list of emails to account name list. 
 3. Next, do a DFS for the unique email (using a hashset 'visited') to fill the emails for the given account name. 
@@ -115,40 +112,53 @@ For Graph Problems, common solution patterns include:
 > **Implement** the code to solve the algorithm.
 
 ```python
-class Solution(object):
-    def accountsMerge(self, accounts):
-        from collections import defaultdict
-        visited_accounts = [False] * len(accounts)
+class Solution:
+    def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
+        # Create adjacency list of email to emails
+        emailToEmails = defaultdict(set)
 
-        # add the emails that contains the current component's emails
-        emails_accounts_map = defaultdict(list)
-        res = []
-        
-        for i, account in enumerate(accounts):
-            for j in range(1, len(account)):
-                email = account[j]
-                emails_accounts_map[email].append(i)
-        
+        # Create email to name dictionary
+        primaryEmailToName = dict()
 
-        # if email is visited, then it's a part of different component
-        # then perform DFS only if email is not visited yet
-        def dfs(i, emails):
-            if visited_accounts[i]:
+        for account in accounts:
+            # Fill in primaryEmailToName Dictionary
+            name = account[0]
+            primaryEmail = account[1]
+            primaryEmailToName[primaryEmail] = name
+
+            # Fill in emailToEmails Adjacency List
+            for email in account[1:]:
+                emailToEmails[primaryEmail].add(email)
+                emailToEmails[email].add(primaryEmail)
+            
+
+        # Run DFS call to join associated emails in Adjacency List under a single name 
+
+        # Create result to store results and visited to prevent email cycles.
+        result = []
+        visited = set()
+
+        # Define DFS call to join all related emails under allRelatedEmails.
+        def dfs(email, allRelatedEmails):
+            if email in visited:
                 return
-            visited_accounts[i] = True
-            for j in range(1, len(accounts[i])):
-                email = accounts[i][j]
-                emails.add(email)
-                for neighbor in emails_accounts_map[email]:
-                    dfs(neighbor, emails)
+            visited.add(email)
+            allRelatedEmails.add(email)
+            relatedEmails = emailToEmails[email]
+            for relatedEmail in relatedEmails:
+                dfs(relatedEmail, allRelatedEmails)
+
+        # Make DFS Call on every primary email and collect all related emails.
+        for primaryEmail, name in primaryEmailToName.items():
+            allRelatedEmails = set()
+            dfs(primaryEmail, allRelatedEmails)
+            
+            # If primary email had not been seen then we should get allRelatedEmail under one name for storage
+            if allRelatedEmails:
+                result.append([name] + sorted(allRelatedEmails))
         
-        for i, account in enumerate(accounts):
-            if visited_accounts[i]:
-                continue
-            name, emails = account[0], set()
-            dfs(i, emails)
-            res.append([name] + sorted(emails))
-        return res
+        # Return results
+        return result
 ```
 ```java
 class Solution {
