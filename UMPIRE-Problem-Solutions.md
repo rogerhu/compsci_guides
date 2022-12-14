@@ -1,23 +1,26 @@
 ## Linked Lists
 
 * [[Reverse a Doubly Linked List]]
-* [[Palindrome Linked Lists]]
 * [[Swap Nodes In Pairs]]
 * [[Rotate List]]
 * [[LRU Cache]]
 * [[Spiral Matrix IV]]
 * [[Reverse Nodes in k-Group]]
-
---- WIP ---
-
 * [[Remove Duplicates from Sorted List]]
 * [[Linked List Cycle]]
 * [[Merge Two Sorted Lists]]
 * [[Remove Duplicates from Sorted List II]]
 * [[Remove Nth Node from End of List]]
 * [[Add Two Numbers]]
+
+--- WIP ---
+
 * [[Middle of the Linked List]]
 * [[Reverse Linked List II]]
+* [[Reverse Linked List]]
+* [[Linked List Cycle II]]
+* [[Remove Linked List Elements]]
+* [[Palindrome Linked Lists]]
 
 ## Stacks
 
