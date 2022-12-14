@@ -136,7 +136,8 @@ class Solution:
         dfs(sr, sc)
         
         # Return the doctored image
-        return image```
+        return image
+```
     
 ## 5: R-eview
     
