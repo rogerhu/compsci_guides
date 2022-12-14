@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 * 💡 **Difficulty:** Easy
 * ⏰ **Time to complete**: 10 mins
-* 🛠️ **Topics**: Linked List, Two Pointer, Dummy Node
+* 🛠️ **Topics**: Linked List, Two Pointer
 * 🗒️ **Similar Questions**: [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/), [Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)
     
 ## 1: U-nderstand
