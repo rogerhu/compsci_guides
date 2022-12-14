@@ -16,7 +16,8 @@
 * [[Remove Duplicates from Sorted List II]]
 * [[Remove Nth Node from End of List]]
 * [[Add Two Numbers]]
-
+* [[Middle of the Linked List]]
+* [[Reverse Linked List II]]
 
 ## Stacks
 
