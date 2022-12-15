@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: 25 mins
-* 🛠️ **Topics**: Array, 2D-Array, DFS, BFS
+* 🛠️ **Topics**: Array, 2D-Array, DFS
 * 🗒️ **Similar Questions**: [Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/), [Spiral Matrix III](https://leetcode.com/problems/spiral-matrix-iii/), [Spiral Matrix IV](https://leetcode.com/problems/spiral-matrix-iv/)
     
 ## 1: U-nderstand
@@ -44,7 +44,6 @@ Input: [
   [4]
 ]
 Output: [1,2,3,4]
-
 ```   
     
 ## 2: M-atch
@@ -61,14 +60,11 @@ For 2D-Array, common solution patterns include:
 - Create/Utilize a Trie
     - A Trie will complicate the problem
 
-
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 **General Idea:** When we finish traversing a row or column, we want to set up a boundary on it so that the next time we get there, we know we need to change the direction.
-
 
 ```markdown
 1. Initialize the output array result.
