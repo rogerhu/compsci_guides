@@ -98,6 +98,7 @@
 * [[Reverse Words in a String II]]
 * [[Spiral Matrix]]
 * [[Island Problem]]
+* [[Squares of a Sorted Array]]
 
 # 2D-Array
 
