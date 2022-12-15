@@ -4,7 +4,7 @@
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: 30 mins
 * 🛠️ **Topics**: Array, Two Pointer
-* 🗒️ **Similar Questions**: [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/), [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+* 🗒️ **Similar Questions**: [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/), [Rotate Array](https://leetcode.com/problems/rotate-array/)
     
 ## 1: U-nderstand
  
