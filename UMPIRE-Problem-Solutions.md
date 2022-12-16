@@ -96,17 +96,27 @@
 * [[Integer to String]]
 * [[Contain Duplicates]]
 * [[Reverse Words in a String II]]
-* [[Spiral Matrix]]
-* [[Island Problem]]
 * [[Squares of a Sorted Array]]
+* [[Unique Number of Occurrences]]
+* [[Merge Sorted Array]]
+* [[Word Frequency]]
 
 # 2D-Array
 
--- WIP --
 * [[Flood Fill]]
 * [[01 Matrix]]
 * [[Word Search II]]
 * [[Rotting Oranges]]
+* [[Spiral Matrix]]
+* [[Island Problem]]
+
+# Binary Search
+* [[Binary Search Problem]]
+* [[First Bad Version]]
+* [[Sqrt(x)]]
+* [[Search in a Sorted Array of Unknown Size]]
+* [[Guess Number Higher or Lower]]
+* [[Find Subsequence of Length K With the Largest Sum]]
 
 ## Trees
 
