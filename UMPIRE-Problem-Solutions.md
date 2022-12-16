@@ -115,6 +115,7 @@
 * [[First Bad Version]]
 * [[Sqrt(x)]]
 * [[Search in a Sorted Array of Unknown Size]]
+* [[Search in Rotated Sorted Array]]
 * [[Guess Number Higher or Lower]]
 * [[Find Subsequence of Length K With the Largest Sum]]
 
