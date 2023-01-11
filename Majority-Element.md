@@ -16,8 +16,7 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - Why is the n/2 element considered to be the middle one in an array of an odd length?
-    - Since majority element always exists and for sure it occurrs more than half of the total size of the array, hence middle element (incase of odd) and (middle-1)th or (middle+1)th element (incase of even) will always be the majority element.
-    - There might not be a solution present. In that case, let’s return Null.
+    - Since majority element always exists and for sure it occurs more than half of the total size of the array, hence middle element (incase of odd) and (middle-1)th or (middle+1)th element (incase of even) will always be the majority element.
 - Can you sort the array?
     - After sorting the array, the majority element shows up in the middle point. This works for both odd and even lengths' arrays. The solution is based on the definition of the majority element: it should occur in the list more than [n / 2]. It means that if we have a sorted list, the element in the middle will always be the majority element. The list can have odd or even number of elements. Sorted list with odd number of elements: [1,1,2]. The middle element is the majority element. Sorted list with even number of elements: [1,1,1,3]. Both elements in the middle will be the majority element.
    
@@ -61,7 +60,7 @@ For Arrays problems, we want to consider the following approaches:
 
 **⚠️ Common Mistakes**
 
-* We need to find the element that appears more than n / 2 times. Initially what we can do is store each element as key and their occurrences as value in a Hash Map. Then iterate over the Hash Map and look for the pair having value more than n/2. If found then return the key else return -1. Now this approach has a O(n) time complexity and O(n) space complexity. We can further improve its space complexity to O(1).
+* We need to find the element that appears more than n / 2 times. Initially what we can do is store each element as key and their occurrences as value in a Hash Map. Then iterate over the Hash Map and look for the pair having value more than n/2. If found then return the key. This approach has a O(n) time complexity and O(n) space complexity. We can further improve its space complexity to O(1) using the boyer-millers voting algorithm.
 
 ## 4: I-mplement
 
