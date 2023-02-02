@@ -105,5 +105,8 @@ class Solution:
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
-* **Time Complexity**: O(N*N!) 1 x 2 + 2 x 3 + 6 x 4 + ... + (n-1)! x n = 1! x 2 + 2! x 3 + 3! x 4 + ... + (n-1)! x n = 2! + 3! + 4! + ... + n!
+* **Time Complexity**: O(N*N!) 
+```markdown
+1 x 2 + 2 x 3 + 6 x 4 + ... + (n-1)! x n = 1! x 2 + 2! x 3 + 3! x 4 + ... + (n-1)! x n = 2! + 3! + 4! + ... + n!
+```
 * **Space Complexity**: O(n!) because we're storing n! permutations
