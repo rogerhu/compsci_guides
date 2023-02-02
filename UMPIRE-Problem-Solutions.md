@@ -120,8 +120,6 @@
 * [[Convert Sorted Array to Binary Search Tree]]
 * [[Flatten Binary Tree to Linked List]]
 * [[Find Largest Value in Each Tree Row]]
-
---- WIP ---
 * [[Same Trees]]
 * [[Insert into a Binary Search Tree]]
 * [[Convert Sorted Array to Binary Search Tree]]
