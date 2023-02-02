@@ -26,9 +26,6 @@
 * [[Implement Queue Using Stacks]]
 * [[Find a Celebrity]]
 * [[Dinner Plate Stacks]]
-
---- WIP ---
-
 * [[Evaluate Reverse Polish Notation]]
 * [[Valid Parentheses]]
 * [[Sort a stack using a temporary stack]]
