@@ -155,8 +155,6 @@
 * [[Clone Graph]]
 * [[Connecting Cities With Minimum Cost]]
 * [[The Earliest Moment When Everyone Become Friends]]
-
--- WIP --
 * [[Accounts Merge]]
 * [[Maximal Network Rank]]
 * [[Clone Graph]]
