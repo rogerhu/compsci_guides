@@ -99,7 +99,9 @@ class Solution:
                 stack.append(s[i])
 
         # In the end, if we are left with a stack still having elements, then this implies an invalid expression.
-        return not stack```
+        return not stack
+```
+
 ```java
 class Solution {
    public boolean isValid(String s) {
