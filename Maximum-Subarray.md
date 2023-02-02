@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/maximum-subarray/>
 * 💡 **Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Dynamic Programming
 * 🗒️ **Similar Questions**: [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/), [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
     
