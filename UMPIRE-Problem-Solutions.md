@@ -35,9 +35,6 @@
 
 * [[Number of Recent Calls]]
 * [[Implement Queue Using Stacks]]
-
---- WIP ---
-
 * [[Implement Stack Using Queue]]
 * [[Moving Average from Data Stream]]
 
