@@ -160,5 +160,5 @@ def largestValues(self, root: TreeNode) -> List[int]:
 
 Assume `N` represents the number of nodes in the tree.
 
-* Time Complexity: O(N)
-* Space Complexity: O(N)
+* Time Complexity: O(N), since we had to process each node in the tree
+* Space Complexity: O(N), as we used a queue data structure
