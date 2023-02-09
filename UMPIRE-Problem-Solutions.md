@@ -92,7 +92,7 @@
 * [[Merge Sorted Array]]
 * [[Word Frequency]]
 
-# 2D-Array
+## 2D-Array
 
 * [[Flood Fill]]
 * [[01 Matrix]]
@@ -101,7 +101,8 @@
 * [[Spiral Matrix]]
 * [[Island Problem]]
 
-# Binary Search
+## Binary Search
+
 * [[Binary Search Problem]]
 * [[First Bad Version]]
 * [[Sqrt(x)]]
@@ -156,6 +157,7 @@
 * [[Accounts Merge]]
 * [[Maximal Network Rank]]
 * [[Clone Graph]]
+*[[Find Eventual Safe States]]
 
 ## Greedy
 
