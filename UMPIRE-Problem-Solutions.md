@@ -157,7 +157,7 @@
 * [[Accounts Merge]]
 * [[Maximal Network Rank]]
 * [[Clone Graph]]
-*[[Find Eventual Safe States]]
+* [[Find Eventual Safe States]]
 
 ## Greedy
 
