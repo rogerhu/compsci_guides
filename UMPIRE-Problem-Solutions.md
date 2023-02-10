@@ -106,7 +106,7 @@
 * [[Binary Search Problem]]
 * [[First Bad Version]]
 * [[Sqrt(x)]]
-* [[Search in a Sorted Array of Unknown Size]]
+* [[Find Minimum in Rotated Sorted Array]]
 * [[Search in Rotated Sorted Array]]
 * [[Guess Number Higher or Lower]]
 * [[Find Subsequence of Length K With the Largest Sum]]
