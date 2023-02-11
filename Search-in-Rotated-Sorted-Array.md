@@ -64,7 +64,7 @@ For Array problems, we want to consider the following approaches:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Let's split the array into two sorted arrays by finding the inflexion point using binary search. I.E. [[Find Minimum in Rotated Sorted Array]]. We can then run binary search on the two sorted arrays using binary search. 
+**General Idea:** Let's split the array into two sorted arrays by finding the inflexion point using binary search. I.E. [[Find Minimum in Rotated Sorted Array]]. We can then run binary search on the two sorted arrays using binary search. I.E. [[Binary Search Problem]]
 
 
 ```markdown
