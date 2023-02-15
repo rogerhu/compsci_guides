@@ -18,6 +18,7 @@
 * [[Linked List Cycle II]]
 * [[Remove Linked List Elements]]
 * [[Palindrome Linked Lists]]
+* [[Add Two Numbers II]]
 
 ## Stacks
 
@@ -30,6 +31,8 @@
 * [[Valid Parentheses]]
 * [[Sort a stack using a temporary stack]]
 * [[Score of Parentheses]]
+* [[Validate Stack Sequences]]
+* [[Evaluate Reverse Polish Notation]]
 
 ## Queues
 
@@ -37,12 +40,18 @@
 * [[Implement Queue Using Stacks]]
 * [[Implement Stack Using Queue]]
 * [[Moving Average from Data Stream]]
+* [[Number of Students Unable to Eat Lunch]]
 
 ## Heaps
 
 * [[Kth Largest Element in a Stream]]
 * [[K Closest Points to the Origin]]
 * [[Find K Pairs with Smallest Sums]]
+
+--- WIP ---
+
+* [[Last Stone Weight]]
+* [[Kth Largest Element in an Array]]
 
 ## Hash Tables
 
