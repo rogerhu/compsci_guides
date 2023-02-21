@@ -98,7 +98,7 @@
 * [[Merge Sorted Array]]
 * [[Word Frequency]]
 * [[Find Subsequence of Length K With the Largest Sum]]
-- [[Is Subsequence]]
+* [[Is Subsequence]]
 
 ## 2D-Array
 
