@@ -89,9 +89,6 @@
 * [[Max Chunks To Make Sorted]]
 * [[Basic Calculator]]
 * [[Asteroid Collision]]
-
---- WIP ---
-
 * [[Two Sum]]
 * [[Integer to String]]
 * [[Contain Duplicates]]
@@ -101,6 +98,7 @@
 * [[Merge Sorted Array]]
 * [[Word Frequency]]
 * [[Find Subsequence of Length K With the Largest Sum]]
+- [[Is Subsequence]]
 
 ## 2D-Array
 
