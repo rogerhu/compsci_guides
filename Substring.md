@@ -6,7 +6,7 @@ Write a function that takes in two strings and returns true if the second string
 
 * 🔗 **Leetcode Link:** [Substring](https://leetcode.com/problems/is-subsequence/)
 * 💡 **Problem Difficulty:** Easy
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Strings, Hash
 * 🗒️ **Similar Questions**: [Number of Matching Subsequences](https://leetcode.com/problems/number-of-matching-subsequences/), [Shortest Way to Form String](https://leetcode.com/problems/shortest-way-to-form-string/)
     
