@@ -53,8 +53,7 @@ Output: "blue is the sky"
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Iterate from left to right and multiply the integer by 10 each time to shift the number.
-
+**General Idea:** Tokenize the input string into words separated by spaces and rejoin the tokens in reversed order.
 
 ```markdown
 1) Tokenize the input string to create a separate array 
