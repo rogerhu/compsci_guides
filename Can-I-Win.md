@@ -86,9 +86,6 @@ class Solution(object):
         else:
             return self.hint(maxChoosableInteger,desiredTotal,usable,{},0)
         
-        # is_used will be smaller than 2**20
-        #print "".join(is_used)
-        #print int("".join(is_used))
     def hint(self,maxChoosbleInt,desiredTotal,usable,cache,already):
         if len(usable) == 0:
             return False
