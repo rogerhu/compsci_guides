@@ -15,9 +15,11 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-- 
+- What are the constraints?
+  - 1 <= n <= 231 - 1
 
-- 
+- How can we handle odd numbers?
+  - There is subtle trick in this problem that allows us to choose either x-1 or x+1 when x is odd. Say x is 7. Then x-1 = 6 and x+1 = 8. 6/2 = 3 and 8/2=4. Now this is consistent - either (x-1)/2 is even or (x+1)/2 is even. And we want to pick the path that leads us to an even number to reach our goal fastest. One exception is x = 3 where both (x-1)/2 is odd or (x+1)/2 is even. For this case, use x-1 which takes us to 2.
 
 
 ```markdown
@@ -59,11 +61,11 @@ The strategy is to avoid repeatedly solving sub-problems. That is a clue to use 
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** 
-
 
 ```markdown
-
+1) if the number is even divide it by 2 and continue
+2) if the number is odd take the two possible numbers and divide it by 2 and use the one that results in an even number since odd adds an extra step.
+3) When the resultant num when divided by 2 in step 2 is 1 use the smallest num.
 ```
 
 ## 4: I-mplement
@@ -71,13 +73,38 @@ The strategy is to avoid repeatedly solving sub-problems. That is a clue to use 
 > **Implement** the code to solve the algorithm.
 
 ```python
-
-       
+class Solution(object):
+    def integerReplacement(self, n):
+        if n <= 1:
+            return 0
+        level = 0
+        while n != 1:
+            if n & 1 == 0:
+                n, level = n / 2, level + 1
+            elif n == 3:
+                n, level = n-1, level + 1
+            else:
+                if (n-1)/2 & 1 == 0:
+                    n, level = n-1, level + 1
+                else:
+                    n, level = n+1, level + 1                    
+        return level   
 ```
 
 ``java
-
-       
+public int integerReplacement(int n) {
+    if (n == Integer.MAX_VALUE) return 32; //n = 2^31-1;
+    int count = 0;
+    while (n > 1){
+        if (n % 2 == 0) n  /= 2;
+        else{
+            if ( (n + 1) % 4 == 0 && (n - 1 != 2) ) n++;
+            else n--;
+        }
+        count++;
+    }
+    return count;
+}   
 ```
 
 
@@ -93,6 +120,5 @@ The strategy is to avoid repeatedly solving sub-problems. That is a clue to use 
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-* **Time Complexity**: 
-
-* **Space Complexity**: 
+* **Time Complexity**: O(n)
+* **Space Complexity**: O(n)
