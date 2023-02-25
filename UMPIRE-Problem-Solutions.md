@@ -191,8 +191,8 @@
 
 ## Recursion with Memoization
 
-** [[Integer Replacement]]
-** [[Can I Win]]
+* [[Integer Replacement]]
+* [[Can I Win]]
 
 ## Miscellaneous 
 
