@@ -120,7 +120,7 @@ class Solution(object):
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Given n is maxChoosableInteger
+Given n is maxChoosableInteger,
 
 * **Time Complexity**: O(2^n), for any given state of choices, the remainder must be the same since there is a relationship between the two variable of `remainder = summed_choices - sum(choices)`, all of which are constant.
 
