@@ -91,7 +91,7 @@ class Solution(object):
         return level   
 ```
 
-``java
+```java
 public int integerReplacement(int n) {
     if (n == Integer.MAX_VALUE) return 32; //n = 2^31-1;
     int count = 0;
