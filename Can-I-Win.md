@@ -15,9 +15,14 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-- 
+- What are the constraints?
+  - 1 <= maxChoosableInteger <= 20, 0 <= desiredTotal <= 300
 
-- 
+- What is the state of the game?
+  - Intuitively, to uniquely determine the result of any state, we need to know: the unchosen numbers and the remaining desiredTotal to reach. Both are related as we can always get the remaining desiredTotal by deducting the sum of chosen numbers from original desiredTotal. 
+
+- How many allowed values sets are possible? 
+  - The length of the allowed value set can range 1 to maxChoosableInteger(N). So the answer is (N,1) + (N,2) + ..(N,N) where (N,K) means choose K from N. This is equal to 2^N.
 
 
 ```markdown
@@ -49,7 +54,7 @@ Output: true
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
-The strategy is to avoid repeatedly solving sub-problems. That is a clue to use memoization. Memoization is a way to potentially make functions that use recursion run faster. A recursive function might end up performing the same calculation with the same input multiple times. Memoizing allows us to store input alongside the result of the calculation. Therefore, rather than having to do the same work again using the same input, it can simply return the value stored in the cache.
+The strategy is to avoid repeatedly solving sub-problems. That is a clue to use memoization. Memoization is a way to potentially make functions that use recursion run faster.  How we define the state of the game determines how we will do memoization as well. Clearly list of current allowed numbers are needed to define the state. Therefore only allowed values uniquely determine the state. Memoizing allows us to store input alongside the result of the calculation. Therefore, rather than having to do the same work again using the same input, it can simply return the value stored in the cache.
 
 **⚠️ Common Mistakes**
 
@@ -60,11 +65,11 @@ The strategy is to avoid repeatedly solving sub-problems. That is a clue to use 
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** 
-
 
 ```markdown
-
+We create an array allowed which has all the integers from 1 to maxChoosableInteger.
+At each state, if the maximum usable number plus the numbers you already summed up (denote as already) is greater than the desired total, it means you can definitely win at this state.
+Else, you loop through the usable numbers, each time pick one number, and see whether your opponent can win at the new state. If he can't, then you can win. (Really, I don't see the logic here, hope someone can explain. Isn't there a situation where none of us can definitely win?) And remember to cache the result.
 ```
 
 ## 4: I-mplement
@@ -72,18 +77,38 @@ The strategy is to avoid repeatedly solving sub-problems. That is a clue to use 
 > **Implement** the code to solve the algorithm.
 
 ```python
-class Solution:
-    def canIWin(self, maxChoosableInteger: int, desiredTotal: int) -> bool:
+class Solution(object):
+    def canIWin(self, maxChoosableInteger, desiredTotal):
+        from math import *
+        usable = [x for x in range(1,maxChoosableInteger +1)]
+        if (1+ maxChoosableInteger) * maxChoosableInteger <= desiredTotal:
+            return False
+        else:
+            return self.hint(maxChoosableInteger,desiredTotal,usable,{},0)
         
-        def check(nums, t):
-            if nums[-1] >= t: return True
-            if tuple(nums) in memo: return memo[tuple(nums)]
-            res = any(not check(nums[:i]+nums[i+1:],t-nums[i]) for i in range(len(nums)))
-            return memo.setdefault(tuple(nums), res)
-            
-        if maxChoosableInteger * (1 + maxChoosableInteger) // 2 < desiredTotal: return False
-        memo, nums = {}, list(range(1, maxChoosableInteger + 1))
-        return check(nums, desiredTotal)       
+        # is_used will be smaller than 2**20
+        #print "".join(is_used)
+        #print int("".join(is_used))
+    def hint(self,maxChoosbleInt,desiredTotal,usable,cache,already):
+        if len(usable) == 0:
+            return False
+        else:
+            state = tuple(usable)
+            if state in cache:
+                return cache[state]
+            else:
+                cache[state] = False
+                if max(usable) + already >= desiredTotal:
+                    cache[state] = True
+                elif len(usable) >1 and max(usable) + already >= desiredTotal:
+                    cache[state] = False
+                else:
+                    for x in usable:
+                        newstate = [y for y in usable if y!= x]
+                        if not self.hint(maxChoosbleInt,desiredTotal,newstate,cache,already + x):
+                            cache[state] = True
+                            break
+                return cache[state]   
 ```
 
     
@@ -98,6 +123,6 @@ class Solution:
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-* **Time Complexity**: O(2^k), for any given state of choices, the remainder must be the same since there is a relationship between the two variable of `remainder = summed_choices - sum(choices)`, all of which are constant.
+* **Time Complexity**: O(2^n), for any given state of choices, the remainder must be the same since there is a relationship between the two variable of `remainder = summed_choices - sum(choices)`, all of which are constant.
 
-* **Space Complexity**: 
+* **Space Complexity**: O(n), where n is maxChoosableInteger
