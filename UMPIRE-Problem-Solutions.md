@@ -189,6 +189,11 @@
 * [[Word Search]]
 * [[Path with Maximum Gold]]
 
+## Recursion with Memoization
+
+** [[Integer Replacement]]
+** [[Can I Win]]
+
 ## Miscellaneous 
 
 * [[Valid Palindrome]]
@@ -198,3 +203,4 @@
 * [[Valid Palindrome II]]
 * [[Pow(x,n)]]
 * [[Permutations]]
+
