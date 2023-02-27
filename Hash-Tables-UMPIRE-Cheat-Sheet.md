@@ -48,10 +48,12 @@
 
 #### Time Complexity
 
-|            | Best Case | Worst Case |
-|------------|-----------|------------|
-| Lookup 	   | O(1)      | O(N)       |
-| Insert     | O(1)      | O(N)       |
-| Delete     | O(1)      | O(N)       |
+When using a hashmap assume O(1) for lookup, insert, and delete. Only in special cases, like maxing out the hashmap results in an O(n) time complexity due to collision on every insert. Note that Lookup and Delete is still O(1), because we don't need to check every possible key for an opening to insert item into hashmap. 
 
-**Note:** Best cases assume that there are no collisions, worst cases assume that every entry is a collision
+|            | Usual Case | Maxed Hashmap Case |
+|------------|-----------|------------|
+| Lookup 	   | O(1)      | O(1)       |
+| Insert     | O(1)      | O(N)       |
+| Delete     | O(1)      | O(1)       |
+
+**Note:** Usual case assume that there are no collisions, maxed hashmap case assume that every entry is a collision
