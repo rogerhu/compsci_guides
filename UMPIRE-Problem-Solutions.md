@@ -99,6 +99,10 @@
 * [[Word Frequency]]
 * [[Find Subsequence of Length K With the Largest Sum]]
 * [[Is Subsequence]]
+* [[Sort Colors]]
+* [[Product of Array Except Self]]
+* [[Container With Most Water]]
+* [[Merge Intervals]]
 
 ## 2D-Array
 
@@ -117,6 +121,7 @@
 * [[Find Minimum in Rotated Sorted Array]]
 * [[Search in Rotated Sorted Array]]
 * [[Guess Number Higher or Lower]]
+* [[Koko Eating Bananas]]
 
 ## Trees
 
@@ -198,9 +203,11 @@
 
 * [[Valid Palindrome]]
 * [[Next Prime]]
-
---- WIP ---
 * [[Valid Palindrome II]]
 * [[Pow(x,n)]]
 * [[Permutations]]
-
+* [[Power of Two]]
+* [[Power of Three]]
+* [[Power of Four]]
+* [[Climbing Stairs]]
+* [[Fibonacci Number]]
