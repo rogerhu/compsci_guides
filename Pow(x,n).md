@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [Pow(x.n)](https://leetcode.com/problems/powx-n/)
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 25 mins
 * 🛠️ **Topics**: Recursion, Divide and Conquer
 * 🗒️ **Similar Questions**: [Sqrt(x)](https://leetcode.com/problems/sqrtx/), [Super Pow](https://leetcode.com/problems/super-pow/)
     
