@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** [Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
 * 💡 **Difficulty:** Easy
 * ⏰ **Time to complete**: 10 mins
-* 🛠️ **Topics**: Linked List, Dummy Node
+* 🛠️ **Topics**: Linked List, Dummy Node, Recursion
 * 🗒️ **Similar Questions**: [Remove Element](https://leetcode.com/problems/remove-element/), [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)
     
 ## 1: U-nderstand
@@ -68,6 +68,15 @@ For Linked List problems, we want to consider the following approaches:
 3) Return dummy.next
 ```
 
+**General Idea:** Use recursion to point each node at the following node if they are equal to value.
+
+```markdown
+1) Set basecase where head is None
+2) Set head.next to the recursive function of the next node to ensure the next node does not equal value
+3) Establish logic for each head node, such that if it's value is equal to value, set this head node to be the next node
+4) Return the head node
+```
+
 **⚠️ Common Mistakes**
 
 * Remember to use a dummy node to handle edge cases.
@@ -75,6 +84,8 @@ For Linked List problems, we want to consider the following approaches:
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
+
+**Dummy Node**
 
 ```python
 class Solution:
@@ -99,6 +110,29 @@ class Solution:
         return dummy.next
 ```
     
+**Recursion**
+```python    
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        # Set basecase where head is None
+        if head == None:
+            return None
+
+        # Set head.next to the recursive function of the next node
+        head.next = self.removeElements(head.next, val)
+
+        # Establish logic for each head node, such that if it's value is equal to value, set this head node to be the next node
+        if head.val == val:
+            head = head.next
+        
+        # Return the head node
+        return head
+```
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
@@ -112,5 +146,11 @@ class Solution:
 
 Assume `N` represents the number of nodes in the linked list.
 
+**Dummy Node**
+
 * **Time Complexity**: `O(N)` because we need to traverse all nodes in the linked list to check for node with the value in question.
 * **Space Complexity**: `O(1)` because we only need a couple pointers for memory.
+
+**Recursion**
+* **Time Complexity**: `O(N)` because we need to recursively traverse all nodes in the linked list to reach the basecase None.
+* **Space Complexity**: `O(1)` because we only need a couple pointers for memory, but if we count the recursive stack it will be `O(N)`
