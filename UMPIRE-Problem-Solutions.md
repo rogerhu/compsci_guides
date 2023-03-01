@@ -135,10 +135,19 @@
 * [[Find Largest Value in Each Tree Row]]
 * [[Same Trees]]
 * [[Insert into a Binary Search Tree]]
-* [[Convert Sorted Array to Binary Search Tree]]
 * [[Print Binary Tree]]
 * [[Binary Tree Paths]]
 * [[Convert Sorted List to BST]]
+* [[Invert Binary Tree]]
+* [[Maximum Depth of Binary Tree]]
+* [[Diameter of Binary Tree]]
+* [[Balanced Binary Tree]]
+* [[Binary Tree Inorder Traversal]]
+* [[Symmetric Tree]]
+* [[Minimum Depth of Binary Tree]]
+* [[Path Sum]]
+* [[Binary Tree Preorder Traversal]]
+* [[Sum of Left Leaves]]
 
 ## Graphs
 
