@@ -3,7 +3,7 @@
 * 🔗 **Leetcode Link:** [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/)
 * 💡 **Problem Difficulty:** Easy
 * ⏰ **Time to complete**: 15 mins
-* 🛠️ **Topics**: 
+* 🛠️ **Topics**: Recursion
 * 🗒️ **Similar Questions**: [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/), [Valid Palindrome IV](https://leetcode.com/problems/valid-palindrome-iv/), [Valid Palindrome III](https://leetcode.com/problems/valid-palindrome-iii/)
     
 ## 1: U-nderstand
