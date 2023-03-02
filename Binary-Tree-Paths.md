@@ -185,7 +185,7 @@ class Solution:
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Assume `N` represents the number of items in array 
+Assume `N` represents the number of nodes in tree
     
 * **Time Complexity**: `O(N)` because we need to visit each node in binary tree.
 * **Space Complexity**: `O(N)` because we need to create a results array of all root-to-left paths which is `(n+1)/2` leafs.
