@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) 
 * 💡 **Problem Difficulty:** Easy
-* ⏰ **Time to complete**: 10 mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Binary Trees, Depth-First-Search
 * 🗒️ **Similar Questions**: [Path Sum II](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/), [Smallest String Starting From Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/), [Step-By-Step Directions From a Binary Tree Node to Another](https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/)
     
@@ -79,13 +79,27 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 5) Return allPaths
 ```
 
+**General Idea:** Lets build the paths as we progress through the nodes. If the node is a leaf node, then add it to our results.
+
+```markdown
+1. Create a helper function to recursively progress through the nodes.
+    a. Collect the values and build string
+    b. At a leaf node add built string to results
+    c. Progress to left node and right node
+2. Create results array
+3. Call helper function to build results
+4. Return results 
+```
+
 **⚠️ Common Mistakes**
 - Not noticing the need for a helper function to retain memory 
-- Not noticing the need to clear current path after recursion a.k.a backtracking
-
+- Choosing the wrong traversal type
+    - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
+
+**Solution 1**
 
 ```python
 class Solution:
@@ -121,7 +135,45 @@ class Solution:
         # Return allPaths
         return allPaths
 ```
-    
+
+**Solution 2**
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]: 
+        # Create a helper function to recursively progress through the nodes.       
+        def dfs(node, s):
+            # Collect the values and build string
+            if s != "":
+                s += "->"
+            s += str(node.val)
+
+            # At a leaf node add built string to results
+            if not node.left and not node.right: 
+                res.append(s)
+
+            # Progress to left node and right node
+            if node.left: 
+                dfs(node.left, s)
+            if node.right: 
+                dfs(node.right, s)
+
+        # Create results array
+        res = []
+
+        # Call helper function to build results
+        dfs(root, "") 
+
+        # Return results
+        return res
+```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
@@ -135,7 +187,6 @@ class Solution:
 
 Assume `N` represents the number of items in array 
     
-* **Time Complexity**: O(N)
-    *  We need to visit each node in the Binary  Tree.
-* **Space Complexity**: O(N) 
-    * O(N) because we need O(N) space to represent each nodes in the binary tree. 
+* **Time Complexity**: `O(N)` because we need to visit each node in binary tree.
+* **Space Complexity**: `O(N)` because we need to create a results array of all root-to-left paths which is `(n+1)/2` leafs.
+  
