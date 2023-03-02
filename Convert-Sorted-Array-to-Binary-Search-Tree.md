@@ -59,24 +59,20 @@ Output: None
 
 For trees, some things we should consider are:
 - Using a traversal (ie. Pre-Order, In-Order, Post-Order, Level-Order)
-  - With a traversal we can visit every node, including the leaf nodes
-  - If we can find the depth of every leaf, we can find the min depth
-  - We should find a way to keep track of the depth of each node we visit while traversing
-  - Since we don’t have a tree to start with, we cannot use these traversals to help us in this problem. However, performing an in order traversal of this tree after generating it would yield ascending values.
+  - Since are traversing a array. Tree Traversal does not apply here
 Using binary search to find an element
-- Using binary search to find an element
-  - Since the input list is provided in sorted order and we need to build a binary search tree, some elements of the binary search algorithm may come in handy
+  - We are not looking to find an element in this problem so this technique is not useful for this problem
 - Storing nodes within a HashMap to refer to later
   - We could employ this technique, but is it really necessary?
 - Applying a level-order traversal with a queue
   - Using this approach may complicate our code
 - We could apply a binary search strategy to this problem to divide the array the way a BST divides a sorted data set.
-
+  - Recursively get the mid point of the array as root and recursively call for left child with first half of array and right child with second half of array.
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-Recursively build binary search trees by using the middle node as the root, splitting the array in half for the left and right nodes.
+**General Idea:** Use fact that the array is sorted and a BST uses binary search. Recursively get the mid point of the array as root and recursively call for left child with first half of array and right child with second half of array.
 
 ```markdown
 1) Basecase: Check for an empty input list. If it is empty, return None (an empty BST)
