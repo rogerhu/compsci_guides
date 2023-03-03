@@ -18,7 +18,7 @@
 - What is the minimum interval length?
     - The minimum interval length is 1.
 - Are the intervals in sorted order?
-    - No the intervals are not garanteed to be sorted order.
+    - No the intervals are not guaranteed to be sorted order.
 - What is my time and space complexity?
     - O(nlogn) time and O(1) space not including the resulting output array.
    
