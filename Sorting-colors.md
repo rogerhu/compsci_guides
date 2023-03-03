@@ -51,7 +51,7 @@ This approach uses multiple pointers. Reading the [two pointer guide](https://gu
 **Approach**
 Although we cannot asymptotically do better than O(N) since we need to pass through the list at least once, we can limit our code to only making one pass. This will be slightly faster than approach #2.
 
-We can accomplish this by seeing that sorting an array with three distinct elements is equivalent to a `partition` operation. Recall that in quick sort, we partition an array to put all elements less than a pivot to the left and greater than to a right. Since we only have three potential values in our list, partitioning using the middle value as a pivot will effectively sort the list.
+We can accomplish this by seeing that sorting an array with three distinct elements is equivalent to a `partition` operation. Recall that in quick sort, we partition an array to put all elements less than a pivot to the left and greater than to the right. Since we only have three potential values in our list, partitioning using the middle value as a pivot will effectively sort the list.
 
 This particular type of partition is a bit tricky though because we're partitioning on the middle element (the 1's) of our list. It's called a three-way partition, since we are also grouping together elements that are equal in the middle (the 1's).
 
