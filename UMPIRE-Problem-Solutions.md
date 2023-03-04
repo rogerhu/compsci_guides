@@ -23,7 +23,6 @@
 ## Stacks
 
 * [[Min Stack]]
-* [[Validate Stack Sequences]]
 * [[Implement Queue Using Stacks]]
 * [[Find a Celebrity]]
 * [[Dinner Plate Stacks]]
