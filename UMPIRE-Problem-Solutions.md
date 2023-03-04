@@ -46,9 +46,6 @@
 * [[Kth Largest Element in a Stream]]
 * [[K Closest Points to the Origin]]
 * [[Find K Pairs with Smallest Sums]]
-
---- WIP ---
-
 * [[Last Stone Weight]]
 * [[Kth Largest Element in an Array]]
 
@@ -57,9 +54,6 @@
 * [[Brick Wall]]
 * [[Word Pattern]]
 * [[Encode and Decode TinyURL]]
-
---- WIP ---
-
 * [[Single Number]]
 * [[Element with a frequency of K]]
 * [[Longest Consecutive Sequence]]
