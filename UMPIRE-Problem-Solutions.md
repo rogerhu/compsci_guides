@@ -66,7 +66,6 @@
 
 * [[Substring]]
 * [[Valid Palindrome]]
-* [[Longest Substring with k distinct characters]]
 * [[Reverse Words in a String]]
 * [[String to Integer (ATOI)]]
 * [[Plus One]]
