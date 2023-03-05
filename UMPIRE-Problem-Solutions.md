@@ -32,6 +32,7 @@
 * [[Score of Parentheses]]
 * [[Validate Stack Sequences]]
 * [[Evaluate Reverse Polish Notation]]
+* [[Decode String]]
 
 ## Queues
 
