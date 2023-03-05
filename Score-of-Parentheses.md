@@ -43,7 +43,9 @@ For brackets problems, we want to consider the following approaches:
 - Using a counter: 
     - A global score counter could help us keep track of the score. However, the number of left/right tokens would not help us to determine the score since there is more to score ruling than simply the number of left/right parentheses.
 - Utilize a Stack: 
-    - A Stack could help keep track of where certain pairs of parentheses evaluate to sub-scores and where incomplete pairs are located.
+    - A Stack could help keep track of where certain pairs of parentheses evaluate to sub-scores and where incomplete pairs are located. What could we push onto a stack to make this problem easier? Stacks don’t allow us to keep track of data based on keys.
+- HashMap: HashMaps allow us to store data for quick access. What could we store in a HashMap to make this problem easier?
+- Heap: Do we need some sort of ordering to our data that a Heap could provide?
 
 
 ## 3: P-lan
