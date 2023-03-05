@@ -38,16 +38,11 @@ Output: "abcabccdcdcdef"
 
 For Array problems, we want to consider the following approaches:
 
-- Sort. 
-  - No we don't want to interfare with the order of the items in the stack
-- Two pointer solutions (left and right pointer variables).
-  - No we don't want to swap between a left and right pointer
-- Storing the elements of the array in a HashMap or a Set. 
-  - No storing element will not help here.
-- Traversing the array with a sliding window. 
-    - No we are not working with a window constraint.
 - Utilize a Stack (Common Data Structure for Parenthesis Problems)
    - This problem follows the standard pattern for postfix notation. Moreover, to get the output, the expression is evaluated to have basic math with Parentheses like this example: ((2 + 1) * 3) = 9
+- Queue: Queues fall into the same category as Stacks, do we need to maintain any sense of ordering to solve this problem?
+- HashMap: HashMaps allow us to store data for quick access. What could we store in a HashMap to make this problem easier?
+- Heap: Do we need some sort of ordering to our data that a Heap could provide?
 
 ## 3: P-lan
 
