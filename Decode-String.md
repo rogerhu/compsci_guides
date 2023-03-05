@@ -62,6 +62,12 @@ If you have solved similar problem such as [Evaluate Polish Notation](https://le
 3. Pop opening bracket [ from the stack.
 4. Pop from the stack while the next character is a digit (0-9) and build the number k.
 ```
+
+⚠️ **Common Mistakes**
+
+* 
+
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -150,5 +156,5 @@ class Solution {
 
 Assume `N` represents the length of output
 
-* **Time Complexity**: `O(N)` since there is only one iteration.
-* **Space Complexity**: `O(N)`
+* **Time Complexity**: `O(N)` since we basically traverse the string and do constant operation on each character
+* **Space Complexity**: `O(N)` for the worst case, as the recursion stack can be at most O(n). Think about what the maximum number of pairs of parenthesis could be in a string of size n.
