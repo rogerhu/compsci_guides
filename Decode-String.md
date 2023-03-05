@@ -65,7 +65,7 @@ If you have solved similar problem such as [Evaluate Polish Notation](https://le
 
 ⚠️ **Common Mistakes**
 
-* 
+* Firstly, to avoid errors, we return nothing if s is empty. Otherwise, we first figure out how many characters in the beginning of the string are letters and store it in start. If we hit the end of the string, then we just return start since it's all letters.
 
 
 ## 4: I-mplement
