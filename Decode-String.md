@@ -54,21 +54,86 @@ If you have solved similar problem such as [Evaluate Polish Notation](https://le
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** 
+**General Idea:** The stack follows the Last In First Out (LIFO) Principle, the top of the stack would have the data we must decode.
 
 ```markdown
-
+1. Start decoding the last traversed string by popping the string decodedString and number k from the top of the stack.
+2. Pop from the stack while the next character is not an opening bracket [ and append each character (a-z) to the decodedString.
+3. Pop opening bracket [ from the stack.
+4. Pop from the stack while the next character is a digit (0-9) and build the number k.
 ```
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
 
 ```python
-
+def decodeString(self, s: str) -> str:
+        stack = []
+        cur_level = []
+        num = 0
+        
+        for char in s:
+            if char.isdigit():
+                num = num * 10 + int(char)
+            
+            elif char.isalpha():
+                cur_level.append(char)
+            
+            elif char == '[':
+                stack.append((num, [*cur_level]))
+                cur_level = []
+                num = 0
+            
+            elif char == ']':
+                prev_level_num, prev_level = stack.pop()
+                cur_level_string = "".join(cur_level)
+                cur_level = [*prev_level, prev_level_num * cur_level_string] 
+            
+        return "".join(cur_level)
         
 ```
-```java
 
+```java
+class Solution {
+    public String decodeString(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ']') {
+                List<Character> decodedString = new ArrayList<>();
+                // get the encoded string
+                while (stack.peek() != '[') {
+                    decodedString.add(stack.pop());
+                }
+                // pop [ from the stack
+                stack.pop();
+                int base = 1;
+                int k = 0;
+                // get the number k
+                while (!stack.isEmpty() && Character.isDigit(stack.peek())) {
+                    k = k + (stack.pop() - '0') * base;
+                    base *= 10;
+                }
+                // decode k[decodedString], by pushing decodedString k times into stack
+                while (k != 0) {
+                    for (int j = decodedString.size() - 1; j >= 0; j--) {
+                        stack.push(decodedString.get(j));
+                    }
+                    k--;
+                }
+            }
+            // push the current character to stack
+            else {
+                stack.push(s.charAt(i));
+            }
+        }      
+        // get the result from stack
+        char[] result = new char[stack.size()];
+        for (int i = result.length - 1; i >= 0; i--) {
+            result[i] = stack.pop();
+        }
+        return new String(result);
+    }
+}
 
 ```
 
@@ -83,7 +148,7 @@ If you have solved similar problem such as [Evaluate Polish Notation](https://le
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Assume `N` represents the number of items in the array
+Assume `N` represents the length of output
 
-* **Time Complexity**: `O(N)` because we need to traverse all items in the array
-* **Space Complexity**: `O(N)` because we may need to store all items in the array into a stack
+* **Time Complexity**: `O(N)` since there is only one iteration.
+* **Space Complexity**: `O(N)`
