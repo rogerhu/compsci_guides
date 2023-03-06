@@ -140,7 +140,7 @@
 * [[Path Sum]]
 * [[Binary Tree Preorder Traversal]]
 * [[Sum of Left Leaves]]
-* [[[Binary Tree Level Order Traversal]]]
+* [[Binary Tree Level Order Traversal]]
 * [[Lowest Common Ancestor of a Binary Tree]]
 * [[Binary Tree Right Side View]]
 * [[Construct Binary Tree from Preorder and Inorder Traversal]]
