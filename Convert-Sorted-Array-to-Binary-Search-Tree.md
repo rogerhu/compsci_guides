@@ -60,19 +60,19 @@ Output: None
 For trees, some things we should consider are:
 - Using a traversal (ie. Pre-Order, In-Order, Post-Order, Level-Order)
   - Since are traversing a array. Tree Traversal does not apply here
-Using binary search to find an element
+- Using binary search to find an element
   - We are not looking to find an element in this problem so this technique is not useful for this problem
 - Storing nodes within a HashMap to refer to later
   - We could employ this technique, but is it really necessary?
 - Applying a level-order traversal with a queue
   - Using this approach may complicate our code
-- We could apply a binary search strategy to this problem to divide the array the way a BST divides a sorted data set.
-  - Recursively get the mid point of the array as root and recursively call for left child with first half of array and right child with second half of array.
+- We could apply fundamental ideas about sorted arrays and binary search to this problem. 
+  - Let's recursively get the mid point of the array as root and recursively call for left child with first half of array and right child with second half of array, because the mid point of each recursive array is the point where we can branch off smaller elements on left and larger elements on right. 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Use fact that the array is sorted and a BST uses binary search. Recursively get the mid point of the array as root and recursively call for left child with first half of array and right child with second half of array.
+**General Idea:** Use fact that the array is sorted and the idea of searching the mid point with each loop during binary search. We recursively get the mid point of the array as root and recursively call for left child with first half of array and right child with second half of array. Because the mid point of each recursive array is the point where we can branch off smaller elements on left and larger elements on right. 
 
 ```markdown
 1) Basecase: Check for an empty input list. If it is empty, return None (an empty BST)
