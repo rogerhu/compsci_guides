@@ -69,7 +69,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 ```markdown
 0) Create helper function to allow us to retain memory of allPaths
 1) Basecase: If the current element is Null, return
-2) Recusive: Build Current Path 
+2) Recursive: Build Current Path 
     a) Add the current node to the current path data structure
     b) If the current node is a leaf node, store the current path in the tree
     c) Recurse Left and Recurse Right
