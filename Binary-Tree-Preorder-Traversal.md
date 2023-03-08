@@ -47,7 +47,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 - Using Binary Search to find an element
     - We are not looking to find an element in this problem so this technique is not useful for this problem
 - Applying a level-order traversal with a queue
-    - Since are traversing tree with the idea of returning In-Order values. Level Order Tree Traversal does not apply very well here.
+    - Since are traversing tree with the idea of returning Pre-Order values. Level Order Tree Traversal does not apply very well here.
 
 ## 3: P-lan
 
