@@ -17,7 +17,11 @@
 
 - What are two possible paths?
   - There are only 2 ways to reach (x, y) i.e either from (x-1, y) and (x, y-1). so, take the route which gives the minimum. Therefore at every cell, we will make the choice to move which costs are less.
-- 
+- What does a top down recursion mean here?
+  - We will move from the cell[M-1][N-1] and try to find our way to the cell[0][0]. Therefore at every index, we will try to move up and towards the left.
+- What are the base cases?
+  - When i=0 and j=0, that is we have reached the destination so we can add to path the current cell value, hence we return mat[0][0].
+When i<0 or j<0, it means that we have crossed the boundary of the matrix and we don’t want to find a path from here, so we return a very large number( say, 1e9) so that this path is rejected by the calling function.
 
    
 ```markdown
