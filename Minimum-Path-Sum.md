@@ -16,14 +16,18 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - What are two possible paths?
-  - There are only 2 ways to reach (x, y) i.e either from (x-1, y) and (x, y-1). so, take the route which gives the minimum.
+  - There are only 2 ways to reach (x, y) i.e either from (x-1, y) and (x, y-1). so, take the route which gives the minimum. Therefore at every cell, we will make the choice to move which costs are less.
 - 
+
    
 ```markdown
-HAPPY CASE
+EXAMPLES
 
+Input: grid = [[1,3,1],[1,5,1],[4,2,1]]
+Output: 7
 
-EDGE CASE
+Input: grid = [[1,2,3],[4,5,6]]
+Output: 12
 
 ```   
     
@@ -36,6 +40,9 @@ EDGE CASE
 The key to this DP problem is subproblems. Whenever you run into a situation where it seems like you don't know how to solve the problem because you don't know which decision to take at each point in the code, it means use DP to enumerate all the decisions and choose the best one. This problem is easier because the problem tells you the two decisions you have at each recursion is going down or going right. In other problems, it could involve iterating over an entire array and choosing the best answer from those subproblems. This is what dynamic programming is all about - trying to figure out what are my decisions at each subproblem.
 
 In this problem, we start at coordinate (0,0) and we try to decide whether it is better to go right or down. We don't know, so we try both. We recurse startx+1 in one branch and starty+1 in another branch. We choose the minimum of both because we don't know which one will be better! If we ever iterate over the bounds of m x n, we know that is not a viable path, so we can return an absurdly large number to rule it out. We only ever return a real number from our base case is we land on the destination node, which is the bottom right node minMatrix[m-1][n-1].
+
+* Would a Greedy approach work here?
+  - As we have to return the minimum path sum, the first approach that comes to our mind is to take a greedy approach and always form a path by locally choosing the cheaper option.
 
 
 ## 3: P-lan
@@ -69,7 +76,9 @@ minMatrix[i][j] is the current value when we are at the corner of the matrix (do
 
 * What are some common pitfalls students might have when implementing this solution?
 
+The Greedy approach will not give us the correct answer. Whenever we are making a local choice, we may tend to choose a path that may cost us way more later.
 
+Therefore, the other alternative left to us is to generate all the possible paths and see which is the path with the minimum path sum. To generate all paths we will use recursion.
 
 ## 4: I-mplement
 
