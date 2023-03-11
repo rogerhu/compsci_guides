@@ -97,7 +97,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 **⚠️ Common Mistakes**
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
-- No creating a helper function
+- Not creating a helper function
     - A helper function can help you add parameters and retain memory.
 ## 4: I-mplement
 
