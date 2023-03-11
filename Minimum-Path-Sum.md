@@ -144,5 +144,6 @@ public class Solution {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-* **Time Complexity**: 
-* **Space Complexity**: 
+* **Time Complexity**: O(mn), as we traverse the entire matrix once.
+
+* **Space Complexity**: O(mn), another matrix of the same size is used.
