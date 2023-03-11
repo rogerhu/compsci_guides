@@ -198,6 +198,8 @@
 * [[Unique Paths]]
 * [[Maximal Rectangle]]
 * [[Climbing Stairs]]
+* [[Minimum Path Sum]]
+* [[House Robber]]
 
 ## Backtracking
 
