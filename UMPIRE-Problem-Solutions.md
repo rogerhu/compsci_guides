@@ -197,6 +197,7 @@
 * [[Longest Palindromic Substring]]
 * [[Unique Paths]]
 * [[Maximal Rectangle]]
+* [[Climbing Stairs]]
 
 ## Backtracking
 
@@ -221,5 +222,4 @@
 * [[Power of Two]]
 * [[Power of Three]]
 * [[Power of Four]]
-* [[Climbing Stairs]]
 * [[Fibonacci Number]]
