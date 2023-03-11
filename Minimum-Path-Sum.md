@@ -15,6 +15,8 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
+- What are two possible paths?
+  - There are only 2 ways to reach (x, y) i.e either from (x-1, y) and (x, y-1). so, take the route which gives the minimum.
 - 
    
 ```markdown
@@ -31,6 +33,9 @@ EDGE CASE
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
+The key to this DP problem is subproblems. Whenever you run into a situation where it seems like you don't know how to solve the problem because you don't know which decision to take at each point in the code, it means use DP to enumerate all the decisions and choose the best one. This problem is easier because the problem tells you the two decisions you have at each recursion is going down or going right. In other problems, it could involve iterating over an entire array and choosing the best answer from those subproblems. This is what dynamic programming is all about - trying to figure out what are my decisions at each subproblem.
+
+In this problem, we start at coordinate (0,0) and we try to decide whether it is better to go right or down. We don't know, so we try both. We recurse startx+1 in one branch and starty+1 in another branch. We choose the minimum of both because we don't know which one will be better! If we ever iterate over the bounds of m x n, we know that is not a viable path, so we can return an absurdly large number to rule it out. We only ever return a real number from our base case is we land on the destination node, which is the bottom right node minMatrix[m-1][n-1].
 
 
 ## 3: P-lan
@@ -40,8 +45,8 @@ EDGE CASE
 ```markdown
 1. We first create an m by n minMatrix. This matrix represents the minimum distance to travel starting from square (i, j) to get to corner element (m-1, n-1). At the end of this algorithm we really are looking for (0,0). Pause and think about this.
 2. We recursively call minPathSum to populate minMatrix starting from (0,0). Note, this will fully populate minMatrix.
-3, We check bounds at the top of the recursion OR if the grid element located at (i,j) has been visited in the past. Note, we leverage the fact that the grid has ONLY non-negative integers here, so during recursion we can use -1 as a flag to indicate if it has been visited.
-4. We check if minMatrix already contains a non-negative entry at (i,j). This leverages the fact that if this is populated then it must have already gone through the recursion to identify this value. Note, this is generaly refered to as memoization.
+3. We check bounds at the top of the recursion OR if the grid element located at (i,j) has been visited in the past. Note, we leverage the fact that the grid has ONLY non-negative integers here, so during recursion we can use -1 as a flag to indicate if it has been visited.
+4. We check if minMatrix already contains a non-negative entry at (i,j). This leverages the fact that if this is populated then it must have already gone through the recursion to identify this value. 
 5. We perform the basic recursion:
 We first pull the value out of the grid to save it in the current stack/frame for the recursion
 
@@ -108,7 +113,24 @@ class Solution {
 }
 ```
 ```java
-       
+public class Solution {
+    public int minPathSum(int[][] grid) {
+        int[][] minMatrix = new int[grid.length][grid[0].length];
+        for (int i = grid.length - 1; i >= 0; i--) {
+            for (int j = grid[0].length - 1; j >= 0; j--) {
+                if(i == grid.length - 1 && j != grid[0].length - 1)
+                    minMatrix[i][j] = grid[i][j] +  minMatrix[i][j + 1];
+                else if(j == grid[0].length - 1 && i != grid.length - 1)
+                    minMatrix[i][j] = grid[i][j] + minMatrix[i + 1][j];
+                else if(j != grid[0].length - 1 && i != grid.length - 1)
+                    minMatrix[i][j] = grid[i][j] + Math.min(minMatrix[i + 1][j], minMatrix[i][j + 1]);
+                else
+                    minMatrix[i][j] = grid[i][j];
+            }
+        }
+        return minMatrix[0][0];
+    }
+}       
 ```
     
 ## 5: R-eview
