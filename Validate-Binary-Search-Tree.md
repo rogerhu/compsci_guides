@@ -48,7 +48,7 @@ Output: true
 If you are dealing with Binary Trees some common techniques you can employ to help you solve the problem:
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
-    - Since we need to identify the a valid binary search tree, sorted order can help. An in-order traversal will help us retrieve the nodes in sorted order and thereby verify that the Binary Search Tree is indeed valid. 
+    - Since we need to identify a valid binary search tree, sorted order can help. An in-order traversal will help us retrieve the nodes in sorted order and thereby verify that the Binary Search Tree is indeed valid. 
 - Store nodes within a HashMap to refer to later
     - We don't need to access the nodes or their values after they have been processed, so this technique is not useful for this problem
 - Using Binary Search to find an element
