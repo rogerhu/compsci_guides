@@ -104,6 +104,15 @@
 * [[Rotting Oranges]]
 * [[Spiral Matrix]]
 * [[Island Problem]]
+* [[Island Perimeter]]
+* [[Transpose Matrix]]
+* [[Flipping an Image]]
+* [[Rotate Image]]
+* [[Number of Islands]]
+* [[Max Area of Island]]
+* [[Battleships in a Board]]
+* [[Search a 2D Matrix]]
+* [[Lucky Numbers in a Matrix]]
 
 ## Binary Search
 
