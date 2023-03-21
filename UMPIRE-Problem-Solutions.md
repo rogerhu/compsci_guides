@@ -116,7 +116,7 @@
 
 ## Binary Search
 
-* [[Binary Search Problem]]
+* [[Binary Search]]
 * [[First Bad Version]]
 * [[Sqrt(x)]]
 * [[Find Minimum in Rotated Sorted Array]]
