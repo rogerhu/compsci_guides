@@ -103,7 +103,7 @@
 * [[Word Search II]]
 * [[Rotting Oranges]]
 * [[Spiral Matrix]]
-* [[Number of Islands Problem]]
+* [[Number of Islands]]
 * [[Island Perimeter]]
 * [[Transpose Matrix]]
 * [[Flipping an Image]]
