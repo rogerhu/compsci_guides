@@ -24,7 +24,7 @@
 - Does the perimeter of the grid count as water or land?
     - The perimeter of the grid counts as water. Out-of-bounds is water.
 - What are the time and space constraints?
-    - Time complexity should be `O(m*n)`, m being the length of array and n being the column of array. Space complexity should be `O(1)`, excluding the recursive stack.
+    - Time complexity should be `O(m*n)`, m being the rows of matrix and n being the columns of matrix. Space complexity should be `O(1)`, excluding the recursive stack.
 
 ```markdown
 HAPPY CASE
