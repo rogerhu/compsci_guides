@@ -112,4 +112,4 @@ Assume`M` represents the number of columns in 2D-array.
 
 
 * **Time Complexity**: `O(N * M)` we need to view each item in the 2D-Array
-* **Space Complexity**: `O(1)`, we only need to store the number of battlships
+* **Space Complexity**: `O(1)`, we only need to store the number of battleships
