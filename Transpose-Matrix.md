@@ -19,7 +19,7 @@
     - Let’s assume the grid is not blank. We don’t need to consider empty inputs.
 
 - What are the time and space constraints?
-    - Time complexity should be `O(m*n)`, m being the rows of the array and n being the columns of array. Space complexity should be `O(m*n)` too.
+    - Time complexity should be `O(m*n)`, m being the rows of the matrix and n being the columns of matrix. Space complexity should be `O(m*n)` too.
 
 ```markdown
 HAPPY CASE
