@@ -113,6 +113,7 @@
 * [[Battleships in a Board]]
 * [[Search a 2D Matrix]]
 * [[Lucky Numbers in a Matrix]]
+* [[Pacific Atlantic Water Flow]]
 
 ## Binary Search
 
@@ -159,7 +160,7 @@
 * [[Count Good Nodes in Binary Tree]]
 * [[Validate Binary Search Tree]]
 * [[All Nodes Distance K in Binary Tree]]
-
+* [[Add One Row to Tree]]
 
 ## Graphs
 
@@ -191,6 +192,9 @@
 * [[Maximal Network Rank]]
 * [[Clone Graph]]
 * [[Find Eventual Safe States]]
+* [[Find the Town Judge]]
+* [[Find Center of Star Graph]]
+* [[Find if Path Exists in Graph]]
 
 ## Greedy
 
@@ -209,6 +213,11 @@
 * [[Climbing Stairs]]
 * [[Minimum Path Sum]]
 * [[House Robber]]
+* [[Fibonacci Number]]
+* [[Min Cost Climbing Stairs]]
+* [[Best Time to Buy and Sell Stock]]
+* [[Pascal's Triangle]]
+* [[Pascal's Triangle II]]
 
 ## Backtracking
 
