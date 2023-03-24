@@ -71,7 +71,6 @@ Output: 0
 **General Idea:** Bottom-Up DP Technique, we will build up our answer. 
 
 ```markdown
-
 1. Manage edge case of 2 steps and under
 2. Reuse the cost array to build up to our answer
 3. From the given numbers we can build up to any number of number of steps.
