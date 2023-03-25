@@ -218,6 +218,8 @@
 * [[Best Time to Buy and Sell Stock]]
 * [[Pascal's Triangle]]
 * [[Pascal's Triangle II]]
+* [[Shopping Offers]]
+* [[Dungeon Game]]
 
 ## Backtracking
 
