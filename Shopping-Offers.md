@@ -21,8 +21,8 @@
 - Why should we start at the zeroth index?
   - Start with 0th index. At each index of offers we have two choice. Either we use that offer or we don't use that.
 Choice 1: First check if we can use that offer if we can then pick that offer present on that index and stay on that index because we can use a offer any number of times.
-
 Choice 2: Don't use that offer and move to next offer to do the same.
+
    
 ```markdown
 Example 1:
