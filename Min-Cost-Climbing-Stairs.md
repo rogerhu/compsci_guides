@@ -61,7 +61,7 @@ Output: 0
     - This does not fit the knapsack-type approach.
 
 - Cache previous results, generally
-    - Yes, we can use the Top-Down DP Technique and recursion to build our answers from previous recursive calls.
+    - Yes, we can use the Top-Down DP Technique and recursion to build our answers from previous recursive calls, but that would be a round about way of solving this algorithm when the array of cost was already given.
 
 
 ## 3: P-lan
@@ -114,7 +114,7 @@ class Solution:
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Assume `N` represents the target fibonacci number
+Assume `N` represents the number of items in the array, which also represents the number of steps and it's cost.
 
 * **Time Complexity**: `O(N)`, because we need to build up to the `N` steps
-* **Space Complexity**: `O(1)`, because for the Bottom-Up approach we reuse the given array
+* **Space Complexity**: `O(1)`, because for the Bottom-Up approach we reuse the given array.
