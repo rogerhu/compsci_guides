@@ -6,6 +6,7 @@
 * 🛠️ **Topics**: Binary Trees, Depth First Search
 * 🗒️ **Similar Questions**: [Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/), [Symmetric Tree
 ](https://leetcode.com/problems/symmetric-tree/), [Same Trees](https://leetcode.com/problems/minimum-depth-of-binary-tree/), [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
+
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
