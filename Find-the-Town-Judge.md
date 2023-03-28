@@ -71,7 +71,6 @@ For Graph Problems, common solution patterns include:
 
 > **Implement** the code to solve the algorithm.
 
-**Approach #1: DFS**
 ```python
 class Solution:
     def findJudge(self, n: int, trust: List[List[int]]) -> int:
