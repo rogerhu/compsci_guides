@@ -104,5 +104,5 @@ class Solution:
 
 Assume `N` represents the number of items in the array.
 
-* **Time Complexity**: `O(n)` because we need to generate heap. Removal of k items need on `O(k)` time, `O(k)` is less than or equal to `O(n)`.
-* **Space Complexity**: `O(n)` because we need to generate and store a heap. 
+* **Time Complexity**: `O(N)` because we generating a heap requires `O(N)` time. The removal of K items need on `O(K)` time, `O(K)` may be less than or equal to `O(N)`.
+* **Space Complexity**: `O(N)` because we need to generate and store a heap. 
