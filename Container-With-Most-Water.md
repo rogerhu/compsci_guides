@@ -61,7 +61,7 @@ For Array/Strings, common solution patterns include:
 1. Create largest range, by creating a left and right pointer
 2. At every part of the range calculate the current area at this width and check against our max area
     a. Reduce the range/width while maintaining the maximum height
-4. Return max area found
+3. Return max area found
 ```
 
 ⚠️ **Common Mistakes**
@@ -109,5 +109,5 @@ class Solution:
 
 Assume N represents the number of heights in array.
 
-* **Time Complexity**: O(n), because we need to check the entire range of heights once. 
-* **Space Complexity**: O(1), because we only use a constant number of variable to hold our area information.
+* **Time Complexity**: `O(N)`, because we need to check the entire range of heights once. 
+* **Space Complexity**: `O(1)`, because we only use a constant number of variable to hold our area information.
