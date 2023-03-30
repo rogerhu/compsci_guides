@@ -44,10 +44,8 @@ For Linked Lists problems, we want to consider the following approaches:
 
 - Multiple passes over the linked list. If we were able to take multiple passes of the linked list, would that help solve the problem?
   - Do we need to discover the length of the lists? 
-
 - Dummy Head. Would using a dummy head as a starting point help simplify our code and handle edge cases?
   - Are we restructuring the given lists? Creating a new one? This could be helpful in keeping track of our return list.
-
 - Two Pointers. If we used two pointers to iterate through list, would that help us solve this problem?
   - Two pointers are used in the sense that we are traversing two separate lists. Multiple pointers for one list does not make sense here though because we are not trying to compare nodes in the list with other nodes in that same list.
 
@@ -67,7 +65,7 @@ For Linked Lists problems, we want to consider the following approaches:
 1) Create a dummy head. This will be our reference to our return list.
 2) Create a prev pointer to point to next node that has not duplicates
 3) Create curr pointer to check if curr node has no duplicate
-3) Traverse the lists while prev and curr is not None
+4) Traverse the lists while prev and curr is not None
     a) Check curr to see if it has duplicates
         i) If curr has duplicates, point prev.next at next unique node and bypass curr node. 
         ii) Else curr has no duplicates set prev pointer at curr
