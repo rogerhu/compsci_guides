@@ -17,10 +17,8 @@
 
 - Can we expect negative numbers in the pings?
   - No, the pings will alway be positive numbers.
-
 - Can we expect numbers to be in increasing order?
   - It is guaranteed that every ping uses a strictly larger value of t than the previous ping.
-
 - Can we expect an empty array as input? What should we return in this case?
   - No, we will assume that there is at least one ping.
    
@@ -59,18 +57,16 @@ Output
 
 If you are dealing with Arrays, there are some common techniques you can employ to help you solve the problem:
 - Sort
-    - Will sorting the array help you solve the problem?
+  - Will sorting the array help you solve the problem?
 - Two pointer solutions (left and right pointer variables)
-    - Will two pointer help you record pings.
-
+  - Will two pointer help you record pings.
 - Storing the elements of the array in a HashMap or a Set
-    - Will hashmap or hashset give you the ordering required for storing pings within 3000 milliseconds.
-
+  - Will hashmap or hashset give you the ordering required for storing pings within 3000 milliseconds.
 - Traversing the array with a sliding window
-    - Will a restrictive window help us?
-
+  - Will a restrictive window help us?
 - Use a Queue
     - A queue will allow us to add a new ping and remove any ping in our queue that has more than 3000 milliseconds compared to our new ping.
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -121,5 +117,5 @@ class RecentCounter:
 Assume `N` represents the number of ping in queue 
     
 * **Time Complexity**: O(N), we may need to remove N pings from the queue. 
-    * Side Node, we can improve this time complexity to O(logN) with binary search and pop off a chuck of the queue at a time.
+    * Side Note, we can improve this time complexity to O(logN) with binary search and pop off a chuck of the queue at a time.
 * **Space Complexity**: O(N), we need to store N pings in our queue.
