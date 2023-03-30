@@ -41,10 +41,14 @@ Output: 3
 
 For Arrays problems, we want to consider the following approaches:
 
-- Sort. We can sort the array first and then use a sliding window to find the number with a frequency of n/2 + 1. However this will cost O(nlogn) time.
-- Two pointer solutions (left and right pointer variables). Two pointer approach could work in this situation but relies on a sorted array, which does not solve for the specific problem.
-- Storing the elements of the array in a HashMap or a Set. This could potentially work if know exactly what to look for after we store elements. You can do this by creating a dictionary where we are going to store the value and the index of each list element as a key-pair respectively. Then we iterate through the indices and values of the list containing our numbers. If the difference between the target and the current value in the list is already included as a key in the dictionary, then it means that the current value and the value stored in the dictionary is the solution to our problem.
-- Traversing the array with a sliding window. A solution may not be two adjacent numbers, so a fixed sliding window won’t solve the problem in all cases, requires sorting.
+- Sort. 
+    - We can sort the array first and then use a sliding window to find the number with a frequency of n/2 + 1. However this will cost O(nlogn) time.
+- Two pointer solutions (left and right pointer variables). 
+    - Two pointer approach could work in this situation but relies on a sorted array, which does not solve for the specific problem.
+- Storing the elements of the array in a HashMap or a Set. 
+    - This could potentially work if know exactly what to look for after we store elements. You can do this by creating a dictionary where we are going to store the value and the index of each list element as a key-pair respectively. Then we iterate through the indices and values of the list containing our numbers. If the difference between the target and the current value in the list is already included as a key in the dictionary, then it means that the current value and the value stored in the dictionary is the solution to our problem.
+- Traversing the array with a sliding window. 
+    - A solution may not be two adjacent numbers, so a fixed sliding window won’t solve the problem in all cases, requires sorting.
 
 
 ## 3: P-lan
