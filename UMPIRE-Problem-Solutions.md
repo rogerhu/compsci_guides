@@ -228,6 +228,9 @@
 * [[Subsets]]
 * [[Word Search]]
 * [[Path with Maximum Gold]]
+* [[N Queens]]
+* [[Matchsticks to Square]]
+* [[Target Sum]]
 
 ## Recursion with Memoization
 
