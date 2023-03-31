@@ -66,6 +66,9 @@ The way we try to solve this is by placing a queen at a position and trying to r
 * What are some common pitfalls students might have when implementing this solution?
 
 * For an 8×8 board, we have to choose positions for 8 identical queens from 64  different squares, which can be done in 64C8 = 4426165368 ways. You can tighten this up by enforcing one queen in each row through the use of 8 nested loop. Using such nested loops, we would only have to look at 44=256 configurations for a 4×4 board and 88 configurations for an 8×8 board --- that's still far too many. 
+
+* Pay attention to the last inserted value has conflicts with previous rows if the column difference is 0 (the Queens are on the same column line) or if column difference = row difference (Queens are on one diagonal)
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
