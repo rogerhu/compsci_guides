@@ -19,7 +19,8 @@
   - A queen can attack horizontally, vertically, or diagonally. A queen can move any number of steps in any direction. The only constraint is that it can’t change its direction while it’s moving. 
 - Can a queen be in the same row or column?
   - No two queens can be in the same row or column. That allows us to place only one queen in each row and each column.  
-- 
+- How can we check if we've reached the end?
+  - If row == N, we've filled in all our rows successfully which implies the current board state is a valid combination
 
 Run through a set of example cases:
 
@@ -50,15 +51,16 @@ The way we try to solve this is by placing a queen at a position and trying to r
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** 
+**General Idea:** Try a promising Queen position, see how it goes. If it fails, undo that Queen and try again somewhere else.
 
 ```markdown
-1) Initialize an empty chessboard of size NxN.
-2) Start with the leftmost column and place a queen in the first row of that column.
-3) Move to the next column and place a queen in the first row of that column.
-4) Repeat step 3 until either all N queens have been placed or it is impossible to place a queen in the current column without violating the rules of the problem. If all N queens have been placed, print the solution. If it is not possible to place a queen in the current column without violating the rules of the problem, backtrack to the previous column.
-5) Remove the queen from the previous column and move it down one row.
-6) Repeat steps 4-7 until all possible configurations have been tried.
+Check if we've reached the end:
+If row == N, we've filled in all our rows successfully which implies the current board state is a valid combination. Let's add it to our output list.
+Loop through each column in the current row.
+3. If we can't add a Queen at this position, skip this col value.
+If we can, add a Queen at this position and adjust our bitmasks respectively.
+Continue to the next row (call backtrack for row+1).
+Undo our changes so we can try other col values.
 ```
 
 **⚠️ Common Mistakes**
