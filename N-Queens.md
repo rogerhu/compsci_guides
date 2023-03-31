@@ -18,7 +18,7 @@
 - Where can a queen move?
   - A queen can attack horizontally, vertically, or diagonally. A queen can move any number of steps in any direction. The only constraint is that it can’t change its direction while it’s moving. 
 - Can a queen be in the same row or column?
-  No two queens can be in the same row or column. That allows us to place only one queen in each row and each column.  
+  - No two queens can be in the same row or column. That allows us to place only one queen in each row and each column.  
 - 
 
 Run through a set of example cases:
