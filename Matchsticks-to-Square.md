@@ -15,7 +15,12 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-- 
+- Are bucket filled from left to right?
+  - Yes. Since buckets are filled from left to right, if any bucket remains empty (i.e. no combination of elements sum up to target), then all buckets to the right of it will also be empty.
+- What are the basic checked needed?
+  - Few basic checks are needed – there should be at least 4 matchsticks, the sum of matchstick lengths should be divisible by 4, and none of the matchstick length should exceed the side length of the square.
+- What would be considered a invalid case?
+  - If total sum of matchsticks array is not divisible by 4, then we are sure that matchsticks elements can not be equally divided into 4 subsets.
 
 Run through a set of example cases:
 
@@ -37,13 +42,12 @@ Explanation: You cannot find a way to form a square with all the matchsticks.
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
-
+To partition a list of nums (matchsticks) into k-buckets (4 sides in our case), we use backtracking to place each number into each bucket, ensuring that bucket sum doesn't exceed the target sum.
 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** 
 
 ```markdown
 1) Calculate sum of the array. If sum/4 is odd, there can not be four subsets with equal sum, so return false.
@@ -54,6 +58,15 @@ Explanation: You cannot find a way to form a square with all the matchsticks.
 **⚠️ Common Mistakes**
 
 * What are some common pitfalls students might have when implementing this solution?
+
+* When attempting to add a piece to the current group, we can obviously skip pieces that are larger than the remaining space, as well as pieces that have already been used. Normally, this would require some kind of additional array or set to keep track of the used pieces, but we can use an in-place approach with M and just replace the used values with a value larger than side. This will simplify the check to skip elements to just one conditional.
+
+(Note: If you don't want to modify the input, you could use a single integer and bit manipulation to achieve the same result in O(1) space. Sorting M will still take O(N) space if you don't want to modify M, however, and in any case, we'll be using O(N) space for the recursion stack.)
+
+* Corner cases to consider: 
+
+1. If you write normal recursion code without pruning then it will fail,
+2. If we have choosen one matchstick for 1 side of square then we cannot consider this matchstick for forming other sides. It means if we visit one matchstick then we cannot visit it again. For checking this we can have a boolean array or Bitset, which will tell whether the matchstick element is taken or not.
 
 
 ## 4: I-mplement
