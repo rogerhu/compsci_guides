@@ -60,6 +60,7 @@
 * [[Majority Element]]
 * [[Roman to Integer]]
 * [[Destination City]]
+* [[Number of Arithmetic Triplets]]
 
 
 ## Arrays and Strings
