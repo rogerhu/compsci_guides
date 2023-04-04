@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/task-scheduler/>
 * 💡 **Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Greedy
 * 🗒️ **Similar Questions**: [Rearrange String k Distance Apart](https://leetcode.com/problems/rearrange-string-k-distance-apart/)
     
@@ -53,6 +53,10 @@ A -> B -> C -> A -> D -> E -> A -> F -> G -> A -> idle -> idle -> A -> idle -> i
 
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
+* Sort
+* Two pointer solutions (left and right pointer variables)
+* Storing the elements of the array in a HashMap or a Set
+* Traversing the array with a sliding window
 * We can schedule most frequent tasks without idling using greedy. The total number of CPU intervals we need consists of busy and idle slots. Number of busy slots is defined by the number of tasks to execute: len(tasks). The problem is to compute a number of idle slots.
 
 Maximum possible number of idle slots is defined by the frequency of the most frequent task: `idle_time <= (f_max - 1) * n`.
