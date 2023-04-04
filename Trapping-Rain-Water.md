@@ -2,8 +2,8 @@
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/trapping-rain-water/](https://leetcode.com/problems/trapping-rain-water/)
 * 💡 **Problem Difficulty:** Hard
-* ⏰ **Time to complete**: __ mins
-* 🛠️ **Topics**: Array
+* ⏰ **Time to complete**: 20 mins
+* 🛠️ **Topics**: Array, Two Pointer
 * 🗒️ **Similar Questions**: [Container With Most Water](https://leetcode.com/problems/container-with-most-water/), [Trapping Rain Water II](https://leetcode.com/problems/trapping-rain-water-ii/)
     
 ## 1: U-nderstand
@@ -148,5 +148,7 @@ class Solution {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
+Assume `n` represents the number of items in array,
+
 * **Time Complexity**: O(n), where n is length of the given array
 * **Space Complexity**: O(1), only constant space required for left, right, left_max, and right_max.
