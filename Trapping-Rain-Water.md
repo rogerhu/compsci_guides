@@ -49,7 +49,8 @@ In Strings/Arrays, common problem patterns include:
 
 - Hash and Store: What would we hash at each index? If we do hash, how does that help us compute the amount of water we can trap.
 - Two Pointer: Two pointer may help us reference both sides of the array at the same time. Since we know that water can be trapped at a cell that has elements on both sides that are higher than itself. This could help us in this situation.
-- Sort: Since the order of the elements matters, sorting may not result in a potential solution path.
+- Sort: Since the order of the elements matters, sorting may not result in a potential solution path
+- Traversing the array with a sliding window
 
 ## 3: P-lan
 
