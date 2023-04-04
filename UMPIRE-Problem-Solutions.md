@@ -96,6 +96,7 @@
 * [[Product of Array Except Self]]
 * [[Container With Most Water]]
 * [[Merge Intervals]]
+* [[3Sum]]
 
 ## 2D-Array
 
