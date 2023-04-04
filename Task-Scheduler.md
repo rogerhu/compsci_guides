@@ -144,5 +144,7 @@ class Solution {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
+Assume N represents the number of items in array,
+
 * **Time Complexity**: O(N), this time is needed to iterate over the input array tasks and compute the array frequencies. Array frequencies contains 26 elements, and hence all operations with it takes constant time.
 * **Space Complexity**: O(1), to keep the array frequencies of 26 elements.
