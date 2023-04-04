@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** <https://leetcode.com/problems/word-break/>
 * 💡 **Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Dynamic Programming
 * 🗒️ **Similar Questions**: [Word Break II](https://leetcode.com/problems/word-break-ii/)
     
