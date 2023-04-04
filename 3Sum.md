@@ -15,11 +15,11 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
-- Can the input array be empty?
-    - Yes, that is possible
+- Is this question similar to [Two Sum](https://leetcode.com/articles/two-sum/) and [Two Sum II](https://leetcode.com/articles/two-sum-ii-input-array-is-sorted/)?
+  - Yes, it's a good idea to take a first look at [Two Sum](https://leetcode.com/articles/two-sum/) and [Two Sum II](https://leetcode.com/articles/two-sum-ii-input-array-is-sorted/). Two Sum, Two Sum II and 3Sum share a similarity that the sum of elements must match the target exactly. A difference is that, instead of exactly one answer, we need to find all unique triplets that sum to zero.
+- Can you modify the input array?
+  - Yes, you can especially if you want to avoid copying it due to memory constraints.
 
-- What is the space and time complexity?
-    - We want O(n) time and O(1) space. 
 
 ```markdown
 Example 1:
@@ -48,7 +48,7 @@ Explanation: The only possible triplet sums up to 0.
 For Array problems, we want to consider the following approaches:
 
 - Sort. 
-    - The arrays are already sorted.
+    - Sort the array so we can skip repeated values.
 - Two pointer solutions (left and right pointer variables). 
     - We can start at index m - 1 for nums1 and index n -1 for nums2, find the larger number and start inserting at m + n - 1 index of nums1. Repeat until we reach index 0 for nums2.
 - Storing the elements of the array in a HashMap or a Set. 
