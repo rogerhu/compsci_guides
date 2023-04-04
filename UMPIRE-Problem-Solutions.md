@@ -119,7 +119,7 @@
 
 ## Binary Search
 
-* [[Binary Search]]
+* [Binary Search](https://github.com/codepath/compsci_guides/wiki/Binary-Search-Problem)
 * [[First Bad Version]]
 * [[Sqrt(x)]]
 * [[Find Minimum in Rotated Sorted Array]]
