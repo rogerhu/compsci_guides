@@ -32,6 +32,7 @@
 * [[Score of Parentheses]]
 * [[Validate Stack Sequences]]
 * [[Decode String]]
+* [[Number of People That Can Be Seen in a Grid]]
 
 ## Queues
 
