@@ -55,68 +55,23 @@ Explanation:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** When pushing a new value to the stack, check if the current minimum has to be updated. Push both the new value and the current minimum to the same (or parallel) stack(s). When popping a value from the stack, we can also pop a record of the current minimum at that level, and the new top of the stack(s) will have a record of the previous minimum based on all the values below it.
-
 ```markdown
-MinStack(): set up a stack that can store two numbers together or two stacks that can each store a number in parallel
-push(value): Append value and current minimum to stack(s)
-pop(): remove value and current minimum from the top of stack(s)
-top(): return value from the top of stack
-getMin(): return current minimum from the top of stack
+
 ```
 
 ⚠️ **Common Mistakes**
 
-* It's easy to get stuck on a strategy for updating the minimum value that will either not work in all cases or is not a constant time operation. Use the stack frame memory to your advantage to solve this problem.
+* 
 
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
 
 ```python
-class MinStack:
-    def __init__(self):
-        self.stack = [ (None, float('inf')) ]
-        
-    def push(self, val: int) -> None:           
-        self.stack.append( (val, min(val, self.getMin())) )
 
-    def pop(self) -> None:
-        self.stack.pop()
-        
-    def top(self) -> int:
-        return self.stack[-1][0]
-
-    def getMin(self) -> int:
-        return self.stack[-1][1]
 ```
 ```java
-class MinStack {
-    Stack<Integer> mins = new Stack<Integer>();
-    Stack<Integer> stack = new Stack<Integer>();
-    
-    public void push(int val) {
-        stack.push(val);
-        if (mins.empty() || val < mins.peek()) {
-          mins.push(val);
-        } else{
-          mins.push(mins.peek());
-        }
-    }
-    
-    public void pop() {
-        stack.pop();
-        mins.pop();
-    }
-    
-    public int top() {
-        return stack.peek();
-    }
-    
-    public int getMin() {
-        return mins.peek();
-    }
-}
+
 ```
     
 ## 5: R-eview
@@ -130,5 +85,5 @@ class MinStack {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
-* **Time Complexity**: O(1) for all stack operations
-* **Space Complexity**: O(N) total stack space used
+* **Time Complexity**: 
+* **Space Complexity**: 
