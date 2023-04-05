@@ -15,6 +15,9 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
+- What happens when a newcomer encounters one with equal height? Can you provide an example?
+  - When a newcomer encounters one with equal height, the newcomer replace the existing one and stops there. 
+Eg. two persons in stack [height == 4, height == 2], a third one with height == 2 shows up, first person cannot see person 3, because his view of person 3 blocked by person 2.
 - 
 
 ```markdown
@@ -56,22 +59,83 @@ Explanation:
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 ```markdown
-
+Maintain a stack and pop an element off and increment answer by 1 when the current height is more than the top element on the stack.
 ```
 
 ⚠️ **Common Mistakes**
 
-* 
+* There is one thing to watch out for - when the current element is equal to the top element on the stack, do not push it onto the stack, just skip it. If we push onto the stack, it will lead to future bigger elements to over count.
 
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
 
 ```python
-
+class Solution:
+    def seePeople(self, heights: List[List[int]]) -> List[List[int]]:
+        m, n = len(heights), len(heights[0])
+        ans = [[0] * n for _ in range(m)]
+        for i in range(m): 
+            stack = []
+            for j in range(n): 
+                prev = -inf
+                while stack and heights[i][stack[-1]] < heights[i][j]: 
+                    if prev < heights[i][stack[-1]]: ans[i][stack[-1]] += 1
+                    prev = heights[i][stack.pop()]
+                if stack and prev < heights[i][stack[-1]]: ans[i][stack[-1]] += 1
+                stack.append(j)
+        for j in range(n): 
+            stack = []
+            for i in range(m): 
+                prev = -inf 
+                while stack and heights[stack[-1]][j] < heights[i][j]: 
+                    if prev < heights[stack[-1]][j]: ans[stack[-1]][j] += 1
+                    prev = heights[stack.pop()][j]
+                if stack and prev < heights[stack[-1]][j]: ans[stack[-1]][j] += 1
+                stack.append(i)
+        return ans 
 ```
-```java
 
+```java
+class Solution {
+    public int[][] seePeople(int[][] heights) {
+        int m = heights.length, n = heights[0].length;
+        int[][] ans = new int[m][n];
+        for (int i = 0; i < n; i++){ // DOWN
+            Deque<Integer> stack = new ArrayDeque<>();
+            for (int j = m - 1; j >= 0; j--){
+                while(!stack.isEmpty() && heights[j][i] > stack.peek()){
+                    ans[j][i]++;
+                    stack.pop();
+                }
+                if (!stack.isEmpty()){
+                    ans[j][i]++;
+                }
+                if (stack.isEmpty() || heights[j][i] != stack.peek()){
+                    stack.push(heights[j][i]);
+                }
+            }
+        }
+
+        for (int i = 0; i < m; i++){ // RIGHT
+            Deque<Integer> stack = new ArrayDeque<>();
+            for (int j = n - 1; j >= 0; j--){
+                while(!stack.isEmpty() && heights[i][j] > stack.peek()){
+                    ans[i][j]++;
+                    stack.pop();
+                }
+                if (!stack.isEmpty()){
+                    ans[i][j]++;
+                }
+                if (stack.isEmpty() || heights[i][j] != stack.peek()){
+                    stack.push(heights[i][j]);
+                }
+            }
+        }
+
+        return ans;
+    }
+}
 ```
     
 ## 5: R-eview
@@ -85,5 +149,5 @@ Explanation:
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
-* **Time Complexity**: 
-* **Space Complexity**: 
+* **Time Complexity**: O(MN), where M and N are the sizes of its two inputs
+* **Space Complexity**: O(N) since a stack is used
