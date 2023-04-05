@@ -18,7 +18,8 @@
 - What happens when a newcomer encounters one with equal height? Can you provide an example?
   - When a newcomer encounters one with equal height, the newcomer replace the existing one and stops there. 
 Eg. two persons in stack [height == 4, height == 2], a third one with height == 2 shows up, first person cannot see person 3, because his view of person 3 blocked by person 2.
-- 
+- How is this different from [Number of Visible People in a Queue](https://leetcode.com/problems/number-of-visible-people-in-a-queue/)? 
+  - One difference is that we can have duplicates here.
 
 ```markdown
 Example 1
