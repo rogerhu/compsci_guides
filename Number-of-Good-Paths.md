@@ -30,6 +30,11 @@ ai != bi
 edges represents a valid tree.
 ```   
 
+- What is the good path?
+  - The graph is represented by an array of values and a 2D array of edges. A good path is defined as a path in the graph where the maximum value of the vertices in the path is minimized.
+- How many nodes and edges are there?
+  - There are N nodes and N-1 edges, which means that there exists a unique path between each pair of nodes.
+
 
 ```markdown
 Example 1:
@@ -58,11 +63,13 @@ For Graph Problems, common solution patterns include:
 - Adjacency List: We already have an adjacency list, let's make it a adjacency dictionary.
 - Adjacency Matrix: We can use an adjacency matrix to store the graph, but this will make the problem more complicated.
 - Topological Sort: In order to have a topological sorting, the graph must not contain any cycles. We cannot apply this sort to this problem because we can have cycles in our graph.
-- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? This can be used for determining if two elements are in the same subset. Can you perform a union operation where you join two subsets into a single subset? Can you check if the two subsets belong to same set? If no, then we cannot perform union. 
+- Union Find: Are there find and union operations here? Can you perform a find operation where you can determine which subset a particular element is in? The approach used in this code is to sort the edges based on the maximum value of the vertices in the edge, and then use a union-find algorithm to group the vertices in the graph into connected components. The union-find algorithm is implemented using a disjoint set data structure, which is a collection of disjoint sets (or connected components) in the graph.
 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
+
+*General idea: use a union-find algorithm to group the vertices in the graph into connected components. Sort the edges based on the maximum value of the vertices in the edge to minimize the maximum value of the vertices in a good path. And return the number of good paths in the graph.
 
 
 ```markdown
@@ -84,7 +91,12 @@ We iterate through all the entries in the group and, for each key, get the value
 
 ⚠️ **Common Mistakes**
 
-* 
+* Realize BFS too slow
+* Noticed that there exists a unique path between any 2 nodes in a tree
+* Notice that the only way it can run in time is to have linear time, a.k.a solution need to go through nodes and edges in linear time
+* Note that you want to sort the node because cheaper nodes can build up to the bigger node
+* The trick that does the magic here is that we focus on the edges instead of the vertices, we prioritize the edges that connect the node values (i.e compare the vertices of the edges, and prioritize the on that has the minimum max of the pair). So when we are merging the groups we know that the edge that is merging them is the one with the minimum maximum possible. Build the graph step by step from edges connecting nodes with smaller values to those connecting larger valued nodes. Every time, try to figure out wether the current largest valued pairs of nodes in the graph are connected.
+
  
 ## 4: I-mplement
 
