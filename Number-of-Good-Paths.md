@@ -1,6 +1,6 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** [Number of Good Paths](https://leetcode.com/problems/number-of-good-paths/)
+* 🔗 **Leetcode Link:** [https://leetcode.com/problems/number-of-good-paths/](https://leetcode.com/problems/number-of-good-paths/)
 * 💡 **Problem Difficulty:** Hard
 * ⏰ **Time to complete**: 20 mins
 * 🛠️ **Topics**: Graph 
