@@ -198,6 +198,8 @@
 * [[Find the Town Judge]]
 * [[Find Center of Star Graph]]
 * [[Find if Path Exists in Graph]]
+* [[Number of Good Paths]]
+* [[The Time When the Network Becomes Idle]]
 
 ## Greedy
 
