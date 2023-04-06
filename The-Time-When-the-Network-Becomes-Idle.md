@@ -1,10 +1,10 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** []()
-* 💡 **Problem Difficulty:** 
+* 🔗 **Leetcode Link:** [The Time When the Network Becomes Idle](https://leetcode.com/problems/the-time-when-the-network-becomes-idle/)
+* 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: 20 mins
 * 🛠️ **Topics**: Graph 
-* 🗒️ **Similar Questions**: []()
+* 🗒️ **Similar Questions**: [Network Delay Time](https://leetcode.com/problems/network-delay-time/)
     
 ## 1: U-nderstand
  
