@@ -67,7 +67,8 @@ For trees, some things we should consider are:
 - Applying a level-order traversal with a queue
   - Using this approach may complicate our code
 - We could apply fundamental ideas about sorted arrays and binary search to this problem. 
-  - Let's recursively get the mid point of the array as root and recursively call for left child with first half of array and right child with second half of array, because the mid point of each recursive array is the point where we can branch off smaller elements on left and larger elements on right. 
+  - Let's recursively get the mid point of the array as root and recursively call for left child with first half of array and right child with second half of array, because the mid point of each recursive array is the point where we can branch off smaller elements on left and larger elements on right.
+ 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
