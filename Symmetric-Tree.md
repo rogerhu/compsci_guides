@@ -110,6 +110,41 @@ class Solution:
         # Return isSameTree recursive function on the two trees
         return isSameTree(p,q)
 ```
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+    // If there is no root, then return True and
+    // Return isSameTree recursive function on the two trees
+    return root==null || isSymmetricHelp(root.left, root.right);
+}
+    // Create isSameTree recursive function to traverse left and right child of root and check for symmetry
+    private boolean isSymmetricHelp(TreeNode left, TreeNode right){
+        // Basecase: If both left and right child is None, then return True
+        if(left==null && right==null)
+            return true;
+        // If both left and right child are equal, then continue to check symmetry
+        if(left!=null && right!=null && left.val==right.val)
+            return isSymmetricHelp(left.left, right.right) && isSymmetricHelp(left.right, right.left);
+        // Otherwise return False
+        return false;
+    }
+}
+```
     
 ## 5: R-eview
 
