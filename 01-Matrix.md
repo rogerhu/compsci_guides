@@ -16,8 +16,7 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - How do we approach a neighboring cell?
-  - When we find the neighbor, we just ignore the visited position, this will lead you to find the new neighbor, and exactly level by level.
-
+    - When we find the neighbor, we just ignore the visited position, this will lead you to find the new neighbor, and exactly level by level.
 - What should we keep track of when we visit a cell?
     - Every time you visit a node, it will be from a path of predecessors that is of the shortest distance to a zero.
 
@@ -56,16 +55,13 @@ For 2D-Array, common solution patterns include:
 
 **General Idea:** Apply BFS to queue up all zero node and look at the next layers from zero as we repeat the bfs call to signify the distance of each position. 
 
-
-
-```markdown
+```python
 PYTHON
 1) Queue up all the zero values 
 2) Traverse level order wise and for each level and update distance
     a) Add such element to back of queue also for next level traversal. In this way those who are not reachable to any zero in first attempt (i.e.first level), the new level is checked and hence length counter will increased by 1
 ```
-
-```markdown
+```java
 JAVA
 1. apply bfs on zero values and store -1 for other matrix data to denote they are not visited yet.
 2. traverse level order wise and for each level update distance only of those
