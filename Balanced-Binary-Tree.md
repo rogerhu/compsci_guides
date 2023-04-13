@@ -6,6 +6,7 @@
 * 🛠️ **Topics**: Binary Trees, Depth First Search
 * 🗒️ **Similar Questions**: [Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/), [Symmetric Tree
 ](https://leetcode.com/problems/symmetric-tree/), [Same Trees](https://leetcode.com/problems/minimum-depth-of-binary-tree/), [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/), [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/), [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
+
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
@@ -56,6 +57,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - We are not looking to find an element in this problem so this technique is not useful for this problem
 - Applying a level-order traversal with a queue
     - Since we need to find the height of the tree, we could get nodes by level. However, we need to do so for each node to check the balance at each node. a level-order traversal using a queue would not be appropriate
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
