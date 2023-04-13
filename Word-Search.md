@@ -17,16 +17,12 @@
 
 - When do we return true?
   - Return true when the last letter is reached.
-
 - What if we come across the same letter during the search path?
     - During the search path, set the visited letter as visited to avoid reuse.
-
 - What is the smallest 2D-Array?
     - 1 row and 1 column
-    
 - What is the shortest word?
     - 1 character long
-    
 - Is it possible that the word is longer than then number of possible squares in 2D-Array?
     - Yes
 
@@ -51,8 +47,6 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - DFS: Our goal is to find if the word exists in the matrix or not. We only have to look at the adjacent cells (ignore the diagonal ones). Match character-by-character, go ahead and check if the adjacent cells match the next character, and go back if it does not match. How should we traverse the matrix efficiently? We need to think of a traversal approach. BFS? DFS? Both can work. But DFS will be better as it immediately checks the next position and returns if it is not needed after marking it as visited.
- 
-
 - Hash the 2D Array in some way to help with the Strings
     - We do need a visited hashset to ensure that we do not revisit the same position twice.
 - Create/Utilize a Trie
