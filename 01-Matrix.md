@@ -74,7 +74,6 @@ that cell has -1.
 ```
 
 ⚠️ **Common Mistakes**
-
 * How do you avoid having the recursion relation going on forever? We can start sweeps from top right and bottom left. With min(up, left) first, then this part of recursion relation ends at bottom right. After that, min(right, down) in the second sweep to end the recursion relation at top left.
 
 ## 4: I-mplement
