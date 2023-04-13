@@ -17,13 +17,10 @@
 
 - What do the possible values of the grid represent? 
   - 1’s are fresh oranges, 2’s are rotten oranges and 0’s are empty spaces
-    
 - What data structures can I use to store the grids? 
   - You can use a 2D array, hashset, queue, etc.
-    
 - Do we need to keep track of the level? 
   - Yes, you can keep track of the level using a search algorithm. Trick is to only increment once per level and only if fresh.
-    
 - What is a possible edge case? 
     - That there is no fresh, there is no rotten
 
@@ -48,22 +45,16 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - BFS: We can model the grid in the form of a graph and to compute the distance for every node, we can apply standard BFS algorithm using a queue. We can think of it in a level by level manner. The key observation is that fresh oranges adjacent to rotten oranges are rotten on day 1, those adjacent to those oranges are rotten on day 2, and so on. The phenomenon is similar to a level order traversal on a graph, where all the initial rotten oranges act as root nodes. We can just push all these root nodes into a queue and perform BFS on a grid algorithm, to calculate the total time taken to rot all the oranges. Since there can be multiple rotten cells, we will push all those cells in the queue first and then continue with the BFS. If all oranges are not rotten before our algorithm terminates, we will return -1.
- 
-
 - Hash the 2D Array in some way to help with the Strings
     - We are not working with strings here
-
 - Create/Utilize a Trie
     - A Trie will complicate the problem.
-
 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 **General Idea:** Use a queue data structure to keep track of the candidates that we need to visit during the process
-
-
 
 ```markdown
 1. Initialize a queue for breadth first search.
@@ -129,7 +120,6 @@ class Solution:
         # return elapsed minutes if no fresh orange left
         return minutes_elapsed if fresh_oranges == 0 else -1
 ```
-
 ```java
 class Solution {
     public int orangesRotting(int[][] grid) {
