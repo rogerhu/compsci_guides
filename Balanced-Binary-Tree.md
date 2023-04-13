@@ -90,7 +90,6 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 #         self.left = left
 #         self.right = right
 class Solution:
-    
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         # Create function to return the height of tree and collect balance at each node
         def helper(root: Optional[TreeNode]) -> int:
@@ -116,7 +115,35 @@ class Solution:
         helper(root)
 
         # Return the balance
-*         return balanced
+          return balanced
+```
+```java
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        // If the tree is empty, we can say it’s balanced...
+        if (root == null)  return true;
+        // Call the function to check balance of each node and return the balance
+		if (Height(root) == -1)  return false;
+		return true;
+	}
+        // Create function to return the height of tree and collect balance at each node
+	public int Height(TreeNode root) {
+                // Basecase is a Null Node, return 0
+		if (root == null)  return 0;
+
+                // Collect information regarding balance of node
+		int leftHeight = Height(root.left);
+		int rightHight = Height(root.right);
+
+                // Recursively return the max between height of left node and right node and add one for current node.
+                // In case of left subtree or right subtree unbalanced, return -1...
+		if (leftHeight == -1 || rightHight == -1)  return -1;
+                // If their heights differ by more than ‘1’, return -1...
+                if (Math.abs(leftHeight - rightHight) > 1)  return -1;
+                // Otherwise, return the height of this subtree as max(leftHeight, rightHight) + 1...
+		return Math.max(leftHeight, rightHight) + 1;
+    }
+}
 ```
     
 ## 5: R-eview
