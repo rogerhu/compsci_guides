@@ -54,6 +54,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - We are not looking to find an element in this problem so this technique is not useful for this problem
 - Applying a level-order traversal with a queue
     - Since we need to swap nodes, we could swap each node by level. a level-order traversal using a queue would be appropriate
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -93,7 +94,26 @@ class Solution:
         # Return the node with swapped children
         return root
 ```
-    
+```java
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        // Basecase is a Null Node
+        if(root == null){
+            return root;
+        }
+        // Swap the left and right nodes
+        invertTree(root.left);
+        invertTree(root.right);
+        TreeNode curr = root.left;
+        root.left = root.right;
+        root.right = curr;
+
+        // Return the node with swapped children
+        return root;        
+    }
+}
+```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
