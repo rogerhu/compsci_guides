@@ -120,6 +120,34 @@ class Solution:
         # Return the largest island size
         return maxArea
 ```
+```java
+class Solution {
+    public int maxAreaOfIsland(int[][] grid) {
+        // Initialize a variable to keep track of the largest islands
+        int max_area = 0;
+        // Iterate over the grid
+        for(int i = 0; i < grid.length; i++)
+            for(int j = 0; j < grid[0].length; j++)
+                // If a '1' is seen: "explore" the island from this '1' using dfs and check size against previously recorded max area
+                if(grid[i][j] == 1)max_area = Math.max(max_area, AreaOfIsland(grid, i, j));
+        // Return the largest island size
+        return max_area;
+    }
+    
+    // helper dfs function
+    public int AreaOfIsland(int[][] grid, int i, int j){
+        // Basecase: Out of bound or grid value is 0, return 0
+        if( i >= 0 && i < grid.length && j >= 0 && j < grid[0].length && grid[i][j] == 1){
+            // Change the grid value to '0' to mark it as visited
+            grid[i][j] = 0;
+            // Recursively check 4 neighbors from the current cell for more island cells (1's) and tack on 1 to account for this square
+            return 1 + AreaOfIsland(grid, i+1, j) + AreaOfIsland(grid, i-1, j) + AreaOfIsland(grid, i, j-1) + AreaOfIsland(grid, i, j+1);
+        }
+        return 0;
+    }
+}
+```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
