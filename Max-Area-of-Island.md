@@ -48,10 +48,8 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - A search through the 2D Array (either BFS or DFS) can help us find and measure the area of each islands. Which of these two traversals will better help us locate islands?
-
 - Hash the 2D Array in some way to help with the Strings
     - Hashing would not directly help us find islands. However, we could hash where certain 1's are in the 2D Array to jumpstart searches (BFS/DFS) faster.
-    
 - Create/Utilize a Trie
     - A Trie would not help us much in this problem since we are not trying to determine anything about a sequence of characters.
 
