@@ -42,12 +42,10 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - BFS: The idea is to put all zeroes in one BFS layer/breadth and move out to other nodes from there. 
-
 - Hash the 2D Array in some way to help with the Strings
     - We are not working with strings
 - Create/Utilize a Trie
     - A Trie will complicate the problem
-
 
 ## 3: P-lan
 
