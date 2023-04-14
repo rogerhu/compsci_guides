@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [Validate Stack Sequences](https://leetcode.com/problems/validate-stack-sequences/) 
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Array, Stack, Greedy
 * 🗒️ **Similar Questions**: TBD
     
@@ -77,6 +77,12 @@ Output: true
 
 ```python
 class Solution(object):
+
+    # Using a stack, keep on adding the elements looping the "pushed" list
+    # Maintain an index var to traverse "popped" list
+    # When the top element of stack equals the popped[index] value, move down the stack to pop elements
+    # with same value as popped[index], incrementing index in each iteration
+    # return True if matches
     def validateStackSequences(self, pushed, popped):
         j = 0
         stack = []
