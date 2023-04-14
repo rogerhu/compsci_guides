@@ -1,8 +1,8 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** <https://leetcode.com/problems/binary-tree-pruning/>
+* 🔗 **Leetcode Link:** [Binary Tree Pruning](https://leetcode.com/problems/binary-tree-pruning/)
 * 💡 **Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Binary Trees, Depth First Search
 * 🗒️ **Similar Questions**: TBD
     
@@ -33,6 +33,23 @@ Input:              [0]
       /         /     /     \        \
      [1]       [0]   [0]    [0]      [1]   
 Output:             [0]
+               /            \
+             [1]            [1]
+          /      \              \
+        [0]      [1]            [0]
+      /                             \
+     [1]                              [1]  
+
+
+
+Input:              [1]
+               /            \
+             [1]            [1]
+          /      \        /       \
+        [0]      [1]    [0]       [0]
+      /         /     /     \        \
+     [1]       [0]   [0]    [0]      [1]   
+Output:             [1]
                /            \
              [1]            [1]
           /      \              \
