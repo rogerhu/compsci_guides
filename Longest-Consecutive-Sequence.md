@@ -86,7 +86,7 @@ For Array problems, we want to consider the following approaches:
 
 > **Implement** the code to solve the algorithm.
 
-### Approach #1 Sort and find subsequence length
+**Approach #1 Sort and find subsequence length**
 
 ```python
 class Solution:
@@ -118,7 +118,7 @@ class Solution:
         return max(longest_streak, current_streak)
 ```
 
-### Approach #2 Use a hash set to find the longest length
+**Approach #2 Use a hash set to find the longest length**
 
 ```python
 class Solution:
