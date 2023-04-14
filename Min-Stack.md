@@ -32,6 +32,7 @@ Input
 Output
 [null,null,null,null,-3,null,0,-2]
 
+Input
 ["MinStack","push","push","push","top","pop","getMin","pop","getMin","pop","push","top","getMin","push","top","getMin","pop","getMin"]
 [[],[2147483646],[2147483646],[2147483647],[],[],[],[],[],[],[2147483647],[],[],[-2147483648],[],[],[],[]]
 
