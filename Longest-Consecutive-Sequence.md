@@ -86,9 +86,9 @@ For Array problems, we want to consider the following approaches:
 
 > **Implement** the code to solve the algorithm.
 
-```python
-# Approach #1 Sort and find subsequence length
+### Approach #1 Sort and find subsequence length
 
+```python
 class Solution:
     def longestConsecutive(self, nums):
         if not nums:
@@ -117,9 +117,10 @@ class Solution:
         # Return the longest streak
         return max(longest_streak, current_streak)
 ```
-```python
-# Approach #2 Use a hash set to find the longest length
 
+### Approach #2 Use a hash set to find the longest length
+
+```python
 class Solution:
     def longestConsecutive(self, nums):
         # Keep track of longestStreak starting at 0.
