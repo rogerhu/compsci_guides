@@ -1,8 +1,8 @@
 ## Problem Highlights
 
-* 🔗 **Geeks for Geeks link:** <https://www.geeksforgeeks.org/print-binary-tree-vertical-order/>
+* 🔗 **Geeks for Geeks link:** [Print Binary Tree Vertical Order](https://www.geeksforgeeks.org/print-binary-tree-vertical-order/)
 * 💡 **Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Binary Trees
 * 🗒️ **Similar Questions**: TBD
     
