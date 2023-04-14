@@ -1,15 +1,14 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** [https://leetcode.com/problems/number-of-islands](https://leetcode.com/problems/number-of-islands)
+* 🔗 **Leetcode Link:** [Number of Islands](https://leetcode.com/problems/number-of-islands)
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 20 mins
 * 🛠️ **Topics**: Graphs, Breadth-First Search, Depth-First Search
 * 🗒️ **Similar Questions**: [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/), [Walls and Gates](https://leetcode.com/problems/walls-and-gates/), [Number of Islands II](https://leetcode.com/problems/number-of-islands-ii/), [Number of Distinct Islands](https://leetcode.com/problems/number-of-distinct-islands/)
 
 ## 1: **U-nderstand**
 
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
-> 
 > - Established a set (2-3) of test cases to verify their own solution later.
 > - Established a set (1-2) of edge cases to verify their solution handles complexities.
 > - Have fully understood the problem and have no clarifying questions.
