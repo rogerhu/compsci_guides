@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [Min Stack](https://leetcode.com/problems/min-stack/) 
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Stack
 * 🗒️ **Similar Questions**: [Max Stack](https://leetcode.com/problems/max-stack/)
     
@@ -31,6 +31,12 @@ Input
 
 Output
 [null,null,null,null,-3,null,0,-2]
+
+["MinStack","push","push","push","top","pop","getMin","pop","getMin","pop","push","top","getMin","push","top","getMin","pop","getMin"]
+[[],[2147483646],[2147483646],[2147483647],[],[],[],[],[],[],[2147483647],[],[],[-2147483648],[],[],[],[]]
+
+Output
+[null,null,null,null,2147483647,null,2147483646,null,2147483646,null,null,2147483647,2147483647,null,-2147483648,-2147483648,null,2147483647]
 
 HARDER CASE
 
@@ -129,5 +135,7 @@ class MinStack {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
+Let n be the total number of operations performed.
+
 * **Time Complexity**: O(1) for all stack operations
 * **Space Complexity**: O(N) total stack space used
