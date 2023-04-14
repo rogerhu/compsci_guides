@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [Number of People That Can Be Seen in a Grid](https://leetcode.com/problems/number-of-people-that-can-be-seen-in-a-grid/) 
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Stack
 * 🗒️ **Similar Questions**: [Number of Visible People in a Queue](https://leetcode.com/problems/number-of-visible-people-in-a-queue/)
     
@@ -22,28 +22,14 @@ Eg. two persons in stack [height == 4, height == 2], a third one with height == 
   - One difference is that we can have duplicates here.
 
 ```markdown
-Example 1
+HAPPY CASE
 Input: heights = [[3,1,4,2,5]]
 Output: [[2,1,2,1,0]]
-Explanation:
-- The person at (0, 0) can see the people at (0, 1) and (0, 2).
-  Note that he cannot see the person at (0, 4) because the person at (0, 2) is taller than him.
-- The person at (0, 1) can see the person at (0, 2).
-- The person at (0, 2) can see the people at (0, 3) and (0, 4).
-- The person at (0, 3) can see the person at (0, 4).
-- The person at (0, 4) cannot see anybody.
 
 
-Example 2
+EDGE CASE
 Input: heights = [[5,1],[3,1],[4,1]]
 Output: [[3,1],[2,1],[1,0]]
-Explanation:
-- The person at (0, 0) can see the people at (0, 1), (1, 0) and (2, 0).
-- The person at (0, 1) can see the person at (1, 1).
-- The person at (1, 0) can see the people at (1, 1) and (2, 0).
-- The person at (1, 1) can see the person at (2, 1).
-- The person at (2, 0) can see the person at (2, 1).
-- The person at (2, 1) cannot see anybody.
 ```   
     
 ## 2: M-atch
