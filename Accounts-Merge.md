@@ -17,17 +17,12 @@
 
 - How might we handle accounts with the same first name?
   -  If two accounts have the same name but do not share any common emails, we can assume that there are two accounts with the same name. Similar in the example, we have two accounts with the name John but are represented by two separate instances in the output.
-
-    
 - Will names be case sensitive?
   - No. You can assume that there will not be two accounts with a similar email but different names as in "John" or "john"
-
 - Can one person have multiple accounts? 
   - One person is allowed to have multiple accounts, but each email can only belong to one person.
-    
 - Why do need to list out all the emails that belong to a specific person? 
   - This is done so that every time we find two accounts with an email in common, we will merge the two accounts into one.
-    
 - What do you mean by “merging” accounts? 
   - We have a set of elements (emails) that are connected (belonging to the same user). We can consider this as our input on a graph. Converting the input into a graph is what is meant by “merging” the accounts.
     
@@ -70,8 +65,7 @@ For Graph Problems, common solution patterns include:
 
 **General Idea:** We will create a adjacency list and find the common emails.  Do a DFS on each account in accounts list and look up to tell us which accounts are linked to that particular account via common emails.
 
-```markdown
-PYTHON
+```python
 1. Create adjacency list list of email to emails
 2. Create primaryEmail to name dictionary
 3. Run DFS call to join associated emails in adjacency list under a single name 
@@ -81,8 +75,7 @@ PYTHON
     d. If primary email had not been seen then we should get allRelatedEmail under one name for storage
 4. Return results
 ```
-```markdown
-JAVA
+```java
 1. Build a graph of an adjacency list of emails. 
 2. Every email should have an edge to the connected email (including itself). From this, we can maintain a list of emails to account name list. 
 3. Next, do a DFS for the unique email (using a hashset 'visited') to fill the emails for the given account name. 
