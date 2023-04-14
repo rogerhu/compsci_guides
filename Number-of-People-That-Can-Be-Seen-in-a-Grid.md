@@ -46,7 +46,8 @@ Output: [[3,1],[2,1],[1,0]]
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 ```markdown
-Maintain a stack and pop an element off and increment answer by 1 when the current height is more than the top element on the stack.
+Maintain a stack and pop an element off 
+Increment answer by 1 when the current height is more than the top element on the stack.
 ```
 
 ⚠️ **Common Mistakes**
@@ -62,25 +63,26 @@ class Solution:
     def seePeople(self, heights: List[List[int]]) -> List[List[int]]:
         m, n = len(heights), len(heights[0])
         ans = [[0] * n for _ in range(m)]
-        for i in range(m): 
-            stack = []
-            for j in range(n): 
-                prev = -inf
-                while stack and heights[i][stack[-1]] < heights[i][j]: 
-                    if prev < heights[i][stack[-1]]: ans[i][stack[-1]] += 1
-                    prev = heights[i][stack.pop()]
-                if stack and prev < heights[i][stack[-1]]: ans[i][stack[-1]] += 1
-                stack.append(j)
-        for j in range(n): 
-            stack = []
-            for i in range(m): 
-                prev = -inf 
-                while stack and heights[stack[-1]][j] < heights[i][j]: 
-                    if prev < heights[stack[-1]][j]: ans[stack[-1]][j] += 1
-                    prev = heights[stack.pop()][j]
-                if stack and prev < heights[stack[-1]][j]: ans[stack[-1]][j] += 1
-                stack.append(i)
-        return ans 
+        s = collections.deque()                   # a deque behave like mono-stack
+        for i in range(m):                        # look right
+            for j in range(n-1, -1, -1):
+                num = heights[i][j]
+                idx = bisect.bisect_left(s, num)  # binary search on an increasing order sequence
+                ans[i][j] += idx + (idx < len(s)) # if `idx` is not out of bound, meaning the next element in `s` is the first one large than `num`, we can count it too
+                while s and s[0] <= num:          # keep a mono-descreasing stack
+                    s.popleft()
+                s.appendleft(num)    
+            s.clear()
+        for j in range(n):                        # look below
+            for i in range(m-1, -1, -1):
+                num = heights[i][j]
+                idx = bisect.bisect_left(s, num)
+                ans[i][j] += idx + (idx < len(s))
+                while s and s[0] <= num:
+                    s.popleft()
+                s.appendleft(num)    
+            s.clear()
+        return ans
 ```
 
 ```java
