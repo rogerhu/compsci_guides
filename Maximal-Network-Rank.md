@@ -18,14 +18,9 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - How can you efficiently check if there is a road connecting two different cities?
-
   -  Check neighbors
-    
 - Would it be efficient to use a matrix to save all the edges between vertex?
-
   - Yes
-
-    
 - If the edge is close to city_1 and city_2, then during counting, are they counted twice?
   - No, the common connection is counted only once.
 
