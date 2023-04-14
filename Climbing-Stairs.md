@@ -76,6 +76,8 @@ We are working with a `n` steps to climb and the ability to take one step or two
 
 > **Implement** the code to solve the algorithm.
 
+Auto Cache
+
 ```python
 class Solution:
     # Store the step that we have already calculated for quick access.
@@ -91,6 +93,7 @@ class Solution:
         return self.climbStairs(n-1) + self.climbStairs(n-2)
 ```
 
+Manual Cache
 ```python
 class Solution:
     def climbStairs(self, n: int) -> int:
