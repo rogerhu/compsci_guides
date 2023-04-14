@@ -1,8 +1,8 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** <https://leetcode.com/problems/find-largest-value-in-each-tree-row/>
+* 🔗 **Leetcode Link:** [Find Largest Value in Each Tree Row](https://leetcode.com/problems/find-largest-value-in-each-tree-row/)
 * 💡 **Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Trees
 * 🗒️ **Similar Questions**: TBD
     
