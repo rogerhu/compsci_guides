@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) 
 * 💡 **Problem Difficulty:** Easy
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Stacks, Queues
 * 🗒️ **Similar Questions**: [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)
     
@@ -26,11 +26,21 @@
 Run through this example case:
 
 ```markdown
+HAPPY CASE
 Input:
-["MyQueue", "push", "push", "peek", "pop", "empty", "pop", "empty"]
-[       [],    [7],   [-2],     [],    [],      [],    [],      []]
+["MyQueue","push","push","peek","pop","empty"]
 Output:
-[     null,   null,   null,     7,     7,   false,     -2,    true]
+[[],[1],[2],[],[],[]]
+
+
+Input:
+["MyQueue","push","push","peek","pop","empty","empty"]
+Output:
+[[],[1],[2],[],[],[],[]]
+
+EDGE CASE
+["MyQueue","push","push","peek","empty","empty"]
+[[],[1],[2],[],[],[]]
 ```   
     
 ## 2: M-atch
@@ -68,28 +78,35 @@ boolean empty(): Returns true if the intake and output stacks are both empty, fa
 > **Implement** the code to solve the algorithm.
 
 ```python
-class Queue(object):
+class MyQueue:
+
     def __init__(self):
-        self.inStack, self.outStack = [], []
+		# we either add to the add or remove from queue.
+        self.addStack, self.popStack = [], []
+        
 
     def push(self, x):
-        self.inStack.append(x)
-
+		# When we add to the queue, we want to add to the addStack
+		# if we previously popped, we want to move all items from the popStack to the addStack
+        while self.popStack:
+            self.addStack.append(self.popStack.pop())
+        self.addStack.append(x)  
+                    
     def pop(self):
-        self.move()
-        return self.outStack.pop()
+	    # when we pop from the queue, we need to migrate items from addstack to popstack
+		# doing this allows us to properly utilize a stack by using the FILO (first in last out) ideology
+        while self.addStack:
+            self.popStack.append(self.addStack.pop())
+        return self.popStack.pop()
 
     def peek(self):
-        self.move()
-        return self.outStack[-1]
+		# if we previously added, look at the last item in the AddStack
+		# if we previously popped, look at the first item in the PopStack
+        return self.popStack[-1] if self.popStack else self.addStack[0]
 
     def empty(self):
-        return (not self.inStack) and (not self.outStack)
-
-    def move(self):
-        if not self.outStack:
-            while self.inStack:
-                self.outStack.append(self.inStack.pop())
+		# check to see if either stack has items
+        return True if not self.addStack and not self.popStack else False
 ```
 ```java
 class MyQueue {
@@ -154,4 +171,4 @@ class MyQueue {
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
 * **Time Complexity**: O(1) for all queue operations, (amortized O(1) for pop() and peek())
-* **Space Complexity**: O(N) total queue space used
+* **Space Complexity**: O(N) total queue space used, where n is the number of elements
