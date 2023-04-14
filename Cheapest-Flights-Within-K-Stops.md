@@ -1,8 +1,8 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** [https://leetcode.com/problems/cheapest-flights-within-k-stops/](https://leetcode.com/problems/cheapest-flights-within-k-stops/)
+* 🔗 **Leetcode Link:** [Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/)
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 20 mins
 * 🛠️ **Topics**: Graphs, Depth-First Search, Breadth-First Search, Dijkstra’s
 * 🗒️ **Similar Questions**: [Maximum Vacation Days](https://leetcode.com/problems/maximum-vacation-days/)
 
