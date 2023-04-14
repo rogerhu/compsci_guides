@@ -94,6 +94,7 @@ class Solution:
 ```
 
 Manual Cache
+
 ```python
 class Solution:
     def climbStairs(self, n: int) -> int:
