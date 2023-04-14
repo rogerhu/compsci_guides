@@ -1,8 +1,8 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** <https://leetcode.com/problems/minimum-depth-of-binary-tree/>
+* 🔗 **Leetcode Link:** [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
 * 💡 **Difficulty:** Easy
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 10 mins
 * 🛠️ **Topics**: Depth First Search, Breadth First Search, Binary Trees
 * 🗒️ **Similar Questions**: [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/), [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
     
