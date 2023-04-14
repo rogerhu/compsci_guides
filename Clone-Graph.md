@@ -17,13 +17,10 @@
 
 - Does the graph have to a connected graph?
   - Yes, this graph has to be a connected graph. If it’s not connected, it’s impossible to clone a graph give only one node.
-    
 - What do we go after copying every single node?
   - We need to copy each single node and assign the correct reference to the copied node.
-    
 - Can a node in this graph have more than one neighbor?
   - Yes, a node could have any number of neighbors. This is why neighbors can be thought of as a list.
-    
 - How do we choose how to traverse the graph?
   - Based on the kind of graph we are expecting, we can chose a BFS or DFS implementation. 
     
@@ -70,8 +67,7 @@ Note: The difference is only in the traversal of DFS and BFS. DFS explores the d
 
 **General Idea:** Use BFS or DFS to mark visited nodes and to keep track of created copies
 
-```markdown
-DFS
+```dfs
 0. Create visited dictionary to save created nodes in memory
 1. Define dfs function:
     a. Check is current node is empty.
@@ -81,8 +77,7 @@ DFS
     e. Return deepcopy
 2. Run dfs on given node
 ```
-```markdown
-BFS
+```bfs
 1. Use a hash map to store the reference of the copy of all the nodes that have already been visited and copied. 
 2. Add the first node to the queue. 
 3. Do the BFS traversal.
@@ -94,7 +89,6 @@ BFS
 
 ⚠️ **Common Mistakes**
 
-
 * Because you need to copy each single node and assign the correct reference to the copied node, you can easily make a mistake in assigning a pointer to the old reference.
 * To avoid cycles, we would need the `visited` hash map in both the BFS/DFS approaches. We need this to to keep track of the nodes which have already been copied. By doing this we don't end up traversing them again.
  
@@ -102,7 +96,6 @@ BFS
 
 > **Implement** the code to solve the algorithm.
 
-**Approach #1: DFS**
 ```python
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
