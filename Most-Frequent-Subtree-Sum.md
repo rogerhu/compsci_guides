@@ -1,8 +1,8 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** <https://leetcode.com/problems/most-frequent-subtree-sum/>
+* 🔗 **Leetcode Link:** [Most Frequent Subtree Sum](https://leetcode.com/problems/most-frequent-subtree-sum/)
 * 💡 **Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Trees
 * 🗒️ **Similar Questions**: [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
     
@@ -25,19 +25,11 @@
    
 ```markdown
 HAPPY CASE
+Input: root = [5,2,-5]
+Output: [2]
+
 Input: root = [5,2,-3]
 Output: [2,-3,4]
-
-Input:              [1]
-               /            \
-             [2]            [5]
-          /      \              \
-        [3]      [4]            [6]   
-Output: The subtrees of this input are [3], [4], [6],      [2]      , [5]    , and the entire tree.
-                                                         /     \        \
-                                                       [3]     [4]      [6]
-The sums of each of these subtrees are [3, 4, 6, 9, 11, 12] respectively. Each of these sums appears only once, so they would be tied for the most frequent subtree sum.
-Therefore, we should return [3, 4, 6, 9, 11, 12] as the answer.
 
 EDGE CASE
 Input: [3]  
