@@ -107,6 +107,30 @@ class Solution:
         # Return the head node
         return head
 ```
+```java
+class Solution {
+	public ListNode deleteDuplicates(ListNode head) {
+        // Establish two pointers
+        ListNode slow = head;
+        ListNode fast = head;
+
+        // While two pointers are not null
+        while (fast != null) {
+            // Re-assign 'next' of each node to a node with a different value
+            while (fast != null && slow.val == fast.val) {
+                fast = fast.next;
+            }
+            slow.next = fast;
+            // Move both pointers to the node with a different value
+            slow = fast;
+        }
+
+        // Return the head node
+        return head;
+
+	}
+}
+```
     
 ## 5: R-eview
 
