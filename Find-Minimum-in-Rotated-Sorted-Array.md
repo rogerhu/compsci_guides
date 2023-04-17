@@ -56,11 +56,6 @@ For Array problems, we want to consider the following approaches:
 - Traversing the array with a sliding window. Similar to the two pointer solution. 
     - A sliding window doesn't really help us here.
 
-**⚠️ Common Mistakes**
-
-* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n) time. But the interviewer wants to solve this problem in O(logn) time.
-
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -77,6 +72,11 @@ For Array problems, we want to consider the following approaches:
         ii. If mid pointer is less than the right pointer, then the smaller half is the left half. Set the right pointer to the mid pointer 
 3. Return number at right pointer for smallest number in list 
 ```
+
+**⚠️ Common Mistakes**
+
+* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n) time. But the interviewer wants to solve this problem in O(logn) time.
+
 
 ## 4: I-mplement
 
