@@ -17,10 +17,8 @@
 
 - Can the input array be empty?
     - No, there will alway be at least one number.
-
 - Will there alway be one bad version?
     - Yes, there will always be one bad version
-
 - What is the space and time complexity?
     - We want O(logn) time and O(1) space. 
 
@@ -115,6 +113,31 @@ class Solution:
                 l = mid + 1
         # Return the right pointer for first bad version
         return r
+```
+```java
+ public class Solution extends VersionControl {
+    public int firstBadVersion(int n) {
+        // Initialize left and right pointers
+        int l=1;
+        int r=n;
+        // While left pointer is less than right pointer we have not exhausted the versions
+        while(l<r){
+            // Get the mid point of the two pointers
+            int m=l+(r-l)/2;
+
+            // Check if mid point is bad or not
+            if(isBadVersion(m)){
+                // If mid point is bad then there might be more bad versions before it, shift right pointer and check for earlier bad version.
+                r=m;
+            }else{
+                // If mid point is good then we know that everything to the left is good, shift left pointer to check for bad version in right half
+                l=m+1;
+            }
+        }
+        // Return the right pointer for first bad version
+        return r;
+    }
+}
 ```
     
 ## 5: R-eview
