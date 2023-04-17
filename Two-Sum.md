@@ -17,10 +17,8 @@
 
 - Could there be no solution for the input parameter ?
   - You may assume that each input would have exactly one solution, and you may not use the same element twice.
-
 - What is the time and space complexity?
     - Can you come up with an algorithm that is less than O(n2) time complexity?
-
 
 ```markdown
 HAPPY CASE
@@ -44,13 +42,10 @@ For Array/Strings, common solution patterns include:
 
 - Sort
     - Does sorting help us achieve what we need in order to solve the problem?
-
 - Two pointer solutions (left and right pointer variables)
     - Two pointer may help us find the two sum pair that adds up to the target after sorting the array. However we will need a separate array to store the index.
-
 - Storing the elements of the array in a HashMap or a Set
     - A hashset will be helpful here, because we can store the missing counterpart of the numbers we had seen. 
-
 - Traversing the array with a sliding window
     - Will viewing pieces of the input at a time help us?
 
@@ -90,6 +85,30 @@ class Solution:
 
             # Store the counterpart of the number we have seen and current index
             hashmap[target-num] = i
+```
+```java
+import java.util.HashMap;
+import java.util.Map;
+ 
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        // Create a hashmap
+        Map<Integer, Integer> numToIndex = new HashMap<>();
+
+        // Iterate through the array
+        for (int i = 0; i < nums.length; i++) {
+            
+            // If we see the counterpart in our hashmap then return the index of the counterpart and current index
+            if (numToIndex.containsKey(target - nums[i])) {
+                return new int[] {numToIndex.get(target - nums[i]), i};
+            }
+            
+            // Store the counterpart of the number we have seen and current index
+            numToIndex.put(nums[i], i);
+        }
+        return new int[] {};
+    }
+}
 ```
     
 ## 5: R-eview
