@@ -50,11 +50,6 @@ For Array problems, we want to consider the following approaches:
 - Traversing the array with a sliding window. Similar to the two pointer solution. 
     - We will need to sort the array first to use the sliding window, but it really isn't all that helpful when sort does the job.
 
-**⚠️ Common Mistakes**
-
-* Sorting requires a O(NlogN) runtime, while a Hash requires a O(N) runtime. If we want to speed up our algorithm we should use a hash.
-
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -68,6 +63,10 @@ For Array problems, we want to consider the following approaches:
     a) Count each number
 3) Return if duplicate values exist in hash table
 ```
+
+**⚠️ Common Mistakes**
+
+* Sorting requires a O(NlogN) runtime, while a Hash requires a O(N) runtime. If we want to speed up our algorithm we should use a hash.
 
 ## 4: I-mplement
 
