@@ -44,19 +44,10 @@ For Linked Lists problems, we want to consider the following approaches:
 
 - Multiple passes over the linked list. If we were able to take multiple passes of the linked list, would that help solve the problem?
   - Do we need to discover the length of the lists? This might be useful when trying to delete a node from the end of the list.
-
 - Dummy Head. Would using a dummy head as a starting point help simplify our code and handle edge cases?
   - Are we restructuring the given lists? Creating a new one? Yes; this could be useful when trying to delete the first node in the list.
-
 - Two Pointers. If we used two pointers to iterate through list, would that help us solve this problem?
   - Two pointers would be useful in helping us find the node that we're trying to remove, and then allow us to restructure the pointers to "remove" the node from the list.
-
-**⚠️ Common Mistakes**
-
-- Not recognizing the dummy head technique as useful. The dummy head allows us to easily remove the value at the head of the list.
-
-- Thinking that you have to replace the nth node to delete it. Usually with linked list problems where we want to delete a node, we end up restructure pointers that point to and from that node to remove it from the list.
-
 
 ## 3: P-lan
 
@@ -72,6 +63,13 @@ For Linked Lists problems, we want to consider the following approaches:
 5) Delete the node being pointed to by second.
 6) Return dummy.next
 ```
+
+**⚠️ Common Mistakes**
+
+- Not recognizing the dummy head technique as useful. The dummy head allows us to easily remove the value at the head of the list.
+
+- Thinking that you have to replace the nth node to delete it. Usually with linked list problems where we want to delete a node, we end up restructure pointers that point to and from that node to remove it from the list.
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
