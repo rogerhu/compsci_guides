@@ -17,7 +17,6 @@
 
 - Can the input array be empty?
     - No, there will alway be at least one number.
-
 - What is the space and time complexity?
     - We want O(logn) time and O(1) space. 
 
@@ -54,11 +53,6 @@ For Array problems, we want to consider the following approaches:
 - Traversing the array with a sliding window. Similar to the two pointer solution. 
     - A sliding window doesn't really help us here.
 
-**⚠️ Common Mistakes**
-
-* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n) time. But the interviewer wants to solve this problem in O(logn) time.
-
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -76,6 +70,10 @@ For Array problems, we want to consider the following approaches:
         iii. otherwise the number is equal, so we return the mid index
 3) The left pointer is greater than the right pointers, we have exhausted the num list, we cannot find the target, return -1
 ```
+
+**⚠️ Common Mistakes**
+
+* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n) time. But the interviewer wants to solve this problem in O(logn) time.
 
 ## 4: I-mplement
 
