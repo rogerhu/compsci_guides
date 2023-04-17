@@ -46,24 +46,16 @@ For Linked Lists problems, we want to consider the following approaches:
 
 - Multiple passes over the linked list. If we were able to take multiple passes of the linked list, would that help solve the problem?
   - Do we need to discover the length of the lists? This might be useful.
-
 - Dummy Head. Would using a dummy head as a starting point help simplify our code and handle edge cases?
   - Are we restructuring the given lists? Creating a new one? This could be helpful in keeping track of our return list.
-
 - Two Pointers. If we used two pointers to iterate through list, would that help us solve this problem?
   - Two pointers are used in the sense that we are traversing two separate lists. Multiple pointers for one list does not make sense here though because we are not trying to compare nodes in the list with other nodes in that same list.
-
-**⚠️ Common Mistakes**
-
-- Which of the above would provide us with an optimal solution?
-
 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 **General Idea:** Iterate through both lists and sum the values of the nodes and remainder from the previous addition for each new node.
-
 
 ```markdown
 1) Create a dummy head. This will be our reference to our return list.
@@ -77,6 +69,11 @@ For Linked Lists problems, we want to consider the following approaches:
     e) Repeat with next nodes
 5) Return dummy.next
 ```
+
+**⚠️ Common Mistakes**
+
+- Which of the above would provide us with an optimal solution?
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
