@@ -17,6 +17,8 @@
 
 - Can the input list be empty?
     - Yes. The linked list can be empty.
+- What are the time and space constraints for this problem?
+    - We are looking for a O(`N`) time and O(`1) space solution. `N` being the number of items in the array.
 
 ```markdown
 HAPPY CASE
@@ -41,21 +43,16 @@ For Linked List problems, we want to consider the following approaches:
 
 - Multiple Pass. If we were able to take multiple passes of the linked list, would that help solve the problem?
     - This may help us determine the length of the list. However we do not need the length of the list.
-
 - Dummy Head. Would using a dummy head as a starting point help simplify our code and handle edge cases?
     - There are no edge cases that a dummy head would help handle
-
 - Two Pointer. If we used two pointers to iterate through the list at different speeds, would that help us solve this problem?
     - Two pointers could help us in this problem. How could we use two different pointers in this problem? A previous point and a current pointer?
-
-
 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 **General Idea:** We will initialize a previous node,current node, and a next node. We will then point the current node .next to the previous node and move the previous node to current node and current node to next node and repeat the process. 
-
 
 ```markdown
 1) Initialize a previous node, a current node.
