@@ -17,10 +17,8 @@
 
 - Will there be negative numbers?
     - No, the number is always positive 
-
 - What is the space and time complexity?
     - We want O(logn) time and O(1) space. 
-
 
 ```markdown
 HAPPY CASE
