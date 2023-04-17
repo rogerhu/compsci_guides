@@ -53,20 +53,9 @@ For Strings, common solution patterns include:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Loop through the first string for an initial match. If we find one, check that match for a full substring match.
-
+**General Idea:** Identify each `s` character in string t in relative order
 ```markdown
-1) Edge Check
-2) Loop through the first string
-3) Find a match to the first character of the second string
-4) While there is a match, loop through both strings in parallel to ensure 
-    the match
-5) If there is an entire match to the second string, return True (there is a 
-    substring)
-6) If the match breaks, continue searching the first string for an initial 
-    character match
-7) If we make it to the end of the first string without a full match, there 
-    is no substring match -- return False 
+1. Identify each `s` character in string t in relative order
 ```
 
 ⚠️ **Common Mistakes**
@@ -79,24 +68,28 @@ For Strings, common solution patterns include:
 > **Implement** the code to solve the algorithm.
 
 ```python
-def substring(large_str, potential_substr):
-    substr_len = len(potential_substr)
-
-    # iterate through larger str for its length minus substr length
-    for i in range(len(large_str) - substr_len):
-        # iterate through potential substr  
-        for j in range(substr_len):
-            # if chars match in both string
-            if large_str[i + j] == potential_substr[j]: 
-                # if at the end of substring, return true
-                if j == (substr_len - 1):
-                    return True
-                # else do nothing and continue looping
-            else:
-                break
-
-    # did not find substring
-    return False
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        # Identify each `s` character in string t in relative order
+        for c in s:
+            i = t.find(c)
+            if i == -1:    
+                return False
+            else:   t = t[i+1:]
+        return True
+```
+```java
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        // Identify each `s` character in string t in relative order
+        int i = 0, j = 0;
+        while(i < s.length() && j < t.length()){
+            if(s.charAt(i) == t.charAt(j)) i++;
+            j++;
+        }
+        return i == s.length();
+    }
+}
 ```
     
 ## 5: R-eview
