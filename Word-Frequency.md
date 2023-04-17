@@ -69,6 +69,7 @@ For Strings/Arrays, some things we should consider are:
 **⚠️ Common Mistakes**
 
 * Look out to pop and push element to the right Stack
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -121,6 +122,7 @@ static int wordFreq(String[] book, String word)
  return count;
 }
 ```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
