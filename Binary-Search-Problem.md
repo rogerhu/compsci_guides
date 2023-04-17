@@ -107,6 +107,35 @@ class Solution:
         # The left pointer is greater than the right pointers, we have exhausted the num list, return -1 
         return -1
 ```
+```java
+class Solution {
+    public int search(int[] nums, int target) {
+        // Initialize left and right pointers
+        int low = 0;
+        int high = nums.length - 1;
+        
+        // While left pointer is less than right pointer we have not exhausted the num list
+        while(low <= high){
+            // Get the mid point of the two pointers 
+            int mid = (low + high) / 2;
+
+            // Check if mid point is less than, greater than, or equal to target
+
+            // the number is equal, so we return the mid index
+            if(nums[mid] == target) return mid;
+            
+            // mid point is less than target, then we know everything to the left of mid point can be eliminated from search
+            else if(target > nums[mid]) low = mid + 1;
+
+            // mid point is greater than target, then we know everything to the right of mid point can be eliminated from search
+            else high = mid - 1;
+        }
+
+        // The left pointer is greater than the right pointers, we have exhausted the num list, return -1
+        return -1;
+    }
+}
+```
     
 ## 5: R-eview
 
