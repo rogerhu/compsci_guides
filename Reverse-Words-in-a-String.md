@@ -16,9 +16,7 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - Could the input parameter be Null?
-
   - Let’s assume no input will be Null. However, the input could be an empty string.
-
 
 ```markdown
 HAPPY CASE
@@ -39,13 +37,10 @@ Output: "blue is the sky"
 
 - Sort
     - Does sorting help us achieve what we need in order to solve the problem?
-
 - Two pointer solutions (left and right pointer variables)
     - Two pointer may help us tokenize the object if we are not allowed to use built-in language methods.
-
 - Storing the elements of the array in a HashMap or a Set
     - In reversing, hashing elements and storing them may not yield an optimal solution.
-
 - Traversing the array with a sliding window
     - Will viewing pieces of the input at a time help us?
 
@@ -78,6 +73,25 @@ class Solution:
         # Return a joined string version of the reversed array
         return " ".join(reversed(arr))
 ```
+```java
+class Solution {
+    public String reverseWords(String s) {
+        StringBuilder sb = new StringBuilder();
+        // Tokenize the input string to create a separate array 
+        String[] array = s.split(" ");
+
+        // Return a joined string version of the reversed array
+        for (int i = array.length - 1; i >= 0; i--) {
+            if (!array[i].isEmpty()) {
+                sb.append(array[i]);
+                sb.append(" ");
+            }
+        }
+
+        return sb.toString().trim();
+    }
+}
+```
     
 ## 5: R-eview
 
@@ -90,9 +104,7 @@ class Solution:
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Assume N represents the number of character in the string.
+Assume `N` represents the number of character in the string.
 
-
-* **Time Complexity**: O(n), traversing done on every word in string
-* 
-* **Space Complexity**: O(n), we will be building a string with the length of the string in reverse.
+* **Time Complexity**: O(N), traversing done on every word in string
+* **Space Complexity**: O(N), we will be building a string with the length of the string in reverse.
