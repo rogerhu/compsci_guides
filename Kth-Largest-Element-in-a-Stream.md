@@ -17,7 +17,6 @@
 
 - Could there be less than k elements in the array?
   - No, it is guaranteed that there will be at least k elements in the array when you search for the kth element.
-
 - What is the time and space complexity?
     - Can you come up with an algorithm such that the add function has a O(logk) time complexity?
 
@@ -72,15 +71,12 @@ For Array/Strings, common solution patterns include:
 
 - Sort
     - Does sorting help us achieve what we need in order to solve the problem?
-
 - Two pointer solutions (left and right pointer variables)
     - Does Two pointers help us find the kth largest item 
 - Storing the elements of the array in a HashMap or a Set
     - A hashset will keep around items, but we still need to sort to find the kth largest item 
-
 - Traversing the array with a sliding window
     - Will viewing pieces of the input at a time help us?
-
 - Heap
     - Adding to a heap will take O(logk) time.  
 
@@ -129,7 +125,44 @@ class KthLargest:
         # Return kth largest val in heap
         return self.heap[0]
 ```
-    
+```java
+class KthLargest {
+	// Create heap
+	private PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+	private int k;
+	
+	public KthLargest(int k, int[] nums) {
+		this.k = k;
+		for (int i: nums) {
+			minHeap.add(i);
+
+			// Limit heap to size k
+			if (minHeap.size() > k) {
+				minHeap.poll();
+			}
+		}
+	}
+
+	public int add(int val) {
+		// Upon add(val), add new val to heap
+		minHeap.add(val);
+
+		// Remove k + 1 largest val from heap
+		if (minHeap.size() > k) {
+			minHeap.poll();
+		}
+
+		// Return kth largest val in heap
+		return minHeap.peek();
+	}
+}
+/**
+ * Your KthLargest object will be instantiated and called as such:
+ * KthLargest obj = new KthLargest(k, nums);
+ * int param_1 = obj.add(val);
+ */
+```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
