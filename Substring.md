@@ -1,7 +1,3 @@
-# Problem
-
-Write a function that takes in two strings and returns true if the second string is substring of the first, and false otherwise.
-
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Substring](https://leetcode.com/problems/is-subsequence/)
