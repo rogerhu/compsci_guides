@@ -52,11 +52,6 @@ For Array problems, we want to consider the following approaches:
 - Traversing the array with a sliding window. Similar to the two pointer solution. 
     - A sliding window doesn't really help us here.
 
-**⚠️ Common Mistakes**
-
-* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n) time. But the interviewer wants to solve this problem in O(logn) time.
-
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -74,6 +69,10 @@ For Array problems, we want to consider the following approaches:
         iii. If mid point is greater than our target, then we move the right pointer down to mid point - 1, because everything to the right of mid point is invalid. 
 3. Return the right pointer for the closes number to square for our target as it is the last remaining valid number.
 ```
+
+**⚠️ Common Mistakes**
+
+* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n) time. But the interviewer wants to solve this problem in O(logn) time.
 
 ## 4: I-mplement
 
