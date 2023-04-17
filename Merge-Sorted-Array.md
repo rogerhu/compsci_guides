@@ -17,9 +17,9 @@
 
 - Can the input array be empty?
     - Yes, that is possible
-
 - What is the space and time complexity?
     - We want O(n) time and O(1) space. 
+
 ```markdown
 HAPPY CASE
 Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
@@ -105,6 +105,30 @@ class Solution:
                 index2 -= 1
 
             insertIndex -= 1
+```
+```java
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        // Initialize three pointers
+            // a.point at last number in nums1
+            // b.point at the last number of nums2
+            // c. point at the last index in nums1
+        int tail1 = m - 1, tail2 = n - 1, insertIndex = m + n - 1;
+
+        // While nums2 has numbers to merge
+        while (tail2 >= 0) {
+            if (tail1 >= 0 && nums1[tail1] > nums2[tail2]) {
+                // Get the larger number and insert into the insertIndex of nums1
+                nums1[insertIndex] = nums1[tail1];
+                tail1--;
+            } else {
+                nums1[insertIndex] = nums2[tail2];
+                tail2--;
+            }
+            insertIndex--;
+        }
+    }
+}
 ```
     
 ## 5: R-eview
