@@ -90,6 +90,25 @@ class Solution:
         # Return False (we have reached the end of the list without duplicate)
         return False
 ```
+```java
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        // Create Set
+        HashSet<Integer> hset = new HashSet<Integer>();
+        // Iterate through numbers
+        for (int idx = 0; idx < nums.length; idx ++){
+            // If number is already in set return True
+            if (hset.contains(nums[idx])){
+                return true;
+            }
+            // Store number in set
+            hset.add(nums[idx]);
+        }
+        // Return False (we have reached the end of the list without duplicate)
+        return false;
+    }
+}
+```
     
 ## 5: R-eview
 
