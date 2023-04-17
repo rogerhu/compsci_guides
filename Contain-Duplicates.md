@@ -48,12 +48,6 @@ For Array problems, we want to consider the following approaches:
 - Storing the elements of the array in a HashMap or a Set. As we iterate through the array, we can store each number in a Set. If the number is already in the Set, then we can return True. Otherwise we reach the end of the array and return False.
 - Traversing the array with a sliding window. Similar to the two pointer solution. We will need to sort the array first to use the sliding window, but it really isn't all that helpful when sort does the job.
 
-**⚠️ Common Mistakes**
-
-* Sorting requires a O(NlogN) runtime, while a Hash requires a O(N) runtime. If we want to speed up our algorithm we should use a hash.
-* Hash requires a O(N) space, while a Sorting requires a O(1) runtime. If we want to save space we should use sorting.
-
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -68,6 +62,11 @@ For Array problems, we want to consider the following approaches:
     b) Store number in set
 3) Return False (we have reached the end of the list without duplicate)
 ```
+
+**⚠️ Common Mistakes**
+
+* Sorting requires a O(NlogN) runtime, while a Hash requires a O(N) runtime. If we want to speed up our algorithm we should use a hash.
+* Hash requires a O(N) space, while a Sorting requires a O(1) runtime. If we want to save space we should use sorting.
 
 ## 4: I-mplement
 
