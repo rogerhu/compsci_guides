@@ -47,10 +47,8 @@ For Linked List problems, we want to consider the following approaches:
 
 - Multiple Pass. If we were able to take multiple passes of the linked list, would that help solve the problem?
     - We are not trying to determine the length of the list, nor are we trying to determine something about the values stored at each node in the list. Taking multiple passes of the linked list will not help us determine whether or not there is a cycle.
-
 - Dummy Head. Would using a dummy head as a starting point help simplify our code and handle edge cases?
     - We are not rearranging the list. Rather, we are trying to determine the structure of the linked list.
-
 - Two Pointer. If we used two pointers to iterate through the list at different speeds, would that help us solve this problem?
     - Two pointers could help us in this problem. How could we use two different pointers in this problem? Would we have the pointers move at different speeds? Could the pointers reference the same node initially?
 
