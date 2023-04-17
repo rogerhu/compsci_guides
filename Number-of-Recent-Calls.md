@@ -80,6 +80,10 @@ If you are dealing with Arrays, there are some common techniques you can employ 
 4. Return length of queue
 ```
 
+**⚠️ Common Mistakes**
+
+* It may be hard to realize that a queue is the right tool for the job, when we are focused on using the sliding window. 
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
