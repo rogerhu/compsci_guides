@@ -91,7 +91,7 @@ For Linked List problems, we want to consider the following approaches:
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         try:
-            # 1. Instantiate two pointers where slow points to the head of the list and fast points to head.next
+            # Instantiate two pointers where slow points to the head of the list and fast points to head.next
             slow = head
             fast = head.next
             
