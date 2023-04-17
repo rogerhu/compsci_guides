@@ -106,6 +106,26 @@ class RecentCounter:
         # Return length of queue
         return len(self.queue)
 ```
+```java
+class RecentCounter {
+    Queue<Integer> q;
+    public RecentCounter() {
+        // Create a new queue
+        q = new LinkedList();
+    }
+
+    public int ping(int t) {
+        // Upon Ping add new ping to queue
+        q.add(t);
+        // Remove all ping in queue with value more than 3000 away from new ping
+        while (q.peek() < t - 3000)
+            q.poll();
+            
+        // Return length of queue
+        return q.size();
+    }
+}
+```
     
 ## 5: R-eview
 
