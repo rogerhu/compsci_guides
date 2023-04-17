@@ -86,6 +86,23 @@ class Solution:
         # Return if duplicate values exist in hash table
         return len(list(hashTable.values())) == len(set(hashTable.values()))
 ```
+```java
+class Solution {
+    public boolean uniqueOccurrences(int[] arr) 
+    {
+        // Initialize Hash Table
+        HashMap<Integer,Integer> hmap=new HashMap<>();
+
+        // Iterate through numbers: Count each number
+        for(int i:arr)
+            hmap.put(i,hmap.getOrDefault(i,0)+1);
+
+        // Return if duplicate values exist in hash table
+        HashSet<Integer> hset=new HashSet<>(hmap.values());
+        return hset.size()==hmap.size();
+    }
+}
+```
     
 ## 5: R-eview
 
