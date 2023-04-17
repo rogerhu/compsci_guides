@@ -106,6 +106,25 @@ class Solution:
             # If fast or fast.next is None this generates an exception and return False
             return False
 ```
+```java
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        // Instantiate two pointers where slow points to the head of the list and fast points to head
+        ListNode slow = head, fast = head;
+        
+        // Iterate over the LL (while slow != fast)
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            // If slow is ever equal to fast then the while loop condition is broken and cycle is found.
+            if (slow == fast) 
+                return true;
+        }
+        // If exit loop return False
+        return false;
+    }
+}
+```
     
 ## 5: R-eview
 
