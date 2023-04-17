@@ -106,6 +106,35 @@ class Solution:
         # Return the right pointer for the closes number to square for our target as it is the last remaining valid number.
         return r
 ```
+```java
+class Solution {
+    public int mySqrt(int x) {
+        if(x==0) return 0;
+
+        // Initialize left and right pointers
+        int low = 1,high = x,ans =0;
+
+        // While left pointer is less than right pointer we have not exhausted the possible numbers
+        while(low<=high){
+            // Get the mid point of the two pointers
+            int mid =low + (high-low)/2;
+
+            // Check if mid point is less than or greater than or equal to our target and instead of mid*mid we are giving x/mid to tackle overflow of integer range when multiplying with bigger numbers
+
+            // If mid point is equal to our target then return our mid point
+            if(x/mid==mid)  return mid;
+
+            // mid point is greater than our target, then we move the right pointer down to mid point - 1, because everything to the right of mid point is invalid. 
+            else if(x/mid<mid)   high=mid-1;
+
+            // mid point is less than our target, then we move the left pointer up to mid point + 1, because everything left of the mid point would be even further away from our target
+            else {low = mid+1; ans = mid;}
+        }
+        // Return the right pointer for the closes number to square for our target as it is the last remaining valid number.
+        return ans;
+    }
+}
+```
     
 ## 5: R-eview
 
