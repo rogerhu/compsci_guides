@@ -17,10 +17,8 @@
 
 - Will there be negative numbers?
     - Yes, the number will be both negative and positive
-
 - Will there alway be a pivot point?
     - Yes, there will always be a pivot point
-
 - What is the space and time complexity?
     - We want O(logn) time and O(1) space. 
 
@@ -117,6 +115,45 @@ class Solution:
                 r = mid
         
         return r
+```
+```java
+class Solution {
+	public int search(int[] nums, int target) {
+		// Create/Use a function to get the inflexion point, the minimum value in list. For more details see [[Find Minimum in Rotated Sorted Array]]
+		int pivot = findPivot(nums);
+		// Create/Run binary search for target in left and right half. For more details see [[Binary Search Problem]]
+		return binarySearch(nums, 0, pivot, target) + binarySearch(nums, pivot + 1, nums.length - 1, target) + 1;
+	}
+	 	
+	// Create/Use a function to get the inflexion point, the minimum value in list. For more details see [[Find Minimum in Rotated Sorted Array]]
+	public int findPivot(int nums[]){
+		int i = 0, j = nums.length - 1;
+		while(i < j - 1){
+			int mid = i + (j - i) / 2;
+			if(nums[i] < nums[mid] && nums[j] < nums[mid]){
+				i = mid;
+			}else {
+				j = mid;
+			}
+		}
+		return i;
+	}
+	 	
+	// Create/Run binary search for target in left and right half. For more details see [[Binary Search Problem]]
+	public int binarySearch(int a[], int start, int end, int key){
+		int i = start, j = end;
+		while(i <= j){
+			int mid = i + (j - i) / 2;
+			if(a[mid] > key){
+				j = mid - 1;
+			}else if(a[mid] < key){
+				i = mid + 1;
+			}
+			else return mid;
+		}
+		return -1;
+	}
+}
 ```
     
 ## 5: R-eview
