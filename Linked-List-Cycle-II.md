@@ -58,9 +58,7 @@ For Linked List problems, we want to consider the following approaches:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-
 **General Idea:** First detect whether or not a cycle exist. Second determine the location of the cycle. 
-
 
 ```markdown!
 1. Detect Cycle
@@ -121,6 +119,31 @@ class Solution:
                 return e
             e = e.next
             h = h.next
+```
+```java
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
+        // Instantiate two pointers where slow and fast points to the head of the list 
+        ListNode slow = head, fast = head;
+
+        // Move slow once and fast twice until they meet
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) break;
+        }
+
+        // If fast or fast.next is None then we have reached the end of cycle and return None
+        if (fast == null || fast.next == null) return null;
+
+        // Find the distance from H to point of entry to cycle using theory(see above)
+        while (head != slow) {
+            head = head.next;
+            slow = slow.next;
+        }
+        return head;
+    }
+}
 ```
     
 ## 5: R-eview
