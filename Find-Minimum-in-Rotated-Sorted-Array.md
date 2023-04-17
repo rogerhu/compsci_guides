@@ -17,10 +17,8 @@
 
 - Will there be negative numbers?
     - Yes, the number will be both negative and positive
-
 - Will the array alway be rotated?
     - Yes, the array will at least be rotated once. 
-
 - What is the space and time complexity?
     - We want O(logn) time and O(1) space. 
 
@@ -105,6 +103,31 @@ class Solution:
         
         # Return number at right pointer for smallest number in list 
         return nums[r]
+```
+```java
+class Solution {
+  public int findMin(int[] nums) {
+    // Initialize left and right pointers
+    int l = 0;
+    int r = nums.length - 1;
+
+    // While left pointer is less than right pointer we have not exhausted the possible numbers 
+    while (l < r) {
+      // Get the mid point of the two pointers    
+      final int m = (l + r) / 2;
+      
+      // Check if mid point is less than or greater than the right pointer
+      if (nums[m] < nums[r])
+        // mid pointer is less than the right pointer, then the smaller half is the left half. Set the right pointer to the mid pointer
+        r = m;
+      else
+        // mid point is greater than the right pointer, then the smaller half is the right half. Set the left pointer to mid pointer + 1.
+        l = m + 1;
+    }
+    // Return number at right pointer for smallest number in list 
+    return nums[r];
+  }
+}
 ```
     
 ## 5: R-eview
