@@ -5,6 +5,7 @@
 * ⏰ **Time to complete**: 20 mins
 * 🛠️ **Topics**: Array, Stack
 * 🗒️ **Similar Questions**: [Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/), [Sender With Largest Word Count](https://leetcode.com/problems/sender-with-largest-word-count/)
+
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
