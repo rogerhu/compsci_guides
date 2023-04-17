@@ -17,7 +17,6 @@
 
 - Could there be no solution for the input parameter ?
   - You may assume that each input would have exactly one solution.
-
 - What is the time and space complexity?
     - Can you come up with an algorithm that is  O(n) time complexity?
 
@@ -50,13 +49,10 @@ For Array/Strings, common solution patterns include:
 
 - Sort
     - Does sorting help us achieve what we need in order to solve the problem?
-
 - Two pointer solutions (left and right pointer variables)
     - Does Two pointers help us find the destination city 
-
 - Storing the elements of the array in a HashMap or a Set
     - A hashset will be helpful here, because we can store the start cities and end cities. Once we found a city in the end cities not in the start cities, we have found the destination city. 
-
 - Traversing the array with a sliding window
     - Will viewing pieces of the input at a time help us?
 
@@ -73,7 +69,6 @@ For Array/Strings, common solution patterns include:
 3) Store the start and end cities.
 4) Check each end-city against the start-cities
     1) If we do not see the end-city in the start-cities, then we found the destination city and return
-    
 ```
 
 ⚠️ **Common Mistakes**
@@ -102,7 +97,31 @@ class Solution:
             if endCity not in startCities:
                 return endCity
 ```
-    
+```java
+class Solution {
+    public String destCity(List<List<String>> paths) {
+        // Create hashsets
+        Set<String> cities = new HashSet<>(); 
+
+        // Iterate through the paths
+        for (List<String> path : paths) {
+            cities.add(path.get(0)); 
+        }
+        
+        // Check each end-city against the start-cities
+        for (List<String> path : paths) {
+            String dest = path.get(1); 
+
+            // If we do not see the end-city in the start-cities, then we found the destination city and return
+            if (!cities.contains(dest)) {
+                return dest; 
+            }
+        }
+        return "";
+    }
+}
+```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
