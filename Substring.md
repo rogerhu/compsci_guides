@@ -1,10 +1,14 @@
+# Problem
+
+Write a function that takes in two strings and returns true if the second string is substring of the first, and false otherwise.
+
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** [Substring](https://leetcode.com/problems/is-subsequence/)
-* 💡 **Problem Difficulty:** Easy
-* ⏰ **Time to complete**: 15 mins
-* 🛠️ **Topics**: Strings, Hash
-* 🗒️ **Similar Questions**: [Number of Matching Subsequences](https://leetcode.com/problems/number-of-matching-subsequences/), [Shortest Way to Form String](https://leetcode.com/problems/shortest-way-to-form-string/)
+* 🔗 **Leetcode Link:** n/a
+* 💡 **Problem Difficulty:** Medium
+* ⏰ **Time to complete**: __ mins
+* 🛠️ **Topics**: Strings
+* 🗒️ **Similar Questions**: TBD
     
 ## 1: U-nderstand
  
@@ -16,7 +20,7 @@
 > - Have you verified any Time/Space Constraints for this problem?
 
 - Are both inputs only strings?
-- Can elements of the string be both characters and numbers?
+  - Can elements of the string be both characters and numbers?
 - Can the second string be larger than the first?
 - What are the Time & Space considerations?
   - Best Case Time Complexity: O(n * m)
@@ -48,14 +52,24 @@ For Strings, common solution patterns include:
 - Storing the characters of the string in a HashMap or a Set
 - Traversing the string with a sliding window
 
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Identify each `s` character in string t in relative order
+**General Idea:** Loop through the first string for an initial match. If we find one, check that match for a full substring match.
+
 ```markdown
-1. Identify each `s` character in string t in relative order
+1) Edge Check
+2) Loop through the first string
+3) Find a match to the first character of the second string
+4) While there is a match, loop through both strings in parallel to ensure 
+    the match
+5) If there is an entire match to the second string, return True (there is a 
+    substring)
+6) If the match breaks, continue searching the first string for an initial 
+    character match
+7) If we make it to the end of the first string without a full match, there 
+    is no substring match -- return False 
 ```
 
 ⚠️ **Common Mistakes**
@@ -68,28 +82,24 @@ For Strings, common solution patterns include:
 > **Implement** the code to solve the algorithm.
 
 ```python
-class Solution:
-    def isSubsequence(self, s: str, t: str) -> bool:
-        # Identify each `s` character in string t in relative order
-        for c in s:
-            i = t.find(c)
-            if i == -1:    
-                return False
-            else:   t = t[i+1:]
-        return True
-```
-```java
-class Solution {
-    public boolean isSubsequence(String s, String t) {
-        // Identify each `s` character in string t in relative order
-        int i = 0, j = 0;
-        while(i < s.length() && j < t.length()){
-            if(s.charAt(i) == t.charAt(j)) i++;
-            j++;
-        }
-        return i == s.length();
-    }
-}
+def substring(large_str, potential_substr):
+    substr_len = len(potential_substr)
+
+    # iterate through larger str for its length minus substr length
+    for i in range(len(large_str) - substr_len):
+        # iterate through potential substr  
+        for j in range(substr_len):
+            # if chars match in both string
+            if large_str[i + j] == potential_substr[j]: 
+                # if at the end of substring, return true
+                if j == (substr_len - 1):
+                    return True
+                # else do nothing and continue looping
+            else:
+                break
+
+    # did not find substring
+    return False
 ```
     
 ## 5: R-eview
