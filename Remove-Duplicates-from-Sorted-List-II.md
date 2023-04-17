@@ -105,6 +105,43 @@ class Solution:
         # Return dummy.next
         return dummy.next
 ```
+```java
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        // Create a dummy head. This will be our reference to our return list.
+        // Create a prev pointer to point to next node that has not duplicates
+        // Create curr pointer to check if curr node has no duplicate
+        ListNode dummy = new ListNode(0), curr = head, prev = dummy;
+        prev.next = curr;
+
+        // Traverse the lists while prev and curr is not None
+        while(prev != null && curr != null) {
+
+            // Check curr to see if it has duplicates
+            ListNode next = curr.next;
+
+            // If curr has duplicates, point prev.next at next unique node and bypass curr node. 
+            if (next != null && curr.val == next.val) {
+                while (next != null && curr.val == next.val) {
+                    next = next.next;
+                }
+                prev.next = next;
+                curr = next;
+            }
+            
+            // Else curr has no duplicates set prev pointer at curr
+            else {
+                prev = curr;
+                curr = next;
+            }
+           
+            
+        }
+        // Return dummy.next
+        return dummy.next;
+    }
+}
+```
 
 ## 5: R-eview
 
