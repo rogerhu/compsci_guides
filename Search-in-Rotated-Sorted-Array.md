@@ -53,11 +53,6 @@ For Array problems, we want to consider the following approaches:
 - Traversing the array with a sliding window. Similar to the two pointer solution. 
     - A sliding window doesn't really help us here.
 
-**⚠️ Common Mistakes**
-
-* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n) time. But the interviewer wants to solve this problem in O(logn) time.
-
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -70,6 +65,10 @@ For Array problems, we want to consider the following approaches:
 2. Create/Run binary search for target in left and right half. For more details see [[Binary Search Problem]]
 3. Return the search results. The max function checks between a positive value(found index) vs negative value(not found index).
 ```
+
+**⚠️ Common Mistakes**
+
+* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n) time. But the interviewer wants to solve this problem in O(logn) time.
 
 ## 4: I-mplement
 
