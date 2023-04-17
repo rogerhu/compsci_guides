@@ -49,17 +49,11 @@ For Linked Lists problems, we want to consider the following approaches:
 - Two Pointers. If we used two pointers to iterate through list, would that help us solve this problem?
   - Two pointers are used in the sense that we are traversing two separate lists. Multiple pointers for one list does not make sense here though because we are not trying to compare nodes in the list with other nodes in that same list.
 
-**⚠️ Common Mistakes**
-
-- Don't worry about using too many variables, use prev, curr, and next. 
-
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 **General Idea:** Use a previous node as a placeholder to demarcate where nodes have no longer duplicates and use it to point to the next node that has no duplicate. Repeat until end of linked list.
-
 
 ```markdown
 1) Create a dummy head. This will be our reference to our return list.
@@ -71,6 +65,11 @@ For Linked Lists problems, we want to consider the following approaches:
         ii) Else curr has no duplicates set prev pointer at curr
 5) Return dummy.next
 ```
+
+**⚠️ Common Mistakes**
+
+- Don't worry about using too many variables, use prev, curr, and next. 
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
