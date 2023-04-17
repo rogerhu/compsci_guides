@@ -93,6 +93,30 @@ class Solution:
         # Return previous node
         return prev
 ```
+```java
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        // Initialize a previous node, a current node.
+        ListNode prev = null;
+        ListNode curr = head;
+
+        // While current node is not null
+        while (curr != null) {
+            // Initialize a next node to temporarily hold the next node
+            ListNode next = curr.next;
+            // Point current node .next to previous node
+            curr.next = prev;
+            // Set prev node to current node
+            prev  = curr;
+            // Set current node to next node
+            curr = next;
+        }
+
+        // Return previous node
+        return prev;
+    }
+}
+```
     
 ## 5: R-eview
 
