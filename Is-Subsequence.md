@@ -53,13 +53,10 @@ For Strings, common solution patterns include:
 
 - Sort
     - Does sorting help us achieve what we need in order to solve the problem?
-
 - Two pointer solutions (left and right pointer variables)
     - Two pointer may help us, if we start at the beginning of each string, we can check if we can match each character in string 's' while we progress through string 't'. Verifying if 's' is a subsequence of 't'.
-
 - Storing the elements of the array in a HashMap or a Set
     - A hashset will be not helpful here.
-
 - Traversing the array with a sliding window
     - Will viewing pieces of the input at a time help us?
 
@@ -68,7 +65,7 @@ For Strings, common solution patterns include:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** We will progress through string 's' if it exist in linear order in string 't'. If we get to the end of string 's', we verified that 's' is substring of 't', otherwise it is not. 
+**General Idea:** Identify each `s` character in string t in relative order. We will progress through string 's' if it exist in linear order in string 't'. If we get to the end of string 's', we verified that 's' is substring of 't', otherwise it is not. 
 
 ```markdown
 1) Create two pointers to represent the character progression of string 's' and 't'
@@ -105,6 +102,26 @@ class Solution:
         
         # Return whether or not we reached the end of string 's' by matching pointerS to length of string 's'
         return pointerS == len(s)
+```
+```java
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        // Create two pointers to represent the character progression of string 's' and 't'
+        int i = 0, j = 0;
+
+        // While pointerS is less than length of string 's' and pointerT is less than length of string 't'
+        while(i < s.length() && j < t.length()){
+            // Let's progress the pointerS every time we match with pointerT
+            if(s.charAt(i) == t.charAt(j)) i++;
+
+            // Let's progress pointerT everytime so we can get the next character
+            j++;
+        }
+
+        // Return whether or not we reached the end of string 's' by matching pointerS to length of string 's'
+        return i == s.length();
+    }
+}
 ```
     
 ## 5: R-eview
