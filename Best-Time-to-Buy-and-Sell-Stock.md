@@ -5,6 +5,7 @@
 * ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Recursion, DP, Bottom-Up
 * 🗒️ **Similar Questions**: [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/), [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/), [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
+
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
