@@ -105,7 +105,35 @@ class Solution(object):
         # Call start and end and point them with the two ends of the input string with the number of available skips to be 1.                       
         return isPalindrome(0, len(s)-1, 0)
 ```
-    
+```java
+
+class Solution {
+    public boolean validPalindrome(String s) {
+        // Call start and end and point them with the two ends of the input string with the number of available skips to be 1. 
+        return isPalindrome(s, 0, s.length()-1, 1);
+    }
+    // Write a recursive function to handle two pointer solution while maintaining the count
+    public boolean isPalindrome(String str, int start, int end, int chance) {
+        // Set the basecase 
+        // if the start and end cross, return true
+            if(start >= end) return true;
+
+            // Now move the start pointer to right so it points to a alphanumeric character. 
+            //  Similarly move end pointer to left so it also points to a alphanumeric character
+            if(str.charAt(start) == str.charAt(end))
+                return isPalindrome(str, start+1, end-1, chance);
+            
+            // if the number of available skips is below 1, return false
+            if(chance == 0) return false;
+            
+            // If it is not equal then we know string is not a valid palindrome, hence return two possibilities 
+            // skip one character on the left or skip one or skip one character on the right. 
+            // (be sure to reduce the number of available skips by 1)
+            return isPalindrome(str, start+1, end, chance-1)  || isPalindrome(str, start, end - 1,chance-1);
+    }
+}
+```    
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
