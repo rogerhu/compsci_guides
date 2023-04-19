@@ -17,10 +17,8 @@
 
 - Will k be smaller or equal to nums?
     - Yes, k is always smaller or equal to nums
-
 - What is the space and time complexity?
     - We want O(n) time and O(n) space. 
-
 
 ```markdown
 HAPPY CASE
@@ -89,6 +87,30 @@ class Solution:
         
         # Return the top of the heap.
         return neg(heap[0])
+```
+```java
+class Solution {
+    public int findKthLargest(int[] nums, int k) 
+    {
+        // Heapify the num array, create new array with negative values for each num
+        PriorityQueue<Integer> minheap=new PriorityQueue<>();
+        for (int i = 0; i < k; i++)
+            minheap.add(nums[i]);
+        
+        // Remove len(nums) - k items from heap
+        for (int i = k; i < nums.length; i++)
+        {
+            if (nums[i]>minheap.peek())
+            {
+                minheap.poll();
+                minheap.add(nums[i]);
+            }
+        }
+
+        // Return the top of the heap.
+        return minheap.peek();
+    }
+}
 ```
     
 ## 5: R-eview
