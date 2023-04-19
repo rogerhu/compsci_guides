@@ -49,10 +49,8 @@ For Linked Lists problems, we want to consider the following approaches:
 
 - Multiple passes over the linked list. If we were able to take multiple passes of the linked list, would that help solve the problem?
   - Do we need to discover the length of the lists? This might be useful.
-
 - Dummy Head. Would using a dummy head as a starting point help simplify our code and handle edge cases?
   - Are we restructuring the given lists? Creating a new one? This could be helpful in keeping track of our return list.
-
 - Two Pointers. If we used two pointers to iterate through list, would that help us solve this problem?
   - Two pointers are used in the sense that we are traversing two separate lists. Multiple pointers for one list does not make sense here though because we are not trying to compare nodes in the list with other nodes in that same list.
 
@@ -152,6 +150,82 @@ class Solution:
         
         return result
 ```
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // Get the length of the linked lists
+        int len1 = getLength(l1);
+        int len2 = getLength(l2);        
+        
+        //Making sure l1 is always greater than l2
+        if(len2 > len1) {
+            ListNode temp = l1;
+            l1 = l2;
+            l2 = temp;
+            
+            int t = len1;
+            len1 = len2;
+            len2 = t;
+        }
+        
+        // Add the linked lists recursively
+        int rem = logic(l1, l2, len1, len2, 0, 0);
+        
+
+        // After recusive call, if there is carry over value, set as head node
+        if(rem != 0) {
+            return new ListNode(rem, l1);
+        } else {
+
+            // Return the head node
+            return l1;
+        }
+    }
+
+    //l1 and l2 are the list length respectively, s1 and s2 are the current index in respect to l1 and l2 
+    public int logic(ListNode l1, ListNode l2, int len1, int len2, int s1, int s2) {
+        // Basecase: Return None and carry value of 0
+        if(l1 == null) return 0;
+        int diff = len1 - len2;
+        
+        // Get Current Sum and Current Carry Value to recursively pass back to calling function
+        if(diff != 0 && s2 < diff) {
+			//case where l2 is smaller than l1, hence we need to skip l2 pointer incrementation
+            int rem = logic(l1.next, l2, len1, len2, s1+1, s2+1);
+            int sum = l1.val + rem;
+            l1.val = sum%10;
+            return sum/10;
+        } else {
+            int rem = logic(l1.next, l2.next, len1, len2, s1+1, s2+1);
+            int sum = l1.val + l2.val + rem;
+            l1.val = sum%10;
+            return sum/10;
+        }
+    }
+
+    //Utility method to get the length of the list
+    public int getLength(ListNode head) {
+        int length = 0;
+        while(head != null) {
+            length++;
+            head = head.next;
+        }
+        return length;
+    }
+}
+```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
