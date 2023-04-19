@@ -114,8 +114,29 @@ class Solution:
             
         return climb(n)
 ```
+```java
+class Solution {
+    public int climbStairs(int n) {
+        // Store the step that we have already calculated for quick access.
+        Map<Integer, Integer> memo = new HashMap<>();
+        // Set the base case at n = 1 and n = 2
+        memo.put(1, 1);
+        memo.put(2, 2);
+        
+        // Return the recursive step n-1 + recursive step n-2, at each step
+        return climbStairs(n, memo);
+    }
 
-    
+    private int climbStairs(int n, Map<Integer, Integer> memo) {
+        if (memo.containsKey(n)) {
+            return memo.get(n);
+        }
+        memo.put(n, climbStairs(n - 1, memo) + climbStairs(n - 2, memo));
+        return memo.get(n);
+    }
+}
+```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
