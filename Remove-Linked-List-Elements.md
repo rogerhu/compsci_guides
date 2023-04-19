@@ -43,14 +43,10 @@ For Linked List problems, we want to consider the following approaches:
 
 - Multiple Pass. If we were able to take multiple passes of the linked list, would that help solve the problem?
     - We are not trying to determine the length of the list, nor are we trying to determine something about the values stored at each node in the list. Taking multiple passes of the linked list will not help us.
-
 - Dummy Head. Would using a dummy head as a starting point help simplify our code and handle edge cases?
     - We are rearranging the list. We want a dummy node to account for the first node or all nodes being deleted.
-
 - Two Pointer. If we used two pointers to iterate through the list at different speeds, would that help us solve this problem?
     - Two pointers does not help us here.
-
-
 
 ## 3: P-lan
 
@@ -109,6 +105,28 @@ class Solution:
         # Return dummy.next
         return dummy.next
 ```
+```java
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        // Initialize dummy node, current node
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode curr = dummy;
+        
+        // Iterate through LL (while the current.next node is not null)
+        while(curr.next != null) {
+            // while current node is val, set current.next node to next.next
+            if(curr.next.val == val) {
+                curr.next = curr.next.next;
+            } else {
+                curr = curr.next;
+            }
+        }
+        // Return dummy.next
+        return dummy.next;
+    }
+}
+```
     
 **Recursion**
 ```python    
@@ -133,6 +151,21 @@ class Solution:
         # Return the head node
         return head
 ```
+```java
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        // Set basecase where head is None
+        if (head == null) return null;
+
+        // Set head.next to the recursive function of the next node
+        head.next = removeElements(head.next, val);
+
+        // Establish logic for each head node, such that if it's value is equal to value, set this head node to be the next node
+        return head.val == val ? head.next : head;
+    }
+}
+```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
