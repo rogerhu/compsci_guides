@@ -17,13 +17,10 @@
 
 - Will there always be an equal amount of sandwiches to students?
     - Yes, sandwiches are always equal to students.
-
 - Students form a queue and sandwiches form a stack?
     - Yes, that is correct. You can only take sandwiches and students from the 0th position. And return students to the nth position.
-
 - What is the space and time complexity?
     - We want O(n) time and O(1) space. 
-
 
 ```markdown
 HAPPY CASE
@@ -90,7 +87,7 @@ For Array problems, we want to consider the following approaches:
 
 > **Implement** the code to solve the algorithm.
 
-Basic Python Solution:
+Basic Solution:
 
 ```python
 class Solution:
@@ -120,8 +117,42 @@ class Solution:
         # Return the total number of students without lunch. 
         return roundStudents + squareStudents
 ```
+```java
+class Solution {
+    public int countStudents(int[] students, int[] sandwiches) {
+        // Create a count of students with round sandwich and square sandwich.
+        int ones = 0; //count of students who prefer type1
+        int zeros = 0; //count of students who prefer type0
+		
+        for(int student : students){
+            if(student == 0) zeros++;
+            else ones++;
+        }
+        
+        // Start at the top of stack of sandwiches and distribute sandwich to appropriate student
+        // Once no more students want the top sandwich then we cannot distribute sandwiches and we are left with students without lunch
+        for(int sandwich : sandwiches){
+            if(sandwich == 0){  // if sandwich is of type0
+                if(zeros == 0){ // if no student want a type0 sandwich
+                    break;
+                }
+                zeros--;
+            }
+            else{  // if sandwich is of type1
+                if(ones == 0){  // if no student want a type1 sandwich 
+                    break;
+                }
+                ones--;
+            }
+        }
+        // Return the total number of students without lunch.
+        return zeros + ones;
+    }
+}
+```
 
 Advanced Python Solution:
+
 ```python
 class Solution:
     def countStudents(self, students: List[int], sandwiches: List[int]) -> int:
