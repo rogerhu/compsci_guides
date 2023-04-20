@@ -26,7 +26,9 @@ HAPPY CASE
 Input: matrix = [[2,4,-1],[-10,5,11],[18,-7,6]]
 Output: [[2,-10,18],[4,5,-7],[-1,11,6]]
 ```
+
 ![Example](https://assets.leetcode.com/uploads/2021/02/10/hint_transpose.png)
+
 ```markdown
 Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 Output: [[1,4,7],[2,5,8],[3,6,9]]
@@ -123,6 +125,25 @@ class Solution:
                 result[j].append(matrix[i][j])
         # Return result
         return result
+```
+```java
+class Solution {
+    public int[][] transpose(int[][] A) {
+		//Create empty array
+		int M = A.length; int N = A[0].length;
+		int[][] B = new int[N][M];
+
+		// Create row for each column
+		for (int i = 0; i < M; i++) {
+			for (int j = 0; j < N; j++) {
+				// Get each element from same column and insert into row
+				B[j][i] = A[i][j];
+			}
+		}
+		// Return result
+		return B;
+	}
+}
 ```
 
 
