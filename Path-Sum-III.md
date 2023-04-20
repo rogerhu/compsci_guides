@@ -22,13 +22,16 @@
 - What is the Time and Space Constraints for this problem?
     - `O(N^2)` Time and `O(1)` Space if we do not count the recursion stack. 
     -  And `O(N)` Time and `O(N)` Space.
+
 ```markdown
 HAPPY CASE
 Input: root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
 Output: 3
 Explanation: The paths that sum to 8 are shown.
 ```
+
 ![Example 1 ](https://assets.leetcode.com/uploads/2021/04/09/pathsum3-1-tree.jpg)
+
 ```markdown
 Input: root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
 Output: 3
@@ -47,15 +50,13 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
     - Choosing a specific tree traversal that follows a general root-to-leaf path should help us identify all of the possible routes.
-    
 - Store nodes within a HashMap to refer to later
     - We don’t have a specific way of referring to previous nodes in a path that could be used in a HashMap. So, a HashMap would not help us as much in this context. But a hashmap could store the previous path sums to be used as starting points.
-
 - Using Binary Search to find an element
     - We are not working with a Binary Search Tree. 
-
 - Applying a level-order traversal with a queue
     - Using this approach may complicate our code
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -195,7 +196,45 @@ class Solution(object):
         # Return the results
         return result
 ```
+```java
+class Solution {
+    public int pathSum(TreeNode root, int targetSum) {
+        // Cache the first possible starting point of zero
+        Map<Long, Integer> map = new HashMap<>();
+        map.put(0L, 1);
 
+        // Return the helper function to find the number of paths
+        return helper(root, (long) targetSum, 0, map);
+    }
+
+    // Create a helper function to process each node and store and release past path sums. Past path sums are used to emulate all possible starting points.
+    private int helper(TreeNode node, long targetSum, long preSum, Map<Long, Integer> map) {
+        // Set basecase to root is None, return
+        if (node == null) {
+            return 0;
+        }
+        // Generate current path sum by adding current node
+        preSum += node.val;
+
+        // Generate past path starting points by subtracting current path sum and target
+        // This is the value we can start from to get the target. Have we seen it? How many times have we seen it?
+        int res = map.getOrDefault(preSum - targetSum, 0);
+
+        // Add the number of ways we can get to TargetSum from this node, by checking the number of starting points that will get us to target.
+        // Add this path to the cache as part of the pastPathSum
+        map.put(preSum, map.getOrDefault(preSum, 0) + 1);
+
+        // Recursively check left child and right child
+        res += helper(node.left, targetSum, preSum, map) + helper(node.right, targetSum, preSum, map);
+        
+        // Release current path sum upon closing resursive call, because current path sum(Starting Point) will no longer be available.
+        map.put(preSum, map.get(preSum) - 1);
+
+        // Return the results
+        return res;
+    }
+}
+```
 
 ## 5: R-eview
 
