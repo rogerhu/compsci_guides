@@ -17,10 +17,8 @@
 
 - Could the input parameter be Null?
   - Let’s assume no input will be Null. The minimum input has two numbers.
-
 - What is the time and space complexity requirements?
     - O(n) time and O(1) space complexity. (The output array does not count as extra space for space complexity analysis.)
-
 
 ```markdown
 HAPPY CASE
@@ -41,13 +39,10 @@ Output: [-9,-9]
 
 - Sort
     - Does sorting help us achieve what we need in order to solve the problem?
-
 - Two pointer solutions (left and right pointer variables)
     - Two pointer may help us.
-
 - Storing the elements of the array in a HashMap or a Set
     - In reversing, hashing elements and storing them may not yield an optimal solution.
-
 - Traversing the array with a sliding window
     - Will viewing pieces of the input at a time help us?
 
@@ -98,6 +93,29 @@ class Solution:
         # Return the output array
         return output
 ```
+```java
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int[] result = new int[nums.length];
+
+        // Create product from the left and right side of each num and store in output array.
+        for (int i = 0; i < result.length; i++) result[i] = 1;
+            int left = 1, right = 1;
+            for (int i = 0, j = nums.length - 1; i < nums.length - 1; i++, j--) {
+                // Store product into output array
+                left *= nums[i];
+                // Multiply right product with the left product stored in output array.
+                right *= nums[j];
+                // Multiply product with the current number to develop left product
+                result[i + 1] *= left;
+                // Mutiply product with the current number to develop right product
+                result[j - 1] *= right;
+            }
+        // Return the output array
+        return result;
+    }
+}
+```
     
 ## 5: R-eview
 
@@ -112,7 +130,5 @@ class Solution:
 
 Assume N represents the number of items in the array.
 
-
 * **Time Complexity**: O(n), traversing done on every number of the array twice.
-* 
 * **Space Complexity**: O(1), when the output array does not count as extra space for space complexity analysis.
