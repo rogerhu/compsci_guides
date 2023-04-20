@@ -24,19 +24,24 @@
     - Yes, p and q node will always exist in tree
 - What is the space and time complexity?
     - Time is `O(N)` and Space is `O(1)` excluding the recursion stack.
+
 ```markdown
 HAPPY CASE
 Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
 Output: 3
 Explanation: The LCA of nodes 5 and 1 is 3.
 ```
+
 ![Example 1 ](https://assets.leetcode.com/uploads/2018/12/14/binarytree.png)
+
 ```markdown
 Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
 Output: 5
 Explanation: The LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.
 ```
+
 ![Example 2 ](https://assets.leetcode.com/uploads/2018/12/14/binarytree.png)
+
 ```markdown
 EDGE CASE 
 Input: root = [1,2], p = 1, q = 2
@@ -51,15 +56,13 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
     - Choosing a specific tree traversal helps identify a existant node.
-    
 - Store nodes within a HashMap to refer to later
     - We don’t have a specific way of referring to previous nodes in a path that could be used in a HashMap. So, a HashMap would not help us as much in this context.
-
 - Using Binary Search to find an element
     - We are not working with a Binary Search Tree. 
-
 - Applying a level-order traversal with a queue
     - Using this approach may complicate our code
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -77,6 +80,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 **⚠️ Common Mistakes**
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -106,6 +110,28 @@ class Solution:
         
         # Otherwise let parent know that what we have currently, because the LCA is higher up the tree
         return left if left else right
+```
+```java
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        // Basecase: When we find p, q, or reach None, return the root. This lets the parent know p, q, or None children is available to it.
+        if(root == null || root == p || root == q) return root; 
+
+        // Recursively check left side and right side
+        TreeNode l = lowestCommonAncestor(root.left, p, q);
+        TreeNode r = lowestCommonAncestor(root.right, p, q);
+
+        // If both left and right is available, then we have found it. Return the current root.
+        if(l!=null && r!=null) return root; 
+
+        // Otherwise let parent know that what we have currently, because the LCA is higher up the tree
+        else 
+        {
+            if(l!=null) return l;
+            else return r;
+        }
+    }
+}
 ```
 
 ## 5: R-eview
