@@ -87,6 +87,16 @@ class Solution:
         # Recursively return the max between height of left node and right node and add one for current node.
         return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
 ```
+```java
+class Solution {
+    public int maxDepth(TreeNode root) {
+        // Basecase is a Null Node, return 0
+        if(root == null)  return 0;
+        // Recursively return the max between height of left node and right node and add one for current node.
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;    
+    }
+}
+```
     
 ## 5: R-eview
 
