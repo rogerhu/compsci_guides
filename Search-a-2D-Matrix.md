@@ -26,12 +26,16 @@ HAPPY CASE
 Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3
 Output: true
 ```
+
 ![Image1](https://assets.leetcode.com/uploads/2020/10/05/mat.jpg)
+
 ```markdown
 Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13
 Output: false
 ```
+
 ![Image2](https://assets.leetcode.com/uploads/2020/10/05/mat2.jpg)
+
 ```markdown
 EDGE CASE
 Input: board = [[1]], target = 1
@@ -47,14 +51,10 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - A search through the 2D Array (either BFS or DFS) can help us, but at the cost of n*m. 
-
 - Hash the 2D Array in some way to help with the Strings
     - Hashing would not help us acheive the runtime O(log(n*m))
-    
 - Create/Utilize a Trie
     - A Trie would not help us much in this problem since we are not trying to determine anything about a sequence of characters.
-
-
 
 ## 3: P-lan
 
@@ -110,6 +110,52 @@ class Solution:
         # Return False, number was not found
         return False
 ```
+```java
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        // Perform binary search with each row 
+        int r1 = 0;
+        int r2 = matrix.length - 1;
+        int c1 = 0;
+        int c2 = matrix[0].length - 1;
+        int row = 0;
+        while (r1 <= r2) {
+            int mid = (r1 + r2) / 2;
+            if (target < matrix[mid][c1]) {
+                r2 = mid - 1;
+            }
+            else if (target > matrix[mid][c2]) {
+                r1 = mid + 1;
+            }
+            else {
+                row = mid;
+                break;
+            }
+        }
+        
+        if (r1 > r2) {
+            return false;
+        } 
+
+        // Perform binary search with each number in identified row and return True if found.
+        while (c1 <= c2) {
+            int mid = (c1 + c2) / 2;
+            if (matrix[row][mid] == target) {
+                return true;
+            }
+            else if (target < matrix[row][mid]) {
+                c2 = mid - 1;
+            }
+            else {
+                c1 = mid + 1;
+            }
+        }
+        
+        return false;
+    }
+}
+```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
