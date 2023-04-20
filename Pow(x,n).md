@@ -97,6 +97,32 @@ class Solution:
         result = self.myPow(x, n // 2)
 
         return result * result * (x if n % 2 else 1)
+```
+```java
+class Solution {
+    public double myPow(double x, int n) {
+        // Break into base case where n = 0 or x = 0 or or x == 1 or n = 1
+        if (n == 0) {
+            return 1;
+        }
+        if (x == 0 || x == 1 || n == 1) {
+            return x;
+        }
+
+        // recurrent relations where n is even or odd numbers.
+        double num = myPow(x, n / 2);
+
+        if (n % 2 == 0) {
+            return num * num;
+        } else {
+            if (n < 0) {
+                return num * num / x;
+            } else {
+                return num * num * x;
+            }
+        }
+    }
+}
 
 ```
     
