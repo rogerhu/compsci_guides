@@ -107,6 +107,32 @@ class Solution:
         # Return results 
         return results
 ```
+```java
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        // Create results array
+        List<Integer> ret = new ArrayList<>();
+        // Call helper function to build results
+        dfs(root, ret);
+        // Return results 
+        return ret;
+    }
+
+    // Create a helper function to recursively progress through the nodes
+    private void dfs(TreeNode node, List<Integer> ret) {
+        // Basecase, root is none. 
+        if (node == null) {
+            return;
+        }
+        // Go to left node
+        dfs(node.left, ret);
+        // Store node value into results
+        ret.add(node.val);
+        // Go to right node
+        dfs(node.right, ret);
+   }
+}
+```
     
 ## 5: R-eview
 
