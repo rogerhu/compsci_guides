@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/asteroid-collision/](https://leetcode.com/problems/asteroid-collision/)
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Array 
 * 🗒️ **Similar Questions**: [Can Place Flowers](https://leetcode.com/problems/can-place-flowers/)
     
