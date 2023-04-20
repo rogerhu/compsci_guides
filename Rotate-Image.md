@@ -26,12 +26,16 @@ HAPPY CASE
 Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 Output: [[7,4,1],[8,5,2],[9,6,3]]
 ```
+
 ![Image 1](https://assets.leetcode.com/uploads/2020/08/28/mat1.jpg)
+
 ```markdown
 Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
 Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
+
 ```
 ![Image 2](https://assets.leetcode.com/uploads/2020/08/28/mat2.jpg)
+
 ```markdown
 EDGE CASE
 Input: matrix = [[1]]
@@ -46,10 +50,8 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - A search through the 2D Array (either BFS or DFS) does not help us. We are rotating an image.
-
 - Hash the 2D Array in some way to help with the Strings
     - Hashing would not help us flipping a image horizontally, then inverting it
-
 - Create/Utilize a Trie
     - A Trie would not help us much in this problem since we are not trying to determine anything about a sequence of characters.
 
@@ -71,6 +73,7 @@ For 2D-Array, common solution patterns include:
     c)Recursive reduce the layers
 2) Run helper function starting at the outermost layer
 ```
+
 ![Image3](https://leetcode.com/problems/Rotate-Image/Figures/48/48_angles.png)
 ![Image4](https://assets.leetcode.com/users/images/a78a7f44-35f0-47ab-9b29-f4011a11e0f5_1614901732.2911437.png)
 
@@ -107,7 +110,39 @@ class Solution:
         n = len(matrix)-1
         helper(0, n)
 ```
-
+```java
+class Solution {
+    public void rotate(int[][] matrix) {
+        // Run helper function starting at the outermost layer
+        int n = matrix.length;
+        solve(matrix, n, 0);
+        return;
+    }
+    
+    void solve(int[][] matrix, int n, int start){
+        // Basecase: Center square 
+        if(start >= n/2){
+            return;
+        }
+        
+        // Rotate the items from upper-row with left-column, left-column with bottom-row, bottom-row with right-column, and right-column with upper-row
+        for(int i = start; i < n-1-start; i++){
+            int a = matrix[start][i];
+            int b = matrix[i][n-1-start];
+            int c = matrix[n-1-start][n-i-1];
+            int d = matrix[n-i-1][start];
+            
+            matrix[start][i] = d;
+            matrix[i][n-1-start] = a;
+            matrix[n-1-start][n-i-1] = b;
+            matrix[n-i-1][start] = c;
+        }
+        
+        // Recursive reduce the layers
+        solve(matrix, n, start+1);
+    }
+}
+```
 
 ## 5: R-eview
 
