@@ -20,13 +20,16 @@
   - Yes, it can be. In that case there are no root-to-leaf paths, correct?
 - Can a root-to-leaf path be the root itself, if it has no children?
   - Yes, that can occur.
+
 ```markdown
 HAPPY CASE
 Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
 Output: true
 Explanation: The root-to-leaf path with the target sum is shown.
 ```
+
 ![Example 1 ](https://assets.leetcode.com/uploads/2021/01/18/pathsum1.jpg)
+
 ```markdown
 Input: root = [1,2,3], targetSum = 5
 Output: false
@@ -35,7 +38,9 @@ Explanation: There two root-to-leaf paths in the tree:
 (1 --> 3): The sum is 4.
 There is no root-to-leaf path with sum = 5.
 ```
+
 ![Example 2 ](https://assets.leetcode.com/uploads/2021/01/18/pathsum2.jpg)
+
 ```markdown
 EDGE CASE 
 Input: root = [], targetSum = 0
@@ -51,15 +56,13 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
     - Choosing a specific tree traversal that follows a general root-to-leaf path should help us identify all of the possible routes.
-    
 - Store nodes within a HashMap to refer to later
     - We don’t have a specific way of referring to previous nodes in a path that could be used in a HashMap. So, a HashMap would not help us as much in this context.
-
 - Using Binary Search to find an element
     - We are not working with a Binary Search Tree. 
-
 - Applying a level-order traversal with a queue
     - Using this approach may complicate our code
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -75,11 +78,10 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 **⚠️ Common Mistakes**
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
-
-**Solution 1**
 
 ```python
 # Definition for a binary tree node.
@@ -100,6 +102,20 @@ class Solution:
         
         # Recursively proceed to next node and remove value from targetSum 
         return self.hasPathSum(root.left, targetSum - root.val) or self.hasPathSum(root.right, targetSum - root.val)
+```
+```java
+class Solution {
+    public boolean hasPathSum(TreeNode root, int sum) {
+        // Set basecase to root is None, return false
+        if (root == null) return false;
+
+        // Upon reaching a leaf node, check if value is equal to targetSum
+        if (root.left == null && root.right == null && root.val == sum) return true;
+
+        // Recursively proceed to next node and remove value from targetSum
+        return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
+    }
+}
 ```
 
 ## 5: R-eview
