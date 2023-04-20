@@ -111,6 +111,43 @@ class Solution:
         # Return the diameter
         return diameter
 ```
+```java
+class Solution 
+{
+    // Create variable to hold diameter information
+    int max;
+    // Create function to return the height of tree and collect diameter at each node
+    public int getDiameter(TreeNode root)
+    {
+        // Basecase is a Null Node, return 0
+        int h= 0; 
+        if(root == null)
+           return 0;
+        
+        // Collect information regarding diameter of node
+        int l= getDiameter(root.left);
+        int r= getDiameter(root.right);
+        
+        // Recursively return the max between height of left node and right node and add one for current node
+
+        h= Math.max(l,r);//
+        max= Math.max(max,l+r+1);//updating the maximum diameter 
+        
+        h=h+1;//increasing heigh covering every node 
+        return h; //returning the maximum height 
+    }
+
+    public int diameterOfBinaryTree(TreeNode root) 
+    {
+        max= Integer.MIN_VALUE;
+        // Call the function to check diameter of each node
+        getDiameter(root);
+
+        // Return the diameter
+        return max-1; //node=edge+1, i.e; edge=node-1
+    }
+}
+```
     
 ## 5: R-eview
 
