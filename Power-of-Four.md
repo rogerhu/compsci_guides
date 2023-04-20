@@ -83,6 +83,19 @@ class Solution:
         # Return the recursive function n/4 
         return self.isPowerOfFour(n/4)
 ```
+```java
+class Solution {
+    public boolean isPowerOfFour(int n) {
+        // Break into base case where n = 1 return True
+        if(n == 1) return true;
+        // Break into base case where n = 0 or n is no longer a whole number when divided by 4 return False
+        if(n % 4 != 0 || n == 0) return false;
+        
+        // Return the recursive function n/4 
+        return isPowerOfFour(n/4);    
+    }
+}
+```
     
 ## 5: R-eview
 
