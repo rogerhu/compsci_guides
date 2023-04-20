@@ -95,6 +95,35 @@ class Solution:
         # Return max area found
         return maxArea
 ```
+```java
+class Solution {
+    public int maxArea(int[] height) {
+        // Create largest range, by creating a left and right pointer
+        int left = 0;
+        int right = height.length - 1;
+        int max = 0;
+
+        // At every part of the range calculate the current area at this width and check against our max area
+        while(left < right){
+            int w = right - left;
+            int h = Math.min(height[left], height[right]);
+            int area = h * w;
+            max = Math.max(max, area);
+
+            //Reduce the range/width while maintaining the maximum height 
+            if(height[left] < height[right]) left++;
+            else if(height[left] > height[right]) right--;
+            else {
+                left++;
+                right--;
+            }
+        }
+        
+        //Return max area found
+        return max;
+    }
+}
+```
     
 ## 5: R-eview
 
