@@ -51,15 +51,13 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
     - Choosing a specific tree traversal that follows a general root-to-leaf path should help us identify all of the possible routes.
-    
 - Store nodes within a HashMap to refer to later
     - We don’t have a specific way of referring to previous nodes in a path that could be used in a HashMap. So, a HashMap would not help us as much in this context.
-
 - Using Binary Search to find an element
     - We are not working with a Binary Search Tree. 
-
 - Applying a level-order traversal with a queue
     - Using this approach may complicate our code
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -172,6 +170,29 @@ class Solution:
 
         # Return results
         return res
+```
+```java
+class Solution {
+    public List<String> binaryTreePaths(TreeNode root) {
+        // Create results array
+        List<String> answer = new ArrayList<String>();
+        // Call helper function to build results
+        if (root != null) searchBT(root, "", answer);
+        // Return results
+        return answer;
+    }
+
+    // Create a helper function to recursively progress through the nodes
+    private void searchBT(TreeNode root, String path, List<String> answer) {
+        // Collect the values and build string
+        // At a leaf node add built string to results
+        if (root.left == null && root.right == null) answer.add(path + root.val);
+
+        // Progress to left node and right node
+        if (root.left != null) searchBT(root.left, path + root.val + "->", answer);
+        if (root.right != null) searchBT(root.right, path + root.val + "->", answer);
+    }
+}
 ```
 
 ## 5: R-eview
