@@ -25,6 +25,7 @@
     - Yes, the node values are unique
 - Is it guaranteed that the value to insert does not exist in the BST?
     - Yes, the node to insert does not originally exist in the BST
+
 ```markdown
 HAPPY CASE
 Input: root = [4,2,7,1,3], val = 5
@@ -52,6 +53,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - We are looking to find the correct position at which to insert the value in this problem so this technique is useful for this problem
 - Applying a level-order traversal with a queue
     - Since we need to compare nodes and node values in both trees top down, a level-order traversal using a queue could be used but try solving the problem using Pre-Order first
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -94,6 +96,27 @@ class Solution:
         
         # Return the root of the tree
         return root
+```
+```java
+class Solution {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+        // Check if the tree is empty. If it is, return a new TreeNode with node value of val
+        if(root==null)
+            return new TreeNode(val);
+        
+        // Recursively traverse the tree in pre-order fashion
+
+        // If node.val > input value: traverse the left subtree
+        if(root.val>val)
+            root.left = insertIntoBST(root.left,val);
+        // Else traverse the right subtree
+        else
+            root.right = insertIntoBST(root.right,val);
+
+        // Return the root of the tree
+        return root;
+    }
+}
 ```
     
 ## 5: R-eview
