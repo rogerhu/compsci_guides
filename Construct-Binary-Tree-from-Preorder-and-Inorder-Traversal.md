@@ -5,6 +5,7 @@
 * ⏰ **Time to complete**: 25 mins
 * 🛠️ **Topics**: Binary Trees, Depth First Search
 * 🗒️ **Similar Questions**: [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/), [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/), [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
@@ -24,7 +25,9 @@ HAPPY CASE
 Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
 Output: [3,9,20,null,null,15,7]
 ```
+
 ![Example 1](https://assets.leetcode.com/uploads/2021/02/19/tree.jpg)
+
 ```markdown
 Input: preorder = [1], inorder = [1]
 Output: [1]
@@ -67,6 +70,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 **⚠️ Common Mistakes**
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -98,6 +102,44 @@ class Solution:
 
         # Return root
         return root
+```
+```java
+public class Solution {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        // Basecase, if inorder array does not exist.
+        if (preorder.length == 0) return null;
+
+        // Return helper function
+        return buildTree(preorder, inorder, 0, 0, inorder.length - 1);
+    }
+    
+    private TreeNode buildTree(int[] preorder, int[] inorder, int preorderIndex, int start, int end) {
+        // Basecase, l and r index crosses
+        if (start > end) return null;
+        // Take the first item from preorder to reflect pre-order traversal
+        TreeNode node = new TreeNode(preorder[preorderIndex]);
+
+        // Find index of root node within in-order traversal to split between left child and right child
+        int inorderIndex = findInorderIndex(inorder, start, end, preorder[preorderIndex]);
+        int leftTreeSize = inorderIndex - start;
+        int rightTreeSize = end - inorderIndex;
+
+        // Recursively build left and right child
+        node.left = buildTree(preorder, inorder, preorderIndex + 1, start, inorderIndex - 1);
+        node.right = buildTree(preorder, inorder, preorderIndex + leftTreeSize + 1, inorderIndex + 1, end);
+
+        // Return root
+        return node;
+    }
+    
+    // index finder helper function
+    private int findInorderIndex(int[] inorder, int start, int end, int key) {
+        for (int i = start; i <= end; i++) {
+            if (inorder[i] == key) return i;
+        }
+        return -1;
+    }
+}
 ```
     
 ## 5: R-eview
