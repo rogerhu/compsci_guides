@@ -110,6 +110,38 @@ class Solution:
         # Return results.
         return results
 ```
+```java
+public class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        // Create a results array to store each level.
+        List<List<Integer>> wrapList = new LinkedList<List<Integer>>();
+
+        if(root == null) return wrapList;
+        
+        // Create a queue with root node and process until no more nodes in queue
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            // Process the current number of nodes in queue to exclude new nodes added to queue
+            int levelNum = queue.size();
+            List<Integer> subList = new LinkedList<Integer>();
+
+            // Store value of node into current level and add children from each node to queue, to be processed in next level.
+            for(int i=0; i<levelNum; i++) {
+                if(queue.peek().left != null) queue.offer(queue.peek().left);
+                if(queue.peek().right != null) queue.offer(queue.peek().right);
+                subList.add(queue.poll().val);
+            }
+
+            // Store level into results
+            wrapList.add(subList);
+        }
+
+        // Return results
+        return wrapList;
+    }
+}
+```
 
 ## 5: R-eview
 
