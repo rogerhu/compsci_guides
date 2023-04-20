@@ -25,17 +25,21 @@
     - Yes, kth item is always inbound.
 - What is the time and space constraints for this problem?
     - `O(k)` time and `O(1)` space complexity without the recursive stack.
+
 ```markdown
 HAPPY CASE
 Input: root = [3,1,4,null,2], k = 1
 Output: 1
 ```
+
 ![Example 1](https://assets.leetcode.com/uploads/2021/01/28/kthtree1.jpg)
+
 ```markdown
 Input: root = [5,3,6,2,4,null,null,1], k = 3
 Output: 3
 ```
 ![Example 2](https://assets.leetcode.com/uploads/2021/01/28/kthtree2.jpg)
+
 ```markdown
 EDGE CASE
 Input: root = [111], k = 1
@@ -56,6 +60,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - We cannot use binary search for this problem because this does not help us identity the sorted order of the item in question.
 - Applying a level-order traversal with a queue
     - A level-order traversal is not helpful here. The level-order traversal does not help us with the sorted order.
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -80,6 +85,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
 - Not recognizing the need for a helper function
     - To help reduce the number of parameters, remove the need for a return value, and retain memory.
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -122,6 +128,39 @@ class Solution:
 
             # Return kthNode
             return kthNode
+```
+```java
+class Solution {
+    // Create variable to hold kthNode
+    int ans = 0, i = 0;
+    public int kthSmallest(TreeNode root, int k) {
+        // Call helper function on root
+        inorder(root, k);
+        // Return kthNode
+        return ans;
+        
+    }
+    // Create a helper function that processes in-order traversal while reducing k to help identify kth node
+    public void inorder(TreeNode root, int k) {
+        //  Base Case: Check if the tree is empty or k is less than 0. If it is, return. We have completed search.
+        if(root == null || k < 0) {
+            return;
+        }
+        
+        // Call helper on left child
+        inorder(root.left, k);
+
+        // Reduce k and check if k is 0, if so set kth node and return
+        i++;
+        if(k==i){
+            ans = root.val; 
+            return;  
+        }
+
+        // Call helper on right child
+        inorder(root.right, k);
+    }
+}
 ```
     
 ## 5: R-eview
