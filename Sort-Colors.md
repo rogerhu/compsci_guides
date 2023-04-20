@@ -98,6 +98,35 @@ class Solution:
         
         return nums
 ```
+```java
+class Solution {
+    public void sortColors(int[] nums) {
+        // Create left, middle, and right pointers.
+        int l = 0, r = nums.length - 1, mid = 0;
+
+        // While the middle pointer is less than or equal to right pointer, we have not visited each number and sorted the numbers
+        while( mid <= r ) {
+            // If middle pointer is pointing at a 0, then swap with the left pointer and move both left and middle pointers forward. Because we setup the left pointer spot to be ready for another zero. Middle pointer can go forward to try next number, because we are garenteed to use spot for left pointer.
+            if( nums[mid] == 0 ) 
+                swap(nums, l++, mid++);
+
+            // If middle pointer is pointing at a 2, then swap with the right pointer and move the right pointer backwards. Because we setup the right pointer spot to be ready for another zero. Middle pointer needs to remain at the original spot because we cannot garanteed to that spot.
+            else if( nums[mid] == 2)
+                swap(nums, r--, mid);   
+
+            // If middle pointer is pointing at a 1, then move middle pointer forward. Because, the 1 is in the right place for the middle pointer.  
+            else
+                mid++;
+        }
+    }
+
+    public void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
+```
     
 ## 5: R-eview
 
