@@ -21,19 +21,24 @@
     - Yes, there will be alway be 1 coin for nodes.
 - What is the time and space constraints for this problem?
     - `O(N)` time and `O(1)` space if we do not count the recursion stack.
+
 ```markdown
 HAPPY CASE
 Input: root = [3,0,0]
 Output: 2
 Explanation: From the root of the tree, we move one coin to its left child, and one coin to its right child.
 ```
+
 ![Example 1 ](https://assets.leetcode.com/uploads/2019/01/18/tree1.png)
+
 ```markdown
 Input: root = [0,3,0]
 Output: 3
 Explanation: From the left child of the root, we move two coins to the root [taking two moves]. Then, we move one coin from the root of the tree to the right child.
 ```
+
 ![Example 2 ](https://assets.leetcode.com/uploads/2019/01/18/tree2.png)
+
 ```markdown
 EDGE CASE 
 Input: root = [1], 
@@ -49,15 +54,13 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
     - Choosing a specific tree traversal that follows a general root-to-leaf path should help us move from leaf-to-root during the recursive return call.
-    
 - Store nodes within a HashMap to refer to later
     - We don’t have a specific way of referring to previous nodes in a path that could be used in a HashMap. So, a HashMap would not help us as much in this context.
-
 - Using Binary Search to find an element
     - We are not working with a Binary Search Tree. 
-
 - Applying a level-order traversal with a queue
     - Using this approach may complicate our code
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -81,6 +84,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
 - We need a helper method to retain the total number of moves during the recursive calls.
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -125,6 +129,53 @@ class Solution:
         
         # Return total number of moves
         return total_num_moves
+```
+```java
+class Solution
+{
+    // We will determine the number of moves needed by looking at the balance of coins at each node that needs to be moved.
+
+    // Create variable to hold total number of moves 
+    int moves= 0;
+    public int distributeCoins(TreeNode root)
+    {
+        // Call helper method to populate total number of moves
+        helper(root);
+
+        // Return total number of moves
+        return moves;
+    }
+
+    // Create helper method to return the balance at each node. We will need to move this balance, hence we will record the balance move through this node.
+    public int helper(TreeNode root)
+    {//Postorder traversal, we know about the child situation first and then the parent 
+        // The balance (excess/needed) is 0 for nodes that don't exist
+        if(root == null)
+           return 0;
+        // Recursively check the number of coins needed to be moved per node starting from the leaves of tree as we need this for each node's total balance
+        int coinsLeft= helper(root.left);
+	    int coinsRight= helper(root.right);
+       
+       // Set total balance at this node is calculated with this formula. All the coins from left child, right child, itself, and the one coin it needs.
+        int coins= coinsLeft + coinsRight;
+        
+        // While calculating the balance of each node in this recursion, we will calculate the number of moves needed to make this balance from left and right child
+        //root node situation 
+        if(root.val == 0) //root node cannot contribute, but needs coin from its parent 
+          coins-= 1;//current node need one coin from parent
+      
+        else if(root.val == 1)//root node cannot contribute, at par
+          coins+= 0;
+      
+        else //root node can contribute to its parent
+          coins+= root.val- 1;//excess coin are been transfered to the parent 
+    
+        moves+= Math.abs(coins);
+
+        // Send the node's balance up to parent
+        return coins;
+    }
+}
 ```
 
 ## 5: R-eview
