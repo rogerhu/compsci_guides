@@ -17,7 +17,6 @@
 
 - Can the input grid be blank??
     - Let’s assume the grid is not blank. We don’t need to consider empty inputs.
-
 - What are the time and space constraints?
     - Time complexity should be `O(m*n)`, m being the rows of the array and n being the columns of array. Space complexity should be `O(1)`.
 
@@ -48,10 +47,8 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - A search through the 2D Array (either BFS or DFS) does not help us. We are flipping a image horizontally, then inverting it, not searching.
-
 - Hash the 2D Array in some way to help with the Strings
     - Hashing would not help us flipping a image horizontally, then inverting it
-
 - Create/Utilize a Trie
     - A Trie would not help us much in this problem since we are not trying to determine anything about a sequence of characters.
 
@@ -89,7 +86,29 @@ class Solution:
         
         return image
 ```
-
+```java
+class Solution {
+    public int[][] flipAndInvertImage(int[][] A) {
+        int row = A.length;
+        int col = A[0].length;
+        int[][] result = new int[row][col];
+        
+		// Use the reverse function on each row
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                result[i][j] = A[i][col-j-1];
+            }
+        }
+        // For each row flip each item from 0 to 1 and 0 to 1.
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                result[i][j] = result[i][j] == 1 ? 0 : 1;
+            }
+        }
+        return result;
+    }   
+}
+```
 
 ## 5: R-eview
 
