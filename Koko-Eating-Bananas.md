@@ -110,6 +110,42 @@ class Solution:
         # Return the minimum number of bananas per hour.
         return right
 ```
+```java
+class Solution {
+    public int minEatingSpeed(int[] piles, int h) {
+        // Get lower bound of binary search
+        int left = 1;
+        // Get higher bound of binary search
+        int right = 1000000000;
+        
+        // While left pointer is less than or equal to right pointer we have not exhausted the possible numbers
+        while(left < right){
+            // Get the mid point of the two pointers and test if this number of bananas per hour will finish all piles within time limit
+            int mid = left + (right - left) / 2;
+            
+            // Check if the number of banana is enough to eat per hour and finish all the piles of banana.
+
+            // If we can finish the piles of banana, then lets try to reduce the number of banana per hour, move right pointer to mid point. The answer must be midpoint and above.
+            if(canEatInTime(piles, mid, h)) right = mid;
+
+            // If we cannot finish the piles of banana, then lets try to increase the number of bananas per hour, move left pointer to mid point. The answer cannot be left of midpoint.
+            else left = mid + 1;
+        }
+
+        // Return the minimum number of bananas per hour.
+        return right;
+    }
+    public boolean canEatInTime(int piles[], int k, int h){
+        int hours = 0;
+        for(int pile : piles){
+            int div = pile / k;
+            hours += div;
+            if(pile % k != 0) hours++;
+        }
+        return hours <= h;
+    }
+}
+```
     
 ## 5: R-eview
 
