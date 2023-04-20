@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [https://leetcode.com/problems/basic-calculator/](https://leetcode.com/problems/basic-calculator/)
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 20 mins
 * 🛠️ **Topics**: String
 * 🗒️ **Similar Questions**: [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/), [Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii/
     
@@ -217,6 +217,7 @@ class Solution:
 ## 6: E-valuate
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
-    
-* **Time Complexity**: O(n), where N is the length of the string
-* **Space Complexity**: O(n) to account for stack used
+   
+
+* **Time Complexity**: O(N), where N is the length of the string
+* **Space Complexity**: O(N) to account for stack used
