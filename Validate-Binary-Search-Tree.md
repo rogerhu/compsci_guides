@@ -23,18 +23,23 @@
   - No, the input tree can have 1-10000 nodes
 - What is the time and space constraints for this problem?
     - `O(n)` time and `O(1)` space complexity without the recursive stack.
+
 ```markdown
 HAPPY CASE
 Input: root = [2,1,3]
 Output: true
 ```
+
 ![Example 1](https://assets.leetcode.com/uploads/2020/12/01/tree1.jpg)
+
 ```markdown
 Input: root = [5,1,4,null,null,3,6]
 Output: false
 Explanation: The root node's value is 5 but its right child's value is 4.
 ```
+
 ![Example 2](https://assets.leetcode.com/uploads/2020/12/01/tree2.jpg)
+
 ```markdown
 EDGE CASE
 Input: root = [1]
@@ -55,6 +60,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - We cannot use binary search for this problem because this does not help us identity the sorted order of the item in question.
 - Applying a level-order traversal with a queue
     - A level-order traversal is not helpful here. The level-order traversal does not help us with the sorted order.
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -77,6 +83,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
 - Not recognizing the need for a helper function
     - To help increase the number of parameters.
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -106,6 +113,27 @@ class Solution:
 
         # Call helper function on root and set minimum value of node to be negative infinite and maximum value of node to be positive infinite
         return helper(root, -math.inf, math.inf)
+```
+```java
+public class Solution {
+    public boolean isValidBST(TreeNode root) {
+        // Call helper function on root and set minimum value of node to be negative infinite and maximum value of node to be positive infinite
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+    
+    // Create a helper function that processes tree via pre-order traversal while retaining the maximum value and minimum value of node as determined by parent nodes.
+    public boolean isValidBST(TreeNode root, long minVal, long maxVal) {
+        //  Check if the node is None. If it is, return true. We made it to the leaf of a tree and every node along the path is valid.
+        if (root == null) return true;
+
+        // Check if the node is within minimum and maximum range. If it is not, return false.
+        if (root.val >= maxVal || root.val <= minVal) return false;
+
+        //  Call helper on left child, when going left, update the maximum value of child node is less than parent node
+        // Call helper on right child, when going right, update the minimum value of child node is greater than parent node
+        return isValidBST(root.left, minVal, root.val) && isValidBST(root.right, root.val, maxVal);
+    }
+}
 ```
     
 ## 5: R-eview
