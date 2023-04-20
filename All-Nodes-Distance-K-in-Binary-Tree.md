@@ -21,13 +21,16 @@
     - Yes, all values are unique.
 - What is the Time and Space Constraints for this problem?
     - `O(N)` Time and `O(N)` Space.
+
 ```markdown
 HAPPY CASE
 Input: root = [3,5,1,6,2,0,8,null,null,7,4], target = 5, k = 2
 Output: [7,4,1]
 Explanation: The nodes that are a distance 2 from the target node (with value 5) have values 7, 4, and 1.
 ```
-![Example 1 ](https://s3-lc-upload.s3.amazonaws.com/uploads/2018/06/28/sketch0.png)
+
+<img src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/06/28/sketch0.png" width = 25% height = 25%>
+
 ```markdown
 Input: root = [1,2,3], target = 1, k = 1
 Output: [2,3]
@@ -45,15 +48,13 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
     - Choosing a specific tree traversal that follows a general target-to-k away path should help us identify all of the possible routes.
-    
 - Store nodes within a HashMap to refer to later
     - A hashmap is very helpful for traversing back to the parent node. As we have no way of returning back to the parent node and keeping count of k away, without it.
-
 - Using Binary Search to find an element
     - We are not working with a Binary Search Tree. 
-
 - Applying a level-order traversal with a queue
     - Using this approach may complicate our code
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -81,11 +82,10 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
 - Not creating a helper function
     - Multiple helper function can help perform multiple dfs calls for solution.
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
-
-**SOLUTION 1:**
 
 ```python
 # Definition for a binary tree node.
@@ -143,7 +143,65 @@ class Solution:
         # Return Results
         return results
 ```
+```java
+class Solution {
+    // Create Parent Map, traversed set, and results to retain memory.
+    List<Integer> answer = new ArrayList<>();
+    Map<TreeNode, TreeNode> childParentMap = new HashMap<>();
+    Set<TreeNode> visited = new HashSet<>();
+    
+    public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
+        // Call getParent function to populate ParentMap
+        getParent(root);
+        // Call getNodes function to populate results
+        getNodes(target, k);
 
+        // Return Results
+        return answer;
+    }
+    
+    // Create a helper function to store parentNode in hashmap
+    private void getParent(TreeNode node) {
+        // Basecase: If node is None, return
+        if(node == null) {
+            return;
+        }
+
+        // Set current node as key and parent as value
+        // Recursively call left child and right child
+        if(node.left != null) {
+            childParentMap.put(node.left, node);
+            getParent(node.left);
+        }
+        if(node.right != null) {
+            childParentMap.put(node.right, node);
+            getParent(node.right);
+        }
+    }
+    
+    // DFS function that gets the nodes at a distance k from the target
+    private void getNodes(TreeNode node, int k) {
+        // Basecase: If node is None, or have been traversed, or node is more than k away, return
+        if(node == null || visited.contains(node)) {
+            return;
+        }
+
+        // Add node to traversed set, so we do not travel down the same path
+        visited.add(node);
+
+        // Upon meeting a node k away from target, add to results
+        if(k == 0) {
+            answer.add(node.val);
+            return;
+        }
+
+        // Otherwise continue searching, left child, right child, and parent
+        getNodes(node.left, k-1);
+        getNodes(node.right, k-1);
+        getNodes(childParentMap.get(node), k-1);
+    }
+}
+```
 
 ## 5: R-eview
 
