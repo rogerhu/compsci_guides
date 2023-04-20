@@ -19,12 +19,15 @@
   - Yes, the root node can be Null.
 - What is the space and time complexity?
     - Time is `O(N)` and Space is `O(N)`.
+
 ```markdown
 HAPPY CASE
 Input: root = [3,9,20,null,null,15,7]
 Output: [[3],[9,20],[15,7]]
 ```
+
 ![Example 1 ](https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg)
+
 ```markdown
 Input: root = [1]
 Output: [[1]]
@@ -71,6 +74,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
 - Failing to recognize the need to store results during the processing of nodes.
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
