@@ -29,7 +29,9 @@ Input: board = [["X",".",".","X"],[".",".",".","X"],[".",".",".","X"]]
 Output: 2
 Explanation: The answer is not 11, because the island must be connected 4-directionally.
 ```
+
 ![Image1](https://assets.leetcode.com/uploads/2021/04/10/battelship-grid.jpg)
+
 ```markdown
 Input: board = [["."]]
 Output: 0
@@ -37,7 +39,6 @@ Output: 0
 EDGE CASE
 Input: board = [["X"]]
 Output: 1
-
 ```   
     
 ## 2: M-atch
@@ -48,14 +49,10 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - A search through the 2D Array (either BFS or DFS) can help us find each battleship. Which of these two traversals will better help us locate the battleship?
-
 - Hash the 2D Array in some way to help with the Strings
     - Hashing would not directly help us find islands. However, we could hash where certain 1's are in the 2D Array to jumpstart searches (BFS/DFS) faster.
-    
 - Create/Utilize a Trie
     - A Trie would not help us much in this problem since we are not trying to determine anything about a sequence of characters.
-
-
 
 ## 3: P-lan
 
@@ -96,6 +93,39 @@ class Solution:
         # Return number of battleships
         return numberOfBattleships
 ```
+```java
+class Solution {
+    public int countBattleships(char[][] board) {
+        if (board == null) {
+            throw new IllegalArgumentException("Input is null");
+        }
+        if (board.length == 0 || board[0].length == 0) {
+            return 0;
+        }
+
+        // Initialize a variable to keep track of the number of battleships
+        int rows = board.length;
+        int cols = board[0].length;
+        int numberOfBattleships = 0;
+
+        // Iterate over the board
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                // If a 'X' is seen and if the left side and the up side is ocean or at the boarder, then it's the head of a ship and add one to the count.
+                if (board[i][j] == 'X'
+						&& (j == cols - 1 || board[i][j + 1] == '.')
+                        && (i == rows - 1 || board[i + 1][j] == '.')) {
+                    numberOfBattleships++;
+                }
+            }
+        }
+        
+        // Return number of battleships
+        return numberOfBattleships;
+    }
+}
+```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
