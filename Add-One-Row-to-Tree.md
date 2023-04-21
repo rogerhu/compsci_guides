@@ -31,12 +31,16 @@ HAPPY CASE
 Input: root = [4,2,6,3,1,5], val = 1, depth = 2
 Output: [4,1,1,2,null,null,6,3,1,5]
 ```
+
 ![Example 1](https://assets.leetcode.com/uploads/2021/03/15/addrow-tree.jpg)
+
 ```markdown
 Input: root = [4,2,null,3,1], val = 1, depth = 3
 Output: [4,2,null,1,1,3,null,null,1]
 ```
+
 ![Example 2](https://assets.leetcode.com/uploads/2021/03/11/add2-tree.jpg)
+
 ```markdown
 EDGE CASE
 Input: root = [1], val=1, depth=1
@@ -67,13 +71,10 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 **General Idea:** Recursively decrement the height until the desired depth and add the new node and attach the previous node to left or right branch as appropriate.
 
 ```markdown
-1. Handle edgecase depth is 1: Add new node and attach root.
-2. Create helper to recursively decrement the height until the desired depth and add new node, and attach the previous node to left or right branch as appropriate
-    a. Early Exit for depth under 
-    b. Upon seeing a node check depth 
-        i. If 1, then create the new node and attach the previous node to left or right branch as appropriate
-    c. Continue to reduce depth and recursively call the helper function
-3. Call helper function
+1. Handle edgecase root is none
+2. Handle edgecase depth is 1: 
+3. Handle edgecase depth is 2: Add new node and attach root.left or root.right 
+4. Continue to reduce depth and recursively call
 4. Return the root
 ```
 
@@ -88,7 +89,6 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 4. Return the root
 ```
 
-
 **⚠️ Common Mistakes**
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
@@ -100,41 +100,45 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 ***Approach #1 DFS:***
 
 ```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 class Solution:
-    def addOneRow(self, root: Optional[TreeNode], val: int, depth: int) -> Optional[TreeNode]:
-        # Handle edgecase depth is 1: Add new node and attach root.
-        if depth == 1:
-            return TreeNode(val, root)
-        
-        # Create helper to recursively decrement the height until the desired depth and add new node, and attach the previous node to left or right branch as appropriate
-        def helper(node: Optional[TreeNode], depth: int):
-            # Early Exit for depth under 1 
-            if depth < 1:
-                return
-            
-            # Upon seeing a node check depth 
-            if node:
-
-                # If 1, then create the new node and attach the previous node to left or right branch as appropriate
-                if depth == 1:
-                    node.left = TreeNode(val, left = node.left)
-                    node.right = TreeNode(val, right = node.right)
-                
-                # Continue to reduce depth and recursively call the helper function
-                helper(node.left, depth - 1)
-                helper(node.right, depth - 1)
-        
-        # Call helper function
-        helper(root, depth - 1)
-
-        # Return root
-        return root
+  def addOneRow(self, root: Optional[TreeNode], val: int, depth: int) -> Optional[TreeNode]:
+    # Handle edgecase root is none
+    if not root:
+      return None
+    # Handle edgecase depth is 1: Add new node and attach root.
+    elif depth == 1:
+      return TreeNode(val, root)
+    # Handle edgecase depth is 2: Add new node and attach root.left or root.right
+    elif depth == 2:
+      root.left = TreeNode(val, root.left, None)
+      root.right = TreeNode(val, None, root.right)
+    # Continue to reduce depth and recursively call
+    else:
+      self.addOneRow(root.left, val, depth-1)
+      self.addOneRow(root.right, val, depth-1)
+    # Return root
+    return root
+```
+```java
+class Solution {
+    public TreeNode addOneRow(TreeNode root, int v, int d) {
+      // Handle edgecase root is none
+      if(root == null) return null;
+      // Handle edgecase depth is 1: Add new node and attach root.
+      if(d == 1) return new TreeNode(v, root, null);
+      // Handle edgecase depth is 2: Add new node and attach root.left or root.right
+      if(d == 2){
+          root.left = new TreeNode(v, root.left, null);
+          root.right = new TreeNode(v, null, root.right);
+      // Continue to reduce depth and recursively call
+      } else{
+          addOneRow(root.left, v, d-1);
+          addOneRow(root.right, v, d-1);
+      }
+      // Return root
+      return root;
+    }
+}
 ```
 
 ***Approach #2 BFS:***
@@ -171,6 +175,38 @@ class Solution:
         
         # Return the root
         return root
+```
+```java
+class Solution {
+  public TreeNode addOneRow(TreeNode root, int val, int depth) {
+    // Handle edgecase depth is 1: Add new node and attach root.
+		if (depth == 1) {
+			return new TreeNode(val,root,null);
+		}
+    
+    // Create queue and iterate until desired depth
+    Queue<TreeNode> q = new LinkedList<>();
+    q.add(root);
+    int currDepth = 2;
+    while(currDepth++ < depth) {
+        int width = q.size();
+        while(width-- > 0) {
+            TreeNode curr = q.poll();
+            if(curr.left != null)
+                q.add(curr.left);
+            if(curr.right != null)
+                q.add(curr.right);
+        }
+    }
+    // Attach new node to all items in queue
+    for(TreeNode node : q) {
+        node.left = new TreeNode(val,node.left,null);
+        node.right = new TreeNode(val,null,node.right);
+    }
+    // Return the root
+    return root;
+  }
+}
 ```
 
 ## 5: R-eview
