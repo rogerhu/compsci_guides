@@ -52,23 +52,21 @@ For Array problems, we want to consider the following approaches:
 - Heap
     - Lets use a heap to and remove k times, this removes k largest elements and puts the kth largest element at the top of the heap. The cost is O(k) time which is constant and less than or equal to O(n) time. That will meet our runtime expectations.
 
-**⚠️ Common Mistakes**
-
-* We want to ask for space/time complexity. Yes this is an easy problem if we had O(nlogn) time. But the interviewer wants to solve this problem in O(k) time.
-
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 **General Idea:** We will heapify the nums, so that we can identify the largest stones at all times. We will remove k items to get the kth largest item at the top of the heap
 
-
 ```markdown
 1. Heapify the num array, create new array with negative values for each num, because python only supports minimum heaps.
 2. Remove k items from heap
 3. Return the top of the heap. 
 ```
+
+**⚠️ Common Mistakes**
+
+* We want to ask for space/time complexity. Yes this is an easy problem if we had O(nlogn) time. But the interviewer wants to solve this problem in O(k) time.
 
 ## 4: I-mplement
 
