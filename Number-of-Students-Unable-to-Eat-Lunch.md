@@ -64,11 +64,6 @@ For Array problems, we want to consider the following approaches:
 - Queue
     - Use the idea of a queue and process students and sandwiches. 
 
-**⚠️ Common Mistakes**
-
-* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n^2) time. But the interviewer wants to solve this problem in O(n) time and O(1) space.
-
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -82,6 +77,10 @@ For Array problems, we want to consider the following approaches:
 3. Once no more students want the top sandwich then we cannot distribute sandwiches and we are left with students without lunch.
 4. Return the total number of students without lunch. 
 ```
+
+**⚠️ Common Mistakes**
+
+* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n^2) time. But the interviewer wants to solve this problem in O(n) time and O(1) space.
 
 ## 4: I-mplement
 
