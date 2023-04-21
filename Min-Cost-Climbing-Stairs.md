@@ -56,13 +56,10 @@ Output: 0
 
 - 2D Array Top-Left -> Bottom-Right, Bottom-Up DP Technique
     - We are not working with a 2D Array, but we can use the Bottom-Up DP Technique to build up our answers from previous calculation.
-    
 - Knapsack-Type Approach
     - This does not fit the knapsack-type approach.
-
 - Cache previous results, generally
     - Yes, we can use the Top-Down DP Technique and recursion to build our answers from previous recursive calls, but that would be a round about way of solving this algorithm when the array of cost was already given.
-
 
 ## 3: P-lan
 
@@ -101,6 +98,22 @@ class Solution:
         
         # Return the minimum cost of climbing stairs by getting the minimum cost of last two steps
         return min(cost[i], cost[i-1])
+```
+```java
+class Solution {
+    public int minCostClimbingStairs(int[] cost) {
+      // Reuse the cost array to build up to our answer
+      int n = cost.length ;
+      for(int i=2 ; i<n ; i++){
+        // From the given numbers we can build up to any number of number of steps
+        // The minimum cost of step is the result of the current step and minimum between two previous steps
+        cost[i] = Math.min(cost[i-1] , cost[i-2]) + cost[i];
+      }
+
+      // Return the minimum cost of climbing stairs by getting the minimum cost of last two steps
+      return Math.min(cost[n-1] , cost[n-2]);
+    }
+}
 ```
 
 ## 5: R-eview
