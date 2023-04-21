@@ -46,13 +46,10 @@ Output: [[1]]
 
 - 2D Array Top-Left -> Bottom-Right, Bottom-Up DP Technique
     - We are not working with a 2D Array, but we can use the Bottom-Up DP Technique to build up our answers from previous calculation.
-    
 - Knapsack-Type Approach
     - This does not fit the knapsack-type approach.
-
 - Cache previous results, generally
     - Yes, we can use the Top-Down DP Technique and recursion to build our answers from previous recursive calls, but that would be a round about way of solving this algorithm.
-
 
 ## 3: P-lan
 
@@ -69,7 +66,6 @@ Output: [[1]]
     d. Append the new row to results.
 7. Return the results
 ```
-
 
 ⚠️ **Common Mistakes**
 
@@ -101,6 +97,29 @@ class Solution:
         
         # Return the results
         return results
+```
+```java
+class Solution {
+  public List<List<Integer>> generate(int numRows) {
+    List<List<Integer>> allrows = new ArrayList<List<Integer>>();
+    ArrayList<Integer> row = new ArrayList<Integer>();
+    
+    // Generate number of rows as requested
+    for(int i=0;i<numRows;i++) {
+      // Add zeros to the beginning and end of previous row for calculation
+      row.add(0, 1);
+
+      // For each item in row, set it to be itself plus the next number
+      for(int j=1;j<row.size()-1;j++)
+        row.set(j, row.get(j)+row.get(j+1));
+
+      allrows.add(new ArrayList<Integer>(row));
+    }
+
+    // Return the results
+    return allrows;
+  }
+}
 ```
 
 ## 5: R-eview
