@@ -42,7 +42,9 @@ Explanation: The following cells can flow to the Pacific and Atlantic oceans, as
        [4,0] -> Atlantic Ocean
 Note that there are other possible paths for these cells to flow to the Pacific and Atlantic oceans..
 ```
+
 ![Image1](https://assets.leetcode.com/uploads/2021/06/08/waterflow-grid.jpg)
+
 ```markdown
 Input: grid = [[0,2,2,0]]
 Output: [[0,0],[0,1],[0,2][0,3]]
@@ -51,7 +53,6 @@ EDGE CASE
 Input: heights = [[1]]
 Output: [[0,0]]
 Explanation: The water can flow from the only cell to the Pacific and Atlantic oceans.
-
 ```   
     
 ## 2: M-atch
@@ -62,14 +63,10 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - A search through the 2D Array (either BFS or DFS) can help us find all items that touch the pacific ocean and atlantic ocean.
-
 - Hash the 2D Array in some way to help with the Strings
-    - Hashing would not directly help us find islands. However, hashing will help us keep track of the islands we have visited.
-    
+    - Hashing would not directly help us find islands. However, hashing will help us keep track of the islands we have visited.   
 - Create/Utilize a Trie
     - A Trie would not help us much in this problem since we are not trying to determine anything about a sequence of characters.
-
-
 
 ## 3: P-lan
 
@@ -135,6 +132,54 @@ class Solution:
         # Return the union of touch pacific and atlantic
         return list(touchesPacific & touchesAtlantic)
 ```
+```java
+class Solution {
+    public List<List<Integer>> pacificAtlantic(int[][] heights) {
+      // Initialize a variable to keep track of the coordinates that touch the pacific or atlantic
+      int rows = heights.length, cols = heights[0].length;
+      boolean[][] pac = new boolean[rows][cols];
+      boolean[][] atl = new boolean[rows][cols];
+        
+      // Iterate over the top row and bottom row 
+      for (int col = 0; col< cols; col++){
+          dfs(0, col, rows, cols, pac, heights[0][col], heights);
+          dfs(rows-1, col,rows, cols, atl, heights[rows-1][col], heights);
+      }
+
+      // Iterate over the left most column and right most column
+      for (int row = 0; row<rows; row++){
+          dfs(row, 0,rows, cols, pac, heights[row][0], heights);
+          dfs(row, cols-1,rows, cols, atl, heights[row][cols-1], heights);
+      }
+
+      // Return the union of touch pacific and atlantic
+      List<List<Integer>> result = new ArrayList<List<Integer>>();
+      for (int i = 0; i < rows; i++)
+          for (int j = 0; j < cols; j++){
+              if (pac[i][j] && atl[i][j])
+                  result.add(Arrays.asList(i,j));
+          }
+      return result;
+    }
+    
+    private void dfs(int row, int col, int rows, int cols, boolean[][] visited, int prevHeight, int[][] heights){
+      //  Basecase: Out of bound or space has been added to touchesOcean, return 
+      // If the coordinate has a height that is equal or greater than previous maxHeigh, then it touches ocean
+      if (row < 0 || row >= rows || col < 0 || col >= cols || visited[row][col] || prevHeight > heights[row][col])
+          return;
+      // Add this coordinate to the touchesOcean set
+      visited[row][col]= true;
+
+      // Check the other for neighbors from this coordinate
+      dfs(row+1, col, rows, cols, visited, heights[row][col], heights);
+      dfs(row-1, col, rows, cols, visited, heights[row][col], heights);
+      dfs(row, col+1, rows, cols, visited, heights[row][col], heights);
+      dfs(row, col-1, rows, cols, visited, heights[row][col], heights);
+        
+    }
+}
+```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
