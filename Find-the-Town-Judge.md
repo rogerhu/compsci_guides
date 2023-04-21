@@ -43,7 +43,6 @@ Output: 1
 
 For Graph Problems, common solution patterns include:
 
-
 - DFS/BFS: This may not a connected graph, a DFS/BFS approach will be less optimal in identifying the town judge.
 - Adjacency List: We already have an adjacency list known as trust that we can use.
 - Adjacency Matrix: We can use an adjacency matrix to store the graph, but this will make the problem more complicated
@@ -89,6 +88,31 @@ class Solution:
         
         # If no one achieves n-1 trust, then there is no town judge
         return -1
+```
+```java
+class Solution {
+    public int findJudge(int n, int[][] trust) {
+        if (trust.length == 0 && n == 1) 
+            return 1;
+        
+        // Create a list of of person and their trust value
+        int[] count = new int[n + 1];
+
+        // Increase trust value of trustee and decrease trust value of truster for each pair
+        for (int[] person : trust) {
+            count[person[0]]--;
+            count[person[1]]++;
+        }
+
+        // Check if anyone achieves n-1 trust. This person is the town judge
+        for (int person = 0; person < count.length; person++) {
+            if (count[person] == n - 1) return person;
+        }
+
+        // If no one achieves n-1 trust, then there is no town judge
+        return -1;
+    }
+}
 ```
 
 ## 5: R-eview
