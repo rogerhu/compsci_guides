@@ -76,6 +76,39 @@ We are working with a `n` steps to climb and the ability to take one step or two
 
 > **Implement** the code to solve the algorithm.
 
+Recursion (Time Limit Exceeded)
+
+```python
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        # Set the base case at n = 1 and n = 2 
+        if n == 1:
+            return 1
+        if n == 2:
+            return 2
+
+        # Return the recursive step n-1 + recursive step n-2, at each step. 
+        return self.climbStairs(n-1) + self.climbStairs(n-2)
+```
+```java
+class Solution {
+    public int climbStairs(int n) {
+      // Set the base case at n = 0, n = 1 and n = 2 
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
+        if (n == 2) {
+            return 2;
+        }
+        // Return the recursive step n-1 + recursive step n-2, at each step. 
+        return climbStairs(n - 1) + climbStairs(n - 2);
+    }
+}
+```
+
 Auto Cache
 
 ```python
