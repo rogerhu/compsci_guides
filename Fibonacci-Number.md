@@ -48,13 +48,10 @@ Output: 0
 
 - 2D Array Top-Left -> Bottom-Right, Bottom-Up DP Technique
     - We are not working with a 2D Array, but we can use the Bottom-Up DP Technique to build up our answers from previous calculation.
-    
 - Knapsack-Type Approach
     - This does not fit the knapsack-type approach.
-
 - Cache previous results, generally
     - Yes, we can use the Top-Down DP Technique and recursion to build our answers from previous recursive calls.
-
 
 ## 3: P-lan
 
@@ -135,26 +132,72 @@ class Solution:
         # Return the target number stored in our array
         return fib[n]
 ```
+```java
+class Solution {
+	public int fib(int N) {
+		// Create a array to store fibonacci numbers to build upon
+		int[] map = new int[N+2];
+		
+		// Set the given numbers fibonacci at 0 is 0 and fibonacci at 1 is 1
+		map[0] = 0;
+		map[1] = 1;
+		
+		// From the given numbers we can build up to any number of fibonacci
+		for (int i = 2; i <= N; i += 1) {
+			map[i] = map[i-1] + map[i-2];
+		}
+
+		// Return the target number stored in our array
+		return map[N];
+	}
+}
+```
 
 **Solution 2:**
 
 ```python
 class Solution:
-    def fib(self, n: int) -> int:
-        # Create helper function to process fibonacci numbers
-        def helper(i) -> int:
-            # Basecase: Fibonacci number was found in our cache
-            if i in fibMemo:
-                return fibMemo[i]
+	def fib(self, n: int) -> int:
+		# Create helper function to process fibonacci numbers
+		def helper(i) -> int:
+			# Basecase: Fibonacci number was found in our cache
+			if i in fibMemo:
+				return fibMemo[i]
+			else:
+				# Recursively call for the answer to our target fibonacci number
+				fibMemo[i] = helper(i-1) + helper(i-2)
+				return fibMemo[i]
 
-            # Recursively call for the answer to our target fibonacci number
-            return helper(i-1) + helper(i-2)
+		# Create cache by using dictionary to store past result for quick look up when recursively asking for answer to the target fibonacci number
+		fibMemo = {0:0, 1:1}
+		
+		# Call our helper function and return the answer 
+		return helper(n)
+```
+```java
+class Solution {
+	public int fib(int N) {
+		// initialize our memoization map and put our base cases
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		// Create cache by using dictionary to store past result for quick look up when recursively asking for answer to the target fibonacci number
+		map.put(0, 0);
+		map.put(1, 1);
 
-        # Create cache by using dictionary to store past result for quick look up when recursively asking for answer to the target fibonacci number
-        fibMemo = {0:0, 1:1}
-        
-        # Call our helper function and return the answer 
-        return helper(n)
+		// call helper function
+		return fib(N, map);
+	}
+
+	// Create helper function to process fibonacci numbers
+	private int fib(int N, HashMap<Integer, Integer> map) {
+		// Basecase: Fibonacci number was found in our cache
+		if (!map.containsKey(N)) {
+			// Recursively call for the answer to our target fibonacci number
+			int currentFib = fib(N - 1, map) + fib(N - 2, map);
+			map.put(N, currentFib);
+		}
+		return map.get(N);
+	}
+}
 ```
 
 **Solution 3:**
@@ -190,6 +233,36 @@ class Solution:
         
         # Return the n-2 + n-1 as the target fibonacci number
         return n_minus_two + n_minus_one
+```
+```java
+class Solution {
+	public int fib(int N) {
+		// Set basecase if target is 0 or 1 return n
+		if (N==0 || N==1) {
+			return N;
+		}
+
+		// Create a variable for fibonacci numbers to build upon
+		// Set the given numbers fibonacci at n-2 to be 0 and fibonacci at n-1 to be 1
+		int nMinusTwo = 0, nMinusOne = 1;
+		int sum = 0;
+		
+		// From the given numbers we can build up to any number of fibonacci
+		// Fibonacci is the result of the addition of the two previous numbers
+		while (N > 2) {
+
+			// Set n-2 to be n-1 and set n-1 to be n-2 + n-1
+			int temp = nMinusTwo + nMinusOne;
+			nMinusTwo = nMinusOne;
+			nMinusOne = temp;
+
+			// decrement counter
+			N -= 1;
+		}
+
+		return nMinusTwo + nMinusOne;
+	}
+}
 ```
 
 ## 5: R-eview
