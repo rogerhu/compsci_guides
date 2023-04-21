@@ -5,6 +5,7 @@
 * ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Recursion, DP, Bottom-Up
 * 🗒️ **Similar Questions**: [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/), [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/), [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/), [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/), [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
@@ -30,7 +31,9 @@ Run through a set of example cases:
 Input: rowIndex = 3
 Output: [1,3,3,1]
 ```
+
 ![Image1](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
+
 ```markdown
 Input: rowIndex = 1
 Output: [1,1]
@@ -46,10 +49,8 @@ Output: [1]
 
 - 2D Array Top-Left -> Bottom-Right, Bottom-Up DP Technique
     - We are not working with a 2D Array, but we can use the Bottom-Up DP Technique to build up our answers from previous calculation.
-    
 - Knapsack-Type Approach
     - This does not fit the knapsack-type approach.
-
 - Cache previous results, generally
     - Yes, we can use the Top-Down DP Technique and recursion to build our answers from previous recursive calls, but that would be a round about way of solving this algorithm.
 
@@ -69,7 +70,6 @@ Output: [1]
     d. Set the new row to result
 3. Return the results
 ```
-
 
 ⚠️ **Common Mistakes**
 
@@ -101,6 +101,24 @@ class Solution:
         
         # Return the results
         return result
+```
+```java
+class Solution {
+  public List<Integer> getRow(int k) {
+    Integer[] arr = new Integer[k + 1];
+    Arrays.fill(arr, 0);
+    // Set the basecase, [1] in results
+    arr[0] = 1;
+    
+    // Generate number of rows as requested
+    for (int i = 1; i <= k; i++) 
+      // For each item in row, set it to be itself plus the previous number
+      for (int j = i; j > 0; j--) 
+        arr[j] = arr[j] + arr[j - 1];
+  
+    return Arrays.asList(arr);
+  }
+}
 ```
 
 ## 5: R-eview
