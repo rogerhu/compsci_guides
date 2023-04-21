@@ -52,17 +52,11 @@ For Array problems, we want to consider the following approaches:
 - Traversing the array with a sliding window. Similar to the two pointer solution. 
     - A sliding window doesn't really help us here.
 
-**⚠️ Common Mistakes**
-
-* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n^2) time. But the interviewer wants to solve this problem in O(n * logn) time.
-
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 **General Idea:** We can have a left and right pointer to create a mid point where we can distinguish between the smaller and larger half, where we can find the minimum number of bananas needs to eat per hour and finish all the piles of bananas 
-
 
 ```markdown
 1. Get the minimum number of bananas needed per hour / lower bound of binary search
@@ -74,6 +68,10 @@ For Array problems, we want to consider the following approaches:
         ii. If we cannot finish the piles of banana, then lets try to increase the number of bananas per hour, move left pointer to mid point. The answer cannot be left of midpoint.
 4. Return the minimum number of bananas per hour.
 ```
+
+**⚠️ Common Mistakes**
+
+* We want to ask for space/time complexity. Yes this is an easy problem if we had O(n^2) time. But the interviewer wants to solve this problem in O(n * logn) time.
 
 ## 4: I-mplement
 
