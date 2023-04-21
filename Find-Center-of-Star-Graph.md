@@ -97,6 +97,14 @@ class Solution:
         # If the first element in the edge pair is in the second pair, then this is the common element and therefore the center node. Else it is the second element. 
         return  edges[0][0] if edges[0][0] == edges[1][0] or edges[0][0] == edges[1][1] else edges[0][1] 
 ```
+```java
+class Solution {
+  public int findCenter(int[][] e) {
+    // # If the first element in the edge pair is in the second pair, then this is the common element and therefore the center node. Else it is the second element. 
+    return e[0][0] == e[1][0] || e[0][0] == e[1][1] ? e[0][0] : e[0][1];
+  }
+}
+```
 
 ## 5: R-eview
 
