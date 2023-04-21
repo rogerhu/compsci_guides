@@ -46,7 +46,7 @@ Explanation: 2^0 = 1
 
 For problems outside of the main catagories, we want to consider the input and output:
 
-We are working with a number and checking if it is a power of four. We know for sure any number is a power of four if it can be divided by four until it becomes 1, along the way down it must also be divisible by 4. 
+We are working with a number and checking if it is a power of four. We know for sure any number is a power of four if it can be divided by four until it becomes 1, along the way down it must also be divisible by 4. **Recursion** would be a good fit here, because we will need to repeat our operation until either the number becomes 1 or is non divisible by 4.
 
 
 ## 3: P-lan
