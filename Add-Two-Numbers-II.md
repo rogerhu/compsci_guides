@@ -25,6 +25,7 @@
     - No. You may not reverse the input list.
 - What is the runtime and space complexity?
     - The runtime is constant O(n) and space is O(1) not counting memory stack.
+
 ```markdown
 HAPPY CASE
 Input: l1 = [7,2,4,3], l2 = [5,6,4]
@@ -54,18 +55,11 @@ For Linked Lists problems, we want to consider the following approaches:
 - Two Pointers. If we used two pointers to iterate through list, would that help us solve this problem?
   - Two pointers are used in the sense that we are traversing two separate lists. Multiple pointers for one list does not make sense here though because we are not trying to compare nodes in the list with other nodes in that same list.
 
-**⚠️ Common Mistakes**
-
-- Which of the above would provide us with an optimal solution?
-    - First of all, the only way to add the numbers without reversing the linked list is to progress through the linked list recurively to use the memory stack as our reverse.
-    - We will also need to go with multiple passes. Once we know the length of the linked list, we can adding digits that are in the same position. For example 456 + 23, we can skip 4 and add 56 and 23. 
-
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 **General Idea:** Obtain the length of both linked list. Recursively iterate through both lists and sum the values of the nodes and remainder from the previous addition for each node of equal length. 
-
 
 ```markdown
 1) Get the length of the linked lists
@@ -82,6 +76,13 @@ For Linked Lists problems, we want to consider the following approaches:
 3) After recusive call, if there is carry over value, set as head node
 4) Return the head node
 ```
+
+**⚠️ Common Mistakes**
+
+- Which of the above would provide us with an optimal solution?
+    - First of all, the only way to add the numbers without reversing the linked list is to progress through the linked list recurively to use the memory stack as our reverse.
+    - We will also need to go with multiple passes. Once we know the length of the linked list, we can adding digits that are in the same position. For example 456 + 23, we can skip 4 and add 56 and 23. 
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
