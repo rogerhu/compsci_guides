@@ -16,10 +16,8 @@
 
 - Could someone call pop() on an empty Stack?
   - If pop() is called on an empty Stack, it will cause Error.
-
 - What is the input type?
   - The input is a List/Array of String
-
 - What if the list if empty?
     - The size range of the List/Array is from 1 to 10^4. Therefore the input can never be empty.
 
@@ -48,7 +46,7 @@ Output: 2
 For Array problems, we want to consider the following approaches:
 
 - Sort. 
-  - No we don't want to interfare with the order of the items in the stack
+  - No we don't want to interfere with the order of the items in the stack
 - Two pointer solutions (left and right pointer variables).
   - No we don't want to swap between a left and right pointer
 - Storing the elements of the array in a HashMap or a Set. 
@@ -71,6 +69,11 @@ For Array problems, we want to consider the following approaches:
 4. For each switch case, perform their operations on the two variables and push the result into the stack again.
 5. At the end of the traversal, the element at the top of the stack is the result.
 ```
+
+**⚠️ Common Mistakes**
+
+- The common solution for Array problems are two pointer, hash, sliding window, and sort. Stack is a more unique case, and not utilizing a stack here, will make life harder.
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
