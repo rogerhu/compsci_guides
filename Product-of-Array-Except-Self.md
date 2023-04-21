@@ -18,7 +18,7 @@
 - Could the input parameter be Null?
   - Let’s assume no input will be Null. The minimum input has two numbers.
 - What is the time and space complexity requirements?
-    - O(n) time and O(1) space complexity. (The output array does not count as extra space for space complexity analysis.)
+    - `O(N)` time and `O(1)` space complexity. Where `N` is the size of array. (The output array does not count as extra space for space complexity analysis.)
 
 ```markdown
 HAPPY CASE
@@ -58,13 +58,13 @@ Output: [-9,-9]
     b) Multiply product with the current number to develop left product
 2) Create product from the right side of each num and multiply with the left product stored in output array.
     a) Multiply right product with the left product stored in output array
-    b) Mutiply product with the current number to develop right product
+    b) Multiply product with the current number to develop right product
 3) Return the output array
 ```
 
 ⚠️ **Common Mistakes**
 
-* You may have a hard time understanding this problem because it seems to be outside of the 4 common techniques for strings/arrays
+* The problem is easy to complete with O(N) space, but without any new space, this problem rely on a creative use of the array data structure.  This creative use of the array data structure can be tricky. 
 
 ## 4: I-mplement
 
@@ -128,7 +128,7 @@ class Solution {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Assume N represents the number of items in the array.
+Assume `N` represents the number of items in the array.
 
-* **Time Complexity**: O(n), traversing done on every number of the array twice.
-* **Space Complexity**: O(1), when the output array does not count as extra space for space complexity analysis.
+* **Time Complexity**: `O(N)`, traversing done on every number of the array twice.
+* **Space Complexity**: `O(1)`, when the output array does not count as extra space for space complexity analysis.
