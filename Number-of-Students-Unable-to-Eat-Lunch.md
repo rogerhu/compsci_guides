@@ -20,7 +20,7 @@
 - Students form a queue and sandwiches form a stack?
     - Yes, that is correct. You can only take sandwiches and students from the 0th position. And return students to the nth position.
 - What is the space and time complexity?
-    - We want O(n) time and O(1) space. 
+    - We want `O(N)` time and `O(1)` space. Where `N` is the number of students. 
 
 ```markdown
 HAPPY CASE
@@ -182,5 +182,5 @@ class Solution:
 
 Assume `N` represents the number of items in the sandwich/student array.
 
-* **Time Complexity**: `O(n)` because we need to go through every sandwich.
+* **Time Complexity**: `O(N)` because we need to go through every sandwich.
 * **Space Complexity**: `O(1)` because we only need to count the number of students. 
