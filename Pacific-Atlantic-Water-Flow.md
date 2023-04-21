@@ -84,7 +84,7 @@ main function:
 
 helper dfs function:
 0) Basecase: Out of bound or space has been added to touchesOcean, return 
-1) If the coordinate has a height that is equal or greater than previous maxHeigh, then it touches ocean
+1) If the coordinate has a height that is equal or greater than previous maxHeight, then it touches ocean
     a) Add this coordinate to the touchesOcean set
     b) Check the other for neighbors from this coordinate
 ```
@@ -104,7 +104,7 @@ class Solution:
             if i < 0 or i >= len(heights) or j < 0 or j >= len(heights[0]) or (i,j) in touchesOcean:
                 return
             
-            # If the coordinate has a height that is equal or greater than previous maxHeigh, then it touches ocean
+            # If the coordinate has a height that is equal or greater than previous maxHeight, then it touches ocean
             elif heights[i][j] >= maxHeight:
 
                 # Add this coordinate to the touchesOcean set
@@ -164,7 +164,7 @@ class Solution {
     
     private void dfs(int row, int col, int rows, int cols, boolean[][] visited, int prevHeight, int[][] heights){
       //  Basecase: Out of bound or space has been added to touchesOcean, return 
-      // If the coordinate has a height that is equal or greater than previous maxHeigh, then it touches ocean
+      // If the coordinate has a height that is equal or greater than previous maxHeight, then it touches ocean
       if (row < 0 || row >= rows || col < 0 || col >= cols || visited[row][col] || prevHeight > heights[row][col])
           return;
       // Add this coordinate to the touchesOcean set
