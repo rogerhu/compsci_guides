@@ -48,13 +48,10 @@ Output: 0
 
 - 2D Array Top-Left -> Bottom-Right, Bottom-Up DP Technique
     - We are not working with a 2D Array, but we can use the Bottom-Up DP Technique to build up our answers from previous calculation.
-    
 - Knapsack-Type Approach
     - This does not fit the knapsack-type approach.
-
 - Cache previous results, generally
     - Yes, we can use the Top-Down DP Technique and recursion to build our answers from previous recursive calls, but that would be a round about way of solving this algorithm when the array of prices was already given.
-
 
 ## 3: P-lan
 
@@ -74,7 +71,6 @@ Output: 0
 **General Idea:** Bottom-Up DP Technique, we will build up our answer, and reduce variables. Again, we will find the minimum cost at each date and check for maximum profit sold.
 
 ```markdown
-
 1. Create variables to hold minimum price and maximum profit
 2. As we progress through the array of prices
     a. Record the minimum price found as we proceed through the array
@@ -109,6 +105,27 @@ class Solution:
         # Return the maximum profit.
         return maxProfit
 ```
+```java
+class Solution {
+  public int maxProfit(int[] prices) {
+    // Create variables to hold minimum prices and maximum profit
+    int[] memoMinPrice = new int[prices.length + 1];
+    memoMinPrice[0] = prices[0];
+    int maxProfit = 0;
+
+    // As we progress through the array of prices
+    for (int i = 0; i < prices.length; i++) {
+      // Record the minimum price found as we proceed through the array
+      memoMinPrice[i + 1] = (Math.min(memoMinPrice[i], prices[i]));
+      // Check for a higher profit
+      maxProfit = Math.max(maxProfit, prices[i] - memoMinPrice[i]);
+    }
+    
+    // Return the maximum profit.
+    return maxProfit;
+  }
+}
+```
 
 **Solution 2**
 
@@ -128,6 +145,26 @@ class Solution:
         
         # Return the maximum profit.
         return maxProfit
+```
+```java
+class Solution {
+  public int maxProfit(int[] prices) {
+    // Create variables to hold minimum prices and maximum profit
+    int minValue = prices[0];
+    int maxProfit = 0;
+
+    // As we progress through the array of prices
+    for (int i = 0; i < prices.length; i++) {
+      // Record the minimum price found as we proceed through the array
+      minValue = Math.min(minValue, prices[i]);
+      // Check for a higher profit
+      maxProfit = Math.max(maxProfit, prices[i] - minValue);
+    }
+    
+    // Return the maximum profit.
+    return maxProfit;
+  }
+}
 ```
 
 ## 5: R-eview
