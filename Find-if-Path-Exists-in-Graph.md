@@ -32,13 +32,17 @@ Explanation: There are two paths from vertex 0 to vertex 2:
 - 0 → 1 → 2
 - 0 → 2
 ```
+
 ![image1](https://assets.leetcode.com/uploads/2021/08/14/validpath-ex1.png)
+
 ```markdown
 Input: n = 6, edges = [[0,1],[0,2],[3,5],[5,4],[4,3]], source = 0, destination = 5
 Output: false
 Explanation: There is no path from vertex 0 to vertex 5.
 ```
+
 ![image2](https://assets.leetcode.com/uploads/2021/08/14/validpath-ex2.png)
+
 ```markdown
 EDGE CASE
 Input: n = 1, edges = [], source = 0, destination = 0
@@ -50,7 +54,6 @@ Output: true
 > **Match** what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming, and strategies or patterns in those categories.
 
 For Graph Problems, common solution patterns include:
-
 
 - DFS/BFS: We could use either BFS or DFS. DFS is fewer lines of code, but BFS makes use of the adjacency dictionary data structure.
 - Adjacency List: We already have an adjacency list, let's make it a adjacency dictionary.
@@ -89,7 +92,6 @@ For Graph Problems, common solution patterns include:
     d. Add neighbors to queue.
 6. We have not visited destination vertex, return False
 ```
-
 
 ⚠️ **Common Mistakes**
 
@@ -132,6 +134,48 @@ class Solution:
         # Return whether or not we have visited the destination vertex
         return destination in visited
 ```
+```java
+class Solution {
+  boolean found = false;
+  public boolean validPath(int n, int[][] edges, int start, int end) {
+    if(start == end) return  true;
+    // Create a visited set to not revisit visited vertex
+    boolean[] visited = new boolean[n];
+    // Create an adjacency dictionary to hold the graph, vertex to edges
+    Map<Integer,List<Integer>> graph = new HashMap();
+    for(int i = 0 ; i < n ; i++) graph.put(i, new ArrayList());
+    for(int[] edge : edges){
+        graph.get(edge[0]).add(edge[1]);
+        graph.get(edge[1]).add(edge[0]);
+    }
+
+    // Call the DFS call on the source vertex
+    dfs(graph,visited,start,end);
+
+    // Return whether or not we have visited the destination vertex
+    return found;
+  }
+  
+  // Create a DFS call to visit neighboring vertex
+  private void dfs(Map<Integer,List<Integer>> graph,boolean[] visited, int start, int end){
+    // Do not continue DFS if vertex was visited or destination was visited
+    if(visited[start] || found) return;
+
+    // Add current vertex to visited set to not revisit visited vertex(avoid infinite loop)
+    visited[start] = true;
+
+    // Visit vertex neighbors
+    for(int nei : graph.get(start)){
+        if(nei == end){
+            found = true;
+            break;
+        }
+        if(!visited[nei])
+            dfs(graph, visited, nei, end); //otherwise deep dig again!
+    }
+  }
+}
+```
 
 ***Approach #2 BFS:***
 
@@ -167,6 +211,55 @@ class Solution:
 
         # We have not visited destination vertex, return False
         return False
+```
+```java
+class Solution {
+    public boolean validPath(int n, int[][] edges, int source, int destination) {
+      // Create an adjacency dictionary to hold the graph, vertex to edges
+      List<List<Integer>> graph = buildGraph(n, edges);        
+      // Create a visited set to not revisit visited vertex
+      boolean[] visited = new boolean[n];
+
+      // BFS call to visit neighboring vertex
+      Queue<Integer> queue = new LinkedList<>();
+
+      queue.offer(source);
+
+      while(!queue.isEmpty()) {
+        int current = queue.poll();
+
+        // We have a matching vertex to destination, return True
+        if (current == destination) return true;
+
+        // Add vertex to vistied set to not revisit visited vertex(avoid infinite loop)
+        visited[current] = true;
+
+        for(int neighbor: graph.get(current)) {
+          // If vertex was NOT visited, Add neighbors to queue
+          if (!visited[neighbor]) queue.offer(neighbor);
+        }
+      }
+
+      // We have not visited destination vertex, return False
+      return false;
+    }
+
+    // Create an adjacency dictionary to hold the graph, vertex to edges
+    private List<List<Integer>> buildGraph(int n, int[][] edges) {
+      List<List<Integer>> graph = new ArrayList<>();
+
+      for(int i=0;i<n;i++) {
+        graph.add(new ArrayList<>());
+      }
+
+      for(int[] edge: edges) {
+        graph.get(edge[0]).add(edge[1]);
+        graph.get(edge[1]).add(edge[0]);
+      }
+
+      return graph;
+    }
+}
 ```
 
 ## 5: R-eview
