@@ -93,6 +93,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 - Not noticing the need for a helper function to retain memory 
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -207,7 +208,9 @@ class Solution {
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
 Assume `N` represents the number of nodes in tree
-    
-* **Time Complexity**: `O(N)` because we need to visit each node in binary tree.
-* **Space Complexity**: `O(N)` because we need to create a results array of all root-to-left paths which is `(n+1)/2` leafs.
+
+* **Solutions 1 & 2**
+
+  * **Time Complexity**: `O(N)` because we need to visit each node in binary tree.
+  * **Space Complexity**: `O(N)` because we need to create a results array of all root-to-left paths which is `(n+1)/2` leafs.
   
