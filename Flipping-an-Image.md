@@ -122,7 +122,7 @@ class Solution {
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
 Assume `N` represents the number of rows in 2D-array.
-Assume`M` represents the number of columns in 2D-array.
+Assume `M` represents the number of columns in 2D-array.
 
 
 * **Time Complexity**: O(N * M) we need to flip each item in the 2D-Array
