@@ -19,6 +19,7 @@
   - Yes, it can be. In that case there are no root-to-leaf paths, correct?
 - Can a root-to-leaf path be the root itself, if it has no children?
   - Yes, that can occur.
+
 ```markdown
 HAPPY CASE
 Input:     1
@@ -62,6 +63,8 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
+**SOLUTION 1:**
+
 **General Idea:** Pre-Order traversal through the Binary Tree while keeping track of a current path. When we reach a leaf node, store the current path and pop elements off as we backtrack and explore more of the tree.
 
 ```markdown
@@ -76,6 +79,8 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 4) Run helper function to collect allPaths
 5) Return allPaths
 ```
+
+**SOLUTION 2:**
 
 **General Idea:** Lets build the paths as we progress through the nodes. If the node is a leaf node, then add it to our results.
 
