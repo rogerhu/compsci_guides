@@ -20,7 +20,7 @@
 - Can battleships be attached to one another?
     - There will always be at least one horizontal or vertical cell separating two battleships.
 - What is the time and space constraints?
-    - Time complexity should be O(m*n), m being the rows of the matrix and n being the columns of matrix. Space complexity should be O(1), excluding the recursive stack.
+    - Time complexity should be `O(M*N)`, m being the rows of the matrix and n being the columns of matrix. Space complexity should be `O(1)`, excluding the recursive stack.
 
 
 ```markdown
@@ -138,7 +138,7 @@ class Solution {
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
 Assume `N` represents the number of rows in 2D-array.
-Assume`M` represents the number of columns in 2D-array.
+Assume `M` represents the number of columns in 2D-array.
 
 
 * **Time Complexity**: `O(N * M)` we need to view each item in the 2D-Array
