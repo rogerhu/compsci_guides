@@ -30,7 +30,9 @@ Input: root = [1,2,3,4,5]
 Output: 3
 Explanation: 3 is the length of the path [4,2,1,3] or [5,2,1,3].
 ```
+
 ![Example 1](https://assets.leetcode.com/uploads/2021/03/06/diamtree.jpg)
+
 ```markdown
 Input: root = [1,2]
 Output: 1
@@ -54,6 +56,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - We are not looking to find an element in this problem so this technique is not useful for this problem
 - Applying a level-order traversal with a queue
     - Since we need to find the height of the tree, we could get nodes by level. However, we need to do so for each node to check the diameter at each node. a level-order traversal using a queue would not be appropriate
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
