@@ -34,6 +34,7 @@ Output: true
 Input: root = [1,2,2,null,3,null,3]
 Output: false
 ```
+
 ![Example 2](https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg)
 
 ```markdown
