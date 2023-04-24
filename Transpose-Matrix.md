@@ -68,10 +68,10 @@ For 2D-Array, common solution patterns include:
 
 **Solution 2:**
 
-**General Idea:** Use list comprehesion to access the column, to gather elements in row by column
+**General Idea:** Use list comprehension to access the column, to gather elements in row by column
 
 ```markdown
-1) Use list comprehesion to access the column, to gather elements in row by column
+1) Use list comprehension to access the column, to gather elements in row by column
 ```
 
 **Solution 3:**
@@ -159,7 +159,7 @@ class Solution {
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
 Assume `N` represents the number of rows in 2D-array.
-Assume`M` represents the number of columns in 2D-array.
+Assume `M` represents the number of columns in 2D-array.
 
 
 * **Time Complexity**: O(N * M) we need to view each item in the 2D-Array
