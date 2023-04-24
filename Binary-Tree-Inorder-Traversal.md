@@ -4,7 +4,8 @@
 * 💡 **Problem Difficulty:** Easy
 * ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: Binary Trees, Depth First Search
-* 🗒️ **Similar Questions**: [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/), [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/), [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/), 
+* 🗒️ **Similar Questions**: [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/), [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/), [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/)
+ 
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
@@ -25,6 +26,7 @@ Input: root = [1,null,2,3]
 Output: [1,3,2]
 ```
 ![Example 1](https://assets.leetcode.com/uploads/2020/09/15/inorder_1.jpg)
+
 ```markdown
 Input: root = [1]
 Output: [1]
