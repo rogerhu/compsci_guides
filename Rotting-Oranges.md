@@ -191,7 +191,7 @@ class Solution {
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
 Assume `N` represents the number of rows in 2D-array.
-Assume`M` represents the number of columns in 2D-array.
+Assume `M` represents the number of columns in 2D-array.
 
 * **Time Complexity**: O(N * M) For first traversal of the grid to find all the rotten and fresh oranges + O(n*m) for queue traversal if there is only one fresh orange and that too when the last orange is fresh.
 * **Space Complexity**: O(N * M) Extra space for queue in the worst case when all the oranges are rotten.
