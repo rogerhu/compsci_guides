@@ -27,12 +27,15 @@ HAPPY CASE
 Input: root = [1,2,2,3,4,4,3]
 Output: true
 ```
+
 ![Example 1](https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg)
+
 ```markdown
 Input: root = [1,2,2,null,3,null,3]
 Output: false
 ```
 ![Example 2](https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg)
+
 ```markdown
 EDGE CASE
 Input: root = []
@@ -53,6 +56,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - We are not looking to find an element in this problem so this technique is not useful for this problem
 - Applying a level-order traversal with a queue
     - Since we need to compare nodes and node values in both trees top down, a level-order traversal using a queue would be appropriate
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
