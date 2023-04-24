@@ -33,6 +33,7 @@
 * [[Validate Stack Sequences]]
 * [[Decode String]]
 * [[Number of People That Can Be Seen in a Grid]]
+* [[Crawler Log Folder]]
 
 ## Queues
 
@@ -98,6 +99,8 @@
 * [[Container With Most Water]]
 * [[Merge Intervals]]
 * [[3Sum]]
+* [[Crawler Log Folder]]
+* [[Shortest Distance to a Character]]
 
 ## 2D-Array
 
