@@ -68,8 +68,8 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 ```
 
 **⚠️ Common Mistakes**
-- Choosing the wrong traversal type
-    - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+- Not seeing the connection between preorder traversal and inorder traversal
+  - Look at the location of the root node from preorder traversal and inorder traversal and each node thereafter.
 
 ## 4: I-mplement
 
