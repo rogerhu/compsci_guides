@@ -84,6 +84,8 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - Read the problem description carefully and clarify with your interviewer if you see this (or a different tree problem) in an interview
 - Choosing the incorrect traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+    - Suppose you chose pre-order traversal check - left - right. You will not be getting the smallest element first.
+    - Suppose you chose pre-order traversal left - right - check. You will not be getting the smallest element first.
 - Not recognizing the need for a helper function
     - To help reduce the number of parameters, remove the need for a return value, and retain memory.
 
