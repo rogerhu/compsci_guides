@@ -32,7 +32,9 @@ Input: grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
 Output: 16
 Explanation: The perimeter is the 16 yellow stripes in the image below.
 ```
+
 ![Image 1](https://assets.leetcode.com/uploads/2018/10/12/island.png)
+
 ```markdown
 Input: grid = [[1,0]]
 Output: 4
@@ -51,15 +53,10 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - A search through the 2D Array (either BFS or DFS) can help us determine the parameter of the island. Which of these two traversals will better help us count the parameter of each piece of land?
-
 - Hash the 2D Array in some way to help with the Strings
     - Hashing would not directly help us find the parameter of the island. However, we could hash where we have counted the parameter for land. 
-
-
 - Create/Utilize a Trie
     - A Trie would not help us much in this problem since we are not trying to determine anything about a sequence of characters.
-
-
 
 ## 3: P-lan
 
@@ -112,6 +109,37 @@ class Solution:
                 if grid[i][j] == 1:
                     return dfs(i, j)
 ```
+```java
+public class Solution {
+    public int islandPerimeter(int[][] grid) {
+      // Iterate over the grid
+      if (grid == null) return 0;
+      for (int i = 0 ; i < grid.length ; i++){
+        for (int j = 0 ; j < grid[0].length ; j++){
+          // If a '1' is seen then "explore" the island from this '1' using dfs return perimeter 
+          if (grid[i][j] == 1) {
+              return getPerimeter(grid,i,j);
+          }
+        }
+      }
+      return 0;
+    }
+    
+    public int getPerimeter(int[][] grid, int i, int j){
+      // Basecase 1: for out of bound items, return 1, because the boundary of the square suggest perimeter
+      if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length) {return 1;}
+      // Basecase 2: for water, return 1, because this side is a perimeter
+      if (grid[i][j] == 0) {
+          return 1;
+      }
+      // Basecase 3: for '-1' return 0, because we have been there, this is land that we have accounted for
+      if (grid[i][j] == -1) return 0;
+      // Change the grid value to '-1' to mark it as visited and recursively return the perimeter of neighbors to get perimeter of all neighbors.
+      grid[i][j] = -1;
+      return  getPerimeter(grid, i-1, j) + getPerimeter(grid, i, j-1) + getPerimeter(grid, i, j+1) + getPerimeter(grid, i+1, j);
+    }
+}
+```
 
 ## 5: R-eview
 
@@ -126,7 +154,6 @@ class Solution:
 
 Assume `N` represents the number of rows in 2D-array.
 Assume `M` represents the number of columns in 2D-array.
-
 
 * **Time Complexity**: O(N * M) we need to view each item in the 2D-Array
 * **Space Complexity**: O(1) exluding the recursive call stack. The recusive DFS solution will cost us O(N*M) space for the recursive call stack, because we may place the entire grid in the the recursive call stack. 
