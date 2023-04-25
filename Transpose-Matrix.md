@@ -62,7 +62,7 @@ For 2D-Array, common solution patterns include:
 **General Idea:** Use a zip function to gather all the first elements together and form a group, and so forth. i.e. [1, 2, 3] and [10, 20, 30] and returns (1, 10), (2, 20), (3, 30)
 
 ```markdown
-1) Use zip function on the unpacked matrix array, to gather the first elements together and form a group and so forth. 
+Use zip function on the unpacked matrix array, to gather the first elements together and form a group and so forth. 
 ```
 
 **Solution 2:**
@@ -70,7 +70,7 @@ For 2D-Array, common solution patterns include:
 **General Idea:** Use list comprehension to access the column, to gather elements in row by column
 
 ```markdown
-1) Use list comprehension to access the column, to gather elements in row by column
+Use list comprehension to access the column, to gather elements in row by column
 ```
 
 **Solution 3:**
