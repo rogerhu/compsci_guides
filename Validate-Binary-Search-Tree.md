@@ -81,6 +81,8 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - Read the problem description carefully and clarify with your interviewer if you see this (or a different tree problem) in an interview
 - Choosing the incorrect traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+    - Suppose you chose to perform in-order traversal left - check - right. You have information about left side but not the right side.
+    - Suppose you chose to perform post-order traversal left - right - check. You have no information about left side nor the right side.
 - Not recognizing the need for a helper function
     - To help increase the number of parameters.
 
