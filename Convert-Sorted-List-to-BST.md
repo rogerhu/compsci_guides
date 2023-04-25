@@ -17,6 +17,7 @@
 
 - Can the input node be Null?
   - Yes, it can be. In that case, we don’t generate any Tree and return Null.
+
 ```markdown
 HAPPY CASE
 Input: [-10,-3,0,5,9]
@@ -42,15 +43,13 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
     - It is very important to identify which tree traversal to use in this situation. As the LinkedList is in ascending order, which means we are iterating through a sorted list, such a tree traversal would also have to be ascending in a BST. This means we should be targeting an In-Order tree traversal.
-    
 - Store nodes within a HashMap to refer to later
     - Since the nodes are sorted and there aren’t any reasons to refer to earlier nodes with a specific key, a HashMap would not help.
-
 - Using Binary Search to find an element
     - We are not working with a Binary Search Tree. 
-
 - Applying a level-order traversal with a queue
     - Using this approach may complicate our code
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -129,7 +128,50 @@ class Solution:
         # Trigger Helper function with paramters 0 and size - 1 to indicate current scope and Return Helper function value
         return helper(0, size - 1)
 ```
-    
+```java
+class Solution {
+    ListNode head;
+    public TreeNode sortedListToBST(ListNode head) {
+      // Keep a global reference to a head variable that can change
+      this.head = head;
+      // Trigger Helper function with paramters 0 and size - 1 to indicate current scope and Return Helper function value
+      return buildBST(0, length(head) - 1);
+    }
+
+    TreeNode buildBST(int left, int right) {
+      // Basecase: If the current start and end pointers are inverted, return
+      if (left > right) return null;
+
+      // Calculate the midpoint of the start and end pointers
+      int mid = (left + right) / 2;
+
+      // Recurse left (as an In-Order Traversal would) with params L and Mid - 1
+      TreeNode leftNode = buildBST(left, mid - 1);
+      
+      // Create a node with the current head node value and move the head pointer forward
+      TreeNode root = new TreeNode(head.val); 
+      head = head.next; 
+      
+      // Recurse right with params Mid + 1 and R
+      // Attach left sub-tree from left recursion to current node and Attach right sub-tree from right recursion to current node
+      root.left = leftNode;
+      root.right = buildBST(mid + 1, right);
+
+      // Return current node
+      return root;
+    }
+
+    int length(ListNode head) {
+        int ans = 0;
+        while (head != null) {
+            head = head.next;
+            ans++;
+        }
+        return ans;
+    }
+}
+```    
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
