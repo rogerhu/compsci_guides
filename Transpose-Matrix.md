@@ -17,7 +17,8 @@
 
 - Can the input grid be blank??
     - Let’s assume the grid is not blank. We don’t need to consider empty inputs.
-
+- Can the row size be different from the column size?
+    - Yes, the row size can be different from the column size.
 - What are the time and space constraints?
     - Time complexity should be `O(m*n)`, m being the rows of the matrix and n being the columns of matrix. Space complexity should be `O(m*n)` too.
 
@@ -47,10 +48,8 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - A search through the 2D Array (either BFS or DFS) does not help us. We are transposing, not searching.
-
 - Hash the 2D Array in some way to help with the Strings
     - Hashing would not help us transpose this array
-
 - Create/Utilize a Trie
     - A Trie would not help us much in this problem since we are not trying to determine anything about a sequence of characters.
 
