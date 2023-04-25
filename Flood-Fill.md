@@ -1,6 +1,7 @@
 ## Problem Highlights
 
 * 🔗 **Leetcode Link:** [Flood Fill](https://leetcode.com/problems/flood-fill/)
+* 💡 **Problem Difficulty:** Easy
 * ⏰ **Time to complete**: 15 mins
 * 🛠️ **Topics**: 2D-Array, Breadth-First Search, Depth-First Search
 * 🗒️ **Similar Questions**: [Island Perimeter](https://leetcode.com/problems/island-perimeter/), [Max Area of Island](https://leetcode.com/problems/max-area-of-island/), [Coloring A Border](https://leetcode.com/problems/coloring-a-border/)
