@@ -15,10 +15,13 @@
 > - Have fully understood the problem and have no clarifying questions.
 > - Have you verified any Time/Space Constraints for this problem?
 
+
 - Can the input be empty List?
-
   - The size range of the List is from 1 to 10 in both size. Therefore the input can never be empty.
-
+- Can the row size be different from the column size?
+  - Yes, the row size can be different from the column size.
+- What is the expected time and space complexity?
+  - Assuming `N` is the number of rows and `M` is the number of columns. `O(N*M)` Time and `O(1)` Space. Please spiral matrix in-place.
 
 ```markdown
 HAPPY CASE
@@ -176,6 +179,7 @@ class Solution {
     }
 }
 ```
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
@@ -190,7 +194,6 @@ class Solution {
 Assume `N` represents the number of rows in 2D-array.
 Assume `M` represents the number of columns in 2D-array.
 
-
 * **Time Complexity**: O(N * M) we need to view each item in the 2D-Array
 * **Space Complexity**: O(1) we only have a few pointers for iterating. 
-    * Do note the recusive DFS solution will cost us O(N*M) space because of the call stack. 
+    * Do note the recursive DFS solution will cost us O(N*M) space because of the call stack. 
