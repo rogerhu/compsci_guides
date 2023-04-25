@@ -181,6 +181,6 @@ def pruneTree(self, root):
 
 Assume `N` represents the number of nodes in the tree.
 
-* Time Complexity: O(n), where n is the number of nodes in the tree. We process each node once.
+* Time Complexity: `O(N)`, where `N` is the number of nodes in the tree. We process each node once.
 
-* Space Complexity: O(n), the recursion call stack can be as large as the height of the tree. 
+* Space Complexity: `O(N)`, the recursion call stack can be as large as the height of the tree. 
