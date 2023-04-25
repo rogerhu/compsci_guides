@@ -180,5 +180,12 @@ class Solution {
 
 Assume `N` represents the number of item in the array
 
+**Solution 1**
+
+* **Time Complexity**: `O(N)`, because we need to build up to check each item in the array.
+* **Space Complexity**: `O(N)`, because we held array of information regarding minPrice at each index.
+
+**Solution 2**
+
 * **Time Complexity**: `O(N)`, because we need to build up to check each item in the array.
 * **Space Complexity**: `O(1)`, because we held 2 pieces of information minPrice and maxProfit.
