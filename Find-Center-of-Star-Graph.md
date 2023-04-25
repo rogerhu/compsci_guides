@@ -30,6 +30,7 @@ Input: edges = [[1,2],[2,3],[4,2]]
 Output: 2
 Explanation: As shown in the figure above, node 2 is connected to every other node, so 2 is the center.
 ```
+
 ![image1](https://assets.leetcode.com/uploads/2021/02/24/star_graph.png)
 
 ```markdown
@@ -63,7 +64,7 @@ For Graph Problems, common solution patterns include:
 **General Idea:** A valid start graph suggest that the center is connected to every edge, therefore we can get the center by seeing the comment element in the first 2 pairs. 
 
 ```markdown
-1. Create 2 sets and return the common element between the two sets.
+Create 2 sets and return the common element between the two sets.
 ```
 
 **Approach #2:**
@@ -71,7 +72,7 @@ For Graph Problems, common solution patterns include:
 **General Idea:** A valid start graph suggest that the center is connected to every edge, therefore we can get the center by seeing the comment element in the first 2 pairs. 
 
 ```markdown
-1. If the first element in the edge pair is in the second pair, then this is the common element and therefore the center node. Else it is the second element. 
+If the first element in the edge pair is in the second pair, then this is the common element and therefore the center node. Else it is the second element. 
 ```
 
 ⚠️ **Common Mistakes**
@@ -83,6 +84,7 @@ For Graph Problems, common solution patterns include:
 > **Implement** the code to solve the algorithm.
 
 **Approach #1:**
+
 ```python
 class Solution:
     def findCenter(self, edges: List[List[int]]) -> int:
@@ -91,6 +93,7 @@ class Solution:
 ```
 
 **Approach #2:**
+
 ```python
 class Solution:
     def findCenter(self, edges: List[List[int]]) -> int:
@@ -118,7 +121,9 @@ class Solution {
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
 Assume `V` represents the number of vertices.
-Assume `E` represents the number of edges
+Assume `E` represents the number of edges.
+
+**Approach #1 & #2 Have the same time and space complexity:**
 
 * **Time Complexity**: O(1) We only need to visit two edges.
 * **Space Complexity**: O(1) We don't need to use additional memory.
