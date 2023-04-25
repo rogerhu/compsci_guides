@@ -17,8 +17,10 @@
 
 - Can the input tree be Null?
   - Yes, the root node can be Null.
+- Do we need to use BFS or DFS for this problem?
+  - You may use BFS or DFS for this problem. Can you do both?
 - What is the space and time complexity?
-    - Time is `O(N)` and Space is `O(N)`.
+  - Time is `O(N)` and Space is `O(N)`.
 
 ```markdown
 HAPPY CASE
