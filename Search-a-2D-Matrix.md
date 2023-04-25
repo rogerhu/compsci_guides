@@ -17,8 +17,12 @@
 
 - Can the input matrix be blank?
     - Let’s assume the matrix is not blank. We don’t need to consider empty inputs.
+- Can the row size be different from the column size?
+    - Yes, the row size can be different from the column size
+- Is the target always in the matrix?
+    - No, the target might not be in the matrix
 - What is the time and space constraints?
-    - Time complexity should be `O(log(m*n))`, m being the rows of the matrix and n being the columns of matrix. Space complexity should be `O(1)`, excluding the recursive stack.
+    - Time complexity should be `O(log(M*N))`, `M` being the rows of the matrix and `N` being the columns of matrix. Space complexity should be `O(1)`, excluding the recursive stack.
 
 
 ```markdown
