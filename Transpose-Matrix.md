@@ -160,6 +160,7 @@ class Solution {
 Assume `N` represents the number of rows in 2D-array.
 Assume `M` represents the number of columns in 2D-array.
 
+**All 3 solutions results in the same space and time complexity**
 
 * **Time Complexity**: O(N * M) we need to view each item in the 2D-Array
 * **Space Complexity**: O(N * M), because we need space to hold the resulting matrix
