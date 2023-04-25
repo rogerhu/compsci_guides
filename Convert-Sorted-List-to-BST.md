@@ -78,6 +78,8 @@ Helper
     - Not recognizing how this sorted property allows us to build the BST
 - Choosing the incorrect traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+    - Suppose you attempted to perform level-order traversal, how would you know each layer.
+    - Suppose you chose to perform pre-order or post-order, you are ignoring the ordering of a BST.
 
 ## 4: I-mplement
 
