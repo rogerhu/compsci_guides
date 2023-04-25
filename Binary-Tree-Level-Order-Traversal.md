@@ -47,13 +47,10 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
     - Choosing a specific tree traversal helps identify with level-order output
-    
 - Store nodes within a HashMap to refer to later
     - We don’t have a specific way of referring to previous nodes in a path that could be used in a HashMap. So, a HashMap would not help us as much in this context.
-
 - Using Binary Search to find an element
     - We are not working with a Binary Search Tree. 
-
 - Applying a level-order traversal with a queue
     - Yes, this is the perfect match for this problem.
 
@@ -73,8 +70,10 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 ```
 
 **⚠️ Common Mistakes**
-- Choosing the wrong traversal type
+- Choosing a wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+    - You may use pre-order, post-order, and level order traversal. All you need is to record each level in the correct order. But can you record the in-order traversal in the correct order. 
+
 - Failing to recognize the need to store results during the processing of nodes.
 
 ## 4: I-mplement
