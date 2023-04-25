@@ -221,6 +221,8 @@ class Solution {
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
 Assume `N` represents the number of nodes in binary tree 
-    
+
+**Approach #1 DFS & #2 BFS Share the same time and space complexity:**    
+
 * **Time Complexity**: `O(N)` because we may need to visit each node in the binary tree
 * **Space Complexity**: `O(N)` because we used BFS requires `O(N/2 + 1)`. The maximum number of leaf nodes in a perfect binary tree is `N/2` and the given the previous node already in the queue. As for DFS we need `O(N)` to account for unbalanced tree (space is used for the recursion stack). In the general case `O(logN)` for balanced tree.
