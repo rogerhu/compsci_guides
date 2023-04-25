@@ -57,7 +57,7 @@ Output: 0
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
-**General Idea:** Bottom-Up DP Technique, we will build up our answer. We will find the minimum cost at each date and check for maximum profit sold.
+**General Idea:** Bottom-Up DP Technique, we will build up our answer. We will store the minimum cost at each date and check for maximum profit sold.
 
 ```markdown
 
@@ -68,7 +68,7 @@ Output: 0
 3. Return the maximum profit.
 ```
 
-**General Idea:** Bottom-Up DP Technique, we will build up our answer, and reduce variables. Again, we will find the minimum cost at each date and check for maximum profit sold.
+**General Idea:** Bottom-Up DP Technique, we will build up our answer. We will maintain only the minimum cost at each date and check for maximum profit sold.
 
 ```markdown
 1. Create variables to hold minimum price and maximum profit
@@ -86,7 +86,7 @@ Output: 0
 
 > **Implement** the code to solve the algorithm.
 
-**Solution 1**
+**Solution 1: Bottom-Up DP Technique, we will build up our answer. We will store the minimum cost at each date and check for maximum profit sold.**
 
 ```python
 class Solution:
@@ -127,7 +127,7 @@ class Solution {
 }
 ```
 
-**Solution 2**
+**Solution 2: Bottom-Up DP Technique, we will build up our answer. We will maintain only the minimum cost at each date and check for maximum profit sold.**
 
 ```python
 class Solution:
@@ -180,12 +180,12 @@ class Solution {
 
 Assume `N` represents the number of item in the array
 
-**Solution 1**
+**Solution 1: Bottom-Up DP Technique, we will build up our answer. We will store the minimum cost at each date and check for maximum profit sold.**
 
 * **Time Complexity**: `O(N)`, because we need to build up to check each item in the array.
 * **Space Complexity**: `O(N)`, because we held array of information regarding minPrice at each index.
 
-**Solution 2**
+**Solution 2: Bottom-Up DP Technique, we will build up our answer. We will maintain only the minimum cost at each date and check for maximum profit sold.**
 
 * **Time Complexity**: `O(N)`, because we need to build up to check each item in the array.
 * **Space Complexity**: `O(1)`, because we held 2 pieces of information minPrice and maxProfit.
