@@ -98,6 +98,8 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 - Not noticing the need for a helper function to retain memory 
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+    - Suppose you choose post order traversal, we would go left - right - check. No root node path.
+    - Suppose you choose in order traversal, we would go left - check - right. No root node for path.
 
 ## 4: I-mplement
 
