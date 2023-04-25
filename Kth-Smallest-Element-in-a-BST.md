@@ -38,6 +38,7 @@ Output: 1
 Input: root = [5,3,6,2,4,null,null,1], k = 3
 Output: 3
 ```
+
 ![Example 2](https://assets.leetcode.com/uploads/2021/01/28/kthtree2.jpg)
 
 ```markdown
