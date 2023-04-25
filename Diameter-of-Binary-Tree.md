@@ -76,6 +76,8 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 **⚠️ Common Mistakes**
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+    - Suppose you choose pre order traversal, we would go  check - left - right. No information during check
+    - Suppose you choose in order traversal, we would go left - check - right. No information for right node.
 
 ## 4: I-mplement
 
