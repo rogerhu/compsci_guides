@@ -276,6 +276,8 @@ class Solution {
 Assume `V` represents the number of vertices/nodes.
 Assume `E` represents the number of edges
 
+***Approach #1 DFS & #2 BFS Share the same time and space complexity:***
+
 * **Time Complexity**: O(V+E) We may need to visit each vertex/nodes and their edges.
 * **Space Complexity**: O(V+E) accounting for the use of a adjacency dictionary.
 
