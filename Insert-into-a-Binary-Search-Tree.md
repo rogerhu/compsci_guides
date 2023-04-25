@@ -130,7 +130,7 @@ class Solution {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Assume `N` represents the number of nodes in binary search tree and `H` represents the height of the binary search tree
+Assume `H` represents the height of the binary search tree
     
 * **Time Complexity**: O(H)
     *  We only need visit each node along the path of the binary search tree. 
