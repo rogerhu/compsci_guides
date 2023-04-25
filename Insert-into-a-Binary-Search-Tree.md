@@ -74,6 +74,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - Read the problem description carefully and clarify with your interviewer if you see this (or a different tree problem) in an interview
 - Choosing the incorrect traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+    - Suppose you chose level order traversal, where would you insert the node into the binary search tree?
 
 ## 4: I-mplement
 
