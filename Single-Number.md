@@ -17,7 +17,6 @@
 
 - Could there be an array with all duplicates?
   - No, it is guaranteed that every element appears twice except for one. Find that single one.
-
 - What is the time and space complexity?
     - You must implement a solution with a linear runtime complexity and use linear space.
         - As a bonus, you can implement a solution with a linear runtime complexity and constant space.
@@ -66,8 +65,7 @@ For Array/Strings, common solution patterns include:
 4) Return number with a single count
 ```
 
-**General Idea:** Use XOR(Exclusive or) and the same number will return zero. Apply to all numbers and we isolate the non-duplicate number
-
+**General Idea:** Use XOR(Exclusive or) and the same number will return zero. All numbers except for one is a duplicate and we isolate the non-duplicate number according to the binary code.
 
 ```markdown
 1) Create total variable
@@ -82,6 +80,8 @@ For Array/Strings, common solution patterns include:
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
+
+**General Idea:** Create a hashset and count each number. Remove numbers seen a second time. There should be a single number left in hashset.
 
 ```python
 class Solution:
@@ -100,19 +100,61 @@ class Solution:
         # Return number with a single count
         return list(hashset)[0]
 ```
+```java
+class Solution {
+  public int singleNumber(int[] nums) {
+    // Create hashset
+    HashSet<Integer> set = new HashSet<Integer>();
+
+    // Count each item
+    for(int i : nums) {
+      // Remove numbers seen a second time
+      if(set.contains(i)) {
+	  set.remove(i);
+      } else{
+	  set.add(i);
+      }
+    }
+
+    // Return number with a single count
+    for(int i:set) {
+	return i;
+    }
+    return -1;
+  }
+}
+```
+
+**General Idea:** Use XOR(Exclusive or) and the same number will return zero. All numbers except for one is a duplicate and we isolate the non-duplicate number according to the binary code.
 
 ```python
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
         # Create total variable
-        total = 0
+        ans = 0
 
         # XOR each number
         for num in nums:
-            total ^= num
+            ans ^= num
         
         # Return remaining number
-        return total
+        return ans
+```
+```java
+class Solution {
+  public int singleNumber(int[] nums) {
+    // Create total variable
+    int ans = 0;
+
+    // XOR each number
+    for(int i=0; i<nums.length; i++){
+        ans ^= nums[i];  
+    }
+
+    // Return remaining number
+    return ans;    
+  }
+}
 ```
     
 ## 5: R-eview
@@ -128,7 +170,12 @@ class Solution:
 
 Assume `N` represents the number of items in array 
 
+**General Idea:** Create a hashset and count each number. Remove numbers seen a second time. There should be a single number left in hashset.
 
-* **Time Complexity**: O(N) we need to view each item in the array
+* **Time Complexity**: `O(N)` we need to view each item in the array
+* **Space Complexity**: `O(N)` Hashset uses `O(N)` because the hashset may store up to O(N/2) numbers before removing them upon seeing the numbers a second time.
+
+**General Idea:** Use XOR(Exclusive or) and the same number will return zero. All numbers except for one is a duplicate and we isolate the non-duplicate number according to the binary code.
+
+* **Time Complexity**: `O(N)` we need to view each item in the array
 * **Space Complexity**: O(1) using the XOR operator we only needed space for the total variable. 
-    * Do note the Hashset uses O(N) because the hashset may store up to O(N/2) numbers before removing them upon seeing the numbers a second time.
