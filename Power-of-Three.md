@@ -19,7 +19,8 @@ Be sure that you clarify the input and output parameters of the problem:
 
 - How do we stimulate the operation of evaluating exponents?
     * An exponent can easily be evaluated by multiplying the base exponent number of times. So, we can easily simulate this using a loop.
-
+- What time and space complexity are we attempting to achieve?
+    * `N` being the number, `O(logN)` time and `O(1)` space.
 
 Run through a set of example cases:
 
@@ -85,6 +86,20 @@ class Solution:
         
         # Return the recursive function n/3 
         return self.isPowerOfThree(n/3)
+```
+```java
+class Solution {
+  public boolean isPowerOfThree(int n) {
+    // Break into base case where n = 1 return True
+    if(n == 1) return true;
+    
+    // Break into base case where n = 0 or n is no longer a whole number when divided by 3 return False
+    if(n == 0 || n % 3 != 0) return false;
+    
+    // Return the recursive function n/3 
+    return isPowerOfThree(n/3);    
+  }
+}
 ```
     
 ## 5: R-eview
