@@ -52,7 +52,8 @@ For Array problems, we want to consider the following approaches:
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 ```markdown
-Create a mapping of numbers to their positions. It suffices to perform two lookups in the mapping and verify that the positions satisfy the strict inequality from the problem statement.
+1. Create a mapping of numbers to their positions. It suffices to perform two lookups in the mapping.
+2. Verify that the positions satisfy the strict inequality from the problem statement.
 ```
 
 **⚠️ Common Mistakes**
@@ -117,7 +118,7 @@ class Solution {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-
+Assume `n` is the number of elements, 
 
 * **Time Complexity**: O(n) - we use two separate loops that iterate over the same number of elements
 
