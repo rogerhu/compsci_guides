@@ -64,6 +64,8 @@ For Array problems, we want to consider the following approaches:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
+General Idea: use the two pointers pattern to make sure the result contains unique triplets
+
 ```markdown
 First, sort the array.
 Have two pointers l and r where l starts from i + 1 and r in reverse. ie len(nums)-1. Here i is the index of n.
