@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/) 
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 25 mins
 * 🛠️ **Topics**: Two Pointers, Greedy, Graphs
 * 🗒️ **Similar Questions**: [Find the Town Judge](https://leetcode.com/problems/find-the-town-judge/)
     
