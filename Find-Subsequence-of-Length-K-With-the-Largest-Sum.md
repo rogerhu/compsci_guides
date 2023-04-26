@@ -17,13 +17,10 @@
 
 - Will there be at least one number?
     - Yes, the array contains at least one number
-
 - Will the number of selected numbers be less than total numbers?
     - Yes, the number of selected numbers will be less than total numbers.
-
 - What is the space and time complexity?
     - We want O(nlogn) run time and O(n) space complexity. 
-
 
 ```markdown
 HAPPY CASE
@@ -97,6 +94,46 @@ class Solution:
 
         # Return the k largest numbers as sorted by index.
         return [numAndIndex[0] for numAndIndex in sortedSubsequenceByIndex]
+```
+```java
+class Solution {
+    public int[] maxSubsequence(int[] nums, int k) {
+        // Hashmap/Tuple number in sorted index pairs.  
+        PriorityQueue<int[]> q = new PriorityQueue<>((a,b)-> (a[0]-b[0])); 
+    
+        // Select the largest k numbers
+        for(int i=0; i<nums.length; i++)
+        {
+            q.offer(new int[]{nums[i],i});
+            if(q.size()> k)
+            {
+                q.poll();
+            }
+        }
+        
+        // Sort largest k numbers by index
+        Set<Integer> index = new HashSet<>();
+        while(!q.isEmpty())
+        {
+            int[] top = q.poll();
+            index.add(top[1]);
+        }
+        
+        // Return the k largest numbers as sorted by index.
+        int[] result = new int[k];
+        int p =0;
+        for(int i=0; i< nums.length; i++)
+        {
+            if(index.contains(i))
+            {
+                result[p] = nums[i];
+                ++p;
+            }
+        }
+        
+        return result;
+    }
+}
 ```
     
 ## 5: R-eview
