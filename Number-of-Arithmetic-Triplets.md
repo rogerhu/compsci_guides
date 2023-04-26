@@ -88,7 +88,7 @@ nums[k] - nums[j] == diff ---> nums[k] = nums[j] + diff ---> nums[k] = (nums[i] 
 class Solution:
     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
 
-        # variable to count the number of triplets
+        # create variable to count the number of triplets
         ans = 0
 
         # loop through nums backwards
@@ -108,10 +108,15 @@ class Solution:
 ```java
 class Solution {
     public int arithmeticTriplets(int[] nums, int diff) {
+        # create variable to count the number of triplets
         final var arr = new boolean[201];
+
+        # loop through nums backwards
         for (int i : nums)
             arr[i] = true;
         int cnt = 0, t = 0;
+
+        # if both of these are in nums, we have a triplet
         for (int i : nums)
             if ( (t = i - diff) >= 0 && arr[t] && (t -= diff) >= 0 && arr[t])
                 cnt++;
