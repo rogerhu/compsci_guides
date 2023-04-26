@@ -87,44 +87,37 @@ nums[k] - nums[j] == diff ---> nums[k] = nums[j] + diff ---> nums[k] = (nums[i] 
 ```python
 class Solution:
     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
+
+        # variable to count the number of triplets
         ans = 0
-        nums_to_pos = {num:index for index, num in enumerate(nums)}
-        for i in range(len(nums)):
-            a = nums[i]
-            b, c = a + diff, a + 2 * diff
-            if b in nums_to_pos and c in nums_to_pos:
-                j, k = nums_to_pos[b], nums_to_pos[c]
-                if i < j < k:
-                    ans += 1
+
+        # loop through nums backwards
+        for i in range(len(nums)-1, -1, -1):
+            
+            # the current number minus diff and diff*2
+            a = nums[i] - (diff*1)
+            b = nums[i] - (diff*2)
+
+            # if both of these are in nums, we have a triplet 
+            if (a in nums) and (b in nums):
+                ans +=1
+
         return ans
 ```
 
 ```java
 class Solution {
-public:
-    int arithmeticTriplets(vector<int>& nums, int diff) {
-        
-        int cnt = 0;
-        
-        unordered_map<int,bool> mp;
-        
-        // Mark every elem presence in map.
-        for(int i=0;i<nums.size();i++)
-            mp[nums[i]] = true;
-        
-        
-        // For every element say 'elm' check if there exist both numbers, (elm + diff) and (elm - diff) inside map. If yes then increment cnt
-        for(int i=0;i<nums.size();i++)
-        {
-            if(mp[nums[i]-diff] && mp[nums[i]+diff])
+    public int arithmeticTriplets(int[] nums, int diff) {
+        final var arr = new boolean[201];
+        for (int i : nums)
+            arr[i] = true;
+        int cnt = 0, t = 0;
+        for (int i : nums)
+            if ( (t = i - diff) >= 0 && arr[t] && (t -= diff) >= 0 && arr[t])
                 cnt++;
-        }
-        
-		
-		// Happy return :)
         return cnt;
     }
-};
+}
 ```
     
 ## 5: R-eview
@@ -138,7 +131,7 @@ public:
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-Assume `n` is the number of elements, 
+Assume `n` is the length of `nums`,
 
 * **Time Complexity**: O(n) - we use two separate loops that iterate over the same number of elements
 
