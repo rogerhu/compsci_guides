@@ -58,9 +58,13 @@ For Array problems, we want to consider the following approaches:
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
+General Idea: 
+
 ```markdown
-1. Create a mapping of numbers to their positions. It suffices to perform two lookups in the mapping.
-2. Verify that the positions satisfy the strict inequality from the problem statement.
+1. Store all the elements of array in a map or a set
+2. Traverse the array and see for every element if there are two more elements present in map 
+3. If present, then increment the count by 1
+4. Return the count variable
 ```
 
 **⚠️ Common Mistakes**
