@@ -21,6 +21,7 @@
   - Yes. Because the numbers in original array are sorted, if for any index `i` we find `nums[i] + diff` and `nums[i] + (2 * diff)` in the set, we can be sure that they exist at indexes that satisfy the constraint of `i < j < k` since any value greater than current index number's value would be at a higher index than current index `(nums[i] + diff` and `nums[i] + (2 * diff)` will always be greater indexes than `nums[i]` since according to problem constraints `1 <= diff <= 50`).
    
 ```markdown
+HAPPY CASE
 Example 1:
 
 Input: nums = [0,1,4,6,7,10], diff = 3
@@ -30,6 +31,12 @@ Example 2:
 
 Input: nums = [4,5,6,7,8,9], diff = 2
 Output: 2
+
+EDGE CASE
+Example 3:
+
+Input: nums = [0,100,101,102,103,200], diff = 3
+Output: 0
 ```   
     
 ## 2: M-atch
