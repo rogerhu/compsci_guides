@@ -101,21 +101,30 @@ class Solution:
 
 ```java
 class Solution {
-    public int arithmeticTriplets(int[] nums, int diff) {
+public:
+    int arithmeticTriplets(vector<int>& nums, int diff) {
         
-        Set<Integer> set = new HashSet<>();
-        int result = 0;
-        for(int num : nums){
-            if(set.contains(num-diff) && set.contains(num-(2*diff))){
-                result += 1;
-            }
-            set.add(num);
+        int cnt = 0;
+        
+        unordered_map<int,bool> mp;
+        
+        // Mark every elem presence in map.
+        for(int i=0;i<nums.size();i++)
+            mp[nums[i]] = true;
+        
+        
+        // For every element say 'elm' check if there exist both numbers, (elm + diff) and (elm - diff) inside map. If yes then increment cnt
+        for(int i=0;i<nums.size();i++)
+        {
+            if(mp[nums[i]-diff] && mp[nums[i]+diff])
+                cnt++;
         }
-        return result;
-            
-      
+        
+		
+		// Happy return :)
+        return cnt;
     }
-}
+};
 ```
     
 ## 5: R-eview
