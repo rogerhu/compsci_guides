@@ -2,7 +2,7 @@
 
 * 🔗 **Leetcode Link:** [Brick Wall](https://leetcode.com/problems/brick-wall/) 
 * 💡 **Problem Difficulty:** Medium
-* ⏰ **Time to complete**: __ mins
+* ⏰ **Time to complete**: 25 mins
 * 🛠️ **Topics**: Array, Hash Table
 * 🗒️ **Similar Questions**: [Number of Ways to Build Sturdy Brick Wall](https://leetcode.com/problems/number-of-ways-to-build-sturdy-brick-wall/)
     
@@ -71,7 +71,7 @@ Output: 3 (A line cannot be drawn at either of the ends, so it must go through
 
 **General Idea:** Use a HashMap to store number of gaps at column indices. Then, use the max gap value to calculate the least number of bricks to cross in a vertical line.
 
-
+```markdown
 1. Create a HashMap to store the number of gaps at each index of a row.
 2. Iterate through each row within the wall
 3. Create a sum variable
@@ -84,7 +84,7 @@ Output: 3 (A line cannot be drawn at either of the ends, so it must go through
         highest number of gaps
 6. Return the height of the wall minus the highest gap value
     - This means the number of bricks you will cross in creating a line there
-
+```
 
 ⚠️ **Common Mistakes**
 
