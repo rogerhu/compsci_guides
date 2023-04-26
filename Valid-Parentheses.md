@@ -62,6 +62,7 @@ For brackets problems, we want to consider the following approaches:
 **⚠️ Common Mistakes**
 
 * Look out for edge case
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -101,7 +102,6 @@ class Solution:
         # In the end, if we are left with a stack still having elements, then this implies an invalid expression.
         return not stack
 ```
-
 ```java
 class Solution {
    public boolean isValid(String s) {
