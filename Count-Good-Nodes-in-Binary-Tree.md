@@ -21,6 +21,7 @@
   - Yes, that can occur.
 - What are the time and space constraints for this problem?
     - `O(N)` time and `O(1)` space excluding the recusive stack.
+
 ```markdown
 HAPPY CASE
 Input: root = [3,1,4,3,null,1,5]
@@ -31,13 +32,17 @@ Node 4 -> (3,4) is the maximum value in the path starting from the root.
 Node 5 -> (3,4,5) is the maximum value in the path
 Node 3 -> (3,1,3) is the maximum value in the path.
 ```
+
 ![Example 1 ](https://assets.leetcode.com/uploads/2020/04/02/test_sample_1.png)
+
 ```markdown
 Input: root = [3,3,null,4,2]
 Output: 3
 Explanation: Node 2 -> (3, 3, 2) is not good, because "3" is higher than it.
 ```
+
 ![Example 2 ](https://assets.leetcode.com/uploads/2020/04/02/test_sample_2.png)
+
 ```markdown
 EDGE CASE 
 Input: root = [1]
@@ -53,15 +58,13 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
     - Choosing a specific tree traversal that follows a general root-to-leaf path should help us identify all of the possible routes. However, we do need to process the node as we traverse down, so pre-order is helpful here.
-    
 - Store nodes within a HashMap to refer to later
     - We don’t have a specific way of referring to previous nodes in a path that could be used in a HashMap. So, a HashMap would not help us as much in this context.
-
 - Using Binary Search to find an element
     - We are not working with a Binary Search Tree. 
-
 - Applying a level-order traversal with a queue
     - Using this approach may complicate our code
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -84,6 +87,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
 - Not realizing the need for a helper function
     - The helper function helps provide additional parameters and allow for retaining memory during recursion.
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -123,6 +127,33 @@ class Solution:
 
         # Return good nodes count
         return countGoodNodes
+```
+```java
+class Solution {
+    // Create a variable to collect good nodes
+    int count = 0; 
+
+    public int goodNodes(TreeNode root) {
+        // Call helper function to populate good nodes
+        helper(root, root.val);
+        // Return good nodes count
+        return count; 
+    }
+    // Create a helper function to collect good nodes and retain the largest value down the path
+    private void helper(TreeNode root, int max) {
+        // Set basecase to root is None, return
+        if (root != null) {
+            // Check current node value against previous max value
+            if (root.val >= max) { 
+                // If a larger or equal value is found then increase good node count and set new max value
+                count++; 
+            }
+            // Recursively process left child and right child to progress through the tree
+            helper(root.left, Math.max(root.val, max)); 
+            helper(root.right, Math.max(root.val, max)); 
+        }
+    }
+}
 ```
 
 ## 5: R-eview
