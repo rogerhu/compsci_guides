@@ -17,22 +17,19 @@
 
 - Can the input list be empty?
     - No. The linked list can have 1-100 nodes.
-
 - What is the middle of one node?
     -  Take the first node.
-
 - What is the middle of two nodes?
     - Take the second node.
-
 - What is the middle of three nodes?
     - Take the middle node
-
 - What is the middle of four nodes? 
    - Between the two middle nodes, take the second one.
    ```markdown
     Input: 1 -> 2 -> 3 -> 4
     Output: 3 -> 4
     ```
+
 ```markdown
 HAPPY CASE
 Input: head = [1,2,3,4,5]
@@ -58,21 +55,16 @@ For Linked List problems, we want to consider the following approaches:
 
 - Multiple Pass. If we were able to take multiple passes of the linked list, would that help solve the problem?
     - This may help us determine the length of the list, and help us get the middle node. However this is not the most efficent approach as this would require two pass.
-
 - Dummy Head. Would using a dummy head as a starting point help simplify our code and handle edge cases?
     - We are not rearranging the list. Rather, we are trying to determine the structure of the linked list.
-
 - Two Pointer. If we used two pointers to iterate through the list at different speeds, would that help us solve this problem?
     - Two pointers could help us in this problem. How could we use two different pointers in this problem? Would we have the pointers move at different speeds? Could the pointers reference the same node initially?
-
-
 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 **General Idea:** Every time we move slow pointer once, we move fast pointer twice. Once fast pointer reaches the end, the slow pointer is pointing at the middle node. 
-
 
 ```markdown
 1) Initialize slow and fast pointer at head node
@@ -103,6 +95,23 @@ class Solution:
             fast = fast.next.next
         # Return slow pointer
         return slow
+```
+```java
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        // Initialize slow and fast pointer at head node
+        ListNode slow = head, fast = head;
+        // While fast pointer and fast.next pointer exist
+        while (fast != null && fast.next != null) {
+            // Move slow pointer forward once
+            slow = slow.next;
+            // Move fast pointer forward twice
+            fast = fast.next.next;
+        }
+        // Return slow pointer
+        return slow;
+    }
+}
 ```
     
 ## 5: R-eview
