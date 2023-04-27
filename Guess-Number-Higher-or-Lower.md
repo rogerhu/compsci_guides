@@ -17,13 +17,10 @@
 
 - Will there be negative numbers?
     - No, the number will begin at 1 thru n.
-
 - Will the picked number alway be between 1 thru n?
     - Yes, the picked number is always between 1 thru n.
-
 - What is the space and time complexity?
     - We want O(logn) time and O(1) space. 
-
 
 ```markdown
 HAPPY CASE
@@ -117,6 +114,28 @@ class Solution:
                     
                 case _:
                     print("Error")
+```
+```java
+public class Solution extends GuessGame {
+    public int guessNumber(int n) {
+
+        // Initialize left and right pointers
+        int start=1, end=n, mid;
+
+        // While left pointer is less than or equal to right pointer we have not exhausted the possible numbers
+        while( start<=end){
+            // Get the mid point of the two pointers
+            mid= start+(end- start)/2;
+            // If mid point number is equal to picked number, then return the picked number
+            if( guess(mid)==0) return mid;
+            // If mid point number is greater than the picked, then we need to check the smaller half for the picked number. Set the right pointer to mid pointer - 1
+            else if( guess(mid)==1) start=mid+1;
+            // If mid point number is less than the picked, then we need to check the larger half for the picked number. Set the left pointer to mid pointer + 1
+            else end=mid-1; 
+        }
+        return -1;
+    }
+}
 ```
     
 ## 5: R-eview
