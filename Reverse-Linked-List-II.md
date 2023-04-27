@@ -17,6 +17,10 @@
 
 - Can the input list be empty?
     - No. The linked list can have 1-500 nodes.
+- Can the left node be greater than the right node?
+    - No. The left node is alway lesser than or equal to right node.
+- What should we expect for time and space complexity?
+    - Assume `N` represents the number of nodes in the linked list. `O(N)` time and `O(1)` Space, ignoring the recursive stack.
 
 ```markdown
 HAPPY CASE
@@ -41,21 +45,16 @@ For Linked List problems, we want to consider the following approaches:
 
 - Multiple Pass. If we were able to take multiple passes of the linked list, would that help solve the problem?
     - This may help us determine the length of the list. This will help us because we need to know where to start reversing
-
 - Dummy Head. Would using a dummy head as a starting point help simplify our code and handle edge cases?
     - We may need to swap the first node for the last node, this requires a dummy node. 
-
 - Two Pointer. If we used two pointers to iterate through the list at different speeds, would that help us solve this problem?
     - Two pointers could help us in this problem. How could we use two different pointers in this problem? A previous point and a current pointer?
-
-
 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 **General Idea:** We will reverse everything in between the left and right index. Then we will point to the new head and tail. 
-
 
 ```markdown
 1) Eliminate Edge Case, left and right is equal
@@ -67,7 +66,7 @@ For Linked List problems, we want to consider the following approaches:
 
 **⚠️ Common Mistakes**
 
-* Mutiple passes will slow down code and make code more complex.
+* Multiple passes will slow down code and make code more complex.
 
 ## 4: I-mplement
 
@@ -106,7 +105,32 @@ class Solution:
         leftPrevious.next = reversedStartPointer
         return dummy.next
 ```
-    
+```java
+class Solution {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        // Initialize dummy node, left previous pointer, left pointer
+        ListNode dummy = new ListNode(0); 
+        dummy.next = head;
+        ListNode prev = dummy; 
+        
+        // Move left previous pointer to left previous and left pointer to left
+        for(int i = 0; i < left - 1; i++)
+            prev = prev.next; 
+        
+        // Reverse all nodes from left pointer until right pointer
+        ListNode curr = prev.next; 
+        for(int i = 0; i < right - left; i++){
+            ListNode forw = curr.next;
+            curr.next = forw.next;
+            forw.next = prev.next;
+            prev.next = forw;
+        }
+        
+        return dummy.next;
+    }
+}
+```    
+
 ## 5: R-eview
 
 > **Review** the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.
