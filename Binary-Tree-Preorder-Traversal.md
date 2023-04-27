@@ -5,6 +5,7 @@
 * ⏰ **Time to complete**: 10 mins
 * 🛠️ **Topics**: Binary Trees, Depth First Search
 * 🗒️ **Similar Questions**: [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/), [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/), [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/), [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+
 ## 1: U-nderstand
  
 > **Understand** what the interviewer is asking for by using test cases and questions about the problem.
@@ -17,7 +18,7 @@
 - Can I expect to receive an empty Tree as input?
   - Yes, there may be an empty Tree as input
 - What is the time and space constraints for this problem?
-    - `O(n)` time complexity and `O(n)` space complexity
+    - Assume `N` represents the number of nodes in Tree. `O(N)` time complexity and `O(N)` space complexity
    
 ```markdown
 HAPPY CASE
@@ -70,6 +71,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
 - Failing to recognize the need for a helper function to store results during recursive processing of nodes.
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -106,6 +108,29 @@ class Solution:
 
         # Return results 
         return result
+```
+```java
+class Solution {
+	public List<Integer> preorderTraversal(TreeNode root) {
+		//  Create results array
+		List<Integer> pre = new LinkedList<Integer>();
+		// Call helper function to build results
+		preHelper(root,pre);
+		// Return results 
+		return pre;
+	}
+	// Create a helper function to recursively progress through the nodes
+	public void preHelper(TreeNode root, List<Integer> pre) {
+		// Basecase, root is none
+		if(root==null) return;
+		// Store node value into results
+		pre.add(root.val);
+		// Go to left node
+		preHelper(root.left,pre);
+		// Go to right node
+		preHelper(root.right,pre);
+	}
+}
 ```
     
 ## 5: R-eview
