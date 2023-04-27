@@ -17,9 +17,8 @@
 
 - Can the input grid be blank??
     - Let’s assume the grid is not blank. We don’t need to consider empty inputs.
-
 - What are the time and space constraints?
-    - Time complexity should be `O(m*n)`, m being the rows of the matrix and n being the columns of matrix. Space complexity should be `O(m*n)` too.
+    - Time complexity should be `O(M*N)`, M being the rows of the matrix and N being the columns of matrix. Space complexity should be `O(M*N)` too.
 
 ```markdown
 HAPPY CASE
@@ -45,10 +44,8 @@ For 2D-Array, common solution patterns include:
 
 - Perform a BFS/DFS Search through the 2D Array
     - A search through the 2D Array (either BFS or DFS) does not help us. We need to find min values in rows and max values in columns. We do not need to go in all four directions.
-
 - Hash the 2D Array in some way to help with the Strings
     - Hashing would not help us here.
-
 - Create/Utilize a Trie
     - A Trie would not help us much in this problem since we are not trying to determine anything about a sequence of characters.
 
@@ -75,8 +72,6 @@ For 2D-Array, common solution patterns include:
 
 > **Implement** the code to solve the algorithm.
 
-**Solution 1:**
-
 ```python
 class Solution:
     def luckyNumbers (self, matrix: List[List[int]]) -> List[int]:
@@ -96,6 +91,43 @@ class Solution:
         # Return a list of numbers that is in both sets
         return list(minRow & maxCol)
 ```
+```java
+class Solution {
+    public List<Integer> luckyNumbers (int[][] matrix) {
+        List<Integer> result = new ArrayList<Integer>();
+        // Search each row in matrix for minimum number and create minimum row numbers
+        for (int row = 0; row < matrix.length; row++) {
+            int minCol = minColInRow(matrix, row);
+            int value = matrix[row][minCol];
+            // Search each column in matrix for maximum number and create maximum column numbers
+            if (checkIfMaxInCol(matrix, minCol, value)) {
+                // Store maximum number per column
+                result.add(value);
+            }
+        }
+        // Return a list of numbers that is in both sets
+        return result;
+    }
+    
+    private int minColInRow(int[][] matrix, int row) {
+        int minIndex = 0, min = matrix[row][minIndex];
+        for (int col = 1; col < matrix[row].length; col++) {
+            if (matrix[row][col] < min) {
+                min = matrix[row][col];
+                minIndex = col;
+            }
+        }
+        return minIndex;
+    }
+    
+    private boolean checkIfMaxInCol(int[][] matrix, int col, int value) {
+        for (int row = 0; row < matrix.length; row++) {
+            if (matrix[row][col] > value) return false;
+        }
+        return true;
+    }
+}
+```
 
 
 ## 5: R-eview
@@ -110,8 +142,7 @@ class Solution:
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
 Assume `N` represents the number of rows in 2D-array.
-Assume`M` represents the number of columns in 2D-array.
+Assume `M` represents the number of columns in 2D-array.
 
-
-* **Time Complexity**: O(N * M) we need to view each item in the 2D-Array to get the minimum number in row and maximum number in column. 
-* **Space Complexity**: O(N * M), because we need space to hold the results. Results may contain all items in 2D-Array. 
+* **Time Complexity**: `O(N * M)` we need to view each item in the 2D-Array to get the minimum number in row and maximum number in column. 
+* **Space Complexity**: `O(N * M)`, because we need space to hold the results. Results may contain all items in 2D-Array. 
