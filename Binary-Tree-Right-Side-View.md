@@ -19,12 +19,15 @@
   - Yes, the root node can be Null.
 - What is the space and time complexity?
     - Time is `O(N)` and Space is `O(N)`.
+
 ```markdown
 HAPPY CASE
 Input: root = [1,2,3,null,5,null,4]
 Output: [1,3,4]
 ```
+
 ![Example 1 ](https://assets.leetcode.com/uploads/2021/02/14/tree.jpg)
+
 ```markdown
 Input: root = [1,null,3]
 Output: [1,3]
@@ -42,13 +45,10 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
     - Choosing a specific tree traversal helps identify the right node. Think level-order output.
-    
 - Store nodes within a HashMap to refer to later
     - We don’t have a specific way of referring to previous nodes in a path that could be used in a HashMap. So, a HashMap would not help us as much in this context.
-
 - Using Binary Search to find an element
     - We are not working with a Binary Search Tree. 
-
 - Applying a level-order traversal with a queue
     - Yes, this is the perfect match for this problem.
 
@@ -70,6 +70,7 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 **⚠️ Common Mistakes**
 - Choosing the wrong traversal type
     - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
+    - Will In-Order traversal tell you the rightmost node? 
 - Failing to recognize the need to store results during the processing of nodes.
 ## 4: I-mplement
 
@@ -108,6 +109,40 @@ class Solution:
         
         # Return results
         return results
+```
+```java
+class Solution {
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> list = new ArrayList<Integer>();
+        // Handle Null Tree
+        if (root == null)
+            return list;
+        
+        // Create a results array to store rightmost node for each level
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        // Create a queue with root node and process until no more nodes in queue
+        while (!queue.isEmpty()) {
+            // Process the current number of nodes in queue to exclude new nodes added to queue. 
+            int size = queue.size(); 
+            TreeNode node = null;
+            while (size > 0) {
+                node = queue.poll();
+                if (node.left != null) 
+                    queue.offer(node.left);
+                if (node.right != null)
+                    queue.offer(node.right);
+                size--;
+            }
+            // Store the last node of each level and add children from each node to queue, to be processed in next level.
+            list.add(node.val); // add the val of last node
+        }
+        
+        // Return results
+        return list;
+    }
+}
 ```
 
 ## 5: R-eview
