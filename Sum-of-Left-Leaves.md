@@ -21,19 +21,25 @@
   - No, there is at least one node.
 - What is the space and time complexity?
     - Time is `O(N)` and Space is `O(1)` excluding the recursion stack.
+
 ```markdown
 HAPPY CASE
 Input: root = [3,9,20,null,null,15,7]
 Output: 24
 Explanation: There are two left leaves in the binary tree, with values 9 and 15 respectively.
+
 ```
+
 ![Example 1 ](https://assets.leetcode.com/uploads/2021/04/08/leftsum-tree.jpg)
+
 ```markdown
 Input: root = [1,2,3]
 Output: 2
 Explanation: There is one left leaf. 2.
 ```
+
 ![Example 2 ](https://assets.leetcode.com/uploads/2021/01/18/pathsum2.jpg)
+
 ```markdown
 EDGE CASE 
 Input: root = [1]
@@ -48,15 +54,13 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 
 - Think about appropriate Tree Traversal: Pre-Order, In-Order, Post-Order, Level-Order
     - Choosing a specific tree traversal helps identify a left leaf.
-    
 - Store nodes within a HashMap to refer to later
     - We don’t have a specific way of referring to previous nodes in a path that could be used in a HashMap. So, a HashMap would not help us as much in this context.
-
 - Using Binary Search to find an element
     - We are not working with a Binary Search Tree. 
-
 - Applying a level-order traversal with a queue
     - Using this approach may complicate our code
+
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
@@ -75,9 +79,8 @@ If you are dealing with Binary Trees some common techniques you can employ to he
 ```
 
 **⚠️ Common Mistakes**
-- Choosing the wrong traversal type
-    - Try to walk through the problem by hand and see the order in which you are processing the nodes. This will clue you into the type of traversal necessary
 - Failing to recognize the need for a helper function to store results during recursive processing of nodes.
+
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
@@ -117,6 +120,33 @@ class Solution:
 
         # Return total
         return total
+```
+```java
+class Solution {
+    // Create the total variable to store sum
+    int sum=0;
+    public int sumOfLeftLeaves(TreeNode root) { 
+        // Recursively call helper
+        helper(root,false);
+        // Return total
+        return sum;
+    }
+    // Create a helper function to recursively progress through the nodes
+    public void helper(TreeNode root,boolean isLeft){
+        // Basecase, root is None. Can't operate function on None
+
+        if(root==null ) return;    
+        if(root.left==null && root.right==null) {
+            // If left child and leaf, then add node's value to total
+            if(isLeft)
+            sum+=root.val;
+        }
+        // Check left side and mark as left child
+        helper(root.left,true);
+        // Check right side and mark as right child
+        helper(root.right,false);
+    }
+}
 ```
 
 ## 5: R-eview
