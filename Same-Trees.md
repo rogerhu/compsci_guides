@@ -1,6 +1,6 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** [Same Trees](https://leetcode.com/problems/minimum-depth-of-binary-tree/) 
+* 🔗 **Leetcode Link:** [Same Trees](https://leetcode.com/problems/same-tree/) 
 * 💡 **Problem Difficulty:** Easy
 * ⏰ **Time to complete**: 10 mins
 * 🛠️ **Topics**: Binary Trees, Depth First Search, Breadth First Search
