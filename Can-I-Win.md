@@ -69,7 +69,7 @@ The strategy is to avoid repeatedly solving sub-problems. That is a clue to use 
 ```markdown
 We create an array allowed which has all the integers from 1 to maxChoosableInteger.
 At each state, if the maximum usable number plus the numbers you already summed up (denote as already) is greater than the desired total, it means you can definitely win at this state.
-Else, you loop through the usable numbers, each time pick one number, and see whether your opponent can win at the new state. If he can't, then you can win. (Really, I don't see the logic here, hope someone can explain. Isn't there a situation where none of us can definitely win?) And remember to cache the result.
+Else, you loop through the usable numbers, each time pick one number, and see whether your opponent can win at the new state. If he can't, then you can win. And remember to cache the result.
 ```
 
 ## 4: I-mplement
