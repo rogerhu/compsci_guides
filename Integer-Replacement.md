@@ -120,5 +120,5 @@ public int integerReplacement(int n) {
 
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
 
-* **Time Complexity**: O(n)
+* **Time Complexity**: O(Logn)
 * **Space Complexity**: O(n)
