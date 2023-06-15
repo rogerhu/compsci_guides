@@ -46,15 +46,15 @@ Output: [1]
 - Multiple passes: To find the length, or save other information about the contents. If we were able to take multiple passes of the linked list, would that help solve the problem? Multiple passes would not help this problem since we aren’t collecting unique items or need any pre-processing.
 - Two pointers: ‘Race car’ strategy with one regular pointer, and one fast pointer. If we used two pointers to iterate through the list at different speeds, would that help us solve this problem?
 A slow and fast pointer may not help the problem.
-- Dummy node: Helpful for preventing errors when returning ‘head’ if merging lists, deleting from lists. Would using a dummy head as a starting point help simplify our code and handle edge cases? Since we have to manipulate the order of the list, including the head of the list, a dummy head would help maintain a pointer to beginning of the list.
+- Temp node: Helpful for preventing errors when returning ‘head’ if merging lists, deleting from lists. Would using a temp head as a starting point help simplify our code and handle edge cases? Since we have to manipulate the order of the list, including the head of the list, a temp head would help maintain a pointer to beginning of the list.
 
 ## 3: P-lan
 
 > **Plan** the solution with appropriate visualizations and pseudocode.
 
 ```markdown
-1) Establish a dummy head that points to the first node
-2) Keep a pointer to the dummy head
+1) Establish a temp head that points to the first node
+2) Keep a pointer to the temp head
 3) Iterate through the list while the pointer has TWO valid nodes ahead
 4) Swap the two nodes ahead of the pointer
 5) Move the pointer to the second post-swap node
@@ -108,7 +108,7 @@ class Solution {
     public ListNode swapPairs(ListNode head) {
         ListNode d = new ListNode(-1);
         d.next = head;
-        // initialize  one dummy node and mark it as prev node
+        // initialize  one temp node and mark it as prev node
         ListNode prev = d;
         while(head != null && head.next!=null){
             // get the current node and next node
@@ -142,4 +142,4 @@ class Solution {
 > **Evaluate** the performance of your algorithm and state any strong/weak or future potential work.
     
 * **Time Complexity**: O(N), as we used a single pass-through linked list
-* **Space Complexity**: O(1), as only 1 dummy node created for any size list
+* **Space Complexity**: O(1), as only 1 temp node created for any size list
