@@ -1,6 +1,6 @@
 ## Problem Highlights
 
-* 🔗 **Leetcode Link:** [https://leetcode.com/problems/swap-nodes-in-pairs/](https://leetcode.com/problems/swap-nodes-in-pairs/)
+* 🔗 **Leetcode Link:** [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
 * 💡 **Problem Difficulty:** Medium
 * ⏰ **Time to complete**: 10 to 12 mins
 * 🛠️ **Topics**: Linked Lists, Recursion
@@ -72,36 +72,24 @@ A slow and fast pointer may not help the problem.
 ```python
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        def swap_node(node1, node2):
-            subsequent_nodes = node2.next
-            node2.next = node1
-            node1.next = subsequent_nodes
-            return node2, node1
-        
-        # less than two nodes, return as it is
-        if not head or not head.next:
-            return head
-        
-        # take first two nodes as cur and cur_next
-        cur, cur_next = head, head.next
-        res_head = None
-        prev = None
-        while cur and cur_next:
-            # swap cur and cur_next
-            cur, cur_next = swap_node(cur, cur_next)
-            if prev:
-                # set next of prev
-                prev.next = cur
-            if res_head is None:
-                # set result head if its unset
-                res_head = cur
-            # set new cur and cur_next
-            new_cur, new_cur_next = cur_next.next, None
-            if new_cur:
-                new_cur_next = new_cur.next
-            prev = cur_next
-            cur, cur_next = new_cur, new_cur_next
-        return res_head
+        # initialize  one temp node and mark it as prev node
+        prev = tempHead = ListNode(0, next = head)
+        # check the next node and next next node exist
+
+        while prev.next and prev.next.next:
+            # get the next node and next next node exist
+            first = prev.next
+            second = prev.next.next
+            # set first.next to second.next, point to next node pair
+            first.next = second.next
+            # set second.next to first, perform the swap
+            second.next = first
+            # set prev.next to second, point to current node pair
+            prev.next = second
+            # set prev to first, set prev to node previous to next node pair
+            prev = first
+
+        return tempHead.next
 ```
 ```java
 class Solution {
