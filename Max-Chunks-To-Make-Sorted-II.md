@@ -80,34 +80,29 @@ In Strings/Arrays, common problem patterns include:
 > **Implement** the code to solve the algorithm.
 
 ```python
-class Solution {
-    public int maxChunksToSorted(int[] arr) {
-        int[] leftMax=new int[arr.length];    // this array stores the max value from 0 to ith index at ith index
-        leftMax[0]=arr[0];                     
-        int[] rightMin=new int[arr.length];   // this array stores the min value from i to arr.length-1 at ith index
-        rightMin[arr.length-1]=arr[arr.length-1];
-        for(int i=1;i<arr.length;i++){
-            leftMax[i]=Math.max(leftMax[i-1],arr[i]);
-        }
-        for(int i=arr.length-2;i>=0;i--){
-            rightMin[i]=Math.min(rightMin[i+1],arr[i]);
-        }
+class Solution:
+    def maxChunksToSorted(self, arr):
+        left_max = [0] * len(arr)  # This list stores the max value from 0 to the ith index at the ith index
+        left_max[0] = arr[0]
+        right_min = [0] * len(arr)  # This list stores the min value from the i to arr.length-1 at the ith index
+        right_min[-1] = arr[-1]
         
-        // now we traverse in leftMax array and rightMin array and compare the ith value of leftMax to (i+1)th value of rightMin array       
-        int i=0;
-        int count=0;  // count of number of partitions
-        while(i<arr.length-1){
-            if(leftMax[i]<=rightMin[i+1]){
-                count++;
-            }
-            i++;
-        }
+        for i in range(1, len(arr)):
+            left_max[i] = max(left_max[i-1], arr[i])
         
-        // the number of chunks is one more than the number of partitions 
-        return count+1;        
+        for i in range(len(arr)-2, -1, -1):
+            right_min[i] = min(right_min[i+1], arr[i])
         
-    }
-}
+        i = 0
+        count = 0  # Count of the number of partitions
+        
+        while i < len(arr) - 1:
+            if left_max[i] <= right_min[i+1]:
+                count += 1
+            i += 1
+        
+        # The number of chunks is one more than the number of partitions
+        return count + 1
 ```
 ```java
 class Solution {
