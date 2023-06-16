@@ -104,6 +104,7 @@ class Solution:
         # The number of chunks is one more than the number of partitions
         return count + 1
 ```
+
 ```java
 class Solution {
     public int maxChunksToSorted(int[] arr) {
