@@ -70,17 +70,28 @@ Else continue to next iteration and repeat the same process of moving both point
 ```python
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-            i = 0
-            while i < len(s):
-                while i < len (s) and not s[i].isalnum():
-                    s = s.replace(s[i],"") #delete all non alphanumeric characters
-                i+=1
-            s, j = s.lower(), len(s)-1  #convert s to lower
-            for i in range(len(s)//2): #i goes from first to middle character, j goes from last to middle character
-                if s[i] != s[j]:
-                    return False
-                j-=1
-            return True
+        # Use two pointer variables: one at left, one at right
+        l = 0; r = len(s) - 1; 
+        # Handle all case differences
+        s = s.lower()
+
+        # Move both l and r until they meet
+        while l < r:
+            # Skip none alpha numerical letters
+            while l < r and not s[l].isalnum():
+                l += 1
+            while l < r and not s[r].isalnum():
+                r -= 1
+            
+            # Return false when left if greater than right or not equal
+            if l > r or s[l] != s[r]:
+                return False
+
+            # iterate 
+            l += 1
+            r -= 1
+        
+        return True
 ```
 ```java
 class Solution {
