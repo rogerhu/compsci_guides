@@ -21,14 +21,14 @@
 ```markdown
 HAPPY CASE
 Input: "the sky is blue"
-Output: "blue is the sky"
+Output: "blue is sky the"
 
 Input: "what is the time"
 Output: "time the is what"
 
 EDGE CASE (Multiple Spaces)
 Input: "the   sky  is   blue"
-Output: "blue is the sky"
+Output: "blue is sky the"
 ```   
     
 ## 2: M-atch
@@ -63,6 +63,62 @@ Output: "blue is the sky"
 ## 4: I-mplement
 
 > **Implement** the code to solve the algorithm.
+
+
+```python
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        # Tokenize the input string to create a separate array 
+        arr = []
+        temp = ""
+        for c in s:
+            if c != " ":
+                temp += c 
+            elif temp != "":
+                arr.append(temp)
+                temp = ""
+        if temp != "":
+            arr.append(temp)
+
+        # Return a joined string version of the reversed array
+        l, r = 0, len(arr) - 1
+        while l<r:
+            arr[l], arr[r] = arr[r], arr[l]
+            l += 1
+            r -= 1
+        return " ".join(arr)
+```
+```java
+class Solution {
+    public String reverseWords(String s) {
+        // Tokenize the input string to create a separate array
+        ArrayList<String> arr = new ArrayList<>();
+        String temp = "";
+        for (char c : s.toCharArray()) {
+            if (c != ' ') {
+                temp += c;
+            } else if (!temp.isEmpty()) {
+                arr.add(temp);
+                temp = "";
+            }
+        }
+        if (!temp.isEmpty()) {
+            arr.add(temp);
+        }
+
+        // Return a joined string version of the reversed array
+        int l = 0, r = arr.size() - 1;
+        while (l < r) {
+            String swap = arr.get(l);
+            arr.set(l, arr.get(r));
+            arr.set(r, swap);
+            l++;
+            r--;
+        }
+        return String.join(" ", arr);
+    }
+}
+```
 
 ```python
 class Solution:
