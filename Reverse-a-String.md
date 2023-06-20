@@ -70,19 +70,15 @@ For Strings, common solution patterns include:
 ```python
 class Solution:
     def reverseString(self, s: List[str]) -> None:
-        # We first convert the string into an array, because a string is immutable.
-        arr = list(input_str)
-
-        # Then we can take two pointer variables, start and end and point them with the two ends of the array.
-        l, r = 0, len(arr) - 1
-
+        # Take two pointer variables, start and end and point them with the two ends of the array.
+        l, r = 0, len(s) - 1
         # As we move the start pointer right and end pointer left, we swap the characters.
         while l < r:
-            arr[l], arr[r] = arr[r], arr[l]
+            s[l], s[r] = s[r], s[l]
             l, r = l + 1, r - 1
 
         # After loop finishes, the string is said to be reversed, hence convert the array into a string and return.
-        return "".join(arr)
+        return s
 ```
 
 **Approach #1: Iterative**
