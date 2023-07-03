@@ -152,59 +152,60 @@ def calculate(self, s: str) -> int:
         return running_result
 ```
 ```java
-class Solution:
-    def calculate(self, s: str) -> int:
-        # remove useless spaces
-        s = "".join(s.split(" "))
+public class Solution {
+    public int calculate(String s) {
+        Stack<Integer> numsStack = new Stack<>();
+        Stack<Character> opsStack = new Stack<>();
         
-        # recursive function for evaluating the string
-        def eval_s(s, i):
-            tmp, op, stack_num = '', '', []
+        String curNum = "0";
+        char curOp = '+';
+        
+        int runningResult = 0;
+        
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
             
-            
-            while i < len(s):
-                c = s[i]
-                if c == '(':
-                    # recursive implementation to calculate the value within the brackets
-                    tmp, go_ahead = eval_s(s, i+1)
-                    i = go_ahead
-                elif c == ')':
-                    # close brackets encountered, hence return the answer and current index
-                    if len(stack_num) == 0:
-                        # Valid when we have only 1 number within the brackets
-                        return int(tmp), i
-                    else:
-                        # valid when we have encountered a number in the past
-                        if op == '+':
-                            return (stack_num.pop() + int(tmp)), i
-                        else:
-                            return (stack_num.pop() - int(tmp)), i
-                # we have either seen 1 number or 2 numbers already. Hence, either store the current number in the stack in case we have seen only 1 number, or store the result of binary operation of 2 numbers in the stack
-                elif c in ['+', '-']:
-                    if len(stack_num) == 0:
-                        stack_num.append(int(tmp))
-                    else:
-                        if op == '+':
-                            stack_num.append(stack_num.pop() + int(tmp))
-                        else:
-                            stack_num.append(stack_num.pop() - int(tmp))
-                    op = c
-                    tmp = ''
-                else:
-                    # the current character is a digit
-                    tmp += c
-                i += 1
+            if (Character.isDigit(c)) {
+                curNum += c;
+            }
+            else if (c == '+' || c == '-') {
+                runningResult += (curOp == '-') ? -Integer.parseInt(curNum) : Integer.parseInt(curNum);
                 
-            # deal with the edge case of loop finishing off without calculating the last operation
-            if len(stack_num) == 0:
-                return int(tmp)
-            else:
-                if op == '+':
-                    return stack_num.pop() + int(tmp)
-                else:
-                    return stack_num.pop() - int(tmp)
-            
-        return eval_s(s, 0)
+                curNum = "0";
+                curOp = c;
+            }
+            else if (c == '(') {
+                numsStack.push(runningResult);
+                opsStack.push(curOp);
+                
+                runningResult = 0;
+                curOp = '+';
+                curNum = "0";
+            }
+            else if (c == ')') {
+                runningResult += (curOp == '-') ? -Integer.parseInt(curNum) : Integer.parseInt(curNum);
+                
+                int prevNum = (!numsStack.isEmpty()) ? numsStack.pop() : 0;
+                char prevOp = (!opsStack.isEmpty()) ? opsStack.pop() : '+';
+                
+                if (prevOp == '-') {
+                    runningResult = -runningResult;
+                }
+                
+                runningResult = prevNum + runningResult;
+                
+                curNum = "0";
+                curOp = '+';
+            }
+        }
+        
+        if (!curNum.equals("")) {
+            runningResult += (curOp == '-') ? -Integer.parseInt(curNum) : Integer.parseInt(curNum);
+        }
+        
+        return runningResult;
+    }
+}
 ```
     
 ## 5: R-eview
