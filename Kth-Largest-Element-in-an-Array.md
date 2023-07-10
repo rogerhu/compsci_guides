@@ -124,7 +124,5 @@ class Solution {
 
 Assume `N` represents the number of items in the array.
 
-* **Time Complexity**: The time complexity of your solution is `O(k + (n - k) * log(k))`. This is because you first heapify the new array, which takes `O(n)` time. Then, you remove k elements from the heap, which takes `O(k * log(k))` time. Finally, you return the top of the heap, which takes `O(1)` time.
-
-In total, the time complexity of your solution is `O(n + k * log(k))`.
+* **Time Complexity**: The time complexity of your solution is `O(k + (n - k) * log(k))`. This is because you first heapify the new array, which takes `O(n)` time. Then, you remove k elements from the heap, which takes `O(k * log(k))` time. Finally, you return the top of the heap, which takes `O(1)` time. In total, the time complexity of your solution is `O(n + k * log(k))`.
 * **Space Complexity**: `O(N)` because we need to generate and store a heap. 
