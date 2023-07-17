@@ -30,7 +30,7 @@ Output: [0,0,9,0,0]
 
 EDGE CASE
 Input: nums = [-3,3]
-Output: [-9,-9]
+Output: [3,-3]
 ```   
     
 ## 2: M-atch
